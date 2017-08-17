@@ -2,50 +2,44 @@
   
   <section id="page-top" class="__page">
 
-    <div class="u-wrapper">
-      <div class="u-baseline-grid"></div>
-    </div>
-
-    <ogm-site-header :contentReached="contentReached"></ogm-site-header>
-    <!-- <ogm-temp-nav></ogm-temp-nav> -->
-    
-    <div class="__content-waypoint-wrapper">
-      <mlc-waypoint class="__content-waypoint" :waypoint="waypointContentTop" id="content-top"></mlc-waypoint>
-    </div>
+    <nav class="__navbar" ref="jsNavbar">
+      <div class="u-wrapper">
+        <ul class="__nav-list">
+          <li class="__nav-item">
+            <nuxt-link class="__nav-link" to="/profile" v-scroll-to="'#content-top'">
+              Profile
+            </nuxt-link>
+          </li>
+          <li class="__nav-item">
+            <nuxt-link class="__nav-link" to="/work" v-scroll-to="'#content-top'">
+              Work
+            </nuxt-link>
+          </li>
+          <li class="__nav-item">
+            <nuxt-link class="__nav-link" to="/contact" v-scroll-to="'#content-top'">
+              Contact
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <nuxt/>
-
-    <ogm-site-footer></ogm-site-footer>
 
   </section>
   
 </template>
 
 <script>
-import ogmSiteHeader from '~/components/organisms/ogm-site-header'
-import ogmSiteFooter from '~/components/organisms/ogm-site-footer'
-import mlcWaypoint from '~/components/molecules/mlc-waypoint'
-
 export default {
   scrollToTop: false,
   components: {
-    ogmSiteHeader,
-    ogmSiteFooter,
-    mlcWaypoint
   },
   data: () => {
     return {
-      contentReached: false
     }
   },
   methods: {
-    waypointContentTop (direction, going) {
-      if (going === 'out') {
-        this.contentReached = true
-      } else {
-        this.contentReached = false
-      }
-    }
   }
 }
 </script>

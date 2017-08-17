@@ -1,23 +1,31 @@
 <template>
-  <div class="ogm-site-footer">
-    <p class="__caption">Made with 
-      <mlc-icon class="__icon" name="heart"></mlc-icon>
-      by Jamie Mitchell
-    </p>
-  </div>
+  <section>
+    
+    <div class="o-wrapper">
+      
+      <h2>work</h2>
+
+      <div class="__filler"></div>
+
+    </div>
+
+  </section>
 </template>
 
 <script>
-import mlcIcon from '~components/molecules/mlc-icon'
 export default {
+  scrollToTop: false,
+  layout: 'default',
+  data: () => {
+    return {
+    }
+  },
   components: {
-    mlcIcon
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
 
 /* NOTES
 ** None
@@ -34,25 +42,17 @@ export default {
 
 /* Base component class
    ====================================================================== */
-.ogm-site-footer {
-  padding: $unit-md;
-  background-color: $neutral-100;
-  color: $neutral-50;
-  @include mq($from: desktop) {
-    // padding: $unit-xxl*2 $unit-md;
-  }
+.page-projects {
 }
 
 /* --
    ====================================================================== */
 
-.__caption {
-  @include vr($font-body, $font-size-sm);
-  @include vr-reset;
+.__quote {
+  @include inner-border(bottom, 1px, low);
+  background-color: $neutral-90;
+  background-image: url('~assets/images/topography.svg');
+  background-size: 100%;
+  color: $neutral-00
 }
-
-.__icon {
-  height: .8em;
-}
-  
 </style>

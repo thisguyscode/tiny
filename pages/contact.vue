@@ -1,19 +1,11 @@
 <template>
-  <section class="page-contact">
-    <div class="u-wrapper u-wrapper--small">
-     <!-- <form action="https://www.enformed.io/dyuof206" method="POST" > -->
-     <form method="POST" > 
-      <label for="name">Name</label>
-      <input id="name" class="__input" type="text" name="name">
-      <label for="replyto">Email</label>
-      <input id="replyto" class="__input" type="email" name="replyto">
-      <label for="message">Message</label>
-      <textarea id="message" rows="4" class="__input  __textarea" type="text" name="message"></textarea>
-      <input class="__submit" type="submit" value="Send">
-    </form>
-    </div>
+  <div class="o-wrapper">
+      
+    <h2>contact</h2>
+
     <div class="__filler"></div>
-  </section>
+
+  </div>
 </template>
 
 <script>

@@ -12,7 +12,7 @@
  */
 
 .u-box {
-  @include inuit-clearfix();
+  // @include inuit-clearfix();
   display: block; /* [1] */
   padding: $unit-md;
 

@@ -1,0 +1,21 @@
+/* ==========================================================================
+   
+   #HEADER-NAV (PRIMARY NAV LINKS)
+
+   ========================================================================== */
+
+/**
+ *
+ */
+
+.o-header-nav {
+  @include vr($font-body, $font-size-md);
+}
+
+.o-header-nav__list {
+
+}
+
+.o-header-nav__item {
+  margin-right: $unit-lg;
+}

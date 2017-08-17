@@ -1,0 +1,42 @@
+/* ==========================================================================
+   
+   #BUTTON
+
+   Note: Extend this object with .c-btn (components/components.button)
+
+   ========================================================================== */
+
+/**
+ *
+ */
+
+.o-btn {
+  @include vr($font-display, $base-font-size);
+  padding: $unit-sm $unit-md;
+  margin-bottom: $paragraph-trailer;
+  cursor: pointer;
+  display: inline-block;
+
+  &:focus {
+    position: relative;
+    z-index: +1;
+  }
+
+  &.s-is-disabled {
+    cursor: default;
+  }
+
+}
+
+
+/* Size variants.
+   ====================================================================== */
+
+.o-btn--small {
+  @include vr($font-display, $font-size-sm);
+  padding: $unit-xs $unit-sm;
+}
+
+.o-btn--large {
+  padding: $unit-md $unit-lg;
+}

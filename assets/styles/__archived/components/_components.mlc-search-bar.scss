@@ -1,0 +1,19 @@
+/* ==========================================================================
+
+   #SEARCHBAR
+
+   ========================================================================== */
+
+   @import 'imports';
+
+   .c-search-bar {
+    @include inner-border(all, 1px);
+    border-radius: $border-radius--large;
+    background: $neutral-00;
+   }
+
+   .c-search-bar__field {
+     appearance: none;
+     background: none;
+     border: none;
+   }

@@ -1,0 +1,37 @@
+/* ==========================================================================
+   
+   #TEXT STYLES
+   
+   ========================================================================== */
+
+/**
+ *
+ */
+
+.u-text--bold {
+  font-weight: $font-weight-semi;
+}
+
+.u-text--low-contrast {
+  color: $neutral-60;
+}
+
+.u-text--lg {
+  @include vr($font-body, $font-size-lg);
+}
+
+.u-text--xl {
+  @include vr($font-body, $font-size-xl);
+}
+
+.u-text--reset-aligmnet {
+  @include vr-reset;
+}
+
+.u-text--paragraph-margin {
+  margin-bottom: $paragraph-trailer;
+}
+
+.u-text--heading-margin {
+  margin-bottom: $heading-trailer;
+}

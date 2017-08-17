@@ -1,0 +1,65 @@
+/* ==========================================================================
+   
+   #HEADER LOGO
+
+   ========================================================================== */
+
+/**
+ *
+ */
+
+$glasses-max-width: 264px;
+$name-max-width: 292px;
+
+$header-padding: $unit-sm;
+
+
+.o-header-logo {
+  text-align: center;
+  margin-bottom: $unit-lg;
+  margin-left: auto;
+  margin-right: auto;
+  width: $name-max-width/4;
+  height: $glasses-max-width/4;
+
+  @include mq($from: desktop) {
+    width: $name-max-width;
+    height: $glasses-max-width;
+  }
+
+}
+
+.o-header-logo__glasses,
+.o-header-logo__name {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  // transition: width .2s;
+}
+
+.o-header-logo__glasses {
+  width: $glasses-max-width/2;
+  margin-bottom: $unit-md;
+  
+  &.s-is-scrolled-to {
+    position: absolute;
+    top: $header-padding;
+    left: $header-padding;
+    width: $glasses-max-width/4;
+  }
+
+  @include mq($from: desktop) {
+    width:  $glasses-max-width;
+    margin-bottom: $unit-lg;
+  }
+
+}
+
+.o-header-logo__name {
+  width: $name-max-width/2;
+
+  @include mq($from: desktop) {
+    width: $name-max-width;
+  }
+
+}

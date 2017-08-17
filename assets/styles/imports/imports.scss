@@ -1,0 +1,14 @@
+@import "../../../node_modules/inuitcss/settings/settings.core";
+@import "./settings.config";
+$show-baseline: false; // Doesn't work in IE and Edge
+@import "./settings.typography";
+@import "./settings.main";
+
+@import "../../../node_modules/inuitcss/tools/tools.clearfix";
+@import "../../../node_modules/inuitcss/tools/tools.hidden";
+@import "../../../node_modules/sass-mq/mq";
+@import "./tools.aliases";
+@import "./tools.border";
+@import "./tools.contrasting-color";
+@import "./tools.vertical-rhythm";
+@import "./tools.z-index";

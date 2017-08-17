@@ -1,0 +1,85 @@
+/* ========================================================================
+
+  #VERTICAL RHYTHM (vr)
+
+  ======================================================================== */
+
+@mixin vr($font-family: $font-body, $font-size: $base-font-size) {
+
+	// Calculate the line height of the text.
+	$line-height: $font-size * $base-line-height;
+
+	// How much rhythm fits in the line height?
+	$rhythm-count: $line-height / $rhythm;
+
+	// Round the rhythm count to half cycles.
+	$rhythm-count-half: $rhythm-count - ($rhythm-count - floor($rhythm-count));
+
+	// Calculate the adjusted line height.
+	$adjusted-line-height: $rhythm-count-half * $rhythm;
+
+	// Shift the text to the baseline (distance between the baseline and descender height).
+	$baseline-shift: (($adjusted-line-height - $font-size) * 0.5);
+
+	position: relative;
+
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+
+	font-size: $font-size;
+
+	// Make sure that 1 rhythm is the minimum line height.
+	@if $adjusted-line-height < 1 {
+		line-height: $base-font-size * $base-line-height;
+	} @else {
+		line-height: $adjusted-line-height;
+	}
+
+	// Set offsets and font families.
+	@if $font-family == $font-display {
+		top: calc(#{$cap-font-display} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
+
+		font-family: $font-display;
+	} @else if $font-family == $font-mono {
+		top: calc(#{$cap-font-mono} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
+
+		font-family: $font-mono;
+	} @else {
+		top: calc(#{$cap-font-body} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
+	}
+}
+
+@mixin vr-reset {
+	position: static;
+	top: auto;
+}
+
+
+// Create a mixin for showing the baseline
+@mixin vr-baseline {
+	$baseline-size: 0.08rem;
+
+	// Sets a baseline every half rhythm.
+	background: linear-gradient(
+		transparent,
+		transparent ($rhythm / 2 - $baseline-size),
+		$baseline-color-transparent ($rhythm / 2 - $baseline-size),
+		$baseline-color-transparent ($rhythm / 2),
+		transparent ($rhythm / 2),
+		transparent ($rhythm - $baseline-size),
+		$baseline-color-transparent ($rhythm - $baseline-size),
+		$baseline-color-transparent ($rhythm)
+	);
+
+	background-size: 100% $rhythm;
+  background-repeat: repeat-y;
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10000px;
+  pointer-events: none;
+}

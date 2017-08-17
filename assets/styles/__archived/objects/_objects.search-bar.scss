@@ -1,0 +1,40 @@
+$searchbar-padding: $unit-xs;
+
+.o-search-bar {
+  text-align: center;
+  display: flex;
+  line-height: 1;
+  width: 100%;
+  position: relative;
+
+  &.s-is-active {
+    text-align: left;
+  }
+}
+
+  .o-search-bar__icon-wrapper {
+    padding: $searchbar-padding;
+  }
+
+  .o-search-bar__field,
+  .o-search-bar__label,
+  .o-search-bar__submit {
+    line-height: 1.2;
+    padding: $searchbar-padding;
+    width: auto;
+  }
+
+  .o-search-bar__label {
+    top: auto;
+    padding: $searchbar-padding;
+  }
+  .o-search-bar__field {
+    appearance: none;
+    flex-grow: 0;
+    max-width: none;
+
+  }
+
+
+  .o-search-bar__submit {
+  }

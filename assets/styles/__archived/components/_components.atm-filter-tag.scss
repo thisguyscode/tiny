@@ -1,0 +1,92 @@
+/* ==========================================================================
+
+   # FILTER TAGS
+   
+   Note: These styles extend .o-btn (objects/objects.button)
+
+   ========================================================================== */
+
+@import "imports";
+
+.c-filter-tag {
+  border: none;
+  box-shadow: $inner-border;
+  text-decoration: none;
+  background-color: $neutral-00;
+  color: $neutral-100;
+  font-family: $ui-font-family;
+
+  &.s-is-busy {
+    
+  }
+
+  &.s-is-disabled {
+    box-shadow: $inner-border-low-contrast;
+    color: $neutral-40;
+  }
+
+  &.s-has-error {
+    background-color: $clr-bad-translucent;
+    box-shadow: $inner-border-bad;
+    color: $clr-bad;
+    
+    &:hover {
+      box-shadow: $inner-border-bad-high-contrast;
+    }
+  }
+
+  &.s-has-success {
+    background-color: $clr-good-translucent;
+    box-shadow: $inner-border-good;
+    color: $clr-good;
+
+    &:hover {
+      box-shadow: $inner-border-good-high-contrast;
+    }
+  }
+
+}
+
+
+/* Type variants.
+   ====================================================================== */
+
+.c-filter-tag--loud {
+  background-color: $clr-loud;
+  color: set-text-color($clr-loud);
+  
+  &.s-is-busy {
+    
+  }
+
+  &.s-is-disabled {
+    background-color: $neutral-25;
+    color: $neutral-60;
+  }
+
+  &.s-has-error {
+    background-color: $clr-bad;
+    color: set-text-color($clr-bad);
+  }
+
+  &.s-has-success {
+    background-color: $clr-good;
+    color: set-text-color($clr-good);
+  }
+  
+}
+
+.c-filter-tag--quiet {
+  background-color: $clr-quiet;
+  color: set-text-color($clr-quiet);
+}
+
+.c-filter-tag--danger {
+  background-color: $clr-bad;
+  color: set-text-color($clr-bad);
+}
+
+.c-filter-tag--go {
+  background-color: $clr-good;
+  color: set-text-color($clr-good);
+}

@@ -1,0 +1,19 @@
+/* ==========================================================================
+   
+   #FLEXGRID
+
+   ========================================================================== */
+
+.o-flexgrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.o-flexgrid__item {
+  flex-grow: 0;
+}
+
+.o-flexgrid__item--fill {
+  flex-grow: 1;
+}

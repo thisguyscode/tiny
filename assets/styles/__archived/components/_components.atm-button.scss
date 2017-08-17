@@ -1,0 +1,118 @@
+/* ==========================================================================
+
+   # BUTTON
+   
+   Note: These styles extend .o-btn (objects/objects.button)
+
+   ========================================================================== */
+
+@import "imports";
+
+/**
+ *
+ */
+
+.c-btn {
+  
+  @include inner-border(all, $btn-border-width, low);
+  border: none;
+  text-decoration: none;
+  background-color: $neutral-00;
+  color: $neutral-100;
+  
+  transition:
+    box-shadow .2s ease,
+    background-color .2s ease;
+
+  &:hover {
+    @include inner-border(all, $btn-border-width);
+    background-color: $neutral-10;
+  }
+
+  /**
+   * The order of the state styling is important in the case of buttons as 
+   * they may be in multiple states at once
+   */
+   
+  &.s-is-busy {
+    
+  }
+
+  &.s-has-error {
+    background-color: $clr-bad-translucent;
+    box-shadow: $inner-border-bad;
+    color: $clr-bad;
+    
+    &:hover {
+      background-color: $clr-bad;
+      box-shadow: $inner-border-bad-high-contrast;
+      color: contrasting-color($clr-bad, $lightest, $darkest);
+    }
+  }
+
+  &.s-has-success {
+    background-color: $clr-good-translucent;
+    box-shadow: $inner-border-good;
+    color: $clr-good;
+
+    &:hover {
+      background-color: $clr-good;
+      box-shadow: $inner-border-good-high-contrast;
+      color: contrasting-color($clr-good, $lightest, $darkest);
+    }
+  }
+
+  &.s-is-disabled {
+    box-shadow: $inner-border-low-contrast;
+    background-color: $neutral-10;
+    color: $neutral-50;
+
+    &:hover {
+      box-shadow: $inner-border-low-contrast;
+    }
+  }
+
+}
+
+
+/* Type variants.
+   ====================================================================== */
+
+.c-btn--loud {
+  background-color: $clr-loud;
+  color: contrasting-color($clr-loud, $lightest, $darkest);
+  
+  &.s-is-busy {
+    
+  }
+  
+  &.s-is-disabled {
+    background-color: $neutral-25;
+    color: $neutral-60;
+  }
+
+}
+
+.c-btn--quiet {
+
+  &:hover {
+    background-color: $neutral-15;
+  }
+
+  background-color: $clr-quiet;
+  color: contrasting-color($clr-quiet, $lightest, $darkest);
+}
+
+.c-btn--danger {
+  background-color: $clr-bad;
+  color: contrasting-color($clr-bad, $lightest, $darkest);
+}
+
+.c-btn--go {
+  background-color: $clr-good;
+  color: contrasting-color($clr-good, $lightest, $darkest);
+
+  &:hover {
+    background-color: $clr-good-darken;
+  }
+}

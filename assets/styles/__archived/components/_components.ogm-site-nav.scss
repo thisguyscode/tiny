@@ -1,0 +1,16 @@
+/* ==========================================================================
+
+   # SITE NAV
+   
+   The topmost project-level navbar
+
+   ========================================================================== */
+
+@import "imports";
+
+.c-site-nav {
+  @include inner-border(y, 1px, low);
+  position: relative;
+  z-index: 10;
+  background: $neutral-05;
+}

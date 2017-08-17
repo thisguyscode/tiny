@@ -1,0 +1,175 @@
+/* ========================================================================
+  
+  #VARIABLES (Global)
+  
+  ======================================================================== */
+
+// Alignment
+$unit-xs:   $rhythm * 0.25;
+$unit-sm:   $rhythm * 0.5;
+$unit-md:   $rhythm * 1;
+$unit-lg:   $rhythm * 1.5;
+$unit-xl:   $rhythm * 2;
+$unit-xxl:  $rhythm * 3;
+
+
+// Breakpoints
+$mq-breakpoints: (
+  mobile:  320px,
+  tablet:  640px,
+  desktop: 840px,
+  wide:    1300px
+);
+
+
+// Z-indexes
+$z-layers: (
+  "trump":           9001,
+  "fixed": (
+    "highest": 700,
+    "high": 650,
+    "mid": 500,
+    "low": 450,
+    "lowest": 400 
+  ),
+  "site-header": (
+    "base": 1000,
+    "glasses": 900,
+    "links": 800
+  ),
+  "primary-nav":      300,
+  "project-header": (
+    "relative":       200,
+    "fixed":          180
+  ),
+  "project-group-header": (
+    "relative":       140,
+    "fixed":          120
+  ),
+  "clickable-content": 90,
+  "bottomless-pit": -9000
+);
+
+
+// Navbar
+$navbar-padding: $unit-md;
+$navbar-padding-mobile: $unit-md;
+// NOTE: $navbar-inner-height is NOT dynamic (changing it will not change actual inner height)
+$navbar-inner-height: $unit-md;
+$navbar-height: ($navbar-padding*2) + $navbar-inner-height;
+
+
+
+// Forms
+$form-label-trailer:			$unit-sm;
+$form-field-trailer:			$unit-md;
+
+$form-field-padding-x:		$unit-sm; // Padding right, left.
+$form-field-padding-y:		$unit-sm; // Padding top, bottom.
+
+$form-select-height:			$unit-lg;
+$form-textarea-height:		$unit-xl;
+
+$border-radius: 2px;
+$border-radius--large: 8px;
+
+
+
+$btn-border-width: 1px;
+
+/* Common colors
+   ====================================================================== */
+
+/**
+* Set common colors with hsla (Hue, Saturation, Lightness, Alpha) to be
+* referenced by more complex color definitions below
+*/
+
+$red: hsla(358, 78, 60, 1) !default;
+$pink: hsla(346, 78, 78, 1) !default;
+$purple: hsla(290, 20, 40, 1) !default;
+$blue: hsla(217, 80, 60, 1) !default;
+$blue-green: hsla(170, 80, 42, 1) !default;
+$green: hsla(144, 68, 45, 1) !default;
+$yellow-green: hsla(84, 90, 60, 1) !default;
+$yellow: hsla(52, 93, 53, 1) !default;
+$orange: hsla(30, 94, 62, 1) !default;
+
+$darkest: hsla(200, 05, 10, 1) !default;
+$lightest: hsla(200, 20, 100, 1) !default;
+
+$neutral-100: $darkest !default;
+$neutral-00: $lightest !default;
+
+$neutral-05: mix($neutral-100, $neutral-00,5%) !default;
+$neutral-10: mix($neutral-100, $neutral-00,10%) !default;
+$neutral-15: mix($neutral-100, $neutral-00,15%) !default;
+$neutral-20: mix($neutral-100, $neutral-00,20%) !default;
+$neutral-25: mix($neutral-100, $neutral-00,25%) !default;
+
+$neutral-30: mix($neutral-100, $neutral-00,30%) !default;
+$neutral-40: mix($neutral-100, $neutral-00,40%) !default;
+$neutral-50: mix($neutral-100, $neutral-00,50%) !default;
+$neutral-60: mix($neutral-100, $neutral-00,60%) !default;
+$neutral-70: mix($neutral-100, $neutral-00,70%) !default;
+
+$neutral-75: mix($neutral-100, $neutral-00,75%) !default;
+$neutral-80: mix($neutral-100, $neutral-00,80%) !default;
+$neutral-85: mix($neutral-100, $neutral-00,85%) !default;
+$neutral-90: mix($neutral-100, $neutral-00,90%) !default;
+$neutral-95: mix($neutral-100, $neutral-00,95%) !default;
+
+
+/* Colors by purpose
+   ====================================================================== */
+
+$clr-loud: $blue !default;
+$clr-loud-dark: darken($clr-loud, 10%) !default;
+$clr-loud-darkest: darken($clr-loud, 20%) !default;
+
+$clr-quiet: $neutral-10;
+$clr-quiet-dark: darken($clr-quiet, 10%) !default;
+$clr-quiet-darkest: darken($clr-quiet, 20%) !default;
+
+$clr-good: $green !default;
+$clr-good-translucent: rgba($clr-good, .2);
+$clr-good-darken: darken($clr-good, 20%);
+
+$clr-bad: $red !default;
+$clr-bad-translucent: rgba($clr-bad, .2);
+
+$clr-external-link: $blue !default;
+$clr-internal-link: $orange !default;
+
+$clr-disabled-text: $neutral-60 !default;
+
+$light-text: $lightest;
+$dark-text: rgba($darkest, .8);
+
+
+/* Box shadows
+   ====================================================================== */
+
+$box-shadow: 0 0 10px 1px rgba($darkest, .1);
+
+$inner-border: inset 0 0 0 1px rgba($neutral-100, .2);
+$inner-border-bottom: inset 0 -1px 0 0 rgba($neutral-100, .2);
+$inner-border-top: inset 0 1px 0 0 rgba($neutral-100, .2);
+$inner-border-left: inset 1px 0 0 0 rgba($neutral-100, .2);
+$inner-border-right: inset -1px 0 0 0 rgba($neutral-100, .2);
+
+$inner-border-low-contrast: inset 0 0 0 1px rgba($neutral-100, .1);
+$inner-border-high-contrast: inset 0 0 0 1px rgba($neutral-100, .3);
+
+$inner-border-good: inset 0 0 0 1px rgba($clr-good, .6);
+$inner-border-good-low-contrast: inset 0 0 0 1px rgba($clr-good, .3);
+$inner-border-good-high-contrast: inset 0 0 0 1px rgba($clr-good, 1);
+
+$inner-border-bad: inset 0 0 0 1px rgba($clr-bad, .6);
+$inner-border-bad-low-contrast: inset 0 0 0 1px rgba($clr-bad, .3);
+$inner-border-bad-high-contrast: inset 0 0 0 1px rgba($clr-bad, 1);
+
+
+// Colors
+$baseline-color:						      $blue;
+$baseline-color-transparent:			rgba($baseline-color, 0.08);

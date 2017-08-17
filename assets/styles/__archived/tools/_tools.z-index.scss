@@ -1,0 +1,16 @@
+/* ========================================================================
+
+  #Z-INDEX
+
+  Simple mixin based on a function which gets the z-index value from map
+  in _settings.main.scss
+
+  ======================================================================== */
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}

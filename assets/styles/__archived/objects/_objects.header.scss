@@ -1,0 +1,60 @@
+/* ==========================================================================
+   
+   #HEADER (PRIMARY)
+
+   ========================================================================== */
+
+/**
+ *
+ */
+
+.o-header {
+  text-align: center;
+  padding: $unit-xxl*2 $unit-xxl;
+
+  @include mq($from: tablet) {
+    padding: $unit-xxl*2;
+  }
+
+  &.s-is-fixed {
+    position: fixed;
+    
+  }
+
+  &.s-is-slid-up {
+    transform: translateY(-60px);
+  }
+  
+}
+
+  .o-header__tagline {
+    @include vr($font-display, $font-size-lg);
+    margin-bottom: $unit-lg;
+  }
+
+  .o-header__nav-list {
+    @include vr($font-display, $font-size-sm);
+  }
+
+    .o-header__nav-item {
+      margin-right: $unit-sm;
+      
+      @include mq($from: desktop) {
+        margin-right: $unit-lg;
+      }
+    }
+
+
+    .o-header__link {
+      
+      &:before {
+        content: '';
+        position: relative;
+        display: inline-block;
+        background-color: red;
+        width: .8em;
+        height: .8em;
+        margin-right: $unit-xs;
+      }
+
+    }

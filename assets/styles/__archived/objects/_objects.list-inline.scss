@@ -1,0 +1,85 @@
+/* ==========================================================================
+   
+   #LIST-INLINE
+   
+   ========================================================================== */
+
+/**
+ * The list-inline object simply displays a list of items in one line.
+ */
+
+.o-list-inline {
+  list-style: none;
+  margin-left: -$unit-sm;
+
+}
+
+  .o-list-inline__item {
+    display: inline-block;
+    padding-left: $unit-sm;
+    
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+  }
+
+
+
+
+/* Spacing variatns
+   ========================================================================== */
+
+
+.o-list-inline--small {
+  margin-left: -$unit-xs;
+  > .o-list-inline__item {
+    padding-left: $unit-xs;
+  }
+}
+
+.o-list-inline--large {
+  margin-left: -$unit-md;
+  > .o-list-inline__item {
+    padding-left: $unit-md;
+  }
+}
+
+.o-list-inline--flush {
+  margin-left: 0;
+  > .o-list-inline__item {
+    padding-left: 0;
+  }
+}
+
+/* Delimited list.
+   ========================================================================== */
+
+/**
+ * By default, applying this class will comma separate your list items. You can
+ * change the delimiter by predefining the following variable:
+ */
+
+$inuit-list-inline-delimiter:   ",\00A0" !default;
+
+/**
+ * 1. Fallback for old IEs not supporting `rem` values.
+ */
+
+.o-list-inline--delimited {
+  font-size: 0;
+
+  > .o-list-inline__item {
+    font-size: $inuit-global-font-size; /* [1] */
+    font-size: 1rem;
+  }
+
+  > .o-list-inline__item + .o-list-inline__item {
+
+    &:before {
+      content: "#{$inuit-list-inline-delimiter}";
+    }
+
+  }
+
+}

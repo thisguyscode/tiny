@@ -1,0 +1,70 @@
+/* ==========================================================================
+   
+   #FORMS / INPUTS / LABELS
+   
+   ========================================================================== */
+
+
+/**
+ * Apply default styling for form elements
+ * Originally came from 'vr'
+ */
+
+form {
+  margin-bottom: $paragraph-trailer;
+  font-family: $font-display;
+}
+
+fieldset {
+  margin-bottom: $form-field-trailer;
+  padding: $form-field-padding-y $form-field-padding-x;
+}
+
+label {
+  @include vr($font-display, $base-font-size);
+  display: block;
+  padding: 0 0 $form-label-trailer;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  @include vr($font-display, $base-font-size);
+  appearance: none;
+  display: block;
+  width: 100%;
+  margin-bottom: $form-field-trailer;
+  padding: $form-field-padding-y $form-field-padding-x;
+  background: transparent;
+  border: none;
+}
+
+select {
+  height: $form-select-height;
+}
+
+textarea {
+  height: $form-textarea-height;
+}
+
+input {
+  &[type=search],
+  &[type=number] {
+    box-sizing: border-box;
+    appearance: textfield;
+  }
+  &[type=radio],
+  &[type=checkbox] {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    +label {
+      display: inline-block;
+      width: auto;
+      margin-right: $unit-sm;
+      padding: 0;
+    }
+  }
+}

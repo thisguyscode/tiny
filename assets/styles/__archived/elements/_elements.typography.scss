@@ -1,0 +1,124 @@
+/* ==========================================================================
+   
+   #TYPOGRAPHY
+
+   NOTE: Heavily dependent upon vertical rhythm mixin
+   
+   ========================================================================== */
+
+
+/**
+ * Apply default styling for typographic elements
+ */
+
+h1 {
+  @include vr($font-display, $font-size-xxl);
+  
+  @include mq($from: tablet) {
+    @include vr($font-display, $font-size-xxxl);
+  }
+}
+
+h2 {
+  @include vr($font-display, $font-size-xl);
+
+  @include mq($from: tablet) {
+    @include vr($font-display, $font-size-xxl);
+  }
+}
+
+h3 {
+  @include vr($font-display, $font-size-lg);
+
+  @include mq($from: tablet) {
+    @include vr($font-display, $font-size-xl);
+  }
+}
+
+h4 {
+  @include vr($font-display, $font-size-md);
+
+  @include mq($from: tablet) {
+    @include vr($font-display, $font-size-lg);
+  }
+}
+
+h5 {
+  @include vr($font-display, $font-size-sm);
+
+  @include mq($from: tablet) {
+    @include vr($font-display, $font-size-md);
+  }
+}
+
+h6 {
+  @include vr($font-display, $font-size-xs);
+
+  @include mq($from: tablet) {
+    @include vr($font-display, $font-size-sm);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: $heading-trailer;
+}
+
+p {
+  @include vr($font-body, $font-size-md);
+  padding-bottom: $paragraph-trailer;
+
+  @include mq($from: tablet) {
+    @include vr($font-body, $font-size-lg);
+    padding-bottom: $paragraph-trailer;
+  }
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+  p {
+    @include vr($font-body, $font-size-md);
+  }
+}
+
+cite {
+  @include vr($font-display, $base-font-size);
+  display: block;
+  padding: 0 0 $paragraph-trailer;
+}
+
+code {
+  @include vr($font-mono, $base-font-size);
+  display: block;
+  padding: 0 0 $paragraph-trailer;
+  pre {
+    margin: 0;
+    font-family: $font-mono;
+  }
+  p & {
+    @include vr-reset;
+    display: inline;
+    line-height: 0;
+  }
+}
+
+ol,
+ul {
+  @include vr($font-body, $base-font-size);
+  padding-bottom: $paragraph-trailer;
+  ol,
+  ul {
+    @include vr-reset;
+    padding-bottom: 0; // Reset trailer
+  }
+}
+
+small {
+  font-size: $font-size-xs;
+  line-height: 1;
+}

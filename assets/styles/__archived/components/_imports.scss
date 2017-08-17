@@ -1,0 +1,31 @@
+// SETTINGS
+
+// inuit
+@import "../../../node_modules/inuitcss/settings/settings.core";
+
+// @import "vendor/vertical-rhythm/vr-main.scss";
+
+// custom (.config includes inuit config)
+@import "../settings/settings.config";
+$show-baseline: false; // Doesn't work in IE and Edge
+@import "../settings/settings.typography";
+@import "../settings/settings.main";
+
+
+
+// TOOLS
+
+// vertical rhythm
+@import "../tools/tools.vertical-rhythm";
+
+// contrasting color
+@import "../tools/tools.contrasting-color";
+
+// inuit
+@import "../../../node_modules/inuitcss/tools/tools.clearfix";
+@import "../../../node_modules/inuitcss/tools/tools.hidden";
+@import "../../../node_modules/sass-mq/mq";
+
+// custom
+@import "../tools/tools.aliases";
+@import "../tools/tools.border";

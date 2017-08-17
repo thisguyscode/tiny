@@ -1,0 +1,57 @@
+/* ==========================================================================
+   
+   #BUTTON GROUP
+
+   Note: Extend this object with .c-btn (components/components.button)
+
+   Note: Size modifiers relate to the gutter, not the button size
+
+   ========================================================================== */
+
+
+.o-btn-group {
+  margin-left: 0;
+  list-style: none;
+}
+
+  .o-btn-group__item {
+    display: inline-block;
+    margin-left: -$btn-border-width;
+    margin-right: $unit-sm;
+    position: relative;
+
+    &:hover {
+      z-index: +1;
+    }
+    
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+
+.o-btn-group--small {
+  
+  > .o-btn-group__item {
+    margin-right: $unit-xs;
+  }
+
+}
+
+.o-btn-group--large {
+  
+  > .o-btn-group__item {
+    margin-right: $unit-md;
+  }
+
+}
+
+.o-btn-group--flush {
+  > .o-btn-group__item {
+    margin-right: 0;
+  }
+}

@@ -1,6 +1,6 @@
 module.exports = {
   router: {
-    base: '/portfolio/',
+    base: '/tiny/',
     scrollBehavior: function (to, from, savedPosition) {
       if (savedPosition) return savedPosition
       return false

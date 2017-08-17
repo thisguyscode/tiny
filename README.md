@@ -1,6 +1,6 @@
-# tinypeople
+# ./tiny/
 
-> mock social network for personal promotion
+> Personal portfolio
 
 ## Build Setup
 

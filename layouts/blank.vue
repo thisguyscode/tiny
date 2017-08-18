@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "~assets/styles/imports/imports";
+@import "~assets/styles/imports";
   .__page {
     background: $neutral-00;
   }

@@ -72,14 +72,15 @@
 		$baseline-color-transparent ($rhythm - $baseline-size),
 		$baseline-color-transparent ($rhythm)
 	);
-
 	background-size: 100% $rhythm;
   background-repeat: repeat-y;
+  
+  content: '';
   position: absolute;
-  z-index: 10000;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 10000px;
+  z-index: -1;
   pointer-events: none;
 }

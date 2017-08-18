@@ -1,28 +1,17 @@
 <template>
   
-  <section id="page-top" class="__page">
-
-    <nav class="__navbar" ref="jsNavbar">
-      <div class="u-wrapper">
-        <ul class="__nav-list">
-          <li class="__nav-item">
-            <nuxt-link class="__nav-link" to="/profile" v-scroll-to="'#content-top'">
-              Profile
-            </nuxt-link>
-          </li>
-          <li class="__nav-item">
-            <nuxt-link class="__nav-link" to="/work" v-scroll-to="'#content-top'">
-              Work
-            </nuxt-link>
-          </li>
-          <li class="__nav-item">
-            <nuxt-link class="__nav-link" to="/contact" v-scroll-to="'#content-top'">
-              Contact
-            </nuxt-link>
-          </li>
-        </ul>
+  <section id="page-top">
+    <div class="c-grid">
+      <div class="l-wrapper  u-fill-height">
+        <div class="l-grid l-grid--flush  u-fill-height">
+          <div class="c-grid__column  l-grid__cell u-1/5"></div>
+          <div class="c-grid__column  l-grid__cell u-1/5"></div>
+          <div class="c-grid__column  l-grid__cell u-1/5"></div>
+          <div class="c-grid__column  l-grid__cell u-1/5"></div>
+          <div class="c-grid__column  l-grid__cell u-1/5"></div>
+        </div>
       </div>
-    </nav>
+    </div>
 
     <nuxt/>
 
@@ -45,19 +34,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/styles/imports/imports";
+@import "~assets/styles/imports";
 
-.__page {
-  background: $neutral-00;
-}
-
-.__content-waypoint-wrapper {
-  position: relative;
-  height: 0;
-}
-.__content-waypoint {
+.c-grid {
+  z-index: z("grid", "base");
   position: absolute;
-  top: -$navbar-height;
+  width: 100%;
+  height: 100%;
+}
+.c-grid__column {
+  box-shadow: inset -1px 0 0 $grid-lines-color;
+  height: 100%;
+
+  &:first-of-type {
+    box-shadow: inset -1px 0 0 $grid-lines-color, inset 1px 0 0 $grid-lines-color;
+  }
 }
 
 </style>

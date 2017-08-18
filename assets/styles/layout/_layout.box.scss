@@ -1,0 +1,50 @@
+/* ==========================================================================
+   
+   #BOX
+   
+   ========================================================================== */
+
+/**
+ * The box object simply boxes off content. Extend with cosmetic styles in the
+ * Components layer.
+ *
+ * 1. So we can apply the `.l-box` class to naturally-inline elements.
+ */
+
+.l-box {
+  @include clearfix();
+  display: block; /* [1] */
+  padding: $unit-md;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+
+
+
+
+/* Size variants
+   ========================================================================== */
+
+.l-box--flush {
+  padding: 0;
+}
+
+.l-box--tiny {
+  padding: $unit-xs;
+}
+
+.l-box--small {
+  padding: $unit-sm;
+}
+
+.l-box--large {
+  padding: $unit-lg;
+}
+
+.l-box--huge {
+  padding: $unit-xl;
+}

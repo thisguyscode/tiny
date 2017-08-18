@@ -16,6 +16,7 @@
  */
 
 html {
+  position: relative;
   font-size: $base-font-size; /* [1] */
   line-height: $base-line-height; /* [1] */
   font-weight: 400;
@@ -23,7 +24,12 @@ html {
   overflow: hidden;
   overflow-y: scroll; /* [2] */
   min-height: 100%; /* [3] */
-  background-color: $neutral-100;
+  background-color: $neutral-95;
   color: $neutral-60;
   text-align: center;
+  &:after {
+    @if ($show-baseline == true) {
+      @include vr-baseline;
+    }
+  }
 }

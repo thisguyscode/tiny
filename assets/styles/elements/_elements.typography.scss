@@ -107,16 +107,16 @@ code {
   }
 }
 
-// ol,
-// ul {
-//   @include vr($font-body, $base-font-size);
-//   padding-bottom: $paragraph-trailer;
-//   ol,
-//   ul {
-//     @include vr-reset;
-//     padding-bottom: 0; // Reset trailer
-//   }
-// }
+ol,
+ul {
+  @include vr($font-body, $base-font-size);
+  padding-bottom: $paragraph-trailer;
+  ol,
+  ul {
+    @include vr-reset;
+    padding-bottom: 0; // Reset trailer
+  }
+}
 
 small {
   font-size: $font-size-xs;

@@ -4,7 +4,10 @@
   
   ======================================================================== */
 
-// Alignment
+/**
+*   ALIGNMENT
+*   $rhythm is calculated by "settings.typography"
+*/
 $unit-xs:   $rhythm * 0.25;
 $unit-sm:   $rhythm * 0.5;
 $unit-md:   $rhythm * 1;
@@ -13,51 +16,64 @@ $unit-xl:   $rhythm * 2;
 $unit-xxl:  $rhythm * 3;
 
 
-// Breakpoints
+/**
+*   PAGE PADDING
+*   The main page gutter at various breakpoints
+*/
+$page-padding-wide:     $unit-xxl;
+$page-padding-desktop:  $unit-xxl;
+$page-padding-tablet:   $unit-xl;
+$page-padding-mobile:   $unit-lg;
+
+
+/**
+*   CONTENT WIDTH
+*/
+$content-max-width:  1200px;
+
+
+/**
+*   BREAKPOINTS
+*   Fed to both "sass-mq" module and "utilities.widths"
+*/
 $mq-breakpoints: (
   mobile:  320px,
-  tablet:  640px,
-  desktop: 840px,
+  tablet:  840px,
+  desktop: 1000px,
   wide:    1300px
 );
 
 
-// Z-indexes
+/**
+*   Z-INDEXES
+*   Fed to "tools.z-index" and used as a function to map z-indexes cleanly
+*/
 $z-layers: (
-  "trump":           9001,
-  "fixed": (
-    "highest": 700,
-    "high": 650,
-    "mid": 500,
-    "low": 450,
-    "lowest": 400 
-  ),
+  "trump":             200,
   "site-header": (
-    "base": 1000,
-    "glasses": 900,
-    "links": 800
+    "base":            100,
   ),
-  "primary-nav":      300,
-  "project-header": (
-    "relative":       200,
-    "fixed":          180
+  "sticky": (
+    "primary":             90,
   ),
-  "project-group-header": (
-    "relative":       140,
-    "fixed":          120
+  "grid": (
+    "base":             10,
+    "baseline":          1,
+    "columns":           2
   ),
-  "clickable-content": 90,
-  "bottomless-pit": -9000
+  "background-color":    0,
+  "bottom":           -100
 );
 
 
 // Navbar
-$navbar-padding: $unit-md;
-$navbar-padding-mobile: $unit-md;
-// NOTE: $navbar-inner-height is NOT dynamic (changing it will not change actual inner height)
-$navbar-inner-height: $unit-md;
-$navbar-height: ($navbar-padding*2) + $navbar-inner-height;
+// $navbar-padding: $unit-md;
+// $navbar-padding-mobile: $unit-md;
+// // NOTE: $navbar-inner-height is NOT dynamic (changing it will not change actual inner height)
+// $navbar-inner-height: $unit-md;
+// $navbar-height: ($navbar-padding*2) + $navbar-inner-height;
 
+// $header-primary-height: $unit-xl;
 
 
 // Forms
@@ -95,8 +111,8 @@ $yellow-green: hsla(84, 90, 60, 1) !default;
 $yellow: hsla(52, 93, 53, 1) !default;
 $orange: hsla(30, 94, 62, 1) !default;
 
-$darkest: hsla(200, 05, 10, 1) !default;
-$lightest: hsla(200, 20, 100, 1) !default;
+$darkest: hsla(0, 5, 8, 1) !default;
+$lightest: hsla(0, 20, 100, 1) !default;
 
 $neutral-100: $darkest !default;
 $neutral-00: $lightest !default;
@@ -171,5 +187,7 @@ $inner-border-bad-high-contrast: inset 0 0 0 1px rgba($clr-bad, 1);
 
 
 // Colors
-$baseline-color:						      $blue;
-$baseline-color-transparent:			rgba($baseline-color, 0.08);
+$baseline-color:						      $neutral-100;
+$baseline-color-transparent:			rgba($baseline-color, 1);
+
+$grid-lines-color: rgba($red, .1);

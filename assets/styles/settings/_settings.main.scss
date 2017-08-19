@@ -73,7 +73,11 @@ $z-layers: (
 // $navbar-inner-height: $unit-md;
 // $navbar-height: ($navbar-padding*2) + $navbar-inner-height;
 
-// $header-primary-height: $unit-xl;
+// TEMPORARY
+$header-primary-padding-top: $unit-md;
+$header-primary-padding-bottom: $unit-sm;
+$header-primary-inner-height: $unit-md;
+$header-primary-height: $header-primary-padding-top + $header-primary-padding-bottom + $header-primary-inner-height;
 
 
 // Forms

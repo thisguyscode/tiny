@@ -13,7 +13,15 @@
 }
 
 .u-text--low-contrast {
+  color: $neutral-40;
+}
+
+.u-text--lowest-contrast {
   color: $neutral-60;
+}
+
+.u-text--high-contrast {
+  color: $neutral-00;
 }
 
 .u-text--lg {

@@ -1,32 +1,34 @@
 <template>
   <div class="l-header-primary">
-    <div class="__inner">
+    <div class="_actual">
       <slot></slot>
     </div>
-    <div class="__placeholder"></div>
+    <div class="_placeholder"></div>
   </div>
 </template>
-
-<script>
-export default {
-}
-</script>
 
 <style lang="scss" scoped>
   
   @import "~assets/styles/imports";
   
   .l-header-primary {
-    padding-left: $unit-xxl;
-    padding-right: $unit-xxl;
+    text-align: left;
   }
 
-  .__inner {
+  ._actual,
+  ._placeholder {
     height: $header-primary-height;
-    position: fixed;
   }
-  .__placeholder {
-    height: $header-primary-height;
+
+  ._actual {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  ._placeholder {
     display: block;
   }
 

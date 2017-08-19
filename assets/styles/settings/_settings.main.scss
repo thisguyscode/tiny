@@ -115,8 +115,8 @@ $yellow-green: hsla(84, 90, 60, 1) !default;
 $yellow: hsla(52, 93, 53, 1) !default;
 $orange: hsla(30, 94, 62, 1) !default;
 
-$darkest: hsla(0, 5, 8, 1) !default;
-$lightest: hsla(0, 20, 100, 1) !default;
+$darkest: hsl(30, 15%, 8%) !default;
+$lightest: hsl(0, 0%, 100%) !default;
 
 $neutral-100: $darkest !default;
 $neutral-00: $lightest !default;
@@ -192,6 +192,6 @@ $inner-border-bad-high-contrast: inset 0 0 0 1px rgba($clr-bad, 1);
 
 // Colors
 $baseline-color:						      $neutral-100;
-$baseline-color-transparent:			rgba($baseline-color, 1);
+$baseline-color-transparent:			rgba($baseline-color, .5);
 
 $grid-lines-color: rgba($red, .1);

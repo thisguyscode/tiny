@@ -45,10 +45,10 @@ $flexgrid-gutter-width: $unit-md !default;
 
 $flexgrid-spacing-sizes: (
     null: $flexgrid-gutter-width,
-    '--tiny': $unit-xs,
-    '--small': $unit-sm,
-    '--large': $unit-lg,
-    '--huge': $unit-xl,
+    '--xs': $unit-xs,
+    '--sm': $unit-sm,
+    '--lg': $unit-lg,
+    '--xl': $unit-xl,
     '--flush': 0,
 ) !default;
 

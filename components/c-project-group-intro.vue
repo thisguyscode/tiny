@@ -74,6 +74,11 @@ export default {
     }
 
   }
+  
+  ._index,
+  ._mobile-index {
+    color: $neutral-80;
+  }
 
   ._index {
     width: $page-padding-mobile;
@@ -84,7 +89,6 @@ export default {
     display: none;
     
     @include mq($from: tablet) {
-      color: $neutral-80;
       display: initial;
       width: $page-padding-tablet;
     }

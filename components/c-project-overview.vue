@@ -3,11 +3,12 @@
     <h3 class="_index" :style="indexStyle">{{ index }}.</h3>
     <l-wrapper>
       <l-grid>
-        <div class="_cell u-2/5@tablet">
+        <div class="_details-wrapper  _cell u-2/5@tablet">
           <l-grid>
             <div class="_cell  u-1/2@tablet">
               <h3 class="_title"><span class="_mobile-index" :style="indexStyle">{{ index }}. </span>{{ name }}</h3>
             </div>
+            <div class="_line  _cell  u-1/2@tablet" :style="lineStyle"></div>
           </l-grid>
         </div>
         <div class="_cell u-3/5@tablet">
@@ -32,7 +33,7 @@ export default {
   },
   props: {
     index: {
-      type: Number,
+      type: String,
       required: true
     },
     project: {
@@ -79,6 +80,9 @@ export default {
     },
     indexStyle: function () {
       return 'color:' + this.project.color + ';'
+    },
+    lineStyle: function () {
+      return 'background-color:' + this.project.color + ';'
     }
   }
 }
@@ -104,6 +108,15 @@ export default {
     @include mq($from: desktop) {
       @include vr($font-display, $font-size-xl);
     }
+  }
+
+  $line-width: 3px;
+
+  ._line {
+    position: relative;
+    top: $unit-sm;
+    margin-top: -$line-width;
+    height: $line-width;
   }
   ._index,
   ._mobile-index {
@@ -134,6 +147,15 @@ export default {
       display: none;
     }
   }
+
+  ._index,
+  ._details-wrapper {
+    @include mq($from: tablet) {
+      padding-top: $unit-sm;
+      padding-bottom: $unit-sm;
+    }
+  }
+
   ._image {
     object-fit: contain;
     object-position: 50% 50%;
@@ -149,6 +171,11 @@ export default {
     position: relative;
     height: $unit-xl*8;
     text-align: center;
+
+    @include mq($until: tablet) {
+      margin-left: -$page-padding-mobile;
+      margin-right: -$page-padding-mobile;
+    }
     
     @include mq($from: tablet){
       margin-right: -$page-padding-tablet;

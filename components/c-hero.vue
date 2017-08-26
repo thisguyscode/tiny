@@ -29,8 +29,8 @@ export default {
   .c-hero {
     text-align: right;
     background-color: rgba($neutral-100,.5);
-    padding-top: $unit-xxl*2;
-    padding-bottom: $unit-xxl*2;
+    padding-top: $unit-xxl;
+    padding-bottom: $unit-xxl;
     box-shadow: inset 0 -1px 0 0 $neutral-80;
   }
 

@@ -44,18 +44,18 @@ module.exports = {
     height: '4px'
   },
   plugins: [
-    '~plugins/vue-scrollto.js',
-    '~plugins/no-ssr.js',
+    '~/plugins/vue-scrollto.js',
+    '~/plugins/no-ssr.js',
     {
-      src: '~plugins/global-events.js',
+      src: '~/plugins/global-events.js',
       ssr: false
     },
     {
-      src: '~plugins/webfontloader.config.js',
+      src: '~/plugins/webfontloader.config.js',
       ssr: false
     },
     {
-      src: '~plugins/vue-awesome.js',
+      src: '~/plugins/vue-awesome.js',
       ssr: false
     }
   ],

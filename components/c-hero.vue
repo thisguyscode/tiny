@@ -1,22 +1,30 @@
 <template>
   <div class="c-hero">
     <l-wrapper>
-      <slot></slot>
+      <l-grid horizontal="right">
+        <div class="_cell  u-3/5@desktop">
+          <slot></slot>
+        </div>
+      </l-grid>
     </l-wrapper>
   </div>
 </template>
 
 <script>
 import lWrapper from '~/components/layout/l-wrapper'
+import lGrid from '~/components/layout/l-grid'
 export default {
   components: {
-    lWrapper
+    lWrapper,
+    lGrid
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/styles/imports";
+  
+  // Import variables and global settings
+  @import "~assets/styles/imports";
 
   .c-hero {
     text-align: right;

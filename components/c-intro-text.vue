@@ -32,8 +32,7 @@ export default {
   @import "~assets/styles/imports";
 
   .c-intro-text {
-    padding-top: $unit-xxl;
-    padding-bottom: $unit-xxl;
+    margin-bottom: $unit-xxl;
   }
 
 </style>

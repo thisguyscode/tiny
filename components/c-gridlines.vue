@@ -22,12 +22,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/styles/imports";
+  
+  // Import variables and global settings
+  @import "~assets/styles/imports";
 
   .c-gridlines {
     position: absolute;
     width: 100%;
     height: 100%;
+    pointer-events: none;
   }
 
   ._column {
@@ -38,4 +41,5 @@ export default {
       box-shadow: inset -1px 0 0 $grid-lines-color, inset 1px 0 0 $grid-lines-color;
     }
   }
+
 </style>

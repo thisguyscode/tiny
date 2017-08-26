@@ -1,30 +1,43 @@
 <template>
+
   <section class="l-staggered-grid">
     <l-wrapper>
-      <div class="l-grid l-grid--flush l-grid--between">
-        <div class="l-grid__cell  u-1/5">
+      <l-grid distribute="between">
+        <div class="_cell  u-1/5">
           Item
         </div>
-        <div class="l-grid__cell  u-1/5">
+        <div class="_cell  u-1/5">
           Item
         </div>
-        <div class="l-grid__cell  u-1/5">
+        <div class="_cell  u-1/5">
           Item
         </div>
-      </div>
+      </l-grid>
     </l-wrapper>
   </section>
+
 </template>
 
 <script>
-import lWrapper from '~/components/layout/l-wrapper'
-export default {
-  components: {
-    lWrapper
+
+  import lWrapper from '~/components/layout/l-wrapper'
+  import lGrid from '~/components/layout/l-grid'
+  export default {
+    components: {
+      lWrapper,
+      lGrid
+    }
   }
-}
+
 </script>
 
-<style>
+<style lang="scss" scoped>
   
+  // Import variables and global settings
+  @import "~assets/styles/imports";
+
+  .l-staggered-grid {
+    //
+  }
+
 </style>

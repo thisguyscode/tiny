@@ -1,0 +1,84 @@
+{ 
+  "projectGroups": [
+    {
+      "name": "SocialCops",
+      "link": "https://socialcops.com",
+      "description": "They have managed to secure massive clients due to their dedication to what they call ‘Data Intelligence’ - using data effectively to glean valuable and actionable insights on a large scale. They are working on a web platform which covers the entire data pipeline, from collection to visualization. I was largely tasked with producing realistic product mockups for said platform for the corporate website, but also had a chance to work on their ‘Visualize’ product",
+      "projects": [
+        {
+          "name": "Project name goes here on 2 lines",
+          "linkTo": "/socialcops/data-dashboard",
+          "color": "#54A94A",
+          "date": "May - Apr 2017",
+          "role": "Product Designer",
+          "imgSrc": "trv-banners.png",
+          "imgClass": "contain",
+          "imgWrapperClass": "padded"
+        },
+        {
+          "name": "Product mockups / screenshots",
+          "linkTo": "/socialcops/data-dashboard",
+          "color": "#5D92FD",
+          "date": "May - Apr 2017",
+          "role": "Product Designer",
+          "imgSrc": "trv-banners.png"
+        },
+        {
+          "name": "Product mockups / screenshots",
+          "linkTo": "/socialcops/data-dashboard",
+          "color": "#E95B3E",
+          "date": "May - Apr 2017",
+          "role": "Product Designer",
+          "imgSrc": "trv-banners.png"
+        },
+        {
+          "name": "SCSS-based color palette generator",
+          "linkTo": "/socialcops/data-dashboard",
+          "color": "#66A604",
+          "date": "May - Apr 2017",
+          "role": "Product Designer",
+          "imgSrc": "topography.svg"
+        }
+      ]
+    },
+    {
+      "name": "SocialCops",
+      "link": "https://socialcops.com",
+      "description": "They have managed to secure massive clients due to their dedication to what they call ‘Data Intelligence’ - using data effectively to glean valuable and actionable insights on a large scale. They are working on a web platform which covers the entire data pipeline, from collection to visualization. I was largely tasked with producing realistic product mockups for said platform for the corporate website, but also had a chance to work on their ‘Visualize’ product",
+      "projects": [
+        {
+          "name": "Project name goes here on 2 lines",
+          "linkTo": "/socialcops/data-dashboard",
+          "color": "#54A94A",
+          "date": "May - Apr 2017",
+          "role": "Product Designer",
+          "imgSrc": "topography.svg"
+        },
+        {
+          "name": "Product mockups / screenshots",
+          "linkTo": "/socialcops/data-dashboard",
+          "color": "#5D92FD",
+          "date": "May - Apr 2017",
+          "role": "Product Designer",
+          "imgSrc": "topography.svg"
+        },
+        {
+          "name": "Product mockups / screenshots",
+          "linkTo": "/socialcops/data-dashboard",
+          "color": "#E95B3E",
+          "date": "May - Apr 2017",
+          "role": "Product Designer",
+          "imgSrc": "topography.svg"
+        },
+        {
+          "name": "SCSS-based color palette generator",
+          "linkTo": "/socialcops/data-dashboard",
+          "color": "#66A604",
+          "date": "May - Apr 2017",
+          "role": "Product Designer",
+          "imgSrc": "topography.svg"
+        }
+      ]
+    }
+  ]
+}

@@ -9,7 +9,7 @@
 
           <!-- LOGO -->
           <li class="l-grid__cell  u-2/5">
-            <nuxt-link class="_link" to="/">
+            <nuxt-link class="_link" to="/" v-scroll-to="'#page-top'">
               <span class="u-text--lowest-contrast">./</span>
               <span>tiny</span>
               <span class="u-text--lowest-contrast">/</span>
@@ -17,19 +17,19 @@
           </li><!--END- LOGO -->
 
           <li class="l-grid__cell  u-text--align-right  u-1/5">
-            <nuxt-link class="_link" to="/profile">
+            <nuxt-link class="_link" to="/profile" v-scroll-to="'#page-top'">
               profile
             </nuxt-link>
           </li>
 
           <li class="l-grid__cell  u-text--align-right  u-1/5">
-            <nuxt-link class="_link" to="/work">
+            <nuxt-link class="_link" to="/work" v-scroll-to="'#page-top'">
               work
             </nuxt-link>
           </li>
 
           <li class="l-grid__cell  u-text--align-right  u-1/5">
-            <nuxt-link class="_link" to="/contact">
+            <nuxt-link class="_link" to="/contact" v-scroll-to="'#page-top'">
               contact
             </nuxt-link>
           </li>

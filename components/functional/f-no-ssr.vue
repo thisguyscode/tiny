@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'atm-no-ssr',
+  name: 'f-no-ssr',
   props: ['placeholder'],
   data () {
     return {

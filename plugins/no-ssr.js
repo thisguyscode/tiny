@@ -1,4 +1,4 @@
 import Vue from 'vue'
-import atmNoSsr from '~/components/atoms/atm-no-ssr'
+import fNoSsr from '~/components/functional/f-no-ssr'
 
-Vue.component('atm-no-ssr', atmNoSsr)
+Vue.component('f-no-ssr', fNoSsr)

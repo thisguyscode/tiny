@@ -1,0 +1,23 @@
+<template>
+  <main class="l-main-content">
+    <slot></slot>
+  </main>
+</template>
+
+<style lang="scss" scoped>
+
+  // Import variables and global settings
+  @import "~assets/styles/imports";
+
+  .l-main-content {
+    padding-top: $unit-xxl;
+    padding-bottom: $unit-xxl;
+
+    @include mq($from: tablet) {
+      padding-top: $unit-xxl*2;
+      padding-bottom: $unit-xxl*2;
+    }
+
+  }
+
+</style>

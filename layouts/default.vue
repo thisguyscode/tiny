@@ -8,6 +8,8 @@
     
     <nuxt/>
 
+    <c-footer></c-footer>
+
   </section>
   
 </template>
@@ -15,6 +17,7 @@
 <script>
 import cGridlines from '~/components/c-gridlines'
 import cSiteHeader from '~/components/c-site-header'
+import cFooter from '~/components/c-footer'
 import lWrapper from '~/components/layout/l-wrapper'
 import lMainContent from '~/components/layout/l-main-content'
 
@@ -23,6 +26,7 @@ export default {
   components: {
     cGridlines,
     cSiteHeader,
+    cFooter,
     lWrapper,
     lMainContent
   },

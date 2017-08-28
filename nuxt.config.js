@@ -55,6 +55,10 @@ module.exports = {
       ssr: false
     },
     {
+      src: '~/plugins/vue-affix.js',
+      ssr: false
+    },
+    {
       src: '~/plugins/vue-awesome.js',
       ssr: false
     }

@@ -5,18 +5,21 @@
    ========================================================================== */
 
 .u-top-0 {
-  top: 0;
+  top: 0 !important;
 }
 
 .u-margin-bottom {
-  margin-bottom: $unit-lg;
+  margin-bottom: $unit-lg !important;
 }
 
 .u-margin-bottom-none {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 .u-margin-bottom-sm {
-  margin-bottom: $unit-sm;
+  margin-bottom: $unit-sm !important;
+}
+.u-margin-bottom-md {
+  margin-bottom: $unit-md !important;
 }
    

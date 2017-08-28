@@ -1,12 +1,19 @@
 <template>
   <section class="c-project-group-intro">
-    <h2 class="_index">{{ index }}.</h2>
     <l-wrapper>
       <l-grid>
-        <div class="_header  _cell  u-margin-bottom-sm  u-2/5@tablet">
+        <div class="_header  _cell  u-2/5@tablet">
           <l-grid>
             <div class="_cell">
-              <h2 class="_name"><span class="_mobile-index">{{ index }}. </span>{{ name }}</h2>
+              <l-affix
+                className="_sticky-header"
+                :relativeElementSelector="'#project-group-' + index"
+                :z="200">
+                <h3 class="_title  u-margin-bottom-none">
+                  <span class="_index">{{ index }}. </span>
+                  <span class="_name">{{ name }}</span>
+                </h3>
+              </l-affix>
             </div>
             <div class="_cell u-1/2">
               <a class="_link" :href="link" target="_blank" rel="noopener">
@@ -29,12 +36,14 @@
 <script>
 import cIcon from '~/components/c-icon'
 import lWrapper from '~/components/layout/l-wrapper'
+import lAffix from '~/components/layout/l-affix'
 import lGrid from '~/components/layout/l-grid'
 export default {
   components: {
     cIcon,
     lWrapper,
-    lGrid
+    lGrid,
+    lAffix
   },
   props: {
     index: {
@@ -74,36 +83,56 @@ export default {
     }
 
   }
+
+  ._title {
+    @include vr($font-display, $font-size-xl);
+    display: flex;
+    margin-bottom: $unit-xs;
+
+    @include mq($from: tablet) {
+      @include vr($font-display, $font-size-xxl);
+      margin-left: -$page-padding-tablet;
+      margin-bottom: $unit-sm;
+    }
+    @include mq($from: desktop) {
+      margin-left: -$page-padding-desktop;
+      margin-bottom: $unit-sm;
+    }
+    @include mq($from: wide) {
+      margin-left: -$page-padding-wide;
+    }
+  }
+
+  ._name {
+    padding-right: $unit-sm;
+  }
+
+  ._index {   
+    min-width: $page-padding-mobile;
+    padding-right: $unit-xs;
+     
+    @include mq($until: tablet) {
+      padding-left: $unit-xs;
+    }
+    
+    @include mq($from: tablet) {
+      text-align: right;
+      min-width: $page-padding-tablet;
+    }
+    @include mq($from: desktop) {
+      padding-right: $unit-sm;
+      min-width: $page-padding-desktop;
+    }
+    @include mq($from: wide) {
+      min-width: $page-padding-wide;
+    }
+  }
   
   ._index,
   ._mobile-index {
     color: $neutral-80;
   }
 
-  ._index {
-    width: $page-padding-mobile;
-    position: absolute;
-    left: 0;
-    text-align: right;
-    padding-right: $unit-sm;
-    display: none;
-    
-    @include mq($from: tablet) {
-      display: initial;
-      width: $page-padding-tablet;
-    }
-    @include mq($from: desktop) {
-      width: $page-padding-desktop;
-    }
-    @include mq($from: wide) {
-      width: $page-padding-wide;
-    }
-  }
-  ._mobile-index {
-    @include mq($from: tablet) {
-      display: none;
-    }
-  }
 
   $link-padding-y: $unit-xs;
   $link-padding-x: $unit-sm;
@@ -127,6 +156,19 @@ export default {
 
     &:hover {
       color: $neutral-00;
+    }
+  }
+
+  ._sticky-header {
+    transition: opacity .1s ease;
+    &.affix {
+      z-index: 1000;
+      ._title {
+        background-color: rgba($neutral-100,1);
+      }
+    }
+    &.affix-bottom {
+      opacity: 0;
     }
   }
 

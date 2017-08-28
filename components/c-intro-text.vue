@@ -1,23 +1,25 @@
 <template>
   <section class="c-intro-text">
     <l-wrapper>
-      <div class="l-grid  l-grid--flush">
-        <div class="l-grid__cell  u-2/5@tablet">
+      <l-grid>
+        <div class="_cell  u-2/5@tablet">
           <h2>{{ heading }}</h2>
         </div>
-        <div class="l-grid__cell  u-3/5@tablet  u-text--lower-contrast">
+        <div class="_cell  u-3/5@tablet  u-text--lower-contrast">
           <slot></slot>
         </div>
-      </div>
+      </l-grid>
     </l-wrapper>
   </section>
 </template>
 
 <script>
 import lWrapper from '~/components/layout/l-wrapper'
+import lGrid from '~/components/layout/l-grid'
 export default {
   components: {
-    lWrapper
+    lWrapper,
+    lGrid
   },
   props: {
     heading: {

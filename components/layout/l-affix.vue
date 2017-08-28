@@ -1,0 +1,92 @@
+<template>
+  <f-no-ssr>
+    <div class="l-affix">
+      <div ref="jsActual">
+        <affix
+          :style="'z-index:' + z"
+          v-on:affixtop="removePlaceholderHeight"
+          v-on:affixbottom="setPlaceholderHeight"
+          v-on:affix="setPlaceholderHeight"
+          :class="className"
+          :offset="offset"
+          :relative-element-selector="relativeElementSelector">
+          <slot></slot>
+        </affix>
+      </div>
+      <div ref="jsPlaceholder" class="_placeholder"></div>
+    </div>
+  </f-no-ssr>
+</template>
+
+<script>
+  import fNoSsr from '~/components/functional/f-no-ssr'
+  export default {
+    components: {
+      fNoSsr
+    },
+    props: {
+      relativeElementSelector: {
+        type: String,
+        required: true
+      },
+      className: {
+        type: String,
+        required: false
+      },
+      z: {
+        type: Number,
+        required: false
+      },
+      offset: {
+        type: Object,
+        default: () => {
+          return {
+            top: 120,
+            bottom: 0
+          }
+        }
+      }
+    },
+    computed: {
+      placeholder () {
+        return this.$refs.jsPlaceholder
+      },
+      actual () {
+        return this.$refs.jsActual
+      }
+    },
+    methods: {
+      setPlaceholderHeight () {
+        this.$refs.jsPlaceholder.style.height = this.actual.getBoundingClientRect().height + 'px'
+      },
+      removePlaceholderHeight () {
+        this.$refs.jsPlaceholder.style.height = null
+      }
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+
+  // Import variables and global settings
+  @import "~assets/styles/imports";
+
+  .l-affix {
+  }
+
+  .vue-affix {
+    width: auto;
+    transition: opacity .1s ease;
+
+    &.affix-bottom {
+      opacity: 0;
+    }
+  }
+
+  ._placeholder {
+    height: 0;
+    position: relative;
+    display: block;
+  }
+
+</style>

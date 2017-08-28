@@ -13,6 +13,7 @@ import 'vue-awesome/icons/facebook'
 // ui
 import 'vue-awesome/icons/at'
 import 'vue-awesome/icons/external-link'
+import 'vue-awesome/icons/eye'
 import 'vue-awesome/icons/heart'
 import 'vue-awesome/icons/chevron-right'
 import 'vue-awesome/icons/bars'

@@ -47,7 +47,9 @@
 
 		font-family: $font-mono;
 	} @else {
-		top: calc(#{$cap-font-body} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
+    top: calc(#{$cap-font-body} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
+    
+    font-family: $font-body;
 	}
 }
 

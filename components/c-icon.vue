@@ -36,7 +36,7 @@ export default {
   @import "~assets/styles/imports";
 
   .c-icon {
-
+    // font-size: .7em;
   }
 
   .c-icon--middle {

@@ -1,5 +1,6 @@
 <template>
   <div class="c-hero">
+    <img class="_background-image" v-if="bgImageSrc" :src="require('~/assets/images/' + bgImageSrc)">
     <l-wrapper>
       <l-grid horizontal="right">
         <div class="_cell  u-3/5@desktop">
@@ -17,6 +18,12 @@ export default {
   components: {
     lWrapper,
     lGrid
+  },
+  props: {
+    bgImageSrc: {
+      type: String,
+      required: false
+    }
   }
 }
 </script>
@@ -28,10 +35,23 @@ export default {
 
   .c-hero {
     text-align: right;
+    overflow: hidden;
     background-color: rgba($neutral-100,.5);
     padding-top: $unit-xxl;
     padding-bottom: $unit-xxl;
     box-shadow: inset 0 -1px 0 0 $neutral-80;
+    position: relative;
+  }
+
+  ._background-image {
+    position: absolute;
+    opacity: .4;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
   }
 
 </style>

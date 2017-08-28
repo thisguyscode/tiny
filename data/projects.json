@@ -1,8 +1,8 @@
 { 
   "projectGroups": [
     {
-      "name": "SocialCops",
-      "link": "https://socialcops.com",
+      "name": "trivago",
+      "link": "https://trivago.com",
       "description": "They have managed to secure massive clients due to their dedication to what they call ‘Data Intelligence’ - using data effectively to glean valuable and actionable insights on a large scale. They are working on a web platform which covers the entire data pipeline, from collection to visualization. I was largely tasked with producing realistic product mockups for said platform for the corporate website, but also had a chance to work on their ‘Visualize’ product",
       "projects": [
         {
@@ -11,6 +11,14 @@
           "color": "#54A94A",
           "date": "May - Apr 2017",
           "role": "Product Designer",
+          "skills": [
+            "User Interface Design",
+            "User Experience Design"
+          ],
+          "techs": [
+            "Adobe Photoshop",
+            "Adobe Illustrator"
+          ],
           "imgSrc": "trv-banners.png",
           "imgClass": "contain",
           "imgWrapperClass": "padded"

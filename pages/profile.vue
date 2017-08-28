@@ -2,9 +2,9 @@
 
   <div class="p-profile">
   
-    <c-hero>
-      <h1>I'm tiny.</h1>
-      <h1 class="u-margin-bottom-none">I <span class="u-text--lowest-contrast">mostly</span> make digital interfaces.</h1>
+    <c-hero bgImageSrc="">
+      <h1 class="u-margin-bottom-md">I'm <span class="u-text--lowest-contrast">./</span>tiny<span class="u-text--lowest-contrast">/</span></h1>
+      <h1 class="u-text--lowest-contrast u-margin-bottom-none">(I have no idea what I'm doing)</h1>
     </c-hero>
 
     <l-main-content>
@@ -70,7 +70,9 @@
   .p-profile {
     text-align: left;
   }
-
+  ._mostly {
+    color: $neutral-100;
+  }
   ._filler {
     height: 2000px;
   }

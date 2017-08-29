@@ -37,7 +37,8 @@ $content-max-width:  1200px;
 *   Fed to both "sass-mq" module and "utilities.widths"
 */
 $mq-breakpoints: (
-  mobile:  320px,
+  tiny:  320px,
+  mobile:  540px,
   tablet:  840px,
   desktop: 1000px,
   wide:    1300px

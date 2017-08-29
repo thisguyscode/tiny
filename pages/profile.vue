@@ -2,9 +2,9 @@
 
   <div class="p-profile">
   
-    <c-hero bgImageSrc="">
-      <h1 class="u-margin-bottom-md">I'm <span class="u-text--lowest-contrast">./</span>tiny<span class="u-text--lowest-contrast">/</span></h1>
-      <h1 class="u-text--lowest-contrast u-margin-bottom-none">(I have no idea what I'm doing)</h1>
+    <c-hero bgImageSrc="chn-shanghai_02.jpg">
+      <h1 class="u-margin-bottom-none">I'm <span class="u-text--lowest-contrast">./</span>tiny<span class="u-text--lowest-contrast">/</span></h1>
+      <h1 class="u-margin-bottom-none">(I have no idea what I'm doing)</h1>
     </c-hero>
 
     <l-main-content>
@@ -31,7 +31,15 @@
         <p>Testing testing testing</p>
       </l-wrapper>
 
-      <div class="_filler"></div>
+      <section>
+        <c-cta-panel
+          mainCtaHeading="Want to see what I can do?"
+          mainCtaBodyText="I’ve not been in the tech industry long, but in this short time I’ve had the chance to work on some cracking projects."
+          mainCtaButton="work"
+          subCtaHeading="Or get in touch!"
+          subCtaButton="contact">
+        </c-cta-panel>
+      </section>
     
     </l-main-content>
 
@@ -42,18 +50,19 @@
 <script>
   import cGridlines from '~/components/c-gridlines'
   import cHero from '~/components/c-hero'
+  import cCtaPanel from '~/components/c-cta-panel'
   import cIntroText from '~/components/c-intro-text'
   import lWrapper from '~/components/layout/l-wrapper'
   import lMainContent from '~/components/layout/l-main-content'
   import lStaggeredGrid from '~/components/layout/l-staggered-grid'
 
   export default {
-    scrollToTop: false,
     layout: 'default',
     components: {
       cGridlines,
       cHero,
       cIntroText,
+      cCtaPanel,
       lWrapper,
       lMainContent,
       lStaggeredGrid

@@ -1,40 +1,7 @@
 <template>
   <section class="p-work">
-
-    <c-hero bgImageSrc="chn-shanghai_02.jpg">
-      <h1>Putting text in boxes & colouring inside the lines.</h1>
-    </c-hero>
-
-    <l-main-content>
-      
-      <section
-        :id="'project-group-' + (index + 1)"
-        style="position:relative;" v-for="(projectGroup, index) in projectGroups"
-        :key="projectGroup.id"
-        class="_project-group">
-          
-        <c-project-group-intro
-          :index="index + 1"
-          :projectGroup="projectGroup">
-        </c-project-group-intro>
-
-        <c-project-overview v-for="(project, subIndex) in projectGroup.projects" :key="project.id"
-          :index="(index + 1) + '.' + String.fromCharCode(97 + subIndex)"
-          :project="project">
-        </c-project-overview>
-      </section>
-
-      <section class="test">
-        <c-cta-panel
-          mainCtaHeading="Looking to hire an interface designer?"
-          mainCtaBodyText="I’m looking for a full-time job, ideally remote, where I can continue to improve as a digital interface designer"
-          mainCtaButton="contact"
-          subCtaHeading="Or get to know me"
-          subCtaButton="contact">
-        </c-cta-panel>
-      </section>
-  
-    </l-main-content>
+    
+    <nuxt-child></nuxt-child>
     
   </section>
 </template>
@@ -51,7 +18,6 @@
   import dataProjects from '~/data/projects.json'
 
   export default {
-    scrollToTop: false,
     layout: 'default',
     components: {
       cHero,

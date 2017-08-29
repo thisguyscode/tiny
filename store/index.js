@@ -2,13 +2,16 @@ import Vuex from 'vuex'
 
 const store = () => new Vuex.Store({
   state: {
-    scrollPosition: null
+    navHeight: 120
   },
   mutations: {
-    updateScroll: (state) => {
-      state.scrollPosition = window.scrollY
+    updateNavHeight: (state, element) => {
+      state.navHeight = element.clientHeight
     }
   }
 })
+
+// Implementation ??
+// this.$store.commit('updateNavHeight', this.elementHeight)
 
 export default store

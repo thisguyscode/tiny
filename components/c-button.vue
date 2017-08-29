@@ -1,34 +1,72 @@
 <template>
-  <span>
 
-    <nuxt-link v-if="relativeLink" :to="relativeLink" class="c-button" :class="baseClassObject" :style="inlineStyle">
-      <c-icon v-if="icon" class="_icon" :style="iconInlineStyle" :name="icon"></c-icon>
-      <span class="_button_text">
-        <slot></slot>
-      </span>
-    </nuxt-link>
-    
-    <a v-if="externalLinkTo" :href="externalLinkTo" class="c-button" :class="baseClassObject" :style="inlineStyle">
-      <c-icon v-if="icon" class="_icon" :style="iconInlineStyle" :name="icon"></c-icon>
-      <span class="_button_text">
-        <slot></slot>
-      </span>
-    </a>
+  <f-link
+    class="c-button"
+    :class="baseClassObject"
+    :style="inlineStyle"
+    :relativeLink="computedRelativeLink"
+    :externalLink="externalLink"
+    :scrollToSelector="scrollToSelector">
 
-  </span>
+    <c-icon
+      v-if="iconName"
+      class="_icon"
+      :style="iconInlineStyle"
+      :name="iconName">
+    </c-icon>
+
+    <!-- Quick content -->
+    <span class="_button_text">
+      <slot></slot>
+      <!-- Contact -->
+      <span v-if="content==='contact'">Contact <span class="u-text--low-contrast">me</span></span>
+      <!-- Profile -->
+      <span v-if="content==='profile'"><span class="u-text--low-contrast">View my </span>profile</span>
+      <!-- Work -->
+      <span v-if="content==='work'"><span class="u-text--low-contrast">View my </span>work</span>
+    </span>
+
+  </f-link>
 </template>
 
 <script>
 import cIcon from '~/components/c-icon'
+import fLink from '~/components/functional/f-link'
 export default {
   components: {
-    cIcon
+    cIcon,
+    fLink
   },
   computed: {
     baseClassObject: function () {
       return {
         'c-button--ghost': this.type === 'ghost',
-        'c-button--solid': this.type === 'solid'
+        'c-button--solid': this.type === 'solid',
+        'c-button--stretch': this.stretch === true
+      }
+    },
+    iconName: function () {
+      if (this.content === 'work') {
+        return 'briefcase'
+      } else if (this.content === 'profile') {
+        return 'user'
+      } else if (this.content === 'contact') {
+        return 'envelope'
+      } else if (this.icon) {
+        return this.icon
+      } else {
+        return false
+      }
+    },
+    computedRelativeLink: function () {
+      if (this.content === 'profile') {
+        return '/profile'
+      } else if (this.content === 'contact') {
+        return '/contact'
+      } else if (this.content === 'work') {
+        return '/work'
+      } else {
+        return this.relativeLink
       }
     }
   },
@@ -37,7 +75,7 @@ export default {
       type: String,
       required: false
     },
-    externalLinkTo: {
+    externalLink: {
       type: String,
       required: false
     },
@@ -56,6 +94,18 @@ export default {
     iconInlineStyle: {
       type: String,
       required: false
+    },
+    content: {
+      type: String,
+      required: false
+    },
+    scrollToSelector: {
+      type: String,
+      default: null
+    },
+    stretch: {
+      type: Boolean,
+      default: true
     }
   }
 }
@@ -67,15 +117,18 @@ export default {
   @import "~assets/styles/imports";
 
   .c-button {
-    padding: $unit-xs $unit-md;
+    padding: $unit-xs $unit-sm;
     text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: $neutral-00;
+    white-space: nowrap;
+    // min-width: 100%;
+    text-align: center;
     
     @include mq($until: tablet) {
       background: $neutral-95;
+    }
+    @include mq($from: tablet) {
+      padding: $unit-xs $unit-md;
     }
 
   }
@@ -91,13 +144,23 @@ export default {
     }
   }
 
+  .c-button--stretch {
+    min-width: 100%;
+  }
+
+  ._button_text,
+  ._button_icon {
+    display: inline-block;
+    vertical-align: bottom;
+  }
   ._button_text {
-    @include vr($font-body, $font-size-sm);
+    @include vr($font-body, $font-size-md);
     @include vr-reset;
     font-weight: 600;
     color: $neutral-00;
   }
   ._icon {
+    height: 1em;
     margin-right: $unit-xs;
   }
 

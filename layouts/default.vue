@@ -29,12 +29,6 @@ export default {
     cFooter,
     lWrapper,
     lMainContent
-  },
-  data: () => {
-    return {
-    }
-  },
-  methods: {
   }
 }
 </script>

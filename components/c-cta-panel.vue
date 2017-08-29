@@ -14,12 +14,9 @@
             </div>
             <div class="_cell  u-1/3@tablet">
               <c-button
-                v-if="mainCtaButton === 'contact'"
                 class="_main-cta-button"
                 type="solid"
-                icon="envelope"
-                relativeLink="/contact">
-                Contact<span class="u-text--low-contrast"> me</span>
+                :content="mainCtaButton">
               </c-button>
             </div>
           </l-grid>
@@ -27,11 +24,10 @@
         <div class="_cell u-1/5"></div>
         <div class="_subCtaWrapper  _cell  u-1/5@tablet  u-text--lower-contrast">
           <h2>{{ subCtaHeading }}</h2>
-          <c-button v-if="subCtaButton === 'contact'"
+          <c-button
+            class="_main-cta-button"
             type="ghost"
-            icon="envelope"
-            relativeLink="/contact">
-            Contact<span class="u-text--low-contrast"> me</span>
+            :content="subCtaButton">
           </c-button>
         </div>
       </l-grid>
@@ -71,10 +67,6 @@
         type: String,
         required: true
       }
-      // mainCtaButtonIcon: {
-      //   type: String,
-      //   required: true
-      // },
     }
   }
 

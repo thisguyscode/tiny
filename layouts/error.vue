@@ -9,7 +9,7 @@
 <script>
 export default {
   props: ['error'],
-  layout: 'blank'
+  layout: 'default'
 }
 </script>
 

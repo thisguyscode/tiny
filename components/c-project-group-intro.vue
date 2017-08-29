@@ -1,7 +1,7 @@
 <template>
-  <section class="c-project-group-intro">
+  <section class="c-project-group-intro" :id="'project-group-' + index + '-top'">
     <l-wrapper>
-      <l-grid>
+      <l-grid class="_grid">
         <div class="_header  _cell  u-2/5@tablet">
           <l-grid>
             <div class="_cell">
@@ -12,16 +12,18 @@
                 <h3 class="_title  u-margin-bottom-none">
                   <span class="_index">{{ index }}. </span>
                   <span class="_name">{{ name }}</span>
+                  <f-link
+                    class="_project-group-link"
+                    :scrollToSelector="'#project-group-' + index + '-top'">
+                    <span class="u-link-bloater"></span>
+                  </f-link>
                 </h3>
               </l-affix>
             </div>
             <div class="_cell u-1/2">
-              <a class="_link" :href="link" target="_blank" rel="noopener">
-                <span class="_link-content">
-                  <c-icon vertical class="_link_icon" name="external-link"></c-icon>
-                  <span class="_link_text">Visit Website</span>
-                </span>
-              </a>
+              <c-button :stretch="false" class="_link" type="ghost" icon="external-link" :externalLink="link">
+                Visit Website
+              </c-button>
             </div>
           </l-grid>
         </div>
@@ -35,12 +37,16 @@
 
 <script>
 import cIcon from '~/components/c-icon'
+import cButton from '~/components/c-button'
+import fLink from '~/components/functional/f-link'
 import lWrapper from '~/components/layout/l-wrapper'
 import lAffix from '~/components/layout/l-affix'
 import lGrid from '~/components/layout/l-grid'
 export default {
   components: {
     cIcon,
+    cButton,
+    fLink,
     lWrapper,
     lGrid,
     lAffix
@@ -84,10 +90,15 @@ export default {
 
   }
 
+  ._grid {
+    align-items: flex-start;
+  }
   ._title {
     @include vr($font-display, $font-size-xl);
+    transition: background-color .2s ease;
     display: flex;
     margin-bottom: $unit-xs;
+    left: -1px;
 
     @include mq($from: tablet) {
       @include vr($font-display, $font-size-xxl);
@@ -104,10 +115,13 @@ export default {
   }
 
   ._name {
+    transition: padding-left .4s ease, box-shadow .4s ease, color .4s ease;
     padding-right: $unit-sm;
   }
 
-  ._index {   
+  ._index {
+    margin-right: 1px;
+    transition: color .4s ease;
     min-width: $page-padding-mobile;
     padding-right: $unit-xs;
      
@@ -138,20 +152,14 @@ export default {
   $link-padding-x: $unit-sm;
 
   ._link {
-    text-align: center;
-    margin-bottom: $heading-trailer;
-    text-decoration: none;
-    transition: $link-transition;
-    display: block;
-    padding: $link-padding-y $link-padding-x;
-    background-color: $neutral-90;
-    box-shadow: inset 1px 0 0 $red, inset 0 0 0 1px $neutral-90;
-    // margin-left: -$link-padding-x;
+    z-index: 900;
 
     @include mq($until: tablet) {
       position: absolute;
       right: 0;
-      bottom: 0;
+      top: -50%;
+      display: inline-block;
+      width: auto;
     }
 
     &:hover {
@@ -159,12 +167,38 @@ export default {
     }
   }
 
+  ._project-group-link {
+    display: none;
+  }
+
   ._sticky-header {
-    transition: opacity .1s ease;
     &.affix {
-      z-index: 1000;
+      ._project-group-link {
+        display: initial;
+      }
       ._title {
-        background-color: rgba($neutral-100,1);
+        @if ($show-baseline == true) {
+          @include vr-baseline;
+        }
+        background-color: $neutral-95;
+        @include mq($from: tablet) {
+          box-shadow: inset 0 0 0 1px $neutral-80;
+        }
+      }
+      ._name {
+        padding-left: $unit-xs;
+        box-shadow: inset 1px 0 0 0 $neutral-00;
+
+        @include mq($until: tablet) {
+          padding-right: $unit-xs;
+        }
+        @include mq($from: tablet) {
+          padding-left: $unit-sm;
+        }
+      }
+      ._name,
+      ._index {
+        color: $neutral-00;
       }
     }
     &.affix-bottom {
@@ -206,6 +240,7 @@ export default {
   }
   ._header {
     position: relative;
+    margin-bottom: $unit-md;
   }
 
 </style>

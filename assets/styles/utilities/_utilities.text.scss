@@ -12,22 +12,27 @@
   font-weight: $font-weight-semi;
 }
 
+.u-text--high-contrast {
+  color: rgba($neutral-00, 1);
+}
+
 .u-text--low-contrast {
-  color: $neutral-40;
+  color: rgba($neutral-00, .6);
 }
 
 .u-text--lower-contrast {
-  color: $neutral-60;
+  color: rgba($neutral-00, .4);
 }
 
 .u-text--lowest-contrast {
-  color: $neutral-80;
+  color: rgba($neutral-00, .2);
 }
 
-.u-text--high-contrast {
-  color: $neutral-00;
-}
 
+
+.u-text--accent {
+  color: $red !important;
+}
 
 .u-text--lg {
   @include vr($font-body, $font-size-lg);

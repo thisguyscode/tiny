@@ -1,10 +1,10 @@
 module.exports = {
   router: {
     base: '/tiny/',
-    scrollBehavior: function (to, from, savedPosition) {
-      if (savedPosition) return savedPosition
-      return false
-    }
+    // scrollBehavior: function (to, from, savedPosition) {
+    //   if (savedPosition) return savedPosition
+    //   return false
+    // }
   },
   /*
   ** Headers of the page

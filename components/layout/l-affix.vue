@@ -1,7 +1,7 @@
 <template>
   <f-no-ssr>
     <div class="l-affix">
-      <div ref="jsActual">
+      <div class="_actual" ref="jsActual">
         <affix
           :style="'z-index:' + z"
           v-on:affixtop="removePlaceholderHeight"
@@ -57,10 +57,10 @@
     },
     methods: {
       setPlaceholderHeight () {
-        this.$refs.jsPlaceholder.style.height = this.actual.getBoundingClientRect().height + 'px'
+        this.$refs.jsPlaceholder.style.height = this.actual.clientHeight + 'px'
       },
       removePlaceholderHeight () {
-        this.$refs.jsPlaceholder.style.height = null
+        this.$refs.jsPlaceholder.style.height = 0
       }
     }
   }
@@ -83,6 +83,9 @@
     }
   }
 
+  ._actual {
+    position: relative;
+  }
   ._placeholder {
     height: 0;
     position: relative;

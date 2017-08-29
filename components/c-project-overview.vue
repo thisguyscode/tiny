@@ -44,6 +44,7 @@
                     :relativeLink="linkTo"
                     :inlineStyle="buttonStyle"
                     :iconInlineStyle="viewIconStyle"
+                    type="ghost"
                     icon="eye">
                     View Project
                   </c-button>

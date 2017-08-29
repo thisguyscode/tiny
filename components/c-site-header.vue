@@ -8,7 +8,7 @@
         <ul class="l-grid  l-grid--flush  u-vr-reset">
 
           <!-- LOGO -->
-          <li class="l-grid__cell  u-2/5">
+          <li class="l-grid__cell  u-1/4  u-2/5@mobile">
             <nuxt-link class="_link" to="/" v-scroll-to="'#page-top'">
               <span class="u-text--lowest-contrast">./</span>
               <span>tiny</span>
@@ -16,19 +16,19 @@
             </nuxt-link>
           </li><!--END- LOGO -->
 
-          <li class="l-grid__cell  u-text--align-right  u-1/5">
+          <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
             <nuxt-link class="_link" to="/profile" v-scroll-to="'#page-top'">
               profile
             </nuxt-link>
           </li>
 
-          <li class="l-grid__cell  u-text--align-right  u-1/5">
+          <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
             <nuxt-link class="_link" to="/work" v-scroll-to="'#page-top'">
               work
             </nuxt-link>
           </li>
 
-          <li class="l-grid__cell  u-text--align-right  u-1/5">
+          <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
             <nuxt-link class="_link" to="/contact" v-scroll-to="'#page-top'">
               contact
             </nuxt-link>

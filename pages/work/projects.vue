@@ -12,6 +12,7 @@
 import lGrid from '~/components/layout/l-grid'
 import cProjectNavbar from '~/components/c-project-navbar'
 export default {
+  scrollToTop: true,
   components: {
     lGrid,
     cProjectNavbar

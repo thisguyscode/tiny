@@ -59,6 +59,7 @@
 
   export default {
     layout: 'default',
+    scrollToTop: true,
     components: {
       cHero,
       cProjectGroupIntro,

@@ -44,6 +44,9 @@ module.exports = {
     height: '4px'
   },
   generate: {
+    /*
+    ** Generate routes from 'linkTo' in project data file
+    */
     routes: function () {
       var routesArray = []
       const projectData = require('./data/projects.json')

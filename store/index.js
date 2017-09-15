@@ -2,9 +2,13 @@ import Vuex from 'vuex'
 
 const store = () => new Vuex.Store({
   state: {
-    currentProject: {}
+    currentProject: {},
+    projectsArray: []
   },
   mutations: {
+    updateProjectsArray: (state, array) => {
+      state.projectsArray = array
+    },
     updateCurrentProject: (state, project) => {
       state.currentProject = project
     }

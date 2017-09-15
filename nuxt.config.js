@@ -54,7 +54,7 @@ module.exports = {
       for (var projectGroup in projectGroups) {
         var projects = projectGroups[projectGroup].projects
         for (var project in projects) {
-          routesArray.push('/work/projects' + projects[project].linkTo)
+          routesArray.push('/work/projects' + projects[project].slug)
         }
       }
       return routesArray

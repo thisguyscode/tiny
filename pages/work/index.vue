@@ -70,29 +70,13 @@
     },
     data: () => {
       return {
-        projectGroups: dataProjects.projectGroups,
-        projectsArray: []
+        projectGroups: dataProjects.projectGroups
       }
     },
     methods: {
       updateCurrentProject: function (currentProject) {
         this.$store.commit('updateCurrentProject', currentProject)
-        console.log(this.$store.state.currentProject)
-        console.log('updateCurrentProject called')
-      },
-      getProjects: function () {
-        var projectGroups = dataProjects.projectGroups
-        for (var projectGroup in projectGroups) {
-          var projects = projectGroups[projectGroup].projects
-          for (var project in projects) {
-            this.projectsArray.push(projects[project])
-          }
-        }
       }
-    },
-    mounted () {
-      this.getProjects()
-      console.log(this.projectsArray)
     }
   }
 

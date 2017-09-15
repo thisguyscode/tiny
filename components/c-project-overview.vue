@@ -50,10 +50,6 @@
                     icon="eye">
                     View Project
                   </c-button>
-                  <!-- <nuxt-link class="_button" :to="linkTo" :style="buttonStyle">
-                    <c-icon class="_button_icon" :style="viewIconStyle" name="eye"></c-icon>
-                    <span class="_button_text">View project</span>
-                  </nuxt-link> -->
                 </div>
               </div>
             </div>
@@ -102,7 +98,7 @@ export default {
       return this.project.name
     },
     linkTo: function () {
-      return '/work/projects' + this.project.linkTo
+      return '/work/' + this.project.slug
     },
     color: function () {
       return this.project.color

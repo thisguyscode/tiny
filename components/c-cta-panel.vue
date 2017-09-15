@@ -16,7 +16,8 @@
               <c-button
                 class="_main-cta-button"
                 type="solid"
-                :content="mainCtaButton">
+                :content="mainCtaButton"
+                :onClick="log">
               </c-button>
             </div>
           </l-grid>
@@ -27,7 +28,8 @@
           <c-button
             class="_main-cta-button"
             type="ghost"
-            :content="subCtaButton">
+            :content="subCtaButton"
+            :onClick="log">
           </c-button>
         </div>
       </l-grid>
@@ -66,6 +68,11 @@
       subCtaButton: {
         type: String,
         required: true
+      }
+    },
+    methods: {
+      log () {
+        console.log('logged')
       }
     }
   }

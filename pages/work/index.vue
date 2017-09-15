@@ -8,20 +8,27 @@
     <l-main-content>
       
       <section
+        class="_project-group"
         :id="'project-group-' + (index + 1)"
-        style="position:relative;" v-for="(projectGroup, index) in projectGroups"
-        :key="projectGroup.id"
-        class="_project-group">
-          
+        v-for="(projectGroup, index) in projectGroups"
+        :key="index"
+      >
         <c-project-group-intro
           :index="index + 1"
-          :projectGroup="projectGroup">
+          :projectGroup="projectGroup"
+        >
         </c-project-group-intro>
 
-        <c-project-overview v-for="(project, subIndex) in projectGroup.projects" :key="project.id"
+        <c-project-overview
+          v-for="(project, subIndex) in projectGroup.projects"
+          :key="subIndex"
           :index="(index + 1) + '.' + String.fromCharCode(97 + subIndex)"
-          :project="project">
+          :project="project"
+          :onVisit="updateCurrentProject"
+          :onVisitArg="project"
+        >
         </c-project-overview>
+        
       </section>
 
       <section>
@@ -62,8 +69,29 @@
     },
     data: () => {
       return {
-        projectGroups: dataProjects.projectGroups
+        projectGroups: dataProjects.projectGroups,
+        projectsArray: []
       }
+    },
+    methods: {
+      updateCurrentProject: function (currentProject) {
+        this.$store.commit('updateCurrentProject', currentProject)
+        console.log(this.$store.state.currentProject)
+        console.log('updateCurrentProject called')
+      },
+      getProjects: function () {
+        var projectGroups = dataProjects.projectGroups
+        for (var projectGroup in projectGroups) {
+          var projects = projectGroups[projectGroup].projects
+          for (var project in projects) {
+            this.projectsArray.push(projects[project])
+          }
+        }
+      }
+    },
+    mounted () {
+      this.getProjects()
+      console.log(this.projectsArray)
     }
   }
 

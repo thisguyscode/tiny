@@ -11,7 +11,8 @@ import 'vue-awesome/icons/twitter'
 import 'vue-awesome/icons/facebook'
 
 // ui
-import 'vue-awesome/icons/at'
+import 'vue-awesome/icons/arrow-left'
+import 'vue-awesome/icons/arrow-right'
 import 'vue-awesome/icons/external-link'
 import 'vue-awesome/icons/eye'
 import 'vue-awesome/icons/heart'

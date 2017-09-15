@@ -8,32 +8,31 @@
 
 
 <script>
-  
-  import cHero from '~/components/c-hero'
-  import cProjectGroupIntro from '~/components/c-project-group-intro'
-  import cProjectOverview from '~/components/c-project-overview'
-  import cCtaPanel from '~/components/c-cta-panel'
-  import lWrapper from '~/components/layout/l-wrapper'
-  import lMainContent from '~/components/layout/l-main-content'
-  import dataProjects from '~/data/projects.json'
+  // import dataProjects from '~/data/projects.json'
 
   export default {
-    layout: 'default',
-    components: {
-      cHero,
-      cProjectGroupIntro,
-      cProjectOverview,
-      cCtaPanel,
-      lWrapper,
-      lMainContent
-    },
-    data: () => {
-      return {
-        projectGroups: dataProjects.projectGroups
-      }
-    }
+    // data: () => {
+    //   return {
+    //     currentProject: null,
+    //     projectsArray: []
+    //   }
+    // },
+    // methods: {
+    //   getProjects: function () {
+    //     var projectGroups = dataProjects.projectGroups
+    //     for (var projectGroup in projectGroups) {
+    //       var projects = projectGroups[projectGroup].projects
+    //       for (var project in projects) {
+    //         this.projectsArray.push(projects[project])
+    //       }
+    //     }
+    //   }
+    // },
+    // mounted () {
+    //   this.getProjects()
+    //   console.log(this.projectsArray)
+    // }
   }
-
 </script>
 
 
@@ -41,12 +40,5 @@
   
   // Import variables and global settings
   @import "~assets/styles/imports";
-
-  .p-work {
-
-  }
-  ._project-group {
-    margin-bottom: $unit-xxl*2;
-  }
 
 </style>

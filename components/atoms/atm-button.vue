@@ -41,11 +41,7 @@ export default {
   props: {
     onClick: {
       type: Function,
-      required: false,
-      default: function logNoEventAssigned () {
-        // eslint-disable-next-line
-        console.log('no click event assigned')
-      }
+      required: false
     },
     state: {
       type: Object,

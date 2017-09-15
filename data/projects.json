@@ -7,7 +7,7 @@
       "projects": [
         {
           "name": "Project name goes here on 2 lines",
-          "linkTo": "/work/socialcops/data-dashboard",
+          "linkTo": "/trivago/test",
           "color": "#54A94A",
           "date": "May - Apr 2017",
           "role": "Product Designer",
@@ -25,7 +25,7 @@
         },
         {
           "name": "Product mockups / screenshots",
-          "linkTo": "/socialcops/data-dashboard",
+          "linkTo": "/trivago/test",
           "color": "#5D92FD",
           "date": "May - Apr 2017",
           "role": "Product Designer",
@@ -33,7 +33,7 @@
         },
         {
           "name": "Product mockups / screenshots",
-          "linkTo": "/socialcops/data-dashboard",
+          "linkTo": "/trivago/test",
           "color": "#E95B3E",
           "date": "May - Apr 2017",
           "role": "Product Designer",
@@ -41,7 +41,7 @@
         },
         {
           "name": "SCSS-based color palette generator",
-          "linkTo": "/socialcops/data-dashboard",
+          "linkTo": "/trivago/test",
           "color": "#66A604",
           "date": "May - Apr 2017",
           "role": "Product Designer",
@@ -64,7 +64,7 @@
         },
         {
           "name": "Product mockups / screenshots",
-          "linkTo": "/socialcops/data-dashboard",
+          "linkTo": "/socialcops/test",
           "color": "#5D92FD",
           "date": "May - Apr 2017",
           "role": "Product Designer",

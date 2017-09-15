@@ -1,10 +1,10 @@
 <template>
 
-  <nuxt-link v-if="relativeLink" :to="relativeLink" v-scroll-to="scrollToSelector">
+  <nuxt-link v-if="relativeLink" :to="relativeLink">
     <slot></slot>
   </nuxt-link>
   
-  <f-no-ssr v-else-if="scrollToSelector" >
+  <f-no-ssr v-else-if="scrollToSelector">
     <a class="f-link" v-scroll-to="scrollToSelector">
       <slot></slot>
     </a>
@@ -25,15 +25,15 @@ export default {
   props: {
     relativeLink: {
       type: String,
-      default: null
+      required: false
     },
     externalLink: {
       type: String,
-      default: null
+      required: false
     },
     scrollToSelector: {
       type: String,
-      default: null
+      required: false
     }
   }
 }

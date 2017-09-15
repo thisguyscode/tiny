@@ -1,6 +1,6 @@
 module.exports = {
   router: {
-    base: '/tiny/',
+    base: '/tiny/'
     // scrollBehavior: function (to, from, savedPosition) {
     //   if (savedPosition) return savedPosition
     //   return false
@@ -42,6 +42,20 @@ module.exports = {
     color: '#e9494f',
     failedColor: 'red',
     height: '4px'
+  },
+  generate: {
+    routes: function () {
+      var routesArray = []
+      const projectData = require('./data/projects.json')
+      var projectGroups = projectData.projectGroups
+      for (var projectGroup in projectGroups) {
+        var projects = projectGroups[projectGroup].projects
+        for (var project in projects) {
+          routesArray.push('/work/projects' + projects[project].linkTo)
+        }
+      }
+      return routesArray
+    }
   },
   plugins: [
     '~/plugins/vue-scrollto.js',

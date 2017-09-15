@@ -2,11 +2,11 @@ import Vuex from 'vuex'
 
 const store = () => new Vuex.Store({
   state: {
-    navHeight: 120
+    currentProject: {}
   },
   mutations: {
-    updateNavHeight: (state, element) => {
-      state.navHeight = element.clientHeight
+    updateCurrentProject: (state, project) => {
+      state.currentProject = project
     }
   }
 })

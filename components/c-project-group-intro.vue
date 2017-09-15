@@ -187,7 +187,7 @@ export default {
       }
       ._name {
         padding-left: $unit-xs;
-        box-shadow: inset 1px 0 0 0 $neutral-00;
+        box-shadow: inset 1px 0 0 0 $neutral-90;
 
         @include mq($until: tablet) {
           padding-right: $unit-xs;

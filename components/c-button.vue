@@ -6,7 +6,8 @@
     :style="inlineStyle"
     :relativeLink="computedRelativeLink"
     :externalLink="externalLink"
-    :scrollToSelector="scrollToSelector">
+    :scrollToSelector="scrollToSelector"
+    @click.native="onClick(onClickArg)">
 
     <c-icon
       v-if="iconName"
@@ -106,6 +107,13 @@ export default {
     stretch: {
       type: Boolean,
       default: true
+    },
+    onClick: {
+      type: Function,
+      required: false
+    },
+    onClickArg: {
+      required: false
     }
   }
 }

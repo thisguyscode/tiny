@@ -7,6 +7,7 @@
       "projects": [
         {
           "name": "Project name goes here on 2 lines",
+          "slug": "data-dashboard",
           "linkTo": "/trivago/test",
           "color": "#54A94A",
           "date": "May - Apr 2017",
@@ -64,7 +65,7 @@
         },
         {
           "name": "Product mockups / screenshots",
-          "linkTo": "/socialcops/test",
+          "linkTo": "/socialcops/other",
           "color": "#5D92FD",
           "date": "May - Apr 2017",
           "role": "Product Designer",

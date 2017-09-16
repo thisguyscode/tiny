@@ -1,5 +1,5 @@
 <template>
-  <section class="c-project-overview">
+  <section class="c-project-overview" :id="sectionId">
     <l-wrapper>
       <l-grid>
         <div class="_details-wrapper  _cell u-2/5@tablet">
@@ -94,6 +94,9 @@ export default {
     }
   },
   computed: {
+    sectionId: function () {
+      return this.project.slug
+    },
     name: function () {
       return this.project.name
     },

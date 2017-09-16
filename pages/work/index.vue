@@ -76,7 +76,20 @@
     methods: {
       updateCurrentProject: function (currentProject) {
         this.$store.commit('updateCurrentProject', currentProject)
+      },
+      scrollToProject: function () {
+        var options = {
+          duration: 0,
+          easing: 'linear',
+          offset: -190
+        }
+        var project = this.$store.state.scrollToSelector
+        this.$scrollTo(project, options)
+        this.$store.commit('removeScrollTo')
       }
+    },
+    mounted () {
+      this.scrollToProject()
     }
   }
 

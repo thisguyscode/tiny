@@ -26,7 +26,6 @@
     },
     mounted () {
       this.getProjects()
-      console.log(this.$store.state.projectsArray)
     }
   }
 </script>

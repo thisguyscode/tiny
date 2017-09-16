@@ -23,7 +23,7 @@ html {
   font-family: $font-body;
   overflow: hidden;
   overflow-y: scroll; /* [2] */
-  min-height: 100%; /* [3] */
+  // min-height: 10000px; /* [3] */
   background-color: $neutral-95;
   color: $neutral-20;
   text-align: center;

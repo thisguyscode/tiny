@@ -35,7 +35,8 @@
 
           <!-- CLOSE -->
           <nuxt-link
-            to="/work"
+            @click.native="setScrollTo"
+            :to="'/work'"
             class="
               _close-control-wrapper
               _cell
@@ -76,6 +77,11 @@
       },
       previous: {
         type: Object
+      }
+    },
+    methods: {
+      setScrollTo: function () {
+        this.$store.commit('setScrollTo', '#' + this.current.slug)
       }
     }
   }

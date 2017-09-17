@@ -6,8 +6,8 @@
       "description": "They have managed to secure massive clients due to their dedication to what they call ‘Data Intelligence’ - using data effectively to glean valuable and actionable insights on a large scale. They are working on a web platform which covers the entire data pipeline, from collection to visualization. I was largely tasked with producing realistic product mockups for said platform for the corporate website, but also had a chance to work on their ‘Visualize’ product",
       "projects": [
         {
-          "name": "First",
-          "slug": "one",
+          "name": "Hotel Ratings & Reviews Slideout",
+          "slug": "ratings-slideout",
           "color": "#54A94A",
           "date": "May - Apr 2017",
           "role": "Product Designer",
@@ -24,8 +24,8 @@
           "imgWrapperClass": "padded"
         },
         {
-          "name": "Second",
-          "slug": "two",
+          "name": "Web Banner Design & Creation",
+          "slug": "web-banners",
           "color": "#5D92FD",
           "date": "May - Apr 2017",
           "role": "Product Designer",
@@ -33,20 +33,12 @@
           "imgWrapperClass": "padded"
         },
         {
-          "name": "Third",
-          "slug": "three",
+          "name": "Illustration for trivago Marathon T-shirts",
+          "slug": "marathon",
           "color": "#E95B3E",
           "date": "May - Apr 2017",
           "role": "Product Designer",
           "imgSrc": "trv-banners.png"
-        },
-        {
-          "name": "Fourth",
-          "slug": "four",
-          "color": "#66A604",
-          "date": "May - Apr 2017",
-          "role": "Product Designer",
-          "imgSrc": "topography.svg"
         }
       ]
     },

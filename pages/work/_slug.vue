@@ -7,12 +7,24 @@
         <l-grid>
           <div class="_cell u-2/5@tablet">
             <div class="_hero-text-wrapper">
-              <h1 class="_project-title">{{ currentProject.name }}</h1>
+              
+              <f-link
+                class="_project-group"
+                :externalLink="currentProject.groupLink"
+              >
+                {{ currentProject.group }}
+                <c-icon name="external-link"></c-icon>
+              </f-link>
+
+              <h1 class="_project-title">
+                {{ currentProject.name }}
+              </h1>
+
             </div>
           </div>
           <div class="_cell u-3/5@tablet">
             <div class="_hero-image-wrapper" :class="imageWrapperClass">
-              <img class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + previousProject.imgSrc)">
+              <img class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + currentProject.imgSrc)">
             </div>
           </div>
         </l-grid>
@@ -30,16 +42,20 @@
 </template>
 
 <script>
+import fLink from '~/components/functional/f-link'
 import lGrid from '~/components/layout/l-grid'
 import lWrapper from '~/components/layout/l-wrapper'
 import cProjectNavbar from '~/components/c-project-navbar'
+import cIcon from '~/components/c-icon'
 import dataProjects from '~/data/projects.json'
 
 export default {
   scrollToTop: true,
   components: {
     lGrid,
+    fLink,
     lWrapper,
+    cIcon,
     cProjectNavbar
   },
   asyncData ({ params }) {
@@ -48,6 +64,8 @@ export default {
     for (var projectGroup in projectGroups) {
       var projects = projectGroups[projectGroup].projects
       for (var project in projects) {
+        projects[project].group = projectGroups[projectGroup].name
+        projects[project].groupLink = projectGroups[projectGroup].link
         projectsArray.push(projects[project])
       }
     }
@@ -136,8 +154,22 @@ export default {
   }
 
   ._project-title {
-    @include vr($font-display, $font-size-xxxl);
+    @include vr($font-display, $font-size-xxl);
     text-align: left;
+    color: $neutral-00;
+  }
+
+  ._project-group {
+    @include vr($font-display, $font-size-lg);
+    text-decoration: none;
+    color: $neutral-00;
+    text-align: left;
+    opacity: .4;
+    cursor: pointer;
+    display: block;
+    &:hover {
+      opacity: 1;
+    }
   }
 
   ._hero-image {

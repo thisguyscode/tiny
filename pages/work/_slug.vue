@@ -97,7 +97,6 @@ export default {
         (parseInt(rgb[1]) * 587) +
         (parseInt(rgb[2]) * 114)) / 1000)
       var textColor = (o > 125) ? 'dark' : 'light'
-      console.log(textColor)
       return textColor
     }
   },

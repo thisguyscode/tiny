@@ -122,6 +122,7 @@ export default {
     overflow: hidden;
     z-index: 90;
     position: relative;
+    text-align: left;
   }
 
   ._hero-image-wrapper {
@@ -154,19 +155,18 @@ export default {
   }
 
   ._project-title {
-    @include vr($font-display, $font-size-xxl);
+    @include vr($font-display, $font-size-xxxl);
     text-align: left;
     color: $neutral-00;
   }
 
   ._project-group {
-    @include vr($font-display, $font-size-lg);
+    @include vr($font-display, $font-size-xl);
+    margin-bottom: $heading-trailer;
     text-decoration: none;
     color: $neutral-00;
-    text-align: left;
     opacity: .4;
     cursor: pointer;
-    display: block;
     &:hover {
       opacity: 1;
     }

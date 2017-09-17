@@ -47,7 +47,6 @@ $rhythm:						      ($base-font-size * $base-line-height); // ! Don't change thi
 $heading-trailer:				  $rhythm * 0.5;
 $paragraph-trailer:				$rhythm * 1;
 
-// Modular scale - see <_vr-calc-font-sizes.scss> for all preset scales
 $modular-scale:					'major-second';
 $font-size-default:				'lg'; // Starting size of the modular scale
 
@@ -63,7 +62,6 @@ $font-sizes:					(
   '--skip-1--',
   '--skip-1--',
   'xxl',
-  '--skip-1--',
   '--skip-1--',
   '--skip-1--',
   'xxxl');

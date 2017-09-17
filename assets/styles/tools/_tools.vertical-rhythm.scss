@@ -40,15 +40,14 @@
 	// Set offsets and font families.
 	@if $font-family == $font-display {
 		top: calc(#{$cap-font-display} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
-
-		font-family: $font-display;
+    font-family: $font-display;
+    
 	} @else if $font-family == $font-mono {
 		top: calc(#{$cap-font-mono} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
-
-		font-family: $font-mono;
+    font-family: $font-mono;
+    
 	} @else {
     top: calc(#{$cap-font-body} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
-    
     font-family: $font-body;
 	}
 }

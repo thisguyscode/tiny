@@ -2,21 +2,22 @@
   <section>
     
     <c-project-navbar :previous="previousProject" :next="nextProject" :current="currentProject"></c-project-navbar>
-    <div class="_hero" :style="'background-color:' + currentProject.color" >
+    <div class="_hero" :style="'background-color:' + currentProject.color" ref="background">
       <l-wrapper>
-        <l-grid>
+        <l-grid class="_hero-grid">
           <div class="_cell u-2/5@tablet">
-            <div class="_hero-text-wrapper">
+            <div class="_hero-text-wrapper" ref="text">
               
               <f-link
                 class="_project-group"
                 :externalLink="currentProject.groupLink"
+                :class="textClass"
               >
                 {{ currentProject.group }}
                 <c-icon name="external-link"></c-icon>
               </f-link>
 
-              <h1 class="_project-title">
+              <h1 class="_project-title" :class="textClass">
                 {{ currentProject.name }}
               </h1>
 
@@ -58,6 +59,48 @@ export default {
     cIcon,
     cProjectNavbar
   },
+  computed: {
+    textClass: function () {
+      return {
+        '_text-light': this.setContrast(this.currentProject.color) === 'light',
+        '_text-dark': this.setContrast(this.currentProject.color) === 'dark'
+      }
+    },
+    imageWrapperClass: function () {
+      return {
+        '--padded': this.currentProject.imgWrapperClass === 'padded'
+      }
+    },
+    imageClass: function () {
+      return {
+        '--cover': this.currentProject.imgClass === 'cover'
+      }
+    }
+  },
+  methods: {
+    hexToRgb: function (hex, alpha) {
+      hex = hex.replace('#', '')
+      var r = parseInt(hex.length === 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2), 16)
+      var g = parseInt(hex.length === 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4), 16)
+      var b = parseInt(hex.length === 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6), 16)
+      if (alpha) {
+        var rgba = [r, g, b, alpha]
+        return rgba
+      } else {
+        var rgb = [r, g, b]
+        return rgb
+      }
+    },
+    setContrast: function (bgColor) {
+      var rgb = this.hexToRgb(bgColor)
+      var o = Math.round(((parseInt(rgb[0]) * 299) +
+        (parseInt(rgb[1]) * 587) +
+        (parseInt(rgb[2]) * 114)) / 1000)
+      var textColor = (o > 125) ? 'dark' : 'light'
+      console.log(textColor)
+      return textColor
+    }
+  },
   asyncData ({ params }) {
     var projectGroups = dataProjects.projectGroups
     var projectsArray = []
@@ -93,21 +136,6 @@ export default {
       previousProject,
       nextProject
     }
-  },
-  methods: {
-    //
-  },
-  computed: {
-    imageWrapperClass: function () {
-      return {
-        '--padded': this.currentProject.imgWrapperClass === 'padded'
-      }
-    },
-    imageClass: function () {
-      return {
-        '--cover': this.currentProject.imgClass === 'cover'
-      }
-    }
   }
 }
 </script>
@@ -116,16 +144,30 @@ export default {
   // Import variables and global settings
   @import "~assets/styles/imports";
 
+  // TEMP
+  ._text-dark {
+    color: $neutral-100;
+  }
+
+  ._text-light {
+    color: $neutral-00;
+  }
+
   ._hero {
     width: 100%;
-    height: $unit-xxl*4;
     overflow: hidden;
     z-index: 90;
     position: relative;
     text-align: left;
   }
 
+  ._hero-grid {
+    height: $unit-xxl*4;
+  }
+
   ._hero-image-wrapper {
+    height: 100%;
+    overflow: hidden;
     margin-right: -$page-padding-mobile;
     @include mq($from: tablet) {
       margin-right: -$page-padding-tablet
@@ -137,7 +179,18 @@ export default {
       margin-right: -$page-padding-wide
     }
     &.--padded {
-      padding: $unit-xl;
+      padding: $unit-lg;
+    }
+  }
+
+  ._hero-image {
+    object-fit: contain;
+    object-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+    
+    &.--cover {
+      object-fit: cover;
     }
   }
 
@@ -157,14 +210,12 @@ export default {
   ._project-title {
     @include vr($font-display, $font-size-xxxl);
     text-align: left;
-    color: $neutral-00;
   }
 
   ._project-group {
     @include vr($font-display, $font-size-xl);
     margin-bottom: $heading-trailer;
     text-decoration: none;
-    color: $neutral-00;
     opacity: .4;
     cursor: pointer;
     &:hover {
@@ -172,15 +223,6 @@ export default {
     }
   }
 
-  ._hero-image {
-    object-fit: contain;
-    object-position: 50% 50%;
-    width: 100%;
-    height: 100%;
-    
-    &.--cover {
-      object-fit: cover;
-    }
-  }
+  
 
 </style>

@@ -19,9 +19,8 @@
             "Adobe Photoshop",
             "Adobe Illustrator"
           ],
-          "imgSrc": "trv-banners.png",
-          "imgClass": "contain",
-          "imgWrapperClass": "padded"
+          "imgSrc": "trv-ratings.png",
+          "imgClass": "cover"
         },
         {
           "name": "Web Banner Design & Creation",
@@ -35,10 +34,11 @@
         {
           "name": "Illustration for trivago Marathon T-shirts",
           "slug": "marathon",
-          "color": "#E95B3E",
+          "color": "#fff",
           "date": "May - Apr 2017",
           "role": "Product Designer",
-          "imgSrc": "trv-banners.png"
+          "imgSrc": "trv-marathon.png",
+          "imgWrapperClass": "padded"
         }
       ]
     },
@@ -48,12 +48,14 @@
       "description": "They have managed to secure massive clients due to their dedication to what they call ‘Data Intelligence’ - using data effectively to glean valuable and actionable insights on a large scale. They are working on a web platform which covers the entire data pipeline, from collection to visualization. I was largely tasked with producing realistic product mockups for said platform for the corporate website, but also had a chance to work on their ‘Visualize’ product",
       "projects": [
         {
-          "name": "Project name goes here on 2 lines",
-          "slug": "five",
-          "color": "#54A94A",
+          "name": "SCSS-Based Color Generator",
+          "slug": "scss-colors",
+          "color": "#ed5945",
           "date": "May - Apr 2017",
           "role": "Product Designer",
-          "imgSrc": "topography.svg"
+          "imgSrc": "scss-colors.jpg",
+          "imgWrapperClass": "cover",
+          "imgClass": "cover"
         },
         {
           "name": "Product mockups / screenshots",

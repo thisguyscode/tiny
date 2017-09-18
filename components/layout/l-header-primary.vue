@@ -1,5 +1,5 @@
 <template>
-  <div class="l-header-primary">
+  <div class="l-header-primary" ref="headerPrimary">
     <div class="_actual">
       <slot></slot>
     </div>

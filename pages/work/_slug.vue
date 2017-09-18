@@ -2,35 +2,38 @@
   <section>
     
     <c-project-navbar :previous="previousProject" :next="nextProject" :current="currentProject"></c-project-navbar>
-    <div class="_hero" :style="'background-color:' + currentProject.color" ref="background">
+    <div class="_hero">
       <l-wrapper>
         <l-grid class="_hero-grid">
-          <div class="_cell u-2/5@tablet">
-            <div class="_hero-text-wrapper" ref="text">
+          <div class="_hero-text-cell _cell u-2/5@tablet">
+            <div class="_hero-text-wrapper">
+              
+              <!-- <div class="_hero-text-background" :style="'background-color:' + currentProject.color"></div> -->
               
               <f-link
                 class="_project-group"
-                :externalLink="currentProject.groupLink"
-                :class="textClass"
-              >
+                :externalLink="currentProject.groupLink">
                 {{ currentProject.group }}
                 <c-icon name="external-link"></c-icon>
               </f-link>
 
-              <h1 class="_project-title" :class="textClass">
+              <h1 class="_project-title" :class="textClass" :style="'background-color:' + currentProject.color">
                 {{ currentProject.name }}
               </h1>
 
             </div>
           </div>
           <div class="_cell u-3/5@tablet">
-            <div class="_hero-image-wrapper" :class="imageWrapperClass">
-              <img class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + currentProject.imgSrc)">
+            <div class="_hero-image-reference" :class="imageWrapperClass" :style="'background-color:' + currentProject.color">
+              <div class="_hero-image-wrapper">
+                <img class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + currentProject.imgSrc)">
+              </div>
             </div>
           </div>
         </l-grid>
       </l-wrapper>
     </div>
+    <section v-if="content" v-html="content"></section>
     <h2>{{ $route.params.slug }}</h2>
     <h1>{{ currentProject.name }}</h1>
     <h1>{{ currentProject.date }}</h1>
@@ -111,6 +114,7 @@ export default {
         projectsArray.push(projects[project])
       }
     }
+
     const currentProject = projectsArray.find(function (item) {
       return item.slug === params.slug
     })
@@ -127,10 +131,12 @@ export default {
       previousProjectIndex = projectsArray.indexOf(currentProject) - 1
     }
 
+    var content = require('html-loader!~/data/project-content/' + currentProject.contentSrc + '.html')
     var previousProject = projectsArray[previousProjectIndex]
     var nextProject = projectsArray[nextProjectIndex]
 
     return {
+      content,
       currentProject,
       previousProject,
       nextProject
@@ -143,15 +149,6 @@ export default {
   // Import variables and global settings
   @import "~assets/styles/imports";
 
-  // TEMP
-  ._text-dark {
-    color: $neutral-100;
-  }
-
-  ._text-light {
-    color: $neutral-00;
-  }
-
   ._hero {
     width: 100%;
     overflow: hidden;
@@ -161,13 +158,18 @@ export default {
   }
 
   ._hero-grid {
-    height: $unit-xxl*4;
+    // height: $unit-xxl*4;
   }
 
-  ._hero-image-wrapper {
-    height: 100%;
-    overflow: hidden;
+  ._hero-image-reference {
+    position: relative;
     margin-right: -$page-padding-mobile;
+    height: 100%;
+    
+    @include mq($until: tablet) {
+      height: $unit-xxl*3;
+      margin-left: -$page-padding-mobile;
+    }
     @include mq($from: tablet) {
       margin-right: -$page-padding-tablet
     }
@@ -177,9 +179,26 @@ export default {
     @include mq($from: wide) {
       margin-right: -$page-padding-wide
     }
+    
     &.--padded {
-      padding: $unit-lg;
+      padding: $unit-md;
+
+      @include mq($from: tablet) {
+        padding: $unit-xl;
+      }
+      @include mq($from: desktop) {
+        padding: $unit-xl;
+      }
+      @include mq($from: wide) {
+        padding: $unit-xxl;
+      }
     }
+  }
+
+  ._hero-image-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
   }
 
   ._hero-image {
@@ -187,41 +206,101 @@ export default {
     object-position: 50% 50%;
     width: 100%;
     height: 100%;
+    top: $unit-md;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+
+    @include mq($from: tablet) {
+      position: absolute;
+    }
     
     &.--cover {
+      @include mq($from: tablet) {
+        // transform: rotate(6deg) scale(1.4);
+        transform-origin: 0 100%;
+      }
       object-fit: cover;
     }
   }
 
+
   ._hero-text-wrapper {
-    padding-top: $page-padding-mobile;
+    padding-top: $page-padding-mobile + $unit-md;
     padding-bottom: $page-padding-mobile;
+    height: 100%;
+    z-index: 100;
+    position: relative;
+    
     @include mq($from: tablet) {
+      min-height: $unit-xxl*4;
       padding-top: $page-padding-tablet;
       padding-bottom: $page-padding-tablet;
+      padding-right: 50%;
+      margin-right: -66.66%;
     }
     @include mq($from: desktop) {
-      padding-top: $unit-lg;
-      padding-bottom: $unit-lg;
+      padding-top: $page-padding-desktop;
+      padding-bottom: $page-padding-desktop;
     }
+  }
+  
+  ._hero-text-background {
+    @include mq($from: tablet) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  ._hero-text-cell {
+    height: 100%;
   }
 
   ._project-title {
-    @include vr($font-display, $font-size-xxxl);
+    @include vr($font-display, $font-size-xxl);
     text-align: left;
+    display: inline;
+
+    @include mq($from: tablet) {
+      @include vr($font-display, $font-size-xxl);
+    }
+
+    @include mq($from: desktop) {
+      @include vr($font-display, $font-size-xxxl);
+    }
   }
 
   ._project-group {
-    @include vr($font-display, $font-size-xl);
+    @include vr($font-display, $font-size-lg);
+    margin-right: 100%;
+    white-space: nowrap;
     margin-bottom: $heading-trailer;
     text-decoration: none;
     opacity: .4;
+    color: $neutral-00;
     cursor: pointer;
+
+    @include mq($from: desktop) {
+      @include vr($font-display, $font-size-xl);
+      margin-bottom: $heading-trailer;
+    }
+   
     &:hover {
       opacity: 1;
     }
   }
 
+  ._project-title {
+    &._text-dark {
+      color: $darkest;
+    }
+    &._text-light {
+      color: $lightest;
+    }
+  }
   
 
 </style>

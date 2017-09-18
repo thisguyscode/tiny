@@ -8,7 +8,8 @@
         {
           "name": "Hotel Ratings & Reviews Slideout",
           "slug": "ratings-slideout",
-          "color": "#54A94A",
+          "contentSrc": "test-project",
+          "color": "#29524A",
           "date": "May - Apr 2017",
           "role": "Product Designer",
           "skills": [
@@ -19,13 +20,13 @@
             "Adobe Photoshop",
             "Adobe Illustrator"
           ],
-          "imgSrc": "trv-ratings.png",
-          "imgClass": "cover"
+          "imgSrc": "trv-ratings.png"
         },
         {
           "name": "Web Banner Design & Creation",
           "slug": "web-banners",
-          "color": "#5D92FD",
+          "contentSrc": "test-project",
+          "color": "#4B244A",
           "date": "May - Apr 2017",
           "role": "Product Designer",
           "imgSrc": "trv-banners.png",
@@ -34,7 +35,8 @@
         {
           "name": "Illustration for trivago Marathon T-shirts",
           "slug": "marathon",
-          "color": "#fff",
+          "contentSrc": "test-project",
+          "color": "#6E0D25",
           "date": "May - Apr 2017",
           "role": "Product Designer",
           "imgSrc": "trv-marathon.png",
@@ -50,32 +52,36 @@
         {
           "name": "SCSS-Based Color Generator",
           "slug": "scss-colors",
-          "color": "#ed5945",
+          "contentSrc": "test-project",
+          "color": "#de5472",
           "date": "May - Apr 2017",
           "role": "Product Designer",
           "imgSrc": "scss-colors.jpg",
-          "imgWrapperClass": "cover",
           "imgClass": "cover"
         },
         {
-          "name": "Product mockups / screenshots",
+          "name": "Product",
           "slug": "six",
-          "color": "#5D92FD",
+          "contentSrc": "test-project",
+          "color": "#7A6F9B",
           "date": "May - Apr 2017",
           "role": "Product Designer",
-          "imgSrc": "topography.svg"
+          "imgSrc": "chn-shanghai_01.jpg",
+          "imgClass": "cover"
         },
         {
-          "name": "Product mockups / screenshots",
+          "name": "Product",
           "slug": "seven",
+          "contentSrc": "test-project",
           "color": "#E95B3E",
           "date": "May - Apr 2017",
           "role": "Product Designer",
-          "imgSrc": "topography.svg"
+          "imgSrc": "trv-marathon.png"
         },
         {
           "name": "SCSS-based color palette generator",
           "slug": "eight",
+          "contentSrc": "test-project",
           "color": "#66A604",
           "date": "May - Apr 2017",
           "role": "Product Designer",

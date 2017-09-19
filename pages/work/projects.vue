@@ -1,12 +1,19 @@
 <template>
   <section>
+    
+    <!-- Project Nav -->
     <c-project-navbar :previous="previousProject" :next="nextProject" :current="currentProject"></c-project-navbar>
+    
+    <!-- Hero -->
     <div class="_hero">
       <l-wrapper>
         <l-grid class="_hero-grid">
+
+          <!-- Hero text panel -->
           <div class="_hero-text-cell _cell u-2/5@tablet">
             <div class="_hero-text-wrapper">
               
+              <!-- Group -->
               <f-link
                 class="_project-group"
                 :externalLink="currentProject.groupLink">
@@ -14,28 +21,33 @@
                 <c-icon name="external-link"></c-icon>
               </f-link>
 
+              <!-- Title -->
               <h1 class="_project-title" :class="textClass" :style="'background-color:' + currentProject.color">
                 {{ currentProject.name }}
               </h1>
 
             </div>
-          </div>
+          </div><!--END Hero text panel -->
+          
+          <!-- Hero image panel -->
           <div class="_cell u-3/5@tablet">
             <div class="_hero-image-reference" :class="imageWrapperClass" :style="'background-color:' + currentProject.color">
               <div class="_hero-image-wrapper">
                 <img class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + currentProject.imgSrc)">
               </div>
             </div>
-          </div>
+          </div><!--END Hero image panel -->
+
         </l-grid>
       </l-wrapper>
-    </div>
-<!--     
-    <h1>{{ currentProject.name }}</h1>
-    <h1>{{ currentProject.date }}</h1>
-    <h4>{{ previousProject.slug }}</h4> -->
+    </div><!--END Hero -->
     
+    <!-- Main project content -->
     <nuxt-child></nuxt-child>
+
+    <!-- CTA -->
+      <!--  -->
+    <!--END CTA  -->
 
   </section>
 

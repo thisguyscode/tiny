@@ -110,6 +110,9 @@ export default {
     },
     onClick: {
       type: Function,
+      default: function () {
+        console.log('')
+      },
       required: false
     },
     onClickArg: {

@@ -24,8 +24,6 @@
           :key="subIndex"
           :index="(index + 1) + '.' + String.fromCharCode(97 + subIndex)"
           :project="project"
-          :onVisit="updateCurrentProject"
-          :onVisitArg="project"
         >
         </c-project-overview>
         
@@ -74,9 +72,6 @@
       }
     },
     methods: {
-      updateCurrentProject: function (currentProject) {
-        this.$store.commit('updateCurrentProject', currentProject)
-      },
       scrollToProject: function () {
         var options = {
           duration: 0,

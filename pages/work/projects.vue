@@ -1,14 +1,11 @@
 <template>
   <section>
-    
     <c-project-navbar :previous="previousProject" :next="nextProject" :current="currentProject"></c-project-navbar>
     <div class="_hero">
       <l-wrapper>
         <l-grid class="_hero-grid">
           <div class="_hero-text-cell _cell u-2/5@tablet">
             <div class="_hero-text-wrapper">
-              
-              <!-- <div class="_hero-text-background" :style="'background-color:' + currentProject.color"></div> -->
               
               <f-link
                 class="_project-group"
@@ -33,13 +30,12 @@
         </l-grid>
       </l-wrapper>
     </div>
-    <section v-if="content" v-html="content"></section>
-    <h2>{{ $route.params.slug }}</h2>
+<!--     
     <h1>{{ currentProject.name }}</h1>
     <h1>{{ currentProject.date }}</h1>
-    <h4>{{ previousProject.slug }}</h4>
+    <h4>{{ previousProject.slug }}</h4> -->
+    
     <nuxt-child></nuxt-child>
-
 
   </section>
 
@@ -61,6 +57,11 @@ export default {
     lWrapper,
     cIcon,
     cProjectNavbar
+  },
+  data: () => {
+    return {
+      currentProject: null
+    }
   },
   computed: {
     textClass: function () {
@@ -103,7 +104,7 @@ export default {
       return textColor
     }
   },
-  asyncData ({ params }) {
+  asyncData ({ route }) {
     var projectGroups = dataProjects.projectGroups
     var projectsArray = []
     for (var projectGroup in projectGroups) {
@@ -116,7 +117,7 @@ export default {
     }
 
     const currentProject = projectsArray.find(function (item) {
-      return item.slug === params.slug
+      return '/work/projects/' + item.slug === route.path
     })
 
     if (projectsArray.indexOf(currentProject) === projectsArray.length - 1) {
@@ -131,12 +132,10 @@ export default {
       previousProjectIndex = projectsArray.indexOf(currentProject) - 1
     }
 
-    var content = require('html-loader!~/data/project-content/' + currentProject.contentSrc + '.html')
     var previousProject = projectsArray[previousProjectIndex]
     var nextProject = projectsArray[nextProjectIndex]
 
     return {
-      content,
       currentProject,
       previousProject,
       nextProject

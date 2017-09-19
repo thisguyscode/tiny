@@ -1,7 +1,7 @@
 <template>
   <section class="p-work">
     
-    <nuxt-child :key="$route.params.slug"></nuxt-child>
+    <nuxt-child></nuxt-child>
     
   </section>
 </template>

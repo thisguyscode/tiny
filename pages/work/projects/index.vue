@@ -1,13 +1,8 @@
 <template>
-  <h1>Select a project</h1>
 </template>
 
 <script>
 export default {
-
+  middleware: 'project-redirect'
 }
 </script>
-
-<style>
-
-</style>

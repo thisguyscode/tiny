@@ -1,7 +1,7 @@
 <template>
   <section class="p-work">
     
-    <nuxt-child :key="$nuxt.$route.path"></nuxt-child>
+    <nuxt-child :key="$route.path"></nuxt-child>
     
   </section>
 </template>
@@ -14,8 +14,6 @@
 
 
 <style lang="scss" scoped>
-  
   // Import variables and global settings
   @import "~assets/styles/imports";
-
 </style>

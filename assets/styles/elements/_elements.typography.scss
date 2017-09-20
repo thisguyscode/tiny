@@ -15,7 +15,7 @@ h1 {
   @include vr($font-display, $font-size-xxl);
   
   @include mq($from: tablet) {
-    @include vr($font-display, $font-size-xxxl);
+    @include vr($font-display, $font-size-xxxxl);
   }
 }
 

@@ -50,7 +50,9 @@ $paragraph-trailer:				$rhythm * 1;
 $modular-scale:					'major-second';
 $font-size-default:				'lg'; // Starting size of the modular scale
 
-
+/**
+ * '--skip-1--' represents a skipped step in the modular scale iteration
+ */
 $font-sizes:					(
   'xs',
   'sm',
@@ -64,7 +66,9 @@ $font-sizes:					(
   'xxl',
   '--skip-1--',
   '--skip-1--',
-  'xxxl');
+  'xxxl',
+  '--skip-1--',
+  'xxxxl');
 
 $font-sizes:					  calc-font-sizes($modular-scale, $font-sizes, $font-size-default);
 
@@ -75,6 +79,7 @@ $font-size-lg:					map-get($font-sizes, lg);
 $font-size-xl:					map-get($font-sizes, xl);
 $font-size-xxl:					map-get($font-sizes, xxl);
 $font-size-xxxl:				map-get($font-sizes, xxxl);
+$font-size-xxxxl:				map-get($font-sizes, xxxxl);
 // ! ----------
 
 

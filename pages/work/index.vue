@@ -7,40 +7,41 @@
 
     <l-main-content>
       
+      <!-- List of project groups -->
       <section
+        v-for="(projectGroup, index) in projectGroups"
         class="_project-group"
         :id="'project-group-' + (index + 1)"
-        v-for="(projectGroup, index) in projectGroups"
-        :key="index"
-      >
+        :key="index">
+
+        <!-- Project group intro -->
         <c-project-group-intro
           :index="index + 1"
-          :projectGroup="projectGroup"
-        >
-        </c-project-group-intro>
-
+          :projectGroup="projectGroup">
+        </c-project-group-intro><!--END Project group intro -->
+        
+        <!-- List of projects in group -->
         <c-project-overview
           v-for="(project, subIndex) in projectGroup.projects"
           :key="subIndex"
           :index="(index + 1) + '.' + String.fromCharCode(97 + subIndex)"
-          :project="project"
-        >
-        </c-project-overview>
-        
-      </section>
+          :project="project">
+        </c-project-overview><!--END list of projects in group -->
 
-      <section>
-        <c-cta-panel
-          mainCtaHeading="Looking to hire an interface designer?"
-          mainCtaBodyText="I’m looking for a full-time job, ideally remote, where I can continue to improve as a digital interface designer"
-          mainCtaButton="contact"
-          subCtaHeading="Or get to know me"
-          subCtaButton="profile">
-        </c-cta-panel>
-      </section>
-  
+      </section><!--END V-FOR each projectGroup -->
+
     </l-main-content>
     
+    <aside>
+      <c-cta-panel
+        mainCtaHeading="Looking to hire an interface designer?"
+        mainCtaBodyText="I’m looking for a full-time job, ideally remote, where I can continue to improve as a digital interface designer"
+        mainCtaButton="contact"
+        subCtaHeading="Or get to know me"
+        subCtaButton="profile">
+      </c-cta-panel>
+    </aside>
+  
   </section>
 </template>
 
@@ -72,19 +73,34 @@
       }
     },
     methods: {
+      /**
+       * Programatically scroll to selector using vue-scrollTo
+       * as NUXT has trouble with # urls
+       */
       scrollToProject: function () {
         var options = {
           duration: 0,
           easing: 'linear',
           offset: -190
         }
+        /**
+         * In this case c-project-navbar will have commited the current
+         * project's ID to the store on close
+         */
         var project = this.$store.state.scrollToSelector
         this.$scrollTo(project, options)
+        /** Remove the selector from the store once reached to avoid warnings */
         this.$store.commit('removeScrollTo')
       }
     },
     mounted () {
-      this.scrollToProject()
+      /**
+       * Only call the scrollToProject method if the store is holding
+       * an appropriate selector
+       */
+      if (this.$store.state.scrollToSelector) {
+        this.scrollToProject()
+      }
     }
   }
 

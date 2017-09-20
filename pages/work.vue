@@ -1,32 +1,14 @@
 <template>
   <section class="p-work">
     
-    <nuxt-child></nuxt-child>
+    <nuxt-child :key="$nuxt.$route.path"></nuxt-child>
     
   </section>
 </template>
 
 
 <script>
-  import dataProjects from '~/data/projects.json'
-  
   export default {
-    methods: {
-      getProjects: function () {
-        var projectsArray = []
-        var projectGroups = dataProjects.projectGroups
-        for (var projectGroup in projectGroups) {
-          var projects = projectGroups[projectGroup].projects
-          for (var project in projects) {
-            projectsArray.push(projects[project])
-          }
-        }
-        this.$store.commit('updateProjectsArray', projectsArray)
-      }
-    },
-    mounted () {
-      this.getProjects()
-    }
   }
 </script>
 

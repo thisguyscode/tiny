@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-if="ready">
     
     <!-- Project Nav -->
     <c-project-navbar :previous="previousProject" :next="nextProject" :current="currentProject"></c-project-navbar>
@@ -72,7 +72,11 @@ export default {
   },
   data: () => {
     return {
-      currentProject: null
+      projectsArray: [],
+      currentProject: null,
+      nextProject: null,
+      previousProject: null,
+      ready: false
     }
   },
   computed: {
@@ -114,44 +118,48 @@ export default {
         (parseInt(rgb[2]) * 114)) / 1000)
       var textColor = (o > 125) ? 'dark' : 'light'
       return textColor
+    },
+    setProjects: function () {
+      var projectGroups = dataProjects.projectGroups
+      var projectsArray = []
+      var currentPath = this.$route.path
+      for (var projectGroup in projectGroups) {
+        var projects = projectGroups[projectGroup].projects
+        for (var project in projects) {
+          projects[project].group = projectGroups[projectGroup].name
+          projects[project].groupLink = projectGroups[projectGroup].link
+          projectsArray.push(projects[project])
+        }
+      }
+
+      this.currentProject = projectsArray.find(function (item) {
+        return '/work/projects/' + item.slug === currentPath
+      })
+
+      if (projectsArray.indexOf(this.currentProject) === projectsArray.length - 1) {
+        var nextProjectIndex = 0
+      } else {
+        nextProjectIndex = projectsArray.indexOf(this.currentProject) + 1
+      }
+
+      if (projectsArray.indexOf(this.currentProject) === 0) {
+        var previousProjectIndex = projectsArray.length - 1
+      } else {
+        previousProjectIndex = projectsArray.indexOf(this.currentProject) - 1
+      }
+
+      this.previousProject = projectsArray[previousProjectIndex]
+      this.nextProject = projectsArray[nextProjectIndex]
+      this.ready = true
     }
   },
-  asyncData ({ route }) {
-    var projectGroups = dataProjects.projectGroups
-    var projectsArray = []
-    for (var projectGroup in projectGroups) {
-      var projects = projectGroups[projectGroup].projects
-      for (var project in projects) {
-        projects[project].group = projectGroups[projectGroup].name
-        projects[project].groupLink = projectGroups[projectGroup].link
-        projectsArray.push(projects[project])
-      }
-    }
-
-    const currentProject = projectsArray.find(function (item) {
-      return '/work/projects/' + item.slug === route.path
-    })
-
-    if (projectsArray.indexOf(currentProject) === projectsArray.length - 1) {
-      var nextProjectIndex = 0
-    } else {
-      nextProjectIndex = projectsArray.indexOf(currentProject) + 1
-    }
-
-    if (projectsArray.indexOf(currentProject) === 0) {
-      var previousProjectIndex = projectsArray.length - 1
-    } else {
-      previousProjectIndex = projectsArray.indexOf(currentProject) - 1
-    }
-
-    var previousProject = projectsArray[previousProjectIndex]
-    var nextProject = projectsArray[nextProjectIndex]
-
-    return {
-      currentProject,
-      previousProject,
-      nextProject
-    }
+  beforeRouteUpdate (to, from, next) {
+    this.ready = false
+    this.setProjects()
+    next()
+  },
+  mounted () {
+    this.setProjects()
   }
 }
 </script>

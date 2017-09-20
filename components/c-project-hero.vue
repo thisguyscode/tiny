@@ -24,7 +24,7 @@
         </div><!--END Hero text panel -->
         
         <!-- Hero image panel -->
-        <div class="_cell u-3/5@tablet">
+        <div class="_hero-image-cell _cell u-3/5@tablet">
           <div class="_hero-image-reference" :class="imageWrapperClass" :style="'background-color:' + project.color">
             <div class="_hero-image-wrapper">
               <img class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + project.imgSrc)">
@@ -119,8 +119,11 @@
     // height: $unit-xxl*4;
   }
 
-  ._hero-image-reference {
+  ._hero-image-cell {
     position: relative;
+  }
+
+  ._hero-image-reference {
     margin-right: -$page-padding-mobile;
     height: 100%;
     
@@ -129,6 +132,11 @@
       margin-left: -$page-padding-mobile;
     }
     @include mq($from: tablet) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       margin-right: -$page-padding-tablet
     }
     @include mq($from: desktop) {

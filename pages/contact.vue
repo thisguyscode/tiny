@@ -5,12 +5,25 @@
 
     <div class="__filler"></div>
 
+    <section>
+      <c-cta-panel
+        mainCtaHeading="Get to know me"
+        mainCtaBodyText="I’ve not been in the tech industry long, but in this short time I’ve had the chance to work on some cracking projects."
+        mainCtaButton="profile"
+        subCtaHeading="Or see what I can do"
+        subCtaButton="work">
+      </c-cta-panel>
+    </section>
+
   </div>
 </template>
 
 <script>
+import cCtaPanel from '~/components/c-cta-panel'
 export default {
-
+  components: {
+    cCtaPanel
+  }
 }
 </script>
 

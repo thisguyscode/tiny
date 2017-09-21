@@ -1,6 +1,6 @@
 module.exports = {
   router: {
-    base: '/tiny/'
+    // base: '/tiny/'
     // scrollBehavior: function (to, from, savedPosition) {
     //   if (savedPosition) return savedPosition
     //   return false
@@ -13,6 +13,7 @@ module.exports = {
     title: './tiny/',
     meta: [
       { charset: 'utf-8' },
+      { httpEquiv: 'Content-Security-Policy', content: 'default-src https:' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],

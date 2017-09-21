@@ -317,8 +317,12 @@ export default {
   }
 
   ._image-wrapper--padded {
-    padding: $unit-xl;
-
+    padding: $unit-md;
+    
+    @include mq($from: desktop) {
+      padding: $unit-xl;
+    }
+    
     @include mq($from: desktop) {
       padding: $unit-xxl;
     }

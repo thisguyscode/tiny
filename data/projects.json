@@ -8,8 +8,7 @@
         {
           "name": "Hotel Ratings & Reviews Slideout",
           "slug": "ratings-slideout",
-          "contentSrc": "test-project",
-          "color": "#29524A",
+          "color": "#7E6B8F",
           "date": "May - Apr 2017",
           "role": "Product Designer",
           "skills": [
@@ -20,25 +19,40 @@
             "Adobe Photoshop",
             "Adobe Illustrator"
           ],
-          "imgSrc": "trv-ratings.png"
+          "imgSrc": "trv-ratings.png",
+          "imgClass": "cover"
         },
         {
           "name": "Web Banner Design & Creation",
           "slug": "web-banners",
-          "contentSrc": "test-project",
-          "color": "#4B244A",
+          "color": "#345995",
           "date": "May - Apr 2017",
           "role": "Product Designer",
+          "skills": [
+            "User Interface Design",
+            "User Experience Design"
+          ],
+          "techs": [
+            "Adobe Photoshop",
+            "Adobe Illustrator"
+          ],
           "imgSrc": "trv-banners.png",
           "imgWrapperClass": "padded"
         },
         {
           "name": "Illustration for trivago Marathon T-shirts",
           "slug": "marathon",
-          "contentSrc": "test-project",
-          "color": "#f1f1f1",
+          "color": "#F6F4F3",
           "date": "May - Apr 2017",
           "role": "Product Designer",
+          "skills": [
+            "User Interface Design",
+            "User Experience Design"
+          ],
+          "techs": [
+            "Adobe Photoshop",
+            "Adobe Illustrator"
+          ],
           "imgSrc": "trv-marathon.png",
           "imgWrapperClass": "padded"
         }
@@ -52,40 +66,70 @@
         {
           "name": "SCSS-Based Color Generator",
           "slug": "scss-colors",
-          "contentSrc": "test-project",
-          "color": "#ed5945",
+          "color": "#de5472",
           "date": "May - Apr 2017",
           "role": "Product Designer",
+          "skills": [
+            "User Interface Design",
+            "User Experience Design"
+          ],
+          "techs": [
+            "Adobe Photoshop",
+            "Adobe Illustrator"
+          ],
           "imgSrc": "scss-colors.jpg",
           "imgClass": "cover"
         },
         {
           "name": "Product",
           "slug": "six",
-          "contentSrc": "test-project",
-          "color": "#7A6F9B",
+          "color": "#FC9E4F",
           "date": "May - Apr 2017",
           "role": "Product Designer",
+          "skills": [
+            "User Interface Design",
+            "User Experience Design"
+          ],
+          "techs": [
+            "Adobe Photoshop",
+            "Adobe Illustrator"
+          ],
           "imgSrc": "chn-shanghai_01.jpg",
           "imgClass": "cover"
         },
         {
           "name": "Product",
           "slug": "seven",
-          "contentSrc": "test-project",
-          "color": "#f1f1f1",
+          "color": "#606C38",
           "date": "May - Apr 2017",
           "role": "Product Designer",
-          "imgSrc": "trv-marathon.png"
+          "skills": [
+            "User Interface Design",
+            "User Experience Design"
+          ],
+          "techs": [
+            "Adobe Photoshop",
+            "Adobe Illustrator"
+          ],
+          "imgSrc": "topography.svg",
+          "imgClass": "cover"
         },
         {
           "name": "SCSS-based color palette generator",
           "slug": "eight",
-          "contentSrc": "test-project",
-          "color": "#ed5945",
+          "color": "#7D5BA6",
           "date": "May - Apr 2017",
           "role": "Product Designer",
-          "imgSrc": "topography.svg"
+          "skills": [
+            "User Interface Design",
+            "User Experience Design"
+          ],
+          "techs": [
+            "Adobe Photoshop",
+            "Adobe Illustrator"
+          ],
+          "imgSrc": "topography.svg",
+          "imgClass": "cover"
         }
       ]
     }

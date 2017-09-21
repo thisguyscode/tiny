@@ -2,22 +2,31 @@
   
   <!--  'ready' will be set true once data is received -->
   <section v-if="ready">
-    
-    <!-- Project Nav -->
-    <c-project-navbar
-      :previous="previousProject"
-      :next="nextProject"
-      :current="currentProject">
-    </c-project-navbar>
-    
+        
     <!-- Hero -->
     <c-project-hero
       :project="currentProject">
     </c-project-hero>
+
+    <!-- Project Nav -->
+    <l-affix
+      :z="999"
+      fullWidth
+      :className="'_sticky-nav'"
+      :relativeElementSelector="'#main'"
+      :offset="{ top: 128, bottom: 0 }"
+    >
+      <c-project-navbar
+        :previous="previousProject"
+        :next="nextProject"
+        :current="currentProject">
+      </c-project-navbar>
+    </l-affix>
       
     <!-- Main project content from ./projects -->
-    <l-main-content>
+    <l-main-content id="main">
       <nuxt-child></nuxt-child>
+      <div style="height: 1000px;"></div>
     </l-main-content>
 
     <!-- Bottom Nav -->
@@ -36,6 +45,7 @@ import fLink from '~/components/functional/f-link'
 import lGrid from '~/components/layout/l-grid'
 import lWrapper from '~/components/layout/l-wrapper'
 import lMainContent from '~/components/layout/l-main-content'
+import lAffix from '~/components/layout/l-affix'
 import cProjectNavbar from '~/components/c-project-navbar'
 import cProjectNavPanels from '~/components/c-project-nav-panels'
 import cProjectHero from '~/components/c-project-hero'
@@ -49,6 +59,7 @@ export default {
     fLink,
     lWrapper,
     lMainContent,
+    lAffix,
     cIcon,
     cProjectNavbar,
     cProjectNavPanels,
@@ -184,4 +195,13 @@ export default {
 <style lang="scss" scoped>
   // Import variables and global settings
   @import "~assets/styles/imports";
+
+  // ._sticky-nav {
+  //   opacity: 1;
+  //   transition: opacity .1s ease;
+  //   &.affix-bottom {
+  //     opacity: 0;
+  //   }
+  // }
+
 </style>

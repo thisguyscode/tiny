@@ -10,14 +10,13 @@
               _panel
               _panel-previous
             "
-            :class="linkClass(previous)"
-            :style="
-              'background-color: ' + previous.color
-            "
           >
             <div
               class="_image-wrapper"
               :class="imgWrapperClass(previous)"
+              :style="
+                'background-color: ' + previous.color
+              "
             >
               <img
                 class="_image _image-previous"
@@ -29,19 +28,21 @@
             <div class="_panel-content">
               <div
                 class="_label _label-previous"
-                :style="'background-color: ' + previous.color">
+                :class="labelClass(previous)">
                 <c-icon class="_icon" name="arrow-left"></c-icon>
                 <span>Previous <span class="_string-project">project</span></span>
               </div>
 
               <h4
                 class="_group-title"
-                :style="'background-color: ' + previous.color">
+                :class="textClass(previous)"
+                :style="'color: ' + previous.color">
                 {{ previous.group }}
               </h4>
               <h3
                 class="_title"
-                :style="'background-color: ' + previous.color">
+                :class="textClass(previous)"
+                :style="'color: ' + previous.color">
                 {{ previous.name }}
               </h3>
             </div>
@@ -57,14 +58,14 @@
               _panel
               _panel-next
             "
-            :class="linkClass(next)"
-            :style="
-              'background-color: ' + next.color + ';'
-            "
+            :class="textClass(next)"
           >
             <div
               class="_image-wrapper"
               :class="imgWrapperClass(next)"
+              :style="
+                'background-color: ' + next.color
+              "
             >
               <img
                 class="_image _image-next"
@@ -75,19 +76,21 @@
             <div class="_panel-content">
               <div
                 class="_label _label-next"
-                :style="'background-color: ' + next.color">
+                :class="labelClass(next)">
                 <span>Next <span class="_string-project">project</span></span>
                 <c-icon class="_icon" name="arrow-right"></c-icon>
               </div>
 
               <h4
                 class="_group-title"
-                :style="'background-color: ' + next.color">
+                :class="textClass(next)"
+                :style="'color: ' + next.color">
                 {{ next.group }}
               </h4>
               <h3
                 class="_title"
-                :style="'background-color: ' + next.color">
+                :class="textClass(next)"
+                :style="'color: ' + next.color">
                 {{ next.name }}
               </h3>
             </div>
@@ -116,7 +119,7 @@
       }
     },
     methods: {
-      linkClass: function (project) {
+      textClass: function (project) {
         return {
           '--text-light': project.contrastingColor === 'light',
           '--text-dark': project.contrastingColor === 'dark'
@@ -130,6 +133,12 @@
       imgClass: function (project) {
         return {
           '--cover': project.imgClass === 'cover'
+        }
+      },
+      labelClass: function (project) {
+        return {
+          '--light': project.contrastingColor === 'light',
+          '--dark': project.contrastingColor === 'dark'
         }
       },
       setScrollTo: function () {
@@ -158,12 +167,14 @@
     padding-right: $page-padding-mobile;
     min-height: $unit-xxl*3;
 
-    &.--text-light {
-      color: $neutral-00;
-    }
-
-    &.--text-dark {
-      color: $neutral-100;
+    &:hover,
+    &:active {
+      ._image-wrapper {
+        opacity: 1;
+        @include mq($from: desktop) {
+          filter: grayscale(0);
+        }
+      }
     }
 
     @include mq($from: tablet) {
@@ -200,6 +211,12 @@
     right: 0;
     bottom: 0;
     left: 0;
+    transition: filter .1s ease, opacity .1s ease;
+    opacity: .8;
+    
+    @include mq($from: desktop) {
+      filter: grayscale(100%);
+    }
 
     &.--padded {
       padding: $unit-sm;
@@ -228,6 +245,9 @@
   ._panel-content {
     position: relative;
   }
+  ._icon {
+    height: .8em;
+  }
 
   ._label {
     @include vr($font-body, $font-size-sm);
@@ -235,9 +255,24 @@
     margin-bottom: $heading-trailer;
     display: inline-block;
     white-space: nowrap;
+    padding-left: $unit-xs;
+    padding-right: $unit-xs;
+
+    &.--light {
+      color: $lightest;
+      background-color: $darkest;
+    }
+
+    &.--dark {
+      color: $darkest;
+      background-color: $lightest;
+    }
 
     @include mq($from: tablet) {
       @include vr($font-body, $font-size-md);
+      margin-bottom: $heading-trailer;
+      display: inline-block;
+      white-space: nowrap;
     }
     
     @include mq($from: desktop) {
@@ -246,25 +281,17 @@
   }
 
   ._label-next {
-    @include mq($from: tablet) {
-      text-align: left;
-    }
+    float: right;
+    margin-left: 100%;
     ._icon {
       margin-left: $unit-xs;
-      @include mq($from: tablet) {
-        margin-left: $unit-sm;
-      }
     }
   }
   ._label-previous {
-    @include mq($from: tablet) {
-      text-align: right;
-    }
+    float: left;
+    margin-right: 100%;
     ._icon {
       margin-right: $unit-xs;
-      @include mq($from: tablet) {
-        margin-right: $unit-sm;
-      }
     }
   }
 
@@ -290,20 +317,12 @@
       float: right;
       margin-left: 100%;
     }
-    ._label {
-      float: left;
-      margin-right: 100%;
-    }
   }
 
   ._panel-previous {
     ._group-title {
       float: left;
       margin-right: 100%;
-    }
-    ._label {
-      float: right;
-      margin-left: 100%;
     }
   }
 
@@ -314,6 +333,15 @@
   ._group-title,
   ._title {
     display: inline;
+    
+    &.--text-light {
+      background-color: $lightest;
+    }
+
+    &.--text-dark {
+      background-color: $darkest;
+    }
+
   }
   
   

@@ -2,16 +2,13 @@ import Vuex from 'vuex'
 
 const store = () => new Vuex.Store({
   state: {
-    currentProject: {},
+    primaryNavHeight: null,
     projectsArray: [],
     scrollToSelector: null
   },
   mutations: {
-    updateProjectsArray: (state, array) => {
-      state.projectsArray = array
-    },
-    updateCurrentProject: (state, project) => {
-      state.currentProject = project
+    updatePrimaryNavHeight: (state, value) => {
+      state.primaryNavHeight = value
     },
     setScrollTo: (state, selector) => {
       state.scrollToSelector = selector

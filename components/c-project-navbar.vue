@@ -52,7 +52,7 @@
         </l-grid>
       </l-wrapper>
     </nav>
-    <div class="_placeholder"></div>
+    <!-- <div class="_placeholder"></div> -->
   </div>
   
 </template>
@@ -101,13 +101,13 @@
   ._actual {
     padding-top: $navbar-padding-y;
     padding-bottom: $navbar-padding-y;
-    background-color: rgba($neutral-100, .5);
-    position: fixed;
-    top: $header-primary-height;
+    // background-color: rgba($neutral-100, .5);
+    // position: fixed;
+    // top: $header-primary-height;
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: inset 0 -1px 0 0 $neutral-90;
+    box-shadow: inset 0 -1px 0 0 $neutral-90, inset 0 1px 0 0 $neutral-90;
   }
   ._close-control-wrapper,
   ._previous-control-wrapper,

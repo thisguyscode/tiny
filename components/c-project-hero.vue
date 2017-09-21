@@ -1,5 +1,5 @@
 <template>
-  <div class="_hero">
+  <div class="_hero" :style="'background-color: ' + project.color">
     <l-wrapper>
       <l-grid class="_hero-grid">
 
@@ -10,13 +10,20 @@
             <!-- Group -->
             <f-link
               class="_project-group"
+              :class="textClass"
+              :style="'color:' + project.color"
               :externalLink="project.groupLink">
               {{ project.group }}
-              <c-icon name="external-link"></c-icon>
+              <c-icon class="_icon" name="external-link"></c-icon>
             </f-link>
 
             <!-- Title -->
-            <h1 class="_project-title" :class="textClass" :style="'background-color:' + project.color">
+            <h1
+              class="_project-title"
+              :class="textClass"
+              :style="
+                'color:' + project.color"
+              >
               {{ project.name }}
             </h1>
 
@@ -24,7 +31,7 @@
         </div><!--END Hero text panel -->
         
         <!-- Hero image panel -->
-        <div class="_hero-image-cell _cell u-3/5@tablet">
+        <div class="_hero-image-cell _cell u-3/5@tablet" :class="heroImageCellClass">
           <div class="_hero-image-reference" :class="imageWrapperClass" :style="'background-color:' + project.color">
             <div class="_hero-image-wrapper">
               <img class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + project.imgSrc)">
@@ -57,11 +64,10 @@
       }
     },
     computed: {
-      /** Pass project color to setContrast() to provide perceived contrast */
       textClass: function () {
         return {
-          '_text-light': this.setContrast(this.project.color) === 'light',
-          '_text-dark': this.setContrast(this.project.color) === 'dark'
+          '_text-light': this.project.contrastingColor === 'light',
+          '_text-dark': this.project.contrastingColor === 'dark'
         }
       },
       imageWrapperClass: function () {
@@ -73,30 +79,11 @@
         return {
           '--cover': this.project.imgClass === 'cover'
         }
-      }
-    },
-    methods: {
-      /** Convert the #hex color code in ~/data/projects.json to an rgb value (as array) */
-      hexToRgb: function (hex) {
-        hex = hex.replace('#', '')
-        var r = parseInt(hex.length === 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2), 16)
-        var g = parseInt(hex.length === 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4), 16)
-        var b = parseInt(hex.length === 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6), 16)
-        var rgb = [r, g, b]
-        return rgb
       },
-      /**
-       * Get the rgb array from hexToRgb and apply perceptual brightness calculations
-       * Then return string of 'dark' or 'light' for contrasting color
-       */
-      setContrast: function (bgColor) {
-        var rgb = this.hexToRgb(bgColor)
-        var o = Math.round((
-          (parseInt(rgb[0]) * 299) +
-          (parseInt(rgb[1]) * 587) +
-          (parseInt(rgb[2]) * 114)) / 1000)
-        var textColor = (o > 125) ? 'dark' : 'light'
-        return textColor
+      heroImageCellClass: function () {
+        return {
+          '--cover': this.project.imgClass === 'cover'
+        }
       }
     }
   }
@@ -113,6 +100,7 @@
     z-index: 90;
     position: relative;
     text-align: left;
+    background-color: rgba($darkest, .5);
   }
 
   ._hero-grid {
@@ -121,22 +109,32 @@
 
   ._hero-image-cell {
     position: relative;
+    
+    @include mq($until: tablet) {
+      height: $unit-xl*3;
+      position: static;
+      order: 1;
+    }
+
+    &.--cover {
+      position: static;
+    }
   }
 
   ._hero-image-reference {
     margin-right: -$page-padding-mobile;
     height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     
     @include mq($until: tablet) {
-      height: $unit-xxl*3;
       margin-left: -$page-padding-mobile;
     }
     @include mq($from: tablet) {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      
       margin-right: -$page-padding-tablet
     }
     @include mq($from: desktop) {
@@ -148,6 +146,13 @@
     
     &.--padded {
       padding: $unit-md;
+
+      @include mq($until: tablet) {
+        top: $page-padding-mobile;
+        right: $page-padding-mobile;
+        bottom: $page-padding-mobile;
+        left: $page-padding-mobile;
+      }
 
       @include mq($from: tablet) {
         padding: $unit-xl;
@@ -169,7 +174,7 @@
 
   ._hero-image {
     object-fit: contain;
-    object-position: 50% 50%;
+    object-position: 50% 0%;
     width: 100%;
     height: 100%;
     top: $unit-md;
@@ -179,6 +184,7 @@
 
     @include mq($from: tablet) {
       position: absolute;
+      object-position: 50% 50%;
     }
     
     &.--cover {
@@ -192,7 +198,7 @@
 
 
   ._hero-text-wrapper {
-    padding-top: $page-padding-mobile + $unit-md;
+    padding-top: 0;
     padding-bottom: $page-padding-mobile;
     height: 100%;
     z-index: 100;
@@ -206,6 +212,7 @@
       margin-right: -66.66%;
     }
     @include mq($from: desktop) {
+      min-height: $unit-xxl*5;
       padding-top: $page-padding-desktop;
       padding-bottom: $page-padding-desktop;
     }
@@ -223,6 +230,10 @@
 
   ._hero-text-cell {
     height: 100%;
+    @include mq($until: tablet) {
+      min-height: $unit-xl*4;
+      order: 2;
+    }
   }
 
   ._project-title {
@@ -241,7 +252,7 @@
     white-space: nowrap;
     margin-bottom: $heading-trailer;
     text-decoration: none;
-    opacity: .4;
+    // opacity: .4;
     color: $neutral-00;
     cursor: pointer;
 
@@ -251,17 +262,22 @@
     }
     
     &:hover {
-      opacity: 1;
+      // opacity: 1;
     }
   }
 
+  ._project-group,
   ._project-title {
     &._text-dark {
-      color: $darkest;
+      background-color: $darkest;
     }
     &._text-light {
-      color: $lightest;
+      background-color: $lightest;
     }
+  }
+
+  ._icon {
+    height: .7em;
   }
 
 </style>

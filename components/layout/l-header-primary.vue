@@ -1,11 +1,19 @@
 <template>
-  <div class="l-header-primary" ref="headerPrimary">
-    <div class="_actual">
+  <div class="l-header-primary">
+    <div class="_actual" ref="headerPrimary">
       <slot></slot>
     </div>
     <div class="_placeholder"></div>
   </div>
 </template>
+<script>
+export default {
+  mounted () {
+    this.$store.commit('updatePrimaryNavHeight', this.$refs.headerPrimary.clientHeight)
+    console.log(this.$store.state.primaryNavHeight)
+  }
+}
+</script>
 
 <style lang="scss" scoped>
   

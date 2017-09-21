@@ -57,12 +57,13 @@ export default {
   .c-hero {
     text-align: right;
     overflow: hidden;
-    background-color: rgba($neutral-100,.5);
+    background-color: rgba($darkest,.5);
     padding-top: $unit-xxl;
     padding-bottom: $unit-xxl;
     min-height: $unit-xxl*2;
     box-shadow: inset 0 -1px 0 0 $neutral-80;
     position: relative;
+    color: $lightest;
     @include mq($from: tablet) {
       min-height: $unit-xxl*5;
     }
@@ -88,7 +89,7 @@ export default {
   }
 
   ._text-wrapper {
-    text-shadow: 0 2px 10px rgba($neutral-95, .7);
+    text-shadow: 0 2px 10px rgba($darkest, .7);
   }
 
 </style>

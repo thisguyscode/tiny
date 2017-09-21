@@ -7,7 +7,7 @@
           v-on:affixtop="removePlaceholderHeight"
           v-on:affixbottom="setPlaceholderHeight"
           v-on:affix="setPlaceholderHeight"
-          :class="className"
+          :class="[className, classObject]"
           :offset="offset"
           :relative-element-selector="relativeElementSelector">
           <slot></slot>
@@ -25,6 +25,10 @@
       fNoSsr
     },
     props: {
+      fullWidth: {
+        type: Boolean,
+        default: false
+      },
       relativeElementSelector: {
         type: String,
         required: true
@@ -53,6 +57,11 @@
       },
       actual () {
         return this.$refs.jsActual
+      },
+      classObject: function () {
+        return {
+          '--full-width': this.fullWidth
+        }
       }
     },
     methods: {
@@ -90,6 +99,10 @@
     height: 0;
     position: relative;
     display: block;
+  }
+
+  .--full-width {
+    width: 100%;
   }
 
 </style>

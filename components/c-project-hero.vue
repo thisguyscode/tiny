@@ -230,10 +230,6 @@
     text-align: left;
     display: inline;
 
-    @include mq($from: tablet) {
-      @include vr($font-display, $font-size-xxl);
-    }
-
     @include mq($from: desktop) {
       @include vr($font-display, $font-size-xxxl);
     }

@@ -4,10 +4,16 @@
   <section v-if="ready">
     
     <!-- Project Nav -->
-    <c-project-navbar :previous="previousProject" :next="nextProject" :current="currentProject"></c-project-navbar>
+    <c-project-navbar
+      :previous="previousProject"
+      :next="nextProject"
+      :current="currentProject">
+    </c-project-navbar>
     
     <!-- Hero -->
-    <c-project-hero :project="currentProject"></c-project-hero>
+    <c-project-hero
+      :project="currentProject">
+    </c-project-hero>
       
     <!-- Main project content from ./projects -->
     <l-main-content>
@@ -15,7 +21,10 @@
     </l-main-content>
 
     <!-- Bottom Nav -->
-      <!--  -->
+    <c-project-nav-panels
+      :next="nextProject"
+      :previous="previousProject">
+    </c-project-nav-panels>
     <!--END Bottom Nav  -->
 
   </section>
@@ -28,6 +37,7 @@ import lGrid from '~/components/layout/l-grid'
 import lWrapper from '~/components/layout/l-wrapper'
 import lMainContent from '~/components/layout/l-main-content'
 import cProjectNavbar from '~/components/c-project-navbar'
+import cProjectNavPanels from '~/components/c-project-nav-panels'
 import cProjectHero from '~/components/c-project-hero'
 import cIcon from '~/components/c-icon'
 import dataProjects from '~/data/projects.json'
@@ -41,6 +51,7 @@ export default {
     lMainContent,
     cIcon,
     cProjectNavbar,
+    cProjectNavPanels,
     cProjectHero
   },
   /** Initialize reactive data values */

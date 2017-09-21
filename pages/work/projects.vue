@@ -67,8 +67,8 @@ export default {
     /** Pass project color to setContrast() to provide perceived contrast */
     textClass: function () {
       return {
-        '_text-light': this.setContrast(this.currentProject.color) === 'light',
-        '_text-dark': this.setContrast(this.currentProject.color) === 'dark'
+        '_text-light': this.currentProject.contrastingColor === 'light',
+        '_text-dark': this.currentProject.contrastingColor === 'dark'
       }
     },
     imageWrapperClass: function () {
@@ -105,11 +105,7 @@ export default {
       var textColor = (o > 125) ? 'dark' : 'light'
       return textColor
     },
-    /**
-     * Set the current, previous and next projects as objects in this componenents data
-     * Could be shortened/optimized/split-up fosho
-     */
-    setProjects: function () {
+    getProjects: function () {
       /** Create a flat array of all the projects */
       var projectGroups = dataProjects.projectGroups
       var projectsArray = []
@@ -123,14 +119,26 @@ export default {
           projects[project].group = projectGroups[projectGroup].name
           projects[project].groupLink = projectGroups[projectGroup].link
           /**
+           * Add the contrasting color to the array object for convenience
+           */
+          projects[project].contrastingColor = this.setContrast(projects[project].color)
+          /**
            * Push to projectsArray (local variable)
            */
           projectsArray.push(projects[project])
         }
       }
-
+      /** Commit this array to the store */
+      this.$store.commit('setProjectsArray', projectsArray)
+    },
+    /**
+     * Set the current, previous and next projects as objects in this componenents data
+     * Could be shortened/optimized/split-up fosho
+     */
+    setProjects: function () {
       /** Match the current path with the project.slug to set currentProject  */
       var currentPath = this.$route.path
+      var projectsArray = this.$store.state.projectsArray
       this.currentProject = projectsArray.find(function (item) {
         return '/work/projects/' + item.slug === currentPath
       })
@@ -159,14 +167,15 @@ export default {
   },
   /**
    * Router guard - called before route is updated
-   * Gets/sets the new project's data in this parent component
+   * Sets the new project's data in this parent component
    */
   beforeRouteUpdate (to, from, next) {
     this.setProjects()
     next()
   },
-  /** Get/set the local data on initial mount */
+  /** Get the projects and store then set the local data on initial mount */
   mounted () {
+    this.getProjects()
     this.setProjects()
   }
 }

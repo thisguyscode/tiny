@@ -18,6 +18,9 @@ const store = () => new Vuex.Store({
     },
     removeScrollTo: (state) => {
       state.scrollToSelector = null
+    },
+    setProjectsArray: (state, array) => {
+      state.projectsArray = array
     }
   }
 })

@@ -10,7 +10,10 @@
               _panel
               _panel-previous
             "
-            :style="'background-color: ' + previous.color"
+            :class="linkClass(previous)"
+            :style="
+              'background-color: ' + previous.color
+            "
           >
             <div
               class="_image-wrapper"
@@ -24,13 +27,23 @@
             </div>
 
             <div class="_panel-content">
-              <div class="_label _label-previous">
+              <div
+                class="_label _label-previous"
+                :style="'background-color: ' + previous.color">
                 <c-icon class="_icon" name="arrow-left"></c-icon>
                 <span>Previous <span class="_string-project">project</span></span>
               </div>
 
-              <h4 class="_group-title">{{ previous.group }}</h4>
-              <h3 class="_title">{{ previous.name }}</h3>
+              <h4
+                class="_group-title"
+                :style="'background-color: ' + previous.color">
+                {{ previous.group }}
+              </h4>
+              <h3
+                class="_title"
+                :style="'background-color: ' + previous.color">
+                {{ previous.name }}
+              </h3>
             </div>
 
           </nuxt-link>
@@ -44,6 +57,7 @@
               _panel
               _panel-next
             "
+            :class="linkClass(next)"
             :style="
               'background-color: ' + next.color + ';'
             "
@@ -59,13 +73,23 @@
               >
             </div>
             <div class="_panel-content">
-              <div class="_label _label-next">
+              <div
+                class="_label _label-next"
+                :style="'background-color: ' + next.color">
                 <span>Next <span class="_string-project">project</span></span>
                 <c-icon class="_icon" name="arrow-right"></c-icon>
               </div>
 
-              <h4 class="_group-title">{{ next.group }}</h4>
-              <h3 class="_title">{{ next.name }}</h3>
+              <h4
+                class="_group-title"
+                :style="'background-color: ' + next.color">
+                {{ next.group }}
+              </h4>
+              <h3
+                class="_title"
+                :style="'background-color: ' + next.color">
+                {{ next.name }}
+              </h3>
             </div>
             
           </nuxt-link>
@@ -92,6 +116,12 @@
       }
     },
     methods: {
+      linkClass: function (project) {
+        return {
+          '--text-light': project.contrastingColor === 'light',
+          '--text-dark': project.contrastingColor === 'dark'
+        }
+      },
       imgWrapperClass: function (project) {
         return {
           '--padded': project.imgWrapperClass === 'padded'
@@ -121,14 +151,20 @@
     width: 100%;
     height: 100%;
     position: relative;
-    // Need to use setContrast()
-    color: $neutral-00;
     text-decoration: none;
     padding-top: $unit-md;
     padding-bottom: $unit-md;
     padding-left: $page-padding-mobile;
     padding-right: $page-padding-mobile;
     min-height: $unit-xxl*3;
+
+    &.--text-light {
+      color: $neutral-00;
+    }
+
+    &.--text-dark {
+      color: $neutral-100;
+    }
 
     @include mq($from: tablet) {
       padding-left: $page-padding-tablet;
@@ -171,11 +207,14 @@
       @include mq($from: tablet) {
         padding: $unit-md;
       }
+
+      @include mq($from: tablet) {
+        padding: $unit-xl;
+      }
     }
   }
 
   ._image {
-    opacity: .3;
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -194,6 +233,8 @@
     @include vr($font-body, $font-size-sm);
     font-weight: $font-weight-semi;
     margin-bottom: $heading-trailer;
+    display: inline-block;
+    white-space: nowrap;
 
     @include mq($from: tablet) {
       @include vr($font-body, $font-size-md);
@@ -222,7 +263,7 @@
     ._icon {
       margin-right: $unit-xs;
       @include mq($from: tablet) {
-        margin-left: $unit-sm;
+        margin-right: $unit-sm;
       }
     }
   }
@@ -235,6 +276,7 @@
     }
   }
 
+
   ._title {
     @include vr($font-display, $font-size-xxl);
 
@@ -243,8 +285,35 @@
     }
   }
 
+  ._panel-next {
+    ._group-title {
+      float: right;
+      margin-left: 100%;
+    }
+    ._label {
+      float: left;
+      margin-right: 100%;
+    }
+  }
+
+  ._panel-previous {
+    ._group-title {
+      float: left;
+      margin-right: 100%;
+    }
+    ._label {
+      float: right;
+      margin-left: 100%;
+    }
+  }
+
   ._group-title {
-    opacity: .5;
+    // opacity: .5;
+  }
+
+  ._group-title,
+  ._title {
+    display: inline;
   }
   
   

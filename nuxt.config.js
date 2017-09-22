@@ -71,10 +71,6 @@ module.exports = {
       ssr: false
     },
     {
-      src: '~/plugins/webfontloader.config.js',
-      ssr: false
-    },
-    {
       src: '~/plugins/vue-affix.js',
       ssr: false
     },

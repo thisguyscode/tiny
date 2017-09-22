@@ -187,17 +187,20 @@ export default {
       event.preventDefault() // we are submitting via xhr below
       var data = this.getFormData() // get the values submitted in the form
       /* OPTION: Remove this comment to enable SPAM prevention, see README.md */
+      var messageBlank = data.message === ''
+      var emailInvalid = !this.validEmail(data.email)
       if (this.validateHuman(data.honeypot)) {  // if form is filled, form will not be submitted
         return false
       }
-      if (data.message === '') {  // if form is filled, form will not be submitted
+      if (messageBlank) {
         this.messageIsValid = false
-        // return false
       }
-      if (!this.validEmail(data.email)) { // if email is not valid show error
-        this.scrollUp()
+      if (emailInvalid) { // if email is not valid show error
         this.emailIsValid = false
-        // return false
+      }
+      if (emailInvalid || messageBlank) {
+        setTimeout(this.scrollUp, 200)
+        return false
       } else {
         var url = event.target.action //
         var xhr = new XMLHttpRequest()

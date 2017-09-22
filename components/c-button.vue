@@ -7,7 +7,7 @@
     :relativeLink="computedRelativeLink"
     :externalLink="externalLink"
     :scrollToSelector="scrollToSelector"
-    @click.native="onClick(onClickArg)">
+    @click.native="clickFunction">
 
     <c-icon
       v-if="iconName"
@@ -16,9 +16,9 @@
       :name="iconName">
     </c-icon>
 
-    <!-- Quick content -->
     <span class="_button_text">
       <slot></slot>
+      <!-- Quick content -->
       <!-- Contact -->
       <span v-if="content==='contact'">Contact <span class="u-text--low-contrast">me</span></span>
       <!-- Profile -->
@@ -39,6 +39,17 @@ export default {
     fLink
   },
   computed: {
+    clickFunction: function () {
+      if (this.onClick & this.onClickArg) {
+        return this.onClick(this.onClickArg)
+      } else if (this.onClick) {
+        return this.onClick
+      } else {
+        return function () {
+          console.log('do nothing')
+        }
+      }
+    },
     baseClassObject: function () {
       return {
         'c-button--ghost': this.type === 'ghost',
@@ -56,7 +67,7 @@ export default {
       } else if (this.icon) {
         return this.icon
       } else {
-        return false
+        return ''
       }
     },
     computedRelativeLink: function () {
@@ -66,9 +77,9 @@ export default {
         return '/contact'
       } else if (this.content === 'work') {
         return '/work'
-      } else {
+      } else if (this.relativeLink) {
         return this.relativeLink
-      }
+      } else return null
     }
   },
   props: {
@@ -110,9 +121,6 @@ export default {
     },
     onClick: {
       type: Function,
-      default: function () {
-        console.log('')
-      },
       required: false
     },
     onClickArg: {
@@ -128,6 +136,7 @@ export default {
   @import "~assets/styles/imports";
 
   .c-button {
+    cursor: pointer;
     padding: $unit-xs $unit-sm;
     text-decoration: none;
     color: $neutral-00;

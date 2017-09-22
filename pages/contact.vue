@@ -6,10 +6,12 @@
       <h1>Please hire me, please.</h1>
     </c-hero>
 
-    <l-main-content>
-
+    <div id="contentTop" ref="contentTop"></div>
+    
+    <l-main-content class="_content-wrapper">
       <l-wrapper>
         <form
+          v-if="$store.state.messageSent === false"
           name="gForm"
           id="gForm"
           ref="gForm"
@@ -18,30 +20,33 @@
           :action="formAction"
           @submit="handleFormSubmit">
           
-          <label class="_honeypot"></label>
+          <label for="honeypot" class="_honeypot"></label>
           <input class="_honeypot" id="honeypot" type="text" name="honeypot" value="" />
           
           <l-grid class="_form-grid">
             <div class="_details-cell _cell u-2/5@tablet">
 
-              <label class="_label">Name:</label>
+              <label for="name" class="_label">Name:</label>
               <input class="_input" type="text" name="name" id="name">
               
-              <label class="_label">Email:</label>
-              <input class="_input" type="text" name="email" id="email">
-              <span class="_error" style="display:none" ref="emailInvalid">Email invalid</span>
+              <span class="_error" v-if="emailIsValid === true">Required</span>
+              <span class="_error" v-if="emailIsValid === false">Please enter a valid email address</span>
+              <label for="email" class="_label">Email:</label>
+              <input class="_input" :class="emailInputClass" type="text" name="email" id="email">
 
-              <label class="_label">Company:</label>
+              <label for="company" class="_label">Company:</label>
               <input class="_input" type="text" name="company" id="company">
 
             </div>
 
             <div class="_message-cell _cell u-3/5@tablet">
-              <label class="_label">Subject:</label>
+              <label for="subject" class="_label">Subject:</label>
               <input class="_input" type="text" name="subject" id="subject">
 
-              <label class="_label">Message:</label>
-              <textarea class="_input _textarea" type="textarea" name="message" id="message"></textarea>
+              <span class="_error" v-if="messageIsValid === true">Required</span>
+              <span class="_error" v-if="messageIsValid === false">Please enter a message</span>
+              <label for="message" class="_label">Message:</label>
+              <textarea class="_input _textarea" :class="messageInputClass" type="textarea" name="message" id="message"></textarea>
 
               <input class="_submit" type="submit" value="Send">
 
@@ -49,10 +54,28 @@
 
           </l-grid>
         </form>
+        
+        <div class="_after-message-wrapper" v-if="$store.state.messageSent === true" ref="afterMessage">
+          <l-grid>
+            <div class="_cell u-3/5@tablet">
+              <h2>Thanks for getting in touch!</h2>
+              <p>I'm not up to much these days so you should hear back from me pretty soon</p>
+            </div>
+            <div class="_cell u-2/5@tablet">
+              <c-button 
+                :onClick="reset"
+                class="_reset-button"
+                type="ghost"
+                icon="envelope">
+                Send another message
+              </c-button>
+            </div>
+          </l-grid>
+        </div>
 
-        <span ref="afterMessage" style="display:none">Done</span>
       </l-wrapper>
     </l-main-content>
+
 
     <section>
       <c-cta-panel
@@ -70,17 +93,22 @@
 <script>
 import cCtaPanel from '~/components/c-cta-panel'
 import cHero from '~/components/c-hero'
+import cButton from '~/components/c-button'
 import lWrapper from '~/components/layout/l-wrapper'
 import lMainContent from '~/components/layout/l-main-content'
 import lGrid from '~/components/layout/l-grid'
 export default {
-  // data: () => {
-  //   return {
-  //   }
-  // },
+  data: () => {
+    return {
+      emailIsValid: true,
+      messageIsValid: true
+      // submitted: false
+    }
+  },
   components: {
     cCtaPanel,
     cHero,
+    cButton,
     lWrapper,
     lGrid,
     lMainContent
@@ -89,13 +117,22 @@ export default {
     formAction: function () {
       return 'https://script.google.com/macros/s/AKfycbwHDqBbMZSYuxCqawuOB2pB8gOO6nZrEKqBzbHg4r9WdfZQ95Gs/exec'
     },
-    formElement: function () {
-      return this.$refs.gForm
+    emailInputClass: function () {
+      return {
+        's-has-error': this.emailIsValid === false
+      }
+    },
+    messageInputClass: function () {
+      return {
+        's-has-error': this.messageIsValid === false
+      }
     }
   },
   methods: {
-    checkSubmitted: function () {
-      if (this.submitted) {}
+    reset: function () {
+      this.$store.commit('setMessageSent', false)
+      this.emailIsValid = true
+      this.messageIsValid = true
     },
     validEmail: function (email) { // see:
       var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
@@ -153,9 +190,14 @@ export default {
       if (this.validateHuman(data.honeypot)) {  // if form is filled, form will not be submitted
         return false
       }
+      if (data.message === '') {  // if form is filled, form will not be submitted
+        this.messageIsValid = false
+        // return false
+      }
       if (!this.validEmail(data.email)) { // if email is not valid show error
-        this.$refs.emailInvalid.style.display = 'block'
-        return false
+        this.scrollUp()
+        this.emailIsValid = false
+        // return false
       } else {
         var url = event.target.action //
         var xhr = new XMLHttpRequest()
@@ -165,23 +207,34 @@ export default {
         xhr.onreadystatechange = function () {
           console.log(xhr.status, xhr.statusText)
           console.log(xhr.responseText)
-          // this.formElement.style.display = 'none' // hide form
-          // this.$refs.afterMessage.style.display = 'block'
-          return
         }
         // url encode form data for sending as post data
         var encoded = Object.keys(data).map(function (k) {
           return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
         }).join('&')
         xhr.send(encoded)
+        this.$store.commit('setMessageSent', true)
+        setTimeout(this.scrollUp, 200)
       }
+    },
+    /**
+      * Programatically scroll to selector using vue-scrollTo
+      * as NUXT has trouble with # urls
+      */
+    scrollUp: function () {
+      var options = {
+        duration: 0,
+        easing: 'linear',
+        offset: -80
+      }
+      /**
+        * In this case c-project-navbar will have commited the current
+        * project's ID to the store on close
+        */
+      var selector = '#' + this.$refs.contentTop.id
+      this.$scrollTo(selector, options)
+      console.log('scrolled to ' + selector)
     }
-    // loaded: function () {
-    //   console.log('contact form submission handler loaded successfully')
-    //   // bind to the submit event of our form
-    //   var form = this.$refs.gForm
-    //   form.addEventListener('submit', handleFormSubmit, false)
-    // }
   }
 }
 
@@ -206,7 +259,6 @@ export default {
 /* Base component class
    ====================================================================== */
 .page-contact {
-  text-align: left;
   padding: $unit-xxl $unit-md;
   @include mq($from: desktop) {
     padding: $unit-xxl;
@@ -215,12 +267,20 @@ export default {
 
 /* --
    ====================================================================== */
+._content-wrapper {
+  text-align: left;
+}
 ._honeypot {
   display: none; /*makes the field not visible to humans*/
 }
 
 ._form {
   text-align: left;
+}
+._error {
+  @include vr($font-body, $font-size-sm);
+  color: $red;
+  float: right;
 }
 
 ._input {
@@ -233,9 +293,15 @@ export default {
     background-color: rgba($neutral-100,.7);
     box-shadow: inset 0 0 0 1px rgba($neutral-00, .3);
   }
+  &.s-has-error {
+    box-shadow: inset 0 0 0 1px rgba($red, 1);
+  }
 }
+
 ._details-cell {
-  padding-right: $unit-md;
+  @include mq($from:tablet) {
+    padding-right: $unit-md;
+  }
 }
 
 ._submit {
@@ -244,7 +310,6 @@ export default {
   padding: $unit-sm;
   background-color: $red;
   cursor: pointer;
-  background: $neutral-100;
   color: $neutral-00;
 }
 

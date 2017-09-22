@@ -11,6 +11,7 @@
 
   .l-main-content {
     padding-top: $unit-xxl;
+    padding-bottom: $unit-xxl;
     // padding-bottom: $unit-xxl;
 
     @include mq($from: tablet) {

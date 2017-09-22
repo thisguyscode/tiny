@@ -14,6 +14,10 @@
     <slot></slot>
   </a>
 
+  <a v-else>
+    <slot></slot>
+  </a>
+
 </template>
 
 <script>

@@ -30,18 +30,7 @@
 
       </section><!--END V-FOR each projectGroup -->
 
-    </l-main-content>
-    
-    <aside>
-      <c-cta-panel
-        mainCtaHeading="Looking to hire an interface designer?"
-        mainCtaBodyText="I’m looking for a full-time job, ideally remote, where I can continue to improve as a digital interface designer"
-        mainCtaButton="contact"
-        subCtaHeading="Or get to know me"
-        subCtaButton="profile">
-      </c-cta-panel>
-    </aside>
-  
+    </l-main-content>  
   </section>
 </template>
 
@@ -51,7 +40,6 @@
   import cHero from '~/components/c-hero'
   import cProjectGroupIntro from '~/components/c-project-group-intro'
   import cProjectOverview from '~/components/c-project-overview'
-  import cCtaPanel from '~/components/c-cta-panel'
   import lWrapper from '~/components/layout/l-wrapper'
   import lMainContent from '~/components/layout/l-main-content'
   import dataProjects from '~/data/projects.json'
@@ -63,7 +51,6 @@
       cHero,
       cProjectGroupIntro,
       cProjectOverview,
-      cCtaPanel,
       lWrapper,
       lMainContent
     },

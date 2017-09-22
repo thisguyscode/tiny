@@ -4,11 +4,15 @@ const store = () => new Vuex.Store({
   state: {
     primaryNavHeight: null,
     projectsArray: [],
-    scrollToSelector: null
+    scrollToSelector: null,
+    messageSent: false
   },
   mutations: {
     updatePrimaryNavHeight: (state, value) => {
       state.primaryNavHeight = value
+    },
+    setMessageSent: (state, boolean) => {
+      state.messageSent = boolean
     },
     setScrollTo: (state, selector) => {
       state.scrollToSelector = selector

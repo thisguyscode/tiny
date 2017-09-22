@@ -83,9 +83,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    // vendor: [
-    //   'webfontloader'
-    // ],
     postcss: [],
     /*
     ** Run ESLINT on save

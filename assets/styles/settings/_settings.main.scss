@@ -82,14 +82,14 @@ $header-primary-height: $header-primary-padding-top + $header-primary-padding-bo
 
 
 // Forms
-$form-label-trailer:			$unit-sm;
+$form-label-trailer:			0;
 $form-field-trailer:			$unit-md;
 
 $form-field-padding-x:		$unit-sm; // Padding right, left.
-$form-field-padding-y:		$unit-sm; // Padding top, bottom.
+$form-field-padding-y:		$unit-xs; // Padding top, bottom.
 
 $form-select-height:			$unit-lg;
-$form-textarea-height:		$unit-xl;
+$form-textarea-height:		$unit-xxl;
 
 $border-radius: 2px;
 $border-radius--large: 8px;

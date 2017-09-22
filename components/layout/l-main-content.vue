@@ -14,7 +14,7 @@
     // padding-bottom: $unit-xxl;
 
     @include mq($from: tablet) {
-      padding-top: $unit-xxl*2;
+      // padding-top: $unit-xxl;
       // padding-bottom: $unit-xxl*2;
     }
 

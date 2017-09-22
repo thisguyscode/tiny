@@ -30,7 +30,8 @@ label {
 input,
 select,
 textarea {
-  @include vr($font-display, $base-font-size);
+  @include vr($font-body, $base-font-size);
+  @include vr-reset;
   appearance: none;
   display: block;
   width: 100%;

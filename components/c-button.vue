@@ -46,7 +46,7 @@ export default {
         return this.onClick
       } else {
         return function () {
-          console.log('do nothing')
+          null
         }
       }
     },

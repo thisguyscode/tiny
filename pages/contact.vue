@@ -140,10 +140,9 @@ export default {
     },
     validateHuman: function (honeypot) {
       if (honeypot) { // if hidden form filled up
-        console.log('Robot Detected!')
         return true
       } else {
-        console.log('Welcome Human!')
+        //
       }
     },
     // get all data in form and return object
@@ -208,8 +207,8 @@ export default {
         // xhr.withCredentials = true
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
         xhr.onreadystatechange = function () {
-          console.log(xhr.status, xhr.statusText)
-          console.log(xhr.responseText)
+          // console.log(xhr.status, xhr.statusText)
+          // console.log(xhr.responseText)
         }
         // url encode form data for sending as post data
         var encoded = Object.keys(data).map(function (k) {
@@ -236,7 +235,6 @@ export default {
         */
       var selector = '#' + this.$refs.contentTop.id
       this.$scrollTo(selector, options)
-      console.log('scrolled to ' + selector)
     }
   }
 }

@@ -38,6 +38,14 @@ module.exports = {
     failedColor: 'red',
     height: '4px'
   },
+  render: {
+    bundleRenderer: {
+      cache: require('lru-cache')({
+        max: 1000,
+        maxAge: 1000 * 60 * 15
+      })
+    }
+  },
   generate: {
     /*
     ** Generate routes from 'linkTo' in project data file

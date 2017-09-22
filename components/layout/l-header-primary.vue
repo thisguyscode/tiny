@@ -10,7 +10,6 @@
 export default {
   mounted () {
     this.$store.commit('updatePrimaryNavHeight', this.$refs.headerPrimary.clientHeight)
-    console.log(this.$store.state.primaryNavHeight)
   }
 }
 </script>

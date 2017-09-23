@@ -181,6 +181,8 @@ export default {
    * Sets the new project's data in this parent component
    */
   beforeRouteUpdate (to, from, next) {
+    /** Block content rendering until new data is loaded */
+    this.ready = false
     this.setProjects()
     next()
   },

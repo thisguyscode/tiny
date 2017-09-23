@@ -162,7 +162,11 @@ export default {
 
       this.currentProject = projectsArray.find(function (item) {
         console.log(currentPath)
-        return '/work/projects/' + item.slug + '/' === currentPath
+        if (currentPath.endsWith('/')) {
+          return '/work/projects/' + item.slug + '/' === currentPath
+        } else {
+          return '/work/projects/' + item.slug === currentPath
+        }
       })
 
       console.log(this.currentProject.color)

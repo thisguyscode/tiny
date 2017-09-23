@@ -161,6 +161,7 @@ export default {
       console.log(projectsArray)
 
       this.currentProject = projectsArray.find(function (item) {
+        console.log(currentPath)
         return '/work/projects/' + item.slug === currentPath
       })
 

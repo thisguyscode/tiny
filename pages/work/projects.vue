@@ -191,9 +191,10 @@ export default {
   },
   /** Get the projects and store then set the local data on initial mount */
   mounted () {
-    console.log(dataProjects.projectGroups[0].projects[0])
+    console.log(this.currentProject)
     this.getProjects()
     this.setProjects()
+    console.log(this.currentProject)
   }
 }
 </script>

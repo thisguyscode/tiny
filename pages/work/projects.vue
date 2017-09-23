@@ -71,6 +71,7 @@ export default {
       currentProject: dataProjects.projectGroups[0].projects[0],
       nextProject: dataProjects.projectGroups[0].projects[0],
       previousProject: dataProjects.projectGroups[0].projects[0],
+      projectsArray: [],
       ready: false
     }
   },
@@ -143,7 +144,7 @@ export default {
         }
       }
       /** Commit this array to the store */
-      this.$store.commit('setProjectsArray', projectsArray)
+      this.projectsArray = projectsArray
     },
     /**
      * Set the current, previous and next projects as objects in this componenents data
@@ -152,7 +153,7 @@ export default {
     setProjects: function () {
       /** Match the current path with the project.slug to set currentProject  */
       var currentPath = this.$route.path
-      var projectsArray = this.$store.state.projectsArray
+      var projectsArray = this.projectsArray
       this.currentProject = projectsArray.find(function (item) {
         return '/work/projects/' + item.slug === currentPath
       })
@@ -191,10 +192,8 @@ export default {
   },
   /** Get the projects and store then set the local data on initial mount */
   mounted () {
-    console.log(this.currentProject)
     this.getProjects()
     this.setProjects()
-    console.log(this.currentProject)
   }
 }
 </script>

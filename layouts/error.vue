@@ -1,8 +1,10 @@
 <template>
   <div class="u-box u-box--xxl">
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
-    <h1 v-else>An error occurred</h1>
-    <nuxt-link to="/">Home page</nuxt-link>
+    <h1 class="error-code">{{ error.statusCode }}</h1>
+      <div class="error-wrapper-message">
+        <h2 class="error-message">{{ error.message }}</h2>
+      </div>
+      <p v-if="error.statusCode === 404"><nuxt-link class="error-link" to="/">Back to the home page</nuxt-link></p>
   </div>
 </template>
 

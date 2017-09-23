@@ -152,12 +152,17 @@ export default {
      */
     setProjects: function () {
       /** Match the current path with the project.slug to set currentProject  */
-      console.log('setProjects called + array =' + this.projectsArray)
+      console.log(this.currentProject.color)
+      console.log(this.currentProject.slug)
+
       var currentPath = this.$route.path
       var projectsArray = this.projectsArray
       this.currentProject = projectsArray.find(function (item) {
         return '/work/projects/' + item.slug === currentPath
       })
+
+      console.log(this.currentProject.color)
+      console.log(this.currentProject.slug)
 
       /** Get the index of the next project in projectsArray */
       if (projectsArray.indexOf(this.currentProject) === projectsArray.length - 1) {
@@ -178,7 +183,6 @@ export default {
       this.previousProject = projectsArray[previousProjectIndex]
 
       /** Resolve the v-if that renders the page content */
-      console.log('ready set true')
       this.ready = true
     }
   },

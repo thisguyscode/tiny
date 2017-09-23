@@ -6,7 +6,9 @@
 
 <script>
 export default {
-
+  mounted () {
+    console.log('ratings-slideout mounted')
+  }
 }
 </script>
 

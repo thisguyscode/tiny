@@ -162,7 +162,7 @@ export default {
 
       this.currentProject = projectsArray.find(function (item) {
         console.log(currentPath)
-        return '/work/projects/' + item.slug === currentPath
+        return '/work/projects/' + item.slug + '/' === currentPath
       })
 
       console.log(this.currentProject.color)

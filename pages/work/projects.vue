@@ -68,13 +68,16 @@ export default {
   /** Initialize reactive data values */
   data: () => {
     return {
-      currentProject: null,
-      nextProject: null,
-      previousProject: null,
+      currentProject: dataProjects.projectGroups[0].projects[0],
+      nextProject: dataProjects.projectGroups[0].projects[0],
+      previousProject: dataProjects.projectGroups[0].projects[0],
       ready: false
     }
   },
   computed: {
+    // nullData: function () {
+    //   return dataProjects.projectGroups[0].projects[0]
+    // },
     /** Pass project color to setContrast() to provide perceived contrast */
     textClass: function () {
       return {
@@ -188,6 +191,7 @@ export default {
   },
   /** Get the projects and store then set the local data on initial mount */
   mounted () {
+    console.log(dataProjects.projectGroups[0].projects[0])
     this.getProjects()
     this.setProjects()
   }

@@ -75,6 +75,7 @@ export default {
     }
   },
   computed: {
+    /** Setting nullData object to solve refresh bug */
     nullData: function () {
       return {
         color: '',

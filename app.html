@@ -1,17 +1,10 @@
 <!DOCTYPE html>
-<!--
-  Hard coding in .wf-loading for no flash when
-  loading font files via webfontloader.
-  webfontloader will remove wf-loading when completed
--->
 <html class="wf-loading" {{ HTML_ATTRS }}>
   <head>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
     {{ APP }}
-    
-    <!-- Web fonts loaded async -->
     <script>
       WebFontConfig = {
         google: {
@@ -21,12 +14,13 @@
       };
 
       (function(d) {
-        var wf = d.createElement('script'), s = d.scripts[0];
+        var wf = d.createElement('script'),
+        s = d.scripts[d.scripts.length - 1];
         wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.async = true;
         wf.defer = true;
         s.parentNode.insertBefore(wf, s);
       })(document);
    </script>
-
   </body>
 </html>

@@ -68,13 +68,19 @@ export default {
   /** Initialize reactive data values */
   data: () => {
     return {
-      currentProject: null,
-      nextProject: null,
-      previousProject: null,
+      currentProject: this.nullData,
+      nextProject: this.nullData,
+      previousProject: this.nullData,
       ready: false
     }
   },
   computed: {
+    nullData: function () {
+      return {
+        color: '',
+        slug: ''
+      }
+    },
     /** Pass project color to setContrast() to provide perceived contrast */
     textClass: function () {
       return {

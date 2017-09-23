@@ -152,6 +152,7 @@ export default {
      */
     setProjects: function () {
       /** Match the current path with the project.slug to set currentProject  */
+      console.log('setProjects called + array =' + this.projectsArray)
       var currentPath = this.$route.path
       var projectsArray = this.projectsArray
       this.currentProject = projectsArray.find(function (item) {
@@ -177,6 +178,7 @@ export default {
       this.previousProject = projectsArray[previousProjectIndex]
 
       /** Resolve the v-if that renders the page content */
+      console.log('ready set true')
       this.ready = true
     }
   },
@@ -192,6 +194,7 @@ export default {
   },
   /** Get the projects and store then set the local data on initial mount */
   mounted () {
+    console.log('mounted called')
     this.getProjects()
     this.setProjects()
   }

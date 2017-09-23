@@ -157,6 +157,9 @@ export default {
 
       var currentPath = this.$route.path
       var projectsArray = this.projectsArray
+
+      console.log(projectsArray)
+
       this.currentProject = projectsArray.find(function (item) {
         return '/work/projects/' + item.slug === currentPath
       })

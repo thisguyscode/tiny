@@ -5,7 +5,7 @@
         <!-- PREVIOUS -->
         <div class="_cell u-1/2@mobile">
           <nuxt-link
-            :to="previous.slug"
+            :to="'/work/projects/' + previous.slug"
             class="
               _panel
               _panel-previous
@@ -53,7 +53,7 @@
         <!-- NEXT -->
         <div class="_cell u-1/2@mobile">
           <nuxt-link
-            :to="next.slug"
+            :to="'/work/projects/' + next.slug"
             class="
               _panel
               _panel-next

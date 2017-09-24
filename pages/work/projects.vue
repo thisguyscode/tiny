@@ -202,13 +202,15 @@ export default {
     }
   },
   beforeRouteUpdate (to, from, next) {
-    if (to === '/work/projects/' + this.previousProject.slug + '/' || '/work/projects/' + this.previousProject.slug) {
-      this.heroColor = this.previousProject.color
-      console.log(this.heroColor)
-    }
-    if (to === '/work/projects/' + this.nextProject.slug + '/' || '/work/projects/' + this.nextProject.slug) {
-      this.heroColor = this.nextProject.color
-    }
+    var path = to.path
+    var project = this.projectsArray.find(function (item) {
+      if (path.endsWith('/')) {
+        return '/work/projects/' + item.slug + '/' === path
+      } else {
+        return '/work/projects/' + item.slug === path
+      }
+    })
+    this.heroColor = project.color
     // this.$store.commit('saveColor', this.currentProject.color)
     setTimeout(function () {
       next()

@@ -224,7 +224,7 @@ export default {
         }).join('&')
         xhr.send(encoded)
         this.$store.commit('setMessageSent', true)
-        setTimeout(this.scrollUp(this.$refs.contentTop), 200)
+        setTimeout(this.scrollUp, 200)
       }
     },
     /**
@@ -237,11 +237,11 @@ export default {
         easing: 'linear',
         offset: -160
       }
-      /**
-        * In this case c-project-navbar will have commited the current
-        * project's ID to the store on close
-        */
-      var selector = '#' + element.id
+      if (element) {
+        var selector = '#' + element.id
+      } else {
+        selector = '#' + this.$refs.contentTop.id
+      }
       this.$scrollTo(selector, options)
     }
   }

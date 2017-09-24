@@ -6,7 +6,8 @@
     <!-- Hero -->
     <c-project-hero
       :project="currentProject"
-      :color="heroColor">
+      :color="heroColor"
+      :transitionEnd="transitionEnd">
     </c-project-hero>
 
     <!-- Project Nav -->
@@ -75,6 +76,7 @@ export default {
   data: () => {
     return {
       heroColor: '',
+      transitionEnd: false,
       currentProject: {
         slug: '',
         color: ''
@@ -130,7 +132,7 @@ export default {
           return '/work/projects/' + item.slug === currentPath
         }
       })
-
+      this.heroContrastingColor = this.currentProject.contrastingColor
       this.heroColor = this.currentProject.color
 
       /** Get the index of the next project in projectsArray */
@@ -161,16 +163,20 @@ export default {
         return '/work/projects/' + item.slug === path
       }
     })
+    // this.heroContrastingColor = project.contrastingColor
     this.heroColor = project.color
     // this.$store.commit('saveColor', this.currentProject.color)
+    this.transitionEnd = false
     setTimeout(function () {
+      // this.transitionEnd = true
       next()
-    }, 100)
+    }, 150)
   },
   /** Get the projects and store then set the local data on initial mount */
   mounted () {
     this.projectsArray = this.$store.state.projectsArray
     this.setProjects()
+    this.transitionEnd = true
   }
 }
 </script>

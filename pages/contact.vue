@@ -224,7 +224,7 @@ export default {
         }).join('&')
         xhr.send(encoded)
         this.$store.commit('setMessageSent', true)
-        setTimeout(this.scrollUp, 200)
+        setTimeout(this.scrollUp(this.$refs.contentTop), 200)
       }
     },
     /**

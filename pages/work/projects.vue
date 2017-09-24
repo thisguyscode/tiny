@@ -6,7 +6,8 @@
     <!-- Hero -->
     <c-project-hero
       :project="currentProject"
-      :color="heroColor">
+      :color="heroColor"
+      :transitionEnd="transitionEnd">
     </c-project-hero>
 
     <!-- Project Nav -->
@@ -57,7 +58,6 @@ import cProjectNavbar from '~/components/c-project-navbar'
 import cProjectNavPanel from '~/components/c-project-nav-panel'
 import cProjectHero from '~/components/c-project-hero'
 import cIcon from '~/components/c-icon'
-import dataProjects from '~/data/projects.json'
 
 export default {
   scrollToTop: true,
@@ -76,6 +76,7 @@ export default {
   data: () => {
     return {
       heroColor: '',
+      transitionEnd: false,
       currentProject: {
         slug: '',
         color: ''
@@ -111,54 +112,6 @@ export default {
     }
   },
   methods: {
-    /** Convert the #hex color code in ~/data/projects.json to an rgb value (as array) */
-    hexToRgb: function (hex) {
-      hex = hex.replace('#', '')
-      var r = parseInt(hex.length === 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2), 16)
-      var g = parseInt(hex.length === 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4), 16)
-      var b = parseInt(hex.length === 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6), 16)
-      var rgb = [r, g, b]
-      return rgb
-    },
-    /**
-     * Get the rgb array from hexToRgb and apply perceptual brightness calculations
-     * Then return string of 'dark' or 'light' for contrasting color
-     */
-    setContrast: function (bgColor) {
-      var rgb = this.hexToRgb(bgColor)
-      var o = Math.round((
-        (parseInt(rgb[0]) * 299) +
-        (parseInt(rgb[1]) * 587) +
-        (parseInt(rgb[2]) * 114)) / 1000)
-      var textColor = (o > 125) ? 'dark' : 'light'
-      return textColor
-    },
-    getProjects: function () {
-      /** Create a flat array of all the projects */
-      var projectGroups = dataProjects.projectGroups
-      var projectsArray = []
-      for (var projectGroup in projectGroups) {
-        var projects = projectGroups[projectGroup].projects
-        for (var project in projects) {
-          /**
-           * Add the new properties .group and .groupLink to each project
-           * from their parent projectGroup
-           */
-          projects[project].group = projectGroups[projectGroup].name
-          projects[project].groupLink = projectGroups[projectGroup].link
-          /**
-           * Add the contrasting color to the array object for convenience
-           */
-          projects[project].contrastingColor = this.setContrast(projects[project].color)
-          /**
-           * Push to projectsArray (local variable)
-           */
-          projectsArray.push(projects[project])
-        }
-      }
-      /** Commit this array to the store */
-      this.projectsArray = projectsArray
-    },
     /**
      * Set the current, previous and next projects as objects in this componenents data
      * Could be shortened/optimized/split-up fosho
@@ -179,7 +132,7 @@ export default {
           return '/work/projects/' + item.slug === currentPath
         }
       })
-
+      this.heroContrastingColor = this.currentProject.contrastingColor
       this.heroColor = this.currentProject.color
 
       /** Get the index of the next project in projectsArray */
@@ -210,16 +163,20 @@ export default {
         return '/work/projects/' + item.slug === path
       }
     })
+    // this.heroContrastingColor = project.contrastingColor
     this.heroColor = project.color
     // this.$store.commit('saveColor', this.currentProject.color)
+    this.transitionEnd = false
     setTimeout(function () {
+      // this.transitionEnd = true
       next()
-    }, 100)
+    }, 150)
   },
   /** Get the projects and store then set the local data on initial mount */
   mounted () {
-    this.getProjects()
+    this.projectsArray = this.$store.state.projectsArray
     this.setProjects()
+    this.transitionEnd = true
   }
 }
 </script>

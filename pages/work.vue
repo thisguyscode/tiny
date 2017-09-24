@@ -22,6 +22,13 @@
   export default {
     components: {
       cCtaPanel
+    },
+    mounted () {
+      this.$store.dispatch('getProjects')
+    },
+    fetch ({store}) {
+      // getProjects action returns a Promise since it's defined as an async function
+      return store.dispatch('getProjects')
     }
   }
 </script>

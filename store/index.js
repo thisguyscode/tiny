@@ -1,4 +1,5 @@
 import Vuex from 'vuex'
+import getProjectsArray from '~/utils/getProjectsArray'
 
 const store = () => new Vuex.Store({
   state: {
@@ -8,7 +9,18 @@ const store = () => new Vuex.Store({
     messageSent: false,
     savedColor: '#999'
   },
+  actions: {
+    async getProjects ({commit}) {
+      const projects = await getProjectsArray()
+      commit('setProjectsArray', projects)
+      console.log('project got')
+    }
+  },
   mutations: {
+    setProjectsArray: (state, array) => {
+      state.projectsArray = array
+      console.log('projects set')
+    },
     saveColor: (state, color) => {
       state.savedColor = color
     },
@@ -23,9 +35,6 @@ const store = () => new Vuex.Store({
     },
     removeScrollTo: (state) => {
       state.scrollToSelector = null
-    },
-    setProjectsArray: (state, array) => {
-      state.projectsArray = array
     }
   }
 })

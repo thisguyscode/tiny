@@ -1,16 +1,21 @@
 <template>
   <div class="_hero" :style="'background-color: ' + color">
+
+<transition name="slide">
+<div v-if="transitionEnd">
+
     <l-wrapper>
       <l-grid class="_hero-grid">
 
+        
         <!-- Hero text panel -->
         <div class="_hero-text-cell _cell u-2/5@tablet">
-            <div class="_hero-text-wrapper">
-              
-              <transition name="fade">
+          <div class="_hero-text-wrapper">
+            <transition name="slide">
+              <div class="transition-wrapper" v-if="transitionEnd">
                 <!-- Group -->
                 <f-link
-                  v-if="project.group"
+                  v-if="transitionEnd"
                   class="_project-group"
                   :class="textClass"
                   :style="'color:' + color"
@@ -18,35 +23,36 @@
                   {{ project.group }}
                   <c-icon class="_icon" name="external-link"></c-icon>
                 </f-link>
-              </transition>
-
-              <transition name="fade">
                 <!-- Title -->
                 <h1
-                  v-if="project.name"
+                  v-if="transitionEnd"
                   class="_project-title"
                   :class="textClass"
                   :style="'color:' + color">
                   {{ project.name }}
                 </h1>
-              </transition>
-
-            </div>
+              </div>
+            </transition>
+          </div>
         </div><!--END Hero text panel -->
         
         <!-- Hero image panel -->
         <div class="_hero-image-cell _cell u-3/5@tablet" :class="heroImageCellClass">
           <div class="_hero-image-reference" :class="imageWrapperClass">
             <div class="_hero-image-wrapper">
-              <transition name="fade">
-                <img v-if="project.imgSrc" class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + project.imgSrc)">
-              </transition>
+              <img v-if="project.imgSrc" class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + project.imgSrc)">
             </div>
           </div>
         </div><!--END Hero image panel -->
 
+
       </l-grid>
     </l-wrapper>
+
+
+    </div>
+    </transition>
+
   </div><!--END Hero -->
   
 </template>
@@ -57,11 +63,6 @@
   import lWrapper from '~/components/layout/l-wrapper'
   import cIcon from '~/components/c-icon'
   export default {
-    data: () => {
-      return {
-        mounted: false
-      }
-    },
     components: {
       lGrid,
       fLink,
@@ -76,6 +77,9 @@
       color: {
         type: String,
         required: true
+      },
+      transitionEnd: {
+        type: Boolean
       }
     },
     computed: {
@@ -100,8 +104,6 @@
           '--cover': this.project.imgClass === 'cover'
         }
       }
-    },
-    mounted () {
     }
   }
 </script>
@@ -114,12 +116,18 @@
   // Import variables and global settings
   @import "~assets/styles/imports";
 
-  ._transition {
-    transition:
-      color $transition-duration $transition-easing
-    ;
+  .slide-leave-active {
+    transition: transform .2s
   }
+  .slide-enter-active {
+    transition: transform .2s
+  }
+  .slide-enter, .slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    transform: translateX(-200%);
+  }
+
   ._hero {
+    min-height: $unit-xxl*3;
     width: 100%;
     overflow: hidden;
     z-index: 90;
@@ -294,7 +302,7 @@
 
   ._project-group,
   ._project-title {
-    transition: color $transition-duration $transition-easing;
+    transition: background-color $transition-duration $transition-easing, color $transition-duration $transition-easing;
     &._text-dark {
       background-color: $darkest;
     }

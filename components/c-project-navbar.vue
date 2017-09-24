@@ -6,7 +6,7 @@
           
           <!-- PREVIOUS -->
           <nuxt-link
-            :to="previous.slug"
+            :to="'/work/projects/' + previous.slug"
             class="
               _previous-control-wrapper
               _cell
@@ -19,7 +19,7 @@
           
           <!-- NEXT -->
           <nuxt-link
-            :to="next.slug"
+            :to="'/work/projects/' + next.slug"
             class="
               _next-control-wrapper
               _cell

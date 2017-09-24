@@ -1,7 +1,7 @@
 <template>
   
   <!--  'ready' will be set true once data is received -->
-  <section v-if="ready">
+  <section>
         
     <!-- Hero -->
     <c-project-hero
@@ -68,11 +68,19 @@ export default {
   /** Initialize reactive data values */
   data: () => {
     return {
-      currentProject: dataProjects.projectGroups[0].projects[0],
-      nextProject: dataProjects.projectGroups[0].projects[0],
-      previousProject: dataProjects.projectGroups[0].projects[0],
-      projectsArray: [],
-      ready: false
+      currentProject: {
+        slug: '',
+        color: ''
+      },
+      nextProject: {
+        slug: '',
+        color: ''
+      },
+      previousProject: {
+        slug: '',
+        color: ''
+      },
+      projectsArray: []
     }
   },
   computed: {
@@ -206,7 +214,7 @@ export default {
   },
   /** Get the projects and store then set the local data on initial mount */
   mounted () {
-    console.log('mounted called')
+    console.log('mounted')
     this.getProjects()
     this.setProjects()
   }

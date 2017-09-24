@@ -80,6 +80,16 @@
   // Import variables and global settings
   @import "~assets/styles/imports";
 
+  $transition-duration: 1s;
+  $transition-easing: ease;
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity $transition-duration $transition-easing
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0
+  }
+
   .l-affix {
   }
 

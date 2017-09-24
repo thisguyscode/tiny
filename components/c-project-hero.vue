@@ -1,40 +1,46 @@
 <template>
-  <div class="_hero" :style="'background-color: ' + project.color">
+  <div class="_hero" :style="backgroundStyle">
     <l-wrapper>
       <l-grid class="_hero-grid">
 
         <!-- Hero text panel -->
         <div class="_hero-text-cell _cell u-2/5@tablet">
-          <div class="_hero-text-wrapper">
-            
-            <!-- Group -->
-            <f-link
-              class="_project-group"
-              :class="textClass"
-              :style="'color:' + project.color"
-              :externalLink="project.groupLink">
-              {{ project.group }}
-              <c-icon class="_icon" name="external-link"></c-icon>
-            </f-link>
+            <div class="_hero-text-wrapper">
+              
+              <transition name="fade">
+                <!-- Group -->
+                <f-link
+                  v-if="project.group"
+                  class="_project-group"
+                  :class="textClass"
+                  :style="linkStyle"
+                  :externalLink="project.groupLink">
+                  {{ project.group }}
+                  <c-icon class="_icon" name="external-link"></c-icon>
+                </f-link>
+              </transition>
 
-            <!-- Title -->
-            <h1
-              class="_project-title"
-              :class="textClass"
-              :style="
-                'color:' + project.color"
-              >
-              {{ project.name }}
-            </h1>
+              <transition name="fade">
+                <!-- Title -->
+                <h1
+                  v-if="project.name"
+                  class="_project-title"
+                  :class="textClass"
+                  :style="'color:' + project.color">
+                  {{ project.name }}
+                </h1>
+              </transition>
 
-          </div>
+            </div>
         </div><!--END Hero text panel -->
         
         <!-- Hero image panel -->
         <div class="_hero-image-cell _cell u-3/5@tablet" :class="heroImageCellClass">
-          <div class="_hero-image-reference" :class="imageWrapperClass" :style="'background-color:' + project.color">
+          <div class="_hero-image-reference" :class="imageWrapperClass">
             <div class="_hero-image-wrapper">
-              <img class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + project.imgSrc)">
+              <transition name="fade">
+                <img v-if="project.imgSrc" class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + project.imgSrc)">
+              </transition>
             </div>
           </div>
         </div><!--END Hero image panel -->
@@ -64,6 +70,16 @@
       }
     },
     computed: {
+      backgroundStyle: function () {
+        if (this.project.color) {
+          return 'background-color:' + this.project.color
+        }
+      },
+      linkStyle: function () {
+        if (this.project.color) {
+          return 'color:' + this.project.color
+        }
+      },
       textClass: function () {
         return {
           '_text-light': this.project.contrastingColor === 'light',
@@ -91,8 +107,18 @@
 
 <style lang="scss" scoped>
 
+ $transition-duration: 1s;
+ $transition-easing: ease;
+
   // Import variables and global settings
   @import "~assets/styles/imports";
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity $transition-duration $transition-easing
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0
+  }
 
   ._hero {
     width: 100%;
@@ -101,6 +127,7 @@
     position: relative;
     text-align: left;
     background-color: rgba($darkest, .5);
+    transition: background-color $transition-duration $transition-easing;
   }
 
   ._hero-grid {
@@ -253,7 +280,6 @@
     margin-bottom: $heading-trailer;
     text-decoration: none;
     // opacity: .4;
-    color: $neutral-00;
     cursor: pointer;
 
     @include mq($from: desktop) {

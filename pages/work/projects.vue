@@ -30,10 +30,16 @@
     </l-main-content>
 
     <!-- Bottom Nav -->
-    <c-project-nav-panels
-      :next="nextProject"
-      :previous="previousProject">
-    </c-project-nav-panels>
+    <nav class="c-project-nav-panels">
+      <l-grid>
+        <div class="_cell u-1/2@mobile">
+          <c-project-nav-panel :project="previousProject" direction="previous"></c-project-nav-panel>
+        </div>
+        <div class="_cell u-1/2@mobile">
+          <c-project-nav-panel :project="nextProject" direction="next"></c-project-nav-panel>
+        </div>
+      </l-grid>
+    </nav>
     <!--END Bottom Nav  -->
 
   </section>
@@ -47,7 +53,7 @@ import lWrapper from '~/components/layout/l-wrapper'
 import lMainContent from '~/components/layout/l-main-content'
 import lAffix from '~/components/layout/l-affix'
 import cProjectNavbar from '~/components/c-project-navbar'
-import cProjectNavPanels from '~/components/c-project-nav-panels'
+import cProjectNavPanel from '~/components/c-project-nav-panel'
 import cProjectHero from '~/components/c-project-hero'
 import cIcon from '~/components/c-icon'
 import dataProjects from '~/data/projects.json'
@@ -62,7 +68,7 @@ export default {
     lAffix,
     cIcon,
     cProjectNavbar,
-    cProjectNavPanels,
+    cProjectNavPanel,
     cProjectHero
   },
   /** Initialize reactive data values */
@@ -84,9 +90,6 @@ export default {
     }
   },
   computed: {
-    // nullData: function () {
-    //   return dataProjects.projectGroups[0].projects[0]
-    // },
     /** Pass project color to setContrast() to provide perceived contrast */
     textClass: function () {
       return {
@@ -158,27 +161,22 @@ export default {
      * Set the current, previous and next projects as objects in this componenents data
      * Could be shortened/optimized/split-up fosho
      */
-    setProjects: function () {
+    setProjects: function (to) {
       /** Match the current path with the project.slug to set currentProject  */
-      console.log(this.currentProject.color)
-      console.log(this.currentProject.slug)
-
-      var currentPath = this.$route.path
+      if (to) {
+        var currentPath = to.path
+      } else {
+        currentPath = this.$route.path
+      }
       var projectsArray = this.projectsArray
 
-      console.log(projectsArray)
-
       this.currentProject = projectsArray.find(function (item) {
-        console.log(currentPath)
         if (currentPath.endsWith('/')) {
           return '/work/projects/' + item.slug + '/' === currentPath
         } else {
           return '/work/projects/' + item.slug === currentPath
         }
       })
-
-      console.log(this.currentProject.color)
-      console.log(this.currentProject.slug)
 
       /** Get the index of the next project in projectsArray */
       if (projectsArray.indexOf(this.currentProject) === projectsArray.length - 1) {
@@ -197,9 +195,6 @@ export default {
       /** Get the objects of previous and next projects by index in projectsArray */
       this.nextProject = projectsArray[nextProjectIndex]
       this.previousProject = projectsArray[previousProjectIndex]
-
-      /** Resolve the v-if that renders the page content */
-      this.ready = true
     }
   },
   /**
@@ -207,10 +202,10 @@ export default {
    * Sets the new project's data in this parent component
    */
   beforeRouteUpdate (to, from, next) {
-    /** Block content rendering until new data is loaded */
-    this.ready = false
-    this.setProjects()
+    this.setProjects(to)
+    console.log(this.previousProject)
     next()
+    console.log(this.previousProject)
   },
   /** Get the projects and store then set the local data on initial mount */
   mounted () {

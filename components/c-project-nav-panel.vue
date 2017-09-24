@@ -14,6 +14,7 @@
       "
     >
       <img
+        v-if="project.imgSrc"
         class="_image _image-previous"
         :class="imgClass"
         :src="require('~/assets/images/' + project.imgSrc)"

@@ -100,8 +100,6 @@
           '--cover': this.project.imgClass === 'cover'
         }
       }
-    },
-    mounted () {
     }
   }
 </script>

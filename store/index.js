@@ -1,4 +1,28 @@
 import Vuex from 'vuex'
+import dataProjects from '~/data/projects.json'
+
+function getProjectsArray () {
+  /** Create a flat array of all the projects */
+  var projectGroups = dataProjects.projectGroups
+  var projectsArray = []
+  for (var projectGroup in projectGroups) {
+    var projects = projectGroups[projectGroup].projects
+    for (var project in projects) {
+      /**
+       * Add the new properties .group and .groupLink to each project
+       * from their parent projectGroup
+       */
+      projects[project].group = projectGroups[projectGroup].name
+      projects[project].groupLink = projectGroups[projectGroup].link
+      /**
+       * Push to projectsArray (local variable)
+       */
+      projectsArray.push(projects[project])
+    }
+  }
+  /** Commit this array to the store */
+  return projectsArray
+}
 
 const store = () => new Vuex.Store({
   state: {
@@ -8,7 +32,17 @@ const store = () => new Vuex.Store({
     messageSent: false,
     savedColor: '#999'
   },
+  actions: {
+    async getProjects ({commit}) {
+      const projects = await getProjectsArray()
+      commit('setProjectsArray', projects)
+      console.log('project gotten')
+    }
+  },
   mutations: {
+    setProjectsArray: (state, array) => {
+      state.projectsArray = array
+    },
     saveColor: (state, color) => {
       state.savedColor = color
     },
@@ -23,9 +57,6 @@ const store = () => new Vuex.Store({
     },
     removeScrollTo: (state) => {
       state.scrollToSelector = null
-    },
-    setProjectsArray: (state, array) => {
-      state.projectsArray = array
     }
   }
 })

@@ -32,7 +32,7 @@
               <span class="_error" v-if="emailIsValid === true">Required</span>
               <span class="_error" v-if="emailIsValid === false">Please enter a valid email address</span>
               <label for="email" class="_label">Email:</label>
-              <input class="_input" :class="emailInputClass" type="text" name="email" id="email">
+              <input class="_input" ref="email" :class="emailInputClass" type="text" name="email" id="email">
 
               <label for="company" class="_label">Company:</label>
               <input class="_input" type="text" name="company" id="company">
@@ -46,7 +46,7 @@
               <span class="_error" v-if="messageIsValid === true">Required</span>
               <span class="_error" v-if="messageIsValid === false">Please enter a message</span>
               <label for="message" class="_label">Message:</label>
-              <textarea class="_input _textarea" :class="messageInputClass" type="textarea" name="message" id="message"></textarea>
+              <textarea class="_input _textarea" ref="message" :class="messageInputClass" type="textarea" name="message" id="message"></textarea>
 
               <input class="_submit" type="submit" value="Send">
 
@@ -193,12 +193,20 @@ export default {
       }
       if (messageBlank) {
         this.messageIsValid = false
+      } else {
+        this.messageIsValid = true
       }
       if (emailInvalid) { // if email is not valid show error
         this.emailIsValid = false
+      } else {
+        this.emailIsValid = true
       }
       if (emailInvalid || messageBlank) {
-        setTimeout(this.scrollUp, 200)
+        if (emailInvalid) {
+          setTimeout(this.scrollUp(this.$refs.email), 200)
+        } else if (messageBlank) {
+          setTimeout(this.scrollUp(this.$refs.message), 200)
+        }
         return false
       } else {
         var url = event.target.action //
@@ -223,17 +231,17 @@ export default {
       * Programatically scroll to selector using vue-scrollTo
       * as NUXT has trouble with # urls
       */
-    scrollUp: function () {
+    scrollUp: function (element) {
       var options = {
         duration: 0,
         easing: 'linear',
-        offset: -80
+        offset: -160
       }
       /**
         * In this case c-project-navbar will have commited the current
         * project's ID to the store on close
         */
-      var selector = '#' + this.$refs.contentTop.id
+      var selector = '#' + element.id
       this.$scrollTo(selector, options)
     }
   }

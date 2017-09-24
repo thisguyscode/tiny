@@ -5,7 +5,8 @@
         
     <!-- Hero -->
     <c-project-hero
-      :project="currentProject">
+      :project="currentProject"
+      :color="heroColor">
     </c-project-hero>
 
     <!-- Project Nav -->
@@ -74,6 +75,7 @@ export default {
   /** Initialize reactive data values */
   data: () => {
     return {
+      heroColor: '',
       currentProject: {
         slug: '',
         color: ''
@@ -178,6 +180,8 @@ export default {
         }
       })
 
+      this.heroColor = this.currentProject.color
+
       /** Get the index of the next project in projectsArray */
       if (projectsArray.indexOf(this.currentProject) === projectsArray.length - 1) {
         var nextProjectIndex = 0
@@ -197,19 +201,21 @@ export default {
       this.previousProject = projectsArray[previousProjectIndex]
     }
   },
-  /**
-   * Router guard - called before route is updated
-   * Sets the new project's data in this parent component
-   */
   beforeRouteUpdate (to, from, next) {
-    this.setProjects(to)
-    console.log(this.previousProject)
-    next()
-    console.log(this.previousProject)
+    if (to === '/work/projects/' + this.previousProject.slug + '/' || '/work/projects/' + this.previousProject.slug) {
+      this.heroColor = this.previousProject.color
+      console.log(this.heroColor)
+    }
+    if (to === '/work/projects/' + this.nextProject.slug + '/' || '/work/projects/' + this.nextProject.slug) {
+      this.heroColor = this.nextProject.color
+    }
+    // this.$store.commit('saveColor', this.currentProject.color)
+    setTimeout(function () {
+      next()
+    }, 100)
   },
   /** Get the projects and store then set the local data on initial mount */
   mounted () {
-    console.log('mounted')
     this.getProjects()
     this.setProjects()
   }

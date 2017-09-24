@@ -1,5 +1,5 @@
 <template>
-  <div class="_hero" :style="backgroundStyle">
+  <div class="_hero" :style="'background-color: ' + color">
     <l-wrapper>
       <l-grid class="_hero-grid">
 
@@ -13,7 +13,7 @@
                   v-if="project.group"
                   class="_project-group"
                   :class="textClass"
-                  :style="linkStyle"
+                  :style="'color:' + color"
                   :externalLink="project.groupLink">
                   {{ project.group }}
                   <c-icon class="_icon" name="external-link"></c-icon>
@@ -26,7 +26,7 @@
                   v-if="project.name"
                   class="_project-title"
                   :class="textClass"
-                  :style="'color:' + project.color">
+                  :style="'color:' + color">
                   {{ project.name }}
                 </h1>
               </transition>
@@ -57,6 +57,11 @@
   import lWrapper from '~/components/layout/l-wrapper'
   import cIcon from '~/components/c-icon'
   export default {
+    data: () => {
+      return {
+        mounted: false
+      }
+    },
     components: {
       lGrid,
       fLink,
@@ -67,19 +72,13 @@
       project: {
         type: Object,
         required: true
+      },
+      color: {
+        type: String,
+        required: true
       }
     },
     computed: {
-      backgroundStyle: function () {
-        if (this.project.color) {
-          return 'background-color:' + this.project.color
-        }
-      },
-      linkStyle: function () {
-        if (this.project.color) {
-          return 'color:' + this.project.color
-        }
-      },
       textClass: function () {
         return {
           '_text-light': this.project.contrastingColor === 'light',
@@ -101,25 +100,25 @@
           '--cover': this.project.imgClass === 'cover'
         }
       }
+    },
+    mounted () {
     }
   }
 </script>
 
 <style lang="scss" scoped>
 
- $transition-duration: 1s;
+ $transition-duration: .2s;
  $transition-easing: ease;
 
   // Import variables and global settings
   @import "~assets/styles/imports";
 
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity $transition-duration $transition-easing
+  ._transition {
+    transition:
+      color $transition-duration $transition-easing
+    ;
   }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0
-  }
-
   ._hero {
     width: 100%;
     overflow: hidden;
@@ -129,6 +128,7 @@
     background-color: rgba($darkest, .5);
     transition: background-color $transition-duration $transition-easing;
   }
+
 
   ._hero-grid {
     // height: $unit-xxl*4;
@@ -294,6 +294,7 @@
 
   ._project-group,
   ._project-title {
+    transition: color $transition-duration $transition-easing;
     &._text-dark {
       background-color: $darkest;
     }

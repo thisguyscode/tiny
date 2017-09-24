@@ -5,9 +5,13 @@ const store = () => new Vuex.Store({
     primaryNavHeight: null,
     projectsArray: [],
     scrollToSelector: null,
-    messageSent: false
+    messageSent: false,
+    savedColor: '#999'
   },
   mutations: {
+    saveColor: (state, color) => {
+      state.savedColor = color
+    },
     updatePrimaryNavHeight: (state, value) => {
       state.primaryNavHeight = value
     },

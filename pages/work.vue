@@ -1,7 +1,7 @@
 <template>
   <section class="p-work">
     
-    <nuxt-child></nuxt-child>
+    <nuxt-child :key="$route.path"></nuxt-child>
     
     <aside>
       <c-cta-panel

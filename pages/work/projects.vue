@@ -172,10 +172,6 @@ export default {
     this.projectsArray = this.$store.state.projectsArray
     this.setProjects()
   }
-  // fetch ({store}) {
-  //   // getProjects action returns a Promise since it's defined as an async function
-  //   // return store.dispatch('getProjects')
-  // }
 }
 </script>
 

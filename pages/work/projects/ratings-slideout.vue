@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Ratings Slideout</h1>
+    <h1>Ratings Slideout XX</h1>
     <l-wrapper>
       <c-testimonials :testimonials="testimonials"></c-testimonials>
     </l-wrapper>

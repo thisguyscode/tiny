@@ -1,7 +1,12 @@
 <template>
-  <section class="l-grid" :class="baseClassObject">
-    <slot></slot>
-  </section>  
+  <span>
+    <ul v-if="list" class="l-grid u-list-bare" :class="baseClassObject">
+      <slot></slot>
+    </ul>
+    <div v-else-if="!list" class="l-grid" :class="baseClassObject">
+      <slot></slot>
+    </div>
+  </span>
 </template>
 
 <script>
@@ -22,6 +27,10 @@
       distribute: {
         type: String,
         required: false
+      },
+      list: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {

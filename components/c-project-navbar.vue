@@ -1,62 +1,62 @@
 <template>
   <nav class="c-project-navbar" :style="'background-color:' + color" :class="baseClass">
-      <l-wrapper>
-        <l-grid>
-          
-          <!-- PREVIOUS -->
-          <nuxt-link
-            :to="'/work/projects/' + previous.slug"
-            :class="textClass"
-            class="
-              _previous-control-wrapper
-              _cell
-              u-1/3 u-1/5@tablet
-            "
-          >
-            <c-icon class="_icon" name="arrow-left"></c-icon>
-            <span>
-              Previous <span class="_string-project">project</span>
-            </span>
-          </nuxt-link><!--END previous -->
-          
-          <!-- NEXT -->
-          <nuxt-link
-            :to="'/work/projects/' + next.slug"
-            :class="textClass"
-            class="
-              _next-control-wrapper
-              _cell
-              u-1/3 u-1/5@tablet
-            "
-          >
-            <span>
-              Next <span class="_string-project">project</span>
-            </span>
-            <c-icon class="_icon" name="arrow-right"></c-icon>
-          </nuxt-link><!--END next -->
-          
-          <!-- SPACER -->
-          <div class="u-2/5@tablet"></div>
+    <l-wrapper>
+      <l-grid>
+        
+        <!-- PREVIOUS -->
+        <nuxt-link
+          :to="'/work/projects/' + previous.slug"
+          :class="textClass"
+          class="
+            _previous-control-wrapper
+            _cell
+            u-1/3 u-1/5@tablet
+          "
+        >
+          <c-icon class="_icon" name="arrow-left"></c-icon>
+          <span>
+            Previous <span class="_string-project">project</span>
+          </span>
+        </nuxt-link><!--END previous -->
+        
+        <!-- NEXT -->
+        <nuxt-link
+          :to="'/work/projects/' + next.slug"
+          :class="textClass"
+          class="
+            _next-control-wrapper
+            _cell
+            u-1/3 u-1/5@tablet
+          "
+        >
+          <span>
+            Next <span class="_string-project">project</span>
+          </span>
+          <c-icon class="_icon" name="arrow-right"></c-icon>
+        </nuxt-link><!--END next -->
+        
+        <!-- SPACER -->
+        <div class="u-2/5@tablet"></div>
 
-          <!-- CLOSE -->
-          <nuxt-link
-            @click.native="setScrollTo"
-            :class="textClass"
-            :to="'/work'"
-            class="
-              _close-control-wrapper
-              _cell
-              u-1/3 u-1/5@tablet
-            "
-          >
-            <span>Close</span>
-            <c-icon class="_icon" name="close"></c-icon>
-          </nuxt-link><!--END close -->
+        <!-- CLOSE -->
+        <nuxt-link
+          @click.native="setScrollTo"
+          :class="textClass"
+          :to="'/work'"
+          class="
+            _close-control-wrapper
+            _cell
+            u-1/3 u-1/5@tablet
+          "
+        >
+          <span>Close</span>
+          <c-icon class="_icon" name="close"></c-icon>
+        </nuxt-link><!--END close -->
 
-          <div class="_cell u-0  u-2/5@tablet"></div>
-          <div class="_cell u-1/3  u-1/5@tablet"></div>
-        </l-grid>
-      </l-wrapper>
+        <div class="_cell u-0  u-2/5@tablet"></div>
+        <div class="_cell u-1/3  u-1/5@tablet"></div>
+      </l-grid>
+    </l-wrapper>
   </nav>
 </template>
 

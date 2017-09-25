@@ -1,24 +1,21 @@
 <template>
   <div class="_hero" :style="'background-color: ' + color">
 
-<transition name="slide">
-<div v-if="transitionEnd">
-
     <l-wrapper>
       <l-grid class="_hero-grid">
 
-        
         <!-- Hero text panel -->
         <div class="_hero-text-cell _cell u-2/5@tablet">
           <div class="_hero-text-wrapper">
-            <transition name="slide">
-              <div class="transition-wrapper" v-if="transitionEnd">
+            
+            <transition name="slide-from-left">
+              <div v-if="transitionEnd" :style="'color:' + color">
+
                 <!-- Group -->
                 <f-link
                   v-if="transitionEnd"
                   class="_project-group"
                   :class="textClass"
-                  :style="'color:' + color"
                   :externalLink="project.groupLink">
                   {{ project.group }}
                   <c-icon class="_icon" name="external-link"></c-icon>
@@ -27,12 +24,13 @@
                 <h1
                   v-if="transitionEnd"
                   class="_project-title"
-                  :class="textClass"
-                  :style="'color:' + color">
+                  :class="textClass">
                   {{ project.name }}
                 </h1>
+
               </div>
             </transition>
+
           </div>
         </div><!--END Hero text panel -->
         
@@ -40,19 +38,18 @@
         <div class="_hero-image-cell _cell u-3/5@tablet" :class="heroImageCellClass">
           <div class="_hero-image-reference" :class="imageWrapperClass">
             <div class="_hero-image-wrapper">
-              <img v-if="project.imgSrc" class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + project.imgSrc)">
+              <transition name="slide-from-right">
+                <!-- <div v-if="project.imgSrc"> -->
+                  <img v-if="project.imgSrc && transitionEnd" class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + project.imgSrc)">
+                <!-- </div> -->
+              </transition>
             </div>
           </div>
-        </div><!--END Hero image panel -->
+        </div>
 
 
       </l-grid>
     </l-wrapper>
-
-
-    </div>
-    </transition>
-
   </div><!--END Hero -->
   
 </template>
@@ -115,16 +112,6 @@
 
   // Import variables and global settings
   @import "~assets/styles/imports";
-
-  .slide-leave-active {
-    transition: transform .2s
-  }
-  .slide-enter-active {
-    transition: transform .2s
-  }
-  .slide-enter, .slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    transform: translateX(-200%);
-  }
 
   ._hero {
     min-height: $unit-xxl*3;
@@ -287,6 +274,7 @@
     white-space: nowrap;
     margin-bottom: $heading-trailer;
     text-decoration: none;
+    color: inherit;
     // opacity: .4;
     cursor: pointer;
 

@@ -1,45 +1,49 @@
 <template>
   <div class="c-project-details" :style="'border-bottom: 1px solid ' + color">
 
-    <transition name="slide">
-      <div v-if="transitionEnd">
+    <l-wrapper>
+      
+      <div class="_heading-wrapper" @click="handleDetails" :class="{'active': showDetails}">
+        <span class="_heading">Project details</span>
+        <span class="_heading-trigger" v-if="showDetails">
+          <span class="_heading-trigger-text">Hide</span>
+          <c-icon class="_heading-trigger-icon" name="chevron-up"></c-icon>
+        </span>
+        <span v-if="!showDetails" class="_heading-trigger">
+          <span class="_heading-trigger-text">Show</span>
+          <c-icon class="_heading-trigger-icon" name="chevron-down"></c-icon>
+        </span>
+      </div>
+      
+      <div class="_grid-wrapper" :class="{ 'visible': showDetails }">
+        <l-grid>
 
-
-        <l-wrapper>
           
-          <div class="_heading-wrapper" @click="handleDetails" :class="{'active': showDetails}">
-            <span class="_heading">Project details</span>
-            <span class="_heading-trigger" v-if="showDetails">
-              <span class="_heading-trigger-text">Hide</span>
-              <c-icon class="_heading-trigger-icon" name="chevron-up"></c-icon>
-            </span>
-            <span v-if="!showDetails" class="_heading-trigger">
-              <span class="_heading-trigger-text">Show</span>
-              <c-icon class="_heading-trigger-icon" name="chevron-down"></c-icon>
-            </span>
-          </div>
-          
-          <div class="_grid-wrapper" :class="{ 'visible': showDetails }">
-            <l-grid>
 
-              <div class="_objective-cell _cell u-2/5@tablet">
+          <div class="_objective-cell _cell u-2/5@tablet">
+            <transition name="fade">
+              <div v-if="transitionEnd">
                 <h4>Objective</h4>
                 <p>{{ project.objective }}</p>
               </div>
+            </transition>
+          </div>
 
-              <div class="_cell u-3/5@tablet">
+          <div class="_cell u-3/5@tablet">
+            <transition name="fade">
+              <div v-if="transitionEnd">
                 <l-grid>
                   <div class="_list-column _cell u-1/3@tablet">
-                    <l-grid>
-                      <div class="_group _cell u-2/5@mobile u-1/1@tablet">
-                        <h4>Date</h4>
-                        <p class="_item">{{ project.date }}</p>
-                      </div>
-                      <div class="_group _cell u-2/5@mobile u-1/1@tablet">
-                        <h4>Role</h4>
-                        <p class="_item">{{ project.role }}</p>
-                      </div>
-                    </l-grid>
+                        <l-grid>
+                          <div class="_group _cell u-2/5@mobile u-1/1@tablet">
+                            <h4>Date</h4>
+                            <p class="_item">{{ project.date }}</p>
+                          </div>
+                          <div class="_group _cell u-2/5@mobile u-1/1@tablet">
+                            <h4>Role</h4>
+                            <p class="_item">{{ project.role }}</p>
+                          </div>
+                        </l-grid>
                   </div>
                   <div class="_list-column _cell u-2/5@mobile u-1/3@tablet">
                     <h4>Skills</h4>
@@ -59,13 +63,11 @@
                   </div>
                 </l-grid>
               </div>
-            </l-grid>
+            </transition>
           </div>
-        </l-wrapper>
-
-
+        </l-grid>
       </div>
-    </transition>
+    </l-wrapper>
   </div><!--END Hero -->
   
 </template>
@@ -141,16 +143,6 @@
   // Import variables and global settings
   @import "~assets/styles/imports";
 
-  .slide-leave-active {
-    transition: transform .2s
-  }
-  .slide-enter-active {
-    transition: transform .2s
-  }
-  .slide-enter, .slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    transform: translateX(-200%);
-  }
-
   .c-project-details {
     text-align: left;
     padding-top: $unit-md;
@@ -158,7 +150,7 @@
       padding-top: $unit-lg;
     }
     // padding-bottom: $unit-md;
-    background-color: rgba($neutral-100, .5);
+    background-color: rgba($neutral-100, .3);
   }
   ._heading-trigger-text {
     margin-right: $unit-xs;

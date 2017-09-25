@@ -1,7 +1,7 @@
 <template>
   
   <!--  'ready' will be set true once data is received -->
-  <section>
+  <section id="top">
         
     <!-- Hero -->
     <c-project-hero
@@ -179,11 +179,15 @@ export default {
     // this.heroContrastingColor = project.contrastingColor
     this.projectColor = project.color
     // this.$store.commit('saveColor', this.currentProject.color)
-    this.transitionEnd = false
+    this.$scrollTo('#top')
+    var self = this
+    setTimeout(function () {
+      self.transitionEnd = false
+    }, 10)
     setTimeout(function () {
       // this.transitionEnd = true
       next()
-    }, 150)
+    }, 210)
   },
   /** Get the projects and store then set the local data on initial mount */
   mounted () {
@@ -198,12 +202,21 @@ export default {
   // Import variables and global settings
   @import "~assets/styles/imports";
 
-  // ._sticky-nav {
-  //   opacity: 1;
-  //   transition: opacity .1s ease;
-  //   &.affix-bottom {
-  //     opacity: 0;
-  //   }
-  // }
+  .slide-from-right-leave-active,
+  .slide-from-left-leave-active,
+  .slide-from-right-enter-active,
+  .slide-from-left-enter-active {
+    transition: transform .2s
+  }
+  
+  .slide-from-right-enter,
+  .slide-from-right-leave-to {
+    transform: translateX(200%);
+  }
+
+  .slide-from-left-enter,
+  .slide-from-left-leave-to {
+    transform: translateX(-200%);
+  }
 
 </style>

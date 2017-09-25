@@ -1,6 +1,6 @@
 <template>
 
-  <nuxt-link v-if="relativeLink" :to="relativeLink">
+  <nuxt-link class="f-link" v-if="relativeLink" :to="relativeLink">
     <slot></slot>
   </nuxt-link>
   
@@ -46,5 +46,6 @@ export default {
 <style lang="scss" scoped>
   .f-link {
     cursor: pointer;
+    color: inherit;
   }
 </style>

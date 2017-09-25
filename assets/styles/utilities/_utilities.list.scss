@@ -1,9 +1,10 @@
 .u-list-bare {
-  display: block;
+  @include vr-reset;
+  display: inline-block;
   list-style: none;
   padding-left: 0;
   
   > li {
-    // @include vr-reset;
+    @include vr-reset;
   }
 }

@@ -6,7 +6,7 @@
     <!-- Hero -->
     <c-project-hero
       :project="currentProject"
-      :color="heroColor"
+      :color="projectColor"
       :transitionEnd="transitionEnd">
     </c-project-hero>
 
@@ -14,22 +14,33 @@
     <l-affix
       :z="999"
       fullWidth
-      :className="'_sticky-nav'"
-      :relativeElementSelector="'#main'"
+      className="_sticky-nav"
+      :relativeElementSelector="'#sticky-trigger'"
       :offset="{ top: 128, bottom: 0 }"
     >
       <c-project-navbar
         :previous="previousProject"
         :next="nextProject"
-        :current="currentProject">
+        :current="currentProject"
+        :color="projectColor">
       </c-project-navbar>
     </l-affix>
-      
-    <!-- Main project content from ./projects -->
-    <l-main-content id="main">
-      <nuxt-child></nuxt-child>
-      <div style="height: 1000px;"></div>
-    </l-main-content>
+
+    <div id="sticky-trigger">
+
+      <c-project-details
+        :project="currentProject"
+        :color="projectColor"
+        :transitionEnd="transitionEnd">
+      </c-project-details>
+        
+      <!-- Main project content from ./projects -->
+      <l-main-content>
+        <nuxt-child></nuxt-child>
+        <div style="height: 1000px;"></div>
+      </l-main-content>
+    
+    </div>
 
     <!-- Bottom Nav -->
     <nav class="c-project-nav-panels">
@@ -57,6 +68,7 @@ import lAffix from '~/components/layout/l-affix'
 import cProjectNavbar from '~/components/c-project-navbar'
 import cProjectNavPanel from '~/components/c-project-nav-panel'
 import cProjectHero from '~/components/c-project-hero'
+import cProjectDetails from '~/components/c-project-details'
 import cIcon from '~/components/c-icon'
 
 export default {
@@ -70,12 +82,13 @@ export default {
     cIcon,
     cProjectNavbar,
     cProjectNavPanel,
-    cProjectHero
+    cProjectHero,
+    cProjectDetails
   },
   /** Initialize reactive data values */
   data: () => {
     return {
-      heroColor: '',
+      projectColor: '',
       transitionEnd: false,
       currentProject: {
         slug: '',
@@ -133,7 +146,7 @@ export default {
         }
       })
       this.heroContrastingColor = this.currentProject.contrastingColor
-      this.heroColor = this.currentProject.color
+      this.projectColor = this.currentProject.color
 
       /** Get the index of the next project in projectsArray */
       if (projectsArray.indexOf(this.currentProject) === projectsArray.length - 1) {
@@ -164,7 +177,7 @@ export default {
       }
     })
     // this.heroContrastingColor = project.contrastingColor
-    this.heroColor = project.color
+    this.projectColor = project.color
     // this.$store.commit('saveColor', this.currentProject.color)
     this.transitionEnd = false
     setTimeout(function () {

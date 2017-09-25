@@ -4,6 +4,7 @@ import getProjectsArray from '~/utils/getProjectsArray'
 const store = () => new Vuex.Store({
   state: {
     primaryNavHeight: null,
+    showDetails: false,
     projectsArray: [],
     scrollToSelector: null,
     messageSent: false,
@@ -20,6 +21,9 @@ const store = () => new Vuex.Store({
     setProjectsArray: (state, array) => {
       state.projectsArray = array
       console.log('projects set')
+    },
+    toggleDetails: (state) => {
+      state.showDetails = !state.showDetails
     },
     saveColor: (state, color) => {
       state.savedColor = color

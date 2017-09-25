@@ -26,7 +26,8 @@
         class="_label"
         :class="labelClass">
         <c-icon v-if="direction === 'previous'" class="_icon" name="arrow-left"></c-icon>
-        <span>Previous <span class="_string-project">project</span></span>
+        <span v-if="direction === 'previous'">Previous <span class="_string-project">project</span></span>
+        <span v-if="direction === 'next'">Next <span class="_string-project">project</span></span>
         <c-icon v-if="direction === 'next'" class="_icon" name="arrow-right"></c-icon>
       </div>
 

@@ -157,7 +157,7 @@
   }
 
   ._hero-image-reference {
-    margin-right: -$page-padding-mobile;
+    // margin-right: -$page-padding-mobile;
     height: 100%;
     position: absolute;
     top: 0;
@@ -166,17 +166,17 @@
     left: 0;
     
     @include mq($until: tablet) {
-      margin-left: -$page-padding-mobile;
+      // margin-left: -$page-padding-mobile;
     }
     @include mq($from: tablet) {
       
-      margin-right: -$page-padding-tablet
+      // margin-right: -$page-padding-tablet
     }
     @include mq($from: desktop) {
-      margin-right: -$page-padding-desktop
+      // margin-right: -$page-padding-desktop
     }
     @include mq($from: wide) {
-      margin-right: -$page-padding-wide
+      // margin-right: -$page-padding-wide
     }
     
     &.--padded {

@@ -5,6 +5,7 @@
   "author": "Jamie Mitchell",
   "private": true,
   "dependencies": {
+    "@nuxtjs/pwa": "^0.2.1",
     "autoprefixer": "^7.1.4",
     "bluebird": "^3.5.0",
     "css-loader": "^0.28.7",

@@ -79,6 +79,10 @@ module.exports = {
       ssr: false
     }
   ],
+  modules: [
+    // Simple usage
+    '@nuxtjs/pwa'
+  ],
   /*
   ** Build configuration
   */

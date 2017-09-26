@@ -65,11 +65,13 @@ h3,
 h4,
 h5,
 h6 {
+  font-weight: $font-weight-semi;
   margin-bottom: $heading-trailer;
 }
 
 p {
   @include vr($font-body, $font-size-md);
+  font-weight: $font-weight-regular;
   padding-bottom: $paragraph-trailer;
 
   @include mq($from: tablet) {

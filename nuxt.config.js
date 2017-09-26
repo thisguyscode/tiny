@@ -40,10 +40,13 @@ module.exports = {
   },
   render: {
     bundleRenderer: {
-      cache: require('lru-cache')({
-        max: 1000,
-        maxAge: 1000 * 60 * 15
-      })
+      // shouldPreload: (file, type) => {
+      //   return ['script', 'style', 'font'].includes(type)
+      // }
+      // cache: require('lru-cache')({
+      //   max: 1000,
+      //   maxAge: 1000 * 60 * 15
+      // })
     }
   },
   generate: {

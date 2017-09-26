@@ -95,7 +95,7 @@ cite {
 code {
   @include vr($font-mono, $base-font-size);
   display: block;
-  padding: 0 0 $paragraph-trailer;
+  // padding: 0 0 $paragraph-trailer;
   pre {
     margin: 0;
     font-family: $font-mono;

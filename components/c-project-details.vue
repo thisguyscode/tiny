@@ -34,16 +34,16 @@
               <div v-if="transitionEnd">
                 <l-grid>
                   <div class="_list-column _cell u-1/3@tablet">
-                        <l-grid>
-                          <div class="_group _cell u-2/5@mobile u-1/1@tablet">
-                            <h4>Date</h4>
-                            <p class="_item">{{ project.date }}</p>
-                          </div>
-                          <div class="_group _cell u-2/5@mobile u-1/1@tablet">
-                            <h4>Role</h4>
-                            <p class="_item">{{ project.role }}</p>
-                          </div>
-                        </l-grid>
+                    <l-grid>
+                      <div class="_group _cell u-2/5@mobile u-1/1@tablet">
+                        <h4>Date</h4>
+                        <p class="_item">{{ project.date }}</p>
+                      </div>
+                      <div class="_group _cell u-2/5@mobile u-1/1@tablet">
+                        <h4>Role</h4>
+                        <p class="_item">{{ project.role }}</p>
+                      </div>
+                    </l-grid>
                   </div>
                   <div class="_list-column _cell u-2/5@mobile u-1/3@tablet">
                     <h4>Skills</h4>

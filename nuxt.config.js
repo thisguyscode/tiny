@@ -65,6 +65,7 @@ module.exports = {
   },
   plugins: [
     '~/plugins/vue-scrollto.js',
+    '~/plugins/vue-highlight.js',
     '~/plugins/no-ssr.js',
     {
       src: '~/plugins/global-events.js',

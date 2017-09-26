@@ -2,6 +2,14 @@
   <div>
     <h1>Ratings Slideout XX</h1>
     <l-wrapper>
+      
+      <c-code :languages="['html']">
+        <pre>
+          <div class="test"></div>
+          <section></section>
+        </pre>
+      </c-code>
+
       <c-testimonials :testimonials="testimonials"></c-testimonials>
     </l-wrapper>
   </div>
@@ -9,10 +17,12 @@
 
 <script>
 import cTestimonials from '~/components/c-testimonials'
+import cCode from '~/components/c-code'
 import lWrapper from '~/components/layout/l-wrapper'
 export default {
   components: {
     cTestimonials,
+    cCode,
     lWrapper
   },
   data: () => {
@@ -41,10 +51,11 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    codeData: function () {
+      return require('html-loader!~/data/code/test')
+    }
   }
 }
 </script>
-
-<style>
-
-</style>

@@ -3,7 +3,7 @@
     <h1>Ratings Slideout XX</h1>
     <l-wrapper>
       
-      <c-code :languages="['html']">
+      <c-code :languages="['xml']">
         <pre>
           <div class="test"></div>
           <section></section>
@@ -61,5 +61,4 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '~highlight.js/styles/github.css';
 </style>

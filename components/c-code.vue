@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import hljs from 'highlight.js'
+import hljs from '~/utils/highlightLanguages.js'
 export default {
   data: () => {
     return {
@@ -79,6 +79,7 @@ export default {
   
   // Import variables and global settings
   @import "~assets/styles/imports";
+  @import '~highlight.js/styles/github.css';
 
   .c-code {
     color: $neutral-100;

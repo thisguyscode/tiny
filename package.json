@@ -30,6 +30,7 @@
     "webpack-dev-middleware": "^1.12.0"
   },
   "scripts": {
+    "analyze": "nuxt build --analyze",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "dev": "nuxt",
     "build": "nuxt build",

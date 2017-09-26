@@ -12,3 +12,6 @@ npm-debug.log
 
 # Nuxt generate
 dist
+
+# Service worker
+static/sw.js

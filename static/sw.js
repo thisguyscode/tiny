@@ -19,8 +19,8 @@ importScripts('workbox-sw.prod.v1.3.0.js');
  */
 const fileManifest = [
   {
-    "url": "/_nuxt/app.1b5203e816425c2a271c.js",
-    "revision": "3b769c309e995e619493cac8739af413"
+    "url": "/_nuxt/app.30671bf1f47b6f0db7a4.js",
+    "revision": "104c89894a18f3c9124df6c937e745a9"
   },
   {
     "url": "/_nuxt/common.c3de9ec769dd63a5c405.js",
@@ -35,8 +35,8 @@ const fileManifest = [
     "revision": "eb4cd6efb10f046174e697994b0db016"
   },
   {
-    "url": "/_nuxt/manifest.67a5121f2ccd837af8b4.js",
-    "revision": "ddbda4da9cab1f4904c972a98a91ea3d"
+    "url": "/_nuxt/manifest.3ea8749114b4972d1fed.js",
+    "revision": "e4bd851b3911d6857ff44a749d9a8f77"
   },
   {
     "url": "/_nuxt/pages/contact.5bebc2210e5730d325ec.js",
@@ -75,8 +75,8 @@ const fileManifest = [
     "revision": "0a49e1a90a109f69ec924b606875baa9"
   },
   {
-    "url": "/_nuxt/pages/work/projects/ratings-slideout.0b09c7bf6d046baa5d34.js",
-    "revision": "33b31cb078d6487ba821f2692c2c6978"
+    "url": "/_nuxt/pages/work/projects/ratings-slideout.539b67d8d010628ae989.js",
+    "revision": "ee568d66a9a7764dfee5d9cc6ed5fa95"
   },
   {
     "url": "/_nuxt/pages/work/projects/scss-colors.2d957c45ad4373759c07.js",

@@ -59,3 +59,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  @import '~/node_modules/highlight.js/styles/github.css';
+</style>

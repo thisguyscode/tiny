@@ -105,7 +105,7 @@
       }
     },
     mounted () {
-      console.log(this.current.contrastingColor)
+      // console.log(this.current.contrastingColor)
     }
   }
 </script>

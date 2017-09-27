@@ -44,7 +44,6 @@ const getProjectsArray = () => {
        */
       // projects[-1] = 5
       projectsArray.push(projects[ix])
-      console.log(projectsArray)
     }
   }
   return projectsArray

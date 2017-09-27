@@ -102,7 +102,13 @@ module.exports = {
           sourceMap: true
         }
       })
+      /** Remove sourcemap from es6-promise on client */
       if (ctx.isClient) {
+        config.module.rules.push({
+          test: /\.js$/,
+          include: /node_modules\/es6-promise/,
+          loader: 'strip-sourcemap-loader'
+        })
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,

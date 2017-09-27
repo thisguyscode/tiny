@@ -89,7 +89,7 @@ export default {
   data: () => {
     return {
       projectColor: '',
-      transitionEnd: false,
+      transitionEnd: true,
       currentProject: {
         slug: '',
         color: ''
@@ -105,95 +105,104 @@ export default {
       projectsArray: []
     }
   },
-  computed: {
-    /** Pass project color to setContrast() to provide perceived contrast */
-    textClass: function () {
-      return {
-        '_text-light': this.currentProject.contrastingColor === 'light',
-        '_text-dark': this.currentProject.contrastingColor === 'dark'
-      }
-    },
-    imageWrapperClass: function () {
-      return {
-        '--padded': this.currentProject.imgWrapperClass === 'padded'
-      }
-    },
-    imageClass: function () {
-      return {
-        '--cover': this.currentProject.imgClass === 'cover'
-      }
-    }
-  },
   methods: {
     /**
      * Set the current, previous and next projects as objects in this componenents data
      * Could be shortened/optimized/split-up fosho
      */
     setProjects: function (to) {
+      var projectsArray = this.$store.state.projectsArray
       /** Match the current path with the project.slug to set currentProject  */
       if (to) {
         var currentPath = to.path
       } else {
         currentPath = this.$route.path
       }
-      var projectsArray = this.projectsArray
 
-      this.currentProject = projectsArray.find(function (item) {
+      var currentProject = projectsArray.find(function (item) {
         if (currentPath.endsWith('/')) {
           return '/work/projects/' + item.slug + '/' === currentPath
         } else {
           return '/work/projects/' + item.slug === currentPath
         }
       })
-      this.heroContrastingColor = this.currentProject.contrastingColor
-      this.projectColor = this.currentProject.color
 
       /** Get the index of the next project in projectsArray */
-      if (projectsArray.indexOf(this.currentProject) === projectsArray.length - 1) {
+      if (projectsArray.indexOf(currentProject) === projectsArray.length - 1) {
         var nextProjectIndex = 0
       } else {
-        nextProjectIndex = projectsArray.indexOf(this.currentProject) + 1
+        nextProjectIndex = projectsArray.indexOf(currentProject) + 1
       }
 
       /** Get the index of the previous project in projectsArray */
-      if (projectsArray.indexOf(this.currentProject) === 0) {
+      if (projectsArray.indexOf(currentProject) === 0) {
         var previousProjectIndex = projectsArray.length - 1
       } else {
-        previousProjectIndex = projectsArray.indexOf(this.currentProject) - 1
+        previousProjectIndex = projectsArray.indexOf(currentProject) - 1
       }
-
+      this.projectColor = currentProject.color
       /** Get the objects of previous and next projects by index in projectsArray */
+      this.currentProject = currentProject
       this.nextProject = projectsArray[nextProjectIndex]
       this.previousProject = projectsArray[previousProjectIndex]
+    },
+    getNextColor: function (to) {
+      var currentPath = to.path
+      var nextProject = this.$store.state.projectsArray.find(function (item) {
+        if (currentPath.endsWith('/')) {
+          return '/work/projects/' + item.slug + '/' === currentPath
+        } else {
+          return '/work/projects/' + item.slug === currentPath
+        }
+      })
+      return nextProject.color
     }
   },
-  beforeRouteUpdate (to, from, next) {
-    var path = to.path
-    var project = this.projectsArray.find(function (item) {
-      if (path.endsWith('/')) {
-        return '/work/projects/' + item.slug + '/' === path
-      } else {
-        return '/work/projects/' + item.slug === path
-      }
-    })
-    // this.heroContrastingColor = project.contrastingColor
-    this.projectColor = project.color
-    // this.$store.commit('saveColor', this.currentProject.color)
-    this.$scrollTo('#top')
-    var self = this
-    setTimeout(function () {
-      self.transitionEnd = false
-    }, 10)
-    setTimeout(function () {
-      // this.transitionEnd = true
-      next()
-    }, 210)
+  watch: {
+    '$route' (to, from) {
+      var self = this
+      self.$scrollTo('#top')
+      self.projectColor = self.getNextColor(to)
+      setTimeout(function () {
+        self.transitionEnd = false
+      }, 50)
+      setTimeout(function () {
+        self.setProjects(to)
+        self.transitionEnd = true
+      }, 200)
+      setTimeout(function () {
+        self.transitionEnd = true
+      }, 200)
+    }
   },
+  // beforeRouteUpdate (to, from, next) {
+  //   // var path = to.path
+  //   // var project = this.projectsArray.find(function (item) {
+  //   //   if (path.endsWith('/')) {
+  //   //     return '/work/projects/' + item.slug + '/' === path
+  //   //   } else {
+  //   //     return '/work/projects/' + item.slug === path
+  //   //   }
+  //   // })
+  //   // this.heroContrastingColor = project.contrastingColor
+  //   // this.projectColor = project.color
+  //   // this.$store.commit('saveColor', this.currentProject.color)
+  //   this.$scrollTo('#top')
+  //   var self = this
+  //   setTimeout(function () {
+  //     self.setProjects(to)
+  //     self.transitionEnd = false
+  //   }, 10)
+  //   setTimeout(function () {
+  //     next()
+  //     self.transitionEnd = true
+  //     // self.setProjects(to)
+  //   }, 180)
+  // },
   /** Get the projects and store then set the local data on initial mount */
   mounted () {
-    this.projectsArray = this.$store.state.projectsArray
+    console.log('mounted')
     this.setProjects()
-    this.transitionEnd = true
   }
 }
 </script>

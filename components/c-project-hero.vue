@@ -6,14 +6,13 @@
 
         <!-- Hero text panel -->
         <div class="_hero-text-cell _cell u-2/5@tablet">
-          <div class="_hero-text-wrapper">
+          <div class="_hero-text-wrapper" :style="'color:' + color">
             
             <transition name="slide-from-left">
-              <div v-if="transitionEnd" :style="'color:' + color">
+              <div v-if="transitionEnd">
 
                 <!-- Group -->
                 <f-link
-                  v-if="transitionEnd"
                   class="_project-group"
                   :class="textClass"
                   :externalLink="project.groupLink">
@@ -22,7 +21,6 @@
                 </f-link>
                 <!-- Title -->
                 <h1
-                  v-if="transitionEnd"
                   class="_project-title"
                   :class="textClass">
                   {{ project.name }}
@@ -66,6 +64,14 @@
       lWrapper,
       cIcon
     },
+    data: () => {
+      return {
+        textClass: '',
+        imageClass: '',
+        imageWrapperClass: '',
+        heroImageCellClass: ''
+      }
+    },
     props: {
       project: {
         type: Object,
@@ -79,28 +85,49 @@
         type: Boolean
       }
     },
-    computed: {
-      textClass: function () {
-        return {
-          '_text-light': this.project.contrastingColor === 'light',
-          '_text-dark': this.project.contrastingColor === 'dark'
+    methods: {
+      setClasses: function (project) {
+        this.setTextClass(project)
+        this.setImageClass(project)
+        this.setImageWrapperClass(project)
+        this.setHeroImageCellClass(project)
+      },
+      setTextClass: function (project) {
+        this.textClass = {
+          '_text-light': project.contrastingColor === 'light',
+          '_text-dark': project.contrastingColor === 'dark'
         }
       },
-      imageWrapperClass: function () {
-        return {
-          '--padded': this.project.imgWrapperClass === 'padded'
+      setImageWrapperClass: function (project) {
+        this.imageWrapperClass = {
+          '--padded': project.imgWrapperClass === 'padded'
         }
       },
-      imageClass: function () {
-        return {
-          '--cover': this.project.imgClass === 'cover'
+      setImageClass: function (project) {
+        this.imageClass = {
+          '--cover': project.imgClass === 'cover'
         }
       },
-      heroImageCellClass: function () {
-        return {
-          '--cover': this.project.imgClass === 'cover'
+      setHeroImageCellClass: function (project) {
+        this.heroImageCellClass = {
+          '--cover': project.imgClass === 'cover'
         }
       }
+    },
+    watch: {
+      '$route' (to, from) {
+        var self = this
+        setTimeout(function () {
+          self.setClasses(self.project)
+        }, 200)
+      }
+    },
+    mounted () {
+      console.log('hero-mounted')
+      var self = this
+      setTimeout(function () {
+        self.setClasses(self.project)
+      }, 200)
     }
   }
 </script>
@@ -220,6 +247,7 @@
 
 
   ._hero-text-wrapper {
+    transition: color .2s ease;
     padding-top: 0;
     padding-bottom: $page-padding-mobile;
     height: 100%;

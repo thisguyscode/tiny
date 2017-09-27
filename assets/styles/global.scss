@@ -27,15 +27,15 @@
 @import "./utilities/utilities.responsive";
 
 // Webfontloader classes
-.wf-loading { 
-  opacity: 0;
-  visibility: hidden;
-}
-.wf-active {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity .7s ease
-}
+// .wf-loading { 
+//   opacity: 0;
+//   visibility: hidden;
+// }
+// .wf-active {
+//   opacity: 1;
+//   visibility: visible;
+//   transition: opacity .7s ease
+// }
 
 .slide-from-right-enter-active,
 .slide-from-left-enter-active {
@@ -43,7 +43,7 @@
 }
 .slide-from-left-leave-active,
 .slide-from-right-leave-active {
-  transition: transform .2s ease-in-out, opacity .2s ease-in-out, color .2s ease-in-out;
+  transition: transform .18s ease-in-out, opacity .18s ease-in-out, color .18s ease-in-out;
 }
 
 .slide-from-right-enter,
@@ -65,7 +65,7 @@
 
 .fade-leave-active,
 .fade-leave-active {
-  transition: opacity .2s ease-in-out;
+  transition: opacity .18s ease-in-out;
 }
 
 .fade-enter,

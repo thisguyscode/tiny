@@ -14,13 +14,11 @@ const store = () => new Vuex.Store({
     async getProjects ({commit}) {
       const projects = await getProjectsArray()
       commit('setProjectsArray', projects)
-      console.log('project got')
     }
   },
   mutations: {
     setProjectsArray: (state, array) => {
       state.projectsArray = array
-      console.log('projects set')
     },
     toggleDetails: (state) => {
       state.showDetails = !state.showDetails

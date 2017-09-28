@@ -6,8 +6,9 @@
         <!-- PREVIOUS -->
         <nuxt-link
           :to="'/work/projects/' + previous.slug"
-          :class="textClass"
+          :class="linkClass"
           class="
+            _link
             _previous-control-wrapper
             _cell
             u-1/3 u-1/5@tablet
@@ -22,8 +23,9 @@
         <!-- NEXT -->
         <nuxt-link
           :to="'/work/projects/' + next.slug"
-          :class="textClass"
+          :class="linkClass"
           class="
+            _link
             _next-control-wrapper
             _cell
             u-1/3 u-1/5@tablet
@@ -41,9 +43,10 @@
         <!-- CLOSE -->
         <nuxt-link
           @click.native="setScrollTo"
-          :class="textClass"
+          :class="linkClass"
           :to="'/work'"
           class="
+            _link
             _close-control-wrapper
             _cell
             u-1/3 u-1/5@tablet
@@ -92,8 +95,9 @@
           'light': this.current.contrastingColor === 'light'
         }
       },
-      textClass: function () {
+      linkClass: function () {
         return {
+          'disabled': !this.current.contrastingColor,
           '_text-dark': this.current.contrastingColor === 'dark',
           '_text-light': this.current.contrastingColor === 'light'
         }
@@ -127,12 +131,19 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    transition: box-shadow .2s ease, background-color .2s ease;
+    transition: box-shadow .8s ease, background-color .8s ease;
     &.dark {
       box-shadow: inset 0 1px 0 0 rgba($neutral-100, .2);
     }
     &.light {
       box-shadow: inset 0 1px 0 0 rgba($neutral-00, .2);
+    }
+  }
+  ._link {
+    color: $neutral-100;
+    transition: color .8s ease;
+    &.disabled {
+      pointer-events: none;
     }
   }
   ._close-control-wrapper,

@@ -88,8 +88,8 @@ export default {
   /** Initialize reactive data values */
   data: () => {
     return {
+      transitionEnd: false,
       projectColor: '',
-      transitionEnd: true,
       currentProject: {
         slug: '',
         color: ''
@@ -140,7 +140,6 @@ export default {
       } else {
         previousProjectIndex = projectsArray.indexOf(currentProject) - 1
       }
-      this.projectColor = currentProject.color
       /** Get the objects of previous and next projects by index in projectsArray */
       this.currentProject = currentProject
       this.nextProject = projectsArray[nextProjectIndex]
@@ -160,19 +159,18 @@ export default {
   },
   watch: {
     '$route' (to, from) {
-      var self = this
-      self.$scrollTo('#top')
-      self.projectColor = self.getNextColor(to)
-      setTimeout(function () {
-        self.transitionEnd = false
-      }, 50)
-      setTimeout(function () {
-        self.setProjects(to)
-        self.transitionEnd = true
-      }, 200)
-      setTimeout(function () {
-        self.transitionEnd = true
-      }, 200)
+      setTimeout(() => {
+        setTimeout(() => {
+          this.projectColor = this.getNextColor(to)
+        }, 50)
+        setTimeout(() => {
+          this.transitionEnd = false
+          this.setProjects(to)
+        }, 100)
+        setTimeout(() => {
+          this.transitionEnd = true
+        }, 300)
+      }, 0)
     }
   },
   // beforeRouteUpdate (to, from, next) {
@@ -203,6 +201,8 @@ export default {
   mounted () {
     console.log('mounted')
     this.setProjects()
+    this.projectColor = this.currentProject.color
+    this.transitionEnd = true
   }
 }
 </script>

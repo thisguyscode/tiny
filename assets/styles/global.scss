@@ -39,11 +39,11 @@
 
 .slide-from-right-enter-active,
 .slide-from-left-enter-active {
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out, color 1s ease-in-out;
+  transition: transform .3s ease-out, opacity .3s ease-out, color .3s ease-out;
 }
 .slide-from-left-leave-active,
 .slide-from-right-leave-active {
-  transition: transform .18s ease-in-out, opacity .18s ease-in-out, color .18s ease-in-out;
+  transition: transform .3s ease-out, opacity .3s ease-out, color .3s ease-out;
 }
 
 .slide-from-right-enter,

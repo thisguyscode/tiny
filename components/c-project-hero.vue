@@ -7,7 +7,7 @@
         <!-- Hero text panel -->
         <div class="_hero-text-cell _cell u-2/5@tablet">
           <div class="_hero-text-wrapper" :style="'color:' + color">
-            
+           
             <transition name="slide-from-left">
               <div v-if="transitionEnd">
 
@@ -119,7 +119,7 @@
         var self = this
         setTimeout(function () {
           self.setClasses(self.project)
-        }, 200)
+        }, 300)
       }
     },
     mounted () {
@@ -134,8 +134,8 @@
 
 <style lang="scss" scoped>
 
- $transition-duration: .2s;
- $transition-easing: ease;
+ $transition-duration: .8s;
+ $transition-easing: ease-out;
 
   // Import variables and global settings
   @import "~assets/styles/imports";
@@ -247,7 +247,6 @@
 
 
   ._hero-text-wrapper {
-    transition: color .2s ease;
     padding-top: 0;
     padding-bottom: $page-padding-mobile;
     height: 100%;
@@ -318,7 +317,6 @@
 
   ._project-group,
   ._project-title {
-    transition: background-color $transition-duration $transition-easing, color $transition-duration $transition-easing;
     &._text-dark {
       background-color: $darkest;
     }

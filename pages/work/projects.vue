@@ -177,7 +177,7 @@ export default {
   mounted () {
     this.setProjects()
     setTimeout(() => {
-      this.$scrollTo('#top')
+      window.scrollTo(0, 0)
       setTimeout(() => {
         this.projectColor = this.currentProject.color
       }, 50)

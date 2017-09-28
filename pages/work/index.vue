@@ -65,17 +65,10 @@
        * as NUXT has trouble with # urls
        */
       scrollToProject: function () {
-        var options = {
-          duration: 0,
-          easing: 'linear',
-          offset: -190
-        }
-        /**
-         * In this case c-project-navbar will have commited the current
-         * project's ID to the store on close
-         */
         var project = this.$store.state.scrollToSelector
-        this.$scrollTo(project, options)
+        var projectTop = document.getElementById(project).getBoundingClientRect().top
+        var offset = 200
+        window.scrollTo(0, projectTop - offset)
         /** Remove the selector from the store once reached to avoid warnings */
         this.$store.commit('removeScrollTo')
       }
@@ -86,7 +79,9 @@
        * an appropriate selector
        */
       if (this.$store.state.scrollToSelector) {
-        this.scrollToProject()
+        setTimeout(() => {
+          this.scrollToProject()
+        }, 0)
       }
     }
   }

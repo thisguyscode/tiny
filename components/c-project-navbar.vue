@@ -105,7 +105,7 @@
     },
     methods: {
       setScrollTo: function () {
-        this.$store.commit('setScrollTo', '#' + this.current.slug)
+        this.$store.commit('setScrollTo', this.current.slug)
       }
     },
     mounted () {

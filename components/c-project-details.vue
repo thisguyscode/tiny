@@ -146,6 +146,7 @@
   .c-project-details {
     text-align: left;
     padding-top: $unit-md;
+    transition: border-color .8s ease;
     @include mq($from: tablet) {
       padding-top: $unit-lg;
     }

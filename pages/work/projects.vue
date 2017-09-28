@@ -175,9 +175,9 @@ export default {
   },
   /** Get the projects and store then set the local data on initial mount */
   mounted () {
+    this.setProjects()
     setTimeout(() => {
       this.$scrollTo('#top')
-      this.setProjects()
       setTimeout(() => {
         this.projectColor = this.currentProject.color
       }, 50)

@@ -147,6 +147,7 @@
     text-align: left;
     padding-top: $unit-md;
     transition: border-color .8s ease;
+    margin-top: -1px;
     @include mq($from: tablet) {
       padding-top: $unit-lg;
     }

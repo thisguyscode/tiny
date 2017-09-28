@@ -1,6 +1,6 @@
 <template>
   <div class="c-testimonials">
-    <h2>Testimonials</h2>
+    <h2 class="_heading">Testimonials</h2>
     <l-grid list>
       <li
         class="_entry _cell"
@@ -12,8 +12,8 @@
           </div>
           <div class="_cell u-2/5@mobile u-1/5@tablet">
             <p class="_detail _name">{{ testimonial.name }}</p>
-            <p class="_detail">{{ testimonial.role }}</p>
-            <p class="_detail">@{{ testimonial.company }}</p>
+            <p class="_detail  u-text--low-contrast">{{ testimonial.role }}</p>
+            <p class="_detail  u-text--low-contrast">@{{ testimonial.company }}</p>
           </div>
           <div class="_cell u-2/5@mobile u-3/5@tablet">
             <p class="_quote"><span class="_quote-mark open">&ldquo;</span>{{ testimonial.quote }}<span class="_quote-mark close">&rdquo;</span></p>
@@ -55,10 +55,13 @@ export default {
     position: relative;
   }
   ._name {
+    color: $red;
     font-weight: $font-weight-semi;
   }
+  ._heading {
+    margin-bottom: $paragraph-trailer;
+  }
   ._image {
-    
     width: $unit-xl;
     height: $unit-xl;
     object-fit: cover;

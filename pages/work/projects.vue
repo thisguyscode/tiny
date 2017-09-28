@@ -37,7 +37,6 @@
       <!-- Main project content from ./projects -->
       <l-main-content>
         <nuxt-child></nuxt-child>
-        <div style="height: 1000px;"></div>
       </l-main-content>
     
     </div>

@@ -3,7 +3,13 @@
     <h1>Ratings Slideout XX</h1>
     <l-wrapper>
       
-      <c-code :languages="['xml']">
+      <c-code filename="projects.json" :code="codeData">
+        <pre>
+          <div class="test"></div>
+          <section></section>
+        </pre>
+      </c-code>
+      <c-code filename="test.json" :languages="['xml']">
         <pre>
           <div class="test"></div>
           <section></section>
@@ -54,7 +60,7 @@ export default {
   },
   computed: {
     codeData: function () {
-      return require('html-loader!~/data/code/test')
+      return require('html-loader!~/utils/getProjectsArray.js')
     }
   }
 }

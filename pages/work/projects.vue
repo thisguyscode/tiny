@@ -46,10 +46,10 @@
     <nav class="c-project-nav-panels">
       <l-grid>
         <div class="_cell u-1/2@mobile">
-          <c-project-nav-panel :project="previousProject" direction="previous"></c-project-nav-panel>
+          <c-project-nav-panel :transitionEnd="transitionEnd" :project="previousProject" direction="previous"></c-project-nav-panel>
         </div>
         <div class="_cell u-1/2@mobile">
-          <c-project-nav-panel :project="nextProject" direction="next"></c-project-nav-panel>
+          <c-project-nav-panel :transitionEnd="transitionEnd" :project="nextProject" direction="next"></c-project-nav-panel>
         </div>
       </l-grid>
     </nav>
@@ -72,7 +72,6 @@ import cProjectDetails from '~/components/c-project-details'
 import cIcon from '~/components/c-icon'
 
 export default {
-  scrollToTop: true,
   components: {
     lGrid,
     fLink,
@@ -160,6 +159,7 @@ export default {
   watch: {
     '$route' (to, from) {
       setTimeout(() => {
+        this.$scrollTo('#top')
         setTimeout(() => {
           this.projectColor = this.getNextColor(to)
         }, 50)
@@ -169,40 +169,22 @@ export default {
         }, 100)
         setTimeout(() => {
           this.transitionEnd = true
-        }, 300)
+        }, 180)
       }, 0)
     }
   },
-  // beforeRouteUpdate (to, from, next) {
-  //   // var path = to.path
-  //   // var project = this.projectsArray.find(function (item) {
-  //   //   if (path.endsWith('/')) {
-  //   //     return '/work/projects/' + item.slug + '/' === path
-  //   //   } else {
-  //   //     return '/work/projects/' + item.slug === path
-  //   //   }
-  //   // })
-  //   // this.heroContrastingColor = project.contrastingColor
-  //   // this.projectColor = project.color
-  //   // this.$store.commit('saveColor', this.currentProject.color)
-  //   this.$scrollTo('#top')
-  //   var self = this
-  //   setTimeout(function () {
-  //     self.setProjects(to)
-  //     self.transitionEnd = false
-  //   }, 10)
-  //   setTimeout(function () {
-  //     next()
-  //     self.transitionEnd = true
-  //     // self.setProjects(to)
-  //   }, 180)
-  // },
   /** Get the projects and store then set the local data on initial mount */
   mounted () {
-    console.log('mounted')
-    this.setProjects()
-    this.projectColor = this.currentProject.color
-    this.transitionEnd = true
+    setTimeout(() => {
+      this.$scrollTo('#top')
+      this.setProjects()
+      setTimeout(() => {
+        this.projectColor = this.currentProject.color
+      }, 50)
+      setTimeout(() => {
+        this.transitionEnd = true
+      }, 300)
+    }, 0)
   }
 }
 </script>

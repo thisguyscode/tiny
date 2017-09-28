@@ -18,52 +18,52 @@
       <div class="_grid-wrapper" :class="{ 'visible': showDetails }">
         <l-grid>
 
-          
-
           <div class="_objective-cell _cell u-2/5@tablet">
+            <h4>Objective</h4>
             <transition name="fade">
-              <div v-if="transitionEnd">
-                <h4>Objective</h4>
-                <p>{{ project.objective }}</p>
-              </div>
+              <p v-if="transitionEnd">{{ project.objective }}</p>
             </transition>
           </div>
 
           <div class="_cell u-3/5@tablet">
-            <transition name="fade">
-              <div v-if="transitionEnd">
+            <l-grid>
+              <div class="_list-column _cell u-1/3@tablet">
                 <l-grid>
-                  <div class="_list-column _cell u-1/3@tablet">
-                    <l-grid>
-                      <div class="_group _cell u-2/5@mobile u-1/1@tablet">
-                        <h4>Date</h4>
-                        <p class="_item">{{ project.date }}</p>
-                      </div>
-                      <div class="_group _cell u-2/5@mobile u-1/1@tablet">
-                        <h4>Role</h4>
-                        <p class="_item">{{ project.role }}</p>
-                      </div>
-                    </l-grid>
+                  <div class="_group _cell u-2/5@mobile u-1/1@tablet">
+                    <h4>Date</h4>
+                    <transition name="fade">
+                      <p v-if="transitionEnd" class="_item">{{ project.date }}</p>
+                    </transition>
                   </div>
-                  <div class="_list-column _cell u-2/5@mobile u-1/3@tablet">
-                    <h4>Skills</h4>
-                    <ul class="_group u-list-bare">
-                      <li class="_item" v-for="skill in project.skills" :key="skill.id">
-                        {{ skill }}
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="_list-column _cell u-2/5@mobile u-1/3@tablet">
-                    <h4>Tech</h4>
-                    <ul class="_group u-list-bare">
-                      <li class="_item" v-for="tech in project.techs" :key="tech.id">
-                        {{ tech }}
-                      </li>
-                    </ul>
+                  <div class="_group _cell u-2/5@mobile u-1/1@tablet">
+                    <h4>Role</h4>
+                    <transition name="fade">
+                      <p v-if="transitionEnd" class="_item">{{ project.role }}</p>
+                    </transition>
                   </div>
                 </l-grid>
               </div>
-            </transition>
+              <div class="_list-column _cell u-2/5@mobile u-1/3@tablet">
+                <h4>Skills</h4>
+                <transition name="fade">
+                  <ul v-if="transitionEnd" class="_group u-list-bare">
+                    <li class="_item" v-for="skill in project.skills" :key="skill.id">
+                      {{ skill }}
+                    </li>
+                  </ul>
+                </transition>
+              </div>
+              <div class="_list-column _cell u-2/5@mobile u-1/3@tablet">
+                <h4>Tech</h4>
+                <transition name="fade">
+                  <ul v-if="transitionEnd" class="_group u-list-bare">
+                    <li class="_item" v-for="tech in project.techs" :key="tech.id">
+                      {{ tech }}
+                    </li>
+                  </ul>
+                </transition>
+              </div>
+            </l-grid>
           </div>
         </l-grid>
       </div>

@@ -10,13 +10,12 @@
   @import "~assets/styles/imports";
 
   .l-main-content {
-    padding-top: $unit-xxl;
-    padding-bottom: $unit-xxl;
-    // padding-bottom: $unit-xxl;
+    padding-top: $unit-xl;
+    padding-bottom: $unit-xl;
 
     @include mq($from: tablet) {
-      // padding-top: $unit-xxl;
-      // padding-bottom: $unit-xxl*2;
+      padding-top: $unit-xxl;
+      padding-bottom: $unit-xxl;
     }
 
   }

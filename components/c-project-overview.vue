@@ -156,6 +156,9 @@ export default {
     position: relative;
     text-align: left;
     margin-bottom: $unit-xl;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
   ._title {
     @include vr($font-display, $font-size-md);

@@ -98,7 +98,10 @@
 
   }
   ._project-group {
-    margin-bottom: $unit-xxl*2;
+    margin-bottom: $unit-xxl;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
 </style>

@@ -48,7 +48,9 @@ export default {
   props: {
     languages: {
       type: Array,
-      default: ['html', 'scss', 'css', 'javascript', 'json']
+      default: function () {
+        return ['html', 'scss', 'css', 'javascript', 'json']
+      }
     },
     code: {
       required: false

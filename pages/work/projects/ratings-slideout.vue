@@ -60,7 +60,7 @@ export default {
   },
   computed: {
     codeData: function () {
-      return require('html-loader!~/utils/getProjectsArray.js')
+      return require('raw-loader!~/utils/getProjectsArray.js')
     }
   }
 }

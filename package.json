@@ -1,10 +1,11 @@
 {
-  "name": "portfolio",
+  "name": "tiny",
   "version": "1.0.0",
-  "description": "for personal promotion",
+  "description": "Jamie Mitchell's personal design portfolio",
   "author": "Jamie Mitchell",
   "private": true,
   "dependencies": {
+    "@nuxtjs/icon": "^1.1.0",
     "@nuxtjs/pwa": "^0.2.1",
     "autoprefixer": "^7.1.4",
     "bluebird": "^3.5.0",

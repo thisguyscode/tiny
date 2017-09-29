@@ -115,6 +115,7 @@ export default {
 
   ._link-text {
     @include vr($font-display, $font-size-md);
+    font-weight: $font-weight-semi;
     display: inline-block;
     transition: transform .2s ease;
   }

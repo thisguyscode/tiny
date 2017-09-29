@@ -1,31 +1,31 @@
 <template>
   <div class="c-code">
     
-    <div class="_header" v-if="filename">
-      <div class="_header-reference">
-        <span class="_gutter">
-          <c-icon class="_icon" name="file"></c-icon>
+    <div class="c-code_header" v-if="filename">
+      <div class="c-code_header-reference">
+        <span class="c-code_gutter">
+          <c-icon class="c-code_icon" name="file"></c-icon>
         </span>
-        <span class="_filename">{{ filename }}</span>
+        <span class="c-code_filename">{{ filename }}</span>
       </div>
     </div>
     
-    <div class="_reference-wrapper">
-      <div class="_code-area">
+    <div class="c-code_reference-wrapper">
+      <div class="c-code_code-area">
         
-        <div class="_gutter">
-          <div class="_number" v-for="i in lineCount" :key="i">{{i}}</div>
+        <div class="c-code_gutter">
+          <div class="c-code_number" v-for="i in lineCount" :key="i">{{i}}</div>
         </div>
 
-        <div class="_code-block">
-          <pre><code class="_code" v-html="content">
+        <div class="c-code_code-block">
+          <pre><code class="c-code_code" v-html="content">
           </code></pre>
         </div>
 
       </div>
     </div>
 
-    <span class="_slot-wrapper" ref="slotWrapper">
+    <span class="c-code_slot-wrapper" ref="slotWrapper">
       <slot></slot>
     </span>
 
@@ -112,7 +112,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   
   // Import variables and global settings
   @import "~assets/styles/imports";
@@ -136,7 +136,7 @@ export default {
     }
   }
 
-  ._header {
+  .c-code_header {
     width: 100%;
     padding-top: $unit-xs;
     padding-bottom: $unit-xs;
@@ -144,22 +144,22 @@ export default {
     background-color: rgba($neutral-90, 1);
     color: $neutral-00;
   }
-  ._header-reference {
+  .c-code_header-reference {
     padding-left: $unit-lg;
     padding-right: $unit-lg;
     position: relative;
   }
-  ._filename {
+  .c-code_filename {
     // @include vr($font-mono, $base-font-size);
   }
-  ._icon {
+  .c-code_icon {
     height: .8em;
   }
-  ._code,
-  ._number {
+  .c-code_code,
+  .c-code_number {
     // @include vr($font-mono, $font-size-sm);
   }
-  ._gutter {
+  .c-code_gutter {
     width: $unit-lg;
     text-align: right;
     position: absolute;
@@ -168,7 +168,7 @@ export default {
     left: 0;
   }
   
-  ._code-area {
+  .c-code_code-area {
     position: relative;
     max-height: $unit-xxl*3;
     padding-left: $unit-lg;
@@ -183,27 +183,27 @@ export default {
     }
   }
 
-  ._reference-wrapper {
+  .c-code_reference-wrapper {
     overflow-y: scroll;
     padding-top: $unit-sm;
     padding-bottom: $unit-sm;
     position: relative;
   }
   
-  ._code-block {
+  .c-code_code-block {
     @include vr($font-mono, $font-size-sm);
     color: $neutral-20;
     overflow-x: scroll;
     position: relative;
   }
 
-  ._number {
+  .c-code_number {
     @include vr($font-mono, $font-size-sm);
     color: $neutral-70;
     // margin-bottom: 0;
   }
   
-  ._slot-wrapper {
+  .c-code_slot-wrapper {
     display: none;
   }
 

@@ -14,9 +14,11 @@
             u-1/3 u-1/5@tablet
           "
         >
-          <c-icon class="_icon" name="arrow-left"></c-icon>
-          <span>
-            Previous <span class="_string-project">project</span>
+          <span class="_link-text">
+            <c-icon class="_icon" name="arrow-left"></c-icon>
+            <span>
+              Previous <span class="_string-project">project</span>
+            </span>
           </span>
         </nuxt-link><!--END previous -->
         
@@ -31,10 +33,12 @@
             u-1/3 u-1/5@tablet
           "
         >
-          <span>
-            Next <span class="_string-project">project</span>
+          <span class="_link-text">
+            <span>
+              Next <span class="_string-project">project</span>
+            </span>
+            <c-icon class="_icon" name="arrow-right"></c-icon>
           </span>
-          <c-icon class="_icon" name="arrow-right"></c-icon>
         </nuxt-link><!--END next -->
         
         <!-- SPACER -->
@@ -52,8 +56,10 @@
             u-1/3 u-1/5@tablet
           "
         >
-          <span>Close</span>
-          <c-icon class="_icon" name="close"></c-icon>
+          <span class="_link-text">
+            <span>Close</span>
+            <c-icon class="_icon" name="close"></c-icon>
+          </span>
         </nuxt-link><!--END close -->
 
         <div class="_cell u-0  u-2/5@tablet"></div>
@@ -123,8 +129,6 @@
   $navbar-height: $navbar-padding-y*2 + $navbar-inner-height;
 
   .c-project-navbar {
-    padding-top: $navbar-padding-y;
-    padding-bottom: $navbar-padding-y;
     // background-color: rgba($neutral-100, .5);
     // position: fixed;
     // top: $header-primary-height;
@@ -140,19 +144,34 @@
     }
   }
   ._link {
+    margin-top: 1px;
+    margin-bottom: -1px;
+    padding-top: $navbar-padding-y;
+    padding-bottom: $navbar-padding-y;
     color: $neutral-100;
     transition: color .8s ease;
+    text-decoration: none;
+    transition: padding .2s ease;
     &.disabled {
       pointer-events: none;
     }
+    &:hover {
+      padding-left: $unit-sm;
+      padding-right: $unit-sm;
+        &._text-dark {
+          background-color: rgba($darkest, .1)
+        }
+
+        &._text-light {
+          background-color: rgba($lightest, .1)
+        }
+    }
   }
-  ._close-control-wrapper,
-  ._previous-control-wrapper,
-  ._next-control-wrapper {
+
+  ._link-text {
     @include vr($font-body, $font-size-md);
     @include vr-reset;
     font-weight: $font-weight-semi;
-    text-decoration: none;
   }
 
   ._previous-control-wrapper {

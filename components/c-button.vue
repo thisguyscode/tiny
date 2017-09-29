@@ -79,7 +79,7 @@ export default {
         return '/work'
       } else if (this.relativeLink) {
         return this.relativeLink
-      } else return null
+      }
     }
   },
   props: {
@@ -143,6 +143,7 @@ export default {
     white-space: nowrap;
     // min-width: 100%;
     text-align: center;
+    display: inline-block;
     
     @include mq($until: tablet) {
       background: $neutral-95;
@@ -155,12 +156,20 @@ export default {
 
   .c-button--solid {
     background-color: $red;
+    transition: background-color .2s ease;
+    &:hover {
+      background-color: darken($red, 5%);
+    }
   }
 
   .c-button--ghost {
     box-shadow: inset 0 0 0 1px $red;
+    transition: background-color .2s ease;
     ._icon {
       color: $red;
+    }
+    &:hover {
+      background-color: rgba($neutral-100, .9);
     }
   }
 

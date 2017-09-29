@@ -10,6 +10,9 @@
 /**
  * Apply default styling for typographic elements
  */
+html {
+font-weight: $font-weight-regular;
+}
 
 h1 {
   @include vr($font-display, $font-size-xxl);
@@ -71,7 +74,6 @@ h6 {
 
 p {
   @include vr($font-body, $font-size-md);
-  font-weight: $font-weight-regular;
   padding-bottom: $paragraph-trailer;
 
   @include mq($from: tablet) {
@@ -93,21 +95,6 @@ cite {
   display: block;
   padding: 0 0 $paragraph-trailer;
 }
-
-// code {
-//   @include vr($font-mono, $base-font-size);
-//   display: block;
-//   // padding: 0 0 $paragraph-trailer;
-//   pre {
-//     margin: 0;
-//     font-family: $font-mono;
-//   }
-//   p & {
-//     @include vr-reset;
-//     display: inline;
-//     line-height: 0;
-//   }
-// }
 
 ol,
 ul {

@@ -25,7 +25,7 @@
         <div class="_subCtaWrapper  _cell  u-1/5@tablet  u-text--lower-contrast">
           <h2>{{ subCtaHeading }}</h2>
           <c-button
-            class="_main-cta-button"
+            class="_sub-cta-button"
             type="ghost"
             :content="subCtaButton">
           </c-button>
@@ -98,11 +98,13 @@
   }
 
   ._main-cta-button {
-    display: block;
-
     @include mq($until: tablet) {
       margin-bottom: $paragraph-trailer*2;
     }
+  }
+
+  ._sub-cta-button {
+    float: right;
   }
 
   ._subCtaWrapper {

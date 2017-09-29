@@ -112,7 +112,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   
   // Import variables and global settings
   @import "~assets/styles/imports";

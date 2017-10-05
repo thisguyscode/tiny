@@ -12,12 +12,12 @@
           'background-color: ' + project.color
         "
       >
-        <img
+        <c-image
           v-if="project.imgSrc"
-          class="_image _image-previous"
+          :classes="'_image _image-previous'"
           :class="imgClass"
-          :src="require('~/assets/images/' + project.imgSrc)"
-        >
+          :imageSrc="project.imgSrc"
+        />
       </div>
 
       <div class="_panel-content">
@@ -51,9 +51,11 @@
 
 <script>
 import cIcon from '~/components/c-icon'
+import cImage from '~/components/c-image'
 export default {
   components: {
-    cIcon
+    cIcon,
+    cImage
   },
   props: {
     project: {

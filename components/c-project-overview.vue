@@ -57,7 +57,12 @@
         </div>
         <div class="_cell u-3/5@tablet">
           <div class="_image-wrapper" :class="imgWrapperClass" :style="'background-color:' + color">
-            <img class="_image" :class="imgClass" :src="require('~/assets/images/' + imgSrc)"/>
+            <c-image
+              v-if="imgSrc"
+              :classes="'_image'"
+              :class="imgClass"
+              :imageSrc="imgSrc"
+            />
           </div>
         </div>   
       </l-grid>
@@ -67,12 +72,14 @@
 
 <script>
 import cIcon from '~/components/c-icon'
+import cImage from '~/components/c-image'
 import cButton from '~/components/c-button'
 import lWrapper from '~/components/layout/l-wrapper'
 import lGrid from '~/components/layout/l-grid'
 export default {
   components: {
     cIcon,
+    cImage,
     cButton,
     lWrapper,
     lGrid

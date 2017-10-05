@@ -1,6 +1,6 @@
 module.exports = {
   router: {
-    base: '/'
+    // base: ''
     // scrollBehavior: function (to, from, savedPosition) {
     //   if (savedPosition) return savedPosition
     //   return false
@@ -34,17 +34,6 @@ module.exports = {
     failedColor: 'red',
     height: '4px'
   },
-  render: {
-    bundleRenderer: {
-      // shouldPreload: (file, type) => {
-      //   return ['script', 'style', 'font'].includes(type)
-      // }
-      // cache: require('lru-cache')({
-      //   max: 1000,
-      //   maxAge: 1000 * 60 * 15
-      // })
-    }
-  },
   generate: {
     /*
     ** Generate routes from 'linkTo' in project data file
@@ -66,9 +55,13 @@ module.exports = {
     '~/plugins/vue-scrollto.js',
     '~/plugins/no-ssr.js',
     {
-      src: '~/plugins/global-events.js',
+      src: '~/plugins/picturefill.js',
       ssr: false
     },
+    // {
+    //   src: '~/plugins/global-events.js',
+    //   ssr: false
+    // },
     {
       src: '~/plugins/vue-affix.js',
       ssr: false
@@ -80,11 +73,12 @@ module.exports = {
   ],
   modules: [
     // Simple usage
-    ['@nuxtjs/pwa', {
-      icon: {
-        sizes: [ 512, 192, 380 ]
-      }
-    }]
+    '@nuxtjs/pwa'
+    // ['@nuxtjs/pwa', {
+    //   icon: {
+    //     sizes: [ 512, 192, 380 ]
+    //   }
+    // }]
   ],
   /*
   ** Build configuration
@@ -95,6 +89,7 @@ module.exports = {
     ** Run ESLINT on save
     */
     extend (config, ctx) {
+      /** Make sure SCSS runs through postcss */
       const cssLoader = config.module.rules.find((loader) => loader.test.toString() === '/\\.scss$/')
       cssLoader.use.splice(2, 0, {
         loader: 'postcss-loader',
@@ -102,8 +97,24 @@ module.exports = {
           sourceMap: true
         }
       })
-      /** Remove sourcemap from es6-promise on client */
+
+      const rule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg)$/')
+      config.module.rules.splice(config.module.rules.indexOf(rule), 1)
+
+      config.module.rules.push({
+        test: /\.(png|jpe?g|gif|svg|tiff|webp)$/i,
+        loaders: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 1000,
+              name: 'img/[name].[hash:3].[ext]'
+            }
+          }
+        ]
+      })
       if (ctx.isClient) {
+        /** Remove sourcemap from es6-promise on client */
         config.module.rules.push({
           test: /\.js$/,
           include: /node_modules\/es6-promise/,

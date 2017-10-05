@@ -8,7 +8,11 @@
         @click="change(testimonial)">
         <l-grid>
           <div class="_image-cell _cell u-1/5">
-            <img class="_image" :src="require('~/assets/images/' + testimonial.character)">
+            <c-image
+              v-if="testimonial.character"
+              :classes="'_image'"
+              :imageSrc="testimonial.character"
+            />
           </div>
           <div class="_cell u-2/5@mobile u-1/5@tablet">
             <p class="_detail _name">{{ testimonial.name }}</p>
@@ -26,9 +30,11 @@
 
 <script>
 import lGrid from '~/components/layout/l-grid'
+import cImage from '~/components/c-image'
 export default {
   components: {
-    lGrid
+    lGrid,
+    cImage
   },
   props: {
     testimonials: {

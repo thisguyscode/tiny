@@ -113,9 +113,6 @@
       setScrollTo: function () {
         this.$store.commit('setScrollTo', this.current.slug)
       }
-    },
-    mounted () {
-      // console.log(this.current.contrastingColor)
     }
   }
 </script>

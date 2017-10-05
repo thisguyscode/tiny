@@ -1,12 +1,13 @@
 <template>
   <div class="c-hero">
-    <img 
-      v-if="bgImageSrc"
-      class="_background-image"
-      :class="bgImageClass"
-      :style="'opacity: ' + bgImageOpacity"
-      :src="require('~/assets/images/' + bgImageSrc)">
     <l-wrapper>
+      <c-image
+        v-if="bgImageSrc"
+        :classes="'_background-image'"
+        :class="bgImageClass"
+        :style="'opacity: ' + bgImageOpacity"
+        :imageSrc="bgImageSrc"
+      />
       <l-grid horizontal="right">
         <div class="_text-wrapper  _cell  u-3/5@desktop">
           <slot></slot>
@@ -19,10 +20,12 @@
 <script>
 import lWrapper from '~/components/layout/l-wrapper'
 import lGrid from '~/components/layout/l-grid'
+import cImage from '~/components/c-image'
 export default {
   components: {
     lWrapper,
-    lGrid
+    lGrid,
+    cImage
   },
   props: {
     bgImageSrc: {
@@ -39,6 +42,9 @@ export default {
     }
   },
   computed: {
+    image: function () {
+      return require('~/assets/images/' + this.bgImageSrc)
+    },
     bgImageClass: function () {
       return {
         '_background-image--top': this.bgImagePosition === 'top',
@@ -58,8 +64,6 @@ export default {
     text-align: right;
     overflow: hidden;
     background-color: rgba($darkest,.5);
-    padding-top: $unit-xxl;
-    padding-bottom: $unit-xxl;
     min-height: $unit-xxl*2;
     box-shadow: inset 0 -1px 0 0 $neutral-80;
     position: relative;
@@ -89,6 +93,8 @@ export default {
   }
 
   ._text-wrapper {
+    padding-top: $unit-xxl;
+    padding-bottom: $unit-xxl;
     text-shadow: 0 2px 10px rgba($darkest, .7);
   }
 

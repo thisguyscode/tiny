@@ -10,6 +10,7 @@
     
     <l-main-content class="_content-wrapper">
       <l-wrapper>
+
         <form
           v-if="$store.state.messageSent === false"
           name="gForm"

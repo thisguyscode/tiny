@@ -8,7 +8,8 @@ const store = () => new Vuex.Store({
     projectsArray: [],
     scrollToSelector: null,
     messageSent: false,
-    savedColor: '#999'
+    savedColor: '#999',
+    images: []
   },
   actions: {
     async getProjects ({commit}) {
@@ -17,6 +18,9 @@ const store = () => new Vuex.Store({
     }
   },
   mutations: {
+    addImage: (state, image) => {
+      state.images.push(image)
+    },
     setProjectsArray: (state, array) => {
       state.projectsArray = array
     },

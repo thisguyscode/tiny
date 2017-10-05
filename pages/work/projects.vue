@@ -182,7 +182,7 @@ export default {
       }, 50)
       setTimeout(() => {
         this.transitionEnd = true
-      }, 300)
+      }, 100)
     }, 0)
   }
 }

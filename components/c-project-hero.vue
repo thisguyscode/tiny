@@ -37,9 +37,11 @@
           <div class="_hero-image-reference" :class="imageWrapperClass">
             <div class="_hero-image-wrapper">
               <transition name="slide-from-right">
-                <!-- <div v-if="project.imgSrc"> -->
-                  <img v-if="project.imgSrc && transitionEnd" class="_hero-image" :class="imageClass" :src="require('~/assets/images/' + project.imgSrc)">
-                <!-- </div> -->
+                <c-image
+                  v-if="project.imgSrc && transitionEnd"
+                  :fit="imageClass"
+                  :imageSrc="project.imgSrc"
+                />
               </transition>
             </div>
           </div>
@@ -57,17 +59,19 @@
   import lGrid from '~/components/layout/l-grid'
   import lWrapper from '~/components/layout/l-wrapper'
   import cIcon from '~/components/c-icon'
+  import cImage from '~/components/c-image'
   export default {
     components: {
       lGrid,
       fLink,
       lWrapper,
-      cIcon
+      cIcon,
+      cImage
     },
     data: () => {
       return {
         textClass: '',
-        imageClass: '',
+        imgClass: '',
         imageWrapperClass: '',
         heroImageCellClass: ''
       }
@@ -79,10 +83,21 @@
       },
       color: {
         type: String,
-        required: true
+        required: true,
+        default: function () {
+          return this.project.color
+        }
       },
       transitionEnd: {
         type: Boolean
+      }
+    },
+    computed: {
+      imageClass: function () {
+        return {
+          'cover': this.imgClass === 'cover',
+          'contain': this.imgClass === 'contain'
+        }
       }
     },
     methods: {
@@ -104,8 +119,9 @@
         }
       },
       setImageClass: function (project) {
-        this.imageClass = {
-          '--cover': project.imgClass === 'cover'
+        this.imgClass = {
+          'cover': project.imgClass === 'cover',
+          'contain': project.imgClass === 'contain'
         }
       },
       setHeroImageCellClass: function (project) {
@@ -120,14 +136,15 @@
         setTimeout(function () {
           self.setClasses(self.project)
         }, 300)
+        console.log(this.imgClass)
+        console.log(this.imgClass)
       }
     },
     mounted () {
-      console.log('hero-mounted')
       var self = this
       setTimeout(function () {
         self.setClasses(self.project)
-      }, 200)
+      }, 0)
     }
   }
 </script>

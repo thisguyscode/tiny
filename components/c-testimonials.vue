@@ -8,11 +8,13 @@
         @click="change(testimonial)">
         <l-grid>
           <div class="_image-cell _cell u-1/5">
-            <c-image
-              v-if="testimonial.character"
-              class="_image"
-              :imageSrc="testimonial.character"
-            />
+            <div class="_image-wrapper">
+              <c-image
+                v-if="testimonial.character"
+                fit="cover"
+                :imageSrc="testimonial.character"
+              />
+            </div>
           </div>
           <div class="_cell u-2/5@mobile u-1/5@tablet">
             <p class="_detail _name">{{ testimonial.name }}</p>
@@ -67,10 +69,9 @@ export default {
   ._heading {
     margin-bottom: $paragraph-trailer;
   }
-  ._image {
+  ._image-wrapper {
     width: $unit-xl;
     height: $unit-xl;
-    object-fit: cover;
     border-radius: 100%;
 
     @include mq($from: mobile) {

@@ -37,6 +37,7 @@
   "scripts": {
     "analyze": "nuxt build --analyze",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "images": "gulp images",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
@@ -52,6 +53,9 @@
     "eslint-plugin-html": "^2.0.0",
     "eslint-plugin-promise": "^3.4.1",
     "eslint-plugin-standard": "^2.0.1",
+    "gulp-changed": "^3.1.0",
+    "gulp-clone": "^1.0.0",
+    "gulp-webp": "^2.3.0",
     "path": "^0.12.7",
     "push-dir": "^0.4.1",
     "vue-affix": "^0.2.1"

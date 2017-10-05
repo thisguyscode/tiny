@@ -73,12 +73,12 @@ module.exports = {
   ],
   modules: [
     // Simple usage
-    '@nuxtjs/pwa'
-    // ['@nuxtjs/pwa', {
-    //   icon: {
-    //     sizes: [ 512, 192, 380 ]
-    //   }
-    // }]
+    // '@nuxtjs/pwa'
+    ['@nuxtjs/pwa', {
+      icon: {
+        sizes: [ 512, 192, 380 ]
+      }
+    }]
   ],
   /*
   ** Build configuration

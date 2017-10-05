@@ -128,7 +128,7 @@
         self.textClass = self.setTextClass(self.project)
         self.imgClass = self.setImgClass(self.project)
         self.imgWrapperClass = self.setImgWrapperClass(self.project)
-      }, 300)
+      }, 100)
     }
   }
 </script>

@@ -1,5 +1,5 @@
 <template>
-<transition name="slide-from-left">
+<transition name="fade">
   <div v-if="transitionEnd" class="_panel" :class="panelClass">
     <nuxt-link
       class="_link"

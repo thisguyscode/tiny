@@ -33,13 +33,13 @@
         </div><!--END Hero text panel -->
         
         <!-- Hero image panel -->
-        <div class="_hero-image-cell _cell u-3/5@tablet" :class="heroImageCellClass">
-          <div class="_hero-image-reference" :class="imageWrapperClass">
+        <div class="_hero-image-cell _cell u-3/5@tablet" :class="imgClass">
+          <div class="_hero-image-reference" :class="imgWrapperClass">
             <div class="_hero-image-wrapper">
               <transition name="slide-from-right">
                 <c-image
-                  v-if="project.imgSrc && transitionEnd"
-                  :fit="imageClass"
+                  v-if="transitionEnd"
+                  :fit="imgClass"
                   :imageSrc="project.imgSrc"
                 />
               </transition>
@@ -72,8 +72,7 @@
       return {
         textClass: '',
         imgClass: '',
-        imageWrapperClass: '',
-        heroImageCellClass: ''
+        imgWrapperClass: ''
       }
     },
     props: {
@@ -92,41 +91,24 @@
         type: Boolean
       }
     },
-    computed: {
-      imageClass: function () {
-        return {
-          'cover': this.imgClass === 'cover',
-          'contain': this.imgClass === 'contain'
-        }
-      }
-    },
     methods: {
-      setClasses: function (project) {
-        this.setTextClass(project)
-        this.setImageClass(project)
-        this.setImageWrapperClass(project)
-        this.setHeroImageCellClass(project)
-      },
       setTextClass: function (project) {
-        this.textClass = {
-          '_text-light': project.contrastingColor === 'light',
-          '_text-dark': project.contrastingColor === 'dark'
+        if (project.contrastingColor === 'light') {
+          return '_text-light'
+        } else if (project.contrastingColor === 'dark') {
+          return '_text-dark'
         }
       },
-      setImageWrapperClass: function (project) {
-        this.imageWrapperClass = {
-          '--padded': project.imgWrapperClass === 'padded'
+      setImgClass: function (project) {
+        if (project.imgClass === 'cover') {
+          return 'cover'
+        } else if (project.imgClass === 'contain') {
+          return 'contain'
         }
       },
-      setImageClass: function (project) {
-        this.imgClass = {
-          'cover': project.imgClass === 'cover',
-          'contain': project.imgClass === 'contain'
-        }
-      },
-      setHeroImageCellClass: function (project) {
-        this.heroImageCellClass = {
-          '--cover': project.imgClass === 'cover'
+      setImgWrapperClass: function (project) {
+        if (project.imgWrapperClass === 'padded') {
+          return 'padded'
         }
       }
     },
@@ -134,17 +116,19 @@
       '$route' (to, from) {
         var self = this
         setTimeout(function () {
-          self.setClasses(self.project)
-        }, 300)
-        console.log(this.imgClass)
-        console.log(this.imgClass)
+          self.textClass = self.setTextClass(self.project)
+          self.imgClass = self.setImgClass(self.project)
+          self.imgWrapperClass = self.setImgWrapperClass(self.project)
+        }, 400)
       }
     },
     mounted () {
       var self = this
       setTimeout(function () {
-        self.setClasses(self.project)
-      }, 0)
+        self.textClass = self.setTextClass(self.project)
+        self.imgClass = self.setImgClass(self.project)
+        self.imgWrapperClass = self.setImgWrapperClass(self.project)
+      }, 300)
     }
   }
 </script>
@@ -182,7 +166,7 @@
       order: 1;
     }
 
-    &.--cover {
+    &.cover {
       position: static;
     }
   }
@@ -210,7 +194,7 @@
       // margin-right: -$page-padding-wide
     }
     
-    &.--padded {
+    &.padded {
       padding: $unit-md;
 
       @include mq($until: tablet) {
@@ -253,7 +237,7 @@
       object-position: 50% 50%;
     }
     
-    &.--cover {
+    &.cover {
       @include mq($from: tablet) {
         // transform: rotate(6deg) scale(1.4);
         transform-origin: 0 100%;

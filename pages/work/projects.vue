@@ -164,11 +164,13 @@ export default {
         }, 50)
         setTimeout(() => {
           this.transitionEnd = false
-          this.setProjects(to)
         }, 100)
         setTimeout(() => {
+          this.setProjects(to)
+        }, 300)
+        setTimeout(() => {
           this.transitionEnd = true
-        }, 180)
+        }, 400)
       }, 0)
     }
   },
@@ -191,22 +193,5 @@ export default {
 <style lang="scss" scoped>
   // Import variables and global settings
   @import "~assets/styles/imports";
-
-  .slide-from-right-leave-active,
-  .slide-from-left-leave-active,
-  .slide-from-right-enter-active,
-  .slide-from-left-enter-active {
-    transition: transform .2s
-  }
-  
-  .slide-from-right-enter,
-  .slide-from-right-leave-to {
-    transform: translateX(200%);
-  }
-
-  .slide-from-left-enter,
-  .slide-from-left-leave-to {
-    transform: translateX(-200%);
-  }
 
 </style>

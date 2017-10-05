@@ -3,7 +3,8 @@
     <l-wrapper>
       <c-image
         v-if="bgImageSrc"
-        :classes="'_background-image'"
+        class='_background-image'
+        fit="cover"
         :class="bgImageClass"
         :style="'opacity: ' + bgImageOpacity"
         :imageSrc="bgImageSrc"

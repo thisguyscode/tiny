@@ -60,7 +60,7 @@
             <c-image
               v-if="imgSrc"
               :classes="'_image'"
-              :class="imgClass"
+              :fit="imgClass"
               :imageSrc="imgSrc"
             />
           </div>
@@ -129,8 +129,10 @@ export default {
       return this.project.imgSrc
     },
     imgClass: function () {
-      return {
-        '_image--cover': this.project.imgClass === 'cover'
+      if (this.project.imgClass === 'cover') {
+        return 'cover'
+      } else if (this.project.imgClass === 'contain') {
+        return 'contain'
       }
     },
     imgWrapperClass: function () {

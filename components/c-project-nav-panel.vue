@@ -15,7 +15,7 @@
         <c-image
           v-if="project.imgSrc"
           :classes="'_image _image-previous'"
-          :class="imgClass"
+          :fit="imgClass"
           :imageSrc="project.imgSrc"
         />
       </div>
@@ -90,8 +90,10 @@ export default {
       }
     },
     imgClass: function () {
-      return {
-        '--cover': this.project.imgClass === 'cover'
+      if (this.project.imgClass === 'cover') {
+        return 'cover'
+      } else if (this.project.imgClass === 'contain') {
+        return 'contain'
       }
     },
     labelClass: function () {

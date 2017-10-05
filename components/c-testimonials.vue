@@ -10,7 +10,7 @@
           <div class="_image-cell _cell u-1/5">
             <c-image
               v-if="testimonial.character"
-              :classes="'_image'"
+              class="_image"
               :imageSrc="testimonial.character"
             />
           </div>

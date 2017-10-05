@@ -1,12 +1,12 @@
 <template>
   <transition>
     <!-- Use picture for images with responsive sizes -->
-    <picture v-if="responsive">
+    <picture v-if="responsive" class="picture">
       <source class="c-image" :class="fitClass" :srcset="asset.webpSrcset"></source>
       <img class="c-image" :class="fitClass" :src="asset.placeholder" :srcset="asset.srcset"/>
     </picture>
     <!-- Otherwise use the plain asset -->
-    <img class="c-image" :class="fitClass" v-else-if="!responsive" :src="asset"/>
+    <img v-else-if="!responsive" class="c-image" :class="fitClass" :src="asset"/>
   </transition>
 </template>
 
@@ -89,15 +89,18 @@ export default {
   @import "~assets/styles/imports";
 
   .c-image {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
   }
   .picture {
-    position: static;
+    display: block;
+    height: 100%;
+    width: 100%;
   }
   .contain {
     object-fit: contain;
   }
-  .contain {
+  .cover {
     object-fit: cover;
   }
   

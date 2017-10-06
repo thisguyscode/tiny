@@ -196,14 +196,7 @@
     
     &.padded {
       padding: $unit-md;
-
-      @include mq($until: tablet) {
-        top: $page-padding-mobile;
-        right: $page-padding-mobile;
-        bottom: $page-padding-mobile;
-        left: $page-padding-mobile;
-      }
-
+      
       @include mq($from: tablet) {
         padding: $unit-xl;
       }

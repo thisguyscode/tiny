@@ -2,7 +2,7 @@
   <transition>
     <!-- Use picture for images with responsive sizes -->
     <picture v-if="responsive" class="picture">
-      <source class="c-image" :class="fitClass" :srcset="asset.webpSrcset"></source>
+      <source type="image/webp" class="c-image" :class="fitClass" :srcset="asset.webpSrcset"></source>
       <img class="c-image" :class="fitClass" :src="asset.placeholder" :srcset="asset.srcset"/>
     </picture>
     <!-- Otherwise use the plain asset -->
@@ -50,19 +50,19 @@ export default {
     asset: function () {
       if (this.responsive) {
         var req = this.req
-        var src = req(`./${this.name}-original.${this.extension}`)
-        var placeholder = req(`./${this.name}-placeholder.${this.extension}`)
+        var src = req(`./${this.imageSrc}/original.${this.extension}`)
+        var placeholder = req(`./${this.imageSrc}/placeholder.${this.extension}`)
         var sizes = [
-          req(`./${this.name}-600px.${this.extension}`) + ' 600w',
-          req(`./${this.name}-900px.${this.extension}`) + ' 900w',
-          req(`./${this.name}-1400px.${this.extension}`) + ' 1400w'
+          req(`./${this.imageSrc}/600px.${this.extension}`) + ' 600w',
+          req(`./${this.imageSrc}/900px.${this.extension}`) + ' 900w',
+          req(`./${this.imageSrc}/1400px.${this.extension}`) + ' 1400w'
         ]
-        var webpSrc = req(`./${this.name}-original.webp`)
-        var webpPlaceholder = req(`./${this.name}-placeholder.webp`)
+        var webpSrc = req(`./original.webp`)
+        var webpPlaceholder = req(`./placeholder.webp`)
         var webpSizes = [
-          req(`./${this.name}-600px.webp`) + ' 600w',
-          req(`./${this.name}-900px.webp`) + ' 900w',
-          req(`./${this.name}-1400px.webp`) + ' 1400w'
+          req(`./${this.imageSrc}/600px.webp`) + ' 600w',
+          req(`./${this.imageSrc}/900px.webp`) + ' 900w',
+          req(`./${this.imageSrc}/1400px.webp`) + ' 1400w'
         ]
         return {
           src,
@@ -73,7 +73,7 @@ export default {
           webpSrcset: webpSizes.toString()
         }
       } else if (!this.responsive) {
-        return this.req('./' + this.imageSrc)
+        return req(`./${this.imageSrc}/${this.imageSrc}`)
       }
     }
   },

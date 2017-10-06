@@ -8,7 +8,7 @@
 
 const gulp = require('gulp')
 /** Generic */
-// const changed = require('gulp-changed')
+const changed = require('gulp-changed')
 const rename = require('gulp-rename')
 const clone = require('gulp-clone')
 const filter = require('gulp-filter')
@@ -42,7 +42,7 @@ gulp.task('images', function () {
   /** Define task source */
   return gulp.src(config.images.srcDir)
     /** Only process changed images */
-    // .pipe(changed(config.images.srcDir))
+    .pipe(changed(config.images.srcDir))
     /** Apply gif / svg filter */
     .pipe(rename(function (path) {
       path.dirname = path.basename + path.extname

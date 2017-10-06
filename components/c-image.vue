@@ -48,8 +48,8 @@ export default {
       return name
     },
     asset: function () {
+      var req = this.req
       if (this.responsive) {
-        var req = this.req
         var src = req(`./${this.imageSrc}/original.${this.extension}`)
         var placeholder = req(`./${this.imageSrc}/placeholder.${this.extension}`)
         var sizes = [

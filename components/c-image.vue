@@ -28,7 +28,7 @@ export default {
       }
     },
     req: function () {
-      return require.context('~/assets/images/', false, /\.(png|jpe?g|gif|svg|tiff|webp)$/i)
+      return require.context('~/assets/images/', true, /\.(png|jpe?g|gif|svg|tiff|webp)$/i)
     },
     responsive: function () {
       if (this.extension === ('svg' || 'gif')) {
@@ -57,8 +57,8 @@ export default {
           req(`./${this.imageSrc}/900px.${this.extension}`) + ' 900w',
           req(`./${this.imageSrc}/1400px.${this.extension}`) + ' 1400w'
         ]
-        var webpSrc = req(`./original.webp`)
-        var webpPlaceholder = req(`./placeholder.webp`)
+        var webpSrc = req(`./${this.imageSrc}/original.webp`)
+        var webpPlaceholder = req(`./${this.imageSrc}/placeholder.webp`)
         var webpSizes = [
           req(`./${this.imageSrc}/600px.webp`) + ' 600w',
           req(`./${this.imageSrc}/900px.webp`) + ' 900w',

@@ -160,7 +160,7 @@
 
   ._heading-trigger-icon {
     height: .8em;
-    color: $red;
+    color: $clr-primary;
   }
 
   ._grid-wrapper {

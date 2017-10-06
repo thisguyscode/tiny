@@ -140,6 +140,8 @@ $neutral-85: mix($neutral-100, $neutral-00,85%) !default;
 $neutral-90: mix($neutral-100, $neutral-00,90%) !default;
 $neutral-95: mix($neutral-100, $neutral-00,95%) !default;
 
+$clr-primary: $blue;
+
 
 /* Colors by purpose
    ====================================================================== */
@@ -195,7 +197,7 @@ $inner-border-bad-high-contrast: inset 0 0 0 1px rgba($clr-bad, 1);
 $baseline-color:						      $neutral-100;
 $baseline-color-transparent:			rgba($baseline-color, .5);
 
-$grid-lines-color: rgba($red, .1);
+$grid-lines-color: rgba($clr-primary, .1);
 
 
 

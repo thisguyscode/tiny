@@ -63,7 +63,7 @@ export default {
     position: relative;
   }
   ._name {
-    color: $red;
+    color: $clr-primary;
     font-weight: $font-weight-semi;
   }
   ._heading {
@@ -73,6 +73,7 @@ export default {
     width: $unit-xl;
     height: $unit-xl;
     border-radius: 100%;
+    overflow: hidden;
 
     @include mq($from: mobile) {
       position: absolute;

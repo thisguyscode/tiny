@@ -220,7 +220,7 @@ export default {
   }
 
   ._link_icon {
-    color: $red;
+    color: $clr-primary;
     height: auto;
     margin-right: $unit-xs;
 

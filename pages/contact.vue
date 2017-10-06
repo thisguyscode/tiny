@@ -318,7 +318,7 @@ export default {
   @include vr($font-display, $font-size-md);
   @include vr-reset;
   padding: $unit-sm;
-  background-color: $red;
+  background-color: $clr-primary;
   cursor: pointer;
   color: $neutral-00;
 }

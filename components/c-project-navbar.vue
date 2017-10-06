@@ -204,7 +204,7 @@
   }
 
   ._icon {
-    // color: $red;
+    // color: $clr-primary;
     height: 1em;
     vertical-align: middle;
   }

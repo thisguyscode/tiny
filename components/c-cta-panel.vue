@@ -84,7 +84,7 @@
     padding-top: $unit-lg;
     padding-bottom: $unit-lg;
     background-color: rgba($neutral-100,.5);
-    box-shadow: inset 0 1px 0 0 $neutral-80, inset 0 -1px 0 0 $red;;
+    box-shadow: inset 0 1px 0 0 $neutral-80, inset 0 -1px 0 0 $clr-primary;;
 
     @include mq($from: tablet) {
       padding-top: $unit-xxl;

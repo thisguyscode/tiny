@@ -155,18 +155,18 @@ export default {
   }
 
   .c-button--solid {
-    background-color: $red;
+    background-color: $clr-primary;
     transition: background-color .2s ease;
     &:hover {
-      background-color: darken($red, 5%);
+      background-color: darken($clr-primary, 5%);
     }
   }
 
   .c-button--ghost {
-    box-shadow: inset 0 0 0 1px $red;
+    box-shadow: inset 0 0 0 1px $clr-primary;
     transition: background-color .2s ease;
     ._icon {
-      color: $red;
+      color: $clr-primary;
     }
     &:hover {
       background-color: rgba($neutral-100, .9);

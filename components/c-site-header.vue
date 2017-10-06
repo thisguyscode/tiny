@@ -9,7 +9,7 @@
 
           <!-- LOGO -->
           <li class="l-grid__cell  u-1/4  u-2/5@mobile">
-            <nuxt-link class="_link" to="/" v-scroll-to="'#page-top'">
+            <nuxt-link class="_link left" to="/" v-scroll-to="'#page-top'">
               <span class="_link-text">
                 <span class="u-text--lowest-contrast">./</span>
                 <span>tiny</span>
@@ -71,7 +71,7 @@ export default {
       background-attachment: scroll;
     }
     background-color: $neutral-95;
-    box-shadow: inset 0 -1px 0 0 $red;
+    box-shadow: inset 0 -1px 0 0 $clr-primary;
   }
 
   ._link {
@@ -82,34 +82,50 @@ export default {
     text-decoration: none;
     margin-bottom: 1px;
     margin-top: -1px;
+    position: relative;
+    transition: background-color .2s ease, padding .2s ease, box-shadow .2s ease;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: $unit-md;
+      transition: width .2s ease;
+      width: 0;
+      right: 0;
+      left: auto;
+      bottom: $unit-md;
+      background-color: $clr-primary;
+    }
+    &.left {
+      &:before {
+        left: 0;
+        right: auto;
+      }
+    }
 
     &.nuxt-link-active {
       color: $neutral-00; 
     }
 
-    &:not(.nuxt-link-exact-active) {
-      transition: background-color .2s ease, padding .2s ease;
-    }
-    
-    &.nuxt-link-exact-active {
-      transition: background-color .2s ease, padding .2s ease;
-    }
 
-    &:hover {
-      &.nuxt-link-exact-active {
-        padding-right: $unit-sm;
-        padding-left: $unit-sm;
+    &:hover,
+    &.nuxt-link-exact-active {
+      &:before {
+        width: 100%;
+      }
+      @include mq($from: desktop) {
+        box-shadow: inset -1px 0 0 0 $clr-primary;
+        padding-right: $unit-md;
         background-color: rgba($neutral-100, .5);
-        ._link-text {
-          transform: translateY(-$unit-xs);
+        &:before {
+          width: $unit-sm;
         }
       }
-    }
-
-    &:hover:not(.nuxt-link-exact-active) {
-      padding-right: $unit-sm;
-      padding-left: $unit-sm;
-      background-color: rgba($neutral-100, .5);
+      &.left {
+        padding-right: 0;
+        padding-left: $unit-md;
+        box-shadow: inset 1px 0 0 0 $clr-primary;
+      }
     }
   }
 

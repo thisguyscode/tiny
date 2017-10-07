@@ -55,6 +55,10 @@ module.exports = {
     '~/plugins/vue-scrollto.js',
     '~/plugins/no-ssr.js',
     {
+      src: '~/plugins/lazysizes.js',
+      ssr: false
+    },
+    {
       src: '~/plugins/picturefill.js',
       ssr: false
     },

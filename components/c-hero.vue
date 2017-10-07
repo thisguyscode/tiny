@@ -3,6 +3,7 @@
     <l-wrapper>
       <c-image
         v-if="bgImageSrc"
+        :lazy="false"
         class='_background-image'
         fit="cover"
         :class="bgImageClass"

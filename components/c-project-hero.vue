@@ -38,6 +38,7 @@
             <div class="_hero-image-wrapper">
               <transition name="slide-from-right">
                 <c-image
+                  :lazy="false"
                   v-if="transitionEnd"
                   :fit="imgClass"
                   :imageSrc="project.imgSrc"

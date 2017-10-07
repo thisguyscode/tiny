@@ -1,12 +1,52 @@
 <template>
   <transition>
+    
     <!-- Use picture for images with responsive sizes -->
-    <picture v-if="responsive" class="picture">
-      <source type="image/webp" class="c-image" :class="fitClass" :srcset="asset.webpSrcset"></source>
-      <img class="c-image" :class="fitClass" :src="asset.placeholder" :srcset="asset.srcset"/>
+    <picture v-if="responsive && lazy" class="picture">
+      <source
+        type="image/webp"
+        :class="fitClass"
+        :data-srcset="asset.webpSrcset">
+      </source>
+      <img
+        class="c-image lazyload"
+        :class="fitClass"
+        :src="asset.placeholder"
+        :data-srcset="asset.srcset"
+      />
     </picture>
+
+    <!-- Non lazy version -->
+    <picture v-if="responsive && !lazy" class="picture">
+      <source
+        type="image/webp"
+        :class="fitClass"
+        :srcset="asset.webpSrcset">
+      </source>
+      <img
+        class="c-image"
+        :class="fitClass"
+        :src="asset.placeholder"
+        :srcset="asset.srcset"
+      />
+    </picture>
+
     <!-- Otherwise use the plain asset -->
-    <img v-else-if="!responsive" class="c-image" :class="fitClass" :src="asset"/>
+    <img
+      v-else-if="!responsive && lazy"
+      class="c-image lazyload"
+      :class="fitClass"
+      :data-src="asset"
+    />
+
+    <!-- Otherwise use the plain asset -->
+    <img
+      v-else-if="!responsive && !lazy"
+      class="c-image"
+      :class="fitClass"
+      :src="asset"
+    />
+
   </transition>
 </template>
 
@@ -18,9 +58,18 @@ export default {
     },
     fit: {
       default: 'contain'
+    },
+    lazy: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
+    isLazy: function () {
+      if (this.lazy) {
+        return true
+      } else {}
+    },
     fitClass: function () {
       return {
         'cover': this.fit === 'cover',

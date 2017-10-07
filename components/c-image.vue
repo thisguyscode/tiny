@@ -128,7 +128,9 @@ export default {
   },
   mounted () {
     console.log(this.fit)
-    // console.log(this.webP)
+    if (process.browser) {
+      require('lazysizes')
+    }
   }
 }
 </script>

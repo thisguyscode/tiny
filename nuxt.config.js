@@ -54,24 +54,16 @@ module.exports = {
   plugins: [
     '~/plugins/vue-scrollto.js',
     '~/plugins/no-ssr.js',
-    // {
-    //   src: '~/plugins/lazysizes.js',
-    //   ssr: false
-    // },
     {
       src: '~/plugins/picturefill.js',
       ssr: false
     },
-    // {
-    //   src: '~/plugins/global-events.js',
-    //   ssr: false
-    // },
     {
-      src: '~/plugins/vue-affix.js',
+      src: '~/plugins/vue-awesome.js',
       ssr: false
     },
     {
-      src: '~/plugins/vue-awesome.js',
+      src: '~/plugins/vue-affix.js',
       ssr: false
     }
   ],

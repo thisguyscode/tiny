@@ -24,7 +24,8 @@ export default {
     background-repeat: repeat-y;
     background-position: 0 0;
     background-image: linear-gradient(
-      transparent,
+      $neutral-90,
+      transparent ($baseline-size) + px,
       transparent ($background-size / 2 - $baseline-size) + px,
       $neutral-90 ($background-size / 2 - $baseline-size) + px,
       $neutral-90 ($background-size / 2) + px,

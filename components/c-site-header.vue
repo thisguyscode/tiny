@@ -10,7 +10,7 @@
 
           <!-- LOGO -->
           <li class="l-grid__cell  u-1/4  u-2/5@mobile">
-            <nuxt-link class="_link left" to="/" v-scroll-to="'#page-top'">
+            <nuxt-link class="_link _logo-link left" to="/" v-scroll-to="'#page-top'">
               <span class="_link-text">
                 <span class="u-text--lowest-contrast">./</span>
                 <span>tiny</span>
@@ -69,6 +69,7 @@ export default {
   @import "~assets/styles/imports";
 
   .c-navbar-primary {
+    overflow: hidden;
     // @if ($show-baseline == true) {
     //   @include vr-baseline;
     //   background-attachment: scroll;
@@ -78,6 +79,11 @@ export default {
   }
 
   ._link {
+    &:not(._logo-link) {
+      @include mq($until: tablet) {
+        text-align: center;
+      }
+    }
     width: 100%;
     padding-top: $header-primary-padding-top;
     padding-bottom: $header-primary-padding-bottom;
@@ -87,17 +93,15 @@ export default {
     margin-top: -1px;
     position: relative;
     transition: background-color .2s ease, padding .2s ease, box-shadow .2s ease;
-
+    
     &:before {
       content: '';
       position: absolute;
       top: $unit-md;
       transition: width .2s ease;
       width: 0;
-      right: 0;
-      left: auto;
       bottom: $unit-md;
-      background-color: $clr-primary;
+      background-color: $green;
     }
     &.left {
       &:before {
@@ -106,28 +110,60 @@ export default {
       }
     }
 
-    &.nuxt-link-active {
-      color: $neutral-00; 
+    @include mq($until: tablet) {
+      &:before {
+        left: 0;
+        right: 0;
+      }
+    }
+    @include mq($from: tablet) {
+      &:before {
+        right: 0;
+        left: auto;
+      }
     }
 
+    
+    &.nuxt-link-active {
+      color: $neutral-00;
+    }
 
-    &:hover,
+    &:hover {
+      color: contrasting-color($green, $lightest, $darkest)
+    }
+
     &.nuxt-link-exact-active {
       &:before {
-        width: 100%;
+        background-color: $clr-primary;
       }
       @include mq($from: desktop) {
         box-shadow: inset -1px 0 0 0 $clr-primary;
+        &.left {
+          box-shadow: inset 1px 0 0 0 $clr-primary;
+        }
+      }
+    }
+    &:hover,
+    &.nuxt-link-exact-active {
+      @include mq($until: tablet) {
+        &:before {
+          width: 100%;
+        }
+      }
+      @include mq($from: tablet) {
+        &:before {
+          width: 90%;
+        }
+      }
+      @include mq($from: desktop) {
         padding-right: $unit-md;
-        background-color: rgba($neutral-100, .5);
         &:before {
           width: $unit-sm;
         }
-      }
-      &.left {
-        padding-right: 0;
-        padding-left: $unit-md;
-        box-shadow: inset 1px 0 0 0 $clr-primary;
+        &.left {
+          padding-right: 0;
+          padding-left: $unit-md;
+        }
       }
     }
   }

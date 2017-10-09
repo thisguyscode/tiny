@@ -16,217 +16,233 @@
       </c-intro-text>
       
       <l-wrapper>
-        <h2>Current fantasies </br><span class="u-text--lowest-contrast">(subject to frequent change)</span></h2>
 
-        <l-grid>
+        <section class="soft-skills">
+          <h2 class="soft-skills-heading">Soft skills</h2>
+          <section class="skills-good">
+            <h3 class="skills-subheading">Pretty damn good at:</h3>
 
-          <!-- 1 -->
-          <div class="fantasy-item-cell _cell u-2/5@tablet u-1/5@desktop">
             <l-grid>
-              <div class="fantasy-icon-cell _cell u-2/5 u-1/1@tablet">
-                <c-icon class="fantasy-icon" name="eye"></c-icon>
+
+              <!-- 1 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <l-grid>
+                  <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
+                    <div class="skill-icon-wrapper comment">
+                      <c-icon class="skill-icon" name="comments"></c-icon>
+                    </div>
+                  </div>
+                  <div class="_cell u-4/5 u-1/1@tablet">
+                    <h4 class="skill-heading u-margin-bottom-none">Written & verbal communication</h4>
+                    <p class="skill-caption">...but only in English</p>
+                  </div>
+                </l-grid>
               </div>
-              <!-- <div class="_cell u-1/5 u-1/2@tablet u-1/1@desktop">
-                <h4 class="item-heading">Title</h4>
-              </div> -->
-              <div class="_cell u-3/5 u-1/1@tablet">
-                <p class="fantasy-caption">Help to usher in a practical alternative to (not replacement for) the traditional market economy</p>
+              
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 2 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <l-grid>
+                  <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
+                    <div class="skill-icon-wrapper bulb">
+                      <c-icon class="skill-icon" name="lightbulb-o"></c-icon>
+                    </div>
+                  </div>
+                  <div class="_cell u-4/5 u-1/1@tablet">
+                    <h4 class="skill-heading u-margin-bottom-none">Common-sense design</h4>
+                    <p class="skill-caption">Designing without data is underrated</p>
+                  </div>
+                </l-grid>
               </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 3 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <l-grid>
+                  <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
+                    <div class="skill-icon-wrapper mouse">
+                      <c-icon class="skill-icon" name="mouse-pointer"></c-icon>
+                    </div>
+                  </div>
+                  <div class="_cell u-4/5 u-1/1@tablet">
+                    <h4 class="skill-heading u-margin-bottom-none">'User' interface design</h4>
+                    <p class="skill-caption">I prefer 'screen' interface design - every interface is a user interface</p>
+                  </div>
+                </l-grid>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 4 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <l-grid>
+                  <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
+                    <div class="skill-icon-wrapper hourglass">
+                      <c-icon class="skill-icon" name="hourglass-2"></c-icon>
+                    </div>
+                  </div>
+                  <div class="_cell u-4/5 u-1/1@tablet">
+                    <h4 class="skill-heading u-margin-bottom-none">Optimising processes</h4>
+                    <p class="skill-caption">I'll put in the time now to save someone else it in the future</p>
+                  </div>
+                </l-grid>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 5 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <l-grid>
+                  <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
+                    <div class="skill-icon-wrapper puzzle">
+                      <c-icon class="skill-icon" name="puzzle-piece"></c-icon>
+                    </div>
+                  </div>
+                  <div class="_cell u-4/5 u-1/1@tablet">
+                    <h4 class="skill-heading u-margin-bottom-none">System-mindedness</h4>
+                    <p class="skill-caption">Making things that play nice with other things</p>
+                  </div>
+                </l-grid>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 6 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <l-grid>
+                  <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
+                    <div class="skill-icon-wrapper heart">
+                      <c-icon class="skill-icon" name="heart"></c-icon>
+                    </div>
+                  </div>
+                  <div class="_cell u-4/5 u-1/1@tablet">
+                    <h4 class="skill-heading u-margin-bottom-none">Empathising</h4>
+                    <p class="skill-caption">Absolutely essential for a designer</p>
+                  </div>
+                </l-grid>
+              </div>
+
             </l-grid>
-          </div>
+          </section>
           
-          <!-- spacer -->
-          <div class="_cell u-1/5@tablet"></div>
+          <section class="skills-not-bad">
 
-          <!-- 2 -->
-          <div class="fantasy-item-cell _cell u-2/5@tablet u-1/5@desktop">
+            <h3 class="subskill-subheading">Not bad at:</h3>
             <l-grid>
-              <div class="fantasy-icon-cell _cell u-2/5 u-1/1@tablet">
-                <c-icon class="fantasy-icon" name="eye"></c-icon>
+
+              <div class="_cell u-2/5@tablet u-1/5@desktop">
+                <span class="subskill">
+                  <c-icon class="subskill-icon" name="user-circle"></c-icon>
+                  <span class="subskill-caption">User experience design</span>
+                </span>
               </div>
-              <!-- <div class="_cell u-1/5 u-1/2@tablet u-1/1@desktop">
-                <h4 class="item-heading">Title</h4>
-              </div> -->
-              <div class="_cell u-3/5 u-1/1@tablet">
-                <p class="fantasy-caption">Help to usher in a practical alternative to (not replacement for) the traditional market economy</p>
+
+              <div class="subskill-spacer u-1/5"></div>
+
+              <div class="_cell u-2/5@tablet u-1/5@desktop">
+                <span class="subskill">
+                  <c-icon class="subskill-icon" name="bar-chart"></c-icon>
+                  <span class="subskill-caption">Data-informed design</span>
+                </span>
+              </div>
+
+              <div class="_cell u-2/5@tablet u-1/5@desktop">
+                <span class="subskill">
+                  <c-icon class="subskill-icon" name="pied-piper"></c-icon>
+                  <span class="subskill-caption">Branding</span>
+                </span>
+              </div>
+
+              <div class="subskill-spacer u-1/5"></div>
+              
+              <div class="_cell u-2/5@tablet u-1/5@desktop">
+                <span class="subskill">
+                  <c-icon class="subskill-icon" name="pencil"></c-icon>
+                  <span class="subskill-caption">Prototyping</span>
+                </span>
+              </div>
+              <div class="_cell u-2/5@tablet u-1/5@desktop">
+                <span class="subskill">
+                  <c-icon class="subskill-icon" name="bullhorn"></c-icon>
+                  <span class="subskill-caption">Presentation</span>
+                </span>
               </div>
             </l-grid>
-          </div>
+          </section>
+        </section><!--END soft skills section -->
 
-          <!-- spacer -->
-          <div class="_cell u-1/5@tablet"></div>
+        <section class="fantasies">
+          <h2>Current fantasies </br><span class="u-text--lowest-contrast">(subject to frequent change)</span></h2>
 
-          <!-- 3 -->
-          <div class="fantasy-item-cell _cell u-2/5@tablet u-1/5@desktop">
-            <l-grid>
-              <div class="fantasy-icon-cell _cell u-2/5 u-1/1@tablet">
-                <c-icon class="fantasy-icon" name="eye"></c-icon>
-              </div>
-              <!-- <div class="_cell u-1/5 u-1/2@tablet u-1/1@desktop">
-                <h4 class="item-heading">Title</h4>
-              </div> -->
-              <div class="_cell u-3/5 u-1/1@tablet">
-                <p class="fantasy-caption">Help to usher in a practical alternative to (not replacement for) the traditional market economy</p>
-              </div>
-            </l-grid>
-          </div>
+          <l-grid>
 
-        </l-grid>
+            <!-- 1 -->
+            <div class="fantasy-item-cell _cell u-2/5@tablet u-1/5@desktop">
+              <l-grid>
+                <div class="fantasy-icon-cell _cell u-2/5 u-1/1@tablet">
+                  <div class="fantasy-icon-wrapper money">
+                    <c-icon class="fantasy-icon" name="money"></c-icon>
+                  </div>
+                </div>
+                <!-- <div class="_cell u-1/5 u-1/2@tablet u-1/1@desktop">
+                  <h4 class="item-heading">Title</h4>
+                </div> -->
+                <div class="_cell u-3/5 u-1/1@tablet">
+                  <p class="fantasy-caption">Help to usher in a practical alternative to (not replacement for) the traditional market economy</p>
+                </div>
+              </l-grid>
+            </div>
+            
+            <!-- spacer -->
+            <div class="_cell u-1/5@tablet"></div>
 
-        <h2>Soft skills</h2>
-        <h3 class="skills-subheading">Pretty damn good at:</h3>
+            <!-- 2 -->
+            <div class="fantasy-item-cell _cell u-2/5@tablet u-1/5@desktop">
+              <l-grid>
+                <div class="fantasy-icon-cell _cell u-2/5 u-1/1@tablet">
+                  <div class="fantasy-icon-wrapper home">
+                    <c-icon class="fantasy-icon" name="home"></c-icon>
+                  </div>
+                </div>
+                <!-- <div class="_cell u-1/5 u-1/2@tablet u-1/1@desktop">
+                  <h4 class="item-heading">Title</h4>
+                </div> -->
+                <div class="_cell u-3/5 u-1/1@tablet">
+                  <p class="fantasy-caption">Build my own house using earth/eco building methods</p>
+                </div>
+              </l-grid>
+            </div>
 
-        <l-grid>
+            <!-- spacer -->
+            <div class="_cell u-1/5@tablet"></div>
 
-          <!-- 1 -->
-          <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
-            <l-grid>
-              <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
-                <c-icon class="fantasy-icon" name="comment"></c-icon>
-              </div>
-              <div class="_cell u-4/5 u-1/1@tablet">
-                <h4 class="skill-heading u-margin-bottom-none">Written & verbal communication</h4>
-                <p class="skill-caption">...but only in English</p>
-              </div>
-            </l-grid>
-          </div>
-          
-          <!-- spacer -->
-          <div class="_cell u-1/5@tablet"></div>
+            <!-- 3 -->
+            <div class="fantasy-item-cell _cell u-2/5@tablet u-1/5@desktop">
+              <l-grid>
+                <div class="fantasy-icon-cell _cell u-2/5 u-1/1@tablet">
+                  <div class="fantasy-icon-wrapper fire">
+                    <c-icon class="fantasy-icon" name="fire"></c-icon>
+                  </div>
+                </div>
+                <!-- <div class="_cell u-1/5 u-1/2@tablet u-1/1@desktop">
+                  <h4 class="item-heading">Title</h4>
+                </div> -->
+                <div class="_cell u-3/5 u-1/1@tablet">
+                  <p class="fantasy-caption">Learn to forge high-quality kitchen knives</p>
+                </div>
+              </l-grid>
+            </div>
 
-          <!-- 2 -->
-          <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
-            <l-grid>
-              <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
-                <c-icon class="fantasy-icon" name="comment"></c-icon>
-              </div>
-              <div class="_cell u-4/5 u-1/1@tablet">
-                <h4 class="skill-heading u-margin-bottom-none">Written & verbal communication</h4>
-                <p class="skill-caption">...but only in English</p>
-              </div>
-            </l-grid>
-          </div>
+          </l-grid>
+        </section><!--END fantasies section -->
 
-          <!-- spacer -->
-          <div class="_cell u-1/5@tablet"></div>
-
-          <!-- 3 -->
-          <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
-            <l-grid>
-              <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
-                <c-icon class="fantasy-icon" name="comment"></c-icon>
-              </div>
-              <div class="_cell u-4/5 u-1/1@tablet">
-                <h4 class="skill-heading u-margin-bottom-none">Written & verbal communication</h4>
-                <p class="skill-caption">...but only in English</p>
-              </div>
-            </l-grid>
-          </div>
-
-          <!-- spacer -->
-          <div class="_cell u-1/5@tablet"></div>
-
-          <!-- 4 -->
-          <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
-            <l-grid>
-              <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
-                <c-icon class="fantasy-icon" name="comment"></c-icon>
-              </div>
-              <div class="_cell u-4/5 u-1/1@tablet">
-                <h4 class="skill-heading u-margin-bottom-none">Written & verbal communication</h4>
-                <p class="skill-caption">...but only in English</p>
-              </div>
-            </l-grid>
-          </div>
-
-          <!-- spacer -->
-          <div class="_cell u-1/5@tablet"></div>
-
-          <!-- 5 -->
-          <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
-            <l-grid>
-              <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
-                <c-icon class="fantasy-icon" name="comment"></c-icon>
-              </div>
-              <div class="_cell u-4/5 u-1/1@tablet">
-                <h4 class="skill-heading u-margin-bottom-none">Written & verbal communication</h4>
-                <p class="skill-caption">...but only in English</p>
-              </div>
-            </l-grid>
-          </div>
-
-          <!-- spacer -->
-          <div class="_cell u-1/5@tablet"></div>
-
-          <!-- 6 -->
-          <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
-            <l-grid>
-              <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
-                <c-icon class="fantasy-icon" name="comment"></c-icon>
-              </div>
-              <div class="_cell u-4/5 u-1/1@tablet">
-                <h4 class="skill-heading u-margin-bottom-none">Written & verbal communication</h4>
-                <p class="skill-caption">...but only in English</p>
-              </div>
-            </l-grid>
-          </div>
-
-        </l-grid>
-
-        <h3 class="subskill-subheading">Not bad at:</h3>
-        <l-grid>
-
-          <div class="_cell u-2/5@tablet u-1/5@desktop">
-            <span class="subskill">
-              <c-icon class="subskill-icon" name="user-circle"></c-icon>
-              <span class="subskill-caption">User experience design</span>
-            </span>
-          </div>
-
-          <div class="subskill-spacer u-1/5"></div>
-
-          <div class="_cell u-2/5@tablet u-1/5@desktop">
-            <span class="subskill">
-              <c-icon class="subskill-icon" name="bar-chart"></c-icon>
-              <span class="subskill-caption">Data-informed design</span>
-            </span>
-          </div>
-
-          <div class="_cell u-2/5@tablet u-1/5@desktop">
-            <span class="subskill">
-              <c-icon class="subskill-icon" name="pied-piper"></c-icon>
-              <span class="subskill-caption">Branding</span>
-            </span>
-          </div>
-
-          <div class="subskill-spacer u-1/5"></div>
-          
-          <div class="_cell u-2/5@tablet u-1/5@desktop">
-            <span class="subskill">
-              <c-icon class="subskill-icon" name="pencil"></c-icon>
-              <span class="subskill-caption">Prototyping</span>
-            </span>
-          </div>
-          <div class="_cell u-2/5@tablet u-1/5@desktop">
-            <span class="subskill">
-              <c-icon class="subskill-icon" name="bullhorn"></c-icon>
-              <span class="subskill-caption">Presentation</span>
-            </span>
-          </div>
-        </l-grid>
-
-      </l-wrapper>
-
-      <!-- <l-staggered-grid></l-staggered-grid> -->
-
-
-      <l-wrapper>
-        <h1>profile</h1>
-        <h2>profile</h2>
-        <h3>profile</h3>
-        <h4 class="u-margin-bottom">profile</h4>
-        <p>Testing testing testing</p>
-        <p>Testing testing testing</p>
       </l-wrapper>
 
       <section>
@@ -299,51 +315,161 @@
     margin-bottom: 0;
   }
   .fantasy-caption {
-    @include vr($font-body, $font-size-sm);
-    font-weight: $font-weight-semi;
+    @include vr($font-body, $font-size-md);
+    color: $neutral-40;
+    // font-weight: $font-weight-semi;
   }
 
-  .fantasy-icon-cell {
+  .fantasy-icon-wrapper {
     height: $unit-xxl;
+    padding: $unit-sm;
+    text-align: center;
+    border-radius: 2px;
+    @include mq($until: tablet) {
+      margin-right: $unit-sm;
+    }
+    &.home {
+      background-color: $neutral-00;
+      > .fantasy-icon {
+        color: contrasting-color($neutral-00, $lightest, $darkest)
+      }
+    }
+    &.money {
+      background-color: $green;
+      > .fantasy-icon {
+        color: contrasting-color($green, $lightest, $darkest)
+      }
+    }
+    &.fire {
+      background-color: $red;
+      > .fantasy-icon {
+        color: contrasting-color($red, $lightest, $darkest)
+      }
+    }
     @include mq($from: tablet) {
       margin-bottom: $unit-md;
     }
   }
+
+  .fantasies {
+    margin-bottom: $unit-lg;
+    @include mq($from: tablet) {
+      margin-bottom: $unit-xxl;
+    }
+  }
+  .soft-skills {
+    margin-bottom: $unit-lg;
+    @include mq($from: tablet) {
+      margin-bottom: $unit-xxl;
+    }
+    // @include mq($from: desktop) {
+    //   margin-bottom: $unit-xxl;
+    // }
+  }
+  .skills-good {
+    margin-bottom: $unit-md;
+    @include mq($from: tablet) {
+      margin-bottom: $unit-lg;
+    }
+  }
+  .skill-heading {
+    @include vr($font-body, $font-size-lg);
+    font-weight: $font-weight-semi;
+    @include mq($until: tablet) {
+      padding-top: $unit-sm;
+    }
+  }
+  .soft-skills-heading {
+    margin-bottom: $unit-md;
+    @include mq($from: tablet) {
+      margin-bottom: $unit-lg;
+    }
+  }
+
+  .skill-icon-wrapper {
+    width: $unit-lg;
+    height: $unit-lg;
+    padding: $unit-xs;
+    position: relative;
+    border-radius: 2px;
+    @include mq($from: tablet) {
+      margin-bottom: $unit-md;
+    }
+    text-align: center;
+    &.heart {
+      background-color: $red;
+      > .skill-icon {
+        color: contrasting-color($red, $lightest, $darkest)
+      }
+    }
+    &.comment {
+      background-color: $purple;
+      > .skill-icon {
+        color: contrasting-color($purple, $lightest, $darkest)
+      }
+    }
+    &.bulb {
+      background-color: gold;
+      > .skill-icon {
+        color: contrasting-color(gold, $lightest, $darkest)
+      }
+    }
+    &.puzzle {
+      background-color: $blue;
+      > .skill-icon {
+        color: contrasting-color($blue, $lightest, $darkest)
+      }
+    }
+    &.mouse {
+      background-color: $neutral-00;
+      > .skill-icon {
+        color: contrasting-color($neutral-00, $lightest, $darkest)
+      }
+    }
+    &.hourglass {
+      background-color: sandybrown;
+      > .skill-icon {
+        color: contrasting-color(sandybrown, $lightest, $darkest)
+      }
+    }
+  }
+
+  .skill-icon {
+
+  }
+
   .skill-icon,
   .fantasy-icon {
-    @include vr($font-body, $font-size-sm);
     width: auto;
     height: 100%;
     max-width: 100%;
     max-height: 100%;
-    // margin-bottom: $heading-trailer;
   }
 
+
   .skill-caption {
+    color: $neutral-40;
     @include mq($until: tablet) {
       display: none;
     }
   }
 
   .skill-item-cell {
-    margin-bottom: $unit-lg;
+    margin-bottom: $unit-sm;
     @include mq($from: tablet) {
       margin-bottom: $unit-md;
     }
   }
-  .skill-icon-cell {
-    height: $unit-md;
-    @include mq($from: tablet) {
-      margin-bottom: $unit-sm;
-      height: $unit-lg;
-    }
-  }
+  // .skill-icon-cell {
+  //   height: $unit-md;
+  //   @include mq($from: tablet) {
+  //     margin-bottom: $unit-sm;
+  //     height: $unit-lg;
+  //   }
+  // }
 
   .skills-subheading {
     margin-bottom: $unit-md;
-    @include mq($from: tablet) {
-      margin-bottom: $unit-lg;
-    }
   }
 
   // .subskill-subheading {
@@ -355,18 +481,23 @@
 
   .subskill {
     display: flex;
-    font-weight: $font-weight-semi;
+    // font-weight: $font-weight-semi;
     
     @include mq($until: desktop) {
       margin-bottom: $unit-md;
     }
   }
-  .subskill-caption {
+  .subskill-caption,
+  .skill-caption {
     @include vr($font-body, $font-size-md);
+    color: $neutral-40;
+  }
+  .subskill-caption {
     padding-right: $unit-xs;
   }
   .subskill-icon {
-    height: $unit-sm + $unit-xs;
+    color: $neutral-00;
+    height: $unit-md;
     margin-right: $unit-xs;
     width: $unit-md;
     max-width: 100%;

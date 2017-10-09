@@ -93,16 +93,16 @@ export default {
       background-position: 0 0;
       background-size: 0 ($background-size + px);
     }
-    20% {
-      background-position: 0 0;
-      background-size: 20% ($background-size + px);
-    }
+    // 20% {
+    //   // background-position: 0 0;
+    //   // background-size: 20% ($background-size + px);
+    // }
     50% {
-      background-size: 40% ($background-size + px);
+      background-size: 50% ($background-size + px);
     }
-    90% {
-      background-size: 20% ($background-size + px);
-    }
+    // 90% {
+    //   // background-size: 20% ($background-size + px);
+    // }
     100% {
       background-position: 100% 0;
       background-size: 0 ($background-size + px);

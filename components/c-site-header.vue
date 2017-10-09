@@ -1,6 +1,7 @@
 <template>
   <l-header-primary>
     
+    <c-baselines></c-baselines>
     <c-gridlines></c-gridlines>
 
     <nav class="c-navbar-primary">
@@ -49,12 +50,14 @@
 
 <script>
 import cGridlines from '~/components/c-gridlines'
+import cBaselines from '~/components/c-baselines'
 import lHeaderPrimary from '~/components/layout/l-header-primary'
 import lWrapper from '~/components/layout/l-wrapper'
 export default {
   components: {
     lHeaderPrimary,
     cGridlines,
+    cBaselines,
     lWrapper
   }
 }
@@ -66,10 +69,10 @@ export default {
   @import "~assets/styles/imports";
 
   .c-navbar-primary {
-    @if ($show-baseline == true) {
-      @include vr-baseline;
-      background-attachment: scroll;
-    }
+    // @if ($show-baseline == true) {
+    //   @include vr-baseline;
+    //   background-attachment: scroll;
+    // }
     background-color: $neutral-95;
     box-shadow: inset 0 -1px 0 0 $clr-primary;
   }

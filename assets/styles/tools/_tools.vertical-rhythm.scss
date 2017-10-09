@@ -56,25 +56,3 @@
 	position: static;
 	top: auto;
 }
-
-
-// Create a mixin for showing the baseline
-@mixin vr-baseline {
-  $baseline-size: 1;
-  $background-size: $px-line-height;
-
-	// Sets a baseline every half rhythm.
-	background: linear-gradient(
-    transparent,
-		transparent ($background-size / 2 - $baseline-size) + px,
-		$baseline-color-transparent ($background-size / 2 - $baseline-size) + px,
-		$baseline-color-transparent ($background-size / 2) + px,
-		transparent ($background-size / 2) + px,
-		transparent ($background-size - $baseline-size) + px,
-		$baseline-color-transparent ($background-size - $baseline-size) + px,
-    $baseline-color-transparent ($background-size ) + px
-	);
-	background-size: 100% ($background-size + px);
-  background-repeat: repeat-y;
-  background-position: 0 0;
-}

@@ -21,7 +21,7 @@ export default {
   
   .l-header-primary {
     text-align: left;
-    z-index: 20000;
+    z-index: 9000;
     position: relative;
   }
 
@@ -32,7 +32,7 @@ export default {
 
   ._actual {
     position: fixed;
-    z-index: 20000;
+    z-index: 9000;
     top: 0;
     left: 0;
     width: 100%;

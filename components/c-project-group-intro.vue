@@ -10,6 +10,7 @@
                 :relativeElementSelector="'#project-group-' + index"
                 :z="200">
                 <h3 class="_title  u-margin-bottom-none">
+                  <c-baselines class="_title-baselines"></c-baselines>
                   <span class="_index">{{ index }}. </span>
                   <span class="_name">{{ name }}</span>
                   <f-link
@@ -38,6 +39,7 @@
 <script>
 import cIcon from '~/components/c-icon'
 import cButton from '~/components/c-button'
+import cBaselines from '~/components/c-baselines'
 import fLink from '~/components/functional/f-link'
 import lWrapper from '~/components/layout/l-wrapper'
 import lAffix from '~/components/layout/l-affix'
@@ -46,6 +48,7 @@ export default {
   components: {
     cIcon,
     cButton,
+    cBaselines,
     fLink,
     lWrapper,
     lGrid,
@@ -89,6 +92,9 @@ export default {
     }
 
   }
+  ._title-baselines {
+    display: none;
+  }
 
   ._grid {
     align-items: flex-start;
@@ -124,6 +130,7 @@ export default {
     transition: color .4s ease;
     min-width: $page-padding-mobile;
     padding-right: $unit-xs;
+    position: relative;
      
     @include mq($until: tablet) {
       padding-left: $unit-xs;
@@ -177,8 +184,11 @@ export default {
         display: initial;
       }
       ._title {
-        @if ($show-baseline == true) {
-          @include vr-baseline;
+        // @if ($show-baseline == true) {
+        //   @include vr-baseline;
+        // }
+        ._title-baselines {
+          display: initial;
         }
         background-color: $neutral-95;
         @include mq($from: tablet) {
@@ -188,6 +198,7 @@ export default {
       ._name {
         padding-left: $unit-xs;
         box-shadow: inset 1px 0 0 0 $neutral-90;
+        position: relative;
 
         @include mq($until: tablet) {
           padding-right: $unit-xs;

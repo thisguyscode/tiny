@@ -1,6 +1,6 @@
 <template>
   <transition>
-    
+
     <!-- Use picture for images with responsive sizes -->
     <picture v-if="responsive && lazy" class="picture">
       <source
@@ -14,6 +14,7 @@
         :src="asset.placeholder"
         :data-srcset="asset.srcset"
       />
+      <c-loading-indef class="loader"></c-loading-indef>
     </picture>
 
     <!-- Non lazy version -->
@@ -32,26 +33,33 @@
     </picture>
 
     <!-- Otherwise use the plain asset -->
-    <img
-      v-else-if="!responsive && lazy"
-      class="c-image lazyload"
-      :class="fitClass"
-      :data-src="asset"
-    />
+    <span v-else-if="!responsive && lazy">
+      <img
+        class="c-image lazyload"
+        :class="fitClass"
+        :data-src="asset"
+      />
+      <c-loading-indef class="loader"></c-loading-indef>
+    </span>
 
     <!-- Otherwise use the plain asset -->
-    <img
-      v-else-if="!responsive && !lazy"
-      class="c-image"
-      :class="fitClass"
-      :src="asset"
-    />
+    <span v-else-if="!responsive && !lazy">
+      <img
+        class="c-image"
+        :class="fitClass"
+        :src="asset"
+      />
+    </span>
 
   </transition>
 </template>
 
 <script>
+import cLoadingIndef from '~/components/c-loading-indef'
 export default {
+  components: {
+    cLoadingIndef
+  },
   props: {
     imageSrc: {
       required: true
@@ -147,6 +155,7 @@ export default {
     display: block;
     height: 100%;
     width: 100%;
+    // position: relative;
   }
   .contain {
     object-fit: contain;
@@ -154,5 +163,16 @@ export default {
   .cover {
     object-fit: cover;
   }
-  
+  .loader {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .lazyloaded {
+    & ~ .loader {
+      display: none;
+    }
+  }
 </style>

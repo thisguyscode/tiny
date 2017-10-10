@@ -21,7 +21,7 @@
           <div class="_objective-cell _cell u-2/5@tablet">
             <h4>Objective</h4>
             <transition name="fade">
-              <p v-if="transitionEnd">{{ project.objective }}</p>
+              <p v-if="transitionEnd" class="overview-string">{{ project.objective }}</p>
             </transition>
           </div>
 
@@ -32,13 +32,15 @@
                   <div class="_group _cell u-2/5@mobile u-1/1@tablet">
                     <h4>Date</h4>
                     <transition name="fade">
-                      <p v-if="transitionEnd" class="_item">{{ project.date }}</p>
+                      <p v-if="transitionEnd" class="_item item-string">
+                        {{ project.date }}
+                      </p>
                     </transition>
                   </div>
                   <div class="_group _cell u-2/5@mobile u-1/1@tablet">
                     <h4>Role</h4>
                     <transition name="fade">
-                      <p v-if="transitionEnd" class="_item">{{ project.role }}</p>
+                      <p v-if="transitionEnd" class="_item item-string">{{ project.role }}</p>
                     </transition>
                   </div>
                 </l-grid>
@@ -48,20 +50,32 @@
                 <transition name="fade">
                   <ul v-if="transitionEnd" class="_group u-list-bare">
                     <li class="_item" v-for="skill in project.skills" :key="skill.id">
-                      {{ skill }}
+                      <span class="item-string">{{ skill }}</span>
                     </li>
                   </ul>
                 </transition>
               </div>
               <div class="_list-column _cell u-2/5@mobile u-1/3@tablet">
+                
                 <h4>Tech</h4>
                 <transition name="fade">
                   <ul v-if="transitionEnd" class="_group u-list-bare">
-                    <li class="_item" v-for="tech in project.techs" :key="tech.id">
-                      {{ tech }}
+                    <li v-for="tech in project.techs" :key="tech.id" class="tech-wrapper">
+                      
+                      <span v-if="tech === 'Adobe Photoshop'" class="tech-icon-wrapper ps">
+                        <span class="tech-icon-text">Ps</span>
+                      </span>
+                      
+                      <span v-else-if="tech === 'Adobe Illustrator'" class="tech-icon-wrapper ai">
+                        <span class="tech-icon-text">Ai</span>
+                      </span>
+
+                      <span class="item-string  tech-string">{{ tech }}</span>
+
                     </li>
                   </ul>
                 </transition>
+
               </div>
             </l-grid>
           </div>
@@ -212,6 +226,50 @@
     display: inline-block;
     padding-bottom: 0;
     margin-bottom: $paragraph-trailer;
+  }
+
+  .tech-wrapper {
+    display: flex;
+    margin-bottom: $unit-sm;
+  }
+  
+  .tech-icon-wrapper {
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    padding-left: $unit-xs;
+    padding-right: $unit-xs;
+    text-align: center;
+    height: $unit-md;
+    width: $unit-md;
+    display: inline-block;
+    margin-right: $unit-xs;
+    &.ps {
+      background-color: $blue;
+      > .tech-icon-text {
+        color: contrasting-color($blue, $lightest, $darkest)
+      }
+    }
+    &.ai {
+      background-color: $yellow;
+      > .tech-icon-text {
+        color: contrasting-color($yellow, $lightest, $darkest)
+      }
+    }
+  }
+  .tech-icon-text {
+    font-weight: $font-weight-semi;
+    height: 100%;
+    display: inline-block;
+  }
+  .tech-string {
+    @include vr($font-body, $font-size-sm);
+    display: inline-block;
+  }
+
+  .item-string,
+  .overview-string {
+    color: $neutral-40;
   }
 
 </style>

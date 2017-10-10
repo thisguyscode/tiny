@@ -18,7 +18,7 @@
       <l-wrapper>
 
         <section class="soft-skills">
-          <h2 class="soft-skills-heading">Hard skills</h2>
+          <h2>Hard skills</h2>
           <p>Completely arbitrary ratings scores for my skills</p>
           
           <section class="skills-good">
@@ -105,22 +105,6 @@
                 </div>
                 <c-score-bar :percent="80" :of="10"></c-score-bar>
                 <p class="skill-caption">Familiar with almost the entirety of this product, though I imagine with their new Sketch integrations I'll have a lot to learn</p>
-              </div>
-
-              <!-- spacer -->
-              <div class="_cell u-1/5@tablet"></div>
-
-              <!-- 6 -->
-              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
-                <div class="skill-icon-wrapper ps software">
-                  <span class="skill-icon-text">Ps</span>
-                </div>
-                <div class="skill-label">
-                  <div class="software-name">Photoshop</div>
-                  <div class="software-company">Adobe</div>
-                </div>
-                <c-score-bar :percent="80" :of="10"></c-score-bar>
-                <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
               </div>
 
             </l-grid>

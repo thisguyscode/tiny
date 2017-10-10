@@ -14,7 +14,7 @@ export default {
 
   $baseline-size: 1;
   $background-size: $px-line-height;
-  $overlay-clr: $blue;
+  $overlay-clr: $neutral-80;
 
   // Create a mixin for showing the baseline
   .c-baselines {

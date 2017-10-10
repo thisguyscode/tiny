@@ -121,8 +121,10 @@ export default {
   }
 
   ._name {
-    transition: padding-left .4s ease, box-shadow .4s ease, color .4s ease;
     padding-right: $unit-sm;
+    @include mq($from: tablet) {
+      transition: padding .4s ease, box-shadow .4s ease, color .4s ease;
+    }
   }
 
   ._index {
@@ -131,12 +133,9 @@ export default {
     min-width: $page-padding-mobile;
     padding-right: $unit-xs;
     position: relative;
-     
-    @include mq($until: tablet) {
-      padding-left: $unit-xs;
-    }
     
     @include mq($from: tablet) {
+      transition: padding .4s ease, color .4s ease;
       text-align: right;
       min-width: $page-padding-tablet;
     }
@@ -180,6 +179,11 @@ export default {
 
   ._sticky-header {
     &.affix {
+      ._name,
+      ._index {
+        padding: $unit-xs;
+        color: $neutral-00;
+      }
       ._project-group-link {
         display: initial;
       }
@@ -191,12 +195,12 @@ export default {
           display: initial;
         }
         background-color: $neutral-95;
+        box-shadow: inset 0 0 0 1px $neutral-80;
         @include mq($from: tablet) {
-          box-shadow: inset 0 0 0 1px $neutral-80;
         }
       }
       ._name {
-        padding-left: $unit-xs;
+        padding-right: $unit-xs;
         box-shadow: inset 1px 0 0 0 $neutral-90;
         position: relative;
 
@@ -207,10 +211,9 @@ export default {
           padding-left: $unit-sm;
         }
       }
-      ._name,
       ._index {
-        color: $neutral-00;
-      }
+        padding-left: $unit-sm;
+      } 
     }
     &.affix-bottom {
       opacity: 0;

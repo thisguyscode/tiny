@@ -172,12 +172,12 @@ export default {
   ._title {
     @include vr($font-display, $font-size-md);
     display: flex;
-    margin-bottom: $unit-xs;
+    margin-bottom: $unit-sm;
 
     @include mq($from: tablet) {
       @include vr($font-display, $font-size-lg);
       margin-left: -$page-padding-tablet;
-      margin-bottom: $unit-sm;
+      // margin-bottom: $unit-sm;
     }
     @include mq($from: desktop) {
       @include vr($font-display, $font-size-xl);

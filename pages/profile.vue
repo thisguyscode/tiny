@@ -18,7 +18,119 @@
       <l-wrapper>
 
         <section class="soft-skills">
+          <h2 class="soft-skills-heading">Hard skills</h2>
+          <p>Completely arbitrary ratings scores for my skills</p>
+          
+          <section class="skills-good">
+            <h3 class="skills-subheading">Design:</h3>
+
+            <l-grid>
+
+              <!-- 1 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper ps software">
+                  <span class="skill-icon-text">Ps</span>
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">Photoshop</div>
+                  <div class="software-company">Adobe</div>
+                </div>
+                <c-score-bar :percent="80" :of="10"></c-score-bar>
+                <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+              </div>
+              
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 2 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper ai software">
+                  <span class="skill-icon-text">Ai</span>
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">Illustrator</div>
+                  <div class="software-company">Adobe</div>
+                </div>
+                <c-score-bar :percent="60" :of="10"></c-score-bar>
+                <p class="skill-caption">Proficient in the fundamentals and able to learn new tools quickly. Understand basics of print-preparation</p>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 3 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper id software">
+                  <span class="skill-icon-text">Id</span>
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">InDesign</div>
+                  <div class="software-company">Adobe</div>
+                </div>
+                <c-score-bar :percent="50" :of="10"></c-score-bar>
+                <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 4 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper software u-padding-none">
+                  <c-image
+                    imageSrc="logo-sketch.svg"
+                  />
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">Sketch</div>
+                  <div class="software-company">Bohemian Coding</div>
+                </div>
+                <c-score-bar :percent="60" :of="10"></c-score-bar>
+                <p class="skill-caption">Mostly familiar with the possibilities and best practices but don't yet make full use of the more complex features and plugins</p>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 5 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper software u-padding-none">
+                  <c-image
+                    imageSrc="logo-invision.svg"
+                  />
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">InVision</div>
+                  <div class="software-company">InVision</div>
+                </div>
+                <c-score-bar :percent="80" :of="10"></c-score-bar>
+                <p class="skill-caption">Familiar with almost the entirety of this product, though I imagine with their new Sketch integrations I'll have a lot to learn</p>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 6 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper ps software">
+                  <span class="skill-icon-text">Ps</span>
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">Photoshop</div>
+                  <div class="software-company">Adobe</div>
+                </div>
+                <c-score-bar :percent="80" :of="10"></c-score-bar>
+                <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+              </div>
+
+            </l-grid>
+          </section>
+        </section><!--END hard skills section -->
+        
+
+        <section class="soft-skills">
           <h2 class="soft-skills-heading">Soft skills</h2>
+          
           <section class="skills-good">
             <h3 class="skills-subheading">Pretty damn good at:</h3>
 
@@ -263,7 +375,9 @@
 
 <script>
   import cGridlines from '~/components/c-gridlines'
+  import cScoreBar from '~/components/c-score-bar'
   import cHero from '~/components/c-hero'
+  import cImage from '~/components/c-image'
   import cIcon from '~/components/c-icon'
   import cCtaPanel from '~/components/c-cta-panel'
   import cIntroText from '~/components/c-intro-text'
@@ -278,6 +392,8 @@
       cGridlines,
       cHero,
       cIcon,
+      cImage,
+      cScoreBar,
       cIntroText,
       cCtaPanel,
       lWrapper,
@@ -302,6 +418,14 @@
   }
   ._filler {
     height: 2000px;
+  }
+
+  .software-name {
+    // float: left;
+    // margin-right: 100%;
+  }
+  .software-company {
+
   }
 
   .fantasy-item-cell {
@@ -351,6 +475,10 @@
     }
   }
 
+  .software-company {
+    color: $neutral-40;
+  }
+
   .fantasies {
     margin-bottom: $unit-lg;
     @include mq($from: tablet) {
@@ -386,16 +514,27 @@
     }
   }
 
+  .skill-label {
+    @include vr($font-body, $font-size-lg);
+    display: inline-block;
+    vertical-align: top;
+    font-weight: $font-weight-semi;
+  }
   .skill-icon-wrapper {
+    margin-right: $unit-sm;
     width: $unit-lg;
     height: $unit-lg;
     padding: $unit-xs;
     position: relative;
     border-radius: 2px;
+    display: inline-block;
     @include mq($from: tablet) {
       margin-bottom: $unit-md;
     }
     text-align: center;
+    &.software {
+      border-radius: 8px;
+    }
     &.heart {
       background-color: $red;
       > .skill-icon {
@@ -430,6 +569,24 @@
       background-color: sandybrown;
       > .skill-icon {
         color: contrasting-color(sandybrown, $lightest, $darkest)
+      }
+    }
+    &.ps {
+      background-color: $blue;
+      > .skill-icon-text {
+        color: contrasting-color($blue, $lightest, $darkest)
+      }
+    }
+    &.ai {
+      background-color: $yellow;
+      > .skill-icon-text {
+        color: contrasting-color($yellow, $lightest, $darkest)
+      }
+    }
+    &.id {
+      background-color: $purple;
+      > .skill-icon-text {
+        color: contrasting-color($purple, $lightest, $darkest)
       }
     }
   }
@@ -487,9 +644,16 @@
       margin-bottom: $unit-md;
     }
   }
+
+  .skill-icon-text {
+    @include vr($font-body, $font-size-xl);
+    @include vr-reset;
+    font-weight: $font-weight-semi;
+  }
+
   .subskill-caption,
   .skill-caption {
-    @include vr($font-body, $font-size-md);
+    @include vr($font-body, $font-size-sm);
     color: $neutral-40;
   }
   .subskill-caption {

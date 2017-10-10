@@ -98,7 +98,7 @@ module.exports = {
       config.module.rules.splice(config.module.rules.indexOf(rule), 1)
 
       config.module.rules.push({
-        test: /\.(tiff|webp)$/i,
+        test: /\.(png|jpe?g|gif|svg|tiff|webp)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -107,38 +107,6 @@ module.exports = {
               name: 'img/[name].[hash:3].[ext]'
             }
           }
-        ]
-      })
-      config.module.rules.push({
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 1000,
-              name: 'img/[name].[hash:3].[ext]'
-            }
-          }
-          // {
-          //   loader: 'image-webpack-loader',
-          //   options: {
-          //     // name: '[name].[ext]',
-          //     gifsicle: {
-          //       interlaced: false
-          //     },
-          //     optipng: {
-          //       optimizationLevel: 7
-          //     },
-          //     pngquant: {
-          //       quality: '65-90',
-          //       speed: 4
-          //     },
-          //     mozjpeg: {
-          //       progressive: true,
-          //       quality: 65
-          //     }
-          //   }
-          // }
         ]
       })
       if (ctx.isClient) {

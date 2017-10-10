@@ -13,6 +13,10 @@ npm-debug.log
 # Nuxt generate
 dist
 
+# Gulp cache
+gulp-cache
+temp
+
 # Service worker
 static/sw.js
 static/workbox-sw*.js

@@ -38,24 +38,24 @@ var homeCache = new cache.Cache({
   cacheDirName: 'gulp-cache'
 })
 
-gulp.task('checkNewImages', ['cleanTemp'], function () {
+function cleanTemp () {
+  return del([config.images.tempDir])
+}
+
+function cleanDest () {
+  return del([config.images.destDir])
+}
+
+function checkNewImages () {
   return gulp.src(config.images.srcDir)
   .pipe(cache(gulp.dest(config.images.tempDir), { fileCache: homeCache }))
-})
+}
 
-gulp.task('cleanTemp', function () {
-  del([config.images.tempDir])
-})
+function clear (done) {
+  return homeCache.clear(null, done)
+}
 
-gulp.task('cleanDest', function () {
-  del([config.images.destDir])
-})
-
-gulp.task('clear', ['cleanTemp', 'cleanDest'], function (done) {
-  homeCache.clear(null, done)
-})
-
-gulp.task('images', ['checkNewImages'], function () {
+function images () {
   /** Create a filter to remove .gifs and .svgs from the stream */
   const f1 = filter(['**/*', '!**/*.gif', '!**/*.svg'], {restore: true})
   /** Create a filter to remove .webp from the stream */
@@ -114,21 +114,19 @@ gulp.task('images', ['checkNewImages'], function () {
     /** Restore the images which were filtered out */
     .pipe(f1.restore)
     /** use imagemin for compression - gulp-responsive seems not to work well */
-    .pipe(imagemin([
-      imageminPngquant({ speed: 1, quality: 90, floyd: 0.8 }),
-      imageminZopfli({ more: true }),
-      imageminGiflossy({ optimizationLevel: 3, optimize: 3, lossy: 2 }),
-      imagemin.svgo({ plugins: [{ removeViewBox: false }] }),
-      imagemin.jpegtran({ progressive: true }),
-      imageminMozjpeg({ quality: 90 })
-    ]))
+    // .pipe(imagemin([
+    //   imageminPngquant({ speed: 1, quality: 90, floyd: 0.8 }),
+    //   imageminZopfli({ more: true }),
+    //   imageminGiflossy({ optimizationLevel: 3, optimize: 3, lossy: 2 }),
+    //   imagemin.svgo({ plugins: [{ removeViewBox: false }] }),
+    //   imagemin.jpegtran({ progressive: true }),
+    //   imageminMozjpeg({ quality: 90 })
+    // ]))
     /** Bring back the webp images */
     .pipe(f2.restore)
     /** Output to destination directory */
     .pipe(gulp.dest(config.images.destDir))
-})
+}
 
-gulp.task('images:update', ['cleanTemp', 'images'])
-gulp.task('images:full', ['clear', 'images'])
-
-gulp.task('default', ['images:update'])
+exports.full = gulp.series(gulp.parallel(clear, cleanDest), checkNewImages, images, cleanTemp)
+exports.default = gulp.series(checkNewImages, images, cleanTemp)

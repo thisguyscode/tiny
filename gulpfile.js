@@ -7,14 +7,12 @@
  */
 
 const gulp = require('gulp')
+const del = require('del')
 /** Generic */
-const changed = require('gulp-changed')
 const rename = require('gulp-rename')
 const clone = require('gulp-clone')
 const filter = require('gulp-filter')
-// const foreach = require('gulp-foreach')
-// const tap = require('gulp-tap')
-// const path = require('path')
+const cache = require('gulp-cache')
 /** Image processing */
 const responsive = require('gulp-responsive')
 const webp = require('gulp-webp')
@@ -28,25 +26,46 @@ const imageminGiflossy = require('imagemin-giflossy')
 var config = {
   images: {
     srcDir: 'images/**/*',
+    tempDir: 'temp/images/',
     destDir: 'assets/images/'
   }
 }
 
 var cloneSink = clone.sink()
 
-gulp.task('images', function () {
+var homeCache = new cache.Cache({
+  tmpDir: './',
+  cacheDirName: 'gulp-cache'
+})
+
+gulp.task('checkNewImages', ['cleanTemp'], function () {
+  return gulp.src(config.images.srcDir)
+  .pipe(cache(gulp.dest(config.images.tempDir), { fileCache: homeCache }))
+})
+
+gulp.task('cleanTemp', function () {
+  del([config.images.tempDir])
+})
+
+gulp.task('cleanDest', function () {
+  del([config.images.destDir])
+})
+
+gulp.task('clear', ['cleanTemp', 'cleanDest'], function (done) {
+  homeCache.clear(null, done)
+})
+
+gulp.task('images', ['checkNewImages'], function () {
   /** Create a filter to remove .gifs and .svgs from the stream */
   const f1 = filter(['**/*', '!**/*.gif', '!**/*.svg'], {restore: true})
   /** Create a filter to remove .webp from the stream */
   const f2 = filter(['**/*', '!**/*.webp'], {restore: true})
   /** Define task source */
-  return gulp.src(config.images.srcDir)
-    /** Only process changed images */
-    .pipe(changed(config.images.srcDir))
-    /** Apply gif / svg filter */
+  return gulp.src(config.images.tempDir + '**/*')
     .pipe(rename(function (path) {
       path.dirname = path.basename + path.extname
     }))
+    /** Apply gif / svg filter */
     .pipe(f1)
     .pipe(responsive({
       '**/*': [
@@ -106,8 +125,10 @@ gulp.task('images', function () {
     /** Bring back the webp images */
     .pipe(f2.restore)
     /** Output to destination directory */
-    .pipe(gulp.dest(config.images.destDir)
-  )
+    .pipe(gulp.dest(config.images.destDir))
 })
 
-gulp.task('default', ['images'])
+gulp.task('images:update', ['cleanTemp', 'images'])
+gulp.task('images:full', ['clear', 'images'])
+
+gulp.task('default', ['images:update'])

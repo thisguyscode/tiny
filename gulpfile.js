@@ -114,14 +114,14 @@ function images () {
     /** Restore the images which were filtered out */
     .pipe(f1.restore)
     /** use imagemin for compression - gulp-responsive seems not to work well */
-    // .pipe(imagemin([
-    //   imageminPngquant({ speed: 1, quality: 90, floyd: 0.8 }),
-    //   imageminZopfli({ more: true }),
-    //   imageminGiflossy({ optimizationLevel: 3, optimize: 3, lossy: 2 }),
-    //   imagemin.svgo({ plugins: [{ removeViewBox: false }] }),
-    //   imagemin.jpegtran({ progressive: true }),
-    //   imageminMozjpeg({ quality: 90 })
-    // ]))
+    .pipe(imagemin([
+      imageminPngquant({ speed: 1, quality: 90, floyd: 0.8 }),
+      imageminZopfli({ more: true }),
+      imageminGiflossy({ optimizationLevel: 3, optimize: 3, lossy: 2 }),
+      imagemin.svgo({ plugins: [{ removeViewBox: false }] }),
+      imagemin.jpegtran({ progressive: true }),
+      imageminMozjpeg({ quality: 90 })
+    ]))
     /** Bring back the webp images */
     .pipe(f2.restore)
     /** Output to destination directory */

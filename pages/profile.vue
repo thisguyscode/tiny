@@ -134,7 +134,7 @@
               <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
                 <div class="skill-icon-wrapper software u-padding-none">
                   <c-image
-                    :lazy="false"
+                    :loader="false"
                     :imageSrc="'logo-scss.png'"
                   />
                 </div>
@@ -167,7 +167,7 @@
               <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
                 <div class="skill-icon-wrapper skill-icon-wrapper-landscape software u-padding-none">
                   <c-image
-                    :lazy="false"
+                    :loader="false"
                     :imageSrc="'logo-npm.png'"
                   />
                 </div>
@@ -185,7 +185,7 @@
               <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
                 <div class="skill-icon-wrapper software u-padding-none">
                   <c-image
-                    :lazy="false"
+                    :loader="false"
                     :imageSrc="'logo-gulp.png'"
                   />
                 </div>
@@ -230,7 +230,7 @@
               <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
                 <div class="skill-icon-wrapper software u-padding-none">
                   <c-image
-                    :lazy="false"
+                    :loader="false"
                     :imageSrc="'logo-js5.png'"
                   />
                 </div>
@@ -247,7 +247,7 @@
               <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
                 <div class="skill-icon-wrapper software u-padding-none">
                   <c-image
-                    :lazy="false"
+                    :loader="false"
                     :imageSrc="'logo-vue.png'"
                   />
                 </div>

@@ -14,7 +14,7 @@
         :src="asset.placeholder"
         :data-srcset="asset.srcset"
       />
-      <c-loading-indef class="loader"></c-loading-indef>
+      <c-loading-indef v-if="loader" class="loader"></c-loading-indef>
     </picture>
 
     <!-- Non lazy version -->
@@ -32,6 +32,8 @@
       />
     </picture>
 
+    <span v-else-if="extension === 'svg'" v-html="asset"></span>
+
     <!-- Otherwise use the plain asset -->
     <span v-else-if="!responsive && lazy">
       <img
@@ -39,7 +41,7 @@
         :class="fitClass"
         :data-src="asset"
       />
-      <c-loading-indef class="loader"></c-loading-indef>
+      <c-loading-indef v-if="loader" class="loader"></c-loading-indef>
     </span>
 
     <!-- Otherwise use the plain asset -->
@@ -68,6 +70,10 @@ export default {
       default: 'contain'
     },
     lazy: {
+      type: Boolean,
+      default: true
+    },
+    loader: {
       type: Boolean,
       default: true
     }

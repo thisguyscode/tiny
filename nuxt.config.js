@@ -98,7 +98,7 @@ module.exports = {
       config.module.rules.splice(config.module.rules.indexOf(rule), 1)
 
       config.module.rules.push({
-        test: /\.(png|jpe?g|gif|svg|tiff|webp)$/i,
+        test: /\.(png|jpe?g|gif|tiff|webp)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -106,6 +106,14 @@ module.exports = {
               limit: 1000,
               name: 'img/[name].[hash:3].[ext]'
             }
+          }
+        ]
+      })
+      config.module.rules.push({
+        test: /\.(svg)$/i,
+        use: [
+          {
+            loader: 'svg-inline-loader'
           }
         ]
       })

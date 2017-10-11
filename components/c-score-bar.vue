@@ -1,11 +1,11 @@
 <template>
   <div class="c-score-bar">
-    <div class="bar">
+    <div v-if="!nobar" class="bar">
       <div class="fill" :class="scoreClass" :style="fillStyle"></div>
     </div>
-    <div class="score">
+    <span class="score">
       <span class="score-number" :class="scoreClass">{{ score }}</span>/{{ of }}
-    </div>
+    </span>
   </div>
 </template>
 
@@ -19,6 +19,10 @@ export default {
     of: {
       type: Number,
       default: 10
+    },
+    nobar: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -55,7 +59,6 @@ export default {
   .score {
     @include vr($font-body, $font-size-lg);
     white-space: nowrap;
-    margin-left: $unit-sm;
     color: $neutral-40;
   }
   .score-number {
@@ -84,6 +87,7 @@ export default {
     border-radius: 2px;
     overflow: hidden;
     background-color: $neutral-80;
+    margin-right: $unit-sm;
   }
   .fill {
     position: absolute;

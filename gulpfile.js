@@ -93,6 +93,7 @@ function images () {
       ]},
       /** Process all files in this stream with the settings below */
       {
+        errorOnNoImages: false,
         quality: 100,
         compressionLevel: 0,
         progressive: false,
@@ -102,7 +103,9 @@ function images () {
         skipOnEnlargement: false,
         errorOnEnlargement: false
       }
-    ))
+    ).on('error', function (err) {
+      console.log('No matching images found')
+    }))
     /** Clone image */
     .pipe(cloneSink)
     /** Convert cloned image to WebP */

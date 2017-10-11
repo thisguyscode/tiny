@@ -17,11 +17,11 @@
       
       <l-wrapper>
 
-        <section class="soft-skills">
-          <h2>Hard skills</h2>
-          <p>Completely arbitrary ratings scores for my skills</p>
+        <section class="hard-skills">
+          <h2 class="u-margin-bottom-none">Hard skills</h2>
+          <p class="u-text--low-contrast">Completely arbitrary ratings scores for my skills</p>
           
-          <section class="skills-good">
+          <section class="skills-design-section">
             <h3 class="skills-subheading">Design:</h3>
 
             <l-grid>
@@ -78,7 +78,7 @@
               <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
                 <div class="skill-icon-wrapper software u-padding-none">
                   <c-image
-                    imageSrc="logo-sketch.svg"
+                    imageSrc="logo-sketch.png"
                   />
                 </div>
                 <div class="skill-label">
@@ -109,6 +109,159 @@
 
             </l-grid>
           </section>
+
+          <section>
+            <h3 class="skills-subheading">Code:</h3>
+
+            <l-grid>
+
+              <!-- 1 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper software u-padding-none">
+                  <c-icon name="css3" class="skill-icon"></c-icon>
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">CSS3</div>
+                  <c-score-bar :nobar="true" :percent="80" :of="10"></c-score-bar>
+                </div>
+                <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+              </div>
+              
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 2 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper software u-padding-none">
+                  <c-image
+                    :lazy="false"
+                    :imageSrc="'logo-scss.png'"
+                  />
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">SCSS</div>
+                  <c-score-bar :nobar="true" :percent="60" :of="10"></c-score-bar>
+                </div>
+                <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 3 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper software u-padding-none">
+                  <c-icon name="html5" class="skill-icon"></c-icon>
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">HTML5</div>
+                  <c-score-bar :nobar="true" :percent="80" :of="10"></c-score-bar>
+                </div>
+                <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 4 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper skill-icon-wrapper-landscape software u-padding-none">
+                  <c-image
+                    :lazy="false"
+                    :imageSrc="'logo-npm.png'"
+                  />
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">npm</div>
+                  <c-score-bar :nobar="true" :percent="60" :of="10"></c-score-bar>
+                </div>
+                <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <!-- 5 -->
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper software u-padding-none">
+                  <c-image
+                    :lazy="false"
+                    :imageSrc="'logo-gulp.png'"
+                  />
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">Gulp</div>
+                  <c-score-bar :nobar="true" :percent="80" :of="10"></c-score-bar>
+                </div>
+                <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper software u-padding-none">
+                  <c-icon name="git" class="skill-icon"></c-icon>
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">git</div>
+                  <c-score-bar :nobar="true" :percent="80" :of="10"></c-score-bar>
+                </div>
+                <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper software u-padding-none">
+                  <c-icon name="github" class="skill-icon"></c-icon>
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">github</div>
+                  <c-score-bar :nobar="true" :percent="80" :of="10"></c-score-bar>
+                </div>
+                <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper software u-padding-none">
+                  <c-image
+                    :lazy="false"
+                    :imageSrc="'logo-js5.png'"
+                  />
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">Javascript</div>
+                  <c-score-bar :nobar="true" :percent="80" :of="10"></c-score-bar>
+                </div>
+                <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+              </div>
+
+              <!-- spacer -->
+              <div class="_cell u-1/5@tablet"></div>
+
+              <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-icon-wrapper software u-padding-none">
+                  <c-image
+                    :lazy="false"
+                    :imageSrc="'logo-vue.png'"
+                  />
+                </div>
+                <div class="skill-label">
+                  <div class="software-name">Vue</div>
+                  <c-score-bar :nobar="true" :percent="80" :of="10"></c-score-bar>
+                </div>
+                <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+              </div>
+
+            </l-grid>
+          </section>
+
+
         </section><!--END hard skills section -->
         
 
@@ -497,9 +650,14 @@
       margin-bottom: $unit-lg;
     }
   }
+  
+  .software-company,
+  .software-name {
+    @include vr($font-body, $font-size-lg);
+  }
+  
 
   .skill-label {
-    @include vr($font-body, $font-size-lg);
     display: inline-block;
     vertical-align: top;
     font-weight: $font-weight-semi;
@@ -512,10 +670,13 @@
     position: relative;
     border-radius: 2px;
     display: inline-block;
+    text-align: center;
     @include mq($from: tablet) {
       margin-bottom: $unit-md;
     }
-    text-align: center;
+    &.skill-icon-wrapper-landscape {
+      width: $unit-xxl;
+    }
     &.software {
       border-radius: 8px;
     }
@@ -577,6 +738,10 @@
 
   .skill-icon {
 
+  }
+
+  .hard-skills {
+    margin-bottom: $unit-lg;
   }
 
   .skill-icon,
@@ -659,6 +824,9 @@
     @include mq($from: desktop) {
       display: none;
     }
+  }
+  .skills-design-section {
+    margin-bottom: $unit-lg;
   }
 
 </style>

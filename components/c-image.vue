@@ -3,7 +3,7 @@
     
     <!-- IF it's an svg then simply load it -->
     <img
-      v-if="extension === 'svg'"
+      v-if="!lazy && extension === 'svg'"
       :src="asset.src"
       class="c-image"
       :class="fitClass">
@@ -29,7 +29,7 @@
       
       <!-- webP source: responsive / NOT lazy -->
       <source
-        v-else-if="responsive && !lazy"
+        v-if="responsive && !lazy"
         type="image/webp"
         :class="fitClass"
         :srcset="asset.webpSrcset">
@@ -37,7 +37,7 @@
 
       <!-- webP source: NOT responsive / lazy -->
       <source
-        v-else-if="!responsive && lazy"
+        v-if="!responsive && lazy"
         type="image/webp"
         :class="fitClass"
         :data-srcset="asset.webpSrc">
@@ -45,7 +45,7 @@
 
       <!-- webP source: NOT responsive / NOT lazy -->
       <source
-        v-else-if="!responsive && !lazy"
+        v-if="!responsive && !lazy"
         type="image/webp"
         :class="fitClass"
         :srcset="asset.webpSrc">
@@ -62,7 +62,7 @@
 
       <!-- img: responsive / NOT Lazy -->
       <img
-        v-else-if="responsive && !lazy"
+        v-if="responsive && !lazy"
         class="c-image"
         :class="fitClass"
         :srcset="asset.srcSet"
@@ -70,7 +70,7 @@
 
       <!-- img: NOT responsive / Lazy -->
       <img
-        v-else-if="!responsive && lazy"
+        v-if="!responsive && lazy"
         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
         class="c-image lazyload"
         :class="fitClass"
@@ -79,7 +79,7 @@
 
       <!-- img: NOT responsive / NOT Lazy -->
       <img
-        v-else-if="!responsive && !lazy"
+        v-if="!responsive && !lazy"
         class="c-image"
         :class="fitClass"
         :src="asset.src"

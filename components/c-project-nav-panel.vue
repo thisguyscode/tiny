@@ -1,52 +1,52 @@
 <template>
-<transition name="fade">
-  <div v-if="transitionEnd" class="_panel" :class="panelClass">
-    <nuxt-link
-      class="_link"
-      :to="'/work/projects/' + project.slug"
-    >
-      <div
-        class="_image-wrapper"
-        :class="imgWrapperClass"
-        :style="
-          'background-color: ' + project.color
-        "
+  <transition name="fade">
+    <div v-if="transitionEnd" class="_panel" :class="panelClass">
+      <nuxt-link
+        class="_link"
+        :to="'/work/projects/' + project.slug"
       >
-        <c-image
-          v-if="project.imgSrc"
-          :classes="'_image _image-previous'"
-          :fit="imgClass"
-          :imageSrc="project.imgSrc"
-        />
-      </div>
-
-      <div class="_panel-content">
         <div
-          class="_label"
-          :class="labelClass">
-          <c-icon v-if="direction === 'previous'" class="_icon" name="arrow-left"></c-icon>
-          <span v-if="direction === 'previous'">Previous <span class="_string-project">project</span></span>
-          <span v-if="direction === 'next'">Next <span class="_string-project">project</span></span>
-          <c-icon v-if="direction === 'next'" class="_icon" name="arrow-right"></c-icon>
+          class="_image-wrapper"
+          :class="imgWrapperClass"
+          :style="
+            'background-color: ' + project.color
+          "
+        >
+          <c-image
+            v-if="project.imgSrc"
+            class="_image _image-previous"
+            :fit="imgClass"
+            :imageSrc="project.imgSrc"
+          />
         </div>
 
-        <h4
-          class="_group-title"
-          :class="textClass"
-          :style="'color: ' + project.color">
-          {{ project.group }}
-        </h4>
-        <h3
-          class="_title"
-          :class="textClass"
-          :style="'color: ' + project.color">
-          {{ project.name }}
-        </h3>
-      </div>
+        <div class="_panel-content">
+          <div
+            class="_label"
+            :class="labelClass">
+            <c-icon v-if="direction === 'previous'" class="_icon" name="arrow-left"></c-icon>
+            <span v-if="direction === 'previous'">Previous <span class="_string-project">project</span></span>
+            <span v-if="direction === 'next'">Next <span class="_string-project">project</span></span>
+            <c-icon v-if="direction === 'next'" class="_icon" name="arrow-right"></c-icon>
+          </div>
 
-    </nuxt-link>
-  </div>
-</transition>
+          <h4
+            class="_group-title"
+            :class="textClass"
+            :style="'color: ' + project.color">
+            {{ project.group }}
+          </h4>
+          <h3
+            class="_title"
+            :class="textClass"
+            :style="'color: ' + project.color">
+            {{ project.name }}
+          </h3>
+        </div>
+
+      </nuxt-link>
+    </div>
+  </transition>
 </template>
 
 <script>

@@ -60,10 +60,6 @@ module.exports = {
       src: '~/plugins/picturefill.js',
       ssr: false
     },
-    // {
-    //   src: '~/plugins/vue-awesome.js',
-    //   ssr: false
-    // },
     {
       src: '~/plugins/vue-affix.js',
       ssr: false
@@ -82,9 +78,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    // vendor: [
-    //   'vue-awesome'
-    // ],
     postcss: [],
     /*
     ** Run ESLINT on save
@@ -114,14 +107,6 @@ module.exports = {
           }
         ]
       })
-      // config.module.rules.push({
-      //   test: /\.(svg)$/i,
-      //   use: [
-      //     {
-      //       loader: 'svg-inline-loader'
-      //     }
-      //   ]
-      // })
       if (ctx.isServer) {
         config.externals = [
           nodeExternals({

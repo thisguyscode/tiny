@@ -1,11 +1,12 @@
 <template>
   <transition>
     
-    <!-- IF it's an svg then inline it -->
-    <div
-      class="c-image"
-      v-if="extension === 'svg'" v-html="asset.src">
-    </div>
+    <!-- IF it's an svg then simply load it -->
+    <img
+      v-if="extension === 'svg'" v-html="asset.src"
+      :src="asset.src"
+      class="c-image">
+    </img>
 
     <!-- ELSE-IF it's a JPG / PNG / etc -->
     <picture  v-else class="picture">

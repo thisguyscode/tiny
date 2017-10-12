@@ -82,9 +82,9 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: [
-      'vue-awesome'
-    ],
+    // vendor: [
+    //   'vue-awesome'
+    // ],
     postcss: [],
     /*
     ** Run ESLINT on save
@@ -103,7 +103,7 @@ module.exports = {
       config.module.rules.splice(config.module.rules.indexOf(rule), 1)
 
       config.module.rules.push({
-        test: /\.(png|jpe?g|gif|tiff|webp)$/i,
+        test: /\.(png|jpe?g|gif|tiff|webp|svg)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -114,14 +114,14 @@ module.exports = {
           }
         ]
       })
-      config.module.rules.push({
-        test: /\.(svg)$/i,
-        use: [
-          {
-            loader: 'svg-inline-loader'
-          }
-        ]
-      })
+      // config.module.rules.push({
+      //   test: /\.(svg)$/i,
+      //   use: [
+      //     {
+      //       loader: 'svg-inline-loader'
+      //     }
+      //   ]
+      // })
       if (ctx.isServer) {
         config.externals = [
           nodeExternals({

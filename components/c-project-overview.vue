@@ -59,7 +59,6 @@
           <div class="_image-wrapper" :class="imgWrapperClass" :style="'background-color:' + color">
             <c-image
               v-if="imgSrc"
-              :classes="'_image'"
               :fit="imgClass"
               :imageSrc="imgSrc"
             />

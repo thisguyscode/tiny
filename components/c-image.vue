@@ -1,86 +1,88 @@
 <template>
   <transition>
+    
+    <!-- IF it's an svg then inline it -->
+    <div
+      class="c-image"
+      v-if="extension === 'svg'" v-html="asset.src">
+    </div>
 
-    <!-- Use picture for images with responsive sizes -->
-    <picture v-if="responsive && lazy" class="picture">
+    <!-- ELSE-IF it's a JPG / PNG / etc -->
+    <picture  v-else class="picture">
+      
+      <!-- webP source: responsive / lazy -->
       <source
+        v-if="responsive && lazy"
         type="image/webp"
         :class="fitClass"
         :data-srcset="asset.webpSrcset">
       </source>
+      
+      <!-- webP source: responsive / NOT lazy -->
+      <source
+        v-else-if="responsive && !lazy"
+        type="image/webp"
+        :class="fitClass"
+        :srcset="asset.webpSrcset">
+      </source>
+
+      <!-- webP source: NOT responsive / lazy -->
+      <source
+        v-else-if="!responsive && lazy"
+        type="image/webp"
+        :class="fitClass"
+        :data-srcset="asset.webpSrc">
+      </source>
+
+      <!-- webP source: NOT responsive / NOT lazy -->
+      <source
+        v-else-if="!responsive && !lazy"
+        type="image/webp"
+        :class="fitClass"
+        :srcset="asset.webpSrc">
+      </source>
+
+      <!-- img: responsive / Lazy -->
       <img
+        v-if="responsive && lazy"
         class="c-image lazyload"
         :class="fitClass"
         :src="asset.placeholder"
         :data-srcset="asset.srcset"
       />
-      <c-loading-indef v-if="loader" class="loader"></c-loading-indef>
-    </picture>
 
-    <!-- Non lazy version -->
-    <picture v-else-if="responsive && !lazy" class="picture">
-      <source
-        type="image/webp"
-        :class="fitClass"
-        :srcset="asset.webpSrcset">
-      </source>
+      <!-- img: responsive / NOT Lazy -->
       <img
-        class="c-image"
-        :class="fitClass"
-        :src="asset.placeholder"
-        :srcset="asset.srcset"
-      />
-    </picture>
-
-    <span v-else-if="extension === 'svg'" v-html="asset.src"></span>
-
-    <picture v-else-if="!responsive && lazy" class="picture">
-      <source
-        type="image/webp"
-        :class="fitClass"
-        :data-srcset="asset.webpSrc">
-      </source>
-      <img
+        v-else-if="responsive && !lazy"
         class="c-image lazyload"
+        :class="fitClass"
+        :srcset="asset.srcSet"
+      />
+
+      <!-- img: NOT responsive / Lazy -->
+      <img
+        v-else-if="!responsive && lazy"
         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-        :class="fitClass"
-        :data-src="asset.src"
-      />
-      <c-loading-indef v-if="loader" class="loader"></c-loading-indef>
-    </picture>
-
-    <picture v-else-if="!responsive && !lazy" class="picture">
-      <source
-        type="image/webp"
-        :class="fitClass"
-        :srcset="asset.webpSrc">
-      </source>
-      <img
-        class="c-image lazyload"
-        :class="fitClass"
-        :src="asset.placeholder"
-      />
-      <c-loading-indef v-if="loader" class="loader"></c-loading-indef>
-    </picture>
-
-    <!-- Otherwise use the plain asset -->
-    <!-- <span v-else-if="!responsive && lazy">
-      <img
         class="c-image lazyload"
         :class="fitClass"
         :data-src="asset.src"
       />
-      <c-loading-indef v-if="loader" class="loader"></c-loading-indef>
-    </span> -->
 
-    <!-- Otherwise use the plain asset -->
-    <!-- <span v-else-if="!responsive && !lazy">
+      <!-- img: NOT responsive / NOT Lazy -->
       <img
+        v-else-if="!responsive && !lazy"
         class="c-image"
         :class="fitClass"
         :src="asset.src"
       />
-    </span> -->
+
+      <!-- Loader -->
+      <c-loading-indef
+        v-if="lazy && loader"
+        class="loader">
+      </c-loading-indef>
+
+    </picture>
 
   </transition>
 </template>
@@ -194,6 +196,7 @@ export default {
   .c-image {
     width: 100%;
     height: 100%;
+    overflow: hidden;
   }
   .picture {
     display: block;

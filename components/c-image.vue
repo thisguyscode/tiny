@@ -141,7 +141,6 @@ export default {
     }
   },
   mounted () {
-    console.log(this.fit)
     if (process.browser) {
       require('lazysizes')
     }

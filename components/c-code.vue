@@ -107,7 +107,6 @@ export default {
       this.content = this.setContentFromSlot()
     }
     this.lineCount = this.getLineCount(this.content)
-    console.log(this.lineCount)
   }
 }
 </script>

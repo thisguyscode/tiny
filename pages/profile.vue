@@ -92,6 +92,7 @@
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-image
                       :makeResponsive="false"
+                      :lazy="false"
                       imageSrc="logo-sketch.png"
                     />
                   </div>
@@ -111,6 +112,7 @@
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-image
                       :makeResponsive="false"
+                      :lazy="false"
                       imageSrc="logo-invision.svg"
                     />
                   </div>
@@ -150,6 +152,7 @@
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-image
                       :makeResponsive="false"
+                      :lazy="false"
                       :imageSrc="'logo-scss.png'"
                     />
                   </div>
@@ -183,6 +186,7 @@
                   <div class="skill-icon-wrapper skill-icon-wrapper-landscape software u-padding-none">
                     <c-image
                       :makeResponsive="false"
+                      :lazy="false"
                       :imageSrc="'logo-npm.png'"
                     />
                   </div>
@@ -201,6 +205,7 @@
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-image
                       :makeResponsive="false"
+                      :lazy="false"
                       :imageSrc="'logo-gulp.png'"
                     />
                   </div>
@@ -246,6 +251,7 @@
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-image
                       :makeResponsive="false"
+                      :lazy="false"
                       :imageSrc="'logo-js5.png'"
                     />
                   </div>
@@ -263,6 +269,7 @@
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-image
                       :makeResponsive="false"
+                      :lazy="false"
                       :imageSrc="'logo-vue.png'"
                     />
                   </div>

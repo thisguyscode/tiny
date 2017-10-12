@@ -14,7 +14,6 @@
         >
           <c-image
             v-if="project.imgSrc"
-            class="_image _image-previous"
             :fit="imgClass"
             :imageSrc="project.imgSrc"
           />

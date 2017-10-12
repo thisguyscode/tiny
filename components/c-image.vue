@@ -3,13 +3,21 @@
     
     <!-- IF it's an svg then simply load it -->
     <img
-      v-if="extension === 'svg'" v-html="asset.src"
+      v-if="extension === 'svg'"
       :src="asset.src"
-      class="c-image">
+      class="c-image"
+      :class="fitClass">
+    </img>
+    <img
+      v-else-if="lazy && extension === 'svg'"
+      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+      :data-src="asset.src"
+      class="c-image lazyload"
+      :class="fitClass">
     </img>
 
     <!-- ELSE-IF it's a JPG / PNG / etc -->
-    <picture  v-else class="picture">
+    <picture v-else class="picture">
       
       <!-- webP source: responsive / lazy -->
       <source
@@ -55,7 +63,7 @@
       <!-- img: responsive / NOT Lazy -->
       <img
         v-else-if="responsive && !lazy"
-        class="c-image lazyload"
+        class="c-image"
         :class="fitClass"
         :srcset="asset.srcSet"
       />
@@ -121,9 +129,9 @@ export default {
         'contain': this.fit === 'contain'
       }
     },
-    req: function () {
-      return require.context('~/assets/images/', true, /\.(png|jpe?g|gif|svg|tiff|webp)$/i)
-    },
+    // req: function () {
+    //   return require.context('~/assets/images/', true, /\.(png|jpe?g|gif|svg|tiff|webp)$/i)
+    // },
     responsive: function () {
       if (this.extension === ('svg' || 'gif')) {
         return false
@@ -144,21 +152,21 @@ export default {
       return name
     },
     asset: function () {
-      var req = this.req
+      // var req = this.req
       if (this.responsive) {
-        var src = req(`./${this.imageSrc}/original.${this.extension}`)
-        var placeholder = req(`./${this.imageSrc}/placeholder.${this.extension}`)
+        var src = require(`~/assets/images/${this.imageSrc}/original.${this.extension}`)
+        var placeholder = require(`~/assets/images/${this.imageSrc}/placeholder.${this.extension}`)
         var sizes = [
-          req(`./${this.imageSrc}/600px.${this.extension}`) + ' 600w',
-          req(`./${this.imageSrc}/900px.${this.extension}`) + ' 900w',
-          req(`./${this.imageSrc}/1400px.${this.extension}`) + ' 1400w'
+          require(`~/assets/images/${this.imageSrc}/600px.${this.extension}`) + ' 600w',
+          require(`~/assets/images/${this.imageSrc}/900px.${this.extension}`) + ' 900w',
+          require(`~/assets/images/${this.imageSrc}/1400px.${this.extension}`) + ' 1400w'
         ]
-        var webpSrc = req(`./${this.imageSrc}/original.webp`)
-        var webpPlaceholder = req(`./${this.imageSrc}/placeholder.webp`)
+        var webpSrc = require(`~/assets/images/${this.imageSrc}/original.webp`)
+        var webpPlaceholder = require(`~/assets/images/${this.imageSrc}/placeholder.webp`)
         var webpSizes = [
-          req(`./${this.imageSrc}/600px.webp`) + ' 600w',
-          req(`./${this.imageSrc}/900px.webp`) + ' 900w',
-          req(`./${this.imageSrc}/1400px.webp`) + ' 1400w'
+          require(`~/assets/images/${this.imageSrc}/600px.webp`) + ' 600w',
+          require(`~/assets/images/${this.imageSrc}/900px.webp`) + ' 900w',
+          require(`~/assets/images/${this.imageSrc}/1400px.webp`) + ' 1400w'
         ]
         return {
           src,
@@ -171,12 +179,12 @@ export default {
       } else if (!this.responsive) {
         if (this.extension === ('svg' || 'gif')) {
           return {
-            src: req(`./${this.imageSrc}/${this.imageSrc}`)
+            src: require(`~/assets/images/${this.imageSrc}/${this.name}.${this.extension}`)
           }
         } else {
           return {
-            src: req(`./${this.imageSrc}/original.${this.extension}`),
-            webpSrc: req(`./${this.imageSrc}/original.webp`)
+            src: require(`~/assets/images/${this.imageSrc}/original.${this.extension}`),
+            webpSrc: require(`~/assets/images/${this.imageSrc}/original.webp`)
           }
         }
       }

@@ -1,5 +1,6 @@
 import Vuex from 'vuex'
 import getProjectsArray from '~/utils/getProjectsArray'
+// import getImagesContext from '~/utils/setImagesContext'
 
 const store = () => new Vuex.Store({
   state: {
@@ -9,9 +10,15 @@ const store = () => new Vuex.Store({
     scrollToSelector: null,
     messageSent: false,
     savedColor: '#999',
-    images: []
+    images: [],
+    imagesContext: require.context('~/assets/images/', true, /\.(png|jpe?g|gif|svg|tiff|webp)$/i)
   },
   actions: {
+    // nuxtServerInit ({ commit }) {
+    //   const imagesContext = getImagesContext()
+    //   console.log(imagesContext)
+    //   commit('setImagesContext', imagesContext)
+    // },
     async getProjects ({commit}) {
       const projects = await getProjectsArray()
       commit('setProjectsArray', projects)
@@ -23,6 +30,9 @@ const store = () => new Vuex.Store({
     },
     setProjectsArray: (state, array) => {
       state.projectsArray = array
+    },
+    setImagesContext: (state, object) => {
+      state.imagesContext = object
     },
     toggleDetails: (state) => {
       state.showDetails = !state.showDetails

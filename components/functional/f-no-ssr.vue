@@ -20,7 +20,13 @@ export default {
       }
       return this.$slots.default[0]
     }
-    return h(this.placeholder)
+    return h(
+      'div',
+      {
+        class: ['no-ssr-placeholder']
+      },
+      this.placeholder
+    )
   }
 }
 </script>

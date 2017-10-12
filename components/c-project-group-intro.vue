@@ -5,21 +5,26 @@
         <div class="_header  _cell  u-2/5@tablet">
           <l-grid>
             <div class="_cell">
+              
               <l-affix
                 className="_sticky-header"
                 :relativeElementSelector="'#project-group-' + index"
-                :z="200">
-                <h3 class="_title  u-margin-bottom-none">
-                  <c-baselines class="_title-baselines"></c-baselines>
-                  <span class="_index">{{ index }}. </span>
-                  <span class="_name">{{ name }}</span>
-                  <f-link
-                    class="_project-group-link"
-                    :scrollToSelector="'#project-group-' + index + '-top'">
-                    <span class="u-link-bloater"></span>
-                  </f-link>
-                </h3>
+                :z="200"
+                :offset="{top: 120, bottom: 0}">
+                <template scope="props" slot="contents">
+                  <h3 class="_title  u-margin-bottom-none">
+                    <c-baselines class="_title-baselines"></c-baselines>
+                    <span class="_index">{{ index }}. </span>
+                    <span class="_name">{{ name }}</span>
+                    <f-link
+                      class="_project-group-link"
+                      :scrollToSelector="'#project-group-' + index + '-top'">
+                      <span class="u-link-bloater"></span>
+                    </f-link>
+                  </h3>
+                </template>
               </l-affix>
+
             </div>
             <div class="_cell u-1/2">
               <c-button :stretch="false" class="_link" type="ghost" icon="external-link" :externalLink="link">

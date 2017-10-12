@@ -1,26 +1,36 @@
 <template>
-  <f-no-ssr>
-    <div class="l-affix">
-      <div class="_actual" ref="jsActual">
+  <div class="l-affix">
+    <div class="_actual" ref="jsActual">
+      <f-no-ssr>
         <affix
           :style="'z-index:' + z"
-          v-on:affixtop="removePlaceholderHeight"
-          v-on:affixbottom="setPlaceholderHeight"
-          v-on:affix="setPlaceholderHeight"
+          v-on:affixtop="affixTopHandler"
+          v-on:affixbottom="affixBottomHandler"
+          v-on:affix="affixHandler"
           :class="[className, classObject]"
           :offset="offset"
           :relative-element-selector="relativeElementSelector">
-          <slot></slot>
+          <slot name="contents"></slot>
         </affix>
-      </div>
-      <div ref="jsPlaceholder" class="_placeholder"></div>
+      </f-no-ssr>
     </div>
-  </f-no-ssr>
+    <div ref="jsPlaceholder" class="_placeholder">
+      <slot name="contents"></slot>
+    </div>
+  </div>
 </template>
 
 <script>
   import fNoSsr from '~/components/functional/f-no-ssr'
   export default {
+    data: () => {
+      return {
+        newOffset: {
+          top: '',
+          bottom: ''
+        }
+      }
+    },
     components: {
       fNoSsr
     },
@@ -45,7 +55,7 @@
         type: Object,
         default: () => {
           return {
-            top: 120,
+            top: 80,
             bottom: 0
           }
         }
@@ -66,10 +76,30 @@
     },
     methods: {
       setPlaceholderHeight () {
-        this.$refs.jsPlaceholder.style.height = this.actual.clientHeight + 'px'
+        this.$refs.jsPlaceholder.style.visibility = 'hidden'
+        this.$refs.jsActual.style.visibility = 'visible'
       },
       removePlaceholderHeight () {
-        this.$refs.jsPlaceholder.style.height = 0
+        this.$refs.jsPlaceholder.style.visibility = 'visible'
+        this.$refs.jsActual.style.visibility = 'hidden'
+      },
+      affixTopHandler () {
+        // console.log('affix-top')
+        this.removePlaceholderHeight()
+      },
+      affixBottomHandler () {
+        // console.log('affix-bottom')
+        this.setPlaceholderHeight()
+      },
+      affixHandler () {
+        // console.log('affix')
+        this.setPlaceholderHeight()
+      }
+    },
+    mounted () {
+      this.newOffset = {
+        top: this.offset.top + this.placeholder.clientHeight,
+        bottom: this.offset.bottom
       }
     }
   }
@@ -91,6 +121,7 @@
   }
 
   .l-affix {
+    position: relative;
   }
 
   .vue-affix {
@@ -103,10 +134,11 @@
   }
 
   ._actual {
+    height: 0;
+    overflow: visible;
     position: relative;
   }
   ._placeholder {
-    height: 0;
     position: relative;
     display: block;
   }

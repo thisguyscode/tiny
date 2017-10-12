@@ -10,23 +10,24 @@
       :transitionEnd="transitionEnd">
     </c-project-hero>
 
+    <div id="sticky-trigger">
+
     <!-- Project Nav -->
     <l-affix
       :z="999"
       fullWidth
       className="_sticky-nav"
       :relativeElementSelector="'#sticky-trigger'"
-      :offset="{ top: 128, bottom: 0 }"
     >
-      <c-project-navbar
-        :previous="previousProject"
-        :next="nextProject"
-        :current="currentProject"
-        :color="projectColor">
-      </c-project-navbar>
+      <template scope="props" slot="contents">
+        <c-project-navbar
+          :previous="previousProject"
+          :next="nextProject"
+          :current="currentProject"
+          :color="projectColor">
+        </c-project-navbar>
+      </template>
     </l-affix>
-
-    <div id="sticky-trigger">
 
       <c-project-details
         :project="currentProject"

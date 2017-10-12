@@ -18,3 +18,7 @@
 .u-vr-reset {
   @include vr-reset;
 }
+
+.u-display-none {
+  display: none;
+}

@@ -15,17 +15,18 @@
         <p class="u-margin-bottom-none">There’ll come a time that I need to pick my battle, as may be the duty of all able-minded beings, but for now I have much to learn, and a will to do so.</p>
       </c-intro-text>
 
-      <!-- Project Nav -->
-      <l-affix
-        :z="999"
-        fullWidth
-        :relativeElementSelector="'#trigger'"
-        :offset="{ top: 80, bottom: 0 }"
-      >
-        <c-profile-navbar></c-profile-navbar>
-      </l-affix>
       
       <div id="trigger">
+        <!-- Project Nav -->
+        <l-affix
+          :z="999"
+          fullWidth
+          :relativeElementSelector="'#trigger'"
+        >
+          <template scope="props" slot="contents">
+            <c-profile-navbar></c-profile-navbar>
+          </template>
+        </l-affix>
       
         <l-wrapper class="content">
 

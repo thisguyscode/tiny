@@ -1,11 +1,8 @@
 <template>
-  <!-- <f-no-ssr> -->
-    <icon :name="name" class="c-icon" :class="classObject"></icon>
-  <!-- </f-no-ssr>   -->
+  <icon :name="name" class="c-icon" :class="classObject"></icon>
 </template>
 
 <script>
-import fNoSsr from '~/components/functional/f-no-ssr'
 import Icon from 'vue-awesome/components/Icon.vue'
 
 import 'vue-awesome/icons/arrow-left.js'
@@ -49,7 +46,6 @@ import 'vue-awesome/icons/puzzle-piece.js'
 
 export default {
   components: {
-    fNoSsr,
     Icon
   },
   props: {

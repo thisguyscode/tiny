@@ -4,11 +4,14 @@
     <slot></slot>
   </nuxt-link>
   
-  <f-no-ssr v-else-if="scrollToSelector">
-    <a class="f-link" v-scroll-to="scrollToSelector">
-      <slot></slot>
-    </a>
-  </f-no-ssr>
+  <span v-else-if="scrollToSelector" class="f-link">
+    <f-no-ssr>
+      <a v-scroll-to="scrollToSelector">
+        <span class="u-link-bloater"></span>
+      </a>
+    </f-no-ssr>
+    <slot></slot>
+  </span>
 
   <a v-else-if="externalLink" :href="externalLink" target="_blank" rel="noopener">
     <slot></slot>
@@ -47,5 +50,6 @@ export default {
   .f-link {
     cursor: pointer;
     color: inherit;
+    position: relative;
   }
 </style>

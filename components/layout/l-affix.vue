@@ -101,6 +101,7 @@
         top: this.offset.top + this.placeholder.clientHeight,
         bottom: this.offset.bottom
       }
+      this.removePlaceholderHeight()
     }
   }
 </script>

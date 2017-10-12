@@ -1,3 +1,5 @@
+const nodeExternals = require('webpack-node-externals')
+
 module.exports = {
   router: {
     // base: ''
@@ -58,10 +60,10 @@ module.exports = {
       src: '~/plugins/picturefill.js',
       ssr: false
     },
-    {
-      src: '~/plugins/vue-awesome.js',
-      ssr: false
-    },
+    // {
+    //   src: '~/plugins/vue-awesome.js',
+    //   ssr: false
+    // },
     {
       src: '~/plugins/vue-affix.js',
       ssr: false
@@ -80,6 +82,9 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: [
+      'vue-awesome'
+    ],
     postcss: [],
     /*
     ** Run ESLINT on save
@@ -117,6 +122,13 @@ module.exports = {
           }
         ]
       })
+      if (ctx.isServer) {
+        config.externals = [
+          nodeExternals({
+            whitelist: [/\.(?!(?:js|json)$).{1,5}$/i, /^vue-awesome/, /es6-promise/]
+          })
+        ]
+      }
       if (ctx.isClient) {
         /** Remove sourcemap from es6-promise on client */
         config.module.rules.push({

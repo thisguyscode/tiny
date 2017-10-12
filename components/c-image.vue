@@ -18,7 +18,7 @@
     </picture>
 
     <!-- Non lazy version -->
-    <picture v-if="responsive && !lazy" class="picture">
+    <picture v-else-if="responsive && !lazy" class="picture">
       <source
         type="image/webp"
         :class="fitClass"
@@ -32,26 +32,55 @@
       />
     </picture>
 
-    <span v-else-if="extension === 'svg'" v-html="asset"></span>
+    <span v-else-if="extension === 'svg'" v-html="asset.src"></span>
 
-    <!-- Otherwise use the plain asset -->
-    <span v-else-if="!responsive && lazy">
+    <picture v-else-if="!responsive && lazy" class="picture">
+      <source
+        type="image/webp"
+        :class="fitClass"
+        :data-srcset="asset.webpSrc">
+      </source>
+      <img
+        class="c-image lazyload"
+        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        :class="fitClass"
+        :data-src="asset.src"
+      />
+      <c-loading-indef v-if="loader" class="loader"></c-loading-indef>
+    </picture>
+
+    <picture v-else-if="!responsive && !lazy" class="picture">
+      <source
+        type="image/webp"
+        :class="fitClass"
+        :srcset="asset.webpSrc">
+      </source>
       <img
         class="c-image lazyload"
         :class="fitClass"
-        :data-src="asset"
+        :src="asset.placeholder"
       />
       <c-loading-indef v-if="loader" class="loader"></c-loading-indef>
-    </span>
+    </picture>
 
     <!-- Otherwise use the plain asset -->
-    <span v-else-if="!responsive && !lazy">
+    <!-- <span v-else-if="!responsive && lazy">
+      <img
+        class="c-image lazyload"
+        :class="fitClass"
+        :data-src="asset.src"
+      />
+      <c-loading-indef v-if="loader" class="loader"></c-loading-indef>
+    </span> -->
+
+    <!-- Otherwise use the plain asset -->
+    <!-- <span v-else-if="!responsive && !lazy">
       <img
         class="c-image"
         :class="fitClass"
-        :src="asset"
+        :src="asset.src"
       />
-    </span>
+    </span> -->
 
   </transition>
 </template>
@@ -66,6 +95,10 @@ export default {
     imageSrc: {
       required: true
     },
+    makeResponsive: {
+      type: Boolean,
+      default: true
+    },
     fit: {
       default: 'contain'
     },
@@ -79,11 +112,6 @@ export default {
     }
   },
   computed: {
-    isLazy: function () {
-      if (this.lazy) {
-        return true
-      } else {}
-    },
     fitClass: function () {
       return {
         'cover': this.fit === 'cover',
@@ -95,6 +123,8 @@ export default {
     },
     responsive: function () {
       if (this.extension === ('svg' || 'gif')) {
+        return false
+      } else if (this.makeResponsive === false) {
         return false
       } else {
         return true
@@ -136,7 +166,16 @@ export default {
           webpSrcset: webpSizes.toString()
         }
       } else if (!this.responsive) {
-        return req(`./${this.imageSrc}/${this.imageSrc}`)
+        if (this.extension === ('svg' || 'gif')) {
+          return {
+            src: req(`./${this.imageSrc}/${this.imageSrc}`)
+          }
+        } else {
+          return {
+            src: req(`./${this.imageSrc}/original.${this.extension}`),
+            webpSrc: req(`./${this.imageSrc}/original.webp`)
+          }
+        }
       }
     }
   },

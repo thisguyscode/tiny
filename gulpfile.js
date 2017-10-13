@@ -80,15 +80,15 @@ function images () {
         },
         {
           width: 600,
-          rename: { basename: '600px' }
+          rename: { basename: '600' }
         },
         {
           width: 900,
-          rename: { basename: '900px' }
+          rename: { basename: '900' }
         },
         {
           width: 1400,
-          rename: { basename: '1400px' }
+          rename: { basename: '1400' }
         }
       ]},
       /** Process all files in this stream with the settings below */
@@ -99,8 +99,7 @@ function images () {
         progressive: false,
         withoutAdaptiveFiltering: true,
         withMetadata: false,
-        withoutEnlargement: true,
-        skipOnEnlargement: false,
+        skipOnEnlargement: true,
         errorOnEnlargement: false
       }
     ).on('error', function (err) {
@@ -118,7 +117,7 @@ function images () {
     .pipe(f1.restore)
     /** use imagemin for compression - gulp-responsive seems not to work well */
     .pipe(imagemin([
-      imageminPngquant({ speed: 1, quality: 90, floyd: 0.8 }),
+      imageminPngquant({ speed: 1 }),
       imageminZopfli({ more: true }),
       imageminGiflossy({ optimizationLevel: 3, optimize: 3, lossy: 2 }),
       imagemin.svgo({ plugins: [{ removeViewBox: false }] }),

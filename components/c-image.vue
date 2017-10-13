@@ -65,7 +65,7 @@
         v-if="responsive && !lazy"
         class="c-image"
         :class="fitClass"
-        :srcset="asset.srcSet"
+        :srcset="asset.srcset"
       />
 
       <!-- img: NOT responsive / Lazy -->
@@ -122,6 +122,16 @@ export default {
       default: true
     }
   },
+  methods: {
+    getName: function (string) {
+      var name = string.substring(0, string.lastIndexOf('.'))
+      return name
+    },
+    getExtension: function (string) {
+      var ext = string.substring(string.lastIndexOf('.') + 1, string.length)
+      return ext
+    }
+  },
   computed: {
     fitClass: function () {
       return {
@@ -129,9 +139,11 @@ export default {
         'contain': this.fit === 'contain'
       }
     },
-    // req: function () {
-    //   return require.context('~/assets/images/', true, /\.(png|jpe?g|gif|svg|tiff|webp)$/i)
-    // },
+    imagesArray: function () {
+      var context = require.context('~/assets/images/', true, /\.(png|jpe?g|gif|svg|tiff|webp)$/i)
+      var array = context.keys()
+      return array
+    },
     responsive: function () {
       if (this.extension === ('svg' || 'gif')) {
         return false
@@ -142,32 +154,53 @@ export default {
       }
     },
     extension: function () {
-      var string = this.imageSrc
-      var ext = string.substring(string.lastIndexOf('.') + 1, string.length)
-      return ext
+      return this.getExtension(this.imageSrc)
     },
     name: function () {
-      var string = this.imageSrc
-      var name = string.substring(0, string.lastIndexOf('.'))
-      return name
+      return this.getName(this.imageSrc)
     },
     asset: function () {
-      // var req = this.req
       if (this.responsive) {
-        var src = require(`~/assets/images/${this.imageSrc}/original.${this.extension}`)
-        var placeholder = require(`~/assets/images/${this.imageSrc}/placeholder.${this.extension}`)
-        var sizes = [
-          require(`~/assets/images/${this.imageSrc}/600px.${this.extension}`) + ' 600w',
-          require(`~/assets/images/${this.imageSrc}/900px.${this.extension}`) + ' 900w',
-          require(`~/assets/images/${this.imageSrc}/1400px.${this.extension}`) + ' 1400w'
-        ]
-        var webpSrc = require(`~/assets/images/${this.imageSrc}/original.webp`)
-        var webpPlaceholder = require(`~/assets/images/${this.imageSrc}/placeholder.webp`)
-        var webpSizes = [
-          require(`~/assets/images/${this.imageSrc}/600px.webp`) + ' 600w',
-          require(`~/assets/images/${this.imageSrc}/900px.webp`) + ' 900w',
-          require(`~/assets/images/${this.imageSrc}/1400px.webp`) + ' 1400w'
-        ]
+        /**
+         * Go through the context list and check which images
+         * are available. Then:
+         * 1. push the sizes as strings to array
+         * 2. require the original and placeholder images if present
+         */
+        var items = this.imagesArray
+        var availableSizes = []
+        var src = ''
+        var placeholder = ''
+        var webpSrc = ''
+        var webpPlaceholder = ''
+        for (var i = 0; i < items.length; i++) {
+          if (items[i].startsWith(this.imageSrc, 2)) {
+            var stringStart = 3 + this.imageSrc.length
+            var stringEnd = items[i].length - (this.getExtension(items[i]).length + 1)
+            var imageFileName = items[i].substring(stringStart, stringEnd)
+            if (!isNaN(imageFileName)) {
+              availableSizes.push(imageFileName)
+            } else if (imageFileName === 'placeholder') {
+              src = require(`~/assets/images/${this.imageSrc}/original.${this.extension}`)
+              webpSrc = require(`~/assets/images/${this.imageSrc}/original.webp`)
+            } else if (imageFileName === 'original') {
+              placeholder = require(`~/assets/images/${this.imageSrc}/placeholder.${this.extension}`)
+              webpPlaceholder = require(`~/assets/images/${this.imageSrc}/placeholder.webp`)
+            }
+          }
+        }
+        /**
+         * Use the availableSizes array to require the necessary images
+         */
+        var sizes = []
+        var webpSizes = []
+        for (var k = 0; k < availableSizes.length; k++) {
+          var size = availableSizes[k]
+          var image = require(`~/assets/images/${this.imageSrc}/${size}.${this.extension}`) + ` ${size} w`
+          var webpImage = require(`~/assets/images/${this.imageSrc}/${size}.webp`) + ` ${size} w`
+          sizes.push(image)
+          webpSizes.push(webpImage)
+        }
         return {
           src,
           placeholder,

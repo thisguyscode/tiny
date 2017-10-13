@@ -56,6 +56,8 @@ module.exports = {
   plugins: [
     '~/plugins/vue-scrollto.js',
     '~/plugins/no-ssr.js',
+    '~/plugins/image.js',
+    '~/plugins/vue-awesome.js',
     {
       src: '~/plugins/picturefill.js',
       ssr: false

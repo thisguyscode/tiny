@@ -71,14 +71,12 @@
 
 <script>
 import cIcon from '~/components/c-icon'
-import cImage from '~/components/c-image'
 import cButton from '~/components/c-button'
 import lWrapper from '~/components/layout/l-wrapper'
 import lGrid from '~/components/layout/l-grid'
 export default {
   components: {
     cIcon,
-    cImage,
     cButton,
     lWrapper,
     lGrid

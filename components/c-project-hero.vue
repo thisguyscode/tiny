@@ -60,14 +60,12 @@
   import lGrid from '~/components/layout/l-grid'
   import lWrapper from '~/components/layout/l-wrapper'
   import cIcon from '~/components/c-icon'
-  import cImage from '~/components/c-image'
   export default {
     components: {
       lGrid,
       fLink,
       lWrapper,
-      cIcon,
-      cImage
+      cIcon
     },
     data: () => {
       return {

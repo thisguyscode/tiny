@@ -548,7 +548,6 @@
   import cTestimonials from '~/components/c-testimonials'
   import cScoreBar from '~/components/c-score-bar'
   import cHero from '~/components/c-hero'
-  import cImage from '~/components/c-image'
   import cIcon from '~/components/c-icon'
   import cCtaPanel from '~/components/c-cta-panel'
   import cProfileNavbar from '~/components/c-profile-navbar'
@@ -567,7 +566,6 @@
       cProfileNavbar,
       cHero,
       cIcon,
-      cImage,
       cScoreBar,
       cIntroText,
       cCtaPanel,

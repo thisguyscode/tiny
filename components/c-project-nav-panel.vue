@@ -50,11 +50,9 @@
 
 <script>
 import cIcon from '~/components/c-icon'
-import cImage from '~/components/c-image'
 export default {
   components: {
-    cIcon,
-    cImage
+    cIcon
   },
   props: {
     project: {

@@ -22,12 +22,10 @@
 <script>
 import lWrapper from '~/components/layout/l-wrapper'
 import lGrid from '~/components/layout/l-grid'
-import cImage from '~/components/c-image'
 export default {
   components: {
     lWrapper,
-    lGrid,
-    cImage
+    lGrid
   },
   props: {
     bgImageSrc: {

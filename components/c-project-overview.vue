@@ -44,8 +44,6 @@
                     :relativeLink="linkTo"
                     :inlineStyle="buttonStyle"
                     :iconInlineStyle="viewIconStyle"
-                    :onClick="onVisit"
-                    :onClickArg="onVisitArg"
                     type="ghost"
                     icon="eye">
                     View Project
@@ -89,12 +87,6 @@ export default {
     project: {
       type: Object,
       required: true
-    },
-    onVisit: {
-      type: Function
-    },
-    onVisitArg: {
-      required: false
     }
   },
   computed: {

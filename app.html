@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html class="wf-loading" {{ HTML_ATTRS }}>
+<html {{ HTML_ATTRS }}>
+  <!-- class="wf-loading"  -->
   <head>
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
     {{ APP }}
-    <script>
+    <!-- <script>
       WebFontConfig = {
         loading: function () {
           // console.log('loading');
@@ -30,6 +31,6 @@
         // wf.defer = true;
         s.parentNode.insertBefore(wf, s);
       })(document);
-   </script>
+   </script> -->
   </body>
 </html>

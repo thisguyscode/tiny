@@ -17,8 +17,8 @@
                     <span class="_index">{{ index }}. </span>
                     <span class="_name">{{ name }}</span>
                     <f-link
-                      class="_project-group-link"
-                      :scrollToSelector="'#project-group-' + index + '-top'">
+                      class="_project-group-link">
+                      <!-- :scrollToSelector="'#project-group-' + index + '-top'" -->
                       <span class="u-link-bloater"></span>
                     </f-link>
                   </h3>
@@ -128,7 +128,7 @@ export default {
   ._name {
     padding-right: $unit-sm;
     @include mq($from: tablet) {
-      transition: padding .4s ease, box-shadow .4s ease, color .4s ease;
+      transition: box-shadow .4s ease, color .4s ease;
     }
   }
 
@@ -140,7 +140,7 @@ export default {
     position: relative;
     
     @include mq($from: tablet) {
-      transition: padding .4s ease, color .4s ease;
+      transition: color .4s ease;
       text-align: right;
       min-width: $page-padding-tablet;
     }

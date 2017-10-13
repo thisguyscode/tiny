@@ -148,7 +148,7 @@
     color: $neutral-100;
     transition: color .8s ease;
     text-decoration: none;
-    transition: padding .2s ease;
+    // transition: padding .2s ease;
     &.disabled {
       pointer-events: none;
     }

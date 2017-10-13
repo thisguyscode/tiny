@@ -100,10 +100,10 @@ export default {
         '--light': this.project.contrastingColor === 'light',
         '--dark': this.project.contrastingColor === 'dark'
       }
-    },
-    setScrollTo: function () {
-      this.$store.commit('setScrollTo', '#' + this.current.slug)
     }
+    // setScrollTo: function () {
+    //   this.$store.commit('setScrollTo', '#' + this.current.slug)
+    // }
   }
 }
 </script>

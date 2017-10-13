@@ -159,7 +159,7 @@ export default {
   watch: {
     '$route' (to, from) {
       setTimeout(() => {
-        this.$scrollTo('#top')
+        window.scrollTo(0, 0)
         setTimeout(() => {
           this.projectColor = this.getNextColor(to)
         }, 50)

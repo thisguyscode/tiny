@@ -10,7 +10,7 @@
 
           <!-- LOGO -->
           <li class="l-grid__cell  u-1/4  u-2/5@mobile">
-            <nuxt-link class="_link _logo-link left" to="/" v-scroll-to="'#page-top'">
+            <nuxt-link class="_link _logo-link left" to="/">
               <span class="_link-text">
                 <span class="u-text--lowest-contrast">./</span>
                 <span>tiny</span>
@@ -20,7 +20,7 @@
           </li><!--END- LOGO -->
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
-            <nuxt-link class="_link" to="/profile" v-scroll-to="'#page-top'">
+            <nuxt-link class="_link" to="/profile">
               <span class="_link-text">
                 profile
               </span>
@@ -28,7 +28,7 @@
           </li>
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
-            <nuxt-link class="_link" to="/work" v-scroll-to="'#page-top'">
+            <nuxt-link class="_link" to="/work">
               <span class="_link-text">
                 work
               </span>
@@ -36,7 +36,7 @@
           </li>
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
-            <nuxt-link class="_link" to="/contact" v-scroll-to="'#page-top'">
+            <nuxt-link class="_link" to="/contact">
               <span class="_link-text">
                 contact
               </span>

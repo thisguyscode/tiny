@@ -8,7 +8,7 @@
         <div class="_hero-text-cell _cell u-2/5@tablet">
           <div class="_hero-text-wrapper" :style="'color:' + color">
            
-            <transition name="slide-from-left">
+            <!-- <transition name="slide-from-left"> -->
               <div v-if="transitionEnd">
 
                 <!-- Group -->
@@ -27,7 +27,7 @@
                 </h1>
 
               </div>
-            </transition>
+            <!-- </transition> -->
 
           </div>
         </div><!--END Hero text panel -->
@@ -36,14 +36,14 @@
         <div class="_hero-image-cell _cell u-3/5@tablet" :class="imgClass">
           <div class="_hero-image-reference" :class="imgWrapperClass">
             <div class="_hero-image-wrapper">
-              <transition name="slide-from-right">
+              <!-- <transition name="slide-from-right"> -->
                 <c-image
                   :lazy="false"
                   v-if="transitionEnd"
                   :fit="imgClass"
                   :imageSrc="project.imgSrc"
                 />
-              </transition>
+              <!-- </transition> -->
             </div>
           </div>
         </div>

@@ -20,9 +20,9 @@
 
           <div class="_objective-cell _cell u-2/5@tablet">
             <h4>Objective</h4>
-            <transition name="fade">
+            <!-- <transition name="fade"> -->
               <p v-if="transitionEnd" class="overview-string">{{ project.objective }}</p>
-            </transition>
+            <!-- </transition> -->
           </div>
 
           <div class="_cell u-3/5@tablet">
@@ -31,34 +31,34 @@
                 <l-grid>
                   <div class="_group _cell u-2/5@mobile u-1/1@tablet">
                     <h4>Date</h4>
-                    <transition name="fade">
+                    <!-- <transition name="fade"> -->
                       <p v-if="transitionEnd" class="_item item-string">
                         {{ project.date }}
                       </p>
-                    </transition>
+                    <!-- </transition> -->
                   </div>
                   <div class="_group _cell u-2/5@mobile u-1/1@tablet">
                     <h4>Role</h4>
-                    <transition name="fade">
+                    <!-- <transition name="fade"> -->
                       <p v-if="transitionEnd" class="_item item-string">{{ project.role }}</p>
-                    </transition>
+                    <!-- </transition> -->
                   </div>
                 </l-grid>
               </div>
               <div class="_list-column _cell u-2/5@mobile u-1/3@tablet">
                 <h4>Skills</h4>
-                <transition name="fade">
+                <!-- <transition name="fade"> -->
                   <ul v-if="transitionEnd" class="_group u-list-bare">
                     <li class="_item" v-for="skill in project.skills" :key="skill.id">
                       <span class="item-string">{{ skill }}</span>
                     </li>
                   </ul>
-                </transition>
+                <!-- </transition> -->
               </div>
               <div class="_list-column _cell u-2/5@mobile u-1/3@tablet">
                 
                 <h4>Tech</h4>
-                <transition name="fade">
+                <!-- <transition name="fade"> -->
                   <ul v-if="transitionEnd" class="_group u-list-bare">
                     <li v-for="tech in project.techs" :key="tech.id" class="tech-wrapper">
                       
@@ -74,7 +74,7 @@
 
                     </li>
                   </ul>
-                </transition>
+                <!-- </transition> -->
 
               </div>
             </l-grid>

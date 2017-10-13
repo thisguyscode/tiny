@@ -1,5 +1,5 @@
 <template>
-  <transition>
+  <span>
     
     <!-- IF it's an svg then simply load it -->
     <img
@@ -93,7 +93,7 @@
 
     </picture>
 
-  </transition>
+  </span>
 </template>
 
 <script>

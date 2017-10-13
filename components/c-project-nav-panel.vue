@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade">
+  <!-- <transition name="fade"> -->
     <div v-if="transitionEnd" class="_panel" :class="panelClass">
       <nuxt-link
         class="_link"
@@ -45,7 +45,7 @@
 
       </nuxt-link>
     </div>
-  </transition>
+  <!-- </transition> -->
 </template>
 
 <script>

@@ -196,8 +196,8 @@ export default {
         var webpSizes = []
         for (var k = 0; k < availableSizes.length; k++) {
           var size = availableSizes[k]
-          var image = require(`~/assets/images/${this.imageSrc}/${size}.${this.extension}`) + ` ${size} w`
-          var webpImage = require(`~/assets/images/${this.imageSrc}/${size}.webp`) + ` ${size} w`
+          var image = require(`~/assets/images/${this.imageSrc}/${size}.${this.extension}`) + ` ${size}w`
+          var webpImage = require(`~/assets/images/${this.imageSrc}/${size}.webp`) + ` ${size}w`
           sizes.push(image)
           webpSizes.push(webpImage)
         }

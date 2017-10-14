@@ -58,7 +58,10 @@ module.exports = {
     '~/plugins/no-ssr.js',
     '~/plugins/image.js',
     '~/plugins/vue-awesome.js',
-    '~/plugins/fontface-observer.js',
+    {
+      src: '~/plugins/fontface-observer.js',
+      ssr: false
+    },
     {
       src: '~/plugins/picturefill.js',
       ssr: false

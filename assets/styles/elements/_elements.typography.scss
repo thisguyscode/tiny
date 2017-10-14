@@ -10,6 +10,12 @@
 /**
  * Apply default styling for typographic elements
  */
+.font-loading {
+  * {
+    font-family: sans-serif;
+  }
+}
+
 html {
 font-weight: $font-weight-regular;
 }

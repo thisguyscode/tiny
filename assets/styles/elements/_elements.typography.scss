@@ -20,12 +20,6 @@ html {
 font-weight: $font-weight-regular;
 }
 
-.wf-loading {
-  * {
-    font-family: sans-serif;
-  }
-}
-
 h1 {
   @include vr($font-display, $font-size-xxl);
   

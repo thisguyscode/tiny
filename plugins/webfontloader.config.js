@@ -3,8 +3,8 @@
 var WebFont = require('webfontloader')
 
 WebFont.load({
-  google: {
-    families: ['Open Sans:300,300i,600,600i', 'Montserrat:600']
+  custom: {
+    families: ['Open Sans:n3,n6,i3', 'Montserrat:n6']
   },
   timeout: 2000
 })

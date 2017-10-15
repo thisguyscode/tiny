@@ -103,25 +103,25 @@ module.exports = {
       })
 
       // Remove default font rule
-      // const fontRule = config.module.rules.find(r => r.test.toString() === '/\\.(woff2?|eot|ttf|otf)(\\?.*)?$/')
-      // config.module.rules.splice(config.module.rules.indexOf(fontRule), 1)
+      const fontRule = config.module.rules.find(r => r.test.toString() === '/\\.(woff2?|eot|ttf|otf)(\\?.*)?$/')
+      config.module.rules.splice(config.module.rules.indexOf(fontRule), 1)
 
       // Remove default image rule
       const imageRule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg)$/')
       config.module.rules.splice(config.module.rules.indexOf(imageRule), 1)
 
-      // config.module.rules.push({
-      //   test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
-      //   use: [
-      //     {
-      //       loader: 'base64-inline-loader',
-      //       options: {
-      //         limit: 1000,
-      //         name: 'fonts/[name].[hash:7].[ext]'
-      //       }
-      //     }
-      //   ]
-      // })
+      config.module.rules.push({
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
+        use: [
+          {
+            loader: 'base64-inline-loader',
+            options: {
+              // limit: 1000,
+              name: 'fonts/[name].[hash:7].[ext]'
+            }
+          }
+        ]
+      })
 
       config.module.rules.push({
         test: /\.(png|jpe?g|gif|tiff|webp|svg)$/i,

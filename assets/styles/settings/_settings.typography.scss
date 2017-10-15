@@ -24,8 +24,8 @@ $modular-scales: (
 	'double-octave': 4
 );
 
-$font-display:				'Montserrat', sans-serif;
-$font-body:						'Open Sans', sans-serif;
+$font-display:				-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-body:						-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $font-mono:						'Courier New', monospace;
 
 // To get the cap height: zoom to 500% in your browser and adjust these values.

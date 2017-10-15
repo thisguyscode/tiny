@@ -92,13 +92,13 @@ export default {
     margin-bottom: 1px;
     margin-top: -1px;
     position: relative;
-    transition: background-color .2s ease, padding .2s ease, box-shadow .2s ease;
+    transition: background-color .2s ease, box-shadow .2s ease;
     
     &:before {
       content: '';
       position: absolute;
       top: $unit-md;
-      transition: width .2s ease;
+      // transition: width .2s ease;
       width: 0;
       bottom: $unit-md;
       background-color: $green;

@@ -52,6 +52,10 @@ module.exports = {
     '~/plugins/image.js',
     '~/plugins/vue-awesome.js',
     {
+      src: '~/plugins/fonts.js',
+      ssr: false
+    },
+    {
       src: '~/plugins/picturefill.js',
       ssr: false
     },

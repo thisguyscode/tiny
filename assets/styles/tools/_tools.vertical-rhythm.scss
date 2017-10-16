@@ -92,5 +92,5 @@
 ======================================================================== */
 @mixin vr-reset {
 	position: static;
-  transform: none;
+  transform: none !important;
 }

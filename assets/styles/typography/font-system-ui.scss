@@ -2,6 +2,10 @@
    # SYSTEM-UI (FONT)
 ========================================================================== */
 
+/**
+ * 1. Reference the parent selector within itself to pump the specicifity
+ *    up a notch
+ */
 
 /* Tool dependencies
 ======================================================================== */
@@ -25,18 +29,22 @@ $font-size-xxxxl: $font-size-xxxxl;
 
 /* Local variables
 ======================================================================== */
-$cap-font-display:			1em;
-$cap-font-body:					1em;
-$cap-font-mono:					1em;
+// $cap-font-display:			1em;
+// $cap-font-body:					1em;
+// $cap-font-mono:					1em;
 
 
-/* Font size modifiers
+/* Heading
 ======================================================================== */
-/**
- * 1. Reference the parent selector within itself to pump the specicifity
- *    up a notch
- */
 
+// Base class
+.o-heading {
+  &#{&} { /*[1]*/
+    color: $red; /* Just for testing */
+  }
+}
+
+// Modifiers
 .o-heading--alpha {
   &#{&} { /*[1]*/
     @include vr-offset($font-display, $font-size-xxxxl);
@@ -65,5 +73,38 @@ $cap-font-mono:					1em;
 .o-heading--zeta {
   &#{&} { /*[1]*/
     @include vr-offset($font-body, $font-size-md);
+  }
+}
+
+/* Body text
+======================================================================== */
+
+// Base
+.o-text {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-md); /*[1]*/
+    color: $red;
+  }
+}
+
+// Modifiers
+.o-text--xs {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-xs);
+  }
+}
+.o-text--sm {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-sm);
+  }
+}
+.o-text--lg {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-lg);
+  }
+}
+.o-text--xl {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-xl);
   }
 }

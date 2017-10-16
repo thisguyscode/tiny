@@ -1,0 +1,49 @@
+/* ==========================================================================
+   # TEXT
+========================================================================== */
+
+
+/* Tool dependencies
+======================================================================== */
+// vertical-rhythm
+
+
+/* Global variable dependencies
+======================================================================== */
+$paragraph-trailer: $paragraph-trailer;
+
+$font-body:       $font-body;
+
+$font-size-xs:    $font-size-xs;
+$font-size-sm:    $font-size-sm;
+$font-size-md:    $font-size-md;
+$font-size-lg:    $font-size-lg;
+
+
+/* Base class
+======================================================================== */
+/**
+ * 1. Set a default size
+ * 2. Transition between the default offset and the font-specific offset
+ *    which is detected on page load
+ */
+.o-text {
+  @include vr($font-display, $font-size-md); /*[1]*/
+  transition: transform 3s ease; /*[2]*/
+}
+
+
+/* Font size modifiers
+======================================================================== */
+.o-text--xs {
+  @include vr($font-display, $font-size-xs);
+}
+.o-text--sm {
+  @include vr($font-display, $font-size-sm);
+}
+.o-text--lg {
+  @include vr($font-display, $font-size-lg);
+}
+.o-text--xl {
+  @include vr($font-display, $font-size-xl);
+}

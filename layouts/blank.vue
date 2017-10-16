@@ -22,7 +22,7 @@
 <style lang="scss" scoped>
   
   // Import variables and global settings
-  @import "~assets/styles/imports";
+  
 
   .layout-blank {
     background: $neutral-00;

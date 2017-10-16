@@ -9,9 +9,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  // Import variables and global settings
-  @import "~assets/styles/imports";
-
   $baseline-size: 1;
   $background-size: $px-line-height;
   $overlay-clr: $neutral-80;

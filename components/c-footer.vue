@@ -10,7 +10,7 @@
 <style lang="scss" scoped>
   
   // Import variables and global settings
-  @import "~assets/styles/imports";
+  
 
   .c-footer {
     padding-top: $page-padding-mobile;

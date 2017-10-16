@@ -17,6 +17,7 @@
     "node-sass": "^4.5.3",
     "normalize.css": "^7.0.0",
     "nuxt": "^1.0.0-rc11",
+    "nuxt-sass-resources-loader": "^1.0.4",
     "picturefill": "^3.0.2",
     "postcss-loader": "^2.0.6",
     "raw-loader": "^0.5.1",

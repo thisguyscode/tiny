@@ -60,11 +60,16 @@
 
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
   // Import variables and global settings
-  @import "~assets/styles/imports";
+  
+  @import "~assets/styles/objects/objects.test";
 
+</style>
+
+<style lang="scss" scoped>
+  // Import variables and global settings
+  
   // This variable is deprecated. Use $flexgrid-spacing-sizes instead.
   $gutter-width: 0 !default;
 

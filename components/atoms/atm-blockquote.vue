@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss" scoped>
 
-@import "~assets/styles/imports";
+
 $quote-width: 34px;
 $quote-height: 20px;
 

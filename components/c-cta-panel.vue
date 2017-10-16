@@ -77,7 +77,7 @@
 
 <style lang="scss" scoped>
 
-  @import "~assets/styles/imports";
+  
 
   .c-cta-panel {
     text-align: left;

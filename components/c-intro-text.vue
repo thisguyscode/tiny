@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import "~assets/styles/imports";
+  
 
   .c-intro-text {
     margin-bottom: $unit-xxl;

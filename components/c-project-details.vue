@@ -155,7 +155,7 @@
  $transition-easing: ease;
 
   // Import variables and global settings
-  @import "~assets/styles/imports";
+  
 
   .c-project-details {
     text-align: left;

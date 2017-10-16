@@ -23,8 +23,8 @@ export default {
 
 <style lang="scss" scoped>
   
-  // Import variables and global settings
-  @import "~assets/styles/imports";
+  
+  
 
   .c-gridlines {
     position: absolute;
@@ -34,12 +34,14 @@ export default {
   }
 
   ._column {
-    box-shadow: inset -1px 0 0 $grid-lines-color;
     height: 100%;
-
-    &:first-of-type {
-      box-shadow: inset -1px 0 0 $grid-lines-color, inset 1px 0 0 $grid-lines-color;
+    @include mq($from: tablet) {
+      box-shadow: inset -1px 0 0 $grid-lines-color;
+      &:first-of-type {
+        box-shadow: inset -1px 0 0 $grid-lines-color, inset 1px 0 0 $grid-lines-color;
+      }
     }
+
   }
 
 </style>

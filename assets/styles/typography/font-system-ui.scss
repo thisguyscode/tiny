@@ -1,3 +1,110 @@
-* {
-  color: lightcoral !important;
+/* ==========================================================================
+   # SYSTEM-UI (FONT)
+========================================================================== */
+
+/**
+ * 1. Reference the parent selector within itself to pump the specicifity
+ *    up a notch
+ */
+
+/* Tool dependencies
+======================================================================== */
+// vertical-rhythm
+
+
+/* Global variable dependencies
+======================================================================== */
+$heading-trailer: $heading-trailer;
+
+$font-display:    $font-display;
+$font-body:       $font-body;
+
+$font-size-md:    $font-size-md;
+$font-size-lg:    $font-size-lg;
+$font-size-xl:    $font-size-xl;
+$font-size-xxl:   $font-size-xxl;
+$font-size-xxxl:  $font-size-xxxl;
+$font-size-xxxxl: $font-size-xxxxl;
+
+
+/* Local variables
+======================================================================== */
+// $cap-font-display:			1em;
+// $cap-font-body:					1em;
+// $cap-font-mono:					1em;
+
+
+/* Heading
+======================================================================== */
+
+// Base class
+.o-heading {
+  &#{&} { /*[1]*/
+    color: $red; /* Just for testing */
+  }
+}
+
+// Modifiers
+.o-heading--alpha {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-xxxxl);
+  }
+}
+.o-heading--beta {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-xxxl);
+  }
+}
+.o-heading--gamma {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-xxl);
+  }
+}
+.o-heading--delta {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-xl);
+  }
+}
+.o-heading--delta {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-lg);
+  }
+}
+.o-heading--zeta {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-body, $font-size-md);
+  }
+}
+
+/* Body text
+======================================================================== */
+
+// Base
+.o-text {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-md); /*[1]*/
+    color: $red;
+  }
+}
+
+// Modifiers
+.o-text--xs {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-xs);
+  }
+}
+.o-text--sm {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-sm);
+  }
+}
+.o-text--lg {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-lg);
+  }
+}
+.o-text--xl {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-xl);
+  }
 }

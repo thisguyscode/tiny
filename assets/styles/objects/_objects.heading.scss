@@ -1,0 +1,58 @@
+/* ==========================================================================
+   # HEADING
+========================================================================== */
+
+
+/* Tool dependencies
+======================================================================== */
+// vertical-rhythm
+
+
+/* Global variable dependencies
+======================================================================== */
+$heading-trailer: $heading-trailer;
+
+$font-display:    $font-display;
+$font-body:       $font-body;
+
+$font-size-md:    $font-size-md;
+$font-size-lg:    $font-size-lg;
+$font-size-xl:    $font-size-xl;
+$font-size-xxl:   $font-size-xxl;
+$font-size-xxxl:  $font-size-xxxl;
+$font-size-xxxxl: $font-size-xxxxl;
+
+
+/* Base class
+======================================================================== */
+/**
+ * 1. Transition between the default offset and the font-specific offset
+ *    which is applied on page load
+ */
+.o-heading {
+  transition: transform .4s ease-out; /*[1]*/
+  font-weight: $font-weight-bold;
+  margin-bottom: $heading-trailer;
+}
+
+
+/* Font size modifiers
+======================================================================== */
+.o-heading--alpha {
+  @include vr($font-display, $font-size-xxxxl);
+}
+.o-heading--beta {
+  @include vr($font-display, $font-size-xxxl);
+}
+.o-heading--gamma {
+  @include vr($font-display, $font-size-xxl);
+}
+.o-heading--delta {
+  @include vr($font-display, $font-size-xl);
+}
+.o-heading--delta {
+  @include vr($font-display, $font-size-lg);
+}
+.o-heading--zeta {
+  @include vr($font-body, $font-size-md);
+}

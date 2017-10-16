@@ -3,8 +3,8 @@
   <div class="p-profile">
   
     <c-hero bgImageSrc="chn-shanghai_02.jpg">
-      <h1 class="u-margin-bottom-none">I'm <span class="u-text--lowest-contrast">./</span>tiny<span class="u-text--lowest-contrast">/</span></h1>
-      <h1 class="u-margin-bottom-none">(I have no idea what I'm doing)</h1>
+      <h1 class="o-heading o-heading--alpha">I'm <span class="u-text--lowest-contrast">./</span>tiny<span class="u-text--lowest-contrast">/</span></h1>
+      <h1 class="o-heading o-heading--alpha">(I have no idea what I'm doing)</h1>
     </c-hero>
 
     <l-main-content>
@@ -606,302 +606,325 @@
 
 </script>
 
+<style lang="scss">
+/* ========================================================================
+  # GLOBAL STYLE DEPENDENCIES
+======================================================================== */
+
+/* Objects
+======================================================================== */
+@import "~assets/styles/objects/objects.heading";
+
+</style>
+
+
 <style lang="scss" scoped>
-  
-  // Import variables and global settings
-  @import "~assets/styles/imports";
-  
-  .p-profile {
-    text-align: left;
-  }
-  ._mostly {
-    color: $neutral-100;
-  }
-  ._filler {
-    height: 2000px;
-  }
+/* ========================================================================
+  # SCOPED STYLES
+======================================================================== */
 
-  .content {
-    padding-top: $unit-lg;
-  }
 
-  .software-name {
-    // float: left;
-    // margin-right: 100%;
-  }
-  .software-company {
+/* Global variable dependencies
+======================================================================== */
 
-  }
 
-  .fantasy-item-cell {
-    margin-bottom: $unit-md;
-    @include mq($from: tablet) {
-      margin-bottom: $unit-xl;
-    }
-  }
+/* Base class
+======================================================================== */
+.p-profile {
+  text-align: left;
+}
 
-  .fantasy-heading {
-    margin-bottom: 0;
-  }
-  .fantasy-caption {
-    @include vr($font-body, $font-size-md);
-    color: $neutral-40;
-    // font-weight: $font-weight-semi;
-  }
 
-  .fantasy-icon-wrapper {
-    height: $unit-xxl;
-    padding: $unit-sm;
-    text-align: center;
-    border-radius: 2px;
-    @include mq($until: tablet) {
-      margin-right: $unit-sm;
-    }
-    &.home {
-      background-color: $neutral-00;
-      > .fantasy-icon {
-        color: contrasting-color($neutral-00, $lightest, $darkest)
-      }
-    }
-    &.money {
-      background-color: $green;
-      > .fantasy-icon {
-        color: contrasting-color($green, $lightest, $darkest)
-      }
-    }
-    &.fire {
-      background-color: $red;
-      > .fantasy-icon {
-        color: contrasting-color($red, $lightest, $darkest)
-      }
-    }
-    @include mq($from: tablet) {
-      margin-bottom: $unit-md;
-    }
-  }
+/* Child classes
+======================================================================== */ 
+._mostly {
+  color: $neutral-100;
+}
+._filler {
+  height: 2000px;
+}
 
-  .software-company {
-    color: $neutral-40;
-  }
+.content {
+  padding-top: $unit-lg;
+}
 
-  .fantasies {
-    margin-bottom: $unit-lg;
-    @include mq($from: tablet) {
-      margin-bottom: $unit-xxl;
-    }
-  }
-  .soft-skills {
-    margin-bottom: $unit-lg;
-    @include mq($from: tablet) {
-      margin-bottom: $unit-xxl;
-    }
-    // @include mq($from: desktop) {
-    //   margin-bottom: $unit-xxl;
-    // }
-  }
-  .skills-good {
-    margin-bottom: $unit-md;
-    @include mq($from: tablet) {
-      margin-bottom: $unit-lg;
-    }
-  }
-  .skill-heading {
-    @include vr($font-body, $font-size-lg);
-    font-weight: $font-weight-semi;
-    @include mq($until: tablet) {
-      padding-top: $unit-sm;
-    }
-  }
-  .soft-skills-heading {
-    margin-bottom: $unit-md;
-    @include mq($from: tablet) {
-      margin-bottom: $unit-lg;
-    }
-  }
-  
-  .software-company,
-  .software-name {
-    @include vr($font-body, $font-size-lg);
-  }
-  
+.software-name {
+  // float: left;
+  // margin-right: 100%;
+}
+.software-company {
 
-  .skill-label {
-    display: inline-block;
-    vertical-align: top;
-    font-weight: $font-weight-semi;
+}
+
+.fantasy-item-cell {
+  margin-bottom: $unit-md;
+  @include mq($from: tablet) {
+    margin-bottom: $unit-xl;
   }
-  .skill-icon-wrapper {
+}
+
+.fantasy-heading {
+  margin-bottom: 0;
+}
+.fantasy-caption {
+  @include vr($font-body, $font-size-md);
+  color: $neutral-40;
+  // font-weight: $font-weight-semi;
+}
+
+.fantasy-icon-wrapper {
+  height: $unit-xxl;
+  padding: $unit-sm;
+  text-align: center;
+  border-radius: 2px;
+  @include mq($until: tablet) {
     margin-right: $unit-sm;
-    width: $unit-lg;
-    height: $unit-lg;
-    padding: $unit-xs;
-    position: relative;
-    border-radius: 2px;
-    display: inline-block;
-    text-align: center;
-    @include mq($from: tablet) {
-      margin-bottom: $unit-md;
-    }
-    &.skill-icon-wrapper-landscape {
-      width: $unit-xxl;
-    }
-    &.software {
-      border-radius: 8px;
-    }
-    &.heart {
-      background-color: $red;
-      > .skill-icon {
-        color: contrasting-color($red, $lightest, $darkest)
-      }
-    }
-    &.comment {
-      background-color: $purple;
-      > .skill-icon {
-        color: contrasting-color($purple, $lightest, $darkest)
-      }
-    }
-    &.bulb {
-      background-color: gold;
-      > .skill-icon {
-        color: contrasting-color(gold, $lightest, $darkest)
-      }
-    }
-    &.puzzle {
-      background-color: $blue;
-      > .skill-icon {
-        color: contrasting-color($blue, $lightest, $darkest)
-      }
-    }
-    &.mouse {
-      background-color: $neutral-00;
-      > .skill-icon {
-        color: contrasting-color($neutral-00, $lightest, $darkest)
-      }
-    }
-    &.hourglass {
-      background-color: sandybrown;
-      > .skill-icon {
-        color: contrasting-color(sandybrown, $lightest, $darkest)
-      }
-    }
-    &.ps {
-      background-color: $blue;
-      > .skill-icon-text {
-        color: contrasting-color($blue, $lightest, $darkest)
-      }
-    }
-    &.ai {
-      background-color: $yellow;
-      > .skill-icon-text {
-        color: contrasting-color($yellow, $lightest, $darkest)
-      }
-    }
-    &.id {
-      background-color: $purple;
-      > .skill-icon-text {
-        color: contrasting-color($purple, $lightest, $darkest)
-      }
+  }
+  &.home {
+    background-color: $neutral-00;
+    > .fantasy-icon {
+      color: contrasting-color($neutral-00, $lightest, $darkest)
     }
   }
-
-  .skill-icon {
-
+  &.money {
+    background-color: $green;
+    > .fantasy-icon {
+      color: contrasting-color($green, $lightest, $darkest)
+    }
   }
+  &.fire {
+    background-color: $red;
+    > .fantasy-icon {
+      color: contrasting-color($red, $lightest, $darkest)
+    }
+  }
+  @include mq($from: tablet) {
+    margin-bottom: $unit-md;
+  }
+}
 
-  .hard-skills {
+.software-company {
+  color: $neutral-40;
+}
+
+.fantasies {
+  margin-bottom: $unit-lg;
+  @include mq($from: tablet) {
+    margin-bottom: $unit-xxl;
+  }
+}
+.soft-skills {
+  margin-bottom: $unit-lg;
+  @include mq($from: tablet) {
+    margin-bottom: $unit-xxl;
+  }
+  // @include mq($from: desktop) {
+  //   margin-bottom: $unit-xxl;
+  // }
+}
+.skills-good {
+  margin-bottom: $unit-md;
+  @include mq($from: tablet) {
     margin-bottom: $unit-lg;
   }
+}
+.skill-heading {
+  @include vr($font-body, $font-size-lg);
+  font-weight: $font-weight-semi;
+  @include mq($until: tablet) {
+    padding-top: $unit-sm;
+  }
+}
+.soft-skills-heading {
+  margin-bottom: $unit-md;
+  @include mq($from: tablet) {
+    margin-bottom: $unit-lg;
+  }
+}
 
-  .skill-icon,
-  .fantasy-icon {
+.software-company,
+.software-name {
+  @include vr($font-body, $font-size-lg);
+}
+
+
+.skill-label {
+  display: inline-block;
+  vertical-align: top;
+  font-weight: $font-weight-semi;
+}
+.skill-icon-wrapper {
+  margin-right: $unit-sm;
+  width: $unit-lg;
+  height: $unit-lg;
+  padding: $unit-xs;
+  position: relative;
+  border-radius: 2px;
+  display: inline-block;
+  text-align: center;
+  @include mq($from: tablet) {
+    margin-bottom: $unit-md;
+  }
+  &.skill-icon-wrapper-landscape {
+    width: $unit-xxl;
+  }
+  &.software {
+    border-radius: 8px;
+  }
+  &.heart {
+    background-color: $red;
+    > .skill-icon {
+      color: contrasting-color($red, $lightest, $darkest)
+    }
+  }
+  &.comment {
+    background-color: $purple;
+    > .skill-icon {
+      color: contrasting-color($purple, $lightest, $darkest)
+    }
+  }
+  &.bulb {
+    background-color: gold;
+    > .skill-icon {
+      color: contrasting-color(gold, $lightest, $darkest)
+    }
+  }
+  &.puzzle {
+    background-color: $blue;
+    > .skill-icon {
+      color: contrasting-color($blue, $lightest, $darkest)
+    }
+  }
+  &.mouse {
+    background-color: $neutral-00;
+    > .skill-icon {
+      color: contrasting-color($neutral-00, $lightest, $darkest)
+    }
+  }
+  &.hourglass {
+    background-color: sandybrown;
+    > .skill-icon {
+      color: contrasting-color(sandybrown, $lightest, $darkest)
+    }
+  }
+  &.ps {
+    background-color: $blue;
+    > .skill-icon-text {
+      color: contrasting-color($blue, $lightest, $darkest)
+    }
+  }
+  &.ai {
+    background-color: $yellow;
+    > .skill-icon-text {
+      color: contrasting-color($yellow, $lightest, $darkest)
+    }
+  }
+  &.id {
+    background-color: $purple;
+    > .skill-icon-text {
+      color: contrasting-color($purple, $lightest, $darkest)
+    }
+  }
+}
+
+.skill-icon {
+
+}
+
+.hard-skills {
+  margin-bottom: $unit-lg;
+}
+
+.skill-icon,
+.fantasy-icon {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+.skill-caption {
+  color: $neutral-40;
+  @include mq($until: tablet) {
+    display: none;
+  }
+}
+
+.testimonials {
+  margin-bottom: $unit-md;
+  @include mq($from: tablet) {
+    margin-bottom: $unit-lg;
+  }
+}
+
+.skill-item-cell {
+  margin-bottom: $unit-sm;
+  @include mq($from: tablet) {
+    margin-bottom: $unit-md;
+  }
+}
+// .skill-icon-cell {
+//   height: $unit-md;
+//   @include mq($from: tablet) {
+//     margin-bottom: $unit-sm;
+//     height: $unit-lg;
+//   }
+// }
+
+.skills-subheading {
+  margin-bottom: $unit-md;
+}
+
+// .subskill-subheading {
+//   margin-bottom: $unit-md;
+//   @include mq($from: tablet) {
+//     margin-bottom: $unit-lg;
+//   }
+// }
+
+.subskill {
+  display: flex;
+  // font-weight: $font-weight-semi;
+  
+  @include mq($until: desktop) {
+    margin-bottom: $unit-md;
+  }
+}
+
+.skill-icon-text {
+  @include vr($font-body, $font-size-xl);
+  @include vr-reset;
+  font-weight: $font-weight-semi;
+}
+
+.subskill-caption,
+.skill-caption {
+  @include vr($font-body, $font-size-sm);
+  color: $neutral-40;
+}
+.subskill-caption {
+  padding-right: $unit-xs;
+}
+.subskill-icon {
+  color: $neutral-00;
+  height: $unit-md;
+  margin-right: $unit-xs;
+  width: $unit-md;
+  max-width: 100%;
+  max-height: 100%;
+  @include mq($from: desktop) {
     width: auto;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
   }
+}
 
-
-  .skill-caption {
-    color: $neutral-40;
-    @include mq($until: tablet) {
-      display: none;
-    }
+.subskill-spacer {
+  @include mq($from: desktop) {
+    display: none;
   }
-
-  .testimonials {
-    margin-bottom: $unit-md;
-    @include mq($from: tablet) {
-      margin-bottom: $unit-lg;
-    }
-  }
-
-  .skill-item-cell {
-    margin-bottom: $unit-sm;
-    @include mq($from: tablet) {
-      margin-bottom: $unit-md;
-    }
-  }
-  // .skill-icon-cell {
-  //   height: $unit-md;
-  //   @include mq($from: tablet) {
-  //     margin-bottom: $unit-sm;
-  //     height: $unit-lg;
-  //   }
-  // }
-
-  .skills-subheading {
-    margin-bottom: $unit-md;
-  }
-
-  // .subskill-subheading {
-  //   margin-bottom: $unit-md;
-  //   @include mq($from: tablet) {
-  //     margin-bottom: $unit-lg;
-  //   }
-  // }
-
-  .subskill {
-    display: flex;
-    // font-weight: $font-weight-semi;
-    
-    @include mq($until: desktop) {
-      margin-bottom: $unit-md;
-    }
-  }
-
-  .skill-icon-text {
-    @include vr($font-body, $font-size-xl);
-    @include vr-reset;
-    font-weight: $font-weight-semi;
-  }
-
-  .subskill-caption,
-  .skill-caption {
-    @include vr($font-body, $font-size-sm);
-    color: $neutral-40;
-  }
-  .subskill-caption {
-    padding-right: $unit-xs;
-  }
-  .subskill-icon {
-    color: $neutral-00;
-    height: $unit-md;
-    margin-right: $unit-xs;
-    width: $unit-md;
-    max-width: 100%;
-    max-height: 100%;
-    @include mq($from: desktop) {
-      width: auto;
-    }
-  }
-
-  .subskill-spacer {
-    @include mq($from: desktop) {
-      display: none;
-    }
-  }
-  .skills-design-section {
-    margin-bottom: $unit-lg;
-  }
+}
+.skills-design-section {
+  margin-bottom: $unit-lg;
+}
 
 </style>

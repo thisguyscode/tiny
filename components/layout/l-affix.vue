@@ -108,8 +108,8 @@
 
 <style lang="scss" scoped>
 
-  // Import variables and global settings
-  @import "~assets/styles/imports";
+  
+  
 
   $transition-duration: 1s;
   $transition-easing: ease;

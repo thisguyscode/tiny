@@ -48,8 +48,8 @@ export default {
 
 <style lang="scss" scoped>
   
-  // Import variables and global settings
-  @import "~assets/styles/imports";
+  
+  
 
   .c-score-bar {
     display: flex;

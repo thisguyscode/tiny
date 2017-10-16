@@ -118,8 +118,8 @@
 </script>
 
 <style lang="scss" scoped>
-  // Import variables and global settings
-  @import "~assets/styles/imports";
+  
+  
   
   $navbar-padding-y: $unit-xs;
   $navbar-inner-height: $unit-md;

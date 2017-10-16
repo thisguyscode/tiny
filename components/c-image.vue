@@ -1,29 +1,28 @@
 <template>
-  <span>
+  <div class="c-image">
     
     <!-- IF it's an svg then simply load it -->
     <img
       v-if="!lazy && extension === 'svg'"
       :src="asset.src"
-      class="c-image"
+      class="c-image__image"
       :class="fitClass">
     </img>
     <img
       v-else-if="lazy && extension === 'svg'"
       src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
       :data-src="asset.src"
-      class="c-image lazyload"
+      class="c-image__image lazyload"
       :class="fitClass">
     </img>
 
     <!-- ELSE-IF it's a JPG / PNG / etc -->
-    <picture v-else class="picture">
+    <picture v-else class="c-image__picture">
       
       <!-- webP source: responsive / lazy -->
       <source
         v-if="responsive && lazy"
         type="image/webp"
-        :class="fitClass"
         :data-srcset="asset.webpSrcset">
       </source>
       
@@ -31,7 +30,6 @@
       <source
         v-if="responsive && !lazy"
         type="image/webp"
-        :class="fitClass"
         :srcset="asset.webpSrcset">
       </source>
 
@@ -39,7 +37,6 @@
       <source
         v-if="!responsive && lazy"
         type="image/webp"
-        :class="fitClass"
         :data-srcset="asset.webpSrc">
       </source>
 
@@ -47,14 +44,13 @@
       <source
         v-if="!responsive && !lazy"
         type="image/webp"
-        :class="fitClass"
         :srcset="asset.webpSrc">
       </source>
 
       <!-- img: responsive / Lazy -->
       <img
         v-if="responsive && lazy"
-        class="c-image lazyload"
+        class="c-image__image lazyload"
         :class="fitClass"
         :src="asset.placeholder"
         :data-srcset="asset.srcset"
@@ -63,7 +59,7 @@
       <!-- img: responsive / NOT Lazy -->
       <img
         v-if="responsive && !lazy"
-        class="c-image"
+        class="c-image__image"
         :class="fitClass"
         :srcset="asset.srcset"
       />
@@ -71,8 +67,8 @@
       <!-- img: NOT responsive / Lazy -->
       <img
         v-if="!responsive && lazy"
+        class="c-image__image lazyload"
         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-        class="c-image lazyload"
         :class="fitClass"
         :data-src="asset.src"
       />
@@ -80,7 +76,7 @@
       <!-- img: NOT responsive / NOT Lazy -->
       <img
         v-if="!responsive && !lazy"
-        class="c-image"
+        class="c-image__image"
         :class="fitClass"
         :src="asset.src"
       />
@@ -88,12 +84,12 @@
       <!-- Loader -->
       <c-loading-indef
         v-if="lazy && loader"
-        class="loader">
+        class="c-image__loader">
       </c-loading-indef>
 
     </picture>
 
-  </span>
+  </div>
 </template>
 
 <script>
@@ -135,8 +131,8 @@ export default {
   computed: {
     fitClass: function () {
       return {
-        'cover': this.fit === 'cover',
-        'contain': this.fit === 'contain'
+        'c-image__image--cover': this.fit === 'cover',
+        'c-image__image--contain': this.fit === 'contain'
       }
     },
     imagesArray: function () {
@@ -231,37 +227,76 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  // Import variables and global settings
-  @import "~assets/styles/imports";
+<style lang="scss">
+/* ========================================================================
+  # GLOBAL STYLE DEPENDENCIES
+======================================================================== */
 
-  .c-image {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+/* Objects
+======================================================================== */
+</style>
+
+
+<style lang="scss" scoped>
+/* ========================================================================
+  # SCOPED STYLES
+======================================================================== */
+
+/* Global variable dependencies
+======================================================================== */
+$content-max-width: $content-max-width;  
+  
+
+/* Base class
+======================================================================== */
+.c-image {
+  height: 100%;
+  text-align: center;
+}
+
+/* Child classes
+======================================================================== */
+// <picture> element
+.c-image__picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+// loader
+.c-image__loader {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+// the actual <img>
+.c-image__image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  max-width: $content-max-width;
+}
+
+.c-image__image--contain {
+  object-fit: contain;
+}
+
+.c-image__image--cover {
+  object-fit: cover;
+}
+
+
+/* Removed loader when required
+======================================================================== */
+.lazyloaded {
+  & ~ .c-image__loader {
+    display: none;
   }
-  .picture {
-    display: block;
-    height: 100%;
-    width: 100%;
-    // position: relative;
-  }
-  .contain {
-    object-fit: contain;
-  }
-  .cover {
-    object-fit: cover;
-  }
-  .loader {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .lazyloaded {
-    & ~ .loader {
-      display: none;
-    }
-  }
+}
+
 </style>

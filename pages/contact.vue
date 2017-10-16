@@ -259,7 +259,7 @@ export default {
 
 /* Import project settings
    ====================================================================== */
-@import "~assets/styles/imports";
+
 
 
 /* Local variables

@@ -137,8 +137,8 @@
  $transition-duration: .8s;
  $transition-easing: ease-out;
 
-  // Import variables and global settings
-  @import "~assets/styles/imports";
+  
+  
 
   ._hero {
     min-height: $unit-xxl*3;

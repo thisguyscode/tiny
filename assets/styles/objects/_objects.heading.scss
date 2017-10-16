@@ -27,11 +27,11 @@ $font-size-xxxxl: $font-size-xxxxl;
 ======================================================================== */
 /**
  * 1. Transition between the default offset and the font-specific offset
- *    which is detected on page load
+ *    which is applied on page load
  */
 .o-heading {
-  transition: transform 3s ease; /*[1]*/
-  font-weight: $font-weight-semi;
+  transition: transform .4s ease-out; /*[1]*/
+  font-weight: $font-weight-bold;
   margin-bottom: $heading-trailer;
 }
 

@@ -1,17 +1,17 @@
 <template>
   <div class="c-hero">
+    <c-image
+      v-if="bgImageSrc"
+      :lazy="false"
+      class='c-hero__background-image'
+      fit="cover"
+      :class="bgImageClass"
+      :style="'opacity: ' + bgImageOpacity"
+      :imageSrc="bgImageSrc"
+    />
     <l-wrapper>
-      <c-image
-        v-if="bgImageSrc"
-        :lazy="false"
-        class='_background-image'
-        fit="cover"
-        :class="bgImageClass"
-        :style="'opacity: ' + bgImageOpacity"
-        :imageSrc="bgImageSrc"
-      />
       <l-grid horizontal="right">
-        <div class="_text-wrapper  _cell  u-3/5@desktop">
+        <div class="c-hero__text-wrapper  _cell  u-3/5@desktop">
           <slot></slot>
         </div>
       </l-grid>
@@ -55,47 +55,74 @@ export default {
 }
 </script>
 
+
+<style lang="scss">
+/* ========================================================================
+  # GLOBAL STYLE DEPENDENCIES
+======================================================================== */
+
+/* Objects
+======================================================================== */
+
+</style>
+
+
 <style lang="scss" scoped>
+/* ========================================================================
+  # SCOPED STYLES
+======================================================================== */
+
+
+/* Global variable dependencies
+======================================================================== */
+
+// Sizes
+$unit-xxl:        $unit-xxl;
+
+// Colors
+$lighest:         $lightest;
+$darkest:         $darkest;
+$neutral-80:      $neutral-80;
+
+
+/* Local variables
+======================================================================== */
+$background-color: rgba($darkest, .5);
+$border: inset 0 -1px 0 0 $neutral-80;
   
-  
-  
 
-  .c-hero {
-    text-align: right;
-    overflow: hidden;
-    background-color: rgba($darkest,.5);
-    min-height: $unit-xxl*2;
-    box-shadow: inset 0 -1px 0 0 $neutral-80;
-    position: relative;
-    color: $lightest;
-    @include mq($from: tablet) {
-      min-height: $unit-xxl*5;
-    }
-  }
+/* Base class
+======================================================================== */
+.c-hero {
+  position: relative;
+  text-align: right;
+  overflow: hidden;
+  background-color: $background-color;
+  box-shadow: $border;
+  color: $lightest;
+  min-height: $unit-xxl*2;
 
-  ._background-image {
-    position: absolute;
-    opacity: .4;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    object-position: 50% 50%;
+  @include mq($from: tablet) {
+    min-height: $unit-xxl*5;
   }
+}
 
-  ._background-image--top {
-    object-position: 50% 0;
-  }
 
-  ._background-image--bottom {
-    object-position: 50% 100%;
-  }
+/* Child classes
+======================================================================== */
+.c-hero__background-image {
+  position: absolute;
+  opacity: .4;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
 
-  ._text-wrapper {
-    padding-top: $unit-xxl;
-    padding-bottom: $unit-xxl;
-    text-shadow: 0 2px 10px rgba($darkest, .7);
-  }
+.c-hero__text-wrapper {
+  padding-top: $unit-xxl;
+  padding-bottom: $unit-xxl;
+  text-shadow: 0 2px 10px rgba($darkest, .7);
+}
 
 </style>

@@ -1,23 +1,69 @@
+/* ==========================================================================
+   # SYSTEM-UI (FONT)
+========================================================================== */
+
+
+/* Tool dependencies
+======================================================================== */
+// vertical-rhythm
+
+
+/* Global variable dependencies
+======================================================================== */
+$heading-trailer: $heading-trailer;
+
+$font-display:    $font-display;
+$font-body:       $font-body;
+
+$font-size-md:    $font-size-md;
+$font-size-lg:    $font-size-lg;
+$font-size-xl:    $font-size-xl;
+$font-size-xxl:   $font-size-xxl;
+$font-size-xxxl:  $font-size-xxxl;
+$font-size-xxxxl: $font-size-xxxxl;
+
+
+/* Local variables
+======================================================================== */
 $cap-font-display:			1em;
 $cap-font-body:					1em;
 $cap-font-mono:					1em;
-* {
-  h1 {
-    @include vr($font-display, $font-size-xxl);
+
+
+/* Font size modifiers
+======================================================================== */
+/**
+ * 1. Reference the parent selector within itself to pump the specicifity
+ *    up a notch
+ */
+
+.o-heading--alpha {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-xxxxl);
   }
-  h2 {
-    @include vr($font-display, $font-size-xl);
+}
+.o-heading--beta {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-xxxl);
   }
-  h3 {
-    @include vr($font-display, $font-size-lg);
+}
+.o-heading--gamma {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-xxl);
   }
-  h4 {
-    @include vr($font-display, $font-size-md);
+}
+.o-heading--delta {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-xl);
   }
-  h5 {
-    @include vr($font-display, $font-size-sm);
+}
+.o-heading--delta {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-display, $font-size-lg);
   }
-  h6 {
-    @include vr($font-display, $font-size-xs);
+}
+.o-heading--zeta {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-body, $font-size-md);
   }
 }

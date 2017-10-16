@@ -23,7 +23,6 @@
       <source
         v-if="responsive && lazy"
         type="image/webp"
-        :class="fitClass"
         :data-srcset="asset.webpSrcset">
       </source>
       
@@ -31,7 +30,6 @@
       <source
         v-if="responsive && !lazy"
         type="image/webp"
-        :class="fitClass"
         :srcset="asset.webpSrcset">
       </source>
 
@@ -39,7 +37,6 @@
       <source
         v-if="!responsive && lazy"
         type="image/webp"
-        :class="fitClass"
         :data-srcset="asset.webpSrc">
       </source>
 
@@ -47,7 +44,6 @@
       <source
         v-if="!responsive && !lazy"
         type="image/webp"
-        :class="fitClass"
         :srcset="asset.webpSrc">
       </source>
 
@@ -231,37 +227,60 @@ export default {
 }
 </script>
 
+<style lang="scss">
+/* ========================================================================
+  # GLOBAL STYLE DEPENDENCIES
+======================================================================== */
+
+/* Objects
+======================================================================== */
+</style>
+
+
 <style lang="scss" scoped>
-  
+/* ========================================================================
+  # SCOPED STYLES
+======================================================================== */
+
+/* Global variable dependencies
+======================================================================== */
+$content-max-width: $content-max-width;  
   
 
-  .c-image {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+/* Base class
+======================================================================== */
+.c-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  max-width: $content-max-width;
+}
+
+
+/* Child classes
+======================================================================== */
+.picture {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.contain {
+  object-fit: contain;
+}
+.cover {
+  object-fit: cover;
+}
+.loader {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lazyloaded {
+  & ~ .loader {
+    display: none;
   }
-  .picture {
-    display: block;
-    height: 100%;
-    width: 100%;
-    // position: relative;
-  }
-  .contain {
-    object-fit: contain;
-  }
-  .cover {
-    object-fit: cover;
-  }
-  .loader {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .lazyloaded {
-    & ~ .loader {
-      display: none;
-    }
-  }
+}
 </style>

@@ -1,9 +1,9 @@
 /* ========================================================================
+   # VERTICAL RHYTHM (vr)
+======================================================================== */
 
-  #VERTICAL RHYTHM (vr)
-
-  ======================================================================== */
-
+/* Generate all required attributes/values
+======================================================================== */
 @mixin vr($font-family: $font-body, $font-size: $base-font-size) {
 
 	// Calculate the line height of the text.
@@ -55,6 +55,41 @@
 	}
 }
 
+/* Recalculate only the offset and apply transformY to selector
+======================================================================== */
+@mixin vr-offset($font-family: $font-body, $font-size: $base-font-size) {
+  
+  // Calculate the line height of the text.
+  $line-height: $font-size * $base-line-height;
+
+  // How much rhythm fits in the line height?
+  $rhythm-count: $line-height / $rhythm;
+
+  // Round the rhythm count to half cycles.
+  $rhythm-count-half: $rhythm-count - ($rhythm-count - floor($rhythm-count));
+
+  // Calculate the adjusted line height.
+  $adjusted-line-height: $rhythm-count-half * $rhythm;
+
+  // Shift the text to the baseline (distance between the baseline and descender height).
+  $baseline-shift: (($adjusted-line-height - $font-size) * 0.5);
+
+  // Set offsets and font families.
+  @if $font-family == $font-display {
+    $offset: #{$cap-font-display} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
+    transform: translateY(calc(#{$offset}));      
+  } @else if $font-family == $font-mono {
+    $offset: #{$cap-font-mono} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
+    transform: translateY(calc(#{$offset}));      
+  } @else {
+    $offset: #{$cap-font-body} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
+    transform: translateY(calc(#{$offset}));
+  }
+}
+
+
+/* Remove the offset
+======================================================================== */
 @mixin vr-reset {
 	position: static;
   transform: none;

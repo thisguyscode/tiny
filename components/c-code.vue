@@ -284,9 +284,6 @@ export default {
   .hljs-strong {
     font-weight: bold;
   }
-  /*.hljs-code {
-  font-family:'Monospace';
-}*/
 
   .hljs-bullet,
   .hljs-selector-tag,

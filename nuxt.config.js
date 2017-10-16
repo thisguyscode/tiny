@@ -1,13 +1,6 @@
 const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
-  router: {
-    // base: ''
-    // scrollBehavior: function (to, from, savedPosition) {
-    //   if (savedPosition) return savedPosition
-    //   return false
-    // }
-  },
   /*
   ** Headers of the page
   */
@@ -59,7 +52,7 @@ module.exports = {
     '~/plugins/image.js',
     '~/plugins/vue-awesome.js',
     {
-      src: '~/plugins/fontface-observer.js',
+      src: '~/plugins/fonts.js',
       ssr: false
     },
     {
@@ -72,8 +65,6 @@ module.exports = {
     }
   ],
   modules: [
-    // Simple usage
-    // '@nuxtjs/pwa'
     ['@nuxtjs/pwa', {
       icon: {
         sizes: [ 512, 192, 380 ]
@@ -98,8 +89,9 @@ module.exports = {
         }
       })
 
-      const rule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg)$/')
-      config.module.rules.splice(config.module.rules.indexOf(rule), 1)
+      // Remove default image rule
+      const imageRule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg)$/')
+      config.module.rules.splice(config.module.rules.indexOf(imageRule), 1)
 
       config.module.rules.push({
         test: /\.(png|jpe?g|gif|tiff|webp|svg)$/i,

@@ -1,3 +1,23 @@
+$cap-font-display:			1em;
+$cap-font-body:					1em;
+$cap-font-mono:					1em;
 * {
-  color: lightcoral !important;
+  h1 {
+    @include vr($font-display, $font-size-xxl);
+  }
+  h2 {
+    @include vr($font-display, $font-size-xl);
+  }
+  h3 {
+    @include vr($font-display, $font-size-lg);
+  }
+  h4 {
+    @include vr($font-display, $font-size-md);
+  }
+  h5 {
+    @include vr($font-display, $font-size-sm);
+  }
+  h6 {
+    @include vr($font-display, $font-size-xs);
+  }
 }

@@ -154,7 +154,7 @@
  $transition-duration: .2s;
  $transition-easing: ease;
 
-  // Import variables and global settings
+  
   
 
   .c-project-details {

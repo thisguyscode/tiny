@@ -113,7 +113,7 @@ export default {
 
 <style lang="scss">
   
-  // Import variables and global settings
+  
   
   // @import '~highlight.js/styles/github.css';
   $padding-x: $unit-lg;

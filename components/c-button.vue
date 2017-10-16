@@ -132,7 +132,7 @@ export default {
 
 <style lang="scss" scoped>
   
-  // Import variables and global settings
+  
   
 
   .c-button {

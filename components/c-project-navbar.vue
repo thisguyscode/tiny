@@ -118,7 +118,7 @@
 </script>
 
 <style lang="scss" scoped>
-  // Import variables and global settings
+  
   
   
   $navbar-padding-y: $unit-xs;

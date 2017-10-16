@@ -3,9 +3,7 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
 <style lang="scss" scoped>
@@ -40,50 +38,6 @@ export default {
     height: 100%;
     pointer-events: none;
     transform: translateZ(0);
-    // background-color: red;
-    // &:after,
-    // &:before {
-    //   content: '';
-    //   pointer-events: none;
-    //   animation: fader 2s forwards;
-    //   position: absolute;
-    //   top: 0;
-    //   bottom: 0;
-    //   left: 0;
-    //   height: 100%;
-    //   background-position: 0 0;
-    //   background-size: 0 ($background-size + px);
-    //   background-repeat: repeat-y;
-    //   transform: translateZ(0);
-    // }
-    // &:before {
-    //   right: 0;
-    //   background-image: linear-gradient(
-    //     $overlay-clr,
-    //     transparent ($baseline-size) + px,
-    //     transparent ($background-size / 2 - $baseline-size) + px,
-    //     $overlay-clr ($background-size / 2 - $baseline-size) + px,
-    //     $overlay-clr ($background-size / 2) + px,
-    //     transparent ($background-size / 2) + px,
-    //     transparent ($background-size - $baseline-size) + px,
-    //     $overlay-clr ($background-size - $baseline-size) + px,
-    //     $overlay-clr ($background-size) + px
-    //   );
-    // }
-    // &:after {
-    //   right: 33%;
-    //   background-image: linear-gradient(
-    //     $yellow,
-    //     transparent ($baseline-size) + px,
-    //     transparent ($background-size / 2 - $baseline-size) + px,
-    //     $yellow ($background-size / 2 - $baseline-size) + px,
-    //     $yellow ($background-size / 2) + px,
-    //     transparent ($background-size / 2) + px,
-    //     transparent ($background-size - $baseline-size) + px,
-    //     $yellow ($background-size - $baseline-size) + px,
-    //     $yellow ($background-size) + px
-    //   );
-    // }
   }
 
   @keyframes fader {

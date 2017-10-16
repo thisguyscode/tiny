@@ -39,20 +39,23 @@
 
 	// Set offsets and font families.
 	@if $font-family == $font-display {
-		top: calc(#{$cap-font-display} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
+    $offset: #{$cap-font-display} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
+    transform: translateY(calc(#{$offset}));
     font-family: $font-display;
     
 	} @else if $font-family == $font-mono {
-		top: calc(#{$cap-font-mono} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
+    $offset: #{$cap-font-mono} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
+    transform: translateY(calc(#{$offset}));
     font-family: $font-mono;
     
 	} @else {
-    top: calc(#{$cap-font-body} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5));
+    $offset: #{$cap-font-body} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
+    transform: translateY(calc(#{$offset}));
     font-family: $font-body;
 	}
 }
 
 @mixin vr-reset {
 	position: static;
-	top: auto;
+  transform: none;
 }

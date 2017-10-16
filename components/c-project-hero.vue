@@ -137,7 +137,7 @@
  $transition-duration: .8s;
  $transition-easing: ease-out;
 
-  // Import variables and global settings
+  
   
 
   ._hero {

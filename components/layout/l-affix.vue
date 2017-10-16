@@ -108,7 +108,7 @@
 
 <style lang="scss" scoped>
 
-  // Import variables and global settings
+  
   
 
   $transition-duration: 1s;

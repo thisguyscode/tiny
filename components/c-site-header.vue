@@ -20,17 +20,17 @@
           </li><!--END- LOGO -->
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
-            <nuxt-link class="_link" to="/profile">
+            <nuxt-link class="_link" to="/work">
               <span class="_link-text">
-                profile
+                work
               </span>
             </nuxt-link>
           </li>
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
-            <nuxt-link class="_link" to="/work">
+            <nuxt-link class="_link" to="/profile">
               <span class="_link-text">
-                work
+                profile
               </span>
             </nuxt-link>
           </li>
@@ -42,6 +42,7 @@
               </span>
             </nuxt-link>
           </li>
+
         </ul>
       </l-wrapper>
     </nav>

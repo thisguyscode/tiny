@@ -29,7 +29,7 @@ $font-size-lg:    $font-size-lg;
  */
 .o-text {
   @include vr($font-display, $font-size-md); /*[1]*/
-  transition: transform 3s ease; /*[2]*/
+  // transition: top 3s ease; /*[2]*/
 }
 
 
@@ -46,4 +46,12 @@ $font-size-lg:    $font-size-lg;
 }
 .o-text--xl {
   @include vr($font-display, $font-size-xl);
+}
+
+
+
+/* Layout modifiers
+======================================================================== */
+.o-text--paragraph {
+  margin-bottom: $paragraph-trailer;
 }

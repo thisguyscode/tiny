@@ -51,5 +51,6 @@ export default {
     cursor: pointer;
     color: inherit;
     position: relative;
+    text-decoration: none;
   }
 </style>

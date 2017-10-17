@@ -6,6 +6,10 @@
 ======================================================================== */
 @mixin vr($font-family: $font-body, $font-size: $base-font-size) {
 
+  /**
+   * VARIABLE defininitions
+   */
+
 	// Calculate the line height of the text.
 	$line-height: $font-size * $base-line-height;
 
@@ -21,13 +25,10 @@
 	// Shift the text to the baseline (distance between the baseline and descender height).
 	$baseline-shift: (($adjusted-line-height - $font-size) * 0.5);
 
+  /**
+   * STYLES created
+   */
 	position: relative;
-
-	margin-top: 0;
-	margin-bottom: 0;
-	padding-top: 0;
-	padding-bottom: 0;
-
 	font-size: $font-size;
 
 	// Make sure that 1 rhythm is the minimum line height.
@@ -41,10 +42,12 @@
 	@if $font-family == $font-display {
     $offset: #{$cap-font-display} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
     top: calc(#{$offset});
+    font-family: $font-display;
     
 	} @else if $font-family == $font-mono {
     $offset: #{$cap-font-mono} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
     top: calc(#{$offset});
+    font-family: $font-mono;
     
 	} @else {
     $offset: #{$cap-font-body} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
@@ -53,10 +56,14 @@
 	}
 }
 
-/* Recalculate only the offset and apply transformY to selector
+/* Recalculate only the offset and apply top offset to selector
 ======================================================================== */
 @mixin vr-offset($font-family: $font-body, $font-size: $base-font-size) {
   
+  /**
+   * VARIABLE defininitions
+   */
+
   // Calculate the line height of the text.
   $line-height: $font-size * $base-line-height;
 
@@ -71,6 +78,10 @@
 
   // Shift the text to the baseline (distance between the baseline and descender height).
   $baseline-shift: (($adjusted-line-height - $font-size) * 0.5);
+
+  /**
+   * STYLES created
+   */
 
   // Set offsets and font families.
   @if $font-family == $font-display {
@@ -92,8 +103,8 @@
 /* Remove the offset
 ======================================================================== */
 @mixin vr-reset {
-  &#{&} { /*[1]*/
-    position: static;
-    top: 0;
-  }
+  // &#{&} { /*[1]*/
+    position: static !important;
+    top: 0 !important;
+  // }
 }

@@ -11,12 +11,12 @@
 
     <c-icon
       v-if="iconName"
-      class="_icon"
+      class="c-button__icon"
       :style="iconInlineStyle"
       :name="iconName">
     </c-icon>
 
-    <span class="_button_text">
+    <span class="c-button__text  o-text  u-vr-reset">
       <slot></slot>
       <!-- Quick content -->
       <!-- Contact -->
@@ -130,67 +130,100 @@ export default {
 }
 </script>
 
+
 <style lang="scss" scoped>
-  
-  
-  
+/* ========================================================================
+  # SCOPED STYLES
+======================================================================== */
 
-  .c-button {
-    cursor: pointer;
-    padding: $unit-xs $unit-sm;
-    text-decoration: none;
-    color: $neutral-00;
-    white-space: nowrap;
-    // min-width: 100%;
-    text-align: center;
-    display: inline-block;
-    
-    @include mq($until: tablet) {
-      background: $neutral-95;
-    }
-    @include mq($from: tablet) {
-      padding: $unit-xs $unit-md;
-    }
+/* Variables (redefine global variable dependencies)
+======================================================================== */
+// Layout
+$padding-y-mobile: $unit-xs;
+$padding-x-mobile: $unit-sm;
+$padding-y-tablet: $unit-xs;
+$padding-x-tablet: $unit-md;
 
+$icon-gutter: $unit-xs;
+
+// Cosmetic
+$font-weight: $font-weight-semi;
+$default-color: $neutral-95;
+$primary-color: $clr-primary;
+
+
+
+
+
+/* Base class
+======================================================================== */
+.c-button {
+  cursor: pointer;
+  padding: $padding-y-mobile $padding-x-mobile;
+  text-decoration: none;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+  // color: $neutral-00;
+  // min-width: 100%;
+  @include mq($until: tablet) {
+    background: $default-color;
+  }
+  @include mq($from: tablet) {
+    padding: $padding-y-tablet $padding-x-tablet;
+  }
+}
+
+
+
+/* Child classes
+======================================================================== */
+.c-button__text {
+  font-weight: $font-weight;
+  // color: $neutral-00;
+}
+.c-button__icon {
+  height: 1em;
+  margin-right: $icon-gutter;
+}
+.c-button__text,
+.c-button__icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+
+/* Style modifiers
+======================================================================== */
+.c-button--solid {
+  background-color: $primary-color;
+  transition: background-color .2s ease;
+  &:hover {
+    background-color: darken($primary-color, 5%);
+  }
+}
+
+
+.c-button--ghost {
+  box-shadow: inset 0 0 0 1px $primary-color;
+  transition: background-color .2s ease;
+
+  .c-button__icon {
+    color: $primary-color;
   }
 
-  .c-button--solid {
-    background-color: $clr-primary;
-    transition: background-color .2s ease;
-    &:hover {
-      background-color: darken($clr-primary, 5%);
-    }
+  &:hover {
+    background-color: rgba($primary-color, .9);
   }
+}
 
-  .c-button--ghost {
-    box-shadow: inset 0 0 0 1px $clr-primary;
-    transition: background-color .2s ease;
-    ._icon {
-      color: $clr-primary;
-    }
-    &:hover {
-      background-color: rgba($neutral-100, .9);
-    }
-  }
 
-  .c-button--stretch {
-    min-width: 100%;
-  }
 
-  ._button_text,
-  ._button_icon {
-    display: inline-block;
-    vertical-align: bottom;
-  }
-  ._button_text {
-    @include vr($font-body, $font-size-md);
-    @include vr-reset;
-    font-weight: 600;
-    color: $neutral-00;
-  }
-  ._icon {
-    height: 1em;
-    margin-right: $unit-xs;
-  }
+/* Layout modifiers
+======================================================================== */
+.c-button--stretch {
+  min-width: 100%;
+}
 
 </style>

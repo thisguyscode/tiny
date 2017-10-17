@@ -30,7 +30,8 @@ $font-size-xxxxl: $font-size-xxxxl;
  *    which is applied on page load
  */
 .o-heading {
-  transition: transform .4s ease-out; /*[1]*/
+  transition: top .4s ease-out; /*[1]*/
+  will-change: top;
   font-weight: $font-weight-bold;
   margin-bottom: $heading-trailer;
 }

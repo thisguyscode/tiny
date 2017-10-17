@@ -40,17 +40,15 @@
 	// Set offsets and font families.
 	@if $font-family == $font-display {
     $offset: #{$cap-font-display} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
-    transform: translateY(calc(#{$offset}));
-    font-family: $font-display;
+    top: calc(#{$offset});
     
 	} @else if $font-family == $font-mono {
     $offset: #{$cap-font-mono} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
-    transform: translateY(calc(#{$offset}));
-    font-family: $font-mono;
+    top: calc(#{$offset});
     
 	} @else {
     $offset: #{$cap-font-body} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
-    transform: translateY(calc(#{$offset}));
+    top: calc(#{$offset});
     font-family: $font-body;
 	}
 }
@@ -77,13 +75,16 @@
   // Set offsets and font families.
   @if $font-family == $font-display {
     $offset: #{$cap-font-display} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
-    transform: translateY(calc(#{$offset}));      
+    // transform: translateY(calc(#{$offset}));
+    top: calc(#{$offset});
   } @else if $font-family == $font-mono {
     $offset: #{$cap-font-mono} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
-    transform: translateY(calc(#{$offset}));      
+    // transform: translateY(calc(#{$offset}));
+    top: calc(#{$offset});
   } @else {
     $offset: #{$cap-font-body} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
-    transform: translateY(calc(#{$offset}));
+    // transform: translateY(calc(#{$offs
+    top: calc(#{$offset});
   }
 }
 
@@ -91,6 +92,8 @@
 /* Remove the offset
 ======================================================================== */
 @mixin vr-reset {
-	position: static;
-  transform: none !important;
+  &#{&} { /*[1]*/
+    position: static;
+    top: 0;
+  }
 }

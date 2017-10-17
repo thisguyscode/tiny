@@ -71,10 +71,6 @@ export default {
 
   .c-navbar-primary {
     overflow: hidden;
-    // @if ($show-baseline == true) {
-    //   @include vr-baseline;
-    //   background-attachment: scroll;
-    // }
     background-color: $neutral-95;
     box-shadow: inset 0 -1px 0 0 $clr-primary;
   }
@@ -99,7 +95,6 @@ export default {
       content: '';
       position: absolute;
       top: $unit-md;
-      // transition: width .2s ease;
       width: 0;
       bottom: $unit-md;
       background-color: $green;

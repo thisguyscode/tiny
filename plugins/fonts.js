@@ -7,7 +7,7 @@ var segoeUI = detectFont('Segoe UI')
 
 /**
  * Attempt to detect each font in the font-stack (in order)
- * and apply the styles that match to adjust top offset
+ * and apply the appropriate styles to adjust top offset
  */
 if (appleSystemFont === true) {
   require('~/assets/styles/typography/font-apple-system.scss')

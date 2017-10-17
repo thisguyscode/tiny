@@ -1,33 +1,41 @@
 <template>
   <div class="c-code">
+
+    <l-affix
+      className="_sticky-header"
+      :relativeElementSelector="'#code-reference'"
+      :z="200"
+      :offset="{top: 120, bottom: 0}">
     
-    <div class="c-code_header" v-if="filename">
-      <div class="c-code_header-reference">
-        <span class="c-code_gutter">
-          <c-icon class="c-code_icon" name="file"></c-icon>
-        </span>
-        <span class="c-code_filename">{{ filename }}</span>
-      </div>
-    </div>
-    
-    <div class="c-code_reference-wrapper">
-      <div class="c-code_code-area">
-        
-        <div class="c-code_gutter">
-          <div class="c-code_number" v-for="i in lineCount" :key="i">{{i}}</div>
+      <div class="c-code_header" v-if="filename">
+        <div class="c-code_header-reference">
+          <span class="c-code_gutter">
+            <c-icon class="c-code_icon" name="file"></c-icon>
+          </span>
+          <span class="c-code_filename">{{ filename }}</span>
         </div>
-
-        <div class="c-code_code-block">
-          <pre><code class="c-code_code" v-html="content">
-          </code></pre>
-        </div>
-
       </div>
-    </div>
+      
+    </l-affix>
 
-    <span class="c-code_slot-wrapper" ref="slotWrapper">
-      <slot></slot>
-    </span>
+      <div class="c-code_reference-wrapper" id="#code-reference">
+        <div class="c-code_code-area">
+          
+          <div class="c-code_gutter">
+            <div class="c-code_number" v-for="i in lineCount" :key="i">{{i}}</div>
+          </div>
+
+          <div class="c-code_code-block">
+            <pre><code class="c-code_code" v-html="content">
+            </code></pre>
+          </div>
+
+        </div>
+      </div>
+
+      <span class="c-code_slot-wrapper" ref="slotWrapper">
+        <slot></slot>
+      </span>
 
   </div>
 </template>
@@ -35,9 +43,11 @@
 <script>
 import hljs from '~/utils/highlightLanguages.js'
 import cIcon from '~/components/c-icon'
+import lAffix from '~/components/layout/l-affix'
 export default {
   components: {
-    cIcon
+    cIcon,
+    lAffix
   },
   data: () => {
     return {

@@ -1,8 +1,10 @@
 /* ==========================================================================
    # SYSTEM-UI (FONT)
 ========================================================================== */
-
 /**
+ *
+ * Added after page load if font-system-ui is detected
+ *
  * 1. Reference the parent selector within itself to pump the specicifity
  *    up a notch
  */
@@ -29,9 +31,12 @@ $font-size-xxxxl: $font-size-xxxxl;
 
 /* Local variables
 ======================================================================== */
-// $cap-font-display:			1em;
-// $cap-font-body:					1em;
-// $cap-font-mono:					1em;
+/**
+ * Refine the cap height of this particular typeface
+ */
+$cap-font-display:			.1em;
+$cap-font-body:					.1em;
+$cap-font-mono:					.1em;
 
 
 /* Heading
@@ -44,35 +49,39 @@ $font-size-xxxxl: $font-size-xxxxl;
   }
 }
 
+/**
+ * 2. Recalculate the top offset based on new cap heights
+ */
+
 // Modifiers
 .o-heading--alpha {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-xxxxl);
+    @include vr-offset($font-display, $font-size-xxxxl); /*[2]*/
   }
 }
 .o-heading--beta {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-xxxl);
+    @include vr-offset($font-display, $font-size-xxxl); /*[2]*/
   }
 }
 .o-heading--gamma {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-xxl);
+    @include vr-offset($font-display, $font-size-xxl); /*[2]*/
   }
 }
 .o-heading--delta {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-xl);
+    @include vr-offset($font-display, $font-size-xl); /*[2]*/
   }
 }
 .o-heading--delta {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-lg);
+    @include vr-offset($font-display, $font-size-lg); /*[2]*/
   }
 }
 .o-heading--zeta {
   &#{&} { /*[1]*/
-    @include vr-offset($font-body, $font-size-md);
+    @include vr-offset($font-body, $font-size-md); /*[2]*/
   }
 }
 
@@ -82,7 +91,7 @@ $font-size-xxxxl: $font-size-xxxxl;
 // Base
 .o-text {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-md); /*[1]*/
+    @include vr-offset($font-display, $font-size-md); /*[2]*/
     color: $red;
   }
 }
@@ -90,21 +99,21 @@ $font-size-xxxxl: $font-size-xxxxl;
 // Modifiers
 .o-text--xs {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-xs);
+    @include vr-offset($font-display, $font-size-xs); /*[2]*/
   }
 }
 .o-text--sm {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-sm);
+    @include vr-offset($font-display, $font-size-sm); /*[2]*/
   }
 }
 .o-text--lg {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-lg);
+    @include vr-offset($font-display, $font-size-lg); /*[2]*/
   }
 }
 .o-text--xl {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-xl);
+    @include vr-offset($font-display, $font-size-xl); /*[2]*/
   }
 }

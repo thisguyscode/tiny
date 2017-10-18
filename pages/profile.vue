@@ -3,16 +3,16 @@
   <div class="p-profile">
   
     <c-hero bgImageSrc="chn-shanghai_02.jpg">
-      <h1 class="o-heading o-heading--alpha">I'm <span class="u-text--lowest-contrast">./</span>tiny<span class="u-text--lowest-contrast">/</span></h1>
-      <h1 class="o-heading o-heading--alpha">(I have no idea what I'm doing)</h1>
+      <h1 class="o-heading o-heading--alpha u-margin-bottom-none">I'm <span class="u-text--lowest-contrast">./</span>tiny<span class="u-text--lowest-contrast">/</span></h1>
+      <span class="o-heading o-heading--alpha">(I have no idea what I'm doing)</span>
     </c-hero>
 
     <l-main-content>
       
       <c-intro-text heading="tiny?">
-        <p>We’re all tiny. Tiny people on a tiny world in the vast expanse of everything - but within each of us is an endless universe - and that’s super cool.</p>
-        <p>I trust myself, and go where I need to. For now I’d like to practice digital interface design. I find it challenging, stimulating and satisfying - hopefully I can also be of value to you and your ambitions.</p>
-        <p class="u-margin-bottom-none">There’ll come a time that I need to pick my battle, as may be the duty of all able-minded beings, but for now I have much to learn, and a will to do so.</p>
+        <p class="o-text o-text--lg o-text--paragraph">We’re all tiny. Tiny people on a tiny world in the vast expanse of everything - but within each of us is an endless universe - and that’s super cool.</p>
+        <p class="o-text o-text--lg o-text--paragraph">I trust myself, and go where I need to. For now I’d like to practice digital interface design. I find it challenging, stimulating and satisfying - hopefully I can also be of value to you and your ambitions.</p>
+        <p class="o-text o-text--lg o-text--paragraph">There’ll come a time that I need to pick my battle, as may be the duty of all able-minded beings, but for now I have much to learn, and a will to do so.</p>
       </c-intro-text>
 
       
@@ -31,11 +31,11 @@
         <l-wrapper class="content">
 
           <section class="hard-skills" id="hard-skills">
-            <h2 class="u-margin-bottom-none">Hard skills</h2>
-            <p class="u-text--low-contrast">Completely arbitrary ratings scores for my skills</p>
+            <h2 class="o-heading o-heading--beta u-margin-bottom-none">Hard skills</h2>
+            <p class="o-text o-text--sm">Completely arbitrary ratings scores for my skills</p>
             
             <section class="skills-design-section">
-              <h3 class="skills-subheading">Design:</h3>
+              <h3 class="o-heading o-heading--gamma">Design:</h3>
 
               <l-grid>
 
@@ -45,11 +45,11 @@
                     <span class="skill-icon-text">Ps</span>
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">Photoshop</div>
-                    <div class="software-company">Adobe</div>
+                    <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Photoshop</h3>
+                    <h4 class="o-heading o-heading--zeta">Adobe</h4>
                   </div>
                   <c-score-bar :percent="80" :of="10"></c-score-bar>
-                  <p class="skill-caption">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+                  <p class="o-text o-text--sm">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
                 </div>
                 
                 <!-- spacer -->
@@ -61,11 +61,11 @@
                     <span class="skill-icon-text">Ai</span>
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">Illustrator</div>
-                    <div class="software-company">Adobe</div>
+                    <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Illustrator</h3>
+                    <h4 class="o-heading o-heading--zeta">Adobe</h4>
                   </div>
                   <c-score-bar :percent="60" :of="10"></c-score-bar>
-                  <p class="skill-caption">Though I'm perfectly familiar with Illustrator and most of its tools, I lack the ability to use it to its full potential (given that I lack the sufficient illustration skill)</p>
+                  <p class="o-text o-text--sm">Though I'm perfectly familiar with Illustrator and most of its tools, I lack the ability to use it to its full potential (given that I lack the sufficient illustration skill)</p>
                 </div>
 
                 <!-- spacer -->
@@ -77,11 +77,11 @@
                     <span class="skill-icon-text">Id</span>
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">InDesign</div>
-                    <div class="software-company">Adobe</div>
+                    <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">InDesign</h3>
+                    <h4 class="o-heading o-heading--zeta">Adobe</h4>
                   </div>
                   <c-score-bar :percent="50" :of="10"></c-score-bar>
-                  <p class="skill-caption">Proficient in the fundamentals and able to learn new tools quickly. Understand basics of print-preparation</p>
+                  <p class="o-text o-text--sm">Proficient in the fundamentals and able to learn new tools quickly. Understand basics of print-preparation</p>
                 </div>
 
                 <!-- spacer -->
@@ -97,11 +97,11 @@
                     />
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">Sketch</div>
-                    <div class="software-company">Bohemian Coding</div>
+                    <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Sketch</h3>
+                    <h4 class="o-heading o-heading--zeta">Bohemian Coding</h4>
                   </div>
                   <c-score-bar :percent="60" :of="10"></c-score-bar>
-                  <p class="skill-caption">Mostly familiar with the possibilities and best practices but don't yet make full use of the more complex features and plugins</p>
+                  <p class="o-text o-text--sm">Mostly familiar with the possibilities and best practices but don't yet make full use of the more complex features and plugins</p>
                 </div>
 
                 <!-- spacer -->
@@ -117,18 +117,18 @@
                     />
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">InVision</div>
-                    <div class="software-company">InVision</div>
+                    <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">InVision</h3>
+                    <h4 class="o-heading o-heading--zeta">InVision</h4>
                   </div>
                   <c-score-bar :percent="80" :of="10"></c-score-bar>
-                  <p class="skill-caption">Familiar with almost the entirety of this product, though I imagine with their new Sketch integrations I'll have a lot to learn</p>
+                  <p class="o-text o-text--sm">Familiar with almost the entirety of this product, though I imagine with their new Sketch integrations I'll have a lot to learn</p>
                 </div>
 
               </l-grid>
             </section>
 
             <section>
-              <h3 class="skills-subheading">Code:</h3>
+              <h3 class="o-heading o-heading--gamma">Code:</h3>
 
               <l-grid>
 
@@ -138,10 +138,12 @@
                     <c-icon name="css3" class="skill-icon"></c-icon>
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">CSS3</div>
+                    <div class="software-name">
+                      <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">CSS3</h3>
+                    </div>
                     <c-score-bar :nobar="true" :percent="80" :of="10"></c-score-bar>
                   </div>
-                  <p class="skill-caption">Understand the full specification and best practices for implementation, including project structure</p>
+                  <p class="o-text o-text--sm">Understand the full specification and best practices for implementation, including project structure</p>
                 </div>
                 
                 <!-- spacer -->
@@ -157,10 +159,12 @@
                     />
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">SCSS</div>
+                    <div class="software-name">
+                      <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">SCSS</h3>
+                    </div>
                     <c-score-bar :nobar="true" :percent="60" :of="10"></c-score-bar>
                   </div>
-                  <p class="skill-caption">Can implement solid SCSS structure which generates clean CSS. Have a lot to learn regarding 'Sass functions'</p>
+                  <p class="o-text o-text--sm">Can implement solid SCSS structure which generates clean CSS. Have a lot to learn regarding 'Sass functions'</p>
                 </div>
 
                 <!-- spacer -->
@@ -172,10 +176,12 @@
                     <c-icon name="html5" class="skill-icon"></c-icon>
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">HTML5</div>
+                    <div class="software-name">
+                      <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">HTML5</h3>
+                    </div>
                     <c-score-bar :nobar="true" :percent="80" :of="10"></c-score-bar>
                   </div>
-                  <p class="skill-caption">No &lt;div&gt; soup with me. I understand the importance of semantic markup</p>
+                  <p class="o-text o-text--sm">No &lt;div&gt; soup with me. I understand the importance of semantic markup</p>
                 </div>
 
                 <!-- spacer -->
@@ -191,10 +197,12 @@
                     />
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">npm</div>
+                    <div class="software-name">
+                      <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">npm</h3>
+                    </div>
                     <c-score-bar :nobar="true" :percent="60" :of="10"></c-score-bar>
                   </div>
-                  <p class="skill-caption">Not masses to know about Node Package Manager, but I know a good deal of it.</p>
+                  <p class="o-text o-text--sm">Not masses to know about Node Package Manager, but I know a good deal of it.</p>
                 </div>
 
                 <!-- spacer -->
@@ -210,10 +218,12 @@
                     />
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">Gulp</div>
+                    <div class="software-name">
+                      <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Gulp</h3>
+                    </div>
                     <c-score-bar :nobar="true" :percent="30" :of="10"></c-score-bar>
                   </div>
-                  <p class="skill-caption">I can throw together a basic Gulp build process. Recently started exploring Gulp 4.0</p>
+                  <p class="o-text o-text--sm">I can throw together a basic Gulp build process. Recently started exploring Gulp 4.0</p>
                 </div>
 
                 <!-- spacer -->
@@ -224,10 +234,12 @@
                     <c-icon name="git" class="skill-icon"></c-icon>
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">git</div>
+                    <div class="software-name">
+                      <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">git</h3>
+                    </div>
                     <c-score-bar :nobar="true" :percent="40" :of="10"></c-score-bar>
                   </div>
-                  <p class="skill-caption">I adore git. I'm no pro, but it's one fo the tools I appreciate the most.</p>
+                  <p class="o-text o-text--sm">I adore git. I'm no pro, but it's one fo the tools I appreciate the most.</p>
                 </div>
 
                 <!-- spacer -->
@@ -238,10 +250,12 @@
                     <c-icon name="github" class="skill-icon"></c-icon>
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">github</div>
+                    <div class="software-name">
+                      <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">github</h3>
+                    </div>
                     <c-score-bar :nobar="true" :percent="40" :of="10"></c-score-bar>
                   </div>
-                  <p class="skill-caption">Similarly to git, I am not a pro, but know enough to collaborate with your dev team</p>
+                  <p class="o-text o-text--sm">Similarly to git, I am not a pro, but know enough to collaborate with your dev team</p>
                 </div>
 
                 <!-- spacer -->
@@ -256,10 +270,12 @@
                     />
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">Javascript</div>
+                    <div class="software-name">
+                      <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Javascript</h3>
+                    </div>
                     <c-score-bar :nobar="true" :percent="20" :of="10"></c-score-bar>
                   </div>
-                  <p class="skill-caption">I really haven't had the chance to learn the fundamentals of Javascript yet, despite having used and modified JS code often.</p>
+                  <p class="o-text o-text--sm">I really haven't had the chance to learn the fundamentals of Javascript yet, despite having used and modified JS code often.</p>
                 </div>
 
                 <!-- spacer -->
@@ -274,10 +290,12 @@
                     />
                   </div>
                   <div class="skill-label">
-                    <div class="software-name">Vue</div>
+                    <div class="software-name">
+                      <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Vue</h3>
+                    </div>
                     <c-score-bar :nobar="true" :percent="40" :of="10"></c-score-bar>
                   </div>
-                  <p class="skill-caption">Despite my lack of Javascript knowledge I've been able to get familiar with many other aspects of the Vue.js framework</p>
+                  <p class="o-text o-text--sm">Despite my lack of Javascript knowledge I've been able to get familiar with many other aspects of the Vue.js framework</p>
                 </div>
 
               </l-grid>
@@ -288,10 +306,10 @@
           
 
           <section class="soft-skills" id="soft-skills">
-            <h2 class="soft-skills-heading">Soft skills</h2>
+            <h2 class="o-heading o-heading--beta">Soft skills</h2>
             
             <section class="skills-good">
-              <h3 class="skills-subheading">Pretty damn good at:</h3>
+              <h3 class="o-heading o-heading--gamma">Pretty damn good at:</h3>
 
               <l-grid>
 
@@ -304,8 +322,8 @@
                       </div>
                     </div>
                     <div class="_cell u-4/5 u-1/1@tablet">
-                      <h4 class="skill-heading u-margin-bottom-none">Written & verbal communication</h4>
-                      <p class="skill-caption">...but only in English</p>
+                      <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">Written & verbal communication</h4>
+                      <p class="o-text o-text--sm">...but only in English</p>
                     </div>
                   </l-grid>
                 </div>
@@ -322,8 +340,8 @@
                       </div>
                     </div>
                     <div class="_cell u-4/5 u-1/1@tablet">
-                      <h4 class="skill-heading u-margin-bottom-none">Common-sense design</h4>
-                      <p class="skill-caption">Designing without data is underrated</p>
+                      <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">Common-sense design</h4>
+                      <p class="o-text o-text--sm">Designing without data is underrated</p>
                     </div>
                   </l-grid>
                 </div>
@@ -340,8 +358,8 @@
                       </div>
                     </div>
                     <div class="_cell u-4/5 u-1/1@tablet">
-                      <h4 class="skill-heading u-margin-bottom-none">'User' interface design</h4>
-                      <p class="skill-caption">I prefer 'screen' interface design - every interface is a user interface</p>
+                      <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">'User' interface design</h4>
+                      <p class="o-text o-text--sm">I prefer 'screen' interface design - every interface is a user interface</p>
                     </div>
                   </l-grid>
                 </div>
@@ -358,8 +376,8 @@
                       </div>
                     </div>
                     <div class="_cell u-4/5 u-1/1@tablet">
-                      <h4 class="skill-heading u-margin-bottom-none">Optimising processes</h4>
-                      <p class="skill-caption">I'll put in the time now to save someone else it in the future</p>
+                      <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">Optimising processes</h4>
+                      <p class="o-text o-text--sm">I'll put in the time now to save someone else it in the future</p>
                     </div>
                   </l-grid>
                 </div>
@@ -376,8 +394,8 @@
                       </div>
                     </div>
                     <div class="_cell u-4/5 u-1/1@tablet">
-                      <h4 class="skill-heading u-margin-bottom-none">System-mindedness</h4>
-                      <p class="skill-caption">Making things that play nice with other things</p>
+                      <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">System-mindedness</h4>
+                      <p class="o-text o-text--sm">Making things that play nice with other things</p>
                     </div>
                   </l-grid>
                 </div>
@@ -394,8 +412,8 @@
                       </div>
                     </div>
                     <div class="_cell u-4/5 u-1/1@tablet">
-                      <h4 class="skill-heading u-margin-bottom-none">Empathising</h4>
-                      <p class="skill-caption">Absolutely essential for a designer</p>
+                      <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">Empathising</h4>
+                      <p class="o-text o-text--sm">Absolutely essential for a designer</p>
                     </div>
                   </l-grid>
                 </div>
@@ -405,13 +423,13 @@
             
             <section class="skills-not-bad">
 
-              <h3 class="subskill-subheading">Not bad at:</h3>
+              <h3 class="o-heading o-heading--gamma">Not bad at:</h3>
               <l-grid>
 
                 <div class="_cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="user-circle"></c-icon>
-                    <span class="subskill-caption">User experience design</span>
+                    <h4 class="o-text o-text--sm">User experience design</h4>
                   </span>
                 </div>
 
@@ -420,14 +438,14 @@
                 <div class="_cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="bar-chart"></c-icon>
-                    <span class="subskill-caption">Data-informed design</span>
+                    <h4 class="o-text o-text--sm">Data-informed design</h4>
                   </span>
                 </div>
 
                 <div class="_cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="pied-piper"></c-icon>
-                    <span class="subskill-caption">Branding</span>
+                    <h4 class="o-text o-text--sm">Branding</h4>
                   </span>
                 </div>
 
@@ -436,13 +454,13 @@
                 <div class="_cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="pencil"></c-icon>
-                    <span class="subskill-caption">Prototyping</span>
+                    <h4 class="o-text o-text--sm">Prototyping</h4>
                   </span>
                 </div>
                 <div class="_cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="bullhorn"></c-icon>
-                    <span class="subskill-caption">Presentation</span>
+                    <h4 class="o-text o-text--sm">Presentation</h4>
                   </span>
                 </div>
               </l-grid>
@@ -450,6 +468,7 @@
           </section><!--END soft skills section -->
           
           <section class="testimonials" id="testimonials">
+            <h2 class="o-heading o-heading--beta">Testimonials</h2>
             <c-testimonials :testimonials="testimonials"></c-testimonials>
           </section>
 
@@ -458,7 +477,8 @@
           </section>
 
           <section class="fantasies" id="fantasies">
-            <h2>Current fantasies </br><span class="u-text--lowest-contrast">(subject to frequent change)</span></h2>
+            <h2 class="o-heading o-heading--beta u-margin-bottom-none">Current fantasies</h2>
+            <span class="o-heading o-heading--gamma">(subject to frequent change)</span>
 
             <l-grid>
 
@@ -474,7 +494,7 @@
                     <h4 class="item-heading">Title</h4>
                   </div> -->
                   <div class="_cell u-3/5 u-1/1@tablet">
-                    <p class="fantasy-caption">Help to usher in a practical alternative to (not replacement for) the traditional market economy</p>
+                    <p class="o-text o-text--sm">Help to usher in a practical alternative to (not replacement for) the traditional market economy</p>
                   </div>
                 </l-grid>
               </div>
@@ -494,7 +514,7 @@
                     <h4 class="item-heading">Title</h4>
                   </div> -->
                   <div class="_cell u-3/5 u-1/1@tablet">
-                    <p class="fantasy-caption">Build my own house using earth/eco building methods</p>
+                    <p class="o-text o-text--sm">Build my own house using earth/eco building methods</p>
                   </div>
                 </l-grid>
               </div>
@@ -514,7 +534,7 @@
                     <h4 class="item-heading">Title</h4>
                   </div> -->
                   <div class="_cell u-3/5 u-1/1@tablet">
-                    <p class="fantasy-caption">Learn to forge high-quality kitchen knives</p>
+                    <p class="o-text o-text--sm">Learn to forge high-quality kitchen knives</p>
                   </div>
                 </l-grid>
           
@@ -637,14 +657,6 @@
   padding-top: $unit-lg;
 }
 
-.software-name {
-  // float: left;
-  // margin-right: 100%;
-}
-.software-company {
-
-}
-
 .fantasy-item-cell {
   margin-bottom: $unit-md;
   @include mq($from: tablet) {
@@ -656,7 +668,7 @@
   margin-bottom: 0;
 }
 .fantasy-caption {
-  @include vr($font-body, $font-size-md);
+  // @include vr($font-body, $font-size-md);
   color: $neutral-40;
   // font-weight: $font-weight-semi;
 }
@@ -718,7 +730,7 @@
   }
 }
 .skill-heading {
-  @include vr($font-body, $font-size-lg);
+  // @include vr($font-body, $font-size-lg);
   font-weight: $font-weight-semi;
   @include mq($until: tablet) {
     padding-top: $unit-sm;
@@ -731,10 +743,10 @@
   }
 }
 
-.software-company,
-.software-name {
-  @include vr($font-body, $font-size-lg);
-}
+// .software-company,
+// .software-name {
+//   @include vr($font-body, $font-size-lg);
+// }
 
 
 .skill-label {
@@ -889,7 +901,7 @@
 
 .subskill-caption,
 .skill-caption {
-  @include vr($font-body, $font-size-sm);
+  // @include vr($font-body, $font-size-sm);
   color: $neutral-40;
 }
 .subskill-caption {

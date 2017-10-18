@@ -3,7 +3,7 @@
     class="c-project-details"
     :style="'border-bottom: 1px solid ' + color">
 
-    <l-wrapper>
+    <l-wrapper class="c-project-details__inner">
       
       <!-- heading-wrapper -->
       <div
@@ -15,8 +15,8 @@
         
         <span
           v-if="showDetails"
-          class="c-project-details__heading-trigger">
-          <span class="c-project-details__heading-trigger-text  o-text">
+          class="c-project-details__heading-trigger  o-text o-text--lg">
+          <span class="c-project-details__heading-trigger-text">
             Hide
           </span>
           <c-icon class="c-project-details__heading-trigger-icon" name="chevron-up"></c-icon>
@@ -24,8 +24,8 @@
 
         <span
           v-else
-          class="c-project-details__heading-trigger">
-          <span class="c-project-details__heading-trigger-text  o-text">
+          class="c-project-details__heading-trigger  o-text o-text--lg">
+          <span class="c-project-details__heading-trigger-text">
             Show
           </span>
           <c-icon class="c-project-details__heading-trigger-icon" name="chevron-down"></c-icon>
@@ -42,7 +42,7 @@
 
           <!-- objective cell -->
           <div class="c-project-details__objective-cell _cell u-2/5@tablet">
-            <h4>Objective</h4>
+            <h4 class="o-heading o-heading--zeta">Objective</h4>
             <p
               v-if="transitionEnd"
               class="c-project-details__overview-string  o-text o-text--xl">
@@ -57,8 +57,8 @@
               <!-- column -->
               <div class="c-project-details__list-column _cell u-1/3@tablet">
                 <l-grid>
-                  <div class="c-project-details__group  u-vr-reset  _cell u-2/5@mobile u-1/1@tablet">
-                    <h4>Date</h4>
+                  <div class="c-project-details__group  _cell u-2/5@mobile u-1/1@tablet">
+                    <h4 class="o-heading o-heading--zeta">Date</h4>
                     <!-- <transition name="fade"> -->
                       <p
                         v-if="transitionEnd"
@@ -67,8 +67,8 @@
                       </p>
                     <!-- </transition> -->
                   </div>
-                  <div class="c-project-details__group  u-vr-reset  _cell u-2/5@mobile u-1/1@tablet">
-                    <h4>Role</h4>
+                  <div class="c-project-details__group  _cell u-2/5@mobile u-1/1@tablet">
+                    <h4 class="o-heading o-heading--zeta">Role</h4>
                     <!-- <transition name="fade"> -->
                       <p
                         v-if="transitionEnd"
@@ -82,16 +82,16 @@
 
               <!-- column -->
               <div class="c-project-details__list-column _cell u-2/5@mobile u-1/3@tablet">
-                <h4>Skills</h4>
+                <h4 class="o-heading o-heading--zeta">Skills</h4>
                 <!-- <transition name="fade"> -->
                   <ul
                     v-if="transitionEnd"
-                    class="c-project-details__group  u-vr-reset  u-list-bare">
+                    class="c-project-details__group u-list-bare">
                     <li
                       v-for="skill in project.skills"
-                      class="c-project-details__item  o-text"
+                      class="c-project-details__item"
                       :key="skill.id">
-                      <span class="c-project-details__item-string">{{ skill }}</span>
+                      <span class="c-project-details__item-string  o-text">{{ skill }}</span>
                     </li>
                   </ul>
                 <!-- </transition> -->
@@ -99,10 +99,10 @@
 
               <!-- column -->
               <div class="c-project-details__list-column _cell u-2/5@mobile u-1/3@tablet">
-                <h4>Tech</h4>
+                <h4 class="o-heading o-heading--zeta">Tech</h4>
                 <ul
                   v-if="transitionEnd"
-                  class="c-project-details__group  u-vr-reset  u-list-bare">
+                  class="c-project-details__group  u-list-bare">
                   <li
                     v-for="tech in project.techs"
                     :key="tech.id"
@@ -228,7 +228,6 @@ $transition-easing: ease;
   text-align: left;
   padding-top: $unit-md;
   transition: border-color .8s ease;
-  margin-top: -1px;
   @include mq($from: tablet) {
     padding-top: $unit-lg;
   }
@@ -283,7 +282,7 @@ $transition-easing: ease;
 }
 
 .c-project-details__group {
-  @include vr-reset;
+  // @include vr-reset;
   display: inline-block;
   padding-bottom: 0;
   margin-bottom: $paragraph-trailer;
@@ -332,4 +331,8 @@ $transition-easing: ease;
   // color: $neutral-40;
 }
 
+
+.c-project-details__inner {
+  margin-bottom: -1px;
+}
 </style>

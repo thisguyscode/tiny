@@ -34,18 +34,6 @@
   color: $clr-primary !important;
 }
 
-.u-text--lg {
-  @include vr($font-body, $font-size-lg);
-}
-
-.u-text--xl {
-  @include vr($font-body, $font-size-xl);
-}
-
-.u-text--reset-aligmnet {
-  @include vr-reset;
-}
-
 .u-text--paragraph-margin {
   margin-bottom: $paragraph-trailer;
 }

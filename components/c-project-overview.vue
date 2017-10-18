@@ -5,7 +5,7 @@
         <div class="_details-wrapper  _cell u-2/5@tablet">
           <l-grid>
             <div class="_cell  u-1/2@tablet">
-              <h3 class="_title">
+              <h3 class="_title  o-heading o-heading--delta">
                 <span class="_index" :style="indexStyle">{{ index }}. </span>
                 <span class="_name">{{ name }}</span>
               </h3>
@@ -14,28 +14,28 @@
             <div class="_cell">
               <l-grid class="u-margin-bottom-sm">
                 <div v-if="skills" class="_detail-group  _cell  u-1/2@tablet">
-                  <h4 class="_subheading">Skills</h4>
+                  <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Skills</h4>
                   <ul class="u-list-bare">
                     <li v-for="skill in skills" :key="skill.id">
-                      <p class="_detail">{{ skill }}</p>
+                      <p class="c-project-overview__detail  o-text o-text--sm">{{ skill }}</p>
                     </li>
                   </ul>
                 </div>
                 <div v-if="techs" class="_detail-group  _cell  u-1/2@tablet">
-                  <h4 class="_subheading">Tech</h4>
+                  <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Tech</h4>
                   <ul class="u-list-bare">
                     <li v-for="tech in techs" :key="tech.id">
-                      <p class="_detail">{{ tech }}</p>
+                      <p class="c-project-overview__detail  o-text o-text--sm">{{ tech }}</p>
                     </li>
                   </ul>
                 </div>
                 <div v-if="role" class="_detail-group  _cell  u-1/2@tablet">
-                  <h4 class="_subheading">Role</h4>
-                  <p class="_detail">{{ role }}</p>
+                  <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Role</h4>
+                  <p class="c-project-overview__detail  o-text o-text--sm">{{ role }}</p>
                 </div>
                 <div v-if="date" class="_detail-group  _cell  u-1/2@tablet">
-                  <h4 class="_subheading">Date</h4>
-                  <p class="_detail">{{ date }}</p>
+                  <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Date</h4>
+                  <p class="c-project-overview__detail  o-text o-text--sm">{{ date }}</p>
                 </div>
               </l-grid>
               <div class="_cell u-1/2@tablet">
@@ -159,17 +159,17 @@ export default {
     }
   }
   ._title {
-    @include vr($font-display, $font-size-md);
+    // @include vr($font-display, $font-size-md);
     display: flex;
     margin-bottom: $unit-sm;
 
     @include mq($from: tablet) {
-      @include vr($font-display, $font-size-lg);
+      // @include vr($font-display, $font-size-lg);
       margin-left: -$page-padding-tablet;
       // margin-bottom: $unit-sm;
     }
     @include mq($from: desktop) {
-      @include vr($font-display, $font-size-xl);
+      // @include vr($font-display, $font-size-xl);
       margin-left: -$page-padding-desktop;
       margin-bottom: $unit-sm;
     }
@@ -200,29 +200,18 @@ export default {
     }
 
   }
-  ._button_text {
-    @include vr($font-body, $font-size-sm);
-    @include vr-reset;
-    font-weight: 600;
-    color: $neutral-00;
-  }
-  ._button_icon {
-    margin-right: $unit-xs;
-  }
   ._name {
     padding-right: $unit-sm;
   }
 
-  ._subheading {
+  .c-project-overview__subheading {
     font-weight: 600;
-    @include vr($font-body, $font-size-sm);
   }
   ._detail {
-    @include vr($font-body, $font-size-sm);
     color: $neutral-50;
   }
 
-  ._subheading,
+  .c-project-overview__subheading,
   ._detail {
     // margin-bottom: $unit-sm;
     padding-right: $unit-sm;

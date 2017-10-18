@@ -1,41 +1,46 @@
 <template>
   <div class="c-code">
+ 
+    <div class="c-code_reference-wrapper" ref="codeReference" :id="'code-reference-' + _uid">
 
-    <l-affix
-      className="_sticky-header"
-      :relativeElementSelector="'#code-reference'"
-      :z="200"
-      :offset="{top: 120, bottom: 0}">
-    
-      <div class="c-code_header" v-if="filename">
-        <div class="c-code_header-reference">
-          <span class="c-code_gutter">
-            <c-icon class="c-code_icon" name="file"></c-icon>
-          </span>
-          <span class="c-code_filename">{{ filename }}</span>
-        </div>
-      </div>
-      
-    </l-affix>
+      <l-affix
+        className="_sticky-header"
+        :relativeElementSelector="'#code-reference-' + _uid"
+        :z="200"
+        :offset="{top: 160, bottom: 0}">
 
-      <div class="c-code_reference-wrapper" id="#code-reference">
-        <div class="c-code_code-area">
-          
-          <div class="c-code_gutter">
-            <div class="c-code_number" v-for="i in lineCount" :key="i">{{i}}</div>
+        <!-- Must use template to show contents before affix js has loaded on client -->
+        <template scope="props" slot="contents">
+          <div class="c-code_header" v-if="filename">
+            <div class="c-code_header-reference">
+              <span class="c-code_header-gutter">
+                <c-icon class="c-code_icon" name="file"></c-icon>
+              </span>
+              <span class="c-code_filename o-code u-vr-reset">{{ filename }}</span>
+            </div>
           </div>
+        </template>
 
-          <div class="c-code_code-block">
-            <pre><code class="c-code_code" v-html="content">
-            </code></pre>
-          </div>
+      </l-affix>
 
+      <div class="c-code_code-area">
+        
+        <div class="c-code_gutter">
+          <div class="c-code_number o-code" v-for="i in lineCount" :key="i">{{i}}</div>
         </div>
+
+        <div class="c-code_code-block  o-code">
+          <pre><code class="c-code_code" v-html="content">
+          </code></pre>
+        </div>
+
       </div>
 
-      <span class="c-code_slot-wrapper" ref="slotWrapper">
-        <slot></slot>
-      </span>
+    </div>
+
+    <span class="c-code_slot-wrapper" ref="slotWrapper">
+      <slot></slot>
+    </span>
 
   </div>
 </template>
@@ -105,7 +110,7 @@ export default {
           rawContent = this.$refs.slotWrapper.innerHTML
         }
       })
-      var content = String(rawContent)
+      var content = rawContent.toString()
       var highlightedCode = hljs.highlightAuto(content, this.languages).value
       return highlightedCode
     }
@@ -133,11 +138,11 @@ export default {
   }
   
   .c-code {
-    @include vr($font-mono, $font-size-sm);
-    @include vr-reset;
+    // @include vr($font-mono, $font-size-sm);
+    // @include vr-reset;
     text-align: left;
     margin-bottom: $paragraph-trailer;
-    box-shadow: inset 0 0 0 1px $neutral-90;
+    box-shadow: inset 0 0 0 1px $neutral-80;
     
     @include mq($from: tablet) {
       margin-left: -$unit-lg;
@@ -150,24 +155,18 @@ export default {
     padding-top: $unit-xs;
     padding-bottom: $unit-xs;
     position: relative;
-    background-color: rgba($neutral-90, 1);
+    background-color: $neutral-80;
     color: $neutral-00;
   }
   .c-code_header-reference {
     padding-left: $unit-lg;
-    padding-right: $unit-lg;
+    padding-right: $unit-sm;
     position: relative;
-  }
-  .c-code_filename {
-    // @include vr($font-mono, $base-font-size);
   }
   .c-code_icon {
     height: .8em;
   }
-  .c-code_code,
-  .c-code_number {
-    // @include vr($font-mono, $font-size-sm);
-  }
+  .c-code_header-gutter,
   .c-code_gutter {
     width: $unit-lg;
     text-align: right;
@@ -176,38 +175,42 @@ export default {
     top: 0;
     left: 0;
   }
+  .c-code_gutter {
+    padding-top: $unit-sm;
+  }
   
   .c-code_code-area {
     position: relative;
-    max-height: $unit-xxl*3;
+    // max-height: $unit-xxl*3;
     padding-left: $unit-lg;
     @include mq($from: tablet) {
-      max-height: $unit-xxl*2;
+      // max-height: $unit-xxl*2;
     }
     @include mq($from: desktop) {
-      max-height: $unit-xxl*3;
+      // max-height: $unit-xxl*3;
     }
     @include mq($from: desktop) {
-      max-height: $unit-xxl*4;
+      // max-height: $unit-xxl*4;
     }
   }
 
   .c-code_reference-wrapper {
     overflow-y: scroll;
-    padding-top: $unit-sm;
+    // padding-top: $unit-sm;
     padding-bottom: $unit-sm;
     position: relative;
   }
   
   .c-code_code-block {
-    @include vr($font-mono, $font-size-sm);
+    // @include vr($font-mono, $font-size-sm);
+    padding-top: $unit-sm;
     color: $neutral-20;
     overflow-x: scroll;
     position: relative;
   }
 
   .c-code_number {
-    @include vr($font-mono, $font-size-sm);
+    // @include vr($font-mono, $font-size-sm);
     color: $neutral-70;
     // margin-bottom: 0;
   }

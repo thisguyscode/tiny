@@ -2,8 +2,8 @@
   <section class="p-contact">  
     
     <c-hero>
-      <h1>I need a job.</h1>
-      <h1>Please hire me, please.</h1>
+      <h1 class="o-heading o-heading--alpha u-margin-bottom-none">I need a job.</h1>
+      <span class="o-heading o-heading--alpha">Please hire me, please.</span>
     </c-hero>
 
     <div id="contentTop" ref="contentTop"></div>
@@ -27,29 +27,35 @@
           <l-grid class="_form-grid">
             <div class="_details-cell _cell u-2/5@tablet">
 
-              <label for="name" class="_label">Name:</label>
+              <label for="name" class="_label  o-text o-text--lg">Name:</label>
               <input class="_input" type="text" name="name" id="name">
               
-              <span class="_error" v-if="emailIsValid === true">Required</span>
-              <span class="_error" v-if="emailIsValid === false">Please enter a valid email address</span>
-              <label for="email" class="_label">Email:</label>
+              <span class="_required  o-text o-text--sm" v-if="emailIsValid === true">Required</span>
+              <span class="_error  o-text o-text--sm" v-if="emailIsValid === false">Please enter a valid email address</span>
+              <label for="email" class="_label  o-text o-text--lg">Email:</label>
               <input class="_input" ref="email" :class="emailInputClass" type="text" name="email" id="email">
 
-              <label for="company" class="_label">Company:</label>
+              <label for="company" class="_label  o-text o-text--lg">Company:</label>
               <input class="_input" type="text" name="company" id="company">
 
             </div>
 
             <div class="_message-cell _cell u-3/5@tablet">
-              <label for="subject" class="_label">Subject:</label>
+              <label for="subject" class="_label  o-text o-text--lg">Subject:</label>
               <input class="_input" type="text" name="subject" id="subject">
 
-              <span class="_error" v-if="messageIsValid === true">Required</span>
-              <span class="_error" v-if="messageIsValid === false">Please enter a message</span>
-              <label for="message" class="_label">Message:</label>
+              <span class="_required  o-text o-text--sm" v-if="messageIsValid === true">Required</span>
+              <span class="_error  o-text o-text--sm" v-if="messageIsValid === false">Please enter a message</span>
+              <label for="message" class="_label  o-text o-text--lg">Message:</label>
               <textarea class="_input _textarea" ref="message" :class="messageInputClass" type="textarea" name="message" id="message"></textarea>
 
-              <input class="_submit" type="submit" value="Send">
+              <c-button
+                :submit="true"
+                type="solid"
+                icon="envelope">
+                Send
+              </c-button>
+              <!-- <input class="_submit" type="submit" value="Send"> -->
 
             </div>
 
@@ -287,8 +293,8 @@ export default {
 ._form {
   text-align: left;
 }
+._required,
 ._error {
-  @include vr($font-body, $font-size-sm);
   color: $red;
   float: right;
 }

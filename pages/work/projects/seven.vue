@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Seven</h1>
+    <h1 class="o-heading o-heading--alpha">Seven</h1>
   </div>
 </template>
 

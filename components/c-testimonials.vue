@@ -1,6 +1,6 @@
 <template>
   <div class="c-testimonials">
-    <h2 class="_heading">Testimonials</h2>
+    <!-- <h2 class="o-heading o-heading--beta">Testimonials</h2> -->
     <l-grid list>
       <li
         class="_entry _cell"
@@ -17,12 +17,12 @@
             </div>
           </div>
           <div class="_cell u-2/5@mobile u-1/5@tablet">
-            <p class="_detail _name">{{ testimonial.name }}</p>
-            <p class="_detail  u-text--low-contrast">{{ testimonial.role }}</p>
-            <p class="_detail  u-text--low-contrast">@{{ testimonial.company }}</p>
+            <p class="o-text _name">{{ testimonial.name }}</p>
+            <p class="o-text  u-text--low-contrast">{{ testimonial.role }}</p>
+            <p class="o-text  u-text--low-contrast">@{{ testimonial.company }}</p>
           </div>
           <div class="_cell u-2/5@mobile u-3/5@tablet">
-            <p class="_quote"><span class="_quote-mark open">&ldquo;</span>{{ testimonial.quote }}<span class="_quote-mark close">&rdquo;</span></p>
+            <p class="o-text o-text--lg _quote"><span class="_quote-mark open">&ldquo;</span>{{ testimonial.quote }}<span class="_quote-mark close">&rdquo;</span></p>
           </div>
         </l-grid>
       </li>
@@ -83,15 +83,8 @@ export default {
       height: $unit-xxl;
     }
   }
-
-  ._detail {
-    @include vr($font-body, $font-size-sm);
-    @include mq($from: desktop) {
-      @include vr($font-body, $font-size-md);
-    }
-  }
+  
   ._quote {
-    @include vr($font-body, $font-size-lg);
     font-style: italic;
     position: relative;
   }

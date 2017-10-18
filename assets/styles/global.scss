@@ -6,7 +6,7 @@
 @import "./generic/generic.my-resets";
 
 @import "./elements/elements.page";
-@import "./elements/elements.typography";
+// @import "./elements/elements.typography";
 @import "./elements/elements.ui";
 @import "./elements/elements.forms";
 
@@ -17,6 +17,7 @@
 
 @import "./objects/objects.heading";
 @import "./objects/objects.text";
+@import "./objects/objects.code";
 
 @import "./utilities/utilities.flow";
 @import "./utilities/utilities.text";

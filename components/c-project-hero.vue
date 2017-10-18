@@ -13,7 +13,7 @@
 
                 <!-- Group -->
                 <f-link
-                  class="_project-group"
+                  class="_project-group o-heading o-heading--delta"
                   :class="textClass"
                   :externalLink="project.groupLink">
                   {{ project.group }}
@@ -21,7 +21,7 @@
                 </f-link>
                 <!-- Title -->
                 <h1
-                  class="_project-title"
+                  class="_project-title  o-heading o-heading--alpha"
                   :class="textClass">
                   {{ project.name }}
                 </h1>
@@ -141,6 +141,7 @@
   
 
   ._hero {
+    margin-top: -1px;
     min-height: $unit-xxl*3;
     width: 100%;
     overflow: hidden;
@@ -231,7 +232,6 @@
     
     &.cover {
       @include mq($from: tablet) {
-        // transform: rotate(6deg) scale(1.4);
         transform-origin: 0 100%;
       }
       object-fit: cover;
@@ -279,17 +279,11 @@
   }
 
   ._project-title {
-    @include vr($font-display, $font-size-xxl);
     text-align: left;
     display: inline;
-
-    @include mq($from: desktop) {
-      @include vr($font-display, $font-size-xxxl);
-    }
   }
 
   ._project-group {
-    @include vr($font-display, $font-size-lg);
     margin-right: 100%;
     white-space: nowrap;
     margin-bottom: $heading-trailer;
@@ -297,11 +291,6 @@
     color: inherit;
     // opacity: .4;
     cursor: pointer;
-
-    @include mq($from: desktop) {
-      @include vr($font-display, $font-size-xl);
-      margin-bottom: $heading-trailer;
-    }
     
     &:hover {
       // opacity: 1;

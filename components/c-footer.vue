@@ -1,6 +1,6 @@
 <template>
   <footer class="c-footer">
-    <small class="u-text--low-contrast"><span class="u-text--lower-contrast">Made by </span>Jamie Mitchell</small>
+    <small class="o-text o-text--sm"><span class="">Made by </span>Jamie Mitchell</small>
   </footer>
 </template>
 

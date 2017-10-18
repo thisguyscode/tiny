@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Scss-colors</h1>
+    <h1 class="o-heading o-heading--alpha">Scss-colors</h1>
   </div>
 </template>
 

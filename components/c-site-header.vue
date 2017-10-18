@@ -1,17 +1,17 @@
 <template>
-  <l-header-primary>
+  <l-header-primary class="c-site-header">
     
     <c-baselines></c-baselines>
     <c-gridlines></c-gridlines>
 
-    <nav class="c-navbar-primary">
+    <nav class="c-site-header__nav">
       <l-wrapper>
         <ul class="l-grid  l-grid--flush  u-vr-reset">
 
           <!-- LOGO -->
           <li class="l-grid__cell  u-1/4  u-2/5@mobile">
             <nuxt-link class="_link _logo-link left" to="/">
-              <span class="_link-text">
+              <span class="_link-text  o-text">
                 <span class="u-text--lowest-contrast">./</span>
                 <span>tiny</span>
                 <span class="u-text--lowest-contrast">/</span>
@@ -21,7 +21,7 @@
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
             <nuxt-link class="_link" to="/work">
-              <span class="_link-text">
+              <span class="_link-text  o-text">
                 work
               </span>
             </nuxt-link>
@@ -29,7 +29,7 @@
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
             <nuxt-link class="_link" to="/profile">
-              <span class="_link-text">
+              <span class="_link-text  o-text">
                 profile
               </span>
             </nuxt-link>
@@ -37,7 +37,7 @@
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
             <nuxt-link class="_link" to="/contact">
-              <span class="_link-text">
+              <span class="_link-text  o-text">
                 contact
               </span>
             </nuxt-link>
@@ -69,7 +69,7 @@ export default {
   
   
 
-  .c-navbar-primary {
+  .c-site-header__nav {
     overflow: hidden;
     background-color: $neutral-95;
     box-shadow: inset 0 -1px 0 0 $clr-primary;
@@ -165,7 +165,6 @@ export default {
   }
 
   ._link-text {
-    @include vr($font-display, $font-size-md);
     font-weight: $font-weight-semi;
     display: inline-block;
     transition: transform .2s ease;

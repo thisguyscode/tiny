@@ -3,7 +3,7 @@
     <div v-if="!nobar" class="bar">
       <div class="fill" :class="scoreClass" :style="fillStyle"></div>
     </div>
-    <span class="score">
+    <span class="score  o-text o-text--lg">
       <span class="score-number" :class="scoreClass">{{ score }}</span>/{{ of }}
     </span>
   </div>
@@ -57,7 +57,7 @@ export default {
   }
 
   .score {
-    @include vr($font-body, $font-size-lg);
+    // @include vr($font-body, $font-size-lg);
     white-space: nowrap;
     color: $neutral-40;
   }

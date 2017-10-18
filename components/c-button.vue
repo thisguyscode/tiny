@@ -1,6 +1,23 @@
 <template>
+  <button
+    v-if="submit===true"
+    class="c-button"
+    :class="baseClassObject"
+    type="submit"
+    >
+    <c-icon
+      v-if="iconName"
+      class="c-button__icon"
+      :style="iconInlineStyle"
+      :name="iconName">
+    </c-icon>
+    <span class="c-button__text  o-text  u-vr-reset">
+      <slot></slot>
+    </span>
+  </button>
 
   <f-link
+    v-else
     class="c-button"
     :class="baseClassObject"
     :style="inlineStyle"
@@ -83,6 +100,10 @@ export default {
     }
   },
   props: {
+    submit: {
+      type: Boolean,
+      default: false
+    },
     relativeLink: {
       type: String,
       required: false

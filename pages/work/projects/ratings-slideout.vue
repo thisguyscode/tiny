@@ -1,18 +1,21 @@
 <template>
   <div>
-    <h1>Ratings Slideout XX</h1>
+    <h1 class="o-heading o-heading--alpha">Ratings Slideout XX</h1>
     <l-wrapper>
       
-      <c-code filename="projects.json" :code="codeData">
-        <pre>
-          <div class="test"></div>
-          <section></section>
-        </pre>
-      </c-code>
+      <c-code filename="projects.json" :code="codeData"></c-code>
+      <c-code filename="projects.json" :code="codeData"></c-code>
       <c-code filename="test.json" :languages="['xml']">
         <pre>
           <div class="test"></div>
           <section></section>
+          <section></section>
+          <section></section>
+          <section></section>
+          <section></section>
+          <section></section>
+          <section></section>
+          
         </pre>
       </c-code>
 

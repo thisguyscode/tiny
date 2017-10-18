@@ -1,5 +1,5 @@
 /* ==========================================================================
-   # TEXT
+   # CODE
 ========================================================================== */
 
 
@@ -10,11 +10,9 @@
 
 /* Global variable dependencies
 ======================================================================== */
-$paragraph-trailer: $paragraph-trailer;
+$font-mono:       $font-mono;
 
-$font-body:       $font-body;
-
-$font-size-xs:    $font-size-xs;
+// $font-size-xs:    $font-size-xs;
 $font-size-sm:    $font-size-sm;
 $font-size-md:    $font-size-md;
 $font-size-lg:    $font-size-lg;
@@ -27,8 +25,8 @@ $font-size-lg:    $font-size-lg;
  * 2. Transition between the default offset and the font-specific offset
  *    which is detected on page load
  */
-.o-text {
-  @include vr($font-display, $font-size-md); /*[1]*/
+.o-code {
+  @include vr($font-mono, $font-size-md); /*[1]*/
   margin: 0;
   position: relative;
   // transition: top 3s ease; /*[2]*/
@@ -37,26 +35,9 @@ $font-size-lg:    $font-size-lg;
 
 /* Font size modifiers
 ======================================================================== */
-.o-text--xs {
-  @include vr($font-display, $font-size-xs);
+.o-code--sm {
+  @include vr($font-mono, $font-size-sm);
 }
-.o-text--sm {
-  @include vr($font-display, $font-size-sm);
-}
-.o-text--lg {
-  @include vr($font-display, $font-size-lg);
-}
-.o-text--xl {
-  @include vr($font-display, $font-size-xl);
-}
-
-
-
-/* Layout modifiers
-======================================================================== */
-.o-text--paragraph {
-  margin-bottom: $paragraph-trailer;
-  // &:last-of-type {
-  //   margin-bottom: 0;
-  // }
+.o-code--lg {
+  @include vr($font-mono, $font-size-lg);
 }

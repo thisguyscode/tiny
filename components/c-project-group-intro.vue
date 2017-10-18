@@ -10,13 +10,13 @@
               
               <l-affix
                 className="c-project-group-intro__sticky-header"
-                :relativeElementSelector="'#project-group-' + index"
+                :relativeElementSelector="'#p-work__project-group-' + index"
                 :z="200"
                 :offset="{top: 120, bottom: 0}">
 
                 <!-- Must use template to show contents before affix js has loaded on client -->
                 <template scope="props" slot="contents">
-                  <h3 class="c-project-group-intro__title">
+                  <h3 class="c-project-group-intro__title u-margin-bottom-none">
                     <c-baselines class="c-project-group-intro__title-baselines"></c-baselines>
                     <span class="c-project-group-intro__index   o-heading  o-heading--gamma  u-margin-bottom-none">{{ index }}. </span>
                     <span class="c-project-group-intro__name   o-heading  o-heading--gamma  u-margin-bottom-none">{{ name }}</span>
@@ -41,7 +41,7 @@
         </div>
 
         <div class="_cell  u-3/5@tablet">
-          <p class="u-text--lower-contrast">{{ description }}</p>
+          <p class="o-text o-text--paragraph">{{ description }}</p>
         </div>
 
       </l-grid>
@@ -135,7 +135,7 @@ $link-padding-x: $unit-sm;
 .c-project-group-intro__title {
   transition: background-color .2s ease;
   display: flex;
-  margin-bottom: $unit-xs;
+  position: relative;
   left: -1px;
 
   @include mq($from: tablet) {
@@ -191,7 +191,7 @@ $link-padding-x: $unit-sm;
   @include mq($until: tablet) {
     position: absolute;
     right: 0;
-    top: -50%;
+    top: 0;
     display: inline-block;
     width: auto;
   }
@@ -200,6 +200,15 @@ $link-padding-x: $unit-sm;
 
 .c-project-group-intro__title-baselines {
   display: none;
+  // @include mq($from: tablet) {
+  //   left: -$page-padding-tablet;
+  // }
+  // @include mq($from: desktop) {
+  //   left: -$page-padding-desktop;
+  // }
+  // @include mq($from: wide) {
+  //   left: -$page-padding-wide;
+  // }
 }
 
 
@@ -232,7 +241,6 @@ $link-padding-x: $unit-sm;
     }
 
     .c-project-group-intro__title {
-      margin-bottom: 0;
       background-color: $neutral-95;
       box-shadow: inset 0 0 0 1px $neutral-80;
     }

@@ -5,10 +5,10 @@
         <div class="_cell  u-3/5@tablet">
           <l-grid>
             <div class="_cell  u-1/1">
-              <h1>{{ mainCtaHeading }}</h1>
+              <h1 class="o-heading o-heading--beta">{{ mainCtaHeading }}</h1>
             </div>
             <div class="_cell  u-2/3@tablet">
-              <p class="u-text--lower-contrast">{{ mainCtaBodyText }}</p>
+              <p class="o-text o-text--paragraph">{{ mainCtaBodyText }}</p>
             </div>
             <div class="_cell  u-1/3@tablet">
             </div>
@@ -23,7 +23,7 @@
         </div>
         <div class="_cell u-1/5"></div>
         <div class="_subCtaWrapper  _cell  u-1/5@tablet  u-text--lower-contrast">
-          <h2>{{ subCtaHeading }}</h2>
+          <h2 class="o-heading o-heading--gamma">{{ subCtaHeading }}</h2>
           <c-button
             class="_sub-cta-button"
             type="ghost"
@@ -67,9 +67,6 @@
         type: String,
         required: true
       }
-    },
-    methods: {
-      //
     }
   }
 

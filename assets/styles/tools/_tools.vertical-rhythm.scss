@@ -104,7 +104,7 @@
 ======================================================================== */
 @mixin vr-reset {
   // &#{&} { /*[1]*/
-    position: static !important;
+    // position: static !important;
     top: 0 !important;
   // }
 }

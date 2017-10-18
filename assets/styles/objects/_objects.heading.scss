@@ -34,6 +34,7 @@ $font-size-xxxxl: $font-size-xxxxl;
   will-change: top;
   font-weight: $font-weight-bold;
   margin-bottom: $heading-trailer;
+  position: relative;
 }
 
 
@@ -51,9 +52,6 @@ $font-size-xxxxl: $font-size-xxxxl;
 .o-heading--delta {
   @include vr($font-display, $font-size-xl);
 }
-.o-heading--delta {
-  @include vr($font-display, $font-size-lg);
-}
 .o-heading--zeta {
-  @include vr($font-body, $font-size-md);
+  @include vr($font-body, $font-size-lg);
 }

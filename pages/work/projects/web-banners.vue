@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Web Banners</h1>
+    <h1 class="o-heading o-heading--alpha">Web Banners</h1>
   </div>
 </template>
 

@@ -21,7 +21,7 @@
 
         <div class="_panel-content">
           <div
-            class="_label"
+            class="_label o-text"
             :class="labelClass">
             <c-icon v-if="direction === 'previous'" class="_icon" name="arrow-left"></c-icon>
             <span v-if="direction === 'previous'">Previous <span class="_string-project">project</span></span>
@@ -30,13 +30,13 @@
           </div>
 
           <h4
-            class="_group-title"
+            class="_group-title o-heading o-heading--delta"
             :class="textClass"
             :style="'color: ' + project.color">
             {{ project.group }}
           </h4>
           <h3
-            class="_title"
+            class="_title o-heading o-heading--gamma"
             :class="textClass"
             :style="'color: ' + project.color">
             {{ project.name }}
@@ -211,7 +211,6 @@ export default {
   }
 
   ._label {
-    @include vr($font-body, $font-size-sm);
     font-weight: $font-weight-semi;
     margin-bottom: $heading-trailer;
     display: inline-block;
@@ -230,7 +229,6 @@ export default {
     }
 
     @include mq($from: tablet) {
-      @include vr($font-body, $font-size-md);
       margin-bottom: $heading-trailer;
       display: inline-block;
       white-space: nowrap;
@@ -264,14 +262,6 @@ export default {
     }
   }
 
-
-  ._title {
-    @include vr($font-display, $font-size-xxl);
-
-    @include mq($from: desktop) {
-      @include vr($font-display, $font-size-xxxl);
-    }
-  }
 
   ._panel-next {
     ._group-title {

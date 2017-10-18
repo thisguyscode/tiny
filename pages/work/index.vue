@@ -2,7 +2,7 @@
   <section class="p-work">
     
     <c-hero>
-      <h1>Putting text in boxes & colouring inside the lines.</h1>
+      <h1 class="o-heading o-heading--alpha">Putting text in boxes & colouring inside the lines.</h1>
     </c-hero>
 
     <l-main-content>
@@ -10,8 +10,8 @@
       <!-- List of project groups -->
       <section
         v-for="(projectGroup, index) in projectGroups"
-        class="_project-group"
-        :id="'project-group-' + (index + 1)"
+        class="p-work__project-group"
+        :id="'p-work__project-group-' + (index + 1)"
         :key="index">
 
         <!-- Project group intro -->
@@ -97,7 +97,7 @@
   .p-work {
 
   }
-  ._project-group {
+  .p-work__project-group {
     margin-bottom: $unit-xxl;
     &:last-of-type {
       margin-bottom: 0;

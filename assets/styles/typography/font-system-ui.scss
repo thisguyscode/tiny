@@ -74,14 +74,9 @@ $cap-font-mono:					.1em;
     @include vr-offset($font-display, $font-size-xl); /*[2]*/
   }
 }
-.o-heading--delta {
-  &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-lg); /*[2]*/
-  }
-}
 .o-heading--zeta {
   &#{&} { /*[1]*/
-    @include vr-offset($font-body, $font-size-md); /*[2]*/
+    @include vr-offset($font-body, $font-size-lg); /*[2]*/
   }
 }
 

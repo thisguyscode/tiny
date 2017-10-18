@@ -14,7 +14,7 @@
             u-1/3 u-1/5@tablet
           "
         >
-          <span class="_link-text">
+          <span class="_link-text o-text u-vr-reset">
             <c-icon class="_icon" name="arrow-left"></c-icon>
             <span>
               Previous <span class="_string-project">project</span>
@@ -33,7 +33,7 @@
             u-1/3 u-1/5@tablet
           "
         >
-          <span class="_link-text">
+          <span class="_link-text o-text u-vr-reset">
             <span>
               Next <span class="_string-project">project</span>
             </span>
@@ -56,7 +56,7 @@
             u-1/3 u-1/5@tablet
           "
         >
-          <span class="_link-text">
+          <span class="_link-text o-text u-vr-reset">
             <span>Close</span>
             <c-icon class="_icon" name="close"></c-icon>
           </span>
@@ -166,8 +166,6 @@
   }
 
   ._link-text {
-    @include vr($font-body, $font-size-md);
-    @include vr-reset;
     font-weight: $font-weight-semi;
   }
 

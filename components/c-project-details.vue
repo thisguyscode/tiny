@@ -41,7 +41,7 @@
         <l-grid>
 
           <!-- objective cell -->
-          <div class="c-project-details__objective-cell _cell u-2/5@tablet">
+          <div class="c-project-details__objective-cell l-grid__cell u-2/5@tablet">
             <h4 class="o-heading o-heading--zeta">Objective</h4>
             <p
               v-if="transitionEnd"
@@ -51,13 +51,13 @@
           </div><!--END objective-cell -->
 
           <!-- details cell -->
-          <div class="_cell u-3/5@tablet">
+          <div class="l-grid__cell u-3/5@tablet">
             <l-grid>
               
               <!-- column -->
-              <div class="c-project-details__list-column _cell u-1/3@tablet">
+              <div class="c-project-details__list-column l-grid__cell u-1/3@tablet">
                 <l-grid>
-                  <div class="c-project-details__group  _cell u-2/5@mobile u-1/1@tablet">
+                  <div class="c-project-details__group  l-grid__cell u-2/5@mobile u-1/1@tablet">
                     <h4 class="o-heading o-heading--zeta">Date</h4>
                     <!-- <transition name="fade"> -->
                       <p
@@ -67,7 +67,7 @@
                       </p>
                     <!-- </transition> -->
                   </div>
-                  <div class="c-project-details__group  _cell u-2/5@mobile u-1/1@tablet">
+                  <div class="c-project-details__group  l-grid__cell u-2/5@mobile u-1/1@tablet">
                     <h4 class="o-heading o-heading--zeta">Role</h4>
                     <!-- <transition name="fade"> -->
                       <p
@@ -81,7 +81,7 @@
               </div><!--END column -->
 
               <!-- column -->
-              <div class="c-project-details__list-column _cell u-2/5@mobile u-1/3@tablet">
+              <div class="c-project-details__list-column l-grid__cell u-2/5@mobile u-1/3@tablet">
                 <h4 class="o-heading o-heading--zeta">Skills</h4>
                 <!-- <transition name="fade"> -->
                   <ul
@@ -98,7 +98,7 @@
               </div><!--END column -->
 
               <!-- column -->
-              <div class="c-project-details__list-column _cell u-2/5@mobile u-1/3@tablet">
+              <div class="c-project-details__list-column l-grid__cell u-2/5@mobile u-1/3@tablet">
                 <h4 class="o-heading o-heading--zeta">Tech</h4>
                 <ul
                   v-if="transitionEnd"

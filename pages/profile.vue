@@ -40,7 +40,7 @@
               <l-grid>
 
                 <!-- 1 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper ps software">
                     <span class="skill-icon-text">Ps</span>
                   </div>
@@ -53,10 +53,10 @@
                 </div>
                 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <!-- 2 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper ai software">
                     <span class="skill-icon-text">Ai</span>
                   </div>
@@ -69,10 +69,10 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <!-- 3 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper id software">
                     <span class="skill-icon-text">Id</span>
                   </div>
@@ -85,10 +85,10 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <!-- 4 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-image
                       :makeResponsive="false"
@@ -105,10 +105,10 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <!-- 5 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-image
                       :makeResponsive="false"
@@ -133,7 +133,7 @@
               <l-grid>
 
                 <!-- 1 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-icon name="css3" class="skill-icon"></c-icon>
                   </div>
@@ -147,10 +147,10 @@
                 </div>
                 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <!-- 2 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-image
                       :makeResponsive="false"
@@ -168,10 +168,10 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <!-- 3 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-icon name="html5" class="skill-icon"></c-icon>
                   </div>
@@ -185,10 +185,10 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <!-- 4 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper skill-icon-wrapper-landscape software u-padding-none">
                     <c-image
                       :makeResponsive="false"
@@ -206,10 +206,10 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <!-- 5 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-image
                       :makeResponsive="false"
@@ -227,9 +227,9 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-icon name="git" class="skill-icon"></c-icon>
                   </div>
@@ -243,9 +243,9 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-icon name="github" class="skill-icon"></c-icon>
                   </div>
@@ -259,9 +259,9 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-image
                       :makeResponsive="false"
@@ -279,9 +279,9 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <div class="skill-icon-wrapper software u-padding-none">
                     <c-image
                       :makeResponsive="false"
@@ -314,14 +314,14 @@
               <l-grid>
 
                 <!-- 1 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <l-grid>
-                    <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
+                    <div class="skill-icon-cell l-grid__cell u-1/5 u-1/1@tablet">
                       <div class="skill-icon-wrapper comment">
                         <c-icon class="skill-icon" name="comments"></c-icon>
                       </div>
                     </div>
-                    <div class="_cell u-4/5 u-1/1@tablet">
+                    <div class="l-grid__cell u-4/5 u-1/1@tablet">
                       <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">Written & verbal communication</h4>
                       <p class="o-text o-text--sm">...but only in English</p>
                     </div>
@@ -329,17 +329,17 @@
                 </div>
                 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <!-- 2 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <l-grid>
-                    <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
+                    <div class="skill-icon-cell l-grid__cell u-1/5 u-1/1@tablet">
                       <div class="skill-icon-wrapper bulb">
                         <c-icon class="skill-icon" name="lightbulb-o"></c-icon>
                       </div>
                     </div>
-                    <div class="_cell u-4/5 u-1/1@tablet">
+                    <div class="l-grid__cell u-4/5 u-1/1@tablet">
                       <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">Common-sense design</h4>
                       <p class="o-text o-text--sm">Designing without data is underrated</p>
                     </div>
@@ -347,17 +347,17 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <!-- 3 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <l-grid>
-                    <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
+                    <div class="skill-icon-cell l-grid__cell u-1/5 u-1/1@tablet">
                       <div class="skill-icon-wrapper mouse">
                         <c-icon class="skill-icon" name="mouse-pointer"></c-icon>
                       </div>
                     </div>
-                    <div class="_cell u-4/5 u-1/1@tablet">
+                    <div class="l-grid__cell u-4/5 u-1/1@tablet">
                       <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">'User' interface design</h4>
                       <p class="o-text o-text--sm">I prefer 'screen' interface design - every interface is a user interface</p>
                     </div>
@@ -365,17 +365,17 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <!-- 4 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <l-grid>
-                    <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
+                    <div class="skill-icon-cell l-grid__cell u-1/5 u-1/1@tablet">
                       <div class="skill-icon-wrapper hourglass">
                         <c-icon class="skill-icon" name="hourglass-2"></c-icon>
                       </div>
                     </div>
-                    <div class="_cell u-4/5 u-1/1@tablet">
+                    <div class="l-grid__cell u-4/5 u-1/1@tablet">
                       <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">Optimising processes</h4>
                       <p class="o-text o-text--sm">I'll put in the time now to save someone else it in the future</p>
                     </div>
@@ -383,17 +383,17 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <!-- 5 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <l-grid>
-                    <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
+                    <div class="skill-icon-cell l-grid__cell u-1/5 u-1/1@tablet">
                       <div class="skill-icon-wrapper puzzle">
                         <c-icon class="skill-icon" name="puzzle-piece"></c-icon>
                       </div>
                     </div>
-                    <div class="_cell u-4/5 u-1/1@tablet">
+                    <div class="l-grid__cell u-4/5 u-1/1@tablet">
                       <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">System-mindedness</h4>
                       <p class="o-text o-text--sm">Making things that play nice with other things</p>
                     </div>
@@ -401,17 +401,17 @@
                 </div>
 
                 <!-- spacer -->
-                <div class="_cell u-1/5@tablet"></div>
+                <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <!-- 6 -->
-                <div class="skill-item-cell _cell u-2/5@tablet u-1/5@desktop">
+                <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <l-grid>
-                    <div class="skill-icon-cell _cell u-1/5 u-1/1@tablet">
+                    <div class="skill-icon-cell l-grid__cell u-1/5 u-1/1@tablet">
                       <div class="skill-icon-wrapper heart">
                         <c-icon class="skill-icon" name="heart"></c-icon>
                       </div>
                     </div>
-                    <div class="_cell u-4/5 u-1/1@tablet">
+                    <div class="l-grid__cell u-4/5 u-1/1@tablet">
                       <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">Empathising</h4>
                       <p class="o-text o-text--sm">Absolutely essential for a designer</p>
                     </div>
@@ -426,7 +426,7 @@
               <h3 class="o-heading o-heading--gamma">Not bad at:</h3>
               <l-grid>
 
-                <div class="_cell u-2/5@tablet u-1/5@desktop">
+                <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="user-circle"></c-icon>
                     <h4 class="o-text o-text--sm">User experience design</h4>
@@ -435,14 +435,14 @@
 
                 <div class="subskill-spacer u-1/5"></div>
 
-                <div class="_cell u-2/5@tablet u-1/5@desktop">
+                <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="bar-chart"></c-icon>
                     <h4 class="o-text o-text--sm">Data-informed design</h4>
                   </span>
                 </div>
 
-                <div class="_cell u-2/5@tablet u-1/5@desktop">
+                <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="pied-piper"></c-icon>
                     <h4 class="o-text o-text--sm">Branding</h4>
@@ -451,13 +451,13 @@
 
                 <div class="subskill-spacer u-1/5"></div>
                 
-                <div class="_cell u-2/5@tablet u-1/5@desktop">
+                <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="pencil"></c-icon>
                     <h4 class="o-text o-text--sm">Prototyping</h4>
                   </span>
                 </div>
-                <div class="_cell u-2/5@tablet u-1/5@desktop">
+                <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="bullhorn"></c-icon>
                     <h4 class="o-text o-text--sm">Presentation</h4>
@@ -483,57 +483,57 @@
             <l-grid>
 
               <!-- 1 -->
-              <div class="fantasy-item-cell _cell u-2/5@tablet u-1/5@desktop">
+              <div class="fantasy-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                 <l-grid>
-                  <div class="fantasy-icon-cell _cell u-2/5 u-1/1@tablet">
+                  <div class="fantasy-icon-cell l-grid__cell u-2/5 u-1/1@tablet">
                     <div class="fantasy-icon-wrapper money">
                       <c-icon class="fantasy-icon" name="money"></c-icon>
                     </div>
                   </div>
-                  <!-- <div class="_cell u-1/5 u-1/2@tablet u-1/1@desktop">
+                  <!-- <div class="l-grid__cell u-1/5 u-1/2@tablet u-1/1@desktop">
                     <h4 class="item-heading">Title</h4>
                   </div> -->
-                  <div class="_cell u-3/5 u-1/1@tablet">
+                  <div class="l-grid__cell u-3/5 u-1/1@tablet">
                     <p class="o-text o-text--sm">Help to usher in a practical alternative to (not replacement for) the traditional market economy</p>
                   </div>
                 </l-grid>
               </div>
               
               <!-- spacer -->
-              <div class="_cell u-1/5@tablet"></div>
+              <div class="l-grid__cell u-1/5@tablet"></div>
 
               <!-- 2 -->
-              <div class="fantasy-item-cell _cell u-2/5@tablet u-1/5@desktop">
+              <div class="fantasy-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                 <l-grid>
-                  <div class="fantasy-icon-cell _cell u-2/5 u-1/1@tablet">
+                  <div class="fantasy-icon-cell l-grid__cell u-2/5 u-1/1@tablet">
                     <div class="fantasy-icon-wrapper home">
                       <c-icon class="fantasy-icon" name="home"></c-icon>
                     </div>
                   </div>
-                  <!-- <div class="_cell u-1/5 u-1/2@tablet u-1/1@desktop">
+                  <!-- <div class="l-grid__cell u-1/5 u-1/2@tablet u-1/1@desktop">
                     <h4 class="item-heading">Title</h4>
                   </div> -->
-                  <div class="_cell u-3/5 u-1/1@tablet">
+                  <div class="l-grid__cell u-3/5 u-1/1@tablet">
                     <p class="o-text o-text--sm">Build my own house using earth/eco building methods</p>
                   </div>
                 </l-grid>
               </div>
 
               <!-- spacer -->
-              <div class="_cell u-1/5@tablet"></div>
+              <div class="l-grid__cell u-1/5@tablet"></div>
 
               <!-- 3 -->
-              <div class="fantasy-item-cell _cell u-2/5@tablet u-1/5@desktop">
+              <div class="fantasy-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
                 <l-grid>
-                  <div class="fantasy-icon-cell _cell u-2/5 u-1/1@tablet">
+                  <div class="fantasy-icon-cell l-grid__cell u-2/5 u-1/1@tablet">
                     <div class="fantasy-icon-wrapper fire">
                       <c-icon class="fantasy-icon" name="fire"></c-icon>
                     </div>
                   </div>
-                  <!-- <div class="_cell u-1/5 u-1/2@tablet u-1/1@desktop">
+                  <!-- <div class="l-grid__cell u-1/5 u-1/2@tablet u-1/1@desktop">
                     <h4 class="item-heading">Title</h4>
                   </div> -->
-                  <div class="_cell u-3/5 u-1/1@tablet">
+                  <div class="l-grid__cell u-3/5 u-1/1@tablet">
                     <p class="o-text o-text--sm">Learn to forge high-quality kitchen knives</p>
                   </div>
                 </l-grid>

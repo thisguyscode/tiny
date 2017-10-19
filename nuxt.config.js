@@ -82,13 +82,10 @@ module.exports = {
     */
     extend (config, ctx) {
       /** Make sure SCSS runs through postcss */
-      const cssLoader = config.module.rules.find((loader) => loader.test.toString() === '/\\.scss$/')
-      cssLoader.use.splice(2, 0, {
-        loader: 'postcss-loader',
-        options: {
-          sourceMap: true
-        }
-      })
+      // const scssLoader = config.module.rules.find((loader) => loader.test.toString() === '/\\.scss$/')
+      // var cssLoader = scssLoader.use.find((use) => use.loader.toString() === 'css-loader')
+      // cssLoader.options.modules = true
+      // cssLoader.options.localIdentName = '[local]'
 
       // Remove default image rule
       const imageRule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg)$/')

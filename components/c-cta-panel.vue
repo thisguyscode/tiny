@@ -2,17 +2,17 @@
   <section class="c-cta-panel">
     <l-wrapper>
       <l-grid>
-        <div class="_cell  u-3/5@tablet">
+        <div class="l-grid__cell  u-3/5@tablet">
           <l-grid>
-            <div class="_cell  u-1/1">
+            <div class="l-grid__cell  u-1/1">
               <h1 class="o-heading o-heading--beta">{{ mainCtaHeading }}</h1>
             </div>
-            <div class="_cell  u-2/3@tablet">
+            <div class="l-grid__cell  u-2/3@tablet">
               <p class="o-text o-text--paragraph">{{ mainCtaBodyText }}</p>
             </div>
-            <div class="_cell  u-1/3@tablet">
+            <div class="l-grid__cell  u-1/3@tablet">
             </div>
-            <div class="_cell  u-1/3@tablet">
+            <div class="l-grid__cell  u-1/3@tablet">
               <c-button
                 class="_main-cta-button"
                 type="solid"
@@ -21,8 +21,8 @@
             </div>
           </l-grid>
         </div>
-        <div class="_cell u-1/5"></div>
-        <div class="_subCtaWrapper  _cell  u-1/5@tablet  u-text--lower-contrast">
+        <div class="l-grid__cell u-1/5"></div>
+        <div class="_subCtaWrapper  l-grid__cell  u-1/5@tablet  u-text--lower-contrast">
           <h2 class="o-heading o-heading--gamma">{{ subCtaHeading }}</h2>
           <c-button
             class="_sub-cta-button"

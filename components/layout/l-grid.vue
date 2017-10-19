@@ -60,7 +60,7 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 /* ========================================================================
   # SCOPED STYLES
 ======================================================================== */
@@ -87,7 +87,7 @@ $spacing-sizes: (
 );
 
 /* The grid
-======================================================================== */
+   ========================================================================== */
 
 .l-grid {
     display: flex;
@@ -97,46 +97,48 @@ $spacing-sizes: (
 }
 
 /**
-* 1. Cells are full-width and stack on top of each other by default.
-*/
+ * 1. Cells are full-width and stack on top of each other by default.
+ */
 
-._cell {
+.l-grid__cell {
     flex: 0 1 auto;
     width: 100%; /* [1] */
 }
 
 
 /* Gutters
-======================================================================== */
+   ========================================================================== */
 
 /**
-* 1. The variable $spacing-sizes contains a `null` key which
-*    will be our default gutter size.
-* 2. Add a negative margin only on one side. That way we aren't required to
-*    use a wrapper with the same amount of spacing, though it's common to do so.
-* 3. Neutralize the left margin on `l-grid`.
-*/
+ * 1. The variable $flexgrid-spacing-sizes contains a `null` key which
+ *    will be our default gutter size.
+ * 2. Add a negative margin only on one side. That way we aren't required to
+ *    use a wrapper with the same amount of spacing, though it's common to do so.
+ * 3. Neutralize the left margin on `l-grid`.
+ */
 
 @each $size-namespace, $size in $spacing-sizes {
     .l-grid#{$size-namespace} { /* [1] */
         margin-left: -$size; /* [2] */
-        & > ._cell {
+        & > .l-grid__cell {
             padding-left: $size; /* [3] */
         }
     }
 }
 
+
 /* Automatically size cells by distributing them equally
-======================================================================== */
+   ========================================================================== */
 
 .l-grid--auto {
-    & > ._cell {
+    & > .l-grid__cell {
         flex: 1 0 0;
     }
 }
 
+
 /* Horizontal alignment
-======================================================================== */
+   ========================================================================== */
 
 .l-grid--center {
     justify-content: center;
@@ -150,8 +152,9 @@ $spacing-sizes: (
     justify-content: flex-start;
 }
 
+
 /* Vertical alignment
-======================================================================== */
+   ========================================================================== */
 
 .l-grid--middle {
     align-items: center;
@@ -163,7 +166,11 @@ $spacing-sizes: (
 
 
 /* Content distribution
-======================================================================== */
+   ========================================================================== */
+
+.l-grid--around {
+    justify-content: space-around;
+}
 
 .l-grid--between {
     justify-content: space-between;
@@ -171,6 +178,7 @@ $spacing-sizes: (
 
 .l-grid--reverse {
     flex-direction: row-reverse;
+
 }
 
 </style>

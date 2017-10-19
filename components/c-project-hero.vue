@@ -5,7 +5,7 @@
       <l-grid class="_hero-grid">
 
         <!-- Hero text panel -->
-        <div class="_hero-text-cell _cell u-2/5@tablet">
+        <div class="_hero-text-cell l-grid__cell u-2/5@tablet">
           <div class="_hero-text-wrapper" :style="'color:' + color">
            
             <!-- <transition name="slide-from-left"> -->
@@ -33,7 +33,7 @@
         </div><!--END Hero text panel -->
         
         <!-- Hero image panel -->
-        <div class="_hero-image-cell _cell u-3/5@tablet" :class="imgClass">
+        <div class="_hero-image-cell l-grid__cell u-3/5@tablet" :class="imgClass">
           <div class="_hero-image-reference" :class="imgWrapperClass">
             <div class="_hero-image-wrapper">
               <!-- <transition name="slide-from-right"> -->

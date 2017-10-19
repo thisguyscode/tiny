@@ -25,7 +25,7 @@
           <input class="_honeypot" id="honeypot" type="text" name="honeypot" value="" />
           
           <l-grid class="_form-grid">
-            <div class="_details-cell _cell u-2/5@tablet">
+            <div class="_details-cell l-grid__cell u-2/5@tablet">
 
               <label for="name" class="_label  o-text o-text--lg">Name:</label>
               <input class="_input" type="text" name="name" id="name">
@@ -40,7 +40,7 @@
 
             </div>
 
-            <div class="_message-cell _cell u-3/5@tablet">
+            <div class="_message-cell l-grid__cell u-3/5@tablet">
               <label for="subject" class="_label  o-text o-text--lg">Subject:</label>
               <input class="_input" type="text" name="subject" id="subject">
 
@@ -64,11 +64,11 @@
         
         <div class="_after-message-wrapper" v-if="$store.state.messageSent === true" ref="afterMessage">
           <l-grid>
-            <div class="_cell u-3/5@tablet">
+            <div class="l-grid__cell u-3/5@tablet">
               <h2>Thanks for getting in touch!</h2>
               <p>I'm not up to much these days so you should hear back from me pretty soon</p>
             </div>
-            <div class="_cell u-2/5@tablet">
+            <div class="l-grid__cell u-2/5@tablet">
               <c-button 
                 :onClick="reset"
                 class="_reset-button"

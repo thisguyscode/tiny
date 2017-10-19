@@ -2,18 +2,18 @@
   <section class="c-project-overview" :id="sectionId">
     <l-wrapper>
       <l-grid>
-        <div class="_details-wrapper  _cell u-2/5@tablet">
+        <div class="_details-wrapper  l-grid__cell u-2/5@tablet">
           <l-grid>
-            <div class="_cell  u-1/2@tablet">
+            <div class="l-grid__cell  u-1/2@tablet">
               <h3 class="_title  o-heading o-heading--delta">
                 <span class="_index" :style="indexStyle">{{ index }}. </span>
                 <span class="_name">{{ name }}</span>
               </h3>
             </div>
-            <div class="_line  _cell  u-1/2@tablet" :style="lineStyle"></div>
-            <div class="_cell">
+            <div class="_line  l-grid__cell  u-1/2@tablet" :style="lineStyle"></div>
+            <div class="l-grid__cell">
               <l-grid class="u-margin-bottom-sm">
-                <div v-if="skills" class="_detail-group  _cell  u-1/2@tablet">
+                <div v-if="skills" class="_detail-group  l-grid__cell  u-1/2@tablet">
                   <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Skills</h4>
                   <ul class="u-list-bare">
                     <li v-for="skill in skills" :key="skill.id">
@@ -21,7 +21,7 @@
                     </li>
                   </ul>
                 </div>
-                <div v-if="techs" class="_detail-group  _cell  u-1/2@tablet">
+                <div v-if="techs" class="_detail-group  l-grid__cell  u-1/2@tablet">
                   <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Tech</h4>
                   <ul class="u-list-bare">
                     <li v-for="tech in techs" :key="tech.id">
@@ -29,16 +29,16 @@
                     </li>
                   </ul>
                 </div>
-                <div v-if="role" class="_detail-group  _cell  u-1/2@tablet">
+                <div v-if="role" class="_detail-group  l-grid__cell  u-1/2@tablet">
                   <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Role</h4>
                   <p class="c-project-overview__detail  o-text o-text--sm">{{ role }}</p>
                 </div>
-                <div v-if="date" class="_detail-group  _cell  u-1/2@tablet">
+                <div v-if="date" class="_detail-group  l-grid__cell  u-1/2@tablet">
                   <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Date</h4>
                   <p class="c-project-overview__detail  o-text o-text--sm">{{ date }}</p>
                 </div>
               </l-grid>
-              <div class="_cell u-1/2@tablet">
+              <div class="l-grid__cell u-1/2@tablet">
                 <div class="_button-wrapper">
                   <c-button 
                     :relativeLink="linkTo"
@@ -53,7 +53,7 @@
             </div>
           </l-grid>
         </div>
-        <div class="_cell u-3/5@tablet">
+        <div class="l-grid__cell u-3/5@tablet">
           <div class="_image-wrapper" :class="imgWrapperClass" :style="'background-color:' + color">
             <c-image
               v-if="imgSrc"

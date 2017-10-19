@@ -3,11 +3,11 @@
     <!-- <h2 class="o-heading o-heading--beta">Testimonials</h2> -->
     <l-grid list>
       <li
-        class="_entry _cell"
+        class="_entry l-grid__cell"
         v-for="testimonial in testimonials" :key="testimonial.id"
         @click="change(testimonial)">
         <l-grid>
-          <div class="_image-cell _cell u-1/5">
+          <div class="_image-cell l-grid__cell u-1/5">
             <div class="_image-wrapper">
               <c-image
                 v-if="testimonial.character"
@@ -16,12 +16,12 @@
               />
             </div>
           </div>
-          <div class="_cell u-2/5@mobile u-1/5@tablet">
+          <div class="l-grid__cell u-2/5@mobile u-1/5@tablet">
             <p class="o-text _name">{{ testimonial.name }}</p>
             <p class="o-text  u-text--low-contrast">{{ testimonial.role }}</p>
             <p class="o-text  u-text--low-contrast">@{{ testimonial.company }}</p>
           </div>
-          <div class="_cell u-2/5@mobile u-3/5@tablet">
+          <div class="l-grid__cell u-2/5@mobile u-3/5@tablet">
             <p class="o-text o-text--lg _quote"><span class="_quote-mark open">&ldquo;</span>{{ testimonial.quote }}<span class="_quote-mark close">&rdquo;</span></p>
           </div>
         </l-grid>

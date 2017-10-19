@@ -11,7 +11,7 @@
     />
     <l-wrapper>
       <l-grid horizontal="right">
-        <div class="c-hero__text-wrapper  _cell  u-3/5@desktop">
+        <div class="c-hero__text-wrapper  l-grid__cell  u-3/5@desktop">
           <slot></slot>
         </div>
       </l-grid>

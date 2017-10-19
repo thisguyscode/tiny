@@ -2,11 +2,11 @@
   <section class="c-project-group-intro" :id="'project-group-' + index + '-top'">
     <l-wrapper>
       <l-grid class="c-project-group-intro__grid">
-        <div class="c-project-group-intro__header  _cell  u-2/5@tablet">
+        <div class="c-project-group-intro__header  l-grid__cell  u-2/5@tablet">
           <l-grid>
 
             <!-- Main group title cell -->
-            <div class="_cell">
+            <div class="l-grid__cell">
               
               <l-affix
                 className="c-project-group-intro__sticky-header"
@@ -31,7 +31,7 @@
               </l-affix>
             </div><!--END Main group title cell -->
             
-            <div class="_cell u-1/2">
+            <div class="l-grid__cell u-1/2">
               <c-button :stretch="false" class="c-project-group-intro__button" type="ghost" icon="external-link" :externalLink="link">
                 Visit Website
               </c-button>
@@ -40,7 +40,7 @@
           </l-grid>
         </div>
 
-        <div class="_cell  u-3/5@tablet">
+        <div class="l-grid__cell  u-3/5@tablet">
           <p class="o-text o-text--paragraph">{{ description }}</p>
         </div>
 

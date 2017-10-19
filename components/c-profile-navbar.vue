@@ -8,7 +8,7 @@
           :scrollToSelector="link.to"
           class="
             c-profile-navbar__link
-            _cell
+            l-grid__cell
             u-1/5
           "
           >

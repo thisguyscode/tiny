@@ -1,9 +1,9 @@
 <template>
   <div class="l-header-primary">
-    <div class="_actual" ref="headerPrimary">
+    <div class="l-header-primary__actual" ref="headerPrimary">
       <slot></slot>
     </div>
-    <div class="_placeholder"></div>
+    <div class="l-header-primary__placeholder"></div>
   </div>
 </template>
 <script>
@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   
   
   
@@ -26,12 +26,12 @@ export default {
     margin-top: -1px;
   }
 
-  ._actual,
-  ._placeholder {
+  .l-header-primary__actual,
+  .l-header-primary__placeholder {
     height: $header-primary-height;
   }
 
-  ._actual {
+  .l-header-primary__actual {
     position: fixed;
     z-index: 9000;
     top: 0;
@@ -39,7 +39,7 @@ export default {
     width: 100%;
   }
   
-  ._placeholder {
+  .l-header-primary__placeholder {
     display: block;
   }
 

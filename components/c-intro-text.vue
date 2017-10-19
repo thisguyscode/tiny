@@ -2,10 +2,10 @@
   <section class="c-intro-text">
     <l-wrapper>
       <l-grid>
-        <div class="_cell  u-2/5@tablet">
+        <div class="l-grid__cell  u-2/5@tablet">
           <h2 class="o-heading o-heading--beta">{{ heading }}</h2>
         </div>
-        <div class="_cell  u-3/5@tablet  u-text--lower-contrast">
+        <div class="l-grid__cell  u-3/5@tablet  u-text--lower-contrast">
           <slot></slot>
         </div>
       </l-grid>

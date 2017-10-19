@@ -10,7 +10,7 @@
           class="
             _link
             _previous-control-wrapper
-            _cell
+            l-grid__cell
             u-1/3 u-1/5@tablet
           "
         >
@@ -29,7 +29,7 @@
           class="
             _link
             _next-control-wrapper
-            _cell
+            l-grid__cell
             u-1/3 u-1/5@tablet
           "
         >
@@ -52,7 +52,7 @@
           class="
             _link
             _close-control-wrapper
-            _cell
+            l-grid__cell
             u-1/3 u-1/5@tablet
           "
         >
@@ -62,8 +62,8 @@
           </span>
         </nuxt-link><!--END close -->
 
-        <div class="_cell u-0  u-2/5@tablet"></div>
-        <div class="_cell u-1/3  u-1/5@tablet"></div>
+        <div class="l-grid__cell u-0  u-2/5@tablet"></div>
+        <div class="l-grid__cell u-1/3  u-1/5@tablet"></div>
       </l-grid>
     </l-wrapper>
   </nav>

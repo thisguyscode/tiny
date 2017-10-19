@@ -45,10 +45,10 @@
     <!-- Bottom Nav -->
     <nav class="c-project-nav-panels">
       <l-grid>
-        <div class="_cell u-1/2@mobile">
+        <div class="l-grid__cell u-1/2@mobile">
           <c-project-nav-panel :transitionEnd="transitionEnd" :project="previousProject" direction="previous"></c-project-nav-panel>
         </div>
-        <div class="_cell u-1/2@mobile">
+        <div class="l-grid__cell u-1/2@mobile">
           <c-project-nav-panel :transitionEnd="transitionEnd" :project="nextProject" direction="next"></c-project-nav-panel>
         </div>
       </l-grid>

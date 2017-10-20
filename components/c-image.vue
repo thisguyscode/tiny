@@ -119,6 +119,8 @@ export default {
     imgSrc: function () {
       if (this.lazy && this.responsive) {
         return this.asset.placeholder
+      } else if (this.lazy && !this.responsive) {
+        return this.transparentGif
       } else if (!this.lazy && this.responsive) {
         return this.transparentGif
       } else {

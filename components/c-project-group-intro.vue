@@ -241,13 +241,23 @@ $link-padding-x: $unit-sm;
     }
 
     .c-project-group-intro__title {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-shadow: inset 0 0 0 1px $neutral-80;
+        z-index: 1;
+      }
       background-color: $neutral-95;
-      box-shadow: inset 0 0 0 1px $neutral-80;
+      position: relative;
     }
 
     .c-project-group-intro__name {
       padding-right: $unit-xs;
-      box-shadow: inset 1px 0 0 0 $neutral-90;
+      // box-shadow: inset 1px 0 0 0 $neutral-90;
       position: relative;
 
       @include mq($until: tablet) {

@@ -34,7 +34,7 @@
         
         <!-- Hero image panel -->
         <div class="_hero-image-cell l-grid__cell u-3/5@tablet" :class="imgClass">
-          <div class="_hero-image-reference" :class="imgWrapperClass">
+          <div class="_hero-image-reference  o-liner" :class="imgWrapperClass">
             <div class="_hero-image-wrapper">
               <!-- <transition name="slide-from-right"> -->
                 <c-image
@@ -141,7 +141,7 @@
   
 
   ._hero {
-    margin-top: -1px;
+    // margin-top: -1px;
     min-height: $unit-xxl*3;
     width: 100%;
     overflow: hidden;
@@ -171,29 +171,7 @@
     }
   }
 
-  ._hero-image-reference {
-    // margin-right: -$page-padding-mobile;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    
-    @include mq($until: tablet) {
-      // margin-left: -$page-padding-mobile;
-    }
-    @include mq($from: tablet) {
-      
-      // margin-right: -$page-padding-tablet
-    }
-    @include mq($from: desktop) {
-      // margin-right: -$page-padding-desktop
-    }
-    @include mq($from: wide) {
-      // margin-right: -$page-padding-wide
-    }
-    
+  ._hero-image-reference {    
     &.padded {
       padding: $unit-md;
       
@@ -257,16 +235,6 @@
       min-height: $unit-xxl*5;
       padding-top: $page-padding-desktop;
       padding-bottom: $page-padding-desktop;
-    }
-  }
-
-  ._hero-text-background {
-    @include mq($from: tablet) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
     }
   }
 

@@ -25,23 +25,26 @@
     :externalLink="externalLink"
     :scrollToSelector="scrollToSelector"
     @click.native="clickFunction">
+    
+    <span class="c-button__inner  o-text  u-vr-reset">
+      <c-icon
+        v-if="iconName"
+        class="c-button__icon"
+        :style="iconInlineStyle"
+        :name="iconName">
+      </c-icon>
 
-    <c-icon
-      v-if="iconName"
-      class="c-button__icon"
-      :style="iconInlineStyle"
-      :name="iconName">
-    </c-icon>
+      <span class="c-button__text">
+        <slot></slot>
+        <!-- Quick content -->
+        <!-- Contact -->
+        <span v-if="content==='contact'">Contact <span class="u-text--low-contrast">me</span></span>
+        <!-- Profile -->
+        <span v-if="content==='profile'"><span class="u-text--low-contrast">View my </span>profile</span>
+        <!-- Work -->
+        <span v-if="content==='work'"><span class="u-text--low-contrast">View my </span>work</span>
+      </span>
 
-    <span class="c-button__text  o-text  u-vr-reset">
-      <slot></slot>
-      <!-- Quick content -->
-      <!-- Contact -->
-      <span v-if="content==='contact'">Contact <span class="u-text--low-contrast">me</span></span>
-      <!-- Profile -->
-      <span v-if="content==='profile'"><span class="u-text--low-contrast">View my </span>profile</span>
-      <!-- Work -->
-      <span v-if="content==='work'"><span class="u-text--low-contrast">View my </span>work</span>
     </span>
 
   </f-link>
@@ -89,11 +92,11 @@ export default {
     },
     computedRelativeLink: function () {
       if (this.content === 'profile') {
-        return '/profile'
+        return '/profile/'
       } else if (this.content === 'contact') {
-        return '/contact'
+        return '/contact/'
       } else if (this.content === 'work') {
-        return '/work'
+        return '/'
       } else if (this.relativeLink) {
         return this.relativeLink
       }
@@ -198,19 +201,23 @@ $primary-color: $clr-primary;
 
 /* Child classes
 ======================================================================== */
+.c-button__inner {
+  text-align: center;
+}
+
 .c-button__text {
   font-weight: $font-weight;
   color: $neutral-00;
 }
 .c-button__icon {
   height: 1em;
+  width: auto;
   margin-right: $icon-gutter;
+  vertical-align: text-top;
 }
-.c-button__text,
-.c-button__icon {
-  display: inline-block;
-  vertical-align: middle;
-}
+// .c-button__icon {
+//   display: inline-block;
+// }
 
 
 

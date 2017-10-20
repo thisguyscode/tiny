@@ -6,38 +6,34 @@
 
     <nav class="c-site-header__nav">
       <l-wrapper>
-        <ul class="l-grid  l-grid--flush  u-vr-reset">
+        <ul class="l-grid  l-grid--flush">
 
           <!-- LOGO -->
           <li class="l-grid__cell  u-1/4  u-2/5@mobile">
-            <nuxt-link class="_link _logo-link left" to="/">
-              <span class="_link-text  o-text">
-                <span class="u-text--lowest-contrast">./</span>
-                <span>tiny</span>
-                <span class="u-text--lowest-contrast">/</span>
-              </span>
+            <nuxt-link class="c-site-header__logo" to="/">
+              <c-logo></c-logo>
             </nuxt-link>
           </li><!--END- LOGO -->
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
-            <nuxt-link class="_link" to="/work">
-              <span class="_link-text  o-text">
+            <nuxt-link class="c-site-header__link" to="/">
+              <span class="c-site-header__link-text  o-text">
                 work
               </span>
             </nuxt-link>
           </li>
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
-            <nuxt-link class="_link" to="/profile">
-              <span class="_link-text  o-text">
+            <nuxt-link class="c-site-header__link" to="/profile/">
+              <span class="c-site-header__link-text  o-text">
                 profile
               </span>
             </nuxt-link>
           </li>
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
-            <nuxt-link class="_link" to="/contact">
-              <span class="_link-text  o-text">
+            <nuxt-link class="c-site-header__link" to="/contact/">
+              <span class="c-site-header__link-text  o-text">
                 contact
               </span>
             </nuxt-link>
@@ -52,6 +48,7 @@
 <script>
 import cGridlines from '~/components/c-gridlines'
 import cBaselines from '~/components/c-baselines'
+import cLogo from '~/components/c-logo'
 import lHeaderPrimary from '~/components/layout/l-header-primary'
 import lWrapper from '~/components/layout/l-wrapper'
 export default {
@@ -59,115 +56,75 @@ export default {
     lHeaderPrimary,
     cGridlines,
     cBaselines,
+    cLogo,
     lWrapper
   }
 }
 </script>
 
 <style lang="scss" scoped>
+/* ========================================================================
+  # SCOPED STYLES
+======================================================================== */
 
-  
-  
 
-  .c-site-header__nav {
-    overflow: hidden;
-    background-color: $neutral-95;
+/* Base class
+======================================================================== */
+.c-site-header {
+}
+
+
+/* Child classes
+======================================================================== */
+
+.c-site-header__nav {
+  // overflow: hidden;
+  background-color: $neutral-95;
+  &:after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
     box-shadow: inset 0 -1px 0 0 $clr-primary;
   }
+}
 
-  ._link {
-    &:not(._logo-link) {
-      @include mq($until: tablet) {
-        text-align: center;
-      }
-    }
-    width: 100%;
-    padding-top: $header-primary-padding-top;
-    padding-bottom: $header-primary-padding-bottom;
-    color: $neutral-40;
-    text-decoration: none;
-    margin-bottom: 1px;
-    margin-top: -1px;
-    position: relative;
-    transition: background-color .2s ease, box-shadow .2s ease;
-    
-    &:before {
-      content: '';
-      position: absolute;
-      top: $unit-md;
-      width: 0;
-      bottom: $unit-md;
-      background-color: $green;
-    }
-    &.left {
-      &:before {
-        left: 0;
-        right: auto;
-      }
-    }
+.c-site-header__link,
+.c-site-header__logo {
+  display: block;
+  padding-top: $unit-md;
+  padding-bottom: $unit-md - $unit-sm;
+  width: 100%;
+  text-decoration: none;
+}
 
-    @include mq($until: tablet) {
-      &:before {
-        left: 0;
-        right: 0;
-      }
-    }
-    @include mq($from: tablet) {
-      &:before {
-        right: 0;
-        left: auto;
-      }
-    }
 
-    
-    &.nuxt-link-active {
-      color: $neutral-00;
-    }
+.c-site-header__link-text {
+  font-weight: $font-weight-semi;
+  display: inline-block;
+  &:after {
+    content: '';
+    background-color: $red;
+  }
+}
 
-    &:hover {
-      color: contrasting-color($green, $lightest, $darkest)
-    }
-
-    &.nuxt-link-exact-active {
-      &:before {
-        background-color: $clr-primary;
-      }
-      @include mq($from: desktop) {
-        box-shadow: inset -1px 0 0 0 $clr-primary;
-        &.left {
-          box-shadow: inset 1px 0 0 0 $clr-primary;
-        }
-      }
-    }
-    &:hover,
-    &.nuxt-link-exact-active {
-      @include mq($until: tablet) {
-        &:before {
-          width: 100%;
-        }
-      }
-      @include mq($from: tablet) {
-        &:before {
-          width: 90%;
-        }
-      }
-      @include mq($from: desktop) {
-        padding-right: $unit-md;
-        &:before {
-          width: $unit-sm;
-        }
-        &.left {
-          padding-right: 0;
-          padding-left: $unit-md;
-        }
-      }
+.c-site-header__link {
+  transition: color .3s ease;
+  color: $neutral-30;
+  position: relative;
+  &.nuxt-link-exact-active {
+    color: $blue;
+  }
+  &:hover {
+    &:not(.nuxt-link-exact-active) {
+      color: $green;
     }
   }
+}
 
-  ._link-text {
-    font-weight: $font-weight-semi;
-    display: inline-block;
-    transition: transform .2s ease;
-  }
 
 </style>

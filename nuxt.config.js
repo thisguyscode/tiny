@@ -26,7 +26,7 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: {
-    color: '#4786eb',
+    color: '#25c163',
     failedColor: '#e9494f',
     height: '4px'
   },
@@ -41,7 +41,7 @@ module.exports = {
       for (var projectGroup in projectGroups) {
         var projects = projectGroups[projectGroup].projects
         for (var project in projects) {
-          routesArray.push('/work/projects/' + projects[project].slug)
+          routesArray.push('/projects/' + projects[project].slug + '/')
         }
       }
       return routesArray

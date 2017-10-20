@@ -101,10 +101,10 @@ $cap-font-mono:					.115em;
 // Base
 .o-text {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-sm); /*[2]*/
+    @include vr-offset($font-body, $font-size-md); /*[2]*/
     
     @include mq($from: desktop) {
-      @include vr-offset($font-display, $font-size-md); /*[2]*/
+      @include vr-offset($font-body, $font-size-lg); /*[2]*/
     }
     
     // color: $red;
@@ -114,21 +114,33 @@ $cap-font-mono:					.115em;
 // Modifiers
 .o-text--xs {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-xs); /*[2]*/
+    @include vr-offset($font-body, $font-size-xs); /*[2]*/
+    @include mq($from: desktop) {
+      @include vr-offset($font-body, $font-size-sm);
+    }
   }
 }
 .o-text--sm {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-sm); /*[2]*/
+    @include vr-offset($font-body, $font-size-sm); /*[2]*/
+    @include mq($from: desktop) {
+      @include vr-offset($font-body, $font-size-md);
+    }
   }
 }
 .o-text--lg {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-lg); /*[2]*/
+    @include vr-offset($font-body, $font-size-md); /*[2]*/
+    @include mq($from: desktop) {
+      @include vr-offset($font-body, $font-size-lg);
+    }
   }
 }
 .o-text--xl {
   &#{&} { /*[1]*/
-    @include vr-offset($font-display, $font-size-xl); /*[2]*/
+    @include vr-offset($font-body, $font-size-lg); /*[2]*/
+    @include mq($from: desktop) {
+      @include vr-offset($font-body, $font-size-xl);
+    }
   }
 }

@@ -5,7 +5,7 @@
         
         <!-- PREVIOUS -->
         <nuxt-link
-          :to="'/work/projects/' + previous.slug"
+          :to="'/projects/' + previous.slug + '/'"
           :class="linkClass"
           class="
             _link
@@ -24,7 +24,7 @@
         
         <!-- NEXT -->
         <nuxt-link
-          :to="'/work/projects/' + next.slug"
+          :to="'/projects/' + next.slug + '/'"
           :class="linkClass"
           class="
             _link
@@ -48,7 +48,7 @@
         <nuxt-link
           @click.native="setScrollTo"
           :class="linkClass"
-          :to="'/work'"
+          :to="'/'"
           class="
             _link
             _close-control-wrapper
@@ -141,8 +141,8 @@
     }
   }
   ._link {
-    margin-top: 1px;
-    margin-bottom: -1px;
+    // margin-top: 1px;
+    // margin-bottom: -1px;
     padding-top: $navbar-padding-y;
     padding-bottom: $navbar-padding-y;
     color: $neutral-100;

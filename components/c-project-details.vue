@@ -1,7 +1,7 @@
 <template>
   <div
     class="c-project-details"
-    :style="'margin-top: -1px; border-bottom: 1px solid ' + color">
+    :style="'border-bottom: 1px solid ' + color">
 
     <l-wrapper class="c-project-details__inner">
       

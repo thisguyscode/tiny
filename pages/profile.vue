@@ -478,7 +478,7 @@
 
           <section class="fantasies" id="fantasies">
             <h2 class="o-heading o-heading--beta u-margin-bottom-none">Current fantasies</h2>
-            <span class="o-heading o-heading--gamma">(subject to frequent change)</span>
+            <p class="o-heading o-heading--gamma">(subject to frequent change)</p>
 
             <l-grid>
 

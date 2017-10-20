@@ -3,7 +3,7 @@
     <c-image
       v-if="bgImageSrc"
       :lazy="false"
-      class='c-hero__background-image'
+      class='c-hero__background-image  o-liner'
       fit="cover"
       :class="bgImageClass"
       :style="'opacity: ' + bgImageOpacity"
@@ -101,6 +101,8 @@ $border: inset 0 -1px 0 0 $neutral-80;
   box-shadow: $border;
   color: $lightest;
   min-height: $unit-xxl*2;
+  // margin-bottom: -1px;
+  // margin-top: -1px;
 
   @include mq($from: tablet) {
     min-height: $unit-xxl*5;
@@ -111,12 +113,7 @@ $border: inset 0 -1px 0 0 $neutral-80;
 /* Child classes
 ======================================================================== */
 .c-hero__background-image {
-  position: absolute;
   opacity: .4;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
 }
 
 .c-hero__text-wrapper {

@@ -1,5 +1,5 @@
 <template>
-  <div class="c-gridlines">
+  <div class="c-gridlines o-liner">
       <l-wrapper class="u-fill-height">
         <div class="l-grid l-grid--flush  u-fill-height">
           <div class="_column  l-grid__cell u-1/5"></div>
@@ -23,13 +23,7 @@ export default {
 
 <style lang="scss" scoped>
   
-  
-  
-
   .c-gridlines {
-    position: absolute;
-    width: 100%;
-    height: 100%;
     pointer-events: none;
   }
 

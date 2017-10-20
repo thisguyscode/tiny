@@ -1,0 +1,38 @@
+/* ==========================================================================
+   # LINER
+========================================================================== */
+
+/**
+ * This object requires that its parent provide a positioning context
+ * E.g. positon: relative (on parent)
+ */
+
+
+/* Base class
+======================================================================== */
+.o-liner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+/* Layout modifiers
+======================================================================== */
+.o-liner--break-top {
+  top: auto;
+}
+
+.o-liner--break-right {
+  right: auto;
+}
+
+.o-liner--break-bottom {
+  bottom: auto;
+}
+
+.o-liner--break-left {
+  left: auto;
+}

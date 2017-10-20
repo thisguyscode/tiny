@@ -28,10 +28,10 @@ $font-size-lg:    $font-size-lg;
  *    which is detected on page load
  */
 .o-text {
-  @include vr($font-display, $font-size-sm); /*[1]*/
+  @include vr($font-body, $font-size-md); /*[1]*/
   
   @include mq($from: desktop) {
-    @include vr($font-display, $font-size-md); /*[1]*/
+    @include vr($font-body, $font-size-lg); /*[1]*/
   }
   
   margin: 0;
@@ -42,16 +42,29 @@ $font-size-lg:    $font-size-lg;
 /* Font size modifiers
 ======================================================================== */
 .o-text--xs {
-  @include vr($font-display, $font-size-xs);
+  @include vr($font-body, $font-size-xs);
+  @include mq($from: desktop) {
+    @include vr($font-body, $font-size-sm);
+  }
 }
+
 .o-text--sm {
-  @include vr($font-display, $font-size-sm);
+  @include vr($font-body, $font-size-sm);
+  @include mq($from: desktop) {
+    @include vr($font-body, $font-size-md);
+  }
 }
 .o-text--lg {
-  @include vr($font-display, $font-size-lg);
+  @include vr($font-body, $font-size-md);
+  @include mq($from: desktop) {
+    @include vr($font-body, $font-size-lg);
+  }
 }
 .o-text--xl {
-  @include vr($font-display, $font-size-xl);
+  @include vr($font-body, $font-size-lg);
+  @include mq($from: desktop) {
+    @include vr($font-body, $font-size-xl);
+  }
 }
 
 

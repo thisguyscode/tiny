@@ -120,9 +120,9 @@ export default {
 
       var currentProject = projectsArray.find(function (item) {
         if (currentPath.endsWith('/')) {
-          return '/work/projects/' + item.slug + '/' === currentPath
+          return '/projects/' + item.slug + '/' === currentPath
         } else {
-          return '/work/projects/' + item.slug === currentPath
+          return '/projects/' + item.slug === currentPath
         }
       })
 
@@ -148,9 +148,9 @@ export default {
       var currentPath = to.path
       var nextProject = this.$store.state.projectsArray.find(function (item) {
         if (currentPath.endsWith('/')) {
-          return '/work/projects/' + item.slug + '/' === currentPath
+          return '/projects/' + item.slug + '/' === currentPath
         } else {
-          return '/work/projects/' + item.slug === currentPath
+          return '/projects/' + item.slug === currentPath
         }
       })
       return nextProject.color

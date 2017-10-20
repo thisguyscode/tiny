@@ -23,7 +23,7 @@ export default {
     text-align: left;
     z-index: 9000;
     position: relative;
-    margin-top: -1px;
+    // margin-top: -1px;
   }
 
   .l-header-primary__actual,

@@ -3,10 +3,10 @@
     <div v-if="transitionEnd" class="_panel" :class="panelClass">
       <nuxt-link
         class="_link"
-        :to="'/work/projects/' + project.slug"
+        :to="'/projects/' + project.slug + '/'"
       >
         <div
-          class="_image-wrapper"
+          class="_image-wrapper  o-liner"
           :class="imgWrapperClass"
           :style="
             'background-color: ' + project.color
@@ -166,12 +166,6 @@ export default {
   }
 
   ._image-wrapper {
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     transition: filter .1s ease, opacity .1s ease;
     opacity: .8;
     
@@ -189,17 +183,6 @@ export default {
       @include mq($from: tablet) {
         padding: $unit-xl;
       }
-    }
-  }
-
-  ._image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: 50% 50%;
-
-    &.--cover {
-      object-fit: cover;
     }
   }
 

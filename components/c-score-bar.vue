@@ -1,7 +1,7 @@
 <template>
   <div class="c-score-bar">
     <div v-if="!nobar" class="bar">
-      <div class="fill" :class="scoreClass" :style="fillStyle"></div>
+      <div class="fill o-liner o-liner--break-right" :class="scoreClass" :style="fillStyle"></div>
     </div>
     <span class="score  o-text o-text--lg">
       <span class="score-number" :class="scoreClass">{{ score }}</span>/{{ of }}
@@ -90,10 +90,6 @@ export default {
     margin-right: $unit-sm;
   }
   .fill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
     display: inline-block;
     &.lowest {
       background-color: $red;

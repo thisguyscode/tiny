@@ -1,7 +1,7 @@
 <template>
   <div
     class="c-project-details"
-    :style="'border-bottom: 1px solid ' + color">
+    :style="'margin-top: -1px; border-bottom: 1px solid ' + color">
 
     <l-wrapper class="c-project-details__inner">
       
@@ -328,11 +328,11 @@ $transition-easing: ease;
 
 .c-project-details__item-string,
 .c-project-details__overview-string {
-  // color: $neutral-40;
+  color: $neutral-40;
 }
 
 
-.c-project-details__inner {
-  margin-bottom: -1px;
-}
+// .c-project-details__inner {
+//   margin-bottom: -1px;
+// }
 </style>

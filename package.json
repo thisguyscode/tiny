@@ -43,6 +43,7 @@
     "precommit": "npm run lint"
   },
   "devDependencies": {
+    "@epegzz/sass-vars-loader": "^2.0.2",
     "babel-eslint": "^7.1.1",
     "del": "^3.0.0",
     "eslint": "^3.15.0",

@@ -59,6 +59,8 @@
               v-if="imgSrc"
               :fit="imgClass"
               :imageSrc="imgSrc"
+              :desktop=".7"
+              :wide=".6"
             />
           </div>
         </div>   

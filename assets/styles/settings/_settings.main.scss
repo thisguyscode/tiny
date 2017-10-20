@@ -36,13 +36,14 @@ $content-max-width:  1400px;
 *   BREAKPOINTS
 *   Fed to both "sass-mq" module and "utilities.widths"
 */
-$mq-breakpoints: (
-  tiny:  320px,
-  mobile:  540px,
-  tablet:  740px,
-  desktop: 1000px,
-  wide:    1300px
-);
+// $mq-breakpoints: (
+//   tiny:  map_get($breakpoints, tiny),
+//   mobile:  map_get($breakpoints, mobile),
+//   tablet:  map_get($breakpoints, tablet),
+//   desktop: map_get($breakpoints, desktop),
+//   wide:    map_get($breakpoints, wide),
+// );
+$mq-breakpoints: ($breakpoints);
 
 
 /**

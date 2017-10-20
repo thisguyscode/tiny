@@ -185,7 +185,6 @@ $primary-color: $clr-primary;
   white-space: nowrap;
   text-align: center;
   display: inline-block;
-  // color: $neutral-00;
   // min-width: 100%;
   @include mq($until: tablet) {
     background: $default-color;
@@ -201,7 +200,7 @@ $primary-color: $clr-primary;
 ======================================================================== */
 .c-button__text {
   font-weight: $font-weight;
-  // color: $neutral-00;
+  color: $neutral-00;
 }
 .c-button__icon {
   height: 1em;
@@ -236,6 +235,10 @@ $primary-color: $clr-primary;
 
   &:hover {
     background-color: rgba($primary-color, .9);
+    .c-button__text,
+    .c-button__icon {
+      color: contrasting-color($primary-color, $darkest, $lightest);
+    }
   }
 }
 

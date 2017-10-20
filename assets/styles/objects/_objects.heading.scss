@@ -30,8 +30,6 @@ $font-size-xxxxl: $font-size-xxxxl;
  *    which is applied on page load
  */
 .o-heading {
-  transition: top .4s ease-out; /*[1]*/
-  will-change: top;
   font-weight: $font-weight-bold;
   margin-bottom: $heading-trailer;
   position: relative;
@@ -41,17 +39,32 @@ $font-size-xxxxl: $font-size-xxxxl;
 /* Font size modifiers
 ======================================================================== */
 .o-heading--alpha {
-  @include vr($font-display, $font-size-xxxxl);
+  @include vr($font-display, $font-size-xxxl);
+  @include mq($from: desktop) {
+    @include vr($font-display, $font-size-xxxxl);
+  }
 }
 .o-heading--beta {
-  @include vr($font-display, $font-size-xxxl);
+  @include vr($font-display, $font-size-xxl);
+  @include mq($from: desktop) {
+    @include vr($font-display, $font-size-xxxl);
+  }
 }
 .o-heading--gamma {
-  @include vr($font-display, $font-size-xxl);
+  @include vr($font-display, $font-size-xl);
+  @include mq($from: desktop) {
+    @include vr($font-display, $font-size-xxl);
+  }
 }
 .o-heading--delta {
-  @include vr($font-display, $font-size-xl);
+  @include vr($font-display, $font-size-lg);
+  @include mq($from: desktop) {
+    @include vr($font-display, $font-size-xl);
+  }
 }
 .o-heading--zeta {
-  @include vr($font-body, $font-size-lg);
+  @include vr($font-body, $font-size-md);
+  @include mq($from: desktop) {
+    @include vr($font-display, $font-size-lg);
+  }
 }

@@ -29,9 +29,11 @@ $font-size-lg:    $font-size-lg;
  */
 .o-text {
   @include vr($font-display, $font-size-md); /*[1]*/
+  @include mq($from: desktop) {
+    @include vr($font-display, $font-size-sm); /*[1]*/
+  }
   margin: 0;
   position: relative;
-  // transition: top 3s ease; /*[2]*/
 }
 
 

@@ -91,6 +91,7 @@ $light:      $lightest;
   left: 0;
   width: 100%;
   z-index: 1000;
+  height: $navbar-height;
   transition: box-shadow .8s ease, background-color .8s ease;
   &.dark {
     box-shadow: inset 0 1px 0 0 rgba($neutral-100, .2);

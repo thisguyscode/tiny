@@ -14,7 +14,7 @@ export default {}
 
 /* Variables
 ======================================================================== */
-$baseline-size: 1;
+$baseline-size: 2;
 $background-size: $rhythm / 2;
 $baseline-color: $neutral-90;
 

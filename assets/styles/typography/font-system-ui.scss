@@ -102,9 +102,11 @@ $cap-font-mono:					.115em;
 .o-text {
   &#{&} { /*[1]*/
     @include vr-offset($font-display, $font-size-sm); /*[2]*/
+    
     @include mq($from: desktop) {
       @include vr-offset($font-display, $font-size-md); /*[2]*/
     }
+    
     // color: $red;
   }
 }

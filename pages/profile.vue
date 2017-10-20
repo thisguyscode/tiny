@@ -32,7 +32,7 @@
 
           <section class="hard-skills" id="hard-skills">
             <h2 class="o-heading o-heading--beta u-margin-bottom-none">Hard skills</h2>
-            <p class="o-text o-text--sm">Completely arbitrary ratings scores for my skills</p>
+            <p class="p-profile__caption o-text o-text--sm">Completely arbitrary ratings scores for my skills</p>
             
             <section class="skills-design-section">
               <h3 class="o-heading o-heading--gamma">Design:</h3>
@@ -49,7 +49,7 @@
                     <h4 class="o-heading o-heading--zeta">Adobe</h4>
                   </div>
                   <c-score-bar :percent="80" :of="10"></c-score-bar>
-                  <p class="o-text o-text--sm">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
+                  <p class="p-profile__caption o-text o-text--sm">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
                 </div>
                 
                 <!-- spacer -->
@@ -65,7 +65,7 @@
                     <h4 class="o-heading o-heading--zeta">Adobe</h4>
                   </div>
                   <c-score-bar :percent="60" :of="10"></c-score-bar>
-                  <p class="o-text o-text--sm">Though I'm perfectly familiar with Illustrator and most of its tools, I lack the ability to use it to its full potential (given that I lack the sufficient illustration skill)</p>
+                  <p class="p-profile__caption o-text o-text--sm">Though I'm perfectly familiar with Illustrator and most of its tools, I lack the ability to use it to its full potential (given that I lack the sufficient illustration skill)</p>
                 </div>
 
                 <!-- spacer -->
@@ -81,7 +81,7 @@
                     <h4 class="o-heading o-heading--zeta">Adobe</h4>
                   </div>
                   <c-score-bar :percent="50" :of="10"></c-score-bar>
-                  <p class="o-text o-text--sm">Proficient in the fundamentals and able to learn new tools quickly. Understand basics of print-preparation</p>
+                  <p class="p-profile__caption o-text o-text--sm">Proficient in the fundamentals and able to learn new tools quickly. Understand basics of print-preparation</p>
                 </div>
 
                 <!-- spacer -->
@@ -101,7 +101,7 @@
                     <h4 class="o-heading o-heading--zeta">Bohemian Coding</h4>
                   </div>
                   <c-score-bar :percent="60" :of="10"></c-score-bar>
-                  <p class="o-text o-text--sm">Mostly familiar with the possibilities and best practices but don't yet make full use of the more complex features and plugins</p>
+                  <p class="p-profile__caption o-text o-text--sm">Mostly familiar with the possibilities and best practices but don't yet make full use of the more complex features and plugins</p>
                 </div>
 
                 <!-- spacer -->
@@ -121,7 +121,7 @@
                     <h4 class="o-heading o-heading--zeta">InVision</h4>
                   </div>
                   <c-score-bar :percent="80" :of="10"></c-score-bar>
-                  <p class="o-text o-text--sm">Familiar with almost the entirety of this product, though I imagine with their new Sketch integrations I'll have a lot to learn</p>
+                  <p class="p-profile__caption o-text o-text--sm">Familiar with almost the entirety of this product, though I imagine with their new Sketch integrations I'll have a lot to learn</p>
                 </div>
 
               </l-grid>
@@ -143,7 +143,7 @@
                     </div>
                     <c-score-bar :nobar="true" :percent="80" :of="10"></c-score-bar>
                   </div>
-                  <p class="o-text o-text--sm">Understand the full specification and best practices for implementation, including project structure</p>
+                  <p class="p-profile__caption o-text o-text--sm">Understand the full specification and best practices for implementation, including project structure</p>
                 </div>
                 
                 <!-- spacer -->
@@ -164,7 +164,7 @@
                     </div>
                     <c-score-bar :nobar="true" :percent="60" :of="10"></c-score-bar>
                   </div>
-                  <p class="o-text o-text--sm">Can implement solid SCSS structure which generates clean CSS. Have a lot to learn regarding 'Sass functions'</p>
+                  <p class="p-profile__caption o-text o-text--sm">Can implement solid SCSS structure which generates clean CSS. Have a lot to learn regarding 'Sass functions'</p>
                 </div>
 
                 <!-- spacer -->
@@ -181,7 +181,7 @@
                     </div>
                     <c-score-bar :nobar="true" :percent="80" :of="10"></c-score-bar>
                   </div>
-                  <p class="o-text o-text--sm">No &lt;div&gt; soup with me. I understand the importance of semantic markup</p>
+                  <p class="p-profile__caption o-text o-text--sm">No &lt;div&gt; soup with me. I understand the importance of semantic markup</p>
                 </div>
 
                 <!-- spacer -->
@@ -202,7 +202,7 @@
                     </div>
                     <c-score-bar :nobar="true" :percent="60" :of="10"></c-score-bar>
                   </div>
-                  <p class="o-text o-text--sm">Not masses to know about Node Package Manager, but I know a good deal of it.</p>
+                  <p class="p-profile__caption o-text o-text--sm">Not masses to know about Node Package Manager, but I know a good deal of it.</p>
                 </div>
 
                 <!-- spacer -->
@@ -223,7 +223,7 @@
                     </div>
                     <c-score-bar :nobar="true" :percent="30" :of="10"></c-score-bar>
                   </div>
-                  <p class="o-text o-text--sm">I can throw together a basic Gulp build process. Recently started exploring Gulp 4.0</p>
+                  <p class="p-profile__caption o-text o-text--sm">I can throw together a basic Gulp build process. Recently started exploring Gulp 4.0</p>
                 </div>
 
                 <!-- spacer -->
@@ -239,7 +239,7 @@
                     </div>
                     <c-score-bar :nobar="true" :percent="40" :of="10"></c-score-bar>
                   </div>
-                  <p class="o-text o-text--sm">I adore git. I'm no pro, but it's one fo the tools I appreciate the most.</p>
+                  <p class="p-profile__caption o-text o-text--sm">I adore git. I'm no pro, but it's one fo the tools I appreciate the most.</p>
                 </div>
 
                 <!-- spacer -->
@@ -255,7 +255,7 @@
                     </div>
                     <c-score-bar :nobar="true" :percent="40" :of="10"></c-score-bar>
                   </div>
-                  <p class="o-text o-text--sm">Similarly to git, I am not a pro, but know enough to collaborate with your dev team</p>
+                  <p class="p-profile__caption o-text o-text--sm">Similarly to git, I am not a pro, but know enough to collaborate with your dev team</p>
                 </div>
 
                 <!-- spacer -->
@@ -275,7 +275,7 @@
                     </div>
                     <c-score-bar :nobar="true" :percent="20" :of="10"></c-score-bar>
                   </div>
-                  <p class="o-text o-text--sm">I really haven't had the chance to learn the fundamentals of Javascript yet, despite having used and modified JS code often.</p>
+                  <p class="p-profile__caption o-text o-text--sm">I really haven't had the chance to learn the fundamentals of Javascript yet, despite having used and modified JS code often.</p>
                 </div>
 
                 <!-- spacer -->
@@ -295,7 +295,7 @@
                     </div>
                     <c-score-bar :nobar="true" :percent="40" :of="10"></c-score-bar>
                   </div>
-                  <p class="o-text o-text--sm">Despite my lack of Javascript knowledge I've been able to get familiar with many other aspects of the Vue.js framework</p>
+                  <p class="p-profile__caption o-text o-text--sm">Despite my lack of Javascript knowledge I've been able to get familiar with many other aspects of the Vue.js framework</p>
                 </div>
 
               </l-grid>
@@ -323,7 +323,7 @@
                     </div>
                     <div class="l-grid__cell u-4/5 u-1/1@tablet">
                       <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">Written & verbal communication</h4>
-                      <p class="o-text o-text--sm">...but only in English</p>
+                      <p class="p-profile__caption o-text o-text--sm">...but only in English</p>
                     </div>
                   </l-grid>
                 </div>
@@ -341,7 +341,7 @@
                     </div>
                     <div class="l-grid__cell u-4/5 u-1/1@tablet">
                       <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">Common-sense design</h4>
-                      <p class="o-text o-text--sm">Designing without data is underrated</p>
+                      <p class="p-profile__caption o-text o-text--sm">Designing without data is underrated</p>
                     </div>
                   </l-grid>
                 </div>
@@ -359,7 +359,7 @@
                     </div>
                     <div class="l-grid__cell u-4/5 u-1/1@tablet">
                       <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">'User' interface design</h4>
-                      <p class="o-text o-text--sm">I prefer 'screen' interface design - every interface is a user interface</p>
+                      <p class="p-profile__caption o-text o-text--sm">I prefer 'screen' interface design - every interface is a user interface</p>
                     </div>
                   </l-grid>
                 </div>
@@ -377,7 +377,7 @@
                     </div>
                     <div class="l-grid__cell u-4/5 u-1/1@tablet">
                       <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">Optimising processes</h4>
-                      <p class="o-text o-text--sm">I'll put in the time now to save someone else it in the future</p>
+                      <p class="p-profile__caption o-text o-text--sm">I'll put in the time now to save someone else it in the future</p>
                     </div>
                   </l-grid>
                 </div>
@@ -395,7 +395,7 @@
                     </div>
                     <div class="l-grid__cell u-4/5 u-1/1@tablet">
                       <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">System-mindedness</h4>
-                      <p class="o-text o-text--sm">Making things that play nice with other things</p>
+                      <p class="p-profile__caption o-text o-text--sm">Making things that play nice with other things</p>
                     </div>
                   </l-grid>
                 </div>
@@ -413,7 +413,7 @@
                     </div>
                     <div class="l-grid__cell u-4/5 u-1/1@tablet">
                       <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">Empathising</h4>
-                      <p class="o-text o-text--sm">Absolutely essential for a designer</p>
+                      <p class="p-profile__caption o-text o-text--sm">Absolutely essential for a designer</p>
                     </div>
                   </l-grid>
                 </div>
@@ -429,7 +429,7 @@
                 <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="user-circle"></c-icon>
-                    <h4 class="o-text o-text--sm">User experience design</h4>
+                    <h4 class="p-profile__caption o-text o-text--sm">User experience design</h4>
                   </span>
                 </div>
 
@@ -438,14 +438,14 @@
                 <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="bar-chart"></c-icon>
-                    <h4 class="o-text o-text--sm">Data-informed design</h4>
+                    <h4 class="p-profile__caption o-text o-text--sm">Data-informed design</h4>
                   </span>
                 </div>
 
                 <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="pied-piper"></c-icon>
-                    <h4 class="o-text o-text--sm">Branding</h4>
+                    <h4 class="p-profile__caption o-text o-text--sm">Branding</h4>
                   </span>
                 </div>
 
@@ -454,13 +454,13 @@
                 <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="pencil"></c-icon>
-                    <h4 class="o-text o-text--sm">Prototyping</h4>
+                    <h4 class="p-profile__caption o-text o-text--sm">Prototyping</h4>
                   </span>
                 </div>
                 <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="bullhorn"></c-icon>
-                    <h4 class="o-text o-text--sm">Presentation</h4>
+                    <h4 class="p-profile__caption o-text o-text--sm">Presentation</h4>
                   </span>
                 </div>
               </l-grid>
@@ -494,7 +494,7 @@
                     <h4 class="item-heading">Title</h4>
                   </div> -->
                   <div class="l-grid__cell u-3/5 u-1/1@tablet">
-                    <p class="o-text o-text--sm">Help to usher in a practical alternative to (not replacement for) the traditional market economy</p>
+                    <p class="p-profile__caption o-text o-text--sm">Help to usher in a practical alternative to (not replacement for) the traditional market economy</p>
                   </div>
                 </l-grid>
               </div>
@@ -514,7 +514,7 @@
                     <h4 class="item-heading">Title</h4>
                   </div> -->
                   <div class="l-grid__cell u-3/5 u-1/1@tablet">
-                    <p class="o-text o-text--sm">Build my own house using earth/eco building methods</p>
+                    <p class="p-profile__caption o-text o-text--sm">Build my own house using earth/eco building methods</p>
                   </div>
                 </l-grid>
               </div>
@@ -534,7 +534,7 @@
                     <h4 class="item-heading">Title</h4>
                   </div> -->
                   <div class="l-grid__cell u-3/5 u-1/1@tablet">
-                    <p class="o-text o-text--sm">Learn to forge high-quality kitchen knives</p>
+                    <p class="p-profile__caption o-text o-text--sm">Learn to forge high-quality kitchen knives</p>
                   </div>
                 </l-grid>
           
@@ -645,7 +645,10 @@
 
 
 /* Child classes
-======================================================================== */ 
+======================================================================== */
+.p-profile__caption {
+  color: $neutral-30;
+}
 ._mostly {
   color: $neutral-100;
 }

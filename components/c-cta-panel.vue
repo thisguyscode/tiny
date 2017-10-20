@@ -8,7 +8,7 @@
               <h1 class="o-heading o-heading--beta">{{ mainCtaHeading }}</h1>
             </div>
             <div class="l-grid__cell  u-2/3@tablet">
-              <p class="o-text o-text--paragraph">{{ mainCtaBodyText }}</p>
+              <p class="c-cta-panel__main-body-text o-text o-text--paragraph">{{ mainCtaBodyText }}</p>
             </div>
             <div class="l-grid__cell  u-1/3@tablet">
             </div>
@@ -92,6 +92,10 @@
       padding-top: $unit-xxl*2;
       padding-bottom: $unit-xxl*2;
     }
+  }
+
+  .c-cta-panel__main-body-text {
+    color: $neutral-30;
   }
 
   ._main-cta-button {

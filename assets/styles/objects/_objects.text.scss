@@ -28,10 +28,12 @@ $font-size-lg:    $font-size-lg;
  *    which is detected on page load
  */
 .o-text {
-  @include vr($font-display, $font-size-md); /*[1]*/
+  @include vr($font-display, $font-size-sm); /*[1]*/
+  
   @include mq($from: desktop) {
-    @include vr($font-display, $font-size-sm); /*[1]*/
+    @include vr($font-display, $font-size-md); /*[1]*/
   }
+  
   margin: 0;
   position: relative;
 }

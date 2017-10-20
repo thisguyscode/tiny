@@ -149,7 +149,9 @@ export default {
 
 <style lang="scss" scoped>
 
-  
+  .c-project-overview__detail {
+    color: $neutral-30;
+  }
   
 
   .c-project-overview {

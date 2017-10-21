@@ -18,7 +18,7 @@
 // Modifiers
 .o-heading--alpha {
   &#{&} { /*[1]*/
-    @include vr-offset($cap-height, $font-size-xxxl);
+    @include vr-offset($cap-height, $font-size-xxl);
     
     @include mq($from: desktop) {
       @include vr-offset($cap-height, $font-size-xxxxl);

@@ -155,10 +155,12 @@ export default {
       }
     },
     sourceSrcset: function () {
-      if (!this.lazy && !this.responsive) {
-        return this.asset.webpSrc
+      if (this.lazy) {
+        return this.asset.webpPlaceholder
       } else if (!this.lazy && this.responsive) {
         return this.asset.webpSrcset
+      } else if (!this.lazy && !this.responsive) {
+        return this.asset.webpSrc
       } else {
         return null
       }

@@ -1,0 +1,9 @@
+/* ==========================================================================
+   # SYSTEM UI (as display font)
+========================================================================== */
+
+/** Redefine the cap height of this particular typeface */
+$cap-height:			.124em;
+
+/** Import the body-font offset classes */
+@import './display-font-offset';

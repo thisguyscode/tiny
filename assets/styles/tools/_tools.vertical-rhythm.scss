@@ -58,7 +58,7 @@
 
 /* Recalculate only the offset and apply top offset to selector
 ======================================================================== */
-@mixin vr-offset($font-family: $font-body, $font-size: $base-font-size) {
+@mixin vr-offset($cap-height: $cap-font-body, $font-size: $base-font-size) {
   
   /**
    * VARIABLE defininitions
@@ -79,24 +79,13 @@
   // Shift the text to the baseline (distance between the baseline and descender height).
   $baseline-shift: (($adjusted-line-height - $font-size) * 0.5);
 
+  // Define the offset
+  $offset: #{$cap-height} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
+  
   /**
    * STYLES created
    */
-
-  // Set offsets and font families.
-  @if $font-family == $font-display {
-    $offset: #{$cap-font-display} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
-    // transform: translateY(calc(#{$offset}));
-    top: calc(#{$offset});
-  } @else if $font-family == $font-mono {
-    $offset: #{$cap-font-mono} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
-    // transform: translateY(calc(#{$offset}));
-    top: calc(#{$offset});
-  } @else {
-    $offset: #{$cap-font-body} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
-    // transform: translateY(calc(#{$offs
-    top: calc(#{$offset});
-  }
+  top: calc(#{$offset});
 }
 
 

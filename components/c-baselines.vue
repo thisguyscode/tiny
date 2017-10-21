@@ -14,7 +14,7 @@ export default {}
 
 /* Variables
 ======================================================================== */
-$baseline-size: 2;
+$baseline-size: 1;
 $background-size: $rhythm / 2;
 $baseline-color: $neutral-90;
 
@@ -29,10 +29,12 @@ $baseline-color: $neutral-90;
   background-repeat: repeat-y;
   background-position: 0 0;
   background-image: linear-gradient(
-    $baseline-color,
+    to bottom,
     $baseline-color $baseline-size + px,
     transparent $baseline-size + px,
     transparent
   );
 }
+
+		
 </style>

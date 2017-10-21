@@ -30,8 +30,8 @@ export default {
   ._column {
     height: 100%;
     @include mq($from: tablet) {
-      box-shadow: inset -1px 0 0 $grid-lines-color;
-      &:first-of-type {
+      box-shadow: inset 1px 0 0 $grid-lines-color;
+      &:last-of-type {
         box-shadow: inset -1px 0 0 $grid-lines-color, inset 1px 0 0 $grid-lines-color;
       }
     }

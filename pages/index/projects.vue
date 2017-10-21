@@ -87,7 +87,7 @@ export default {
   /** Initialize reactive data values */
   data: () => {
     return {
-      transitionEnd: false,
+      transitionEnd: true,
       projectColor: '',
       currentProject: {
         slug: '',
@@ -110,14 +110,13 @@ export default {
      * Could be shortened/optimized/split-up fosho
      */
     setProjects: function (to) {
-      var projectsArray = this.$store.state.projectsArray
-      /** Match the current path with the project.slug to set currentProject  */
       if (to) {
         var currentPath = to.path
       } else {
         currentPath = this.$route.path
       }
 
+      var projectsArray = this.$store.state.projectsArray
       var currentProject = projectsArray.find(function (item) {
         if (currentPath.endsWith('/')) {
           return '/projects/' + item.slug + '/' === currentPath
@@ -139,6 +138,7 @@ export default {
       } else {
         previousProjectIndex = projectsArray.indexOf(currentProject) - 1
       }
+
       /** Get the objects of previous and next projects by index in projectsArray */
       this.currentProject = currentProject
       this.nextProject = projectsArray[nextProjectIndex]
@@ -178,15 +178,8 @@ export default {
   /** Get the projects and store then set the local data on initial mount */
   mounted () {
     this.setProjects()
-    setTimeout(() => {
-      window.scrollTo(0, 0)
-      setTimeout(() => {
-        this.projectColor = this.currentProject.color
-      }, 50)
-      setTimeout(() => {
-        this.transitionEnd = true
-      }, 100)
-    }, 0)
+    this.projectColor = this.currentProject.color
+    window.scrollTo(0, 0)
   }
 }
 </script>

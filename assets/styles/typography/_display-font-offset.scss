@@ -1,0 +1,63 @@
+/* ==========================================================================
+   # DISPLAY FONT OFFSET
+========================================================================== */
+
+/**
+ * Imported in each of the body-font-... files after the new cap-height
+ * variable has been set
+ */
+
+
+// Base class (currently unused)
+// .o-heading {
+//   &#{&} { /*[1]*/
+    
+//   }
+// }
+
+// Modifiers
+.o-heading--alpha {
+  &#{&} { /*[1]*/
+    @include vr-offset($cap-height, $font-size-xxxl);
+    
+    @include mq($from: desktop) {
+      @include vr-offset($cap-height, $font-size-xxxxl);
+    }
+  }
+}
+.o-heading--beta {
+  &#{&} { /*[1]*/
+    @include vr-offset($cap-height, $font-size-xxl);
+    
+    @include mq($from: desktop) {
+      @include vr-offset($cap-height, $font-size-xxxl);
+    }
+  }
+}
+.o-heading--gamma {
+  &#{&} { /*[1]*/
+    @include vr-offset($cap-height, $font-size-xl);
+    
+    @include mq($from: desktop) {
+      @include vr-offset($cap-height, $font-size-xxl);
+    }
+  }
+}
+.o-heading--delta {
+  &#{&} { /*[1]*/
+    @include vr-offset($cap-height, $font-size-lg);
+    
+    @include mq($from: desktop) {
+      @include vr-offset($cap-height, $font-size-xl);
+    }
+  }
+}
+.o-heading--zeta {
+  &#{&} { /*[1]*/
+    @include vr-offset($font-body, $font-size-md);
+    
+    @include mq($from: desktop) {
+      @include vr-offset($cap-height, $font-size-lg);
+    }
+  }
+}

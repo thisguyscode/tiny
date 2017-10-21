@@ -14,15 +14,19 @@
                 <!-- Group -->
                 <f-link
                   class="_project-group o-heading o-heading--delta"
-                  :class="textClass"
+                  :class="setTextClass(project)"
                   :externalLink="project.groupLink">
                   {{ project.group }}
-                  <c-icon class="_icon" name="external-link"></c-icon>
+                  <c-icon
+                    v-if="project.group"
+                    class="_icon"
+                    name="external-link">
+                  </c-icon>
                 </f-link>
                 <!-- Title -->
                 <h1
                   class="_project-title  o-heading o-heading--alpha"
-                  :class="textClass">
+                  :class="setTextClass(project)">
                   {{ project.name }}
                 </h1>
 
@@ -33,14 +37,14 @@
         </div><!--END Hero text panel -->
         
         <!-- Hero image panel -->
-        <div class="_hero-image-cell l-grid__cell u-3/5@tablet" :class="imgClass">
-          <div class="_hero-image-reference  o-liner" :class="imgWrapperClass">
+        <div class="_hero-image-cell l-grid__cell u-3/5@tablet" :class="setImgClass(project)">
+          <div class="_hero-image-reference  o-liner" :class="setImgWrapperClass(project)">
             <div class="_hero-image-wrapper">
               <!-- <transition name="slide-from-right"> -->
                 <c-image
                   :lazy="false"
-                  v-if="transitionEnd"
-                  :fit="imgClass"
+                  v-if="transitionEnd && project.imgSrc"
+                  :fit="setImgClass(project)"
                   :imageSrc="project.imgSrc"
                 />
               <!-- </transition> -->
@@ -110,25 +114,25 @@
           return 'padded'
         }
       }
-    },
-    watch: {
-      '$route' (to, from) {
-        var self = this
-        setTimeout(function () {
-          self.textClass = self.setTextClass(self.project)
-          self.imgClass = self.setImgClass(self.project)
-          self.imgWrapperClass = self.setImgWrapperClass(self.project)
-        }, 400)
-      }
-    },
-    mounted () {
-      var self = this
-      setTimeout(function () {
-        self.textClass = self.setTextClass(self.project)
-        self.imgClass = self.setImgClass(self.project)
-        self.imgWrapperClass = self.setImgWrapperClass(self.project)
-      }, 100)
     }
+    // watch: {
+    //   '$route' (to, from) {
+    //     var self = this
+    //     setTimeout(function () {
+    //       self.textClass = self.setTextClass(self.project)
+    //       self.imgClass = self.setImgClass(self.project)
+    //       self.imgWrapperClass = self.setImgWrapperClass(self.project)
+    //     }, 600)
+    //   }
+    // },
+    // mounted () {
+    //   var self = this
+    //   setTimeout(function () {
+    //     self.textClass = self.setTextClass(self.project)
+    //     self.imgClass = self.setImgClass(self.project)
+    //     self.imgWrapperClass = self.setImgWrapperClass(self.project)
+    //   }, 100)
+    // }
   }
 </script>
 
@@ -257,6 +261,7 @@
     margin-bottom: $heading-trailer;
     text-decoration: none;
     color: inherit;
+    display: inline-block;
     // opacity: .4;
     cursor: pointer;
     

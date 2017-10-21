@@ -226,6 +226,7 @@ $primary-color: $clr-primary;
 .c-button--solid {
   background-color: $primary-color;
   transition: background-color .2s ease;
+  box-shadow: 0 1px $green;
   &:hover {
     background-color: darken($primary-color, 5%);
   }
@@ -233,7 +234,7 @@ $primary-color: $clr-primary;
 
 
 .c-button--ghost {
-  box-shadow: inset 0 0 0 1px $primary-color;
+  box-shadow: inset 0 0 0 1px $primary-color, 0 1px 0 0 $green;;
   transition: background-color .2s ease;
 
   .c-button__icon {

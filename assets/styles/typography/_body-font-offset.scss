@@ -1,0 +1,59 @@
+/* ==========================================================================
+   # BODY FONT OFFSET
+========================================================================== */
+
+/**
+ * Imported in each of the body-font-... files after the new cap-height
+ * variable has been set
+ */
+
+
+// Base
+.o-text {
+  &#{&} { /*[1]*/
+    @include vr-offset($cap-height, $font-size-md); /*[2]*/
+    
+    @include mq($from: desktop) {
+      @include vr-offset($cap-height, $font-size-lg); /*[2]*/
+    }
+
+  }
+}
+
+// Modifiers
+.o-text--xs {
+  &#{&} { /*[1]*/
+    @include vr-offset($cap-height, $font-size-xs); /*[2]*/
+    
+    @include mq($from: desktop) {
+      @include vr-offset($cap-height, $font-size-sm);
+    }
+  }
+}
+.o-text--sm {
+  &#{&} { /*[1]*/
+    @include vr-offset($cap-height, $font-size-sm); /*[2]*/
+    
+    @include mq($from: desktop) {
+      @include vr-offset($cap-height, $font-size-md);
+    }
+  }
+}
+.o-text--lg {
+  &#{&} { /*[1]*/
+    @include vr-offset($cap-height, $font-size-md); /*[2]*/
+    
+    @include mq($from: desktop) {
+      @include vr-offset($cap-height, $font-size-lg);
+    }
+  }
+}
+.o-text--xl {
+  &#{&} { /*[1]*/
+    @include vr-offset($cap-height, $font-size-lg); /*[2]*/
+    
+    @include mq($from: desktop) {
+      @include vr-offset($cap-height, $font-size-xl);
+    }
+  }
+}

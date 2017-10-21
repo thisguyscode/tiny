@@ -41,7 +41,7 @@
         </div>
 
         <div class="l-grid__cell  u-3/5@tablet">
-          <p class="o-text o-text--paragraph">{{ description }}</p>
+          <p class="c-project-group-intro__description  o-text o-text--paragraph">{{ description }}</p>
         </div>
 
       </l-grid>
@@ -195,6 +195,10 @@ $link-padding-x: $unit-sm;
     display: inline-block;
     width: auto;
   }
+}
+
+.c-project-group-intro__description {
+  color: $neutral-30;
 }
 
 

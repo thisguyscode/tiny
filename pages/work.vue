@@ -1,5 +1,5 @@
 <template>
-  <section class="p-work">
+  <section>
     
     <nuxt-child :key="'/work/projects/'"></nuxt-child>
     

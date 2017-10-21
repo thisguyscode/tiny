@@ -1,5 +1,11 @@
 <template>
-  <icon :name="name" class="c-icon" :class="classObject"></icon>
+
+  <icon
+    class="c-icon"
+    :class="classObject"
+    :name="name">
+  </icon>
+
 </template>
 
 <script>
@@ -18,7 +24,8 @@ export default {
   computed: {
     classObject: function () {
       return {
-        'c-icon--middle': this.vertical === true
+        'c-icon--middle': this.vertical === true,
+        'c-icon--resize': this.resize === true
       }
     }
   }
@@ -27,15 +34,15 @@ export default {
 
 <style lang="scss" scoped>
 
-  
-  
+.c-icon {
+  width: auto;
+  /* Include the following two lines to make this work in Safari */
+  max-width: 100%;
+  max-height: 100%;
+}
 
-  .c-icon {
-    // font-size: .7em;
-  }
-
-  .c-icon--middle {
-    vertical-align: middle;
-  }
+.c-icon--resize {
+  
+}
 
 </style>

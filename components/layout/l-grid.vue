@@ -101,6 +101,7 @@ $spacing-sizes: (
  */
 
 .l-grid__cell {
+    position: relative;
     flex: 0 1 auto;
     width: 100%; /* [1] */
 }

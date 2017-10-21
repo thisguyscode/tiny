@@ -1,4 +1,5 @@
 <template>
+  
   <button
     v-if="submit===true"
     class="c-button"
@@ -11,9 +12,9 @@
       :style="iconInlineStyle"
       :name="iconName">
     </c-icon>
-    <span class="c-button__text  o-text  u-vr-reset">
+    <p class="c-button__text  o-text  u-vr-reset">
       <slot></slot>
-    </span>
+    </p>
   </button>
 
   <f-link
@@ -26,7 +27,7 @@
     :scrollToSelector="scrollToSelector"
     @click.native="clickFunction">
     
-    <span class="c-button__inner  o-text  u-vr-reset">
+    <span class="c-button__inner">
       <c-icon
         v-if="iconName"
         class="c-button__icon"
@@ -34,16 +35,18 @@
         :name="iconName">
       </c-icon>
 
-      <span class="c-button__text">
+      <p
+        class="c-button__text  o-text  u-vr-reset"
+        :class="textClassObject">
         <slot></slot>
         <!-- Quick content -->
         <!-- Contact -->
-        <span v-if="content==='contact'">Contact <span class="u-text--low-contrast">me</span></span>
+        <span v-if="content==='contact'">Contact me</span>
         <!-- Profile -->
-        <span v-if="content==='profile'"><span class="u-text--low-contrast">View my </span>profile</span>
+        <span v-if="content==='profile'">View my profile</span>
         <!-- Work -->
-        <span v-if="content==='work'"><span class="u-text--low-contrast">View my </span>work</span>
-      </span>
+        <span v-if="content==='work'">View my work</span>
+      </p>
 
     </span>
 
@@ -74,7 +77,19 @@ export default {
       return {
         'c-button--ghost': this.type === 'ghost',
         'c-button--solid': this.type === 'solid',
-        'c-button--stretch': this.stretch === true
+        'c-button--stretch': this.stretch === true,
+        'c-button--sm': this.size === 'sm',
+        'c-button--md': this.size === 'md',
+        'c-button--lg': this.size === 'lg',
+        'c-button--go': this.intent === 'go',
+        'c-button--danger': this.intent === 'danger',
+        'c-button--quiet': this.intent === 'quiet'
+      }
+    },
+    textClassObject: function () {
+      return {
+        'o-text--sm': this.size === 'sm',
+        'o-text--lg': this.size === 'lg'
       }
     },
     iconName: function () {
@@ -103,6 +118,10 @@ export default {
     }
   },
   props: {
+    size: {
+      type: String,
+      default: 'md'
+    },
     submit: {
       type: Boolean,
       default: false
@@ -149,6 +168,10 @@ export default {
     },
     onClickArg: {
       required: false
+    },
+    intent: {
+      type: String,
+      required: false
     }
   }
 }
@@ -160,14 +183,9 @@ export default {
   # SCOPED STYLES
 ======================================================================== */
 
-/* Variables (redefine global variable dependencies)
+/* Variables
 ======================================================================== */
 // Layout
-$padding-y-mobile: $unit-xs;
-$padding-x-mobile: $unit-sm;
-$padding-y-tablet: $unit-xs;
-$padding-x-tablet: $unit-md;
-
 $icon-gutter: $unit-xs;
 
 // Cosmetic
@@ -175,7 +193,7 @@ $font-weight: $font-weight-semi;
 $default-color: $neutral-95;
 $primary-color: $clr-primary;
 
-
+$underline-shadow: 0 1px $neutral-100; 
 
 
 
@@ -183,18 +201,12 @@ $primary-color: $clr-primary;
 ======================================================================== */
 .c-button {
   cursor: pointer;
-  padding: $padding-y-mobile $padding-x-mobile;
+  position: relative;
   text-decoration: none;
   white-space: nowrap;
   text-align: center;
   display: inline-block;
-  // min-width: 100%;
-  @include mq($until: tablet) {
-    background: $default-color;
-  }
-  @include mq($from: tablet) {
-    padding: $padding-y-tablet $padding-x-tablet;
-  }
+  margin-bottom: $unit-md;
 }
 
 
@@ -202,51 +214,127 @@ $primary-color: $clr-primary;
 /* Child classes
 ======================================================================== */
 .c-button__inner {
+  pointer-events: none;
   text-align: center;
 }
 
 .c-button__text {
+  display: inline-block;
   font-weight: $font-weight;
   color: $neutral-00;
 }
 .c-button__icon {
-  height: 1em;
-  width: auto;
+  height: 1.1em;
+  display: inline-block;
   margin-right: $icon-gutter;
   vertical-align: text-top;
 }
-// .c-button__icon {
-//   display: inline-block;
-// }
 
 
 
-/* Style modifiers
+/* Type modifiers
 ======================================================================== */
 .c-button--solid {
   background-color: $primary-color;
   transition: background-color .2s ease;
-  box-shadow: 0 1px $green;
+  box-shadow: inset 0 0 0 1px $primary-color, $underline-shadow;
+  .c-button__text,
+  .c-button__icon {
+      color: contrasting-color($primary-color, $lightest, $darkest);
+    }
   &:hover {
-    background-color: darken($primary-color, 5%);
+    background-color: darken($primary-color, 8%);
   }
 }
 
 
 .c-button--ghost {
-  box-shadow: inset 0 0 0 1px $primary-color, 0 1px 0 0 $green;;
+  // background-color: rgba($neutral-100, .5);
+  box-shadow: inset 0 0 0 1px $primary-color, $underline-shadow;
   transition: background-color .2s ease;
-
   .c-button__icon {
     color: $primary-color;
   }
+}
 
-  &:hover {
-    background-color: rgba($primary-color, .9);
+
+/* Style modifiers
+======================================================================== */
+.c-button--go {
+  box-shadow: inset 0 0 0 1px $clr-good, $underline-shadow;
+  &.c-button--ghost {
+    .c-button__icon {
+      color: $clr-good;
+    }
+  }
+  &.c-button--solid {
+    background-color: $clr-good;
+    .c-button__icon,
+    .c-button__text {
+      color: contrasting-color($clr-good, $lightest, $darkest);
+    }
+    &:hover {
+      background-color: darken($clr-good, 8%);
+    }
+  }
+}
+
+
+.c-button--danger {
+  box-shadow: inset 0 0 0 1px $clr-bad, $underline-shadow;
+  &.c-button--ghost {
+    .c-button__icon {
+      color: $clr-bad;
+    }
+  }
+  &.c-button--solid {
+    background-color: $clr-bad;
     .c-button__text,
     .c-button__icon {
-      color: contrasting-color($primary-color, $darkest, $lightest);
+      color: contrasting-color($clr-bad, $lightest, $darkest);
     }
+    &:hover {
+      background-color: darken($clr-bad, 8%);
+    }
+  }
+}
+
+.c-button--quiet {
+  box-shadow: inset 0 0 0 1px $neutral-70, $underline-shadow;
+  &.c-button--ghost {
+    .c-button__icon {
+      color: $neutral-30;
+    }
+  }
+  &.c-button--solid {
+    background-color: $neutral-90;
+    .c-button__text,
+    .c-button__icon {
+      color: contrasting-color($neutral-90, $lightest, $darkest);
+    }
+    &:hover {
+      background-color: darken($neutral-90, 8%);
+    }
+  }
+}
+
+/* Size modifiers
+======================================================================== */
+.c-button--sm {
+  padding: $unit-xs $unit-xs;
+}
+
+.c-button--md {
+  padding: $unit-xs $unit-xs;
+  @include mq($from: tablet) {
+    padding: $unit-xs $unit-md;
+  }
+}
+
+.c-button--lg {
+  padding: $unit-sm $unit-md;
+  @include mq($from: tablet) {
+    padding: $unit-sm $unit-lg;
   }
 }
 

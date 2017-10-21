@@ -40,7 +40,7 @@ $font-size-xxxxl: $font-size-xxxxl;
 /* Font size modifiers
 ======================================================================== */
 .o-heading--alpha {
-  @include vr($font-display, $font-size-xxxl);
+  @include vr($font-display, $font-size-xxl);
   @include mq($from: desktop) {
     @include vr($font-display, $font-size-xxxxl);
   }

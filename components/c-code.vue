@@ -178,6 +178,9 @@ export default {
   .c-code_gutter {
     padding-top: $unit-sm;
   }
+  .c-code_header-gutter {
+    padding-top: $unit-xs;
+  }
   
   .c-code_code-area {
     position: relative;

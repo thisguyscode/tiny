@@ -1,17 +1,25 @@
 <template>
   <section class="c-project-overview" :id="sectionId">
     <l-wrapper>
+      
       <l-grid>
+        
         <div class="_details-wrapper  l-grid__cell u-2/5@tablet">
+          
           <l-grid>
-            <div class="l-grid__cell  u-1/2@tablet">
+            <!-- Title cell -->
+            <div class="l-grid__cell  u-2/3 u-1/2@tablet">
               <h3 class="_title  o-heading o-heading--delta">
                 <span class="_index" :style="indexStyle">{{ index }}. </span>
                 <span class="_name">{{ name }}</span>
               </h3>
             </div>
-            <div class="_line  l-grid__cell  u-1/2@tablet" :style="lineStyle"></div>
-            <div class="l-grid__cell">
+
+            <!-- Just the line (desktop only) -->
+            <div class="_line  l-grid__cell  u-1/2" :style="lineStyle"></div>
+            
+            <!-- Details -->
+            <div class="c-project-overview__details-cell  l-grid__cell">
               <l-grid class="u-margin-bottom-sm">
                 <div v-if="skills" class="_detail-group  l-grid__cell  u-1/2@tablet">
                   <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Skills</h4>
@@ -38,21 +46,23 @@
                   <p class="c-project-overview__detail  o-text o-text--sm">{{ date }}</p>
                 </div>
               </l-grid>
-              <div class="l-grid__cell u-1/2@tablet">
-                <div class="_button-wrapper">
-                  <c-button 
-                    :relativeLink="linkTo"
-                    :inlineStyle="buttonStyle"
-                    :iconInlineStyle="viewIconStyle"
-                    type="ghost"
-                    icon="eye">
-                    View Project
-                  </c-button>
-                </div>
+            </div>
+            <div class="l-grid__cell u-1/3 u-1/2@tablet">
+              <div class="_button-wrapper">
+                <c-button 
+                  :relativeLink="linkTo"
+                  :inlineStyle="buttonStyle"
+                  :iconInlineStyle="viewIconStyle"
+                  type="ghost"
+                  icon="eye">
+                  View<span class="u-hide-mobile"> Project</span>
+                </c-button>
               </div>
             </div>
           </l-grid>
+
         </div>
+
         <div class="l-grid__cell u-3/5@tablet">
           <div class="_image-wrapper" :class="imgWrapperClass" :style="'background-color:' + color">
             <c-image
@@ -63,7 +73,8 @@
               :wide=".6"
             />
           </div>
-        </div>   
+        </div>
+
       </l-grid>
     </l-wrapper>
   </section>
@@ -152,12 +163,21 @@ export default {
   .c-project-overview__detail {
     color: $neutral-30;
   }
+
+  .c-project-overview__details-cell {
+    @include mq($until: tablet) {
+      display: none
+    }
+  }
   
 
   .c-project-overview {
     position: relative;
     text-align: left;
-    margin-bottom: $unit-xl;
+    margin-bottom: $unit-xxl;
+    @include mq($from: tablet) {
+      margin-bottom: $unit-xxl;
+    }
     &:last-of-type {
       margin-bottom: 0;
     }
@@ -184,11 +204,11 @@ export default {
 
   ._button-wrapper {
     @include mq($until: tablet) {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: $page-padding-mobile;
+      // position: absolute;
+      // bottom: 0;
+      // left: 0;
+      // right: 0;
+      // padding: $page-padding-mobile;
       z-index: 100;
     }
   }
@@ -209,7 +229,8 @@ export default {
   }
 
   .c-project-overview__subheading {
-    font-weight: 600;
+    margin-bottom: 0;
+    font-weight: $font-weight-semi;
   }
   ._detail {
     color: $neutral-50;
@@ -228,8 +249,7 @@ export default {
     }
   }
 
-  ._index {   
-    min-width: $page-padding-mobile;
+  ._index {
     padding-right: $unit-xs;
      
     @include mq($from: tablet) {

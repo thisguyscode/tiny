@@ -17,7 +17,7 @@
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
             <nuxt-link class="c-site-header__link" to="/work/">
-              <span class="c-site-header__link-text  o-text o-text--sm">
+              <span class="c-site-header__link-text  o-text">
                 work
               </span>
             </nuxt-link>
@@ -25,7 +25,7 @@
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
             <nuxt-link class="c-site-header__link" to="/profile/">
-              <span class="c-site-header__link-text  o-text o-text--sm">
+              <span class="c-site-header__link-text  o-text">
                 profile
               </span>
             </nuxt-link>
@@ -33,7 +33,7 @@
 
           <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
             <nuxt-link class="c-site-header__link" to="/contact/">
-              <span class="c-site-header__link-text  o-text o-text--sm">
+              <span class="c-site-header__link-text  o-text">
                 contact
               </span>
             </nuxt-link>

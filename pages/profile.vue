@@ -2,7 +2,7 @@
 
   <div class="p-profile">
   
-    <c-hero bgImageSrc="chn-shanghai_02.jpg">
+    <c-hero class="p-profile__hero" bgImageSrc="chn-shanghai_02.jpg">
       <h1 class="o-heading o-heading--alpha u-margin-bottom-none">I'm <span class="u-text--lowest-contrast">./</span>tiny<span class="u-text--lowest-contrast">/</span></h1>
       <span class="o-heading o-heading--alpha">(I have no idea what I'm doing)</span>
     </c-hero>
@@ -646,6 +646,12 @@
 
 /* Child classes
 ======================================================================== */
+.p-profile__hero {
+  margin-bottom: $unit-xl;
+  @include mq($from: tablet) {
+    margin-bottom: $unit-xxl;
+  }
+}
 .p-profile__caption {
   color: $neutral-30;
 }

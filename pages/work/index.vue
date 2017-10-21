@@ -1,7 +1,7 @@
 <template>
   <section class="p-work">
     
-    <c-hero>
+    <c-hero class="p-work__hero">
       <h1 class="o-heading o-heading--alpha">Putting text in boxes & colouring inside the lines.</h1>
     </c-hero>
 
@@ -95,13 +95,24 @@
   
 
   .p-work {
-
+    // padding-top: $unit-xxl;
   }
+
+  .p-work__hero {
+    margin-bottom: $unit-xl;
+    @include mq($from: desktop) {
+      margin-bottom: $unit-xxl;
+    }
+  }
+
   .p-work__project-group {
     margin-bottom: $unit-xxl;
-    &:last-of-type {
-      margin-bottom: 0;
+    @include mq($from: tablet) {
+      margin-bottom: $unit-xxl*2;
     }
+    // &:last-of-type {
+    //   margin-bottom: 0;
+    // }
   }
 
 </style>

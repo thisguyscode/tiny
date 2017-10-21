@@ -6,7 +6,7 @@
           <l-grid>
 
             <!-- Main group title cell -->
-            <div class="l-grid__cell">
+            <div class="l-grid__cell  u-2/3 u-1/1@tablet">
               
               <l-affix
                 className="c-project-group-intro__sticky-header"
@@ -31,10 +31,18 @@
               </l-affix>
             </div><!--END Main group title cell -->
             
-            <div class="l-grid__cell u-1/2">
-              <c-button :stretch="false" class="c-project-group-intro__button" type="ghost" icon="external-link" :externalLink="link">
-                Visit Website
+            <div class="l-grid__cell  u-1/3 u-1/2@tablet">
+              
+              <c-button
+                class="c-project-group-intro__button"
+                size="sm"
+                type="ghost"
+                intent="quiet"
+                icon="external-link"
+                :externalLink="link">
+                <span class="u-hide-tablet">Visit </span>Website
               </c-button>
+
             </div>
 
           </l-grid>
@@ -128,7 +136,9 @@ $link-padding-x: $unit-sm;
 
 .c-project-group-intro__header {
   position: relative;
-  margin-bottom: $unit-md;
+  @include mq($from: desktop) {
+    margin-bottom: $unit-md;
+  }
 }
 
 
@@ -187,7 +197,6 @@ $link-padding-x: $unit-sm;
 
 
 .c-project-group-intro__button {
-  z-index: 900;
   @include mq($until: tablet) {
     position: absolute;
     right: 0;
@@ -199,22 +208,15 @@ $link-padding-x: $unit-sm;
 
 .c-project-group-intro__description {
   color: $neutral-30;
+  @include mq($until: tablet) {
+    margin-bottom: $unit-xl;
+  }
 }
 
 
 .c-project-group-intro__title-baselines {
   display: none;
-  // @include mq($from: tablet) {
-  //   left: -$page-padding-tablet;
-  // }
-  // @include mq($from: desktop) {
-  //   left: -$page-padding-desktop;
-  // }
-  // @include mq($from: wide) {
-  //   left: -$page-padding-wide;
-  // }
 }
-
 
 .c-project-group-intro__scrollLink {
   display: none;
@@ -225,6 +227,13 @@ $link-padding-x: $unit-sm;
   transition: padding .2s ease, top .2s ease;
 }
 
+.c-project-group-intro__name,
+.c-project-group-intro__index {
+  @include mq($until: tablet) {
+    padding-top: $unit-sm;
+    padding-bottom: $unit-sm;
+  }
+}
 
 .c-project-group-intro__sticky-header {
   &.affix {

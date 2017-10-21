@@ -1,7 +1,7 @@
 <template>
   <section class="p-contact">  
     
-    <c-hero>
+    <c-hero class="p-contact__hero">
       <h1 class="o-heading o-heading--alpha u-margin-bottom-none">I need a job.</h1>
       <span class="o-heading o-heading--alpha">Please hire me, please.</span>
     </c-hero>
@@ -274,15 +274,15 @@ export default {
 
 /* Base component class
    ====================================================================== */
-.page-contact {
-  padding: $unit-xxl $unit-md;
-  @include mq($from: desktop) {
-    padding: $unit-xxl;
-  }
+.p-contact {
 }
 
 /* --
    ====================================================================== */
+
+.p-contact__hero {
+  margin-bottom: $unit-xl;
+}
 ._content-wrapper {
   text-align: left;
 }

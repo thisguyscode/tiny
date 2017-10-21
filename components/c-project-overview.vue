@@ -99,7 +99,7 @@ export default {
       return this.project.name
     },
     linkTo: function () {
-      return '/projects/' + this.project.slug + '/'
+      return '/work/projects/' + this.project.slug + '/'
     },
     color: function () {
       return this.project.color

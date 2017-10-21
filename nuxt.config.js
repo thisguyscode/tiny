@@ -2,6 +2,9 @@ const nodeExternals = require('webpack-node-externals')
 const path = require('path')
 
 module.exports = {
+  router: {
+    base: '/'
+  },
   /*
   ** Headers of the page
   */
@@ -41,7 +44,7 @@ module.exports = {
       for (var projectGroup in projectGroups) {
         var projects = projectGroups[projectGroup].projects
         for (var project in projects) {
-          routesArray.push('/projects/' + projects[project].slug + '/')
+          routesArray.push('/work/projects/' + projects[project].slug + '/')
         }
       }
       return routesArray

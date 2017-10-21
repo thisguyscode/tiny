@@ -5,7 +5,7 @@
         
         <!-- PREVIOUS -->
         <nuxt-link
-          :to="'/projects/' + previous.slug + '/'"
+          :to="'/work/projects/' + previous.slug + '/'"
           :class="linkClass"
           class="
             _link
@@ -24,7 +24,7 @@
         
         <!-- NEXT -->
         <nuxt-link
-          :to="'/projects/' + next.slug + '/'"
+          :to="'/work/projects/' + next.slug + '/'"
           :class="linkClass"
           class="
             _link

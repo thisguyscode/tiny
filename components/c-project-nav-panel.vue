@@ -3,7 +3,7 @@
     <div v-if="transitionEnd" class="_panel" :class="panelClass">
       <nuxt-link
         class="_link"
-        :to="'/projects/' + project.slug + '/'"
+        :to="'/work/projects/' + project.slug + '/'"
       >
         <div
           class="_image-wrapper  o-liner"

@@ -6,15 +6,17 @@
     :class="baseClassObject"
     type="submit"
     >
-    <c-icon
-      v-if="iconName"
-      class="c-button__icon"
-      :style="iconInlineStyle"
-      :name="iconName">
-    </c-icon>
-    <p class="c-button__text  o-text  u-vr-reset">
-      <slot></slot>
-    </p>
+    <span class="c-button__inner">
+      <c-icon
+        v-if="iconName"
+        class="c-button__icon"
+        :style="iconInlineStyle"
+        :name="iconName">
+      </c-icon>
+      <span class="c-button__text  o-text  u-vr-reset">
+        <slot></slot>
+      </span>
+    </span>
   </button>
 
   <f-link
@@ -35,7 +37,7 @@
         :name="iconName">
       </c-icon>
 
-      <p
+      <span
         class="c-button__text  o-text  u-vr-reset"
         :class="textClassObject">
         <slot></slot>
@@ -46,7 +48,7 @@
         <span v-if="content==='profile'">View my profile</span>
         <!-- Work -->
         <span v-if="content==='work'">View my work</span>
-      </p>
+      </span>
 
     </span>
 

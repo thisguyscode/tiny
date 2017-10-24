@@ -4,7 +4,7 @@
     <c-baselines></c-baselines>
     <c-gridlines></c-gridlines>
 
-    <nav class="c-site-header__nav">
+    <nav class="c-site-header__nav" :style="navStyle()">
       <l-wrapper>
         <ul class="l-grid  l-grid--flush">
 
@@ -58,6 +58,11 @@ export default {
     cBaselines,
     cLogo,
     lWrapper
+  },
+  methods: {
+    navStyle: function () {
+      return 'border-bottom-color: ' + this.$store.state.currentColor + ';'
+    }
   }
 }
 </script>
@@ -79,18 +84,20 @@ export default {
 
 .c-site-header__nav {
   // overflow: hidden;
+  transition: border-color .2s ease;
   background-color: $neutral-95;
-  &:after {
-    content: '';
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    box-shadow: inset 0 -1px 0 0 $clr-primary;
-  }
+  border-bottom: 1px solid $clr-primary;
+  // &:after {
+  //   content: '';
+  //   pointer-events: none;
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   z-index: 1;
+    
+  // }
 }
 
 .c-site-header__link,

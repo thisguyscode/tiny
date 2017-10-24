@@ -176,6 +176,7 @@ export default {
   }
 
   .c-project-overview__details-cell {
+    margin-bottom: $unit-sm;
     @include mq($until: tablet) {
       display: none
     }

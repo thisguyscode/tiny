@@ -25,7 +25,7 @@
         <div class="_subCtaWrapper  l-grid__cell  u-1/5@tablet  u-text--lower-contrast">
           <h2 class="o-heading o-heading--gamma">{{ subCtaHeading }}</h2>
           <c-button
-            class="_sub-cta-button"
+            class="_sub-cta-button u-margin-bottom-none"
             type="ghost"
             :content="subCtaButton">
           </c-button>
@@ -90,8 +90,8 @@
     }
     
     @include mq($from: desktop) {
-      padding-top: $unit-xl*3;
-      padding-bottom: $unit-xl*2;
+      padding-top: $unit-xxl + $unit-md;
+      padding-bottom: $unit-xxl + $unit-md;
     }
   }
 
@@ -102,6 +102,9 @@
   ._main-cta-button {
     @include mq($until: tablet) {
       margin-bottom: $paragraph-trailer*2;
+    }
+    @include mq($from: tablet) {
+      margin-bottom: 0;
     }
   }
 

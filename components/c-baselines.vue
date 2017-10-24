@@ -27,12 +27,14 @@ $baseline-color: $neutral-90;
   background-size: 100% $background-size;
   background-repeat: repeat-y;
   background-position: 0 0;
-  background-image: linear-gradient(
-    to bottom,
-    $baseline-color $baseline-size + px,
-    transparent $baseline-size + px,
-    transparent
-  );
+  @if ($show-baseline == true) {
+    background-image: linear-gradient(
+      to bottom,
+      $baseline-color $baseline-size + px,
+      transparent $baseline-size + px,
+      transparent
+    );
+  }
 }
 
 		

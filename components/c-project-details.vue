@@ -42,7 +42,7 @@
 
           <!-- objective cell -->
           <div class="c-project-details__objective-cell l-grid__cell u-2/5@tablet">
-            <h4 class="o-heading o-heading--zeta">Objective</h4>
+            <h4 class="c-project-details__subheading  o-heading o-heading--zeta">Objective</h4>
             <p
               v-if="transitionEnd"
               class="c-project-details__overview-string  o-text o-text--xl">
@@ -80,22 +80,6 @@
                 </l-grid>
               </div><!--END column -->
 
-              <!-- column -->
-              <div class="c-project-details__list-column l-grid__cell u-2/5@mobile u-1/3@tablet">
-                <h4 class="o-heading o-heading--zeta">Skills</h4>
-                <!-- <transition name="fade"> -->
-                  <ul
-                    v-if="transitionEnd"
-                    class="c-project-details__group u-list-bare">
-                    <li
-                      v-for="skill in project.skills"
-                      class="c-project-details__item"
-                      :key="skill.id">
-                      <span class="c-project-details__item-string  o-text">{{ skill }}</span>
-                    </li>
-                  </ul>
-                <!-- </transition> -->
-              </div><!--END column -->
 
               <!-- column -->
               <div class="c-project-details__list-column l-grid__cell u-2/5@mobile u-1/3@tablet">
@@ -124,6 +108,23 @@
 
                   </li>
                 </ul>
+              </div><!--END column -->
+
+              <!-- column -->
+              <div class="c-project-details__list-column l-grid__cell u-2/5@mobile u-1/3@tablet">
+                <h4 class="o-heading o-heading--zeta">Skills</h4>
+                <!-- <transition name="fade"> -->
+                  <ul
+                    v-if="transitionEnd"
+                    class="c-project-details__group u-list-bare">
+                    <li
+                      v-for="skill in project.skills"
+                      class="c-project-details__item"
+                      :key="skill.id">
+                      <span class="c-project-details__item-string  o-text">{{ skill }}</span>
+                    </li>
+                  </ul>
+                <!-- </transition> -->
               </div><!--END column -->
 
             </l-grid>
@@ -228,6 +229,7 @@ $transition-easing: ease;
   text-align: left;
   padding-top: $unit-md;
   transition: border-color .8s ease;
+  margin-top: -1px;
   @include mq($from: tablet) {
     padding-top: $unit-lg;
   }
@@ -279,13 +281,16 @@ $transition-easing: ease;
 
 .c-project-details__item {
   margin-bottom: $unit-sm;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .c-project-details__group {
   // @include vr-reset;
   display: inline-block;
   padding-bottom: 0;
-  margin-bottom: $paragraph-trailer;
+  margin-bottom: $unit-md;
 }
 
 .tech-wrapper {
@@ -317,13 +322,25 @@ $transition-easing: ease;
     }
   }
 }
+
 .c-project-details__tech-icon-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%);
+  font-family: $font-display;
   font-weight: $font-weight-semi;
-  height: 100%;
   display: inline-block;
 }
+
 .c-project-details__tech-string {
   display: inline-block;
+}
+
+.c-project-details__overview-string {
+  margin-bottom: $unit-md;
 }
 
 .c-project-details__item-string,
@@ -331,6 +348,10 @@ $transition-easing: ease;
   color: $neutral-40;
 }
 
+
+.c-project-details__subheading {
+  margin-bottom: $unit-sm;
+}
 
 // .c-project-details__inner {
 //   margin-bottom: -1px;

@@ -1,35 +1,39 @@
 <template>
-  <div class="_hero" :style="'background-color: ' + color">
+  <div class="c-project-hero" :style="'background-color: ' + color">
 
     <l-wrapper>
-      <l-grid class="_hero-grid">
+      <l-grid class="c-project-hero-grid">
 
         <!-- Hero text panel -->
-        <div class="_hero-text-cell l-grid__cell u-2/5@tablet">
-          <div class="_hero-text-wrapper" :style="'color:' + color">
+        <div class="c-project-hero-text-cell l-grid__cell u-2/5@tablet">
+          <div class="c-project-hero-text-wrapper" :style="'color:' + color">
            
             <!-- <transition name="slide-from-left"> -->
               <div v-if="transitionEnd">
 
+                <div class="c-project-hero__group-title-wrapper">
                 <!-- Group -->
-                <f-link
-                  class="_project-group o-heading o-heading--delta"
-                  :class="setTextClass(project)"
-                  :externalLink="project.groupLink">
-                  {{ project.group }}
-                  <c-icon
-                    v-if="project.group"
-                    class="_icon"
-                    name="external-link">
-                  </c-icon>
-                </f-link>
+                  <f-link
+                    class="c-project-hero__group-title  o-heading o-heading--delta"
+                    :class="setTextClass(project)"
+                    :externalLink="project.groupLink"
+                    :style="'color:' + color">
+                    {{ project.group }}
+                    <c-icon
+                      v-if="project.group"
+                      class="c-project-hero__group-title-icon"
+                      name="external-link">
+                    </c-icon>
+                  </f-link>
+                </div>
                 <!-- Title -->
-                <h1
-                  class="_project-title  o-heading o-heading--alpha"
-                  :class="setTextClass(project)">
-                  {{ project.name }}
-                </h1>
-
+                <div class="c-project-hero__project-title-wrapper">
+                  <h1
+                    class="c-project-hero__project-title  o-heading o-heading--beta"
+                    :class="setTextClass(project)">
+                    {{ project.name }}
+                  </h1>
+                </div>
               </div>
             <!-- </transition> -->
 
@@ -37,17 +41,14 @@
         </div><!--END Hero text panel -->
         
         <!-- Hero image panel -->
-        <div class="_hero-image-cell l-grid__cell u-3/5@tablet" :class="setImgClass(project)">
-          <div class="_hero-image-reference  o-liner" :class="setImgWrapperClass(project)">
-            <div class="_hero-image-wrapper">
-              <!-- <transition name="slide-from-right"> -->
-                <c-image
-                  :lazy="false"
-                  v-if="transitionEnd && project.imgSrc"
-                  :fit="setImgClass(project)"
-                  :imageSrc="project.imgSrc"
-                />
-              <!-- </transition> -->
+        <div class="c-project-hero-image-cell l-grid__cell u-3/5@tablet" :class="setImgClass(project)">
+          <div v-if="transitionEnd && project.imgSrc"  class="c-project-hero-image-reference  o-liner" :class="setImgWrapperClass(project)">
+            <div class="c-project-hero-image-wrapper">
+              <c-image
+                :lazy="false"
+                :fit="setImgClass(project)"
+                :imageSrc="project.imgSrc"
+              />
             </div>
           </div>
         </div>
@@ -97,9 +98,9 @@
     methods: {
       setTextClass: function (project) {
         if (project.contrastingColor === 'light') {
-          return '_text-light'
+          return 'project-color-is-dark'
         } else if (project.contrastingColor === 'dark') {
-          return '_text-dark'
+          return 'project-color-is-light'
         }
       },
       setImgClass: function (project) {
@@ -137,151 +138,135 @@
 </script>
 
 <style lang="scss" scoped>
+/* ========================================================================
+  # SCOPED STYLES
+======================================================================== */
 
- $transition-duration: .8s;
- $transition-easing: ease-out;
-
+/* Variables
+======================================================================== */
+$transition-duration: .8s;
+$transition-easing: ease-out;
   
+
+
+/* Base class
+======================================================================== */
+.c-project-hero {
+  // margin-top: -1px;
+  min-height: $unit-xxl*3;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  background-color: rgba($darkest, .5);
+  transition: background-color $transition-duration $transition-easing;
+}
+
+
+
+/* Image
+======================================================================== */
+.c-project-hero-image-cell {
+  position: relative;
+
+  &.cover {
+    position: static;
+  }
   
-
-  ._hero {
-    // margin-top: -1px;
-    min-height: $unit-xxl*3;
-    width: 100%;
-    overflow: hidden;
-    z-index: 90;
-    position: relative;
-    text-align: left;
-    background-color: rgba($darkest, .5);
-    transition: background-color $transition-duration $transition-easing;
-  }
+  @include mq($until: tablet) {
+    height: $unit-xl*3;
+    position: static;
+    order: 1;
+  }  
+}
 
 
-  ._hero-grid {
-    // height: $unit-xxl*4;
-  }
-
-  ._hero-image-cell {
-    position: relative;
-    
-    @include mq($until: tablet) {
-      height: $unit-xl*3;
-      position: static;
-      order: 1;
-    }
-
-    &.cover {
-      position: static;
-    }
-  }
-
-  ._hero-image-reference {    
-    &.padded {
-      padding: $unit-md;
-      
-      @include mq($from: tablet) {
-        padding: $unit-xl;
-      }
-      @include mq($from: desktop) {
-        padding: $unit-xl;
-      }
-      @include mq($from: wide) {
-        padding: $unit-xxl;
-      }
-    }
-  }
-
-  ._hero-image-wrapper {
-    height: 100%;
-    width: 100%;
-    position: relative;
-  }
-
-  ._hero-image {
-    object-fit: contain;
-    object-position: 50% 0%;
-    width: 100%;
-    height: 100%;
-    top: $unit-md;
-    top: 0;
-    right: 0;
-    overflow: hidden;
-
-    @include mq($from: tablet) {
-      position: absolute;
-      object-position: 50% 50%;
-    }
-    
-    &.cover {
-      @include mq($from: tablet) {
-        transform-origin: 0 100%;
-      }
-      object-fit: cover;
-    }
-  }
+.c-project-hero-image-wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
 
 
-  ._hero-text-wrapper {
-    padding-top: 0;
-    padding-bottom: $page-padding-mobile;
-    height: 100%;
-    z-index: 100;
-    position: relative;
+.c-project-hero-image-reference {    
+  &.padded {
+    padding: $unit-md;
     
     @include mq($from: tablet) {
-      min-height: $unit-xxl*4;
-      padding-top: $page-padding-tablet;
-      padding-bottom: $page-padding-tablet;
-      padding-right: 50%;
-      margin-right: -66.66%;
+      padding: $unit-xl;
     }
     @include mq($from: desktop) {
-      min-height: $unit-xxl*5;
-      padding-top: $page-padding-desktop;
-      padding-bottom: $page-padding-desktop;
+      padding: $unit-xl;
+    }
+    @include mq($from: wide) {
+      padding: $unit-xxl;
     }
   }
+}
 
-  ._hero-text-cell {
-    height: 100%;
-    @include mq($until: tablet) {
-      min-height: $unit-xl*4;
-      order: 2;
-    }
-  }
 
-  ._project-title {
-    text-align: left;
-    display: inline;
-  }
 
-  ._project-group {
-    margin-right: 100%;
-    white-space: nowrap;
-    margin-bottom: $heading-trailer;
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-    // opacity: .4;
-    cursor: pointer;
-    
-    &:hover {
-      // opacity: 1;
-    }
+/* Text
+======================================================================== */
+.c-project-hero-text-wrapper {
+  padding-top: 0;
+  padding-bottom: $page-padding-mobile;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  
+  @include mq($from: tablet) {
+    min-height: $unit-xxl*4;
+    padding-top: $page-padding-tablet;
+    padding-bottom: $page-padding-tablet;
+    padding-right: 50%;
+    margin-right: -66.66%;
   }
+  @include mq($from: desktop) {
+    min-height: $unit-xxl*5;
+    padding-top: $page-padding-desktop;
+    padding-bottom: $page-padding-desktop;
+  }
+}
 
-  ._project-group,
-  ._project-title {
-    &._text-dark {
-      background-color: $darkest;
-    }
-    &._text-light {
-      background-color: $lightest;
-    }
+.c-project-hero-text-cell {
+  height: 100%;
+  @include mq($until: tablet) {
+    min-height: $unit-xl*4;
+    order: 2;
   }
+}
 
-  ._icon {
-    height: .7em;
+
+.c-project-hero__group-title {
+  display: inline;
+  white-space: nowrap;
+  &:hover {
+    // opacity: 1;
   }
+}
+
+.c-project-hero__project-title {
+  display: inline;
+}
+
+.c-project-hero__group-title-wrapper {
+  margin-bottom: $heading-trailer;
+}
+
+.c-project-hero__group-title,
+.c-project-hero__project-title {
+  &.project-color-is-light {
+    background-color: $darkest;
+  }
+  &.project-color-is-dark {
+    background-color: $lightest;
+  }
+}
+
+
+.c-project-hero__group-title-icon {
+  height: .7em;
+}
 
 </style>

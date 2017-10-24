@@ -83,6 +83,7 @@
           this.scrollToProject()
         }, 0)
       }
+      this.$store.commit('resetCurrentColor')
     }
   }
 

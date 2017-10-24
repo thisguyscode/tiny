@@ -621,6 +621,9 @@
           }
         ]
       }
+    },
+    mounted () {
+      this.$store.commit('resetCurrentColor')
     }
   }
 

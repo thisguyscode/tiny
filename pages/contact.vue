@@ -251,6 +251,9 @@ export default {
       }
       this.$scrollTo(selector, options)
     }
+  },
+  mounted () {
+    this.$store.commit('resetCurrentColor')
   }
 }
 

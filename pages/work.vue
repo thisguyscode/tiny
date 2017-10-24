@@ -25,6 +25,7 @@
     },
     mounted () {
       this.$store.dispatch('getProjects')
+      this.$store.commit('resetCurrentColor')
     },
     fetch ({store}) {
       // getProjects action returns a Promise since it's defined as an async function

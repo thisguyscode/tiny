@@ -87,8 +87,12 @@ function images () {
           rename: { basename: '900' }
         },
         {
-          width: 1400,
-          rename: { basename: '1400' }
+          width: 1200,
+          rename: { basename: '1200' }
+        },
+        {
+          width: 1600,
+          rename: { basename: '1600' }
         }
       ]},
       /** Process all files in this stream with the settings below */

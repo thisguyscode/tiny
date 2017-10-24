@@ -153,7 +153,7 @@ $transition-easing: ease-out;
 ======================================================================== */
 .c-project-hero {
   // margin-top: -1px;
-  min-height: $unit-xxl*3;
+  min-height: $unit-xxl*2;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -174,7 +174,7 @@ $transition-easing: ease-out;
   }
   
   @include mq($until: tablet) {
-    height: $unit-xl*3;
+    height: $unit-xl*2;
     position: static;
     order: 1;
   }  

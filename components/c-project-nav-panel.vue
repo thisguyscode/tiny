@@ -141,10 +141,8 @@ $label-icon-gutter: $unit-xs;
   width: 100%;
   height: 100%;
   position: relative;
-  padding: $unit-md;
-  // padding-bottom: $unit-md;
-  // padding-left: $page-padding-mobile;
-  // padding-right: $page-padding-mobile;
+  padding-top: $unit-md;
+  padding-bottom: $unit-md;
   min-height: $unit-xxl*3;
 
   &:hover,
@@ -157,31 +155,23 @@ $label-icon-gutter: $unit-xs;
     }
   }
 
-  @include mq($from: tablet) {
-    // padding-left: $page-padding-tablet;
-    // padding-right: $page-padding-tablet;
-  }
-
   @include mq($from: desktop) {
-    padding: $unit-lg;
-    // padding-top: $unit-lg;
-    // padding-bottom: $unit-lg;
-    // padding-left: $page-padding-desktop;
-    // padding-right: $page-padding-desktop;
-    min-height: $unit-xxl*4;
+    padding-top: $unit-lg;
+    padding-bottom: $unit-lg;
+    min-height: $unit-xxl*3;
   }
-
-  @include mq($from: wide) {
-    // padding-left: $page-padding-wide;
-    // padding-right: $page-padding-wide;
-  }
+  
 }
 
 .c-project-nav-panel--previous {
+  padding-left: $unit-lg;
+  padding-right: $unit-xxl;
   text-align: left;
 }
 
 .c-project-nav-panel--next {
+  padding-right: $unit-lg;
+  padding-left: $unit-xxl;
   text-align: right;
 }
 
@@ -210,9 +200,6 @@ $label-icon-gutter: $unit-xs;
   padding: $unit-sm;
   @include mq($from: tablet) {
     padding: $unit-md;
-  }
-  @include mq($from: tablet) {
-    padding: $unit-xl;
   }
 }
 

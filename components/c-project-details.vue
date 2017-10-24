@@ -91,18 +91,8 @@
                     v-for="tech in project.techs"
                     :key="tech.id"
                     class="tech-wrapper">
-                    
-                    <span
-                      v-if="tech === 'Adobe Photoshop'"
-                      class="c-project-details__tech-icon-wrapper ps">
-                      <span class="c-project-details__tech-icon-text">Ps</span>
-                    </span>
-                    
-                    <span
-                      v-else-if="tech === 'Adobe Illustrator'"
-                      class="c-project-details__tech-icon-wrapper ai">
-                      <span class="c-project-details__tech-icon-text">Ai</span>
-                    </span>
+
+                    <c-tech-icon :name="tech"/>
 
                     <span class="c-project-details__item-string  c-project-details__tech-string  o-text">{{ tech }}</span>
 
@@ -140,6 +130,7 @@
   import lGrid from '~/components/layout/l-grid'
   import lWrapper from '~/components/layout/l-wrapper'
   import cIcon from '~/components/c-icon'
+  import cTechIcon from '~/components/c-tech-icon'
   export default {
     data: () => {
       return {
@@ -149,7 +140,8 @@
     components: {
       lGrid,
       lWrapper,
-      cIcon
+      cIcon,
+      cTechIcon
     },
     props: {
       project: {
@@ -226,10 +218,11 @@ $transition-duration: .2s;
 $transition-easing: ease;
 
 .c-project-details {
+  position: relative;
   text-align: left;
   padding-top: $unit-md;
   transition: border-color .8s ease;
-  margin-top: -1px;
+  margin-bottom: -1px;
   @include mq($from: tablet) {
     padding-top: $unit-lg;
   }
@@ -257,7 +250,7 @@ $transition-easing: ease;
   cursor: pointer;
   padding-bottom: $heading-trailer;
   &.active {
-    box-shadow: inset 0 -1px 0 0 $neutral-90;
+    box-shadow: 0 1px 0 0 $neutral-60;
     margin-bottom: $paragraph-trailer;
   }
   @include mq($from: tablet) {
@@ -321,6 +314,11 @@ $transition-easing: ease;
       color: contrasting-color($yellow, $lightest, $darkest)
     }
   }
+}
+
+.c-project-details__tech-icon {
+  height: 100%;
+  width: auto;
 }
 
 .c-project-details__tech-icon-text {

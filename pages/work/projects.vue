@@ -36,7 +36,7 @@
       </c-project-details>
         
       <!-- Main project content from ./projects -->
-      <l-main-content>
+      <l-main-content class="p-projects__main-content">
         <nuxt-child></nuxt-child>
       </l-main-content>
     
@@ -46,7 +46,7 @@
     <div class="p-projects__nav-panels-wrapper">
       <nav class="p-projects__nav-panels">
         <!-- <l-wrapper> -->
-          <l-grid spacing="sm">
+          <l-grid spacing="xs">
             <div class="p-projects__nav-panel p-projects__nav-panel--previous  l-grid__cell u-1/2@mobile">
               <c-project-nav-panel :transitionEnd="transitionEnd" :project="previousProject" direction="previous"></c-project-nav-panel>
             </div>
@@ -191,8 +191,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .p-projects {
 
+}
+
+.p-projects__main-content {
+  position: relative;
+  // background-color: rgba($neutral-00, .9);
 }
 
 .p-projects__nav-panels-wrapper {
@@ -200,7 +206,10 @@ export default {
   background-color: $neutral-100;
   text-align: center;
   padding: $unit-sm;
-  box-shadow: inset 0 1px 0 0 $neutral-80;
+  box-shadow: inset 0 -1px 0 0 $neutral-80;
+  @include mq($from: mobile) {
+    padding: $unit-xs;
+  }
 }
 
 

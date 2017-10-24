@@ -43,16 +43,20 @@
     </div>
 
     <!-- Bottom Nav -->
-    <nav class="c-project-nav-panels">
-      <l-grid>
-        <div class="l-grid__cell u-1/2@mobile">
-          <c-project-nav-panel :transitionEnd="transitionEnd" :project="previousProject" direction="previous"></c-project-nav-panel>
-        </div>
-        <div class="l-grid__cell u-1/2@mobile">
-          <c-project-nav-panel :transitionEnd="transitionEnd" :project="nextProject" direction="next"></c-project-nav-panel>
-        </div>
-      </l-grid>
-    </nav>
+    <div class="p-projects__nav-panels-wrapper">
+      <nav class="p-projects__nav-panels">
+        <!-- <l-wrapper> -->
+          <l-grid spacing="sm">
+            <div class="p-projects__nav-panel p-projects__nav-panel--previous  l-grid__cell u-1/2@mobile">
+              <c-project-nav-panel :transitionEnd="transitionEnd" :project="previousProject" direction="previous"></c-project-nav-panel>
+            </div>
+            <div class="p-projects__nav-panel p-projects__nav-panel--next  l-grid__cell u-1/2@mobile">
+              <c-project-nav-panel :transitionEnd="transitionEnd" :project="nextProject" direction="next"></c-project-nav-panel>
+            </div>
+          </l-grid>
+        <!-- </l-wrapper> -->
+      </nav>
+    </div>
     <!--END Bottom Nav  -->
 
   </section>
@@ -143,6 +147,8 @@ export default {
       this.currentProject = currentProject
       this.nextProject = projectsArray[nextProjectIndex]
       this.previousProject = projectsArray[previousProjectIndex]
+
+      this.$store.commit('setCurrentColor', currentProject.color)
     },
     getNextColor: function (to) {
       var currentPath = to.path
@@ -185,7 +191,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  
-  
+.p-projects {
+
+}
+
+.p-projects__nav-panels-wrapper {
+  position: relative;
+  background-color: $neutral-100;
+  text-align: center;
+  padding: $unit-sm;
+  box-shadow: inset 0 1px 0 0 $neutral-80;
+}
+
+
+.p-projects__nav-panels {
+  max-width: $content-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.p-projects__nav-panel {
+  @include mq($until: mobile) {
+    margin-bottom: $unit-sm;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
 
 </style>

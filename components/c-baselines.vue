@@ -24,7 +24,6 @@ $baseline-color: $neutral-90;
 ======================================================================== */
 .c-baselines {
   pointer-events: none;
-  transform: translateZ(0);
   background-size: 100% $background-size;
   background-repeat: repeat-y;
   background-position: 0 0;

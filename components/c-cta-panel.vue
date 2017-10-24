@@ -77,20 +77,21 @@
   
 
   .c-cta-panel {
+    position: relative;
     text-align: left;
-    padding-top: $unit-lg;
+    padding-top: $unit-xl;
     padding-bottom: $unit-lg;
     background-color: rgba($neutral-100,.5);
-    box-shadow: inset 0 1px 0 0 $neutral-80, inset 0 -1px 0 0 $clr-primary;;
+    box-shadow: inset 0 1px 0 0 $neutral-80, inset 0 -1px 0 0 $clr-primary;
 
     @include mq($from: tablet) {
-      padding-top: $unit-xxl;
-      padding-bottom: $unit-xxl;
+      padding-top: $unit-xl;
+      padding-bottom: $unit-xl;
     }
     
     @include mq($from: desktop) {
-      padding-top: $unit-xxl*2;
-      padding-bottom: $unit-xxl*2;
+      padding-top: $unit-xl*3;
+      padding-bottom: $unit-xl*2;
     }
   }
 

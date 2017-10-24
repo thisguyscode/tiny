@@ -21,9 +21,8 @@
                     <span class="c-project-group-intro__index   o-heading  o-heading--gamma  u-margin-bottom-none">{{ index }}. </span>
                     <span class="c-project-group-intro__name   o-heading  o-heading--gamma  u-margin-bottom-none">{{ name }}</span>
                     <f-link
-                      class="c-project-group-intro__scrollLink">
-                      <!-- :scrollToSelector="'#project-group-' + index + '-top'" -->
-                      <span class="u-link-bloater"></span>
+                      class="c-project-group-intro__scrollLink"
+                      :scrollToSelector="'#p-work__project-group-' + index">
                     </f-link>
                   </h3>
                 </template>
@@ -31,7 +30,7 @@
               </l-affix>
             </div><!--END Main group title cell -->
             
-            <div class="l-grid__cell  u-1/3 u-1/2@tablet">
+            <div class="l-grid__cell  u-1/3 u-1/2@tablet" v-if="link">
               
               <c-button
                 class="c-project-group-intro__button"
@@ -49,7 +48,7 @@
         </div>
 
         <div class="l-grid__cell  u-3/5@tablet">
-          <p class="c-project-group-intro__description  o-text o-text--paragraph">{{ description }}</p>
+          <p class="c-project-group-intro__description  o-text o-text--lg o-text--paragraph">{{ description }}</p>
         </div>
 
       </l-grid>
@@ -263,6 +262,7 @@ $link-padding-x: $unit-sm;
         left: 0;
         box-shadow: inset 0 0 0 1px $neutral-80;
         z-index: 1;
+        pointer-events: none;
       }
       background-color: $neutral-95;
       position: relative;

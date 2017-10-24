@@ -112,6 +112,7 @@ $light:      $lightest;
 }
 
 .c-profile-navbar__link-text {
+  pointer-events: none;
   font-weight: $font-weight-semi;
 }
 

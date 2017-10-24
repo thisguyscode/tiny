@@ -21,31 +21,42 @@
             <!-- Details -->
             <div class="c-project-overview__details-cell  l-grid__cell">
               <l-grid class="u-margin-bottom-sm">
-                <div v-if="skills" class="_detail-group  l-grid__cell  u-1/2@tablet">
-                  <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Skills</h4>
-                  <ul class="u-list-bare">
-                    <li v-for="skill in skills" :key="skill.id">
-                      <p class="c-project-overview__detail  o-text o-text--sm">{{ skill }}</p>
-                    </li>
-                  </ul>
+                <div class="l-grid__cell  u-1/2@tablet">
+                  
+                  <div v-if="role" class="_detail-group">
+                    <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Role</h4>
+                    <p class="c-project-overview__detail  o-text o-text--sm">{{ role }}</p>
+                  </div>
+
+                  <div v-if="role" class="_detail-group">
+                    <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Tech</h4>
+                    <ul class="u-list-bare">
+                      <li v-for="tech in techs" :key="tech.id">
+                        <p class="c-project-overview__detail  o-text o-text--sm">{{ tech }}</p>
+                      </li>
+                    </ul>
+                  </div>
+
                 </div>
-                <div v-if="techs" class="_detail-group  l-grid__cell  u-1/2@tablet">
-                  <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Tech</h4>
-                  <ul class="u-list-bare">
-                    <li v-for="tech in techs" :key="tech.id">
-                      <p class="c-project-overview__detail  o-text o-text--sm">{{ tech }}</p>
-                    </li>
-                  </ul>
-                </div>
-                <div v-if="role" class="_detail-group  l-grid__cell  u-1/2@tablet">
-                  <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Role</h4>
-                  <p class="c-project-overview__detail  o-text o-text--sm">{{ role }}</p>
-                </div>
-                <div v-if="date" class="_detail-group  l-grid__cell  u-1/2@tablet">
-                  <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Date</h4>
-                  <p class="c-project-overview__detail  o-text o-text--sm">{{ date }}</p>
+
+                <div class="l-grid__cell  u-1/2@tablet">
+                  
+                  <div v-if="date" class="_detail-group">
+                    <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Date</h4>
+                    <p class="c-project-overview__detail  o-text o-text--sm">{{ date }}</p>
+                  </div>
+
+                  <div v-if="skills" class="_detail-group">
+                    <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Skills</h4>
+                    <ul class="u-list-bare">
+                      <li v-for="skill in skills" :key="skill.id">
+                        <p class="c-project-overview__detail  o-text o-text--sm">{{ skill }}</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </l-grid>
+
             </div>
             <div class="l-grid__cell u-1/3 u-1/2@tablet">
               <div class="_button-wrapper">

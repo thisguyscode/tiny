@@ -4,9 +4,9 @@
     <slot></slot>
   </nuxt-link>
   
-  <span v-else-if="scrollToSelector" class="f-link">
+  <span v-else-if="scrollToSelector">
     <f-no-ssr>
-      <a v-scroll-to="scrollToSelector">
+      <a class="f-link" v-scroll-to="{ el: scrollToSelector, offset: -176 }">
         <span class="u-link-bloater"></span>
       </a>
     </f-no-ssr>
@@ -47,10 +47,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  
   .f-link {
     cursor: pointer;
     color: inherit;
-    position: relative;
+    position: static;
     text-decoration: none;
   }
+
 </style>

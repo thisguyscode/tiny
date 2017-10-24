@@ -9,16 +9,16 @@
 
     <l-main-content>
       
-      <c-intro-text heading="tiny?">
+      <!-- <c-intro-text heading="tiny?">
         <p class="o-text o-text--lg o-text--paragraph">We’re all tiny. Tiny people on a tiny world in the vast expanse of everything - but within each of us is an endless universe - and that’s super cool.</p>
         <p class="o-text o-text--lg o-text--paragraph">I trust myself, and go where I need to. For now I’d like to practice digital interface design. I find it challenging, stimulating and satisfying - hopefully I can also be of value to you and your ambitions.</p>
         <p class="o-text o-text--lg o-text--paragraph">There’ll come a time that I need to pick my battle, as may be the duty of all able-minded beings, but for now I have much to learn, and a will to do so.</p>
-      </c-intro-text>
+      </c-intro-text> -->
 
       
       <div id="trigger">
         <!-- Project Nav -->
-        <l-affix
+        <!-- <l-affix
           :z="999"
           fullWidth
           :relativeElementSelector="'#trigger'"
@@ -26,13 +26,13 @@
           <template scope="props" slot="contents">
             <c-profile-navbar></c-profile-navbar>
           </template>
-        </l-affix>
+        </l-affix> -->
       
         <l-wrapper class="content">
 
           <section class="hard-skills" id="hard-skills">
-            <h2 class="o-heading o-heading--beta u-margin-bottom-none">Hard skills</h2>
-            <p class="p-profile__caption o-text o-text--sm">Completely arbitrary ratings scores for my skills</p>
+            <h2 class="o-heading o-heading--beta">Hard skills</h2>
+            <!-- <p class="p-profile__caption o-text">Completely arbitrary ratings scores for my skills</p> -->
             
             <section class="skills-design-section">
               <h3 class="o-heading o-heading--gamma">Design:</h3>
@@ -423,7 +423,7 @@
             
             <section class="skills-not-bad">
 
-              <h3 class="o-heading o-heading--gamma">Not bad at:</h3>
+              <h3 class="o-heading o-heading--delta">Not bad at:</h3>
               <l-grid>
 
                 <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
@@ -663,7 +663,7 @@
 }
 
 .content {
-  padding-top: $unit-lg;
+  // padding-top: $unit-lg;
 }
 
 .fantasy-item-cell {

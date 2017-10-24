@@ -30,12 +30,14 @@
       
         <l-wrapper class="content">
 
-          <section class="hard-skills" id="hard-skills">
-            <h2 class="o-heading o-heading--beta">Hard skills</h2>
-            <!-- <p class="p-profile__caption o-text">Completely arbitrary ratings scores for my skills</p> -->
+          <section class="p-profile__hard-skills-section" id="hard-skills">
+            <div class="p-profile__section-heading-wrapper">
+              <h2 class="o-heading o-heading--beta  u-margin-bottom-none">Hard skills</h2>
+              <!-- <p class="p-profile__caption o-text">Completely arbitrary ratings scores for my skills</p> -->
+            </div>
             
             <section class="skills-design-section">
-              <h3 class="o-heading o-heading--gamma">Design:</h3>
+              <h3 class="p-profile__section-subheading  o-heading o-heading--gamma">Design:</h3>
 
               <l-grid>
 
@@ -127,8 +129,8 @@
               </l-grid>
             </section>
 
-            <section>
-              <h3 class="o-heading o-heading--gamma">Code:</h3>
+            <section class="skills-code-section">
+              <h3 class="p-profile__section-subheading  o-heading o-heading--gamma">Code:</h3>
 
               <l-grid>
 
@@ -305,11 +307,14 @@
           </section><!--END hard skills section -->
           
 
-          <section class="soft-skills" id="soft-skills">
-            <h2 class="o-heading o-heading--beta">Soft skills</h2>
+          <section class="p-profile__soft-skills-section" id="soft-skills">
+
+            <div class="p-profile__section-heading-wrapper">
+              <h2 class="o-heading o-heading--beta  u-margin-bottom-none">Soft skills</h2>
+            </div>
             
             <section class="skills-good">
-              <h3 class="o-heading o-heading--gamma">Pretty damn good at:</h3>
+              <h3 class="p-profile__section-subheading  o-heading o-heading--gamma">Pretty damn good at:</h3>
 
               <l-grid>
 
@@ -423,7 +428,7 @@
             
             <section class="skills-not-bad">
 
-              <h3 class="o-heading o-heading--delta">Not bad at:</h3>
+              <h3 class="p-profile__section-subheading  o-heading o-heading--delta">Not bad at:</h3>
               <l-grid>
 
                 <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
@@ -467,8 +472,10 @@
             </section>
           </section><!--END soft skills section -->
           
-          <section class="testimonials" id="testimonials">
-            <h2 class="o-heading o-heading--beta">Testimonials</h2>
+          <section class="p-profile__testimonials-section" id="testimonials">
+            <div class="p-profile__section-heading-wrapper">
+              <h2 class="o-heading o-heading--beta  u-margin-bottom-none">Testimonials</h2>
+            </div>
             <c-testimonials :testimonials="testimonials"></c-testimonials>
           </section>
 
@@ -658,15 +665,44 @@
 .p-profile__caption {
   color: $neutral-30;
 }
+
+.p-profile__hard-skills-section {
+  margin-bottom: $unit-xl;
+  @include mq($from: tablet) {
+    margin-bottom: $unit-xl;
+  }
+}
+
+.p-profile__soft-skills-section {
+  margin-bottom: $unit-xxl;
+  @include mq($from: tablet) {
+    margin-bottom: $unit-xxl*2;
+  }
+}
+
+.p-profile__testimonials-section {
+  margin-bottom: $unit-xxl;
+  @include mq($from: tablet) {
+    margin-bottom: $unit-xxl*2;
+  }
+}
+
+.p-profile__section-heading-wrapper {
+  margin-bottom: $unit-md;
+  @include mq($from: tablet) {
+    margin-bottom: $unit-lg;
+  }
+}
+
+.p-profile__section-subheading {
+  margin-bottom: $unit-md;
+}
+
 ._mostly {
   color: $neutral-100;
 }
 ._filler {
   height: 2000px;
-}
-
-.content {
-  // padding-top: $unit-lg;
 }
 
 .fantasy-item-cell {
@@ -680,9 +716,7 @@
   margin-bottom: 0;
 }
 .fantasy-caption {
-  // @include vr($font-body, $font-size-md);
   color: $neutral-40;
-  // font-weight: $font-weight-semi;
 }
 
 .fantasy-icon-wrapper {
@@ -731,9 +765,6 @@
   @include mq($from: tablet) {
     margin-bottom: $unit-xxl;
   }
-  // @include mq($from: desktop) {
-  //   margin-bottom: $unit-xxl;
-  // }
 }
 .skills-good {
   margin-bottom: $unit-md;
@@ -742,10 +773,9 @@
   }
 }
 .skill-heading {
-  // @include vr($font-body, $font-size-lg);
   font-weight: $font-weight-semi;
   @include mq($until: tablet) {
-    padding-top: $unit-sm;
+    // padding-top: $unit-sm;
   }
 }
 .soft-skills-heading {
@@ -872,10 +902,10 @@
 }
 
 .skill-item-cell {
-  margin-bottom: $unit-sm;
-  @include mq($from: tablet) {
-    margin-bottom: $unit-md;
-  }
+  margin-bottom: $unit-lg;
+  // @include mq($from: tablet) {
+  //   margin-bottom: $unit-md;
+  // }
 }
 // .skill-icon-cell {
 //   height: $unit-md;
@@ -936,8 +966,13 @@
     display: none;
   }
 }
+
 .skills-design-section {
-  margin-bottom: $unit-lg;
+  margin-bottom: $unit-xl;
+}
+
+.skills-code-section {
+
 }
 
 </style>

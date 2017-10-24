@@ -23,7 +23,7 @@ $unit-xxl:  $rhythm * 3;
 $page-padding-wide:     $unit-xxl;
 $page-padding-desktop:  $unit-xxl;
 $page-padding-tablet:   $unit-xl;
-$page-padding-mobile:   $unit-md;
+$page-padding-mobile:   $unit-sm + $unit-xs;
 
 
 /**

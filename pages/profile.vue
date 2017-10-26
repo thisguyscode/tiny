@@ -43,9 +43,9 @@
 
                 <!-- 1 -->
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper ps software">
-                    <span class="skill-icon-text">Ps</span>
-                  </div>
+                  
+                  <c-tech-icon size="lg" name="Adobe Photoshop"/>
+
                   <div class="skill-label">
                     <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Photoshop</h3>
                     <h4 class="o-heading o-heading--zeta">Adobe</h4>
@@ -59,9 +59,7 @@
 
                 <!-- 2 -->
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper ai software">
-                    <span class="skill-icon-text">Ai</span>
-                  </div>
+                  <c-tech-icon size="lg" name="Adobe Illustrator"/>
                   <div class="skill-label">
                     <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Illustrator</h3>
                     <h4 class="o-heading o-heading--zeta">Adobe</h4>
@@ -75,9 +73,7 @@
 
                 <!-- 3 -->
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper id software">
-                    <span class="skill-icon-text">Id</span>
-                  </div>
+                  <c-tech-icon size="lg" name="Adobe InDesign"/>
                   <div class="skill-label">
                     <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">InDesign</h3>
                     <h4 class="o-heading o-heading--zeta">Adobe</h4>
@@ -91,13 +87,7 @@
 
                 <!-- 4 -->
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper software u-padding-none">
-                    <c-image
-                      :makeResponsive="false"
-                      :lazy="false"
-                      imageSrc="logo-sketch.png"
-                    />
-                  </div>
+                  <c-tech-icon size="lg" name="Sketch"/>
                   <div class="skill-label">
                     <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Sketch</h3>
                     <h4 class="o-heading o-heading--zeta">Bohemian Coding</h4>
@@ -111,13 +101,7 @@
 
                 <!-- 5 -->
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper software u-padding-none">
-                    <c-image
-                      :makeResponsive="false"
-                      :lazy="false"
-                      imageSrc="logo-invision.svg"
-                    />
-                  </div>
+                  <c-tech-icon size="lg" name="InVision"/>
                   <div class="skill-label">
                     <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">InVision</h3>
                     <h4 class="o-heading o-heading--zeta">InVision</h4>
@@ -136,9 +120,7 @@
 
                 <!-- 1 -->
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper software u-padding-none">
-                    <c-icon name="css3" class="skill-icon"></c-icon>
-                  </div>
+                  <c-tech-icon size="lg" name="css"/>
                   <div class="skill-label">
                     <div class="software-name">
                       <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">CSS3</h3>
@@ -153,13 +135,7 @@
 
                 <!-- 2 -->
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper software u-padding-none">
-                    <c-image
-                      :makeResponsive="false"
-                      :lazy="false"
-                      :imageSrc="'logo-scss.png'"
-                    />
-                  </div>
+                  <c-tech-icon size="lg" name="scss"/>
                   <div class="skill-label">
                     <div class="software-name">
                       <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">SCSS</h3>
@@ -174,9 +150,7 @@
 
                 <!-- 3 -->
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper software u-padding-none">
-                    <c-icon name="html5" class="skill-icon"></c-icon>
-                  </div>
+                  <c-tech-icon size="lg" name="HTML5"/>
                   <div class="skill-label">
                     <div class="software-name">
                       <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">HTML5</h3>
@@ -191,13 +165,7 @@
 
                 <!-- 4 -->
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper skill-icon-wrapper-landscape software u-padding-none">
-                    <c-image
-                      :makeResponsive="false"
-                      :lazy="false"
-                      :imageSrc="'logo-npm.png'"
-                    />
-                  </div>
+                  <c-tech-icon size="lg" :landscape="true" name="npm"/>
                   <div class="skill-label">
                     <div class="software-name">
                       <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">npm</h3>
@@ -212,13 +180,7 @@
 
                 <!-- 5 -->
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper software u-padding-none">
-                    <c-image
-                      :makeResponsive="false"
-                      :lazy="false"
-                      :imageSrc="'logo-gulp.png'"
-                    />
-                  </div>
+                  <c-tech-icon size="lg" name="gulp"/>
                   <div class="skill-label">
                     <div class="software-name">
                       <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Gulp</h3>
@@ -232,9 +194,7 @@
                 <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper software u-padding-none">
-                    <c-icon name="git" class="skill-icon"></c-icon>
-                  </div>
+                  <c-tech-icon size="lg" name="git"/>
                   <div class="skill-label">
                     <div class="software-name">
                       <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">git</h3>
@@ -248,9 +208,7 @@
                 <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper software u-padding-none">
-                    <c-icon name="github" class="skill-icon"></c-icon>
-                  </div>
+                  <c-tech-icon size="lg" name="github"/>
                   <div class="skill-label">
                     <div class="software-name">
                       <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">github</h3>
@@ -264,13 +222,7 @@
                 <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper software u-padding-none">
-                    <c-image
-                      :makeResponsive="false"
-                      :lazy="false"
-                      :imageSrc="'logo-js5.png'"
-                    />
-                  </div>
+                  <c-tech-icon size="lg" name="js"/>
                   <div class="skill-label">
                     <div class="software-name">
                       <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Javascript</h3>
@@ -284,13 +236,7 @@
                 <div class="l-grid__cell u-1/5@tablet"></div>
 
                 <div class="skill-item-cell l-grid__cell u-2/5@tablet u-1/5@desktop">
-                  <div class="skill-icon-wrapper software u-padding-none">
-                    <c-image
-                      :makeResponsive="false"
-                      :lazy="false"
-                      :imageSrc="'logo-vue.png'"
-                    />
-                  </div>
+                  <c-tech-icon size="lg" name="vue"/>
                   <div class="skill-label">
                     <div class="software-name">
                       <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Vue</h3>
@@ -484,9 +430,12 @@
           </section>
 
           <section class="fantasies" id="fantasies">
-            <h2 class="o-heading o-heading--beta u-margin-bottom-none">Current fantasies</h2>
-            <p class="o-heading o-heading--gamma">(subject to frequent change)</p>
 
+            <div class="p-profile__section-heading-wrapper">
+              <h2 class="o-heading o-heading--beta u-margin-bottom-none">Current fantasies</h2>
+              <p class="o-heading o-heading--delta">(subject to frequent change)</p>
+            </div>
+            
             <l-grid>
 
               <!-- 1 -->
@@ -573,6 +522,7 @@
 <script>
   import cGridlines from '~/components/c-gridlines'
   import cTestimonials from '~/components/c-testimonials'
+  import cTechIcon from '~/components/c-tech-icon'
   import cScoreBar from '~/components/c-score-bar'
   import cHero from '~/components/c-hero'
   import cIcon from '~/components/c-icon'
@@ -593,6 +543,7 @@
       cProfileNavbar,
       cHero,
       cIcon,
+      cTechIcon,
       cScoreBar,
       cIntroText,
       cCtaPanel,
@@ -609,21 +560,24 @@
             name: 'Dejan Ulcej',
             company: 'trivago',
             role: 'Product Designer',
-            character: 'topography.svg',
+            character: 'character-04.svg',
+            color: 'yellow',
             quote: 'Rerum voluptatem minima distinctio. Fugit odio qui repudiandae architecto omnis adipisci. Quo fuga aut nostrum. Reiciendis nihil vero praesentium non. Perferendis cupiditate impedit ipsum tenetur.'
           },
           {
             name: 'Dan Ardenleneu',
             company: 'trivago',
             role: 'Product Designer',
-            character: 'topography.svg',
+            character: 'character-07.svg',
+            color: '#fc6666',
             quote: 'Hic mollitia temporibus iure nemo voluptatem. Eveniet non iusto cupiditate odio. Perferendis corrupti quia saepe. Ex aperiam neque sunt reprehenderit numquam voluptatum non accusantium.'
           },
           {
             name: 'Someone Else',
             company: 'trivago',
             role: 'Product Designer',
-            character: 'topography.svg',
+            character: 'character-09.svg',
+            color: '#fff',
             quote: 'Eos ut sit minima. Repellat dolore tempora dolore veniam fugit veniam. Sit nam voluptatibus quia quod.'
           }
         ]

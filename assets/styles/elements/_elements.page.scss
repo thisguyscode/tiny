@@ -16,7 +16,7 @@ html {
   overflow: hidden; /* [1] */
   overflow-y: scroll; /* [1] */
   position: relative;
-  background-color: $neutral-80;
+  background-color: desaturate($clr-primary, 20);
   color: $neutral-00;
   text-align: center;
 }

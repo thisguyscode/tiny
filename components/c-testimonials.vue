@@ -8,7 +8,7 @@
         @click="change(testimonial)">
         <l-grid>
           <div class="_image-cell l-grid__cell u-1/5">
-            <div class="_image-wrapper">
+            <div class="_image-wrapper" :style="'background-color:' + testimonial.color">
               <c-image
                 v-if="testimonial.character"
                 fit="cover"
@@ -17,7 +17,9 @@
             </div>
           </div>
           <div class="l-grid__cell u-2/5@mobile u-1/5@tablet">
-            <p class="o-text _name">{{ testimonial.name }}</p>
+            <p class="o-text _name" :style="'color:' + testimonial.color">
+              {{ testimonial.name }}
+            </p>
             <p class="o-text  u-text--low-contrast">{{ testimonial.role }}</p>
             <p class="o-text  u-text--low-contrast">@{{ testimonial.company }}</p>
           </div>
@@ -90,7 +92,7 @@ export default {
   }
 
   ._quote-mark {
-    font-family: $font-display;
+    font-family: serif;
     font-size: $font-size-xxxl;
     line-height: 0;
     display: inline-block;

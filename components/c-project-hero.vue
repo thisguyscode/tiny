@@ -43,13 +43,15 @@
         <!-- Hero image panel -->
         <div class="c-project-hero-image-cell l-grid__cell u-3/5@tablet" :class="setImgClass(project)">
           <div v-if="transitionEnd && project.imgSrc"  class="c-project-hero-image-reference  o-liner" :class="setImgWrapperClass(project)">
-            <div class="c-project-hero-image-wrapper">
-              <c-image
-                :lazy="false"
-                :fit="setImgClass(project)"
-                :imageSrc="project.imgSrc"
-              />
-            </div>
+             <transition name="fade"> 
+              <div class="c-project-hero-image-wrapper">
+                <c-image
+                  :lazy="false"
+                  :fit="setImgClass(project)"
+                  :imageSrc="project.imgSrc"
+                />
+              </div>
+            </transition>
           </div>
         </div>
 

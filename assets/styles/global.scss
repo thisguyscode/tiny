@@ -31,3 +31,16 @@
 @import "./utilities/utilities.box";
 @import "./utilities/utilities.divider";
 @import "./utilities/utilities.responsive";
+
+.fade-enter {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.fade-before-enter {
+  opacity: 0;
+}
+
+.fade-after-enter {
+  opacity: 1;
+}

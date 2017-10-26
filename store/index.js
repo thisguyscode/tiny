@@ -8,7 +8,7 @@ const store = () => new Vuex.Store({
     projectsArray: [],
     scrollToSelector: null,
     messageSent: false,
-    currentColor: '#4786eb'
+    currentColor: ''
   },
   actions: {
     async getProjects ({commit}) {
@@ -39,7 +39,7 @@ const store = () => new Vuex.Store({
       state.currentColor = string
     },
     resetCurrentColor: (state) => {
-      state.currentColor = '#4786eb'
+      state.currentColor = ''
     }
   }
 })

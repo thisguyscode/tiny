@@ -3,8 +3,8 @@
     <div v-if="!nobar" class="bar">
       <div class="fill o-liner o-liner--break-right" :class="scoreClass" :style="fillStyle"></div>
     </div>
-    <span class="score  o-text o-text--lg">
-      <span class="score-number" :class="scoreClass">{{ score }}</span>/{{ of }}
+    <span class="score" :class="scoreClass">
+      <span class="score-number">{{ score }} </span>/ {{ of }}
     </span>
   </div>
 </template>
@@ -57,26 +57,35 @@ export default {
   }
 
   .score {
-    // @include vr($font-body, $font-size-lg);
+    display: inline;
     white-space: nowrap;
-    color: $neutral-40;
+    font-family: $font-body;
+    font-size: $font-size-md;
+    font-weight: $font-weight-regular;
   }
   .score-number {
-    font-weight: $font-weight-semi;
+    font-weight: $font-weight-bold;
+  }
+  .score {
     &.lowest {
-      color: $red;
+      color: contrasting-color($red, $lightest, $darkest);
+      background-color: $red;
     }
     &.low {
-      color: $orange;
+      color: contrasting-color($orange, $lightest, $darkest);
+      background-color: $orange;
     }
     &.mid {
-      color: $yellow;
+      color: contrasting-color($yellow, $lightest, $darkest);
+      background-color: $yellow;
     }
     &.high {
-      color: $yellow-green;
+      color: contrasting-color($yellow-green, $lightest, $darkest);
+      background-color: $yellow-green;
     }
     &.highest {
-      color: $green;
+      color: contrasting-color($green, $lightest, $darkest);
+      background-color: $green;
     }
   }
 
@@ -86,7 +95,7 @@ export default {
     height: $unit-sm;
     border-radius: 2px;
     overflow: hidden;
-    background-color: $neutral-80;
+    background-color: $neutral-70;
     margin-right: $unit-sm;
   }
   .fill {

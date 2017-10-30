@@ -10,7 +10,9 @@
             <!-- Title cell -->
             <div class="l-grid__cell  u-2/3 u-1/2@tablet">
               <h3 class="_title  o-heading o-heading--delta">
-                <span class="_index" :style="indexStyle">{{ index }}. </span>
+                <span class="_index">
+                  <span class="_index-string" :class="indexClass" :style="indexStyle">{{ index }}. </span>
+                </span>
                 <span class="_name">{{ name }}</span>
               </h3>
             </div>
@@ -96,6 +98,8 @@ import cIcon from '~/components/c-icon'
 import cButton from '~/components/c-button'
 import lWrapper from '~/components/layout/l-wrapper'
 import lGrid from '~/components/layout/l-grid'
+import detectContrast from '~/utils/detectContrast'
+
 export default {
   components: {
     cIcon,
@@ -154,7 +158,10 @@ export default {
       }
     },
     indexStyle: function () {
-      return 'color:' + this.project.color + ';'
+      return 'background-color: ' + this.project.color + ';'
+    },
+    indexClass: function () {
+      return 'c-project-overview__index-string--' + detectContrast(this.project.color)
     },
     lineStyle: function () {
       return 'background-color:' + this.project.color + ';'
@@ -275,6 +282,12 @@ export default {
     @include mq($from: wide) {
       min-width: $page-padding-wide;
     }
+  }
+  .c-project-overview__index-string--dark {
+    color: $darkest;
+  }
+  .c-project-overview__index-string--light {
+    color: $lightest;
   }
 
   $line-width: 3px;

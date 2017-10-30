@@ -260,11 +260,11 @@ $link-padding-x: $unit-sm;
         right: 0;
         bottom: 0;
         left: 0;
-        box-shadow: inset 0 0 0 1px $neutral-80;
+        box-shadow: inset 0 0 0 1px $neutral-00;
         z-index: 1;
         pointer-events: none;
       }
-      background-color: $neutral-95;
+      background-color: $neutral-100;
       position: relative;
     }
 
@@ -277,6 +277,7 @@ $link-padding-x: $unit-sm;
         padding-right: $unit-xs;
       }
       @include mq($from: tablet) {
+        padding-right: $unit-md;
         padding-left: $unit-sm;
       }
     }

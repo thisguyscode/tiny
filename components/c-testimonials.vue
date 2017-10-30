@@ -16,15 +16,30 @@
               />
             </div>
           </div>
-          <div class="l-grid__cell u-2/5@mobile u-1/5@tablet">
-            <p class="o-text _name" :style="'color:' + testimonial.color">
+          <div class="_details-wrapper  l-grid__cell u-2/5@mobile u-1/5@tablet">
+            <span 
+              v-if="testimonial.color"
+              class="o-text _name"
+              :class="'c-testimonials__name--' + detectContrast(testimonial.color)"
+              :style="
+                'background-color:' + testimonial.color
+              ">
               {{ testimonial.name }}
-            </p>
-            <p class="o-text  u-text--low-contrast">{{ testimonial.role }}</p>
-            <p class="o-text  u-text--low-contrast">@{{ testimonial.company }}</p>
+            </span>
+            <span 
+              v-else
+              class="o-text _name">
+              {{ testimonial.name }}
+            </span>
+            <p class="o-text _role">{{ testimonial.role }}</p>
+            <p class="o-text _company">@{{ testimonial.company }}</p>
           </div>
           <div class="l-grid__cell u-2/5@mobile u-3/5@tablet">
-            <p class="o-text o-text--lg _quote"><span class="_quote-mark open">&ldquo;</span>{{ testimonial.quote }}<span class="_quote-mark close">&rdquo;</span></p>
+            <p class="o-text o-text--xl _quote">
+              <span class="_quote-mark open">&ldquo;</span>
+              {{ testimonial.quote }}
+              <span class="_quote-mark close">&rdquo;</span>
+            </p>
           </div>
         </l-grid>
       </li>
@@ -34,6 +49,8 @@
 
 <script>
 import lGrid from '~/components/layout/l-grid'
+import detectContrast from '~/utils/detectContrast.js'
+
 export default {
   components: {
     lGrid
@@ -45,6 +62,9 @@ export default {
     }
   },
   methods: {
+    detectContrast: function (color) {
+      return detectContrast(color)
+    },
     change: function (to) {
       console.log(to)
     }
@@ -54,8 +74,6 @@ export default {
 
 <style lang="scss" scoped>
   
-  
-
   .c-testimonials {
     text-align: left;
   }
@@ -75,6 +93,10 @@ export default {
     border-radius: 100%;
     overflow: hidden;
 
+    @include mq($until: mobile) {
+      margin-bottom: $unit-sm;
+    }
+    
     @include mq($from: mobile) {
       position: absolute;
       top: 0;
@@ -85,35 +107,64 @@ export default {
       height: $unit-xxl;
     }
   }
+
+  ._details-wrapper {
+    @include mq($until: tablet) {
+      margin-bottom: $unit-sm;
+    }
+  }
   
   ._quote {
     font-style: italic;
+    display: inline;
     position: relative;
+    z-index: 1;
   }
 
   ._quote-mark {
     font-family: serif;
-    font-size: $font-size-xxxl;
+    font-size: 9rem;
     line-height: 0;
     display: inline-block;
-    color: $neutral-80;
+    color: $clr-primary;
+    position: absolute;
+    z-index: -1;
+    opacity: .1;
     &.open {
-      position: absolute;
-      top: $unit-sm;
+      top: 2rem;
       left: -$unit-md;
+      @include mq($from: mobile) {
+        left: -$unit-lg;
+      }
     }
     &.close {
-      top: auto;
-      position: relative;
-      top: $unit-sm;
-      right: -$unit-xs;
+      bottom: -1.5rem;
+      right: -$unit-lg;
     }
   }
 
   ._entry {
     margin-bottom: $unit-md;
-    @include mq($from: tablet) {
+    @include mq($from: mobile) {
       margin-bottom: $unit-xl;
     }
+    @include mq($from: tablet) {
+      margin-bottom: $unit-xxl;
+    }
+  }
+
+  ._role,
+  ._company {
+    color: $neutral-30;
+  }
+
+  .c-testimonials__name {
+
+  }
+  .c-testimonials__name--light {
+    color: $lightest;
+  }
+  .c-testimonials__name--dark {
+    color: $darkest;
   }
 </style>

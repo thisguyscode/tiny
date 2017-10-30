@@ -76,7 +76,7 @@ $neutral-80:      $neutral-80;
 
 /* Local variables
 ======================================================================== */
-$background-color: rgba($darkest, .5);
+$background-color: $clr-primary;
 $border: inset 0 -1px 0 0 $neutral-80;
   
 
@@ -88,7 +88,7 @@ $border: inset 0 -1px 0 0 $neutral-80;
   overflow: hidden;
   background-color: $background-color;
   box-shadow: $border;
-  color: $lightest;
+  color: contrasting-color($background-color, $lightest, $darkest);
   min-height: $unit-xxl*2;
   // margin-bottom: -1px;
   // margin-top: -1px;
@@ -108,7 +108,7 @@ $border: inset 0 -1px 0 0 $neutral-80;
 .c-hero__text-wrapper {
   padding-top: $unit-xxl;
   padding-bottom: $unit-xxl;
-  text-shadow: 0 2px 10px rgba($darkest, .7);
+  // text-shadow: 0 2px 10px rgba($darkest, .7);
 }
 
 </style>

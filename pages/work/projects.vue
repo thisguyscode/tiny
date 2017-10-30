@@ -200,7 +200,7 @@ export default {
   background-color: $neutral-100;
   text-align: center;
   padding: $unit-sm;
-  box-shadow: inset 0 -1px 0 0 $neutral-80;
+  box-shadow: inset 0 1px 0 0 $neutral-80;
   @include mq($from: mobile) {
     padding: $unit-xs;
   }

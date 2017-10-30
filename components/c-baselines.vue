@@ -16,7 +16,7 @@ export default {}
 ======================================================================== */
 $baseline-size: 1;
 $background-size: $rhythm / 2;
-$baseline-color: $neutral-90;
+$baseline-color: rgba($neutral-00, .08);
 
 
 

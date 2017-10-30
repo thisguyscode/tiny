@@ -10,8 +10,8 @@
 
           <!-- LOGO -->
           <li class="l-grid__cell  u-1/4  u-2/5@mobile">
-            <nuxt-link class="c-site-header__logo" to="/">
-              <c-logo size="sm"></c-logo>
+            <nuxt-link class="c-site-header__logo-wrapper" to="/">
+              <c-logo class="c-site-header__logo" size="md"></c-logo>
             </nuxt-link>
           </li><!--END- LOGO -->
 
@@ -85,7 +85,7 @@ export default {
 .c-site-header__nav {
   // overflow: hidden;
   transition: border-color .2s ease;
-  background-color: $neutral-95;
+  background-color: $neutral-100;
   border-bottom: 1px solid $clr-primary;
   // &:after {
   //   content: '';
@@ -101,12 +101,16 @@ export default {
 }
 
 .c-site-header__link,
-.c-site-header__logo {
+.c-site-header__logo-wrapper {
   display: block;
   padding-top: $unit-md;
   padding-bottom: $unit-md - $unit-sm;
   width: 100%;
   text-decoration: none;
+}
+
+.c-site-header__logo {
+  width: 100%;
 }
 
 

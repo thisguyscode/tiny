@@ -120,8 +120,8 @@ $orange: hsla(30, 94, 62, 1) !default;
 $darkest: hsl(30, 15%, 8%) !default;
 $lightest: hsl(0, 0%, 100%) !default;
 
-$neutral-100: $darkest !default;
-$neutral-00: $lightest !default;
+$neutral-100: $lightest !default;
+$neutral-00: $darkest !default;
 
 $neutral-05: mix($neutral-100, $neutral-00,5%) !default;
 $neutral-10: mix($neutral-100, $neutral-00,10%) !default;
@@ -141,7 +141,7 @@ $neutral-85: mix($neutral-100, $neutral-00,85%) !default;
 $neutral-90: mix($neutral-100, $neutral-00,90%) !default;
 $neutral-95: mix($neutral-100, $neutral-00,95%) !default;
 
-$clr-primary: $blue;
+$clr-primary: $neutral-00;
 
 
 /* Colors by purpose

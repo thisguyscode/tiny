@@ -25,21 +25,6 @@ import lMainContent from '~/components/layout/l-main-content'
 
 export default {
   scrollToTop: false,
-  head: {
-    htmlAttrs: {
-      style: 'background-color: ' + this.testColor + ';'
-    }
-  },
-  data: () => {
-    return {
-      testColor: '#fff'
-    }
-  },
-  computed: {
-    htmlBackgroundColor: function () {
-      return this.$store.state.currentColor
-    }
-  },
   components: {
     cGridlines,
     cSiteHeader,
@@ -47,13 +32,6 @@ export default {
     cFooter,
     lWrapper,
     lMainContent
-  },
-  mounted () {
-    setTimeout(() => {
-      this.testColor = '#666'
-      // $head.htmlAttrs.style = 'background-color: ' + this.testColor + ';'
-    }, 10000)
-    console.log(this.$store.state.currentColor)
   }
 }
 </script>

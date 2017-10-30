@@ -7,7 +7,7 @@
         className="_sticky-header"
         :relativeElementSelector="'#code-reference-' + _uid"
         :z="200"
-        :offset="{top: 160, bottom: 0}">
+        :offset="{top: 144, bottom: 0}">
 
         <!-- Must use template to show contents before affix js has loaded on client -->
         <template scope="props" slot="contents">
@@ -16,7 +16,7 @@
               <span class="c-code_header-gutter">
                 <c-icon class="c-code_icon" name="file"></c-icon>
               </span>
-              <span class="c-code_filename o-code u-vr-reset">{{ filename }}</span>
+              <span class="c-code_filename o-code o-code--sm u-vr-reset">{{ filename }}</span>
             </div>
           </div>
         </template>
@@ -142,20 +142,21 @@ export default {
     // @include vr-reset;
     text-align: left;
     margin-bottom: $paragraph-trailer;
-    box-shadow: inset 0 0 0 1px $neutral-80;
+    // box-shadow: inset 0 0 0 1px $neutral-100;
+    color: $lightest;
     
-    @include mq($from: tablet) {
-      margin-left: -$unit-lg;
-      margin-right: -$unit-lg;
+    @include mq($until: tablet) {
+      margin-left: -$page-padding-mobile;
+      margin-right: -$page-padding-mobile;
     }
   }
 
   .c-code_header {
+    // transition: width 1s ease;
     width: 100%;
     padding-top: $unit-xs;
     padding-bottom: $unit-xs;
     position: relative;
-    background-color: $neutral-80;
     color: $neutral-00;
   }
   .c-code_header-reference {
@@ -183,6 +184,7 @@ export default {
   }
   
   .c-code_code-area {
+    background-color: rgba($darkest, .9);
     position: relative;
     // max-height: $unit-xxl*3;
     padding-left: $unit-lg;
@@ -207,7 +209,7 @@ export default {
   .c-code_code-block {
     // @include vr($font-mono, $font-size-sm);
     padding-top: $unit-sm;
-    color: $neutral-20;
+    color: $lightest;
     overflow-x: scroll;
     position: relative;
   }
@@ -220,6 +222,17 @@ export default {
   
   .c-code_slot-wrapper {
     display: none;
+  }
+
+  ._sticky-header {
+    &.affix {
+      background-color: $neutral-100;
+      // left: 0;
+      // right: 0;
+      // padding-left: $page-padding-desktop;
+      // padding-right: $page-padding-desktop;
+      // background-color: red;
+    }
   }
 
   .hljs-keyword,

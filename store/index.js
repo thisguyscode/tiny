@@ -36,9 +36,13 @@ const store = () => new Vuex.Store({
       state.scrollToSelector = null
     },
     setCurrentColor: (state, string) => {
+      var htmlTag = document.documentElement
+      htmlTag.style.backgroundColor = string
       state.currentColor = string
     },
     resetCurrentColor: (state) => {
+      var htmlTag = document.documentElement
+      htmlTag.style.backgroundColor = ''
       state.currentColor = ''
     }
   }

@@ -57,6 +57,9 @@ export default {
     fit: {
       default: 'contain'
     },
+    position: {
+      default: 'center'
+    },
     lazy: {
       type: Boolean,
       default: true
@@ -111,6 +114,8 @@ export default {
           {
             'c-image__image--cover': this.fit === 'cover',
             'c-image__image--contain': this.fit === 'contain',
+            'c-image__image--center': this.position === 'center',
+            'c-image__image--top-left': this.position === 'top-left',
             'lazyload': this.lazy === true
           }
         ]
@@ -336,6 +341,14 @@ export default {
 
 .c-image__image--cover {
   object-fit: cover;
+}
+
+.c-image__image--center {
+  object-position: 50% 50%;
+}
+
+.c-image__image--top-left {
+  object-position: 0 0;
 }
 
 

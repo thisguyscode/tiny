@@ -2,9 +2,19 @@
 
   <div class="p-profile">
   
-    <c-hero class="p-profile__hero" bgImageSrc="chn-shanghai_02.jpg">
-      <h1 class="o-heading o-heading--alpha u-margin-bottom-none">I'm <span class="u-text--lowest-contrast">./</span>tiny<span class="u-text--lowest-contrast">/</span></h1>
-      <span class="o-heading o-heading--alpha">(I have no idea what I'm doing)</span>
+    <c-hero class="p-profile__hero">
+      <h1 class="o-heading o-heading--alpha">
+        <span>I'm </span>
+        <!-- <span>
+          <span>./</span>
+          <span>tiny</span>
+          <span>/ </span>
+        </span> -->
+        <c-logo size="xl" fill="light"></c-logo>
+        <span>.</span></br>
+        <span>I have no idea what I'm doing</span>
+      </h1>
+      <!-- <span class="o-heading o-heading--alpha">(I have no idea what I'm doing)</span> -->
     </c-hero>
 
     <l-main-content>
@@ -48,7 +58,7 @@
 
                   <div class="skill-label">
                     <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Photoshop</h3>
-                    <h4 class="o-heading o-heading--zeta">Adobe</h4>
+                    <h4 class="o-heading o-heading--zeta software-company">Adobe</h4>
                   </div>
                   <c-score-bar :percent="80" :of="10"></c-score-bar>
                   <p class="p-profile__caption o-text o-text--sm">Highly proficient when working on interfaces. Able to produce complex GIFs and understand fine pixel manipulation. Could learn more about photo editing.</p>
@@ -62,7 +72,7 @@
                   <c-tech-icon size="lg" name="Adobe Illustrator"/>
                   <div class="skill-label">
                     <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Illustrator</h3>
-                    <h4 class="o-heading o-heading--zeta">Adobe</h4>
+                    <h4 class="o-heading o-heading--zeta software-company">Adobe</h4>
                   </div>
                   <c-score-bar :percent="60" :of="10"></c-score-bar>
                   <p class="p-profile__caption o-text o-text--sm">Though I'm perfectly familiar with Illustrator and most of its tools, I lack the ability to use it to its full potential (given that I lack the sufficient illustration skill)</p>
@@ -76,7 +86,7 @@
                   <c-tech-icon size="lg" name="Adobe InDesign"/>
                   <div class="skill-label">
                     <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">InDesign</h3>
-                    <h4 class="o-heading o-heading--zeta">Adobe</h4>
+                    <h4 class="o-heading o-heading--zeta software-company">Adobe</h4>
                   </div>
                   <c-score-bar :percent="50" :of="10"></c-score-bar>
                   <p class="p-profile__caption o-text o-text--sm">Proficient in the fundamentals and able to learn new tools quickly. Understand basics of print-preparation</p>
@@ -90,7 +100,7 @@
                   <c-tech-icon size="lg" name="Sketch"/>
                   <div class="skill-label">
                     <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">Sketch</h3>
-                    <h4 class="o-heading o-heading--zeta">Bohemian Coding</h4>
+                    <h4 class="o-heading o-heading--zeta  software-company">Bohemian Coding</h4>
                   </div>
                   <c-score-bar :percent="60" :of="10"></c-score-bar>
                   <p class="p-profile__caption o-text o-text--sm">Mostly familiar with the possibilities and best practices but don't yet make full use of the more complex features and plugins</p>
@@ -104,7 +114,7 @@
                   <c-tech-icon size="lg" name="InVision"/>
                   <div class="skill-label">
                     <h3 class="o-heading o-heading--zeta  u-margin-bottom-none">InVision</h3>
-                    <h4 class="o-heading o-heading--zeta">InVision</h4>
+                    <h4 class="o-heading o-heading--zeta  software-company">InVision</h4>
                   </div>
                   <c-score-bar :percent="80" :of="10"></c-score-bar>
                   <p class="p-profile__caption o-text o-text--sm">Familiar with almost the entirety of this product, though I imagine with their new Sketch integrations I'll have a lot to learn</p>
@@ -523,6 +533,7 @@
   import cGridlines from '~/components/c-gridlines'
   import cTestimonials from '~/components/c-testimonials'
   import cTechIcon from '~/components/c-tech-icon'
+  import cLogo from '~/components/c-logo'
   import cScoreBar from '~/components/c-score-bar'
   import cHero from '~/components/c-hero'
   import cIcon from '~/components/c-icon'
@@ -543,6 +554,7 @@
       cProfileNavbar,
       cHero,
       cIcon,
+      cLogo,
       cTechIcon,
       cScoreBar,
       cIntroText,
@@ -561,7 +573,7 @@
             company: 'trivago',
             role: 'Product Designer',
             character: 'character-04.svg',
-            color: 'yellow',
+            color: 'black',
             quote: 'Rerum voluptatem minima distinctio. Fugit odio qui repudiandae architecto omnis adipisci. Quo fuga aut nostrum. Reiciendis nihil vero praesentium non. Perferendis cupiditate impedit ipsum tenetur.'
           },
           {

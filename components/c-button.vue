@@ -6,14 +6,17 @@
     :class="baseClassObject"
     type="submit"
     >
-    <span class="c-button__inner">
+    <span class="c-button__inner" :style="innerInlineStyle">
       <c-icon
         v-if="iconName"
         class="c-button__icon"
+        :class="iconClassObject"
         :style="iconInlineStyle"
         :name="iconName">
       </c-icon>
-      <span class="c-button__text  o-text  u-vr-reset">
+      <span
+        class="c-button__text  o-text  u-vr-reset"
+        :class="textClassObject">
         <slot></slot>
       </span>
     </span>
@@ -29,11 +32,11 @@
     :scrollToSelector="scrollToSelector"
     @click.native="clickFunction">
     
-    <span class="c-button__inner">
+    <span class="c-button__inner" :style="innerInlineStyle">
       <c-icon
         v-if="iconName"
         class="c-button__icon"
-        :style="iconInlineStyle"
+        :class="iconClassObject"
         :name="iconName">
       </c-icon>
 
@@ -58,6 +61,7 @@
 <script>
 import cIcon from '~/components/c-icon'
 import fLink from '~/components/functional/f-link'
+import detectContrast from '~/utils/detectContrast'
 export default {
   components: {
     cIcon,
@@ -86,13 +90,31 @@ export default {
         'c-button--go': this.intent === 'go',
         'c-button--danger': this.intent === 'danger',
         'c-button--quiet': this.intent === 'quiet'
+        // 'c-button--dark': this.contrast === 'dark',
+        // 'c-button--light': this.contrast === 'light'
       }
     },
     textClassObject: function () {
       return {
         'o-text--sm': this.size === 'sm',
-        'o-text--lg': this.size === 'lg'
+        'o-text--lg': this.size === 'lg',
+        'c-button__text--dark': this.contrast === 'dark',
+        'c-button__text--light': this.contrast === 'light'
       }
+    },
+    iconClassObject: function () {
+      return {
+        'c-button__icon--dark': this.contrast === 'dark',
+        'c-button__icon--light': this.contrast === 'light'
+      }
+    },
+    contrast: function () {
+      if (this.highlightColor) {
+        return detectContrast(this.highlightColor)
+      }
+    },
+    innerInlineStyle: function () {
+      return 'background-color: ' + this.highlightColor + ';'
     },
     iconName: function () {
       if (this.content === 'work') {
@@ -129,6 +151,10 @@ export default {
       default: false
     },
     relativeLink: {
+      type: String,
+      required: false
+    },
+    highlightColor: {
       type: String,
       required: false
     },
@@ -209,6 +235,7 @@ $underline-shadow: 0 1px $neutral-100;
   text-align: center;
   display: inline-block;
   margin-bottom: $unit-md;
+  color: $neutral-00;
 }
 
 
@@ -216,18 +243,23 @@ $underline-shadow: 0 1px $neutral-100;
 /* Child classes
 ======================================================================== */
 .c-button__inner {
+  padding-left: $unit-sm;
+  padding-right: $unit-sm;
   pointer-events: none;
   text-align: center;
 }
 
+.c-button__icon,
 .c-button__text {
-  display: inline-block;
-  font-weight: $font-weight;
-  color: $neutral-00;
+  display: inline;
 }
+
+.c-button__text {
+  font-weight: $font-weight;
+}
+
 .c-button__icon {
-  height: 1.1em;
-  display: inline-block;
+  // height: 1rem;
   margin-right: $icon-gutter;
   vertical-align: text-top;
 }
@@ -237,25 +269,46 @@ $underline-shadow: 0 1px $neutral-100;
 /* Type modifiers
 ======================================================================== */
 .c-button--solid {
-  background-color: $primary-color;
+  background-color: $neutral-10;
   transition: background-color .2s ease;
-  box-shadow: inset 0 0 0 1px $primary-color, $underline-shadow;
+  box-shadow: inset 0 0 0 1px $neutral-10, $underline-shadow;
   .c-button__text,
   .c-button__icon {
-      color: contrasting-color($primary-color, $lightest, $darkest);
+      color: contrasting-color($neutral-10, $lightest, $darkest);
     }
   &:hover {
-    background-color: darken($primary-color, 8%);
+    background-color: darken($neutral-10, 8%);
   }
 }
 
 
 .c-button--ghost {
   // background-color: rgba($neutral-100, .5);
-  box-shadow: inset 0 0 0 1px $primary-color, $underline-shadow;
-  transition: background-color .2s ease;
+  transition: box-shadow .2s ease;
+  box-shadow: inset 0 0 0 1px $neutral-70, $underline-shadow;
+
   .c-button__icon {
     color: $primary-color;
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px $neutral-00, $underline-shadow;
+  }
+}
+
+.c-button--ghost {
+  > .c-button__inner {
+
+    > .c-button__icon--dark,
+    > .c-button__text--dark {
+      color: $neutral-00;
+    }
+
+    > .c-button__icon--light,
+    > .c-button__text--light {
+      color: $neutral-100;
+    }
+
   }
 }
 
@@ -266,7 +319,7 @@ $underline-shadow: 0 1px $neutral-100;
   box-shadow: inset 0 0 0 1px $clr-good, $underline-shadow;
   &.c-button--ghost {
     .c-button__icon {
-      color: $clr-good;
+      // color: $clr-good;
     }
   }
   &.c-button--solid {
@@ -286,7 +339,7 @@ $underline-shadow: 0 1px $neutral-100;
   box-shadow: inset 0 0 0 1px $clr-bad, $underline-shadow;
   &.c-button--ghost {
     .c-button__icon {
-      color: $clr-bad;
+      // color: $clr-bad;
     }
   }
   &.c-button--solid {
@@ -305,7 +358,7 @@ $underline-shadow: 0 1px $neutral-100;
   box-shadow: inset 0 0 0 1px $neutral-70, $underline-shadow;
   &.c-button--ghost {
     .c-button__icon {
-      color: $neutral-30;
+      // color: $neutral-30;
     }
   }
   &.c-button--solid {

@@ -12,7 +12,7 @@
         </span> -->
         <c-logo size="xl" fill="dark"></c-logo>
         <span>.</span></br>
-        <span>I almost know what I'm doing</span>
+        <span>I almost know what I'm doing...</span>
       </h1>
       <!-- <span class="o-heading o-heading--alpha">(I have no idea what I'm doing)</span> -->
     </c-hero>

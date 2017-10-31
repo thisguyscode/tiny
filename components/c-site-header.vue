@@ -15,7 +15,7 @@
             </nuxt-link>
           </li><!--END- LOGO -->
 
-          <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile" v-scroll-to="'#page-top'">
+          <li class="c-site-header__link-wrapper  l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile" v-scroll-to="'#page-top'">
             <nuxt-link class="c-site-header__link" to="/work/">
               <span class="c-site-header__link-text  o-text o-text--sm">
                 work
@@ -23,7 +23,7 @@
             </nuxt-link>
           </li>
 
-          <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile" v-scroll-to="'#page-top'">
+          <li class="c-site-header__link-wrapper  l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile" v-scroll-to="'#page-top'">
             <nuxt-link class="c-site-header__link" to="/profile/">
               <span class="c-site-header__link-text  o-text o-text--sm">
                 profile
@@ -31,7 +31,7 @@
             </nuxt-link>
           </li>
 
-          <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile" v-scroll-to="'#page-top'">
+          <li class="c-site-header__link-wrapper  l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile" v-scroll-to="'#page-top'">
             <nuxt-link class="c-site-header__link" to="/contact/">
               <span class="c-site-header__link-text  o-text o-text--sm">
                 contact
@@ -150,13 +150,38 @@ export default {
 }
 
 
+.c-site-header__link {
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    top: $unit-md;
+    bottom: $unit-md;
+    background-color: $neutral-80;
+  }
+}
+.c-site-header__link-wrapper {
+  > .c-site-header__link {
+    &:before {
+      left: 0;
+      width: 1px;
+    }
+  }
+  &:last-of-type {
+    > .c-site-header__link {
+      &:after {
+        right: 0;
+        width: 1px;
+      }
+    }
+  }
+}
+
+
 .c-site-header__link-text {
   font-weight: $font-weight-semi;
-  display: inline-block;
+  display: inline;
   position: relative;
-  box-shadow: inset -1px 0 $neutral-80, inset 1px 0 $neutral-80;
-  padding-left: $unit-md;
-  padding-right: $unit-md;
 }
 
 .c-site-header__link {
@@ -164,30 +189,16 @@ export default {
   color: $neutral-50;
   text-align: center;
 
-  &:before {
-    top: 1rem;
-  }
-  &:after {
-    bottom: 1rem;
-  }
   &.nuxt-link-active {
     &:not(.c-site-header__logo-wrapper) {
       > .c-site-header__link-text {
-        color: $neutral-00;
-        box-shadow: inset -2px 0 $neutral-00, inset 2px 0 $neutral-00;
+        background: $neutral-00;
+        color: $neutral-100;
       }
-      // background-color: $semi-transparent-background;
-      // box-shadow: inset 1px 0 0 0 $neutral-80, inset -1px 0 0 0 $neutral-80;
-      // color: $neutral-00;  
     }
   }
   &:hover {
     background-color: rgba($neutral-00, .05);
-  }
-  &:hover {
-    &:not(.nuxt-link-exact-active) {
-      color: $green;
-    }
   }
 }
 </style>

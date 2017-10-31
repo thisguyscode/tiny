@@ -1,5 +1,5 @@
 @import "./settings/settings.config";
-$show-baseline: false; // Doesn't work in IE and Edge
+$show-baseline: true; // Doesn't work in IE and Edge
 @import "./settings/settings.typography";
 @import "./settings/settings.main";
 

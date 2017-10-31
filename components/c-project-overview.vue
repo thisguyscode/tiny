@@ -64,8 +64,9 @@
               <div class="_button-wrapper">
                 <c-button 
                   :relativeLink="linkTo"
-                  :inlineStyle="buttonStyle"
+                  :inlineStyle="viewIconStyle"
                   :iconInlineStyle="viewIconStyle"
+                  :highlightColor="project.color"
                   type="ghost"
                   icon="eye">
                   View<span class="u-hide-mobile"> Project</span>
@@ -77,15 +78,17 @@
         </div>
 
         <div class="l-grid__cell u-3/5@tablet">
-          <div class="_image-wrapper" :class="imgWrapperClass" :style="'background-color:' + color">
-            <c-image
-              v-if="imgSrc"
-              :fit="imgClass"
-              :imageSrc="imgSrc"
-              :desktop=".7"
-              :wide=".6"
-            />
-          </div>
+          <f-link :relativeLink="linkTo">
+            <div class="_image-wrapper" :class="imgWrapperClass" :style="'background-color:' + color">
+              <c-image
+                v-if="imgSrc"
+                :fit="imgClass"
+                :imageSrc="imgSrc"
+                :desktop=".7"
+                :wide=".6"
+              />
+            </div>
+          </f-link>
         </div>
 
       </l-grid>
@@ -94,6 +97,7 @@
 </template>
 
 <script>
+import fLink from '~/components/functional/f-link'
 import cIcon from '~/components/c-icon'
 import cButton from '~/components/c-button'
 import lWrapper from '~/components/layout/l-wrapper'
@@ -105,7 +109,8 @@ export default {
     cIcon,
     cButton,
     lWrapper,
-    lGrid
+    lGrid,
+    fLink
   },
   props: {
     index: {
@@ -152,6 +157,9 @@ export default {
         return 'contain'
       }
     },
+    contrast: function () {
+      return detectContrast(this.project.color)
+    },
     imgWrapperClass: function () {
       return {
         '_image-wrapper--padded': this.project.imgWrapperClass === 'padded'
@@ -161,7 +169,7 @@ export default {
       return 'background-color: ' + this.project.color + ';'
     },
     indexClass: function () {
-      return 'c-project-overview__index-string--' + detectContrast(this.project.color)
+      return 'c-project-overview__index-string--' + this.contrast
     },
     lineStyle: function () {
       return 'background-color:' + this.project.color + ';'
@@ -170,7 +178,8 @@ export default {
       return 'color:' + this.project.color + ';'
     },
     buttonStyle: function () {
-      return 'box-shadow:' + 'inset 0 0 0 1px' + this.project.color + ';'
+
+      // return 'box-shadow:' + 'inset 0 0 0 1px' + this.project.color + ';'
     }
   }
 }
@@ -335,6 +344,9 @@ export default {
     position: relative;
     height: $unit-xl*6;
     text-align: center;
+    &:hover {
+      opacity: .85;
+    }
 
     @include mq($until: tablet) {
       margin-left: -$page-padding-mobile;

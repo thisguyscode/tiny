@@ -303,17 +303,17 @@ export default {
 }
 
 ._input {
-  box-shadow: inset 0 0 0 1px rgba($neutral-00, .15);
+  box-shadow: inset 0 0 0 1px rgba($neutral-00, .15), 0 1px $neutral-00;
   transition: box-shadow .1s ease, background-color .1s ease;
   background-color: rgba($neutral-100,.5);
   color: $neutral-00;
   &:hover,
   &:focus {
     background-color: rgba($neutral-100,.7);
-    box-shadow: inset 0 0 0 1px rgba($neutral-00, .3);
+    box-shadow: inset 0 0 0 1px rgba($neutral-00, .3), 0 1px $neutral-00;
   }
   &.s-has-error {
-    box-shadow: inset 0 0 0 1px rgba($red, 1);
+    box-shadow: inset 0 0 0 1px rgba($red, .5), 0 1px $red;
   }
 }
 

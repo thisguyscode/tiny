@@ -76,7 +76,7 @@ $neutral-80:      $neutral-80;
 
 /* Local variables
 ======================================================================== */
-$background-color: $neutral-100;
+$background-color: $semi-transparent-background;
 $border: inset 0 -1px 0 0 $neutral-00;
   
 

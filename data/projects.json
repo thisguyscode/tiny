@@ -41,7 +41,7 @@
         {
           "name": "Illustration for trivago Marathon T-shirts",
           "slug": "marathon",
-          "color": "#F6F4F3",
+          "color": "#DE722B",
           "date": "2015",
           "role": "Graphic Designer",
           "skills": [
@@ -53,7 +53,7 @@
             "Adobe Illustrator"
           ],
           "imgSrc": "trv-marathon.png",
-          "imgWrapperClass": "padded"
+          "imgClass": "cover"
         }
       ]
     },

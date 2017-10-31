@@ -28,10 +28,10 @@ $font-size-lg:    $font-size-lg;
  *    which is detected on page load
  */
 .o-text {
-  @include vr($font-body, $font-size-sm); /*[1]*/
+  @include vr($font-body, $font-size-md); /*[1]*/
   
   @include mq($from: desktop) {
-    @include vr($font-body, $font-size-md); /*[1]*/
+    @include vr($font-body, $font-size-lg); /*[1]*/
   }
   
   margin: 0;
@@ -44,27 +44,27 @@ $font-size-lg:    $font-size-lg;
 ======================================================================== */
 .o-text--xs {
   @include vr($font-body, $font-size-xs);
-  // @include mq($from: desktop) {
-  //   @include vr($font-body, $font-size-sm);
-  // }
+  @include mq($from: desktop) {
+    @include vr($font-body, $font-size-sm);
+  }
 }
 
 .o-text--sm {
-  // @include vr($font-body, $font-size-xs);
-  // @include mq($from: desktop) {
-    @include vr($font-body, $font-size-sm);
-  // }
-}
-.o-text--lg {
-  @include vr($font-body, $font-size-md);
+  @include vr($font-body, $font-size-sm);
   @include mq($from: desktop) {
-    @include vr($font-body, $font-size-lg);
+    @include vr($font-body, $font-size-md);
   }
 }
-.o-text--xl {
+.o-text--lg {
   @include vr($font-body, $font-size-lg);
   @include mq($from: desktop) {
     @include vr($font-body, $font-size-xl);
+  }
+}
+.o-text--xl {
+  @include vr($font-body, $font-size-xl);
+  @include mq($from: desktop) {
+    @include vr($font-body, $font-size-xxl);
   }
 }
 

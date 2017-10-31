@@ -4,36 +4,36 @@
     <c-baselines></c-baselines>
     <c-gridlines></c-gridlines>
 
-    <nav class="c-site-header__nav" :style="navStyle()">
+    <nav class="c-site-header__nav" :class="navClass" :style="navStyle()">
       <l-wrapper>
         <ul class="l-grid  l-grid--flush">
 
           <!-- LOGO -->
-          <li class="l-grid__cell  u-1/4  u-2/5@mobile">
+          <li class="l-grid__cell  u-1/4  u-2/5@mobile" v-scroll-to="'#page-top'">
             <nuxt-link class="c-site-header__logo-wrapper" to="/">
               <c-logo class="c-site-header__logo" size="md"></c-logo>
             </nuxt-link>
           </li><!--END- LOGO -->
 
-          <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
+          <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile" v-scroll-to="'#page-top'">
             <nuxt-link class="c-site-header__link" to="/work/">
-              <span class="c-site-header__link-text  o-text">
+              <span class="c-site-header__link-text  o-text o-text--sm">
                 work
               </span>
             </nuxt-link>
           </li>
 
-          <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
+          <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile" v-scroll-to="'#page-top'">
             <nuxt-link class="c-site-header__link" to="/profile/">
-              <span class="c-site-header__link-text  o-text">
+              <span class="c-site-header__link-text  o-text o-text--sm">
                 profile
               </span>
             </nuxt-link>
           </li>
 
-          <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile">
+          <li class="l-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile" v-scroll-to="'#page-top'">
             <nuxt-link class="c-site-header__link" to="/contact/">
-              <span class="c-site-header__link-text  o-text">
+              <span class="c-site-header__link-text  o-text o-text--sm">
                 contact
               </span>
             </nuxt-link>
@@ -51,6 +51,7 @@ import cBaselines from '~/components/c-baselines'
 import cLogo from '~/components/c-logo'
 import lHeaderPrimary from '~/components/layout/l-header-primary'
 import lWrapper from '~/components/layout/l-wrapper'
+import detectContrast from '~/utils/detectContrast'
 export default {
   components: {
     lHeaderPrimary,
@@ -59,9 +60,25 @@ export default {
     cLogo,
     lWrapper
   },
+  computed: {
+    currentColor: function () {
+      return this.$store.state.currentColor
+    },
+    navClass: function () {
+      return {
+        'c-site-header__nav--light': this.contrast === 'light',
+        'c-site-header__nav--dark': this.contrast === 'dark'
+      }
+    }
+  },
   methods: {
+    contrast: function () {
+      return detectContrast(this.currentColor)
+    },
     navStyle: function () {
-      return 'border-bottom-color: ' + this.$store.state.currentColor + ';'
+      if (this.contrast === 'light') {
+        // return 'border-bottom-color: ' + this.currentColor + ';'
+      }
     }
   }
 }
@@ -86,7 +103,7 @@ export default {
   // overflow: hidden;
   transition: border-color .2s ease;
   background-color: $neutral-100;
-  border-bottom: 1px solid $clr-primary;
+  border-bottom: 1px solid $darkest;
   // &:after {
   //   content: '';
   //   pointer-events: none;
@@ -99,6 +116,12 @@ export default {
     
   // }
 }
+// .c-site-header__nav--dark {
+//   border-bottom-color: rgba($darkest, .5);
+// }
+// .c-site-header__nav--light {
+//   border-bottom-color: rgba($lightest, .5);
+// }
 
 .c-site-header__link,
 .c-site-header__logo-wrapper {
@@ -109,26 +132,57 @@ export default {
   text-decoration: none;
 }
 
+.c-site-header__logo-wrapper {
+  height: 100%;
+  overflow: hidden;
+  &:hover {
+    background-color: rgba($neutral-00, .05);
+    > .c-site-header__logo {
+      transform: scale(1.4);
+    }
+  }
+}
+
 .c-site-header__logo {
   width: 100%;
+  transition: transform .1s ease;
+  transform-origin: 0 40%;
 }
 
 
 .c-site-header__link-text {
   font-weight: $font-weight-semi;
   display: inline-block;
-  &:after {
-    content: '';
-    background-color: $red;
-  }
+  position: relative;
+  box-shadow: inset -1px 0 $neutral-80, inset 1px 0 $neutral-80;
+  padding-left: $unit-md;
+  padding-right: $unit-md;
 }
 
 .c-site-header__link {
   transition: color .3s ease;
-  color: $neutral-30;
-  position: relative;
-  &.nuxt-link-exact-active {
-    color: $blue;
+  color: $neutral-50;
+  text-align: center;
+
+  &:before {
+    top: 1rem;
+  }
+  &:after {
+    bottom: 1rem;
+  }
+  &.nuxt-link-active {
+    &:not(.c-site-header__logo-wrapper) {
+      > .c-site-header__link-text {
+        color: $neutral-00;
+        box-shadow: inset -2px 0 $neutral-00, inset 2px 0 $neutral-00;
+      }
+      // background-color: $semi-transparent-background;
+      // box-shadow: inset 1px 0 0 0 $neutral-80, inset -1px 0 0 0 $neutral-80;
+      // color: $neutral-00;  
+    }
+  }
+  &:hover {
+    background-color: rgba($neutral-00, .05);
   }
   &:hover {
     &:not(.nuxt-link-exact-active) {
@@ -136,6 +190,4 @@ export default {
     }
   }
 }
-
-
 </style>

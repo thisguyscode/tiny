@@ -41,7 +41,7 @@ $font-size-xxxxl: $font-size-xxxxl;
 ======================================================================== */
 .o-heading--alpha {
   @include vr($font-display, $font-size-xxl);
-  @include mq($from: desktop) {
+  @include mq($from: tablet) {
     @include vr($font-display, $font-size-xxxxl);
   }
 }

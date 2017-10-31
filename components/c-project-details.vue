@@ -1,7 +1,6 @@
 <template>
   <div
-    class="c-project-details"
-    :style="'border-bottom: 1px solid ' + color">
+    class="c-project-details">
 
     <l-wrapper class="c-project-details__inner">
       
@@ -45,7 +44,7 @@
             <h4 class="c-project-details__subheading  o-heading o-heading--zeta">Objective</h4>
             <p
               v-if="transitionEnd"
-              class="c-project-details__overview-string  o-text o-text--xl">
+              class="c-project-details__overview-string  o-text o-text--lg">
               {{ project.objective }}
             </p>
           </div><!--END objective-cell -->
@@ -223,10 +222,11 @@ $transition-easing: ease;
   padding-top: $unit-md;
   transition: border-color .8s ease;
   margin-bottom: -1px;
+  border-bottom: 1px solid $neutral-00;
   @include mq($from: tablet) {
     padding-top: $unit-lg;
   }
-  background-color: rgba($neutral-100, .3);
+  background-color: $semi-transparent-background;
 }
 .c-project-details__heading-trigger-text {
   margin-right: $unit-xs;

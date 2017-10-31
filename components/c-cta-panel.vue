@@ -81,7 +81,7 @@
     text-align: left;
     padding-top: $unit-xl;
     padding-bottom: $unit-lg;
-    background-color: rgba($neutral-100,.5);
+    background-color: $semi-transparent-background;
     box-shadow: inset 0 1px 0 0 $neutral-50, inset 0 -1px 0 0 $neutral-00;
 
     @include mq($from: tablet) {

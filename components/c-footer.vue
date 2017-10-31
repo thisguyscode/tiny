@@ -1,6 +1,6 @@
 <template>
   <footer class="c-footer" :style="'background-color:' + this.$store.state.currentColor">
-    <small class="c-footer__text o-text o-text--sm" :class="textClass">
+    <small class="c-footer__text o-text o-text--xs" :class="textClass">
       <span class="">Made by </span>
       <span class="c-footer__name">Jamie Mitchell</span>
     </small>
@@ -12,7 +12,9 @@ import detectContrast from '~/utils/detectContrast'
 export default {
   computed: {
     textClass: function () {
-      return 'c-footer__text--' + detectContrast(this.$store.state.currentColor)
+      if (this.$store.state.currentColor) {
+        return 'c-footer__text--' + detectContrast(this.$store.state.currentColor)
+      }
     }
   }
 }
@@ -21,24 +23,12 @@ export default {
 <style lang="scss" scoped>
 
   .c-footer {
-    color: contrasting-color($clr-primary, $darkest, lightest);
+    background-color: $clr-primary;
+    color: contrasting-color($clr-primary, $lightest, $darkest);
     padding-top: $unit-md;
     padding-bottom: $unit-md;
-    background-color: $clr-primary;
-
-    // @include mq($from: tablet) {
-    //   padding-top: $page-padding-tablet;
-    //   padding-bottom: $page-padding-tablet;
-    // }
-    // @include mq($from: desktop) {
-    //   padding-top: $page-padding-desktop;
-    //   padding-bottom: $page-padding-desktop;
-    // }
-    // @include mq($from: wide) {
-    //   padding-top: $page-padding-wide;
-    //   padding-bottom: $page-padding-wide;
-    // }
   }
+
   .c-footer__text {
     opacity: .7;
   }
@@ -52,7 +42,7 @@ export default {
   }
 
   .c-footer__name {
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-semi;
   }
 
 </style>

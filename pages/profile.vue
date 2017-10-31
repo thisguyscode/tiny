@@ -3,16 +3,16 @@
   <div class="p-profile">
   
     <c-hero class="p-profile__hero">
-      <h1 class="o-heading o-heading--alpha">
+      <h1 class="o-heading o-heading--alpha u-margin-bottom-none">
         <span>I'm </span>
         <!-- <span>
           <span>./</span>
           <span>tiny</span>
           <span>/ </span>
         </span> -->
-        <c-logo size="xl" fill="light"></c-logo>
+        <c-logo size="xl" fill="dark"></c-logo>
         <span>.</span></br>
-        <span>I have no idea what I'm doing</span>
+        <span>I almost know what I'm doing</span>
       </h1>
       <!-- <span class="o-heading o-heading--alpha">(I have no idea what I'm doing)</span> -->
     </c-hero>
@@ -390,7 +390,7 @@
                 <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="user-circle"></c-icon>
-                    <h4 class="p-profile__caption o-text o-text--sm">User experience design</h4>
+                    <h4 class="subskill__text o-text">User experience design</h4>
                   </span>
                 </div>
 
@@ -399,14 +399,14 @@
                 <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="bar-chart"></c-icon>
-                    <h4 class="p-profile__caption o-text o-text--sm">Data-informed design</h4>
+                    <h4 class="subskill__text o-text">Data-informed design</h4>
                   </span>
                 </div>
 
                 <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="pied-piper"></c-icon>
-                    <h4 class="p-profile__caption o-text o-text--sm">Branding</h4>
+                    <h4 class="subskill__text o-text">Branding</h4>
                   </span>
                 </div>
 
@@ -415,13 +415,13 @@
                 <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="pencil"></c-icon>
-                    <h4 class="p-profile__caption o-text o-text--sm">Prototyping</h4>
+                    <h4 class="subskill__text o-text">Prototyping</h4>
                   </span>
                 </div>
                 <div class="l-grid__cell u-2/5@tablet u-1/5@desktop">
                   <span class="subskill">
                     <c-icon class="subskill-icon" name="bullhorn"></c-icon>
-                    <h4 class="p-profile__caption o-text o-text--sm">Presentation</h4>
+                    <h4 class="subskill__text o-text">Presentation</h4>
                   </span>
                 </div>
               </l-grid>
@@ -739,7 +739,7 @@
   }
 }
 .skill-heading {
-  font-weight: $font-weight-semi;
+  // font-weight: $font-weight-semi;
   @include mq($until: tablet) {
     // padding-top: $unit-sm;
   }
@@ -760,7 +760,7 @@
 .skill-label {
   display: inline-block;
   vertical-align: top;
-  font-weight: $font-weight-semi;
+  // font-weight: $font-weight-semi;
 }
 .skill-icon-wrapper {
   margin-right: $unit-sm;
@@ -894,7 +894,8 @@
 
 .subskill {
   display: flex;
-  // font-weight: $font-weight-semi;
+  font-weight: $font-weight-bold;
+  padding-right: $unit-md;
   
   @include mq($until: desktop) {
     margin-bottom: $unit-md;
@@ -915,8 +916,12 @@
 .subskill-caption {
   padding-right: $unit-xs;
 }
+
+.subskill__text {
+  font-weight: $font-weight-semi;
+}
 .subskill-icon {
-  color: $neutral-00;
+  color: $clr-primary;
   height: $unit-md;
   margin-right: $unit-xs;
   width: $unit-md;

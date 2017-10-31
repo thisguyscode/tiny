@@ -27,26 +27,26 @@
           <l-grid class="_form-grid">
             <div class="_details-cell l-grid__cell u-2/5@tablet">
 
-              <label for="name" class="_label  o-text o-text--lg">Name:</label>
+              <label for="name" class="_label  o-text">Name:</label>
               <input class="_input" type="text" name="name" id="name">
               
               <span class="_required  o-text o-text--sm" v-if="emailIsValid === true">Required</span>
               <span class="_error  o-text o-text--sm" v-if="emailIsValid === false">Please enter a valid email address</span>
-              <label for="email" class="_label  o-text o-text--lg">Email:</label>
+              <label for="email" class="_label  o-text">Email:</label>
               <input class="_input" ref="email" :class="emailInputClass" type="text" name="email" id="email">
 
-              <label for="company" class="_label  o-text o-text--lg">Company:</label>
+              <label for="company" class="_label  o-text">Company:</label>
               <input class="_input" type="text" name="company" id="company">
 
             </div>
 
             <div class="_message-cell l-grid__cell u-3/5@tablet">
-              <label for="subject" class="_label  o-text o-text--lg">Subject:</label>
+              <label for="subject" class="_label  o-text">Subject:</label>
               <input class="_input" type="text" name="subject" id="subject">
 
               <span class="_required  o-text o-text--sm" v-if="messageIsValid === true">Required</span>
               <span class="_error  o-text o-text--sm" v-if="messageIsValid === false">Please enter a message</span>
-              <label for="message" class="_label  o-text o-text--lg">Message:</label>
+              <label for="message" class="_label  o-text">Message:</label>
               <textarea class="_input _textarea" ref="message" :class="messageInputClass" type="textarea" name="message" id="message"></textarea>
 
               <c-button
@@ -315,6 +315,10 @@ export default {
   &.s-has-error {
     box-shadow: inset 0 0 0 1px rgba($red, 1);
   }
+}
+
+._label {
+  font-weight: $font-weight-semi;
 }
 
 ._details-cell {

@@ -2,7 +2,7 @@
   <section class="p-work">
     
     <c-hero class="p-work__hero">
-      <h1 class="o-heading o-heading--alpha">Putting text in boxes & colouring inside the lines.</h1>
+      <h1 class="o-heading o-heading--alpha u-margin-bottom-none">Putting text in boxes & colouring inside the lines.</h1>
     </c-hero>
 
     <l-main-content>

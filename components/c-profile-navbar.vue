@@ -76,7 +76,7 @@ $navbar-inner-height:      $unit-md;
 $navbar-height:            $navbar-padding-y*2 + $navbar-inner-height;
 
 // Cosmetic
-$background: rgba($neutral-100, .5);
+$background: $semi-transparent-background;
 $link-color: $neutral-00;
 $dark:       $darkest;
 $light:      $lightest;

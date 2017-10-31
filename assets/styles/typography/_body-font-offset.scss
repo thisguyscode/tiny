@@ -11,10 +11,10 @@
 // Base
 .o-text {
   &#{&} { /*[1]*/
-    @include vr-offset($cap-height, $font-size-sm); /*[2]*/
+    @include vr-offset($cap-height, $font-size-md); /*[2]*/
     
     @include mq($from: desktop) {
-      @include vr-offset($cap-height, $font-size-md); /*[2]*/
+      @include vr-offset($cap-height, $font-size-lg); /*[2]*/
     }
 
   }
@@ -25,35 +25,35 @@
   &#{&} { /*[1]*/
     @include vr-offset($cap-height, $font-size-xs); /*[2]*/
     
-    // @include mq($from: desktop) {
-    //   @include vr-offset($cap-height, $font-size-sm);
-    // }
+    @include mq($from: desktop) {
+      @include vr-offset($cap-height, $font-size-sm);
+    }
   }
 }
 .o-text--sm {
   &#{&} { /*[1]*/
-    // @include vr-offset($cap-height, $font-size-xs); /*[2]*/
-    
-    // @include mq($from: desktop) {
-      @include vr-offset($cap-height, $font-size-sm);
-    // }
-  }
-}
-.o-text--lg {
-  &#{&} { /*[1]*/
-    @include vr-offset($cap-height, $font-size-md); /*[2]*/
+    @include vr-offset($cap-height, $font-size-sm); /*[2]*/
     
     @include mq($from: desktop) {
-      @include vr-offset($cap-height, $font-size-lg);
+      @include vr-offset($cap-height, $font-size-md);
     }
   }
 }
-.o-text--xl {
+.o-text--lg {
   &#{&} { /*[1]*/
     @include vr-offset($cap-height, $font-size-lg); /*[2]*/
     
     @include mq($from: desktop) {
       @include vr-offset($cap-height, $font-size-xl);
+    }
+  }
+}
+.o-text--xl {
+  &#{&} { /*[1]*/
+    @include vr-offset($cap-height, $font-size-xl); /*[2]*/
+    
+    @include mq($from: desktop) {
+      @include vr-offset($cap-height, $font-size-xxl);
     }
   }
 }

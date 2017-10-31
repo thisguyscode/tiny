@@ -22,6 +22,14 @@
       <div class="test-block"></div>
       <div class="o-text o-text--xs">Text XS</div>
     </section>
+    <section class="p-vertical-rhythm__code">
+      <div class="o-code o-code--sm">Code SM</div>
+      <div class="test-block"></div>
+      <div class="o-code">Code MD</div>
+      <div class="test-block"></div>
+      <div class="o-code o-code--lg">Code LG</div>
+      <div class="test-block"></div>
+    </section>
   </section>
 </template>
 

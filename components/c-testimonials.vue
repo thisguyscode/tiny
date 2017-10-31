@@ -35,7 +35,7 @@
             <p class="o-text _company">@{{ testimonial.company }}</p>
           </div>
           <div class="l-grid__cell u-2/5@mobile u-3/5@tablet">
-            <p class="o-text o-text--xl _quote">
+            <p class="o-text o-text--lg _quote">
               <span class="_quote-mark open">&ldquo;</span>
               {{ testimonial.quote }}
               <span class="_quote-mark close">&rdquo;</span>

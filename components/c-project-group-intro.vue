@@ -12,7 +12,7 @@
                 className="c-project-group-intro__sticky-header"
                 :relativeElementSelector="'#p-work__project-group-' + index"
                 :z="200"
-                :offset="{top: 120, bottom: 0}">
+                :offset="{top: 104, bottom: 0}">
 
                 <!-- Must use template to show contents before affix js has loaded on client -->
                 <template scope="props" slot="contents">
@@ -178,7 +178,7 @@ $link-padding-x: $unit-sm;
   min-width: $page-padding-mobile;
   padding-right: $unit-xs;
   position: relative;
-  color: $neutral-80;
+  color: $neutral-60;
   
   @include mq($from: tablet) {
     transition: color .4s ease;

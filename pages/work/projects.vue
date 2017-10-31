@@ -14,8 +14,9 @@
 
     <!-- Project Nav -->
     <l-affix
-      :z="999"
+      :z="9999"
       fullWidth
+      class="p-projects__navbar"
       className="_sticky-nav"
       :relativeElementSelector="'#sticky-trigger'"
     >
@@ -190,14 +191,20 @@ export default {
 
 }
 
+.p-projects__navbar {
+  z-index: 2000;
+}
+
 .p-projects__main-content {
   position: relative;
+  padding-top: $unit-xxl*4;
+  padding-bottom: $unit-xxl*4;
   // background-color: rgba($neutral-00, .9);
 }
 
 .p-projects__nav-panels-wrapper {
   position: relative;
-  background-color: $neutral-100;
+  background-color: $neutral-00;
   text-align: center;
   padding: $unit-sm;
   box-shadow: inset 0 1px 0 0 $neutral-80;

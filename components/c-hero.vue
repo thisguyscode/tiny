@@ -11,7 +11,7 @@
     />
     <l-wrapper>
       <l-grid horizontal="right">
-        <div class="c-hero__text-wrapper  l-grid__cell  u-3/5@desktop">
+        <div class="c-hero__text-wrapper  l-grid__cell  u-4/5@tablet u-3/5@desktop">
           <slot></slot>
         </div>
       </l-grid>
@@ -76,8 +76,8 @@ $neutral-80:      $neutral-80;
 
 /* Local variables
 ======================================================================== */
-$background-color: $clr-primary;
-$border: inset 0 -1px 0 0 $neutral-80;
+$background-color: $neutral-100;
+$border: inset 0 -1px 0 0 $neutral-00;
   
 
 /* Base class
@@ -88,7 +88,8 @@ $border: inset 0 -1px 0 0 $neutral-80;
   overflow: hidden;
   background-color: $background-color;
   box-shadow: $border;
-  color: contrasting-color($background-color, $lightest, $darkest);
+  // color: contrasting-color($background-color, $lightest, $darkest);
+  color: $neutral-00;
   min-height: $unit-xxl*2;
   // margin-bottom: -1px;
   // margin-top: -1px;

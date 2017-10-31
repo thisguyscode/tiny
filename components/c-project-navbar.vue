@@ -140,10 +140,10 @@ $icon-gutter: $unit-xs;
   z-index: 1000;
   transition: box-shadow .8s ease, background-color .8s ease;
   &.dark {
-    box-shadow: inset 0 1px 0 0 rgba($neutral-100, .2);
+    box-shadow: inset 0 1px 0 0 rgba($darkest, .2), inset 0 -1px 0 0 rgba($darkest, .4);
   }
   &.light {
-    box-shadow: inset 0 1px 0 0 rgba($neutral-00, .2);
+    box-shadow: inset 0 1px 0 0 rgba($lightest, .2), inset 0 -1px 0 0 rgba($darkest, .8);
   }
 }
 
@@ -199,6 +199,7 @@ $icon-gutter: $unit-xs;
   text-align: right;
 }
 .c-project-navbar__link-text {
+  white-space: nowrap;
   font-weight: $font-weight-semi;
 }
 

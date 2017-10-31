@@ -3,19 +3,25 @@
     <h1 class="o-heading o-heading--alpha">Ratings Slideout XX</h1>
     <l-wrapper>
       
-      <c-code filename="projects.json" :code="codeData"></c-code>
-      <c-code filename="projects.json" :code="codeData"></c-code>
-      <c-code filename="test.json" :languages="['xml']">
+      <c-code filename="projects.json" :code="codeData" :langauges="['js']"></c-code>
+      <c-code filename="projects.json" :code="codeData" :langauges="['js']"></c-code>
+      <c-code filename="test.json" :languages="['js']">
         <pre>
-          <div class="test"></div>
-          <section></section>
-          <section></section>
-          <section></section>
-          <section></section>
-          <section></section>
-          <section></section>
-          <section></section>
-          
+        function $initHighlight(block, cls) {
+          try {
+            if (cls.search(/\bno\-highlight\b/) != -1)
+              return process(block, true, 0x0F) +
+                    ` class="${cls}"`;
+          } catch (e) {
+            /* handle exception */
+          }
+          for (var i = 0 / 2; i < classes.length; i++) {
+            if (checkCondition(classes[i]) === undefined)
+              console.log('undefined');
+          }
+        }
+
+        export  $initHighlight;
         </pre>
       </c-code>
 

@@ -13,10 +13,10 @@
         <template scope="props" slot="contents">
           <div class="c-code_header" v-if="filename">
             <div class="c-code_header-reference">
-              <span class="c-code_header-gutter">
+              <span class="c-code_header-gutter  o-code">
                 <c-icon class="c-code_icon" name="file"></c-icon>
               </span>
-              <span class="c-code_filename o-code o-code--sm u-vr-reset">{{ filename }}</span>
+              <span class="c-code_filename o-code o-code--sm">{{ filename }}</span>
             </div>
           </div>
         </template>
@@ -29,8 +29,8 @@
           <div class="c-code_number o-code" v-for="i in lineCount" :key="i">{{i}}</div>
         </div>
 
-        <div class="c-code_code-block  o-code">
-          <pre><code class="c-code_code" v-html="content">
+        <div class="c-code_code-block">
+          <pre><code class="c-code_code  o-code" v-html="content">
           </code></pre>
         </div>
 
@@ -134,6 +134,7 @@ export default {
   $padding-x: $unit-lg;
   $padding-y: $unit-sm;
   pre {
+    // font-family: $font-mono;
     margin: 0;
   }
   
@@ -152,10 +153,9 @@ export default {
   }
 
   .c-code_header {
-    // transition: width 1s ease;
+    // transition: padding-top .2s ease;
     width: 100%;
-    padding-top: $unit-xs;
-    padding-bottom: $unit-xs;
+    // padding-bottom: $unit-xs;
     position: relative;
     color: $neutral-00;
   }
@@ -165,7 +165,9 @@ export default {
     position: relative;
   }
   .c-code_icon {
-    height: .8em;
+    // vertical-align: text-top;
+    height: 1em;
+    width: auto;
   }
   .c-code_header-gutter,
   .c-code_gutter {
@@ -180,7 +182,7 @@ export default {
     padding-top: $unit-sm;
   }
   .c-code_header-gutter {
-    padding-top: $unit-xs;
+    // padding-top: $unit-xs;
   }
   
   .c-code_code-area {
@@ -226,6 +228,7 @@ export default {
 
   ._sticky-header {
     &.affix {
+      padding-top: $unit-xs;
       background-color: $neutral-100;
       // left: 0;
       // right: 0;
@@ -235,103 +238,111 @@ export default {
     }
   }
 
-  .hljs-keyword,
-  .hljs-literal,
-  .hljs-symbol,
-  .hljs-name {
-    color: $red;
-  }
 
-  .hljs-link {
-    color: #569CD6;
-    text-decoration: underline;
-  }
 
-  .hljs-built_in,
-  .hljs-type {
-    color: #4EC9B0;
-  }
+  
+.hljs-keyword,
+.hljs-literal,
+.hljs-symbol,
+.hljs-name {
+  color: #569CD6;
+}
 
-  .hljs-number,
-  .hljs-class {
-    color: #B8D7A3;
-  }
+.hljs-link {
+  color: #569CD6;
+  text-decoration: underline;
+}
 
-  .hljs-string,
-  .hljs-meta-string {
-    color: $orange;
-  }
+.hljs-built_in,
+.hljs-type {
+  color: #4EC9B0;
+}
 
-  .hljs-regexp,
-  .hljs-template-tag {
-    color: #9A5334;
-  }
+.hljs-number,
+.hljs-class {
+  color: #B8D7A3;
+}
 
-  .hljs-subst,
-  .hljs-function,
-  .hljs-title,
-  .hljs-params,
-  .hljs-formula {
-    color: #DCDCDC;
-  }
+.hljs-string,
+.hljs-meta-string {
+  color: #D69D85;
+}
 
-  .hljs-comment,
-  .hljs-quote {
-    color: #57A64A;
-    font-style: italic;
-  }
+.hljs-regexp,
+.hljs-template-tag {
+  color: #9A5334;
+}
 
-  .hljs-doctag {
-    color: #608B4E;
-  }
+.hljs-subst,
+.hljs-function,
+.hljs-title,
+.hljs-params,
+.hljs-formula {
+  color: #DCDCDC;
+}
 
-  .hljs-meta,
-  .hljs-meta-keyword,
-  .hljs-tag {
-    color: #9B9B9B;
-  }
+.hljs-comment,
+.hljs-quote {
+  color: #57A64A;
+  // font-style: italic;
+}
 
-  .hljs-variable,
-  .hljs-template-variable {
-    color: #BD63C5;
-  }
+.hljs-doctag {
+  color: #608B4E;
+}
 
-  .hljs-attr,
-  .hljs-attribute,
-  .hljs-builtin-name {
-    color: $blue;
-  }
+.hljs-meta,
+.hljs-meta-keyword,
+.hljs-tag {
+  color: #9B9B9B;
+}
 
-  .hljs-section {
-    color: gold;
-  }
+.hljs-variable,
+.hljs-template-variable {
+  color: #BD63C5;
+}
 
-  .hljs-emphasis {
-    font-style: italic;
-  }
+.hljs-attr,
+.hljs-attribute,
+.hljs-builtin-name {
+  color: #9CDCFE;
+}
 
-  .hljs-strong {
-    font-weight: bold;
-  }
+.hljs-section {
+  color: gold;
+}
 
-  .hljs-bullet,
-  .hljs-selector-tag,
-  .hljs-selector-id,
-  .hljs-selector-class,
-  .hljs-selector-attr,
-  .hljs-selector-pseudo {
-    color: #D7BA7D;
-  }
+.hljs-emphasis {
+  font-style: italic;
+}
 
-  .hljs-addition {
-    background-color: #144212;
-    display: inline-block;
-    width: 100%;
-  }
+.hljs-strong {
+  font-weight: bold;
+}
 
-  .hljs-deletion {
-    background-color: #600;
-    display: inline-block;
-    width: 100%;
-  }  
+/*.hljs-code {
+  font-family:'Monospace';
+}*/
+
+.hljs-bullet,
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #D7BA7D;
+}
+
+.hljs-addition {
+  background-color: #144212;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: #600;
+  display: inline-block;
+  width: 100%;
+}
+
 </style>

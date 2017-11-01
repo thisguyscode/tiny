@@ -20,7 +20,7 @@
           ],
           "imgSrc": "trv-ratings.png",
           "imgClass": "cover",
-          "objective": "Design this thing that does something for the people who need it and ting bluuud"
+          "objective": "Make the hotel reviews / ratings / info more accessible on trivago (i.e. reduce users' need to visit partner site for anything other than booking)"
         },
         {
           "name": "Web Banner Design & Creation",
@@ -36,6 +36,7 @@
             "Adobe Photoshop"
           ],
           "imgSrc": "trv-banners.png",
+          "imgClass": "fill",
           "imgWrapperClass": "padded"
         },
         {
@@ -158,6 +159,7 @@
             "Webpack 2",
             "HTML5"
           ],
+          "imgClass": "fill",
           "imgWrapperClass": "padded"
         }
       ]

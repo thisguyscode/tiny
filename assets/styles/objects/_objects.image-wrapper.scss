@@ -1,0 +1,63 @@
+/* ==========================================================================
+   # IMAGE WRAPPER
+========================================================================== */
+
+/**
+ * Wrap around block-level images to fix their height (for VR / Baseline control)
+ */
+
+
+/* Base class
+======================================================================== */
+.o-image-wrapper {
+  background-color: $neutral-90;
+  box-shadow: inset 0 0 0 1px rgba($neutral-00, .2), 0 1px $neutral-70;
+  height: $unit-xxl*2;
+  margin-bottom: $unit-md;
+  position: relative;
+  overflow: hidden;
+  &:last-of-type {
+    margin-bottom: $unit-xl;
+  }
+}
+
+
+/* Layout modifiers
+======================================================================== */
+.o-image-wrapper--padded {
+  padding: $unit-md;
+}
+
+
+
+/* Height modifiers
+======================================================================== */
+
+.o-image-wrapper--xs {
+  height: $unit-xl;
+  &.o-image-wrapper--padded {
+    padding: $unit-xs;
+  }
+}
+
+.o-image-wrapper--sm {
+  height: $unit-xxl;
+  &.o-image-wrapper--padded {
+    padding: $unit-sm;
+  }
+}
+
+.o-image-wrapper--lg {
+  height: $unit-xxl*4;
+  &.o-image-wrapper--padded {
+    padding: $unit-lg;
+  }
+}
+
+.o-image-wrapper--xl {
+  height: $unit-xxl*6;
+  &.o-image-wrapper--padded {
+    padding: $unit-xl;
+  }
+}
+

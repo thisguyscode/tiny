@@ -102,10 +102,8 @@
         }
       },
       setImgClass: function (project) {
-        if (project.imgClass === 'cover') {
-          return 'cover'
-        } else if (project.imgClass === 'contain') {
-          return 'contain'
+        if (project.imgClass) {
+          return project.imgClass
         }
       },
       setImgWrapperClass: function (project) {

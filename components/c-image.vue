@@ -15,6 +15,7 @@
       <!-- webP source -->
       <source
         type="image/webp"
+        :sizes="img.sizes"
         :srcset="source.srcset"
         :data-srcset="source.dataSrcset">
       </source>
@@ -22,6 +23,7 @@
       <!-- img element-->
       <img
         :class="img.class"
+        :sizes="img.sizes"
         :src="img.src"
         :srcset="img.srcset"
         :data-src="img.dataSrc"
@@ -105,6 +107,7 @@ export default {
     },
     img: function () {
       return {
+        sizes: this.imgSizes,
         src: this.imgSrc,
         dataSrc: this.imgDataSrc,
         srcset: this.imgSrcset,
@@ -112,6 +115,7 @@ export default {
         class: [
           'c-image__image',
           {
+            'c-image__image--fill': this.fit === 'fill',
             'c-image__image--cover': this.fit === 'cover',
             'c-image__image--contain': this.fit === 'contain',
             'c-image__image--center': this.position === 'center',
@@ -120,6 +124,9 @@ export default {
           }
         ]
       }
+    },
+    imgSizes: function () {
+      return '(min-width: ' + this.asset.largest + 'px) ' + this.asset.largest + 'px, 100vw'
     },
     imgSrc: function () {
       if (this.lazy && this.responsive) {
@@ -231,6 +238,7 @@ export default {
             }
           }
         }
+        var largestSize = availableSizes[(availableSizes.length - 1)]
         /**
          * Use the availableSizes array to require the necessary images
          */
@@ -264,6 +272,7 @@ export default {
         }
         return {
           src,
+          largest: largestSize.toString(),
           placeholder,
           srcset: sizes.toString(),
           webpSrc,
@@ -287,6 +296,7 @@ export default {
   mounted () {
     if (process.browser) {
       require('lazysizes')
+      console.log(this.asset.largest)
     }
   }
 }
@@ -303,17 +313,19 @@ export default {
 /* Base class
 ======================================================================== */
 .c-image {
-  height: 100%;
   text-align: center;
+  height: 100%;
+  width: 100%;
+  max-width: $content-max-width;
+  position: relative;
 }
 
 /* Child classes
 ======================================================================== */
 // <picture> element
 .c-image__picture {
-  display: block;
-  width: 100%;
-  height: 100%;
+  // width: 100%;
+  // max-width: 100%;
 }
 
 
@@ -329,17 +341,26 @@ export default {
 
 // the actual <img>
 .c-image__image {
-  width: 100%;
-  height: 100%;
+  display: inline-block;
   overflow: hidden;
-  max-width: $content-max-width;
+  // width: 100%;
+  max-width: 100%;
 }
 
 .c-image__image--contain {
   object-fit: contain;
 }
 
+
+.c-image__image--fill {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .c-image__image--cover {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 

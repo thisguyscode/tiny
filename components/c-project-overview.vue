@@ -82,7 +82,7 @@
             <div class="_image-wrapper" :class="imgWrapperClass" :style="'background-color:' + color">
               <c-image
                 v-if="imgSrc"
-                :fit="imgClass"
+                :fit="project.imgClass"
                 :imageSrc="imgSrc"
                 :desktop=".7"
                 :wide=".6"
@@ -149,13 +149,6 @@ export default {
     },
     imgSrc: function () {
       return this.project.imgSrc
-    },
-    imgClass: function () {
-      if (this.project.imgClass === 'cover') {
-        return 'cover'
-      } else if (this.project.imgClass === 'contain') {
-        return 'contain'
-      }
     },
     contrast: function () {
       return detectContrast(this.project.color)

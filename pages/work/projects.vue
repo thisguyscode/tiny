@@ -38,7 +38,9 @@
         
       <!-- Main project content from ./projects -->
       <l-main-content class="p-projects__main-content">
-        <nuxt-child></nuxt-child>
+        <l-wrapper>
+          <nuxt-child></nuxt-child>
+        </l-wrapper>
       </l-main-content>
     
     </div>
@@ -199,8 +201,9 @@ export default {
 
 .p-projects__main-content {
   position: relative;
-  padding-top: $unit-xxl*4;
-  padding-bottom: $unit-xxl*4;
+  padding-top: $unit-xxl;
+  padding-bottom: $unit-xxl;
+  text-align: left;
   // background-color: rgba($neutral-00, .9);
 }
 

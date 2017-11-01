@@ -14,7 +14,7 @@
         >
           <c-image
             v-if="project.imgSrc"
-            :fit="imgClass"
+            :fit="project.imgClass"
             :imageSrc="project.imgSrc"
           />
         </div>
@@ -107,13 +107,6 @@ export default {
     imgWrapperClass: function () {
       return {
         'c-project-nav-panel__image-wrapper--padded': this.project.imgWrapperClass === 'padded'
-      }
-    },
-    imgClass: function () {
-      if (this.project.imgClass === 'cover') {
-        return 'cover'
-      } else if (this.project.imgClass === 'contain') {
-        return 'contain'
       }
     }
     // setScrollTo: function () {

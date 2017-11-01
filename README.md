@@ -1,6 +1,6 @@
 # ./tiny/
 
-> Personal portfolio
+> Personal portfolio - live on https://tinyworld.xyz
 
 ## Build Setup
 

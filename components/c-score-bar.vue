@@ -57,12 +57,14 @@ export default {
   }
 
   .score {
-    display: inline;
+    display: inline-block;
     white-space: nowrap;
     font-family: $font-body;
     font-size: $font-size-md;
     font-weight: $font-weight-regular;
+    height: 1rem;
   }
+
   .score-number {
     font-weight: $font-weight-bold;
   }

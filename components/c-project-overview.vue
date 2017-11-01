@@ -344,6 +344,7 @@ export default {
     position: relative;
     height: $unit-xl*6;
     text-align: center;
+    transition: opacity .1s ease;
     &:hover {
       opacity: .85;
     }

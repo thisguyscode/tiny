@@ -33,7 +33,7 @@
 .o-text--sm {
   &#{&} { /*[1]*/
     @include vr-offset($cap-height, $font-size-sm); /*[2]*/
-    
+
     @include mq($from: desktop) {
       @include vr-offset($cap-height, $font-size-md);
     }

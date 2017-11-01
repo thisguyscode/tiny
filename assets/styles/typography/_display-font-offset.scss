@@ -54,7 +54,7 @@
 }
 .o-heading--zeta {
   &#{&} { /*[1]*/
-    @include vr-offset($font-body, $font-size-md);
+    @include vr-offset($cap-height, $font-size-md);
     
     @include mq($from: desktop) {
       @include vr-offset($cap-height, $font-size-lg);

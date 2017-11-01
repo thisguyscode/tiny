@@ -32,15 +32,9 @@
 @import "./utilities/utilities.divider";
 @import "./utilities/utilities.responsive";
 
-.fade-enter {
-  opacity: 1;
-  transition: opacity 1s ease;
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
 }
-
-.fade-before-enter {
-  opacity: 0;
-}
-
-.fade-after-enter {
-  opacity: 1;
+.fade-enter, .fade-leave-to, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0
 }

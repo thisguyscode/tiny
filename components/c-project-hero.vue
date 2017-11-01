@@ -8,16 +8,16 @@
         <div class="c-project-hero-text-cell l-grid__cell u-2/5@tablet">
           <div class="c-project-hero-text-wrapper" :style="'color:' + color">
            
-            <!-- <transition name="slide-from-left"> -->
+            <transition name="fade">
               <div v-if="transitionEnd">
 
                 <div class="c-project-hero__group-title-wrapper">
+
                 <!-- Group -->
                   <f-link
                     class="c-project-hero__group-title  o-heading o-heading--delta"
                     :class="setTextClass(project)"
-                    :externalLink="project.groupLink"
-                    :style="'color:' + color">
+                    :externalLink="project.groupLink">
                     {{ project.group }}
                     <c-icon
                       v-if="project.group"
@@ -26,6 +26,7 @@
                     </c-icon>
                   </f-link>
                 </div>
+
                 <!-- Title -->
                 <div class="c-project-hero__project-title-wrapper">
                   <h1
@@ -34,26 +35,28 @@
                     {{ project.name }}
                   </h1>
                 </div>
+
               </div>
-            <!-- </transition> -->
+            </transition>
 
           </div>
         </div><!--END Hero text panel -->
         
         <!-- Hero image panel -->
-        <div class="c-project-hero-image-cell l-grid__cell u-3/5@tablet" :class="setImgClass(project)">
-          <div v-if="transitionEnd && project.imgSrc"  class="c-project-hero-image-reference  o-liner" :class="setImgWrapperClass(project)">
-             <transition name="fade"> 
+        <transition name="fade">
+          <div v-if="transitionEnd" class="c-project-hero-image-cell l-grid__cell u-3/5@tablet" :class="setImgClass(project)">
+            <div class="c-project-hero-image-reference  o-liner" :class="setImgWrapperClass(project)">
               <div class="c-project-hero-image-wrapper">
                 <c-image
+                  v-if="project.imgSrc"
                   :lazy="false"
                   :fit="setImgClass(project)"
                   :imageSrc="project.imgSrc"
                 />
               </div>
-            </transition>
+            </div>
           </div>
-        </div>
+        </transition>
 
 
       </l-grid>
@@ -73,13 +76,6 @@
       fLink,
       lWrapper,
       cIcon
-    },
-    data: () => {
-      return {
-        textClass: '',
-        imgClass: '',
-        imgWrapperClass: ''
-      }
     },
     props: {
       project: {
@@ -118,24 +114,6 @@
         }
       }
     }
-    // watch: {
-    //   '$route' (to, from) {
-    //     var self = this
-    //     setTimeout(function () {
-    //       self.textClass = self.setTextClass(self.project)
-    //       self.imgClass = self.setImgClass(self.project)
-    //       self.imgWrapperClass = self.setImgWrapperClass(self.project)
-    //     }, 600)
-    //   }
-    // },
-    // mounted () {
-    //   var self = this
-    //   setTimeout(function () {
-    //     self.textClass = self.setTextClass(self.project)
-    //     self.imgClass = self.setImgClass(self.project)
-    //     self.imgWrapperClass = self.setImgWrapperClass(self.project)
-    //   }, 100)
-    // }
   }
 </script>
 

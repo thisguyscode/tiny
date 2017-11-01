@@ -167,11 +167,13 @@ export default {
     '$route' (to, from) {
       setTimeout(() => {
         window.scrollTo(0, 0)
-        this.projectColor = this.getNextColor(to)
         this.transitionEnd = false
+        this.projectColor = this.getNextColor(to)
+      }, 0)
+      setTimeout(() => {
         this.setProjects(to)
         this.transitionEnd = true
-      }, 0)
+      }, 500)
     }
   },
   /** Get the projects and store then set the local data on initial mount */

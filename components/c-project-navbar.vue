@@ -70,51 +70,42 @@
 </template>
 
 <script>
-  import lGrid from '~/components/layout/l-grid'
-  import lWrapper from '~/components/layout/l-wrapper'
-  import cIcon from '~/components/c-icon'
-
-  export default {
-    components: {
-      lGrid,
-      lWrapper,
-      cIcon
+export default {
+  props: {
+    color: {
+      type: String
     },
-    props: {
-      color: {
-        type: String
-      },
-      current: {
-        type: Object
-      },
-      next: {
-        type: Object
-      },
-      previous: {
-        type: Object
+    current: {
+      type: Object
+    },
+    next: {
+      type: Object
+    },
+    previous: {
+      type: Object
+    }
+  },
+  computed: {
+    baseClass: function () {
+      return {
+        'dark': this.current.contrastingColor === 'dark',
+        'light': this.current.contrastingColor === 'light'
       }
     },
-    computed: {
-      baseClass: function () {
-        return {
-          'dark': this.current.contrastingColor === 'dark',
-          'light': this.current.contrastingColor === 'light'
-        }
-      },
-      linkClass: function () {
-        return {
-          'disabled': !this.current.contrastingColor,
-          'project-color-is-dark': this.current.contrastingColor === 'dark',
-          'project-color-is-light': this.current.contrastingColor === 'light'
-        }
-      }
-    },
-    methods: {
-      setScrollTo: function () {
-        this.$store.commit('setScrollTo', this.current.slug)
+    linkClass: function () {
+      return {
+        'disabled': !this.current.contrastingColor,
+        'project-color-is-dark': this.current.contrastingColor === 'dark',
+        'project-color-is-light': this.current.contrastingColor === 'light'
       }
     }
+  },
+  methods: {
+    setScrollTo: function () {
+      this.$store.commit('setScrollTo', this.current.slug)
+    }
   }
+}
 </script>
 
 <style lang="scss" scoped>

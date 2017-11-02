@@ -53,7 +53,7 @@ module.exports = {
   plugins: [
     '~/plugins/vue-scrollto.js',
     '~/plugins/no-ssr.js',
-    '~/plugins/image.js',
+    '~/plugins/common.js',
     '~/plugins/vue-awesome.js',
     {
       src: '~/plugins/fonts.js',

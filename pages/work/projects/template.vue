@@ -33,12 +33,10 @@
 <script>
 import cTestimonials from '~/components/c-testimonials'
 import cCode from '~/components/c-code'
-import lWrapper from '~/components/layout/l-wrapper'
 export default {
   components: {
     cTestimonials,
-    cCode,
-    lWrapper
+    cCode
   },
   data: () => {
     return {

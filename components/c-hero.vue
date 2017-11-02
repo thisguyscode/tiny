@@ -20,13 +20,7 @@
 </template>
 
 <script>
-import lWrapper from '~/components/layout/l-wrapper'
-import lGrid from '~/components/layout/l-grid'
 export default {
-  components: {
-    lWrapper,
-    lGrid
-  },
   props: {
     bgImageSrc: {
       type: String,

@@ -97,20 +97,12 @@
 </template>
 
 <script>
-import fLink from '~/components/functional/f-link'
-import cIcon from '~/components/c-icon'
 import cButton from '~/components/c-button'
-import lWrapper from '~/components/layout/l-wrapper'
-import lGrid from '~/components/layout/l-grid'
 import detectContrast from '~/utils/detectContrast'
 
 export default {
   components: {
-    cIcon,
-    cButton,
-    lWrapper,
-    lGrid,
-    fLink
+    cButton
   },
   props: {
     index: {

@@ -126,68 +126,62 @@
 </template>
 
 <script>
-  import lGrid from '~/components/layout/l-grid'
-  import lWrapper from '~/components/layout/l-wrapper'
-  import cIcon from '~/components/c-icon'
-  import cTechIcon from '~/components/c-tech-icon'
-  export default {
-    data: () => {
-      return {
-        showDetails: false
-      }
+import cTechIcon from '~/components/c-tech-icon'
+export default {
+  data: () => {
+    return {
+      showDetails: false
+    }
+  },
+  components: {
+    cTechIcon
+  },
+  props: {
+    project: {
+      type: Object,
+      required: true
     },
-    components: {
-      lGrid,
-      lWrapper,
-      cIcon,
-      cTechIcon
+    color: {
+      type: String,
+      required: true
     },
-    props: {
-      project: {
-        type: Object,
-        required: true
-      },
-      color: {
-        type: String,
-        required: true
-      },
-      transitionEnd: {
-        type: Boolean
-      }
-    },
-    methods: {
-      handleDetails: function () {
-        this.$store.commit('toggleDetails')
-        this.showDetails = this.$store.state.showDetails
-      }
-    },
-    computed: {
-      textClass: function () {
-        return {
-          '_text-light': this.project.contrastingColor === 'light',
-          '_text-dark': this.project.contrastingColor === 'dark'
-        }
-      },
-      imageWrapperClass: function () {
-        return {
-          '--padded': this.project.imgWrapperClass === 'padded'
-        }
-      },
-      imageClass: function () {
-        return {
-          '--cover': this.project.imgClass === 'cover'
-        }
-      },
-      heroImageCellClass: function () {
-        return {
-          '--cover': this.project.imgClass === 'cover'
-        }
-      }
-    },
-    mounted () {
+    transitionEnd: {
+      type: Boolean
+    }
+  },
+  methods: {
+    handleDetails: function () {
+      this.$store.commit('toggleDetails')
       this.showDetails = this.$store.state.showDetails
     }
+  },
+  computed: {
+    textClass: function () {
+      return {
+        '_text-light': this.project.contrastingColor === 'light',
+        '_text-dark': this.project.contrastingColor === 'dark'
+      }
+    },
+    imageWrapperClass: function () {
+      return {
+        '--padded': this.project.imgWrapperClass === 'padded'
+      }
+    },
+    imageClass: function () {
+      return {
+        '--cover': this.project.imgClass === 'cover'
+      }
+    },
+    heroImageCellClass: function () {
+      return {
+        '--cover': this.project.imgClass === 'cover'
+      }
+    }
+  },
+  mounted () {
+    this.showDetails = this.$store.state.showDetails
   }
+}
 </script>
 
 

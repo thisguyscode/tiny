@@ -21,11 +21,6 @@
 </template>
 
 <script>
-import lGrid from '~/components/layout/l-grid'
-import fLink from '~/components/functional/f-link'
-import lWrapper from '~/components/layout/l-wrapper'
-import cIcon from '~/components/c-icon'
-
 export default {
   data: () => {
     return {
@@ -52,12 +47,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    lGrid,
-    fLink,
-    lWrapper,
-    cIcon
   }
 }
 </script>

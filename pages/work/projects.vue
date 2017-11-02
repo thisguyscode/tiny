@@ -67,25 +67,17 @@
 </template>
 
 <script>
-import fLink from '~/components/functional/f-link'
-import lGrid from '~/components/layout/l-grid'
-import lWrapper from '~/components/layout/l-wrapper'
 import lMainContent from '~/components/layout/l-main-content'
 import lAffix from '~/components/layout/l-affix'
 import cProjectNavbar from '~/components/c-project-navbar'
 import cProjectNavPanel from '~/components/c-project-nav-panel'
 import cProjectHero from '~/components/c-project-hero'
 import cProjectDetails from '~/components/c-project-details'
-import cIcon from '~/components/c-icon'
 
 export default {
   components: {
-    lGrid,
-    fLink,
-    lWrapper,
     lMainContent,
     lAffix,
-    cIcon,
     cProjectNavbar,
     cProjectNavPanel,
     cProjectHero,

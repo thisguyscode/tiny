@@ -20,7 +20,6 @@ import cGridlines from '~/components/c-gridlines'
 import cSiteHeader from '~/components/c-site-header'
 import cBaselines from '~/components/c-baselines'
 import cFooter from '~/components/c-footer'
-import lWrapper from '~/components/layout/l-wrapper'
 import lMainContent from '~/components/layout/l-main-content'
 
 export default {
@@ -30,7 +29,6 @@ export default {
     cSiteHeader,
     cBaselines,
     cFooter,
-    lWrapper,
     lMainContent
   }
 }

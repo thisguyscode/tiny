@@ -50,15 +50,13 @@ import cGridlines from '~/components/c-gridlines'
 import cBaselines from '~/components/c-baselines'
 import cLogo from '~/components/c-logo'
 import lHeaderPrimary from '~/components/layout/l-header-primary'
-import lWrapper from '~/components/layout/l-wrapper'
 import detectContrast from '~/utils/detectContrast'
 export default {
   components: {
     lHeaderPrimary,
     cGridlines,
     cBaselines,
-    cLogo,
-    lWrapper
+    cLogo
   },
   computed: {
     currentColor: function () {

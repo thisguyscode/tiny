@@ -19,16 +19,7 @@
 </template>
 
 <script>
-
-  import lWrapper from '~/components/layout/l-wrapper'
-  import lGrid from '~/components/layout/l-grid'
-  export default {
-    components: {
-      lWrapper,
-      lGrid
-    }
-  }
-
+export default {}
 </script>
 
 <style lang="scss" scoped>

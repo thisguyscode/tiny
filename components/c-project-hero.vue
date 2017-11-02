@@ -66,53 +66,43 @@
 </template>
 
 <script>
-  import fLink from '~/components/functional/f-link'
-  import lGrid from '~/components/layout/l-grid'
-  import lWrapper from '~/components/layout/l-wrapper'
-  import cIcon from '~/components/c-icon'
-  export default {
-    components: {
-      lGrid,
-      fLink,
-      lWrapper,
-      cIcon
+export default {
+  props: {
+    project: {
+      type: Object,
+      required: true
     },
-    props: {
-      project: {
-        type: Object,
-        required: true
-      },
-      color: {
-        type: String,
-        required: true,
-        default: function () {
-          return this.project.color
-        }
-      },
-      transitionEnd: {
-        type: Boolean
+    color: {
+      type: String,
+      required: true,
+      default: function () {
+        return this.project.color
       }
     },
-    methods: {
-      setTextClass: function (project) {
-        if (project.contrastingColor === 'light') {
-          return 'project-color-is-dark'
-        } else if (project.contrastingColor === 'dark') {
-          return 'project-color-is-light'
-        }
-      },
-      setImgClass: function (project) {
-        if (project.imgClass) {
-          return project.imgClass
-        }
-      },
-      setImgWrapperClass: function (project) {
-        if (project.imgWrapperClass === 'padded') {
-          return 'padded'
-        }
+    transitionEnd: {
+      type: Boolean
+    }
+  },
+  methods: {
+    setTextClass: function (project) {
+      if (project.contrastingColor === 'light') {
+        return 'project-color-is-dark'
+      } else if (project.contrastingColor === 'dark') {
+        return 'project-color-is-light'
+      }
+    },
+    setImgClass: function (project) {
+      if (project.imgClass) {
+        return project.imgClass
+      }
+    },
+    setImgWrapperClass: function (project) {
+      if (project.imgWrapperClass === 'padded') {
+        return 'padded'
       }
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -536,12 +536,9 @@
   import cLogo from '~/components/c-logo'
   import cScoreBar from '~/components/c-score-bar'
   import cHero from '~/components/c-hero'
-  import cIcon from '~/components/c-icon'
   import cCtaPanel from '~/components/c-cta-panel'
   import cProfileNavbar from '~/components/c-profile-navbar'
   import cIntroText from '~/components/c-intro-text'
-  import lWrapper from '~/components/layout/l-wrapper'
-  import lGrid from '~/components/layout/l-grid'
   import lAffix from '~/components/layout/l-affix'
   import lMainContent from '~/components/layout/l-main-content'
   import lStaggeredGrid from '~/components/layout/l-staggered-grid'
@@ -553,15 +550,12 @@
       cTestimonials,
       cProfileNavbar,
       cHero,
-      cIcon,
       cLogo,
       cTechIcon,
       cScoreBar,
       cIntroText,
       cCtaPanel,
-      lWrapper,
       lAffix,
-      lGrid,
       lMainContent,
       lStaggeredGrid
     },

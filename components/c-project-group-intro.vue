@@ -57,21 +57,13 @@
 </template>
 
 <script>
-import cIcon from '~/components/c-icon'
 import cButton from '~/components/c-button'
 import cBaselines from '~/components/c-baselines'
-import fLink from '~/components/functional/f-link'
-import lWrapper from '~/components/layout/l-wrapper'
 import lAffix from '~/components/layout/l-affix'
-import lGrid from '~/components/layout/l-grid'
 export default {
   components: {
-    cIcon,
     cButton,
     cBaselines,
-    fLink,
-    lWrapper,
-    lGrid,
     lAffix
   },
   props: {

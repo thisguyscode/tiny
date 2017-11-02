@@ -101,9 +101,7 @@
 import cCtaPanel from '~/components/c-cta-panel'
 import cHero from '~/components/c-hero'
 import cButton from '~/components/c-button'
-import lWrapper from '~/components/layout/l-wrapper'
 import lMainContent from '~/components/layout/l-main-content'
-import lGrid from '~/components/layout/l-grid'
 export default {
   data: () => {
     return {
@@ -116,8 +114,6 @@ export default {
     cCtaPanel,
     cHero,
     cButton,
-    lWrapper,
-    lGrid,
     lMainContent
   },
   computed: {

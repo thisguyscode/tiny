@@ -13,12 +13,7 @@
 </template>
 
 <script>
-import lWrapper from '~/components/layout/l-wrapper'
-export default {
-  components: {
-    lWrapper
-  }
-}
+export default {}
 </script>
 
 <style lang="scss" scoped>

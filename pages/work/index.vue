@@ -40,7 +40,6 @@
   import cHero from '~/components/c-hero'
   import cProjectGroupIntro from '~/components/c-project-group-intro'
   import cProjectOverview from '~/components/c-project-overview'
-  import lWrapper from '~/components/layout/l-wrapper'
   import lMainContent from '~/components/layout/l-main-content'
   import dataProjects from '~/data/projects.json'
 
@@ -51,7 +50,6 @@
       cHero,
       cProjectGroupIntro,
       cProjectOverview,
-      lWrapper,
       lMainContent
     },
     data: () => {

@@ -48,13 +48,9 @@
 </template>
 
 <script>
-import lGrid from '~/components/layout/l-grid'
 import detectContrast from '~/utils/detectContrast.js'
 
 export default {
-  components: {
-    lGrid
-  },
   props: {
     testimonials: {
       type: Array,

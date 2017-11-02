@@ -6,12 +6,10 @@
 @import "./generic/generic.my-resets";
 
 @import "./elements/elements.page";
-// @import "./elements/elements.typography";
 @import "./elements/elements.ui";
 @import "./elements/elements.forms";
 
 
-// @import "./layout/layout.grid";
 @import "./layout/layout.box";
 @import "./layout/layout.wrapper";
 
@@ -19,7 +17,6 @@
 @import "./objects/objects.liner";
 @import "./objects/objects.text";
 @import "./objects/objects.code";
-@import "./objects/objects.image-wrapper";
 
 @import "./utilities/utilities.flow";
 @import "./utilities/utilities.text";

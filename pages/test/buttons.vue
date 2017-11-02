@@ -115,14 +115,10 @@
 
 
 <script>
-import lGrid from '~/components/layout/l-grid'
-import lWrapper from '~/components/layout/l-wrapper'
 import cButton from '~/components/c-button'
 export default {
   components: {
-    cButton,
-    lGrid,
-    lWrapper
+    cButton
   }
 }
 </script>

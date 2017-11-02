@@ -118,6 +118,7 @@ export default {
           {
             'c-image__image--fill': this.fit === 'fill',
             'c-image__image--cover': this.fit === 'cover',
+            'c-image__image--default-fit': !this.fit,
             'c-image__image--contain': this.fit === 'contain',
             'c-image__image--center': this.position === 'center',
             'c-image__image--top-left': this.position === 'top-left',
@@ -239,13 +240,21 @@ export default {
             }
           }
         }
-        var largestSize = Math.max.apply(null, availableSizes)
         /**
          * Use the availableSizes array to require the necessary images
          */
         var sizes = []
         var webpSizes = []
         var bp = breakpoints.breakpoints
+        var largestSize = 0
+        if (availableSizes.length === 0) {
+          var original = require(`~/assets/images/${this.imageSrc}/original.${this.extension}`)
+          var webpOriginal = require(`~/assets/images/${this.imageSrc}/original.webp`)
+          sizes.push(original)
+          webpSizes.push(webpOriginal)
+        } else {
+          largestSize = Math.max.apply(null, availableSizes)
+        }
         for (var k = 0; k < availableSizes.length; k++) {
           var size = availableSizes[k]
           var fitAdjustment = 1
@@ -297,7 +306,7 @@ export default {
   mounted () {
     if (process.browser) {
       require('lazysizes')
-      console.log(this.asset.largest)
+      // console.log(this.asset.largest)
     }
   }
 }
@@ -351,18 +360,15 @@ export default {
   max-width: 100%;
 }
 
+
+.c-image__image--default-fit {
+  object-fit: contain;
+}
+
 .c-image__image--contain {
   max-height: 100%;
   max-width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
   object-fit: contain;
-  &.lazyload {
-    width: 100%;
-    height: 100%;
-  }
 }
 
 
@@ -379,11 +385,42 @@ export default {
 }
 
 .c-image__image--center {
-  object-position: 50% 50%;
+  &.c-image__image--contain,
+  &.c-image__image--default-fit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+  &.c-image__image--cover {
+    object-position: 50% 50%;
+  }
 }
 
 .c-image__image--top-left {
-  object-position: 0 0;
+  &.c-image__image--contain,
+  &.c-image__image--default-fit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // transform: translate3d(-50%, -50%, 0);
+  }
+  &.c-image__image--cover {
+    object-position: 0 0;
+  }
+}
+
+.c-image__image--top-middle {
+  &.c-image__image--contain,
+  &.c-image__image--default-fit {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
+  &.c-image__image--cover {
+    object-position: 0 0;
+  }
 }
 
 
@@ -393,6 +430,13 @@ export default {
   & ~ .c-image__loader {
     display: none;
   }
+}
+
+.lazyload {
+  object-fit: contain;
+  width: 100%;
+  // max-width: 100%;
+  // min-height: 100%;
 }
 
 </style>

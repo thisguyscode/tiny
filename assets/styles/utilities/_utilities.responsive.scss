@@ -6,19 +6,19 @@
 
 .u-hide-mobile-tablet {
   @include mq($from: mobile, $until: desktop) {
-    display: none;
+    display: none !important;
   }
 }
 
 .u-hide-mobile {
   @include mq($until: tablet) {
-    display: none;
+    display: none !important;
   }
 }
 
 
 .u-hide-tablet {
   @include mq($until: desktop) {
-    display: none;
+    display: none !important;
   }
 }

@@ -1,6 +1,7 @@
 <template>
   <div
     class="l-height-wrapper"
+    :class="baseClassObject"
     ref="baseElement">
     <slot></slot>
   </div>
@@ -10,6 +11,10 @@
 import breakpoints from '~/assets/styles/breakpoints.js'
 export default {
   props: {
+    inline: {
+      type: Boolean,
+      default: false
+    },
     tiny: {
       type: Number,
       default: 10
@@ -55,6 +60,11 @@ export default {
   computed: {
     breakpoints: function () {
       return breakpoints.breakpoints
+    },
+    baseClassObject: function () {
+      return {
+        'l-height-wrapper--inline': this.inline === true
+      }
     }
   },
   mounted () {
@@ -70,9 +80,10 @@ export default {
 <style lang="scss" scoped>
 .l-height-wrapper {
   position: relative;
-  display: block;
-  
+  display: inline-block;
+  width: 100%;
   height: 10rem;
+  overflow: hidden;
 
   @include mq($from: mobile) {
     height: 20rem;
@@ -87,4 +98,5 @@ export default {
     height: 30rem;
   }
 }
+
 </style>

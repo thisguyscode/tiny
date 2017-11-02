@@ -49,6 +49,7 @@ export default {
   position: relative;
   display: block;
   margin-bottom: $unit-md;
+  font-size: 0;
 }
 
 

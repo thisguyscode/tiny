@@ -122,6 +122,8 @@ export default {
             'c-image__image--contain': this.fit === 'contain',
             'c-image__image--center': this.position === 'center',
             'c-image__image--top-left': this.position === 'top-left',
+            'c-image__image--top-middle': this.position === 'top-middle',
+            'c-image__image--bottom-middle': this.position === 'bottom-middle',
             'lazyload': this.lazy === true
           }
         ]
@@ -419,7 +421,20 @@ export default {
     transform: translate3d(-50%, 0, 0);
   }
   &.c-image__image--cover {
-    object-position: 0 0;
+    object-position: 50% 0;
+  }
+}
+
+.c-image__image--bottom-middle {
+  &.c-image__image--contain,
+  &.c-image__image--default-fit {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
+  &.c-image__image--cover {
+    object-position: 50% 100%;
   }
 }
 

@@ -57,7 +57,8 @@ export default {
       default: true
     },
     fit: {
-      default: 'contain'
+      type: String,
+      required: false
     },
     position: {
       default: 'center'
@@ -228,17 +229,17 @@ export default {
               var imageFileName = items[i].substring(stringStart, stringEnd)
               if (!isNaN(imageFileName)) {
                 availableSizes.push(imageFileName)
-              } else if (imageFileName === 'placeholder') {
+              } else if (imageFileName === 'original') {
                 src = require(`~/assets/images/${this.imageSrc}/original.${this.extension}`)
                 webpSrc = require(`~/assets/images/${this.imageSrc}/original.webp`)
-              } else if (imageFileName === 'original') {
+              } else if (imageFileName === 'placeholder') {
                 placeholder = require(`~/assets/images/${this.imageSrc}/placeholder.${this.extension}`)
                 webpPlaceholder = require(`~/assets/images/${this.imageSrc}/placeholder.webp`)
               }
             }
           }
         }
-        var largestSize = availableSizes[(availableSizes.length - 1)]
+        var largestSize = Math.max.apply(null, availableSizes)
         /**
          * Use the availableSizes array to require the necessary images
          */
@@ -318,12 +319,15 @@ export default {
   width: 100%;
   max-width: $content-max-width;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Child classes
 ======================================================================== */
 // <picture> element
 .c-image__picture {
+  text-align: center;
   // width: 100%;
   // max-width: 100%;
 }
@@ -348,7 +352,17 @@ export default {
 }
 
 .c-image__image--contain {
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
   object-fit: contain;
+  &.lazyload {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 

@@ -1,7 +1,6 @@
 <template>
   <section>
     <section>
-      <h3 class="o-heading o-heading--gamma">Desktop</h3>
 
       <c-box :border="true" :filled="true">
         <l-height-wrapper
@@ -68,7 +67,6 @@
     </section>
 
     <section>
-      <h3 class="o-heading o-heading--gamma">Mobile</h3>
       
       <c-box :border="true" :filled="true">
         <l-height-wrapper

@@ -1,11 +1,11 @@
 <template>
   <section>
 
-    <div class="o-page-section">
+    <div class="o-text-section">
       <c-baselines></c-baselines>
-      <l-wrapper>
-        <h1 class="o-heading o-heading--beta">Test</h1>
-        <p class="o-text">jbasckjbavnba adsvba vmn aviosdnvk cnsbdi ahjd v lsvn akvuzdbvoa sk doivankj adv aoisnvkasd savioabdva dvaiodv ajdv ousv alvadvb apdv l vuosf vsv a</p>
+      <l-wrapper size="sm">
+        <h1 class="o-heading o-heading--gamma">Test</h1>
+        <p class="o-text o-text--paragraph">jbasckjbavnba adsvba vmn aviosdnvk cnsbdi ahjd v lsvn akvuzdbvoa sk doivankj adv aoisnvkasd savioabdva dvaiodv ajdv ousv alvadvb apdv l vuosf vsv a</p>
       </l-wrapper>
     </div>
 
@@ -21,10 +21,11 @@
       />
     </c-box>
 
-    <div class="o-page-section">
+    <div class="o-text-section">
       <c-baselines></c-baselines>
-      <l-wrapper>
-        <p class="o-text">jbasckjbavnba adsvba vmn aviosdnvk cnsbdi ahjd v lsvn akvuzdbvoa sk doivankj adv aoisnvkasd savioabdva dvaiodv ajdv ousv alvadvb apdv l vuosf vsv a</p>
+      <l-wrapper size="sm">
+        <h1 class="o-heading o-heading--gamma">Test</h1>
+        <p class="o-text o-text--paragraph">jbasckjbavnba adsvba vmn aviosdnvk cnsbdi ahjd v lsvn akvuzdbvoa sk doivankj adv aoisnvkasd savioabdva dvaiodv ajdv ousv alvadvb apdv l vuosf vsv a</p>
       </l-wrapper>
     </div>
 
@@ -54,6 +55,10 @@
         </div>
       </l-grid>
     </c-box>
+
+    <div class="o-text-section">
+      <c-baselines></c-baselines>
+    </div>
     
   </section>
 </template>

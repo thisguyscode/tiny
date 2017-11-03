@@ -10,16 +10,15 @@
 
 /* Base class
 ======================================================================== */
-.o-page-section {
+.o-text-section {
   position: relative;
   padding-top: $unit-xl;
-  padding-bottom: $unit-lg;
   @include mq($from: tablet) {
-    padding-top: $unit-xxl;
-    padding-bottom: $unit-xl;
+    padding-top: $unit-xxl + $unit-xl;
+  }
+  & ~ #{&} {
+    @include mq($from: tablet) {
+      padding-top: $unit-xxl;
+    }
   }
 }
-
-
-/* Layout modifiers
-======================================================================== */

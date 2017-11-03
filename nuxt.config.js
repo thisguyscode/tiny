@@ -52,19 +52,18 @@ module.exports = {
   },
   plugins: [
     '~/plugins/vue-scrollto.js',
-    '~/plugins/no-ssr.js',
     '~/plugins/common.js',
     '~/plugins/vue-awesome.js',
+    {
+      src: '~/plugins/vue-affix.js',
+      ssr: false
+    },
     {
       src: '~/plugins/fonts.js',
       ssr: false
     },
     {
       src: '~/plugins/picturefill.js',
-      ssr: false
-    },
-    {
-      src: '~/plugins/vue-affix.js',
       ssr: false
     }
   ],

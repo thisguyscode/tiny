@@ -8,6 +8,10 @@ import Vue from 'vue'
 import fLink from '~/components/functional/f-link'
 Vue.component('f-link', fLink)
 
+// No SSR
+import fNoSsr from '~/components/functional/f-no-ssr'
+Vue.component('f-no-ssr', fNoSsr)
+
 /**
  * LAYOUT
  */

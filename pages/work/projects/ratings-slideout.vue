@@ -56,10 +56,6 @@
       </l-grid>
     </c-box>
 
-    <div class="o-text-section">
-      <c-baselines></c-baselines>
-    </div>
-    
   </section>
 </template>
 

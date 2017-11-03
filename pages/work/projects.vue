@@ -28,7 +28,7 @@
             :color="projectColor">
           </c-project-navbar>
         </template>
-      </l-affix>
+      </l-affix><!--END nav -->
 
       <c-project-details
         :project="currentProject"
@@ -36,28 +36,29 @@
         :transitionEnd="transitionEnd">
       </c-project-details>
         
-      <!-- Main project content from ./projects -->
       <l-main-content class="p-projects__main-content-wrapper">
-        <!-- <l-wrapper> -->
-          <nuxt-child class="p-projects__main-content"></nuxt-child>
-        <!-- </l-wrapper> -->
+        <!-- Main project content from ./projects -->
+        <nuxt-child class="p-projects__main-content"></nuxt-child>
+        
+        <!-- Little extra spacer at the end of each project -->
+        <div class="o-text-section">
+          <c-baselines></c-baselines>
+        </div>
       </l-main-content>
     
-    </div>
+    </div><!--END sticky-trigger area -->
 
     <!-- Bottom Nav -->
     <div class="p-projects__nav-panels-wrapper">
       <nav class="p-projects__nav-panels">
-        <!-- <l-wrapper> -->
-          <l-grid spacing="xs">
-            <div class="p-projects__nav-panel p-projects__nav-panel--previous  l-grid__cell u-1/2@mobile">
-              <c-project-nav-panel :transitionEnd="transitionEnd" :project="previousProject" direction="previous"></c-project-nav-panel>
-            </div>
-            <div class="p-projects__nav-panel p-projects__nav-panel--next  l-grid__cell u-1/2@mobile">
-              <c-project-nav-panel :transitionEnd="transitionEnd" :project="nextProject" direction="next"></c-project-nav-panel>
-            </div>
-          </l-grid>
-        <!-- </l-wrapper> -->
+        <l-grid spacing="xs">
+          <div class="p-projects__nav-panel p-projects__nav-panel--previous  l-grid__cell u-1/2@mobile">
+            <c-project-nav-panel :transitionEnd="transitionEnd" :project="previousProject" direction="previous"></c-project-nav-panel>
+          </div>
+          <div class="p-projects__nav-panel p-projects__nav-panel--next  l-grid__cell u-1/2@mobile">
+            <c-project-nav-panel :transitionEnd="transitionEnd" :project="nextProject" direction="next"></c-project-nav-panel>
+          </div>
+        </l-grid>
       </nav>
     </div>
     <!--END Bottom Nav  -->
@@ -193,9 +194,6 @@ export default {
 
 .p-projects__main-content-wrapper {
   position: relative;
-  // padding-top: $unit-xxl;
-  // padding-bottom: $unit-xxl;
-  // background-color: rgba($neutral-00, .9);
 }
 
 .p-projects__main-content {

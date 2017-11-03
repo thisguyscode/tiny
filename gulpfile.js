@@ -61,9 +61,9 @@ function images () {
   /** Create a filter to remove .webp from the stream */
   const f2 = filter(['**/*', '!**/*.webp'], {restore: true})
   /** Define task source */
-  return gulp.src(config.images.tempDir + '**/*')
+  return gulp.src(config.images.tempDir + '**/*', {nodir: true})
     .pipe(rename(function (path) {
-      path.dirname = path.basename + path.extname
+      path.dirname = path.dirname + '/' + path.basename + path.extname
     }))
     /** Apply gif / svg filter */
     .pipe(f1)

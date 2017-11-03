@@ -11,7 +11,7 @@
 
     <c-box :border="true" :filled="true" :padded="true">
       <c-image
-        :imageSrc="'trv-banners-gdn-05.gif'"
+        :imageSrc="'trivago/banners/005.gif'"
       />
     </c-box>
 

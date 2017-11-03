@@ -101,8 +101,12 @@ export default {
   },
   methods: {
     getName: function (string) {
-      var name = string.substring(0, string.lastIndexOf('.'))
-      return name
+      var start = 0
+      var end = string.lastIndexOf('.')
+      if (string.includes('/')) {
+        start = string.lastIndexOf('/') + 1
+      }
+      return string.substring(start, end)
     },
     getExtension: function (string) {
       var ext = string.substring(string.lastIndexOf('.') + 1, string.length)

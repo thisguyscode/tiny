@@ -1,6 +1,8 @@
 <template>
   <div
     class="c-project-details">
+    
+    <c-baselines></c-baselines>
 
     <l-wrapper class="c-project-details__inner">
       

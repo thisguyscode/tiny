@@ -1,115 +1,66 @@
 <template>
   <section>
-    <section>
 
-      <c-box :border="true" :filled="true">
-        <l-height-wrapper
-          :tiny="15"
-          :tablet="20"
-          :desktop="20"
-          :wide="20">
-            <c-image
-              :imageSrc="'trv-rating-overview-desktop.png'"
-            />
-        </l-height-wrapper>
-      </c-box>
+    <div class="o-page-section">
+      <c-baselines></c-baselines>
+      <l-wrapper>
+        <h1 class="o-heading o-heading--beta">Test</h1>
+        <p class="o-text">jbasckjbavnba adsvba vmn aviosdnvk cnsbdi ahjd v lsvn akvuzdbvoa sk doivankj adv aoisnvkasd savioabdva dvaiodv ajdv ousv alvadvb apdv l vuosf vsv a</p>
+      </l-wrapper>
+    </div>
 
-      <c-box :border="true" :filled="true">
-        <l-height-wrapper
-          :tiny="15"
-          :tablet="20"
-          :desktop="20"
-          :wide="20">
-            <c-image
-              fit="contain"
-              :imageSrc="'trv-rating-overview-limited-desktop.png'"
-            />
-        </l-height-wrapper>
-      </c-box>
+    <c-box :border="true" :filled="true" :padded="true">
+      <c-image
+        :imageSrc="'trv-rating-overview-desktop.png'"
+      />
+    </c-box>
 
-      <c-box :border="true" :filled="true">
-        <l-height-wrapper
-          :tiny="35"
-          :mobile="55"
-          :tablet="60"
-          :desktop="30"
-          :wide="30"
-          class="u-1/2@desktop">
-            <c-image
-              position="top-middle"
-              :imageSrc="'trv-hotel-test-desktop.png'"
-            />
-        </l-height-wrapper>
-        <l-height-wrapper
-          :desktop="30"
-          :wide="30"
-          class="u-1/2@desktop u-hide-tablet">
-            <c-image
-              position="bottom-middle"
-              :imageSrc="'trv-hotel-test-desktop.png'"
-            />
-        </l-height-wrapper>
-      </c-box>
+    <c-box :border="true" :filled="true" :padded="true">
+      <c-image
+        :imageSrc="'trv-rating-overview-limited-desktop.png'"
+      />
+    </c-box>
 
-      <c-box :border="true" :filled="true">
-        <l-height-wrapper
-          :tiny="15"
-          :tablet="20"
-          :desktop="30"
-          :wide="40">
-            <c-image
-              position="top-middle"
-              :imageSrc="'trv-meta-desktop.png'"
-            />
-        </l-height-wrapper>
-      </c-box>
+    <div class="o-page-section">
+      <c-baselines></c-baselines>
+      <l-wrapper>
+        <p class="o-text">jbasckjbavnba adsvba vmn aviosdnvk cnsbdi ahjd v lsvn akvuzdbvoa sk doivankj adv aoisnvkasd savioabdva dvaiodv ajdv ousv alvadvb apdv l vuosf vsv a</p>
+      </l-wrapper>
+    </div>
 
-    </section>
+    <c-box :border="true" :filled="true" :padded="true">
+      <c-image
+        :imageSrc="'trv-hotel-test-desktop.png'"
+      />
+    </c-box>
 
-    <section>
-      
-      <c-box :border="true" :filled="true">
-        <l-height-wrapper
-          class="u-1/2@tablet"
-          :tiny="50"
-          :mobile="55"
-          :tablet="55"
-          :desktop="60"
-          :wide="60">
-            <c-image
-              fit="contain"
-              :imageSrc="'trv-ratings-mobile.png'"
-            />
-        </l-height-wrapper>
-        <l-height-wrapper
-          class="u-1/2@tablet"
-          :tiny="25"
-          :mobile="30"
-          :tablet="55"
-          :desktop="60"
-          :wide="60">
-            <c-image
-              fit="contain"
-              :imageSrc="'trv-meta-mobile.png'"
-            />
-        </l-height-wrapper>
-      </c-box>
+    <c-box :border="true" :filled="true" :padded="true">
+      <c-image
+        :imageSrc="'trv-meta-desktop.png'"
+      />
+    </c-box>
 
-    </section>
-
+    <c-box :border="true" :filled="true" :padded="true">
+      <l-grid size="md">
+        <div class="l-grid__cell u-1/2@tablet">
+          <c-image
+            :imageSrc="'trv-ratings-mobile.png'"
+          />
+        </div>
+        <div class="l-grid__cell u-1/2@tablet">
+          <c-image
+            :imageSrc="'trv-meta-mobile.png'"
+          />
+        </div>
+      </l-grid>
+    </c-box>
+    
   </section>
 </template>
 
 <script>
-import lHeightWrapper from '~/components/layout/l-height-wrapper'
-import cBox from '~/components/c-box'
-export default {
-  components: {
-    cBox,
-    lHeightWrapper
-  }
-}
+export default {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 </style>

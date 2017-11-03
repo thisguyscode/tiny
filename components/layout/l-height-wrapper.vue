@@ -83,7 +83,6 @@ export default {
   display: inline-block;
   width: 100%;
   height: 10rem;
-  overflow: hidden;
 
   @include mq($from: mobile) {
     height: 20rem;

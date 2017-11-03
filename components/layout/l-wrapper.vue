@@ -12,6 +12,7 @@
   .l-wrapper {
     display: block;
     position: relative;
+    height: 100%;
     max-width: $content-max-width;
     box-sizing: content-box;
     margin-left: auto;

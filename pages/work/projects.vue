@@ -2,7 +2,7 @@
   
   <!--  'ready' will be set true once data is received -->
   <section id="top">
-        
+    
     <!-- Hero -->
     <c-project-hero
       :project="currentProject"
@@ -12,23 +12,23 @@
 
     <div id="sticky-trigger">
 
-    <!-- Project Nav -->
-    <l-affix
-      :z="9999"
-      fullWidth
-      class="p-projects__navbar"
-      className="_sticky-nav"
-      :relativeElementSelector="'#sticky-trigger'"
-    >
-      <template scope="props" slot="contents">
-        <c-project-navbar
-          :previous="previousProject"
-          :next="nextProject"
-          :current="currentProject"
-          :color="projectColor">
-        </c-project-navbar>
-      </template>
-    </l-affix>
+      <!-- Project Nav -->
+      <l-affix
+        :z="9999"
+        fullWidth
+        class="p-projects__navbar"
+        className="_sticky-nav"
+        :relativeElementSelector="'#sticky-trigger'"
+      >
+        <template scope="props" slot="contents">
+          <c-project-navbar
+            :previous="previousProject"
+            :next="nextProject"
+            :current="currentProject"
+            :color="projectColor">
+          </c-project-navbar>
+        </template>
+      </l-affix>
 
       <c-project-details
         :project="currentProject"
@@ -37,10 +37,10 @@
       </c-project-details>
         
       <!-- Main project content from ./projects -->
-      <l-main-content class="p-projects__main-content">
-        <l-wrapper>
-          <nuxt-child></nuxt-child>
-        </l-wrapper>
+      <l-main-content class="p-projects__main-content-wrapper">
+        <!-- <l-wrapper> -->
+          <nuxt-child class="p-projects__main-content"></nuxt-child>
+        <!-- </l-wrapper> -->
       </l-main-content>
     
     </div>
@@ -191,12 +191,16 @@ export default {
   z-index: 2000;
 }
 
-.p-projects__main-content {
+.p-projects__main-content-wrapper {
   position: relative;
-  padding-top: $unit-xxl;
-  padding-bottom: $unit-xxl;
-  text-align: left;
+  // padding-top: $unit-xxl;
+  // padding-bottom: $unit-xxl;
   // background-color: rgba($neutral-00, .9);
+}
+
+.p-projects__main-content {
+  position: static;
+  text-align: left;
 }
 
 .p-projects__nav-panels-wrapper {

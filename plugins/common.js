@@ -28,6 +28,10 @@ Vue.component('l-height-wrapper', lHeightWrapper)
  * COSMETIC
  */
 
+// Baselines
+import cBaselines from '~/components/c-baselines'
+Vue.component('c-baselines', cBaselines)
+
 // Image
 import cImage from '~/components/c-image'
 Vue.component('c-image', cImage)

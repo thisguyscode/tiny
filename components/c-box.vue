@@ -45,10 +45,10 @@ export default {
 /* Base class
 ======================================================================== */
 .c-box {
-  overflow: hidden;
+  // overflow: hidden;
   position: relative;
   display: block;
-  margin-bottom: $unit-md;
+  // margin-bottom: $unit-md;
   font-size: 0;
 }
 
@@ -64,8 +64,7 @@ export default {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1;
-    box-shadow: inset 0 0 0 1px rgba($neutral-00, .2), 0 1px $neutral-70;
+    box-shadow: 0 -1px $neutral-70, inset 0 -1px $neutral-70, 0 1px $neutral-100;
   }
 }
 

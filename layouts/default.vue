@@ -1,10 +1,7 @@
 <template>
   
   <section id="page-top" class="page">
-
-    <c-gridlines></c-gridlines>
-    <c-baselines></c-baselines>
-
+    
     <c-site-header></c-site-header>
     
     <nuxt/>
@@ -16,18 +13,14 @@
 </template>
 
 <script>
-import cGridlines from '~/components/c-gridlines'
 import cSiteHeader from '~/components/c-site-header'
-import cBaselines from '~/components/c-baselines'
 import cFooter from '~/components/c-footer'
 import lMainContent from '~/components/layout/l-main-content'
 
 export default {
   scrollToTop: false,
   components: {
-    cGridlines,
     cSiteHeader,
-    cBaselines,
     cFooter,
     lMainContent
   }

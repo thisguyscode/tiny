@@ -9,6 +9,13 @@
       :class="img.class">
     </img>
 
+    <img
+      v-else-if="extension === 'gif'"
+      :src="img.src"
+      :data-src="img.dataSrc"
+      :class="img.class">
+    </img>
+
     <!-- ELSE-IF it's a JPG / PNG / etc -->
     <picture v-else class="c-image__picture">
       
@@ -196,7 +203,7 @@ export default {
       return array
     },
     responsive: function () {
-      if (this.extension === ('svg' || 'gif')) {
+      if (this.extension === 'svg' || this.extension === 'gif') {
         return false
       } else if (this.makeResponsive === false) {
         return false
@@ -292,7 +299,7 @@ export default {
           webpSrcset: webpSizes.toString()
         }
       } else if (!this.responsive) {
-        if (this.extension === ('svg' || 'gif')) {
+        if (this.extension === 'svg' || this.extension === 'gif') {
           return {
             src: require(`~/assets/images/${this.imageSrc}/${this.name}.${this.extension}`)
           }
@@ -308,6 +315,7 @@ export default {
   mounted () {
     if (process.browser) {
       require('lazysizes')
+      console.log(this.asset.src)
       // console.log(this.asset.largest)
     }
   }
@@ -387,8 +395,10 @@ export default {
 }
 
 .c-image__image--center {
-  &.c-image__image--contain,
   &.c-image__image--default-fit {
+    
+  }
+  &.c-image__image--contain {
     position: absolute;
     top: 50%;
     left: 50%;

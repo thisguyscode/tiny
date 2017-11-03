@@ -1,0 +1,25 @@
+/* ==========================================================================
+   # PAGE SECTION
+========================================================================== */
+
+/**
+ * This object requires that its parent provide a positioning context
+ * E.g. positon: relative (on parent)
+ */
+
+
+/* Base class
+======================================================================== */
+.o-page-section {
+  position: relative;
+  padding-top: $unit-xl;
+  padding-bottom: $unit-lg;
+  @include mq($from: tablet) {
+    padding-top: $unit-xxl;
+    padding-bottom: $unit-xl;
+  }
+}
+
+
+/* Layout modifiers
+======================================================================== */

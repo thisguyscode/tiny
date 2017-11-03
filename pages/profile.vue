@@ -1,7 +1,7 @@
 <template>
 
   <div class="p-profile">
-  
+
     <c-hero class="p-profile__hero">
       <h1 class="o-heading o-heading--alpha u-margin-bottom-none">
         <span>I'm </span>
@@ -18,7 +18,7 @@
     </c-hero>
 
     <l-main-content>
-      
+      <c-baselines></c-baselines>
       <!-- <c-intro-text heading="tiny?">
         <p class="o-text o-text--lg o-text--paragraph">We’re all tiny. Tiny people on a tiny world in the vast expanse of everything - but within each of us is an endless universe - and that’s super cool.</p>
         <p class="o-text o-text--lg o-text--paragraph">I trust myself, and go where I need to. For now I’d like to practice digital interface design. I find it challenging, stimulating and satisfying - hopefully I can also be of value to you and your ambitions.</p>

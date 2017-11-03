@@ -1,5 +1,8 @@
 <template>
   <section class="c-cta-panel">
+    
+    <c-baselines></c-baselines>
+    
     <l-wrapper>
       <l-grid>
         <div class="l-grid__cell  u-3/5@tablet">

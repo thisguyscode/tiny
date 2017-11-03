@@ -1,5 +1,6 @@
 <template>
   <div class="c-hero">
+    <c-baselines></c-baselines>
     <c-image
       v-if="bgImageSrc"
       :lazy="false"

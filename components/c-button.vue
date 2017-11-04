@@ -221,7 +221,7 @@ $font-weight: $font-weight-semi;
 $default-color: $neutral-95;
 $primary-color: $clr-primary;
 
-$underline-shadow: 0 1px $neutral-100; 
+$underline-shadow: 0 1px rgba($neutral-100, .7); 
 
 
 
@@ -271,13 +271,10 @@ $underline-shadow: 0 1px $neutral-100;
 .c-button--solid {
   background-color: $neutral-10;
   transition: background-color .2s ease;
-  box-shadow: inset 0 0 0 1px $neutral-10, $underline-shadow;
-  .c-button__text,
-  .c-button__icon {
-      color: contrasting-color($neutral-10, $lightest, $darkest);
-    }
+  box-shadow: inset 0 0 0 1px rgba($neutral-00, .1), $underline-shadow;
+  color: contrasting-color($neutral-10, $lightest, $darkest);
   &:hover {
-    background-color: darken($neutral-10, 8%);
+    background-color: $neutral-00;
   }
 }
 
@@ -285,10 +282,10 @@ $underline-shadow: 0 1px $neutral-100;
 .c-button--ghost {
   // background-color: rgba($neutral-100, .5);
   transition: box-shadow .2s ease;
-  box-shadow: inset 0 0 0 1px $neutral-70, $underline-shadow;
+  box-shadow: inset 0 0 0 1px rgba($neutral-00, .2), $underline-shadow;
 
   .c-button__icon {
-    color: $primary-color;
+    // color: $primary-color;
   }
 
   &:hover {

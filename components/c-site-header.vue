@@ -101,7 +101,8 @@ export default {
   // overflow: hidden;
   transition: border-color .2s ease;
   background-color: $neutral-100;
-  border-bottom: 1px solid $darkest;
+  border-bottom: 1px solid $neutral-00;
+  border-top: 1px solid $neutral-00;
   // &:after {
   //   content: '';
   //   pointer-events: none;

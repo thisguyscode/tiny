@@ -11,19 +11,18 @@
             <transition name="fade">
               <div v-if="transitionEnd">
 
-                <div class="c-project-hero__group-title-wrapper">
-
                 <!-- Group -->
+                <div class="c-project-hero__group-title-wrapper">
                   <f-link
                     class="c-project-hero__group-title  o-heading o-heading--delta"
                     :class="setTextClass(project)"
                     :externalLink="project.groupLink">
-                    {{ project.group }}
                     <c-icon
-                      v-if="project.group"
+                      v-if="project.groupLink"
                       class="c-project-hero__group-title-icon"
                       name="external-link">
                     </c-icon>
+                    {{ project.group }}
                   </f-link>
                 </div>
 
@@ -35,6 +34,32 @@
                     {{ project.name }}
                   </h1>
                 </div>
+
+                <!-- Group -->
+                <c-button
+                  v-if="project.github"
+                  class="c-project-hero__github-button"
+                  :class="setTextClass(project)"
+                  :inlineStyle="'color: ' + project.color"
+                  size="sm"
+                  type="solid"
+                  icon="github"
+                  :stretch="false"
+                  :externalLink="project.github">
+                  <span>View on Github</span>
+                </c-button>
+                <!-- <c-button v-if="project.github" class="c-project-hero__group-title-wrapper">
+                  <f-link
+                    class="c-project-hero__group-title  o-heading o-heading--zeta"
+                    :class="setTextClass(project)"
+                    :externalLink="project.github">
+                    <c-icon
+                      v-if="project.group"
+                      name="github">
+                    </c-icon>
+                    View on Github
+                  </f-link>
+                </c-button> -->
 
               </div>
             </transition>
@@ -66,7 +91,11 @@
 </template>
 
 <script>
+import cButton from '~/components/c-button'
 export default {
+  components: {
+    cButton
+  },
   props: {
     project: {
       type: Object,
@@ -222,13 +251,46 @@ $transition-easing: ease-out;
   margin-bottom: $heading-trailer;
 }
 
-.c-project-hero__group-title,
+.c-project-hero__group-title-icon {
+  transition: transform .1s ease;
+  transform-origin: 0 100%;
+}
+
+.c-project-hero__group-title {
+  &.project-color-is-light {
+    background-color: $darkest;
+  }
+  &.project-color-is-dark {
+    background-color: $lightest;
+  }
+  &:hover {
+    .c-project-hero__group-title-icon {
+      transform: scale(1.2);
+    }
+  }
+}
+
 .c-project-hero__project-title {
   &.project-color-is-light {
     background-color: $darkest;
   }
   &.project-color-is-dark {
     background-color: $lightest;
+  }
+}
+
+.c-project-hero__github-button {
+  &.project-color-is-light {
+    background-color: $dark-10  ;
+    &:hover {
+      background-color: $darkest;
+    }
+  }
+  &.project-color-is-dark {
+    background-color: $light-10;
+    &:hover {
+      background-color: $lightest;
+    }
   }
 }
 

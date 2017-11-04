@@ -11,19 +11,19 @@
 
     <c-box :border="true" :filled="true" :padded="true">
       <c-image
-        :imageSrc="'trivago/banners/005.gif'"
+        :imageSrc="'trivago/web-banners/001.gif'"
       />
     </c-box>
 
     <c-box :border="true" :filled="true" :padded="true">
       <c-image
-        :imageSrc="'trv-banners-gdn-06.gif'"
+        :imageSrc="'trivago/web-banners/002.gif'"
       />
     </c-box>
 
     <c-box :border="true" :filled="true" :padded="true">
       <c-image
-        :imageSrc="'trv-banners-gdn-04.gif'"
+        :imageSrc="'trivago/web-banners/003.gif'"
       />
     </c-box>
 
@@ -66,19 +66,13 @@
 
     <c-box :border="true" :filled="true" :padded="true">
       <c-image
-        :imageSrc="'trv-banners-gdn-05.gif'"
+        :imageSrc="'trivago/web-banners/004.gif'"
       />
     </c-box>
 
     <c-box :border="true" :filled="true" :padded="true">
       <c-image
-        :imageSrc="'trv-banners-gdn-06.gif'"
-      />
-    </c-box>
-
-    <c-box :border="true" :filled="true" :padded="true">
-      <c-image
-        :imageSrc="'trv-banners-gdn-04.gif'"
+        :imageSrc="'trivago/web-banners/005.gif'"
       />
     </c-box>
 

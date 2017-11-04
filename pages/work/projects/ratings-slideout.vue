@@ -11,13 +11,13 @@
 
     <c-box :border="true" :filled="true" :padded="true">
       <c-image
-        :imageSrc="'trv-rating-overview-desktop.png'"
+        :imageSrc="'trivago/ratings-slideout/overview-desktop.png'"
       />
     </c-box>
 
     <c-box :border="true" :filled="true" :padded="true">
       <c-image
-        :imageSrc="'trv-rating-overview-limited-desktop.png'"
+        :imageSrc="'trivago/ratings-slideout/overview-limited-desktop.png'"
       />
     </c-box>
 
@@ -31,13 +31,13 @@
 
     <c-box :border="true" :filled="true" :padded="true">
       <c-image
-        :imageSrc="'trv-hotel-test-desktop.png'"
+        :imageSrc="'trivago/ratings-slideout/hotel-test-desktop.png'"
       />
     </c-box>
 
     <c-box :border="true" :filled="true" :padded="true">
       <c-image
-        :imageSrc="'trv-meta-desktop.png'"
+        :imageSrc="'trivago/ratings-slideout/meta-desktop.png'"
       />
     </c-box>
 
@@ -45,12 +45,12 @@
       <l-grid size="md">
         <div class="l-grid__cell u-1/2@tablet">
           <c-image
-            :imageSrc="'trv-ratings-mobile.png'"
+             :imageSrc="'trivago/ratings-slideout/analysis-mobile.png'"
           />
         </div>
         <div class="l-grid__cell u-1/2@tablet">
           <c-image
-            :imageSrc="'trv-meta-mobile.png'"
+            :imageSrc="'trivago/ratings-slideout/meta-mobile.png'"
           />
         </div>
       </l-grid>

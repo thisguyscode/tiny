@@ -330,8 +330,22 @@ export default {
     height: $unit-xl*6;
     text-align: center;
     transition: opacity .1s ease;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      transition: box-shadow .1s ease;
+      box-shadow: inset 0 0 0 1px rgba($neutral-00, .2), 0 1px $neutral-100;
+    }
     &:hover {
       opacity: .85;
+      &:after {
+        box-shadow: inset 0 0 0 1px rgba($neutral-00, .5), 0 1px $neutral-100;
+      }
     }
 
     @include mq($until: tablet) {

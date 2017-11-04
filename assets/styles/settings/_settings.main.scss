@@ -120,6 +120,16 @@ $orange: hsla(30, 94, 62, 1) !default;
 $darkest: hsl(20, 20%, 7%) !default;
 $lightest: hsl(10, 1%, 99%) !default;
 
+$dark-00: $darkest;
+$dark-05: mix($lightest, $darkest, 5%) !default;
+$dark-10: mix($lightest, $darkest, 10%) !default;
+$dark-15: mix($lightest, $darkest, 15%) !default;
+
+$light-00: $lightest;
+$light-05: mix($darkest, $lightest, 5%) !default;
+$light-10: mix($darkest, $lightest, 10%) !default;
+$light-15: mix($darkest, $lightest, 15%) !default;
+
 $neutral-100: $lightest !default;
 $neutral-00: $darkest !default;
 

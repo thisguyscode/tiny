@@ -121,7 +121,9 @@ $spacing-sizes: (
 @each $size-namespace, $size in $spacing-sizes {
     .l-grid#{$size-namespace} { /* [1] */
         margin-left: -$size; /* [2] */
+        margin-top: -$size; /* [2] */
         & > .l-grid__cell {
+            padding-top: $size; /* [3] */
             padding-left: $size; /* [3] */
         }
     }

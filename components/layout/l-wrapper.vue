@@ -59,7 +59,7 @@ export default {
 }
 
 .l-wrapper--lg {
-  max-width: none;
+  max-width: calc(#{$content-max-width} + #{$unit-xxl*4});
 }
 
 </style>

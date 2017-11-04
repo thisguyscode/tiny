@@ -219,14 +219,4 @@ export default {
   margin-right: auto;
 }
 
-
-.p-projects__nav-panel {
-  @include mq($until: mobile) {
-    margin-bottom: $unit-sm;
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-  }
-}
-
 </style>

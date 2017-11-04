@@ -11,11 +11,9 @@
       :imageSrc="bgImageSrc"
     />
     <l-wrapper>
-      <l-grid horizontal="right">
-        <div class="c-hero__text-wrapper  l-grid__cell  u-4/5@tablet u-3/5@desktop">
-          <slot></slot>
-        </div>
-      </l-grid>
+      <div class="c-hero__text-wrapper u-4/5@tablet u-3/5@desktop">
+        <slot></slot>
+      </div>
     </l-wrapper>
   </div>
 </template>
@@ -102,6 +100,7 @@ $border: inset 0 -1px 0 0 $neutral-00;
 }
 
 .c-hero__text-wrapper {
+  float: right;
   padding-top: $unit-xxl;
   padding-bottom: $unit-xxl;
   // text-shadow: 0 2px 10px rgba($darkest, .7);

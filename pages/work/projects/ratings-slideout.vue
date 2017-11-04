@@ -42,7 +42,7 @@
     </c-box>
 
     <c-box :border="true" :filled="true" :padded="true">
-      <l-grid size="md">
+      <l-grid spacing="xs">
         <div class="l-grid__cell u-1/2@tablet">
           <c-image
              :imageSrc="'trivago/ratings-slideout/analysis-mobile.png'"

@@ -37,7 +37,8 @@
           ],
           "imgSrc": "trivago/web-banners/main.png",
           "imgClass": "fill",
-          "imgWrapperClass": "padded"
+          "imgWrapperClass": "padded",
+          "objective": "Use web banners to drive traffic to trivago and improve brand recall. Must meet specific file-size and dimension criteria"
         },
         {
           "name": "Illustration for trivago Marathon T-shirts",

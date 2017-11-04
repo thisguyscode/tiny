@@ -76,12 +76,15 @@ export default {
 /* Layout modifiers
 ======================================================================== */
 .c-box--padded {
-  padding: $unit-md;
+  padding-top: $unit-md;
+  padding-bottom: $unit-md;
   @include mq($from: mobile) {
-    padding: $unit-lg;
+    padding-top: $unit-lg;
+    padding-bottom: $unit-lg;
   }
   @include mq($from: tablet) {
-    padding: $unit-xl;
+    padding-top: $unit-xl;
+    padding-bottom: $unit-xl;
   }
 }
 

@@ -1,0 +1,52 @@
+/* Da color MACHINE
+======================================================================== */
+/**
+* 1. Import the contrasting-color function for perceptual brightness
+* 2. Mixin accepts a single color and a theme name
+* 3. Reset the color lightness to ensure we can create a palette with the
+     full range of brightnesses. I.E. Attempt to standaradize the treatment
+     of colors.
+* 4. Currently not used - can use complimentary color in the palette
+* 5. Define how the color is adjusted for each palette color
+* 6. Create a class named after $name variable and wrap all the color
+     classes inside it.
+* 7. Create a class for each of the palette colors
+* 8. Set the text color to contrasting color
+* 9. Set the background to the color
+* 10. Print the hex-code on top
+*/
+
+@import './brightness'; /*[1]*/
+
+@mixin theme($name, $color) { /*[2]*/
+  $base: adjust-color($color, $lightness: -100%); /*[3]*/
+  $comp: complement(change-color($base, $lightness: 80%, $saturation: 100%)); /*[4]*/
+  $s_05: adjust-color($base, $hue: 32deg, $saturation: -40%, $lightness: 95%); /*[4]*/ 
+  $s_10: adjust-color($base, $hue: 24deg, $saturation: -30%, $lightness: 90%); /*[4]*/ 
+  $s_20: adjust-color($base, $hue: 16deg, $saturation: -20%, $lightness: 80%); /*[4]*/ 
+  $s_30: adjust-color($base, $hue: 8deg, $saturation: -10%, $lightness: 70%); /*[4]*/ 
+  $s_40: adjust-color($base, $hue: 0deg, $saturation: -5%, $lightness: 60%); /*[4]*/ 
+  $s_50: adjust-color($base, $hue: 0deg, $saturation: 18%, $lightness: 50%); /*[4]*/ 
+  $s_60: adjust-color($base, $hue: -8deg, $saturation: 5%, $lightness: 40%); /*[4]*/ 
+  $s_70: adjust-color($base, $hue: -16deg, $saturation: 10%, $lightness: 30%); /*[4]*/ 
+  $s_80: adjust-color($base, $hue: -24deg, $saturation: 20%, $lightness: 20%); /*[4]*/ 
+  $s_90: adjust-color($base, $hue: -32deg, $saturation: 30%, $lightness: 10%); /*[4]*/ 
+  $s_95: adjust-color($base, $hue: -40deg, $saturation: 40%, $lightness: 05%); /*[4]*/ 
+  .#{$name} { /*[6]*/
+    ._05 { /*[7]*/
+      color: contrasting-color($s_05, $s_05, $s_90); /*[8]*/
+      background: $s_05; /*[9]*/
+      &:after {
+        content: $s_05 + ""; /*[10]*/
+      }
+    }
+    ._10 {
+      color: contrasting-color($s_10, $s_05, $s_90);
+      background: $s_10;
+      &:after {
+        content: $s_10 + "";
+      }
+    }
+    ... // Repeat through ._20 - ._95
+  }
+}

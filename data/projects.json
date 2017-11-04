@@ -20,7 +20,7 @@
           ],
           "imgSrc": "trivago/ratings-slideout/main.png",
           "imgClass": "cover",
-          "objective": "Make the hotel reviews / ratings / info more accessible on trivago (i.e. reduce users' need to visit partner site for anything other than booking)"
+          "overview": "Make the hotel reviews / ratings / info more accessible on trivago (i.e. reduce users' need to visit partner site for anything other than booking)"
         },
         {
           "name": "Web Banner Design & Creation",
@@ -38,7 +38,7 @@
           "imgSrc": "trivago/web-banners/main.png",
           "imgClass": "fill",
           "imgWrapperClass": "padded",
-          "objective": "Use web banners to drive traffic to trivago and improve brand recall. Must meet specific file-size and dimension criteria"
+          "overview": "Use web banners to drive traffic to trivago and improve brand recall. Must meet specific file-size and dimension criteria"
         },
         {
           "name": "Illustration for trivago Marathon T-shirts",

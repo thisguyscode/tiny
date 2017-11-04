@@ -41,15 +41,15 @@
 
         <l-grid>
 
-          <!-- objective cell -->
-          <div class="c-project-details__objective-cell l-grid__cell u-2/5@tablet">
-            <h4 class="c-project-details__subheading  o-heading o-heading--zeta">Objective</h4>
+          <!-- overview cell -->
+          <div class="c-project-details__overview-cell l-grid__cell u-2/5@tablet">
+            <h4 class="c-project-details__subheading  o-heading o-heading--delta">Overview</h4>
             <p
               v-if="transitionEnd"
               class="c-project-details__overview-string  o-text o-text--lg">
-              {{ project.objective }}
+              {{ project.overview }}
             </p>
-          </div><!--END objective-cell -->
+          </div><!--END overview-cell -->
 
           <!-- details cell -->
           <div class="l-grid__cell u-3/5@tablet">
@@ -256,7 +256,7 @@ $transition-easing: ease;
 .c-project-details__heading-trigger {
   float: right;
 }
-.c-project-details__objective-cell {
+.c-project-details__overview-cell {
   @include mq($from: tablet) {
     padding-right: $unit-lg;
   }

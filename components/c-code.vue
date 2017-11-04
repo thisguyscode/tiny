@@ -24,6 +24,7 @@
       </l-affix>
 
       <div class="c-code_code-area">
+        <c-baselines class="c-code__baselines" :inverse="true"></c-baselines>
         
         <div class="c-code_gutter">
           <div class="c-code_number o-code" v-for="i in lineCount" :key="i">{{i}}</div>
@@ -151,6 +152,9 @@ export default {
       margin-right: -$page-padding-mobile;
     }
   }
+  .c-code__baselines {
+    opacity: .5;
+  }
 
   .c-code_header {
     // transition: padding-top .2s ease;
@@ -186,7 +190,7 @@ export default {
   }
   
   .c-code_code-area {
-    background-color: rgba($darkest, .9);
+    background-color: $dark-05;
     position: relative;
     // max-height: $unit-xxl*3;
     padding-left: $unit-lg;

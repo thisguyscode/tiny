@@ -5,76 +5,33 @@
       <c-baselines></c-baselines>
       
       <l-wrapper size="sm">
-        <h1 class="o-heading o-heading--gamma">Test</h1>
-        <p class="o-text o-text--paragraph">jbasckjbavnba adsvba vmn aviosdnvk cnsbdi ahjd v lsvn akvuzdbvoa sk doivankj adv aoisnvkasd savioabdva dvaiodv ajdv ousv alvadvb apdv l vuosf vsv a</p>
+        <h3 class="o-heading o-heading--gamma">What's the issue?</h3>
+        
+        <p class="o-text o-text--paragraph">There are lots of reason to want to automate color palette generation. At the time of making this there were a few main ones:</p>
+        
+        <ol class="o-text o-text--paragraph">
+          <li>Customise apps and web-pages to client brand colors.</li>
+          <li>Quickly add pretty colors to simple data vizzzess (like bar graphs n tings).</li>
+          <li>Create a unique color palette for each of SocialCops' four main products.</li>
+          <li>For the fun of it.</li>
+        </ol>
+
+        <p class="o-text o-text--paragraph">There are countless tools out there already for generating color palettes. One of my favourites for pretty (and small) palettes is <f-link externalLink="https://coolors.co" :inline="true">Coolors</f-link> and for the purposes of data visualisaton there may be no better than <f-link :inline="true" externalLink="http://vrl.cs.brown.edu/color">Colorgorical</f-link> from Brown University. But the goals of this project were somewhere between the two. Furthermore it needed to be easy to integrate into existing and future web projects - not a manual effort every time colors changed.</p>
+
+        <h3 class="o-heading o-heading--gamma">So I Made This SCSS Mixin</h3>
+        <p class="o-text o-text--paragraph">It accepts a single color and a name and when imported to the stylesheet outputs a bunch of classes nested in the palette's name - e.g. <code class="o-code o-code--inline u-vr-reset">.palette.coralred ._05 { /*...*/} .palette.coralred ._10 { /*...*/} .palette.coralred ._15 { /*...*/}</code> with each number representing a color in a scale.</p>
+        
       </l-wrapper>
       
       <l-wrapper>
-        <c-code filename="mixin.scss" :languages="['scss']">
-          <pre>
-            /* Da color MACHINE
-            ======================================================================== */
-            /**
-            * 1. Mixin accepts a single color and a theme name
-            * 2. Reset the color lightness to ensure we can create a palette with the
-                  full range of brightnesses. I.E. Attempt to standaradize the treatment
-                  of colors.
-            * 3. Currently not used - can use complimentary color in the palette
-            * 4. Define how the color is adjusted for each palette color
-            * 5. Create a class named after $name variable and wrap all the color
-                  classes inside it.
-            * 6. Create a class for each of the palette colors
-            * 7. Set the text color to contrasting color
-            * 8. Set the background to the color
-            * 9. Print the hex-code on top
-            */
-
-            @mixin theme($name, $color) { /*[1]*/
-              $base: adjust-color($color, $lightness: -100%); /*[2]*/
-              $comp: complement(change-color($base, $lightness: 80%, $saturation: 100%)); /*[3]*/
-              $s_05: adjust-color($base, $hue: 32deg, $saturation: -40%, $lightness: 95%); /*[4]*/ 
-              $s_10: adjust-color($base, $hue: 24deg, $saturation: -30%, $lightness: 90%); /*[4]*/ 
-              $s_20: adjust-color($base, $hue: 16deg, $saturation: -20%, $lightness: 80%); /*[4]*/ 
-              $s_30: adjust-color($base, $hue: 8deg, $saturation: -10%, $lightness: 70%); /*[4]*/ 
-              $s_40: adjust-color($base, $hue: 0deg, $saturation: -5%, $lightness: 60%); /*[4]*/ 
-              $s_50: adjust-color($base, $hue: 0deg, $saturation: 18%, $lightness: 50%); /*[4]*/ 
-              $s_60: adjust-color($base, $hue: -8deg, $saturation: 5%, $lightness: 40%); /*[4]*/ 
-              $s_70: adjust-color($base, $hue: -16deg, $saturation: 10%, $lightness: 30%); /*[4]*/ 
-              $s_80: adjust-color($base, $hue: -24deg, $saturation: 20%, $lightness: 20%); /*[4]*/ 
-              $s_90: adjust-color($base, $hue: -32deg, $saturation: 30%, $lightness: 10%); /*[4]*/ 
-              $s_95: adjust-color($base, $hue: -40deg, $saturation: 40%, $lightness: 05%); /*[4]*/ 
-              .#{$name} { /*[5]*/
-                ._05 { /*[6]*/
-                  color: contrasting-color($s_05, $s_05, $s_90); /*[7]*/
-                  background: $s_05; /*[8]*/
-                  &:after {
-                    content: $s_05 + ""; /*[9]*/
-                  }
-                }
-                ._10 {
-                  color: contrasting-color($s_10, $s_05, $s_90);
-                  background: $s_10;
-                  &:after {
-                    content: $s_10 + "";
-                  }
-                }
-                ... // Repeat through ._20 - ._95
-              }
-            }
-          </pre>
-        </c-code>
+        <c-code :code="mixinCode" filename="_mixin.scss" :languages="['scss']"></c-code>
       </l-wrapper>
 
-    </div>
-
-    <div class="o-text-section">
-      <c-baselines></c-baselines>
-      
       <l-wrapper size="sm">
-        <h1 class="o-heading o-heading--gamma">Test</h1>
-        <p class="o-text o-text--paragraph">jbasckjbavnba adsvba vmn aviosdnvk cnsbdi ahjd v lsvn akvuzdbvoa sk doivankj adv aoisnvkasd savioabdva dvaiodv ajdv ousv alvadvb apdv l vuosf vsv a</p>
+        <p class="o-heading o-heading--gamma"><code class="o-code o-code--inline u-vr-reset">contrasting-color()</code> Isn't a SCSS Function!</p>
+        <p class="o-text o-text--paragraph">Yeah, that's just a little something to calculate the perceptual brightness of the color. I took it from someone brighter (shit pun intended) than myself. We're using it here for the text color so that hopefully we can read it regardless of the color that gets generated. Here it is in full:</p>
       </l-wrapper>
-      
+
       <l-wrapper>
         <c-code filename="_brightness.scss" :languages="['scss']">
           <pre>
@@ -122,7 +79,36 @@
         </c-code>
       </l-wrapper>
 
+      <l-wrapper size="sm">
+        <h3 class="o-heading o-heading--gamma">Back to the Palette</h3>
+        <p class="o-text">So now we just need to import the mixin, define a color and @include it to generate us some sweet sweet classes.</p>
+      </l-wrapper>
+
+      <l-wrapper>
+        <c-code filename="main.scss" :languages="['scss']">
+          <pre>
+            @import './mixin'
+            $saffron: rgba(225,153,51,1);
+            @include theme('palette.saffron', $saffron);
+          </pre>
+        </c-code>
+      </l-wrapper>
+
+      <l-wrapper size="sm">
+        <p class="o-text">Which outputs the following CSS...</p>
+      </l-wrapper>
+
+      <l-wrapper>
+        <c-code :code="outputCode" filename="styles.css" :languages="['css']"></c-code>
+      </l-wrapper>
+
+      <l-wrapper size="sm">
+        <h3 class="o-heading o-heading--gamma">Example</h3>
+        <p class="o-text o-text--paragraph">Live demo <f-link externalLink="https://thisguyscode.github.io/scss-color-palettes/" :inline="true">here</f-link></p>
+      </l-wrapper>
+
     </div>
+
   </section>
 </template>
 
@@ -133,6 +119,14 @@ export default {
   components: {
     cCode,
     cColorPalette
+  },
+  computed: {
+    mixinCode: function () {
+      return require('raw-loader!~/data/code/scss-color-mixin')
+    },
+    outputCode: function () {
+      return require('raw-loader!~/data/code/scss-color-output')
+    }
   }
 }
 </script>

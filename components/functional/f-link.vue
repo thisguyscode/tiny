@@ -13,7 +13,7 @@
     <slot></slot>
   </span>
 
-  <a v-else-if="externalLink" :href="externalLink" target="_blank" rel="noopener">
+  <a class="f-link" :class="baseClassObject" v-else-if="externalLink" :href="externalLink" target="_blank" rel="noopener">
     <slot></slot>
   </a>
 
@@ -41,6 +41,17 @@ export default {
     scrollToSelector: {
       type: String,
       required: false
+    },
+    inline: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    baseClassObject: function () {
+      return {
+        'f-link--inline': this.inline === true
+      }
     }
   }
 }
@@ -53,6 +64,17 @@ export default {
     color: inherit;
     position: static;
     text-decoration: none;
+  }
+  
+  .f-link--inline {
+    transition: background-color .1s ease, color .1s ease;
+    display: inline;
+    background-color: rgba($blue, .2);
+    box-shadow: 0 1px $blue;
+    &:hover {
+      color: contrasting-color($blue, $lightest, $darkest);
+      background-color: rgba($blue, .8);
+    }
   }
 
 </style>

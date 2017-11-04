@@ -1,5 +1,0 @@
-.test {
-  &.this {
-    background-color: $clr-primary;
-  }
-}

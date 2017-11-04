@@ -1,9 +1,16 @@
 <template>
-  <div class="c-baselines o-liner"></div>
+  <div class="c-baselines o-liner" :class="{'c-baselines--inverse': this.inverse === true}"></div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    inverse: {
+      type: Boolean,
+      default: false
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -17,6 +24,7 @@ export default {}
 $baseline-size: 1;
 $background-size: $rhythm / 2;
 $baseline-color: rgba($neutral-00, .08);
+$inverse-color: rgba($neutral-100, .08);
 
 
 
@@ -31,6 +39,17 @@ $baseline-color: rgba($neutral-00, .08);
     background-image: linear-gradient(
       to bottom,
       $baseline-color $baseline-size + px,
+      transparent $baseline-size + px,
+      transparent
+    );
+  }
+}
+
+.c-baselines--inverse {
+  @if ($show-baseline == true) {
+    background-image: linear-gradient(
+      to bottom,
+      $inverse-color $baseline-size + px,
       transparent $baseline-size + px,
       transparent
     );

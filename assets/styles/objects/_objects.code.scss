@@ -41,3 +41,13 @@ $font-size-lg:    $font-size-lg;
 .o-code--lg {
   @include vr($font-mono, $font-size-lg);
 }
+
+
+
+/* Layout modifiers
+======================================================================== */
+.o-code--inline {
+  display: inline;
+  line-height: normal;
+  font-size: inherit;
+}

@@ -1,0 +1,102 @@
+.palette.saffron ._05 {
+  color: #330300;
+  background: #f6f7ee;
+}
+
+.palette.saffron ._05:after {
+  content: "#f6f7ee";
+}
+
+.palette.saffron ._10 {
+  color: #330300;
+  background: #f1f0da;
+}
+
+.palette.saffron ._10:after {
+  content: "#f1f0da";
+}
+
+.palette.saffron ._20 {
+  color: #330300;
+  background: #e8e0b0;
+}
+
+.palette.saffron ._20:after {
+  content: "#e8e0b0";
+}
+
+.palette.saffron ._30 {
+  color: #330300;
+  background: #e4c881;
+}
+
+.palette.saffron ._30:after {
+  content: "#e4c881";
+}
+
+.palette.saffron ._base {
+  height: 20%;
+  min-height: 60px;
+  color: #330300;
+  background: #e0a552;
+}
+
+.palette.saffron ._base:after {
+  content: "#e0a552";
+}
+
+.palette.saffron ._highlight {
+  min-height: 2%;
+  min-height: 18px;
+  color: #330300;
+  background: #f5940a;
+}
+
+.palette.saffron ._highlight:after {
+  content: "#f5940a";
+}
+
+.palette.saffron ._60 {
+  color: #f6f7ee;
+  background: #b75e15;
+}
+
+.palette.saffron ._60:after {
+  content: "#b75e15";
+}
+
+.palette.saffron ._70 {
+  color: #f6f7ee;
+  background: #8d350c;
+}
+
+.palette.saffron ._70:after {
+  content: "#8d350c";
+}
+
+.palette.saffron ._80 {
+  color: #f6f7ee;
+  background: #631503;
+}
+
+.palette.saffron ._80:after {
+  content: "#631503";
+}
+
+.palette.saffron ._90 {
+  color: #f6f7ee;
+  background: #330300;
+}
+
+.palette.saffron ._90:after {
+  content: "#330300";
+}
+
+.palette.saffron ._95 {
+  color: #f6f7ee;
+  background: #1a0002;
+}
+
+.palette.saffron ._95:after {
+  content: "#1a0002";
+}

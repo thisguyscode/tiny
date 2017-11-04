@@ -18,7 +18,7 @@
           "techs": [
             "Adobe Photoshop"
           ],
-          "imgSrc": "trv-ratings.png",
+          "imgSrc": "trivago/ratings-slideout/main.png",
           "imgClass": "cover",
           "objective": "Make the hotel reviews / ratings / info more accessible on trivago (i.e. reduce users' need to visit partner site for anything other than booking)"
         },
@@ -35,7 +35,7 @@
           "techs": [
             "Adobe Photoshop"
           ],
-          "imgSrc": "trv-banners.png",
+          "imgSrc": "trivago/web-banners/main.png",
           "imgClass": "fill",
           "imgWrapperClass": "padded"
         },
@@ -53,7 +53,7 @@
           "techs": [
             "Adobe Illustrator"
           ],
-          "imgSrc": "trv-marathon.png",
+          "imgSrc": "trivago/marathon/main.png",
           "imgClass": "cover"
         }
       ]
@@ -103,7 +103,8 @@
         {
           "name": "SCSS-based color palette generator",
           "slug": "scss-colors",
-          "color": "#61E786",
+          "color": "#ffb700",
+          "github": "https://github.com/thisguyscode/scss-color-palettes",
           "date": "2017",
           "role": "Product Designer",
           "skills": [
@@ -114,7 +115,7 @@
             "Adobe Photoshop",
             "Adobe Illustrator"
           ],
-          "imgSrc": "topography.svg",
+          "imgSrc": "socialcops/scss-colors/main.png",
           "imgClass": "cover"
         },
         {
@@ -134,7 +135,7 @@
             "CSS3 / SCSS",
             "HTML5"
           ],
-          "imgSrc": "scss-colors.jpg",
+          "imgSrc": "socialcops/scss-colors/main.png",
           "imgClass": "cover"
         }
       ]

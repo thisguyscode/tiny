@@ -272,7 +272,7 @@ export default {
           var size = availableSizes[k]
           var fitAdjustment = 1
           if (this.fit === 'cover') {
-            fitAdjustment = 1.4
+            fitAdjustment = 1.51
           }
           var fitAdjustedSize = (size / fitAdjustment)
           var breakpointAdjustedSize = fitAdjustedSize

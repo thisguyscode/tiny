@@ -35,7 +35,7 @@
                   </h1>
                 </div>
 
-                <!-- Group -->
+                <!-- GITHUB BUTTON -->
                 <c-button
                   v-if="project.github"
                   class="c-project-hero__github-button"
@@ -48,19 +48,6 @@
                   :externalLink="project.github">
                   <span>View on Github</span>
                 </c-button>
-                <!-- <c-button v-if="project.github" class="c-project-hero__group-title-wrapper">
-                  <f-link
-                    class="c-project-hero__group-title  o-heading o-heading--zeta"
-                    :class="setTextClass(project)"
-                    :externalLink="project.github">
-                    <c-icon
-                      v-if="project.group"
-                      name="github">
-                    </c-icon>
-                    View on Github
-                  </f-link>
-                </c-button> -->
-
               </div>
             </transition>
 
@@ -69,13 +56,15 @@
         
         <!-- Hero image panel -->
         <transition name="fade">
-          <div v-if="transitionEnd" class="c-project-hero-image-cell l-grid__cell u-3/5@tablet" :class="setImgClass(project)">
+          <div v-if="transitionEnd" class="c-project-hero-image-cell l-grid__cell u-3/5@tablet" :class="setImgFit(project)">
             <div class="c-project-hero-image-reference  o-liner" :class="setImgWrapperClass(project)">
               <div class="c-project-hero-image-wrapper">
                 <c-image
+                  class="c-project-hero__image"
+                  :class="setImgClass(project)"
                   v-if="project.imgSrc"
                   :lazy="false"
-                  :fit="setImgClass(project)"
+                  :fit="setImgFit(project)"
                   :imageSrc="project.imgSrc"
                 />
               </div>
@@ -120,7 +109,7 @@ export default {
         return 'project-color-is-light'
       }
     },
-    setImgClass: function (project) {
+    setImgFit: function (project) {
       if (project.imgClass) {
         return project.imgClass
       }
@@ -128,6 +117,14 @@ export default {
     setImgWrapperClass: function (project) {
       if (project.imgWrapperClass === 'padded') {
         return 'padded'
+      }
+    },
+    setImgClass: function (project) {
+      if (project.imgClass === 'cover') {
+        return {
+          'c-project-hero__image--light': this.project.contrastingColor === 'light',
+          'c-project-hero__image--dark': this.project.contrastingColor === 'dark'
+        }
       }
     }
   }
@@ -163,6 +160,17 @@ $transition-easing: ease-out;
 
 /* Image
 ======================================================================== */
+.c-project-hero__image {
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+.c-project-hero__image--light {
+  border-color: rgba($neutral-100, .1);
+}
+.c-project-hero__image--dark {
+  border-color: rgba($neutral-00, .1);
+}
+
 .c-project-hero-image-cell {
   position: relative;
 

@@ -9,6 +9,7 @@
     <div id="contentTop" ref="contentTop"></div>
     
     <l-main-content class="_content-wrapper">
+      <c-baselines></c-baselines>
       <l-wrapper>
 
         <form

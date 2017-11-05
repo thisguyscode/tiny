@@ -8,7 +8,9 @@
         <slot></slot>
       </div>
 
-      <div v-else-if="device === 'mobile'" class="c-device-frame__mobile-frame">
+      <div
+        v-else-if="device === 'mobile'"
+        class="c-device-frame__mobile-frame">
         <div class="c-device-frame__mobile-screen">
           <slot></slot>
         </div>

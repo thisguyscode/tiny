@@ -460,8 +460,11 @@ export default {
 }
 
 .lazyload {
-  object-fit: contain;
   width: 100%;
+  height: 100%;
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
   // max-width: 100%;
   // min-height: 100%;
 }

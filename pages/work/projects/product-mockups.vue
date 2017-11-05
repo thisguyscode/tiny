@@ -26,6 +26,16 @@
     </div>
 
     <c-box :border="true" :filled="true" :padded="true" class="u-text--align-center">
+      <l-wrapper size="lg">
+        <c-device-frame>
+          <c-image
+            :imageSrc="'socialcops/product-mockups/collect-dashboard-desktop.jpg'"
+          />
+        </c-device-frame>
+      </l-wrapper>
+    </c-box>
+
+    <c-box :border="true" :filled="true" :padded="true" class="u-text--align-center">
       <l-wrapper>
         <c-device-frame device="combo">
           <c-image
@@ -39,16 +49,7 @@
         </c-device-frame>
       </l-wrapper>
     </c-box>
-  
-    <c-box :border="true" :filled="true" :padded="true" class="u-text--align-center">
-      <l-wrapper size="lg">
-        <c-device-frame>
-          <c-image
-            :imageSrc="'socialcops/product-mockups/collect-data-desktop.gif'"
-          />
-        </c-device-frame>
-      </l-wrapper>
-    </c-box>
+
     <c-box :border="true" :filled="true" :padded="true" class="u-text--align-center">
       <l-wrapper size="lg">
         <c-device-frame>
@@ -69,16 +70,6 @@
           <c-image
             slot="desktopImg"
             :imageSrc="'socialcops/product-mockups/collect-conditions-desktop.jpg'"
-          />
-        </c-device-frame>
-      </l-wrapper>
-    </c-box>
-
-    <c-box :border="true" :filled="true" :padded="true" class="u-text--align-center">
-      <l-wrapper size="lg">
-        <c-device-frame>
-          <c-image
-            :imageSrc="'socialcops/product-mockups/collect-dashboard-desktop.jpg'"
           />
         </c-device-frame>
       </l-wrapper>
@@ -113,15 +104,10 @@
     </c-box>
 
     <c-box :border="true" :filled="true" :padded="true" class="u-text--align-center">
-      <l-wrapper>
-        <c-device-frame device="combo">
+      <l-wrapper size="lg">
+        <c-device-frame>
           <c-image
-            slot="mobileImg"
-            :imageSrc="'socialcops/product-mockups/collect-basic-mobile.gif'"
-          />
-          <c-image
-            slot="desktopImg"
-            :imageSrc="'socialcops/product-mockups/visualize-explore.gif'"
+            :imageSrc="'socialcops/product-mockups/collect-data-desktop.gif'"
           />
         </c-device-frame>
       </l-wrapper>
@@ -130,8 +116,8 @@
     <div class="o-text-section">
       <c-baselines></c-baselines>
       <l-wrapper size="sm">
-        <h1 class="o-heading o-heading--gamma">T</h1>
-        <p class="o-text o-text--paragraph">P</p>
+        <h1 class="o-heading o-heading--gamma">Visualize</h1>
+        <p class="o-text o-text--paragraph">This is SocialCops' data visualization platform. At the time of making these mockups SocialCops had already deployed quite a few data viz products, but each was custom built to specific clients / purposes. As a result they did not look to be the same product. I reworked them to tie them together visually.</p>
       </l-wrapper>
     </div>
 
@@ -181,53 +167,75 @@
       </l-wrapper>
     </c-box>
 
-    <!-- TRANSFORM -->
-    <c-box :border="true" :filled="true" :padded="true">
+    <div class="o-text-section">
+      <c-baselines></c-baselines>
+      <l-wrapper size="sm">
+        <h1 class="o-heading o-heading--gamma">Transform</h1>
+        <p class="o-text o-text--paragraph">Transform is SocialCops' data cleaning product. It never had a front-end UI while I was there (at least not a client-facing one), but it was certainly being used by the data team on a regular basis. Given the complexity of the operations it performed, it was important to seriously simplify the mockups.</p>
+      </l-wrapper>
+    </div>
+
+    <c-box :border="true" :filled="true" :padded="true" class="u-text--align-center">
       <l-wrapper size="lg">
-        
-        <l-grid spacing="md" vertical="middle">
-          <div class="l-grid__cell">
-            <c-image
-              :imageSrc="'socialcops/product-mockups/transform-overview.gif'"
-            />
-          </div>
-          <div class="l-grid__cell  u-1/2@tablet">
-            <c-image
-              :imageSrc="'socialcops/product-mockups/transform-godzilla.gif'"
-            />
-          </div>
-          <div class="l-grid__cell  u-1/2@tablet">  
-            <c-image
-              :imageSrc="'socialcops/product-mockups/transform-learning.gif'"
-            />
-          </div>
-          <div class="l-grid__cell  u-1/2@tablet">
-            <c-image
-              :imageSrc="'socialcops/product-mockups/transform-location.gif'"
-            />
-          </div>
-          <div class="l-grid__cell  u-1/2@tablet">
-            <c-image
-              :imageSrc="'socialcops/product-mockups/transform-fuzzy.gif'"
-            />
-          </div>
-        </l-grid>
+        <c-device-frame>
+          <c-image
+            :imageSrc="'socialcops/product-mockups/transform-fuzzy.gif'"
+          />
+        </c-device-frame>
+      </l-wrapper>
+    </c-box>
+    <c-box :border="true" :filled="true" :padded="true" class="u-text--align-center">
+      <l-wrapper size="lg">
+        <c-device-frame>
+          <c-image
+            :imageSrc="'socialcops/product-mockups/transform-location.gif'"
+          />
+        </c-device-frame>
+      </l-wrapper>
+    </c-box>
+    <c-box :border="true" :filled="true" :padded="true" class="u-text--align-center">
+      <l-wrapper size="lg">
+        <c-device-frame>
+          <c-image
+            :imageSrc="'socialcops/product-mockups/transform-godzilla.gif'"
+          />
+        </c-device-frame>
+      </l-wrapper>
+    </c-box>
+    <c-box :border="true" :filled="true" :padded="true" class="u-text--align-center">
+      <l-wrapper size="lg">
+        <c-device-frame>
+          <c-image
+            :imageSrc="'socialcops/product-mockups/transform-overview.gif'"
+          />
+        </c-device-frame>
+      </l-wrapper>
+    </c-box>
+    <c-box :border="true" :filled="true" :padded="true" class="u-text--align-center">
+      <l-wrapper size="lg">
+        <c-device-frame>
+          <c-image
+            :imageSrc="'socialcops/product-mockups/transform-learning.gif'"
+          />
+        </c-device-frame>
       </l-wrapper>
     </c-box>
 
+    <div class="o-text-section">
+      <c-baselines></c-baselines>
+      <l-wrapper size="sm">
+        <h1 class="o-heading o-heading--gamma">Access</h1>
+        <p class="o-text o-text--paragraph">SocialCops' data search tool. This was probably the least developed of the products, so all that was required was a over simplified version of the rough idea.</p>
+      </l-wrapper>
+    </div>
 
-    <!-- ACCESS -->
-    <c-box :border="true" :filled="true" :padded="true">
+    <c-box :border="true" :filled="true" :padded="true" class="u-text--align-center">
       <l-wrapper size="lg">
-        
-        <l-grid spacing="md" vertical="middle">
-          <div class="l-grid__cell">
-            <c-image
-              :imageSrc="'socialcops/product-mockups/access-overview.gif'"
-            />
-          </div>
-
-        </l-grid>
+        <c-device-frame>
+          <c-image
+            :imageSrc="'socialcops/product-mockups/access-overview.gif'"
+          />
+        </c-device-frame>
       </l-wrapper>
     </c-box>
 

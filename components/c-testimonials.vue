@@ -4,8 +4,7 @@
     <l-grid list>
       <li
         class="_entry l-grid__cell"
-        v-for="testimonial in testimonials" :key="testimonial.id"
-        @click="change(testimonial)">
+        v-for="testimonial in testimonials" :key="testimonial.id">
         <l-grid>
           <div class="_image-cell l-grid__cell u-1/5">
             <div class="_image-wrapper" :style="'background-color:' + testimonial.color">
@@ -60,9 +59,6 @@ export default {
   methods: {
     detectContrast: function (color) {
       return detectContrast(color)
-    },
-    change: function (to) {
-      console.log(to)
     }
   }
 }

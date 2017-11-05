@@ -45,7 +45,7 @@ export default {
 /* Base class
 ======================================================================== */
 .c-box {
-  // overflow: hidden;
+  overflow: hidden;
   position: relative;
   display: block;
   // margin-bottom: $unit-md;
@@ -58,6 +58,7 @@ export default {
 ======================================================================== */
 .c-box--bordered {
   &:after {
+    pointer-events: none;
     content: '';
     position: absolute;
     top: 0;

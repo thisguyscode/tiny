@@ -84,15 +84,12 @@
         this.$refs.jsActual.style.visibility = 'hidden'
       },
       affixTopHandler () {
-        // console.log('affix-top')
         this.removePlaceholderHeight()
       },
       affixBottomHandler () {
-        // console.log('affix-bottom')
         this.setPlaceholderHeight()
       },
       affixHandler () {
-        // console.log('affix')
         this.setPlaceholderHeight()
       }
     },

@@ -319,8 +319,6 @@ export default {
   mounted () {
     if (process.browser) {
       require('lazysizes')
-      console.log(this.asset.src)
-      // console.log(this.asset.largest)
     }
   }
 }

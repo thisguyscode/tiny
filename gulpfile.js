@@ -121,7 +121,7 @@ function images () {
     .pipe(f1.restore)
     /** use imagemin for compression - gulp-responsive seems not to work well */
     .pipe(imagemin([
-      imageminPngquant({ speed: 1 }),
+      imageminPngquant({ speed: 10 }),
       imageminZopfli({ more: true }),
       imageminGiflossy({ optimizationLevel: 3, optimize: 3, lossy: 2 }),
       imagemin.svgo({ plugins: [{ removeViewBox: false }] }),

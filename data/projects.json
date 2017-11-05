@@ -67,7 +67,7 @@
         {
           "name": "Product Mockups (incl. GIFS)",
           "slug": "product-mockups",
-          "color": "#A64253",
+          "color": "#ADC5F8",
           "date": "May - Apr 2017",
           "role": "Screen Designer / UI Designer",
           "skills": [
@@ -78,7 +78,7 @@
           "techs": [
             "Adobe Photoshop"
           ],
-          "imgSrc": "chn-shanghai_02.jpg",
+          "imgSrc": "socialcops/product-mockups/main.png",
           "imgClass": "cover"
         },
         {

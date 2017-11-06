@@ -44,7 +44,7 @@
         {
           "name": "SCSS-based color palette generator",
           "slug": "scss-colors",
-          "color": "#ffb700",
+          "color": "#ed5945",
           "github": "https://github.com/thisguyscode/scss-color-palettes",
           "date": "2017",
           "role": "Product Designer",
@@ -164,9 +164,9 @@
       "description": "",
       "projects": [
         {
-          "name": "Strict Vertical Rhythm... for the fuck of it.",
+          "name": "Vertical Rhythm... Because Life Is Too Easy",
           "slug": "vertical-rhythm",
-          "color": "#3C91E6",
+          "color": "#F05D5E",
           "date": "Sep 2017",
           "role": "Crazy Person",
           "skills": [
@@ -179,9 +179,10 @@
             "Webpack 2",
             "HTML5"
           ],
-          "imgClass": "fill",
-          "imgSrc": "topography.svg",
-          "imgWrapperClass": "padded"
+          "imgClass": "cover",
+          "imgWrapperClass": "",
+          "imgPosition": "top-left",
+          "imgSrc": "personal/vr/main.jpg"
         }
       ]
     }

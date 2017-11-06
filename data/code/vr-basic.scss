@@ -1,0 +1,50 @@
+// Define your font families
+$font-display:				sans-serif;
+$font-body:						sans-serif;
+$font-mono:						monospace;
+
+/**
+ * Once all set up you need to zoom the browser in to 500% and
+ * manually tweak each of these values to get the text sitting
+ * perfectly on the baselines.
+ */
+$cap-font-display:			0.1em;
+$cap-font-body:					0.067em;
+$cap-font-mono:					0.25em;
+
+// Create this crazy-ass mixin
+@mixin vr($font-family: $font-body, $font-size: $base-font-size) {
+  // Clever maths
+	$line-height: $font-size * $base-line-height;
+	$rhythm-count: $line-height / $rhythm;
+	$rhythm-count-half: $rhythm-count - ($rhythm-count - floor($rhythm-count));
+	$adjusted-line-height: $rhythm-count-half * $rhythm;
+	$baseline-shift: (($adjusted-line-height - $font-size) * 0.5);
+	
+  position: relative;
+	font-size: $font-size;
+
+  // Make sure line-height is at least 1
+	@if $adjusted-line-height < 1 {
+		line-height: $base-font-size * $base-line-height;
+	} @else {
+		line-height: $adjusted-line-height;
+	}
+
+  // Apply the offset depending on which family is loaded
+	@if $font-family == $font-display {
+    $offset: #{$cap-font-display} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
+    top: calc(#{$offset});
+    font-family: $font-display;
+    
+	} @else if $font-family == $font-mono {
+    $offset: #{$cap-font-mono} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
+    top: calc(#{$offset});
+    font-family: $font-mono;
+    
+	} @else {
+    $offset: #{$cap-font-body} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
+    top: calc(#{$offset});
+    font-family: $font-body;
+	}
+}

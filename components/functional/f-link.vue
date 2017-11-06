@@ -1,12 +1,12 @@
 <template>
 
-  <nuxt-link class="f-link" v-if="relativeLink" :to="relativeLink">
+  <nuxt-link class="f-link" :class="baseClassObject" v-if="relativeLink" :to="relativeLink">
     <slot></slot>
   </nuxt-link>
   
   <span v-else-if="scrollToSelector">
     <f-no-ssr>
-      <a class="f-link" v-scroll-to="{ el: scrollToSelector, offset: -176 }">
+      <a class="f-link" :class="baseClassObject" v-scroll-to="{ el: scrollToSelector, offset: -176 }">
         <span class="u-link-bloater"></span>
       </a>
     </f-no-ssr>

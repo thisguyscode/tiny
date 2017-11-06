@@ -349,8 +349,10 @@ export default {
 // <picture> element
 .c-image__picture {
   text-align: center;
-  // width: 100%;
-  // max-width: 100%;
+  // position: relative;
+  width: 100%;
+  max-width: 100%;
+  // height: 100%;
 }
 
 
@@ -368,7 +370,6 @@ export default {
 .c-image__image {
   display: inline-block;
   overflow: hidden;
-  // width: 100%;
   max-width: 100%;
 }
 
@@ -397,9 +398,6 @@ export default {
 }
 
 .c-image__image--center {
-  &.c-image__image--default-fit {
-    
-  }
   &.c-image__image--contain {
     position: absolute;
     top: 50%;
@@ -463,10 +461,19 @@ export default {
   width: 100%;
   height: 100%;
   display: block;
-  min-width: 100%;
-  min-height: 100%;
   // max-width: 100%;
-  // min-height: 100%;
+  // max-height: 100%;
+  // display: block;
+  // min-width: $unit-xxl*3;
+  // min-height: $unit-xxl*1;
+  // @include mq($from: tablet) {
+  //   min-width: $unit-xxl*6;
+  //   min-height: $unit-xxl*2;
+  // }
+  // @include mq($from: desktop) {
+  //   min-width: $unit-xxl*9;
+  //   min-height: $unit-xxl*3;
+  // }
 }
 
 </style>

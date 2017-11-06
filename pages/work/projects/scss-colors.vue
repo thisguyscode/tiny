@@ -3,6 +3,15 @@
 
     <div class="o-text-section">
       <c-baselines></c-baselines>
+
+      <l-wrapper size="sm">
+        <h3 class="o-heading o-heading--gamma">Just Show Me!</h3>
+        <p class="o-text o-text--paragraph">Yeah if you're not interested in reading any of this there's a simple live demo <f-link externalLink="https://thisguyscode.github.io/scss-color-palettes/" :inline="true">here</f-link></p>
+      </l-wrapper>
+    </div>
+    
+    <div class="o-text-section">
+      <c-baselines></c-baselines>
       
       <l-wrapper size="sm">
         <h3 class="o-heading o-heading--gamma">What's the issue?</h3>
@@ -100,11 +109,6 @@
 
       <l-wrapper>
         <c-code :code="outputCode" filename="styles.css" :languages="['css']"></c-code>
-      </l-wrapper>
-
-      <l-wrapper size="sm">
-        <h3 class="o-heading o-heading--gamma">Example</h3>
-        <p class="o-text o-text--paragraph">Live demo <f-link externalLink="https://thisguyscode.github.io/scss-color-palettes/" :inline="true">here</f-link></p>
       </l-wrapper>
 
     </div>

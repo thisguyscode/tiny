@@ -8,15 +8,18 @@
         {
           "name": "National Data Dashboard",
           "slug": "data-dashboard",
-          "color": "#000",
+          "color": "#54a94b",
           "date": "May - Apr 2017",
-          "role": "",
+          "role": "UI Designer",
           "skills": [
-            ""
+            "UI / UX Design",
+            "Branding"
           ],
           "techs": [
-            ""
+            "Sketch",
+            "InVision"
           ],
+          "overview": "A dashboard for tracking a range of indicators on a national level, with granularity down to a district level.",
           "imgSrc": "socialcops/data-dashboard/003.jpg",
           "imgPosition": "top-left",
           "imgClass": "cover"
@@ -39,26 +42,6 @@
           "imgClass": "cover"
         },
         {
-          "name": "Corporate Website",
-          "slug": "corporate-website",
-          "color": "#EAD637",
-          "date": "May - Apr 2017",
-          "role": "'Technical' Web Designer",
-          "skills": [
-            "Static Web Design",
-            "User Experience Design"
-          ],
-          "techs": [
-            "Adobe Photoshop",
-            "CSS3 / SCSS",
-            "HTML5",
-            "Hugo",
-            "git"
-          ],
-          "imgSrc": "topography.svg",
-          "imgClass": "cover"
-        },
-        {
           "name": "SCSS-based color palette generator",
           "slug": "scss-colors",
           "color": "#ffb700",
@@ -73,14 +56,14 @@
             "Adobe Photoshop",
             "Adobe Illustrator"
           ],
+          "imgPosition": "top-left",
           "imgSrc": "socialcops/scss-colors/main.png",
           "imgClass": "cover"
         },
         {
           "name": "My Application to SocialCops",
           "slug": "application-to-sc",
-          "github": "https://github.com/thisguyscode/malaria",
-          "color": "#3D315B",
+          "color": "#5BC0EB",
           "date": "Feb 2016",
           "role": "Design Candidate",
           "skills": [
@@ -94,7 +77,8 @@
             "CSS3 / SCSS",
             "HTML5"
           ],
-          "imgSrc": "socialcops/scss-colors/main.png",
+          "imgPosition": "top-left",
+          "imgSrc": "socialcops/application-to-sc/main.jpg",
           "imgClass": "cover"
         }
       ]
@@ -179,6 +163,7 @@
             "HTML5"
           ],
           "imgClass": "fill",
+          "imgSrc": "topography.svg",
           "imgWrapperClass": "padded"
         }
       ]

@@ -1,0 +1,21 @@
+
+{
+  "name": "Corporate Website",
+  "slug": "corporate-website",
+  "color": "#EAD637",
+  "date": "May - Apr 2017",
+  "role": "'Technical' Web Designer",
+  "skills": [
+    "Static Web Design",
+    "User Experience Design"
+  ],
+  "techs": [
+    "Adobe Photoshop",
+    "CSS3 / SCSS",
+    "HTML5",
+    "Hugo",
+    "git"
+  ],
+  "imgSrc": "topography.svg",
+  "imgClass": "cover"
+}

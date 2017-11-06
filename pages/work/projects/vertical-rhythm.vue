@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1 class="o-heading o-heading--alpha">Eight</h1>
+    <c-image
+      :imageSrc="'topography.svg'"
+    />
   </div>
 </template>
 

@@ -63,10 +63,17 @@ $mobile-frame-color: $neutral-15;
 
 
 
+.c-device-frame {
+  position: relative;
+  max-width: 100%;
+}
+
+
 /* Mobile frame
 ========================================================================== */
 
 .c-device-frame__mobile-frame {
+  width: 100%;
   max-width: 18rem;
 
   @include mq($from: desktop) {
@@ -140,13 +147,25 @@ $mobile-frame-color: $neutral-15;
       background: $neutral-00;
     }
   }
+  /**
+   * Anyone reading this please forgive the '!important' s 
+   */
 }
 
 
 /* Desktop frame
 ========================================================================== */
 .c-device-frame__desktop-frame {
-  // min-width: 500px;
+  min-width: $unit-xxl*3;
+  min-height: $unit-xxl*1;
+  @include mq($from: tablet) {
+    min-width: $unit-xxl*6;
+    min-height: $unit-xxl*2;
+  }
+  // @include mq($from: desktop) {
+  //   min-width: $unit-xxl*9;
+  //   min-height: $unit-xxl*3;
+  // }
   margin-left: auto;
   margin-right: auto;
   position: relative;

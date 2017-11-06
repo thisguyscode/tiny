@@ -146,7 +146,7 @@ $mobile-frame-color: $neutral-15;
 /* Desktop frame
 ========================================================================== */
 .c-device-frame__desktop-frame {
-  min-width: 500px;
+  // min-width: 500px;
   margin-left: auto;
   margin-right: auto;
   position: relative;

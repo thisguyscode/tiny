@@ -45,10 +45,9 @@ export default {
 /* Base class
 ======================================================================== */
 .c-box {
-  overflow: hidden;
+  // overflow: hidden;
   position: relative;
   display: block;
-  // margin-bottom: $unit-md;
   font-size: 0;
 }
 

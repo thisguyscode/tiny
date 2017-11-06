@@ -1,69 +1,26 @@
 { 
   "projectGroups": [
     {
-      "name": "trivago",
-      "link": "https://trivago.com",
-      "description": "trivago is one of the big players in the online travel market. They provide users with a simple to use and comprehensive hotel search engine. They gave me my first job as a designer, which provided me with a fanstastic opportunity to learn the ropes.",
-      "projects": [
-        {
-          "name": "Hotel Ratings & Reviews Slideout",
-          "slug": "ratings-slideout",
-          "color": "#2071BA",
-          "date": "2015",
-          "role": "'Lead' Product Designer",
-          "skills": [
-            "User Interface Design",
-            "User Experience Design"
-          ],
-          "techs": [
-            "Adobe Photoshop"
-          ],
-          "imgSrc": "trivago/ratings-slideout/main.png",
-          "imgClass": "cover",
-          "overview": "Make the hotel reviews / ratings / info more accessible on trivago (i.e. reduce users' need to visit partner site for anything other than booking)"
-        },
-        {
-          "name": "Web Banner Design & Creation",
-          "slug": "web-banners",
-          "color": "#009833",
-          "date": "2014",
-          "role": "Screen Designer",
-          "skills": [
-            "Screen Design",
-            "Image Optimization"
-          ],
-          "techs": [
-            "Adobe Photoshop"
-          ],
-          "imgSrc": "trivago/web-banners/main.png",
-          "imgClass": "fill",
-          "imgWrapperClass": "padded",
-          "overview": "Use web banners to drive traffic to trivago and improve brand recall. Must meet specific file-size and dimension criteria"
-        },
-        {
-          "name": "Illustration for trivago Marathon T-shirts",
-          "slug": "marathon",
-          "color": "#DE722B",
-          "date": "2015",
-          "role": "Graphic Designer",
-          "skills": [
-            "Print Design",
-            "Pre-press",
-            "Illustration"
-          ],
-          "techs": [
-            "Adobe Illustrator"
-          ],
-          "imgSrc": "trivago/marathon/main.png",
-          "imgClass": "cover"
-        }
-      ]
-    },
-    {
       "name": "SocialCops",
       "link": "https://socialcops.com",
       "description": "SocialCops have managed to secure massive clients due to their dedication to what they call ‘Data Intelligence’ - using data effectively to glean valuable and actionable insights on a large scale. They are working on a web platform which covers the entire data pipeline, from collection to visualization. I was largely tasked with producing realistic product mockups for said platform for the corporate website, but also had a chance to work on their live ‘Visualize’ product",
       "projects": [
+        {
+          "name": "National Data Dashboard",
+          "slug": "data-dashboard",
+          "color": "#000",
+          "date": "May - Apr 2017",
+          "role": "",
+          "skills": [
+            ""
+          ],
+          "techs": [
+            ""
+          ],
+          "imgSrc": "socialcops/data-dashboard/003.jpg",
+          "imgPosition": "top-left",
+          "imgClass": "cover"
+        },
         {
           "name": "Product Mockups (incl. GIFS)",
           "slug": "product-mockups",
@@ -122,6 +79,7 @@
         {
           "name": "My Application to SocialCops",
           "slug": "application-to-sc",
+          "github": "https://github.com/thisguyscode/malaria",
           "color": "#3D315B",
           "date": "Feb 2016",
           "role": "Design Candidate",
@@ -137,6 +95,65 @@
             "HTML5"
           ],
           "imgSrc": "socialcops/scss-colors/main.png",
+          "imgClass": "cover"
+        }
+      ]
+    },
+    {
+      "name": "trivago",
+      "link": "https://trivago.com",
+      "description": "trivago is one of the big players in the online travel market. They provide users with a simple to use and comprehensive hotel search engine. They gave me my first job as a designer, which provided me with a fanstastic opportunity to learn the ropes.",
+      "projects": [
+        {
+          "name": "Hotel Ratings & Reviews Slideout",
+          "slug": "ratings-slideout",
+          "color": "#2071BA",
+          "date": "2015",
+          "role": "'Lead' Product Designer",
+          "skills": [
+            "User Interface Design",
+            "User Experience Design"
+          ],
+          "techs": [
+            "Adobe Photoshop"
+          ],
+          "imgSrc": "trivago/ratings-slideout/main.png",
+          "imgClass": "cover",
+          "overview": "Make the hotel reviews / ratings / info more accessible on trivago (i.e. reduce users' need to visit partner site for anything other than booking)"
+        },
+        {
+          "name": "Web Banner Design & Creation",
+          "slug": "web-banners",
+          "color": "#009833",
+          "date": "2014",
+          "role": "Screen Designer",
+          "skills": [
+            "Screen Design",
+            "Image Optimization"
+          ],
+          "techs": [
+            "Adobe Photoshop"
+          ],
+          "imgSrc": "trivago/web-banners/main.png",
+          "imgClass": "fill",
+          "imgWrapperClass": "padded",
+          "overview": "Use web banners to drive traffic to trivago and improve brand recall. Must meet specific file-size and dimension criteria"
+        },
+        {
+          "name": "Miscellaneous Illustrations n Tings",
+          "slug": "trivago-misc",
+          "color": "#DE722B",
+          "date": "2015",
+          "role": "Graphic Designer",
+          "skills": [
+            "Print Design",
+            "Pre-press",
+            "Illustration"
+          ],
+          "techs": [
+            "Adobe Illustrator"
+          ],
+          "imgSrc": "trivago/misc/main.png",
           "imgClass": "cover"
         }
       ]

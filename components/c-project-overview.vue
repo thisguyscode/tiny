@@ -83,6 +83,7 @@
               <c-image
                 v-if="imgSrc"
                 :fit="project.imgClass"
+                :position="project.imgPosition"
                 :imageSrc="imgSrc"
                 :desktop=".7"
                 :wide=".6"

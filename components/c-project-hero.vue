@@ -148,6 +148,9 @@ $transition-easing: ease-out;
 .c-project-hero {
   // margin-top: -1px;
   min-height: $unit-xxl*2;
+  @include mq($from: wide) {
+    min-height: $unit-xxl*3;
+  }
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -165,10 +168,10 @@ $transition-easing: ease-out;
   border-right: 1px solid transparent;
 }
 .c-project-hero__image--light {
-  border-color: rgba($neutral-100, .1);
+  border-color: rgba($neutral-100, .3);
 }
 .c-project-hero__image--dark {
-  border-color: rgba($neutral-00, .1);
+  border-color: rgba($neutral-00, .3);
 }
 
 .c-project-hero-image-cell {
@@ -231,6 +234,9 @@ $transition-easing: ease-out;
     min-height: $unit-xxl*5;
     padding-top: $page-padding-desktop;
     padding-bottom: $page-padding-desktop;
+  }
+  @include mq($from: wide) {
+    min-height: $unit-xxl*6;
   }
 }
 

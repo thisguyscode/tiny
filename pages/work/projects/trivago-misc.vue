@@ -12,7 +12,7 @@
     </div>
 
     <!-- 1 -->
-    <c-box :border="true" :filled="true" :padded="true">
+    <c-box :border="true" :filled="true" :padded="true" class="collage-image-wrapper">
       <l-wrapper size="lg">
         <l-grid spacing="xl" vertical="middle">
           <div class="l-grid__cell u-1/2@tablet">
@@ -75,6 +75,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.collage-image-wrapper {
+  background-color: $neutral-100;
+}
 .collage-image {
   padding: $unit-xl;
   @include mq($from: tablet) {

@@ -29,7 +29,7 @@
       </l-wrapper>
     </div>
 
-    <c-box :border="true" :filled="true" :padded="true">
+    <c-box :border="true" :padded="true" class="desktop-box">
       <l-wrapper size="lg" class="u-text--align-center">
         <l-grid>
           <div class="l-grid__cell u-1/2@tablet">
@@ -50,14 +50,11 @@
 </template>
 
 <script>
-import cDeviceFrame from '~/components/c-device-frame'
-export default {
-  components: {
-    cDeviceFrame
-  }
-}
+export default {}
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.desktop-box {
+  background-color: #e6e6e6;
+}
 </style>

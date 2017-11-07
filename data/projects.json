@@ -3,7 +3,7 @@
     {
       "name": "SocialCops",
       "link": "https://socialcops.com",
-      "description": "SocialCops have managed to secure massive clients due to their dedication to what they call ‘Data Intelligence’ - using data effectively to glean valuable and actionable insights on a large scale. They are working on a web platform which covers the entire data pipeline, from collection to visualization. I was largely tasked with producing realistic product mockups for said platform for the corporate website, but also had a chance to work on their live ‘Visualize’ product",
+      "description": "SocialCops have managed to secure massive clients due to their focus on what they call ‘Data Intelligence’ - using data effectively to glean valuable and actionable insights on a large scale. They are working on a web platform which covers the entire data pipeline, from collection to visualization. I was largely tasked with producing realistic product mockups for said platform for the corporate website, but also had a chance to work on their live ‘Visualize’ product",
       "projects": [
         {
           "name": "National Data Dashboard",
@@ -28,7 +28,7 @@
           "name": "Product Mockups (incl. GIFS)",
           "slug": "product-mockups",
           "color": "#f6b601",
-          "date": "May - Apr 2017",
+          "date": "Jun 2016 - Apr 2017",
           "role": "Screen Designer / UI Designer",
           "skills": [
             "User Interface Design",
@@ -38,6 +38,7 @@
           "techs": [
             "Adobe Photoshop"
           ],
+          "overview": "Making a tonne of simplified product mock-ups, mostly depicting future features (i.e. without references).",
           "imgSrc": "socialcops/product-mockups/main.png",
           "imgClass": "cover"
         },
@@ -46,16 +47,18 @@
           "slug": "scss-colors",
           "color": "#ed5945",
           "github": "https://github.com/thisguyscode/scss-color-palettes",
-          "date": "2017",
-          "role": "Product Designer",
+          "date": "Jan 2017",
+          "role": "Tinkerer",
           "skills": [
             "User Interface Design",
-            "User Experience Design"
+            "System Design",
+            "Front-end Development"
           ],
           "techs": [
-            "Adobe Photoshop",
+            "SCSS",
             "Adobe Illustrator"
           ],
+          "overview": "A bit of funky SCSS for automatically generating color palettes from a single color input.",
           "imgPosition": "top-left",
           "imgSrc": "socialcops/scss-colors/main.png",
           "imgClass": "cover"
@@ -67,6 +70,7 @@
           "date": "Feb 2016",
           "role": "Design Candidate",
           "skills": [
+            "User Interface Design",
             "Front-end Development",
             "Infographic Design",
             "Illustration"
@@ -77,6 +81,7 @@
             "CSS3 / SCSS",
             "HTML5"
           ],
+          "overview": "The mini-tasks that got me a job at SocialCops. Infographics, microsites and a little UI for good measure.",
           "imgPosition": "top-left",
           "imgSrc": "socialcops/application-to-sc/main.jpg",
           "imgClass": "cover"
@@ -93,7 +98,7 @@
           "slug": "ratings-slideout",
           "color": "#2071BA",
           "date": "2015",
-          "role": "'Lead' Product Designer",
+          "role": "Product Designer",
           "skills": [
             "User Interface Design",
             "User Experience Design"
@@ -101,9 +106,9 @@
           "techs": [
             "Adobe Photoshop"
           ],
+          "overview": "Make the hotel reviews / ratings / info more accessible on trivago (i.e. reduce users' need to visit partner site for anything other than booking)",
           "imgSrc": "trivago/ratings-slideout/main.png",
-          "imgClass": "cover",
-          "overview": "Make the hotel reviews / ratings / info more accessible on trivago (i.e. reduce users' need to visit partner site for anything other than booking)"
+          "imgClass": "cover"
         },
         {
           "name": "Hotel Item Element",
@@ -118,9 +123,9 @@
           "techs": [
             "Adobe Photoshop"
           ],
+          "overview": "Clean up the hotel item element which populates the main results list on trivago.",
           "imgSrc": "trivago/hotel-item/item-evolution-mobile.jpg",
-          "imgClass": "cover",
-          "overview": "Make the hotel reviews / ratings / info more accessible on trivago (i.e. reduce users' need to visit partner site for anything other than booking)"
+          "imgClass": "cover"
         },
         {
           "name": "Web Banner Design & Creation",
@@ -144,7 +149,7 @@
           "name": "Miscellaneous Illustrations n Tings",
           "slug": "trivago-misc",
           "color": "#DE722B",
-          "date": "2015",
+          "date": "2014 / 2015",
           "role": "Graphic Designer",
           "skills": [
             "Print Design",
@@ -154,6 +159,7 @@
           "techs": [
             "Adobe Illustrator"
           ],
+          "overview": "I took on a lot of little internal projects at trivago. Here's a quick sample.",
           "imgSrc": "trivago/misc/main.png",
           "imgClass": "cover"
         }
@@ -161,17 +167,18 @@
     },
     {
       "name": "Personal",
-      "description": "",
+      "description": "You know the scene. It's a beautiful day outside. You've got no work to do. Your significant other wants to take you out to lunch. You open up your laptop and make some interfaces!",
       "projects": [
         {
           "name": "Vertical Rhythm... Because Life Is Too Easy",
           "slug": "vertical-rhythm",
           "color": "#F05D5E",
-          "date": "Sep 2017",
+          "date": "Just now",
           "role": "Crazy Person",
           "skills": [
             "User Interface Design",
-            "Serious Attention to Detail"
+            "Serious Attention to Detail",
+            "Masochism"
           ],
           "techs": [
             "CSS3 / SCSS",
@@ -179,8 +186,8 @@
             "Webpack 2",
             "HTML5"
           ],
+          "overview": "Enforcing a strict (far more strict than necessary) vertical rhythm on this website.",
           "imgClass": "cover",
-          "imgWrapperClass": "",
           "imgPosition": "top-left",
           "imgSrc": "personal/vr/main.jpg"
         }

@@ -6,8 +6,8 @@
     <div class="o-text-section">
       <c-baselines></c-baselines>
       <l-wrapper size="sm">
-        <h1 class="o-heading o-heading--gamma">The Devil's in the Detail</h1>
-        <p class="o-text o-text--paragraph">Banners were a great lesson in how anal modern web designers need to be. Brand identity, pixel-pushing, image optimization and process automation, all come together to make even the most simple of banner collections.</p>
+        <h1 class="o-heading o-heading--gamma">Logo Collages</h1>
+        <p class="o-text o-text--paragraph">As I pretty much suck at illustration the collage on the left was actually something of an achievement for me. It was an illustration for trivago's team in the Dusseldorf marathon. On the right is an illustration for an onboarding card.</p>
       </l-wrapper>
     </div>
 
@@ -31,12 +31,11 @@
       </l-wrapper>
     </c-box>
 
-    <!-- MOON -->
     <div class="o-text-section">
       <c-baselines></c-baselines>
       <l-wrapper size="sm">
-        <h1 class="o-heading o-heading--gamma">The Devil's in the Detail</h1>
-        <p class="o-text o-text--paragraph">Banners were a great lesson in how anal modern web designers need to be. Brand identity, pixel-pushing, image optimization and process automation, all come together to make even the most simple of banner collections.</p>
+        <h1 class="o-heading o-heading--gamma">Academy Poster</h1>
+        <p class="o-text o-text--paragraph">I really enjoyed this one. It was a quiet week in the office, and one of trivago's frequent 'Academy' events was coming up, so I threw this minimal poster together.</p>
       </l-wrapper>
     </div>
 
@@ -48,12 +47,11 @@
       </l-wrapper>
     </c-box>
 
-    <!-- MOON -->
     <div class="o-text-section">
       <c-baselines></c-baselines>
       <l-wrapper size="sm">
-        <h1 class="o-heading o-heading--gamma">The Devil's in the Detail</h1>
-        <p class="o-text o-text--paragraph">Banners were a great lesson in how anal modern web designers need to be. Brand identity, pixel-pushing, image optimization and process automation, all come together to make even the most simple of banner collections.</p>
+        <h1 class="o-heading o-heading--gamma">Documents Galore</h1>
+        <p class="o-text o-text--paragraph">I was the go-to designer at trivago for internal docs - I asked for that responsibility. Having the occasional 'mundane' task is a great relief from the usual design work, and everything has its own challenges. I composed a lot of documents while I was at trivago.</p>
       </l-wrapper>
     </div>
 

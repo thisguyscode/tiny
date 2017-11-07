@@ -5,7 +5,7 @@
       <c-baselines></c-baselines>
       <l-wrapper size="sm">
         <h1 class="o-heading o-heading--gamma">How I Learned to Stop Worrying and Love the Gif</h1>
-        <p class="o-text o-text--paragraph">I was handed this project to try and complete in my first week at SocialCops and I ended up working on it throughout an entire year. I was tasked with producing quick feature demos for each of SocialCops' 4 products - which would be displayed on the website. I thought, &ldquo;sure, no problem - open up the product, take some screenshots, Bob's your uncle.&rdquo;...</p>
+        <p class="o-text o-text--paragraph">I was handed this project to try and complete in my first week at SocialCops and I ended up working on it throughout an entire year. I was tasked with producing quick feature demos for each of SocialCops' 4 products - which would be displayed on the website. I thought, &ldquo;sure, no problem - open up the product, take some screenshots, Bob's your uncle&rdquo;...</p>
         <p class="o-text o-text--paragraph">How wrong I was. There were a few details that everyone (including myself) had overlooked.</p>
         <ol class="o-text o-text--paragraph">
           <li>Only 1 of the 4 products actually had a finished front-end UI</li>
@@ -14,6 +14,7 @@
           <li>I had never animated more than blinking buttons on web banners</li>
         </ol>
         <p class="o-text o-text--paragraph">Now there was nothing wrong with any of this. Startups and their employees need to wing-it a little, but this was certainly a case of optimistic time planning. I worked on many other things during the year at SocialCops, but I was working on some of these screenshots until just before I left.</p>
+        <p class="o-text o-text--paragraph">The thing I was really proud of was the size of these images. In my research I found a lot of .MP4s and .WEBPs that looked beautiful but were <em>at least</em> 2MB a piece, with plenty of them over 4/5MB! I wasn't having any of that. We were going to have up to 6 of these per page and they'd be autoplaying. By manually crafting these GIFs I was able to get almost all of them below 1MB, with the majority under 500kb - not tiny, but a significant performance gain.</p>
       </l-wrapper>
     </div>
 

@@ -60,7 +60,7 @@
       <c-baselines></c-baselines>
       <l-wrapper size="sm">
         <h1 class="o-heading o-heading--gamma">World Malaria Day</h1>
-        <p class="o-text o-text--paragraph">Well the Right to Education task seemed to please the powers that be enough, so they set me another task. They wanted to see my graphicky-type-skills (which are to this day admittedly lacking), so they asked to me do something infographicky related to World Malaria Day, again with very little in the way of restrictions or suggestions. So I took a handful of facts, make some accompanying illustrations, and used them in 3 different media:</p>
+        <p class="o-text o-text--paragraph">Well the Right to Education task seemed to please the powers that be enough, so they set me another task. They wanted to see my graphicky-type-skills (which are to this day admittedly lacking), so they asked me to do something infographicky related to World Malaria Day, again with very little in the way of restrictions or suggestions. So I took a handful of facts, make some accompanying illustrations, and used them in 3 different media:</p>
         <ol class="o-text o-text--paragraph">
           <li>An infographic - intended for sharing on social media (see below)</li>
           <li><f-link externalLink="https://thisguyscode.github.io/malaria/" :inline="true">A microsite</f-link> (of course)</li>

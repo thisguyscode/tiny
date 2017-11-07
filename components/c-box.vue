@@ -52,6 +52,14 @@ export default {
 }
 
 
+/* Child classes
+======================================================================== */
+.c-box__caption {
+  color: $neutral-30;
+  text-align: center;
+  display: block;
+}
+
 
 /* Style modifiers
 ======================================================================== */
@@ -87,5 +95,4 @@ export default {
     padding-bottom: $unit-xl;
   }
 }
-
 </style>

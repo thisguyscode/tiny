@@ -113,6 +113,14 @@
 
     </div>
 
+    <div class="o-text-section">
+      <c-baselines></c-baselines>
+
+      <l-wrapper size="sm">
+        <p class="o-text o-text--paragraph">The savvy reader will realise that these classes are largely useless in an actual web project. In their current format they are only really intended for generating the <f-link externalLink="https://thisguyscode.github.io/scss-color-palettes/" :inline="true">color palette demo</f-link>, but it doesn't take much to apply this to an actual style system... it just depends on the particulars</p>
+      </l-wrapper>
+    </div>
+
   </section>
 </template>
 

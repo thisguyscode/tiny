@@ -566,23 +566,23 @@
             name: 'Dan Ardenleneu',
             company: 'trivago',
             role: 'Head of Design',
-            character: 'character-09.svg',
+            character: 'characters/character-12.svg',
             color: '#E4FF1A',
             quote: 'He has excellent analytical abilities. Coupled with his innovative thinking and passion for design, he proved to be an invaluable employee.'
           },
           {
-            name: 'Dejan Ulcej (with a hint of hyperbole)',
-            company: 'trivago',
-            role: 'Product Designer',
-            character: 'character-07.svg',
+            name: 'Sahaj Talwar',
+            company: 'SocialCops',
+            role: 'Everything Designer',
+            character: 'characters/character-11.svg',
             color: '#fc6666',
-            quote: 'An open-minded, talented, and interesting guy with ideas that destroy the chains of our black-and-white world.'
+            quote: "Jamie seems to love pixels almost as much as he loves making jokes. He's a SASSy learner, focuses on details and is just extremely good company to have around."
           },
           {
             name: 'Charlotte Mitchell',
             company: 'home',
             role: 'Mum',
-            character: 'character-04.svg',
+            character: 'characters/character-13.svg',
             color: '#53DD6C',
             quote: "He's alright"
           }

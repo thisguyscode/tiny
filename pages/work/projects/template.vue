@@ -45,7 +45,7 @@ export default {
           name: 'Dejan Ulcej',
           company: 'trivago',
           role: 'Product Designer',
-          character: 'character-07.svg',
+          character: 'characters/character-07.svg',
           color: '#2071BA',
           quote: 'Rerum voluptatem minima distinctio. Fugit odio qui repudiandae architecto omnis adipisci. Quo fuga aut nostrum. Reiciendis nihil vero praesentium non. Perferendis cupiditate impedit ipsum tenetur.'
         },
@@ -53,7 +53,7 @@ export default {
           name: 'Dan Ardenleneu',
           company: 'trivago',
           role: 'Product Designer',
-          character: 'character-07.svg',
+          character: 'characters/character-07.svg',
           color: '#2071BA',
           quote: 'Hic mollitia temporibus iure nemo voluptatem. Eveniet non iusto cupiditate odio. Perferendis corrupti quia saepe. Ex aperiam neque sunt reprehenderit numquam voluptatum non accusantium.'
         },
@@ -61,7 +61,7 @@ export default {
           name: 'Someone Else',
           company: 'trivago',
           role: 'Product Designer',
-          character: 'character-07.svg',
+          character: 'characters/character-07.svg',
           color: '#2071BA',
           quote: 'Eos ut sit minima. Repellat dolore tempora dolore veniam fugit veniam. Sit nam voluptatibus quia quod.'
         }

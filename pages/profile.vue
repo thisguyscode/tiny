@@ -563,28 +563,28 @@
       return {
         testimonials: [
           {
-            name: 'Dejan Ulcej',
+            name: 'Dan Ardenleneu',
             company: 'trivago',
-            role: 'Product Designer',
-            character: 'character-04.svg',
-            color: 'black',
-            quote: 'Rerum voluptatem minima distinctio. Fugit odio qui repudiandae architecto omnis adipisci. Quo fuga aut nostrum. Reiciendis nihil vero praesentium non. Perferendis cupiditate impedit ipsum tenetur.'
+            role: 'Head of Design',
+            character: 'character-09.svg',
+            color: '#E4FF1A',
+            quote: 'He has excellent analytical abilities. Coupled with his innovative thinking and passion for design, he proved to be an invaluable employee.'
           },
           {
-            name: 'Dan Ardenleneu',
+            name: 'Dejan Ulcej (with a hint of hyperbole)',
             company: 'trivago',
             role: 'Product Designer',
             character: 'character-07.svg',
             color: '#fc6666',
-            quote: 'Hic mollitia temporibus iure nemo voluptatem. Eveniet non iusto cupiditate odio. Perferendis corrupti quia saepe. Ex aperiam neque sunt reprehenderit numquam voluptatum non accusantium.'
+            quote: 'An open-minded, talented, and interesting guy with ideas that destroy the chains of our black-and-white world.'
           },
           {
-            name: 'Someone Else',
-            company: 'trivago',
-            role: 'Product Designer',
-            character: 'character-09.svg',
-            color: '#fff',
-            quote: 'Eos ut sit minima. Repellat dolore tempora dolore veniam fugit veniam. Sit nam voluptatibus quia quod.'
+            name: 'Charlotte Mitchell',
+            company: 'home',
+            role: 'Mum',
+            character: 'character-04.svg',
+            color: '#53DD6C',
+            quote: "He's alright"
           }
         ]
       }

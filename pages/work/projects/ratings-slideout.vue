@@ -5,7 +5,7 @@
       <c-baselines></c-baselines>
       <l-wrapper size="sm">
         <h1 class="o-heading o-heading--gamma">Rating Overview</h1>
-        <p class="o-text o-text--paragraph">Perhaps most important (at least most viewed) would be the quick rating overview. It needed to give a quick impression of the hotels quality, but also the credibility of its score (how many reviews it has received and where the scores are coming from)</p>
+        <p class="o-text o-text--paragraph">Perhaps most important (at least most viewed) would be the rating overview. It needed to give a quick impression of the hotels quality, but also the credibility of its score (how many reviews it has received and where the scores are coming from)</p>
         <p class="o-text o-text--paragraph">N.B. The color/score relationship was in flux at the time so there may be some visual inconsistencies.</p>
       </l-wrapper>
     </div>
@@ -94,7 +94,7 @@
       <c-baselines></c-baselines>
       <l-wrapper size="sm">
         <h1 class="o-heading o-heading--gamma">Meta-reviews</h1>
-        <p class="o-text o-text--paragraph">trivago was able to collate multiple qualitative reviews into consise snippets. I've seen this elsewhere across the web since.</p>
+        <p class="o-text o-text--paragraph">trivago was able to collate multiple qualitative reviews into concise snippets. I've since seen this elsewhere across the web.</p>
       </l-wrapper>
     </div>
 
@@ -119,7 +119,7 @@
       <c-baselines></c-baselines>
       <l-wrapper size="sm">
         <h1 class="o-heading o-heading--gamma">Hotel Test</h1>
-         <p class="o-text o-text--paragraph">Hotel Test was trivago's own reviewing system, whereby hotel-goers were given significant discounts on their hotel for leaving a through review. I'm not sure that the Hotel Test results were ever featured on mobile... I certainly never worked on a mobile composition.</p>
+         <p class="o-text o-text--paragraph">Hotel Test was trivago's own reviewing system, whereby hotel-goers were given significant discounts on their hotel for leaving a thorough review. I'm not sure that the Hotel Test results were ever featured on mobile... I certainly never worked on a mobile composition.</p>
       </l-wrapper>
     </div>
 

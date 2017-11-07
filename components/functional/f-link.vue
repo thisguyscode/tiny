@@ -61,7 +61,6 @@ export default {
   
   .f-link {
     cursor: pointer;
-    color: inherit;
     position: static;
     text-decoration: none;
   }

@@ -60,12 +60,10 @@
 
 <script>
 import cIcon from '~/components/c-icon'
-import fLink from '~/components/functional/f-link'
 import detectContrast from '~/utils/detectContrast'
 export default {
   components: {
-    cIcon,
-    fLink
+    cIcon
   },
   computed: {
     clickFunction: function () {

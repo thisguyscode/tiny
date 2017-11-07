@@ -211,7 +211,7 @@
                     </div>
                     <c-score-bar :nobar="true" :percent="40" :of="10"></c-score-bar>
                   </div>
-                  <p class="p-profile__caption o-text o-text--sm">I adore git. I'm no pro, but it's one fo the tools I appreciate the most.</p>
+                  <p class="p-profile__caption o-text o-text--sm">I adore git. I'm no pro, but it's one of the tools I appreciate the most.</p>
                 </div>
 
                 <!-- spacer -->

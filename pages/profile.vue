@@ -338,7 +338,7 @@
                     </div>
                     <div class="l-grid__cell u-4/5 u-1/1@tablet">
                       <h4 class="skill-heading o-heading o-heading--zeta  u-margin-bottom-none">Optimising processes</h4>
-                      <p class="p-profile__caption o-text o-text--sm">I'll put in the time now to save someone else it in the future</p>
+                      <p class="p-profile__caption o-text o-text--sm">I'll put in the time now to save someone else time in the future</p>
                     </div>
                   </l-grid>
                 </div>

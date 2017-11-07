@@ -66,8 +66,8 @@
         <div class="_after-message-wrapper" v-if="$store.state.messageSent === true" ref="afterMessage">
           <l-grid>
             <div class="l-grid__cell u-3/5@tablet">
-              <h2>Thanks for getting in touch!</h2>
-              <p>I'm not up to much these days so you should hear back from me pretty soon</p>
+              <h2 class="o-heading o-heading--gamma">Thanks for getting in touch!</h2>
+              <p class="o-text o-text--paragraph">You should hear back from me pretty soon.</p>
             </div>
             <div class="l-grid__cell u-2/5@tablet">
               <c-button 

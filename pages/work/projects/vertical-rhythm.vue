@@ -28,7 +28,7 @@
             }
           </pre>
         </c-code>
-        <p class="o-text o-text--paragraph">That one's <em>Wordpress's</em> by the way. Basically the browser is going to check the client system for a font called -apple-system, and then failing that BlinkMacSystemFont, then Segoe UI and so on down the stack. These are the native fonts of various sytems, so the webpage text will render instantly AND blend in like a lexical chameleon.</p>
+        <p class="o-text o-text--paragraph">That one's <em>Wordpress's</em> by the way. Basically the browser is going to check the client system for a font referred to as '-apple-system', and then failing that 'BlinkMacSystemFont' (which actually resolves to 'system-ui'), then 'Segoe UI' and so on down the stack. These are the native fonts of various sytems, so the webpage text will render instantly AND blend in like a lexical chameleon.</p>
         <h1 class="o-heading o-heading--gamma">That's Not Going To Work</h1>
         <p class="o-text o-text--paragraph">I need to offset the text by a very specific amount based on the precise height of the letters. That was fine when I was declaring Montserrat for headings and Open Sans for body copy... but now I don't know which font is going to be used. What I need is a way to determine which font the user-agent is actually rendering.</p>
         <h1 class="o-heading o-heading--gamma">Enter the hack!</h1>

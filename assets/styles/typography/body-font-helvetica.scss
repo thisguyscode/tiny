@@ -1,0 +1,9 @@
+/* ==========================================================================
+   # Helvetica (as display font)
+========================================================================== */
+
+/** Redefine the cap height of this particular typeface */
+$cap-height:			.15em;
+
+/** Import the body-font offset classes */
+@import './body-font-offset';

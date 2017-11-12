@@ -46,7 +46,7 @@
             <h4 class="c-project-details__subheading  o-heading o-heading--delta">Overview</h4>
             <p
               v-if="transitionEnd"
-              class="c-project-details__overview-string  o-text o-text--lg">
+              class="c-project-details__overview-string  o-text">
               {{ project.overview }}
             </p>
           </div><!--END overview-cell -->

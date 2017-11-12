@@ -1,0 +1,9 @@
+/* ==========================================================================
+   # Helvetica Neue (as body font)
+========================================================================== */
+
+/** Redefine the cap height of this particular typeface */
+$cap-height:			.12em;
+
+/** Import the body-font offset classes */
+@import './body-font-offset';

@@ -1,0 +1,9 @@
+/* ==========================================================================
+   # Trebuchet MS (as display font)
+========================================================================== */
+
+/** Redefine the cap height of this particular typeface */
+$cap-height:			.16em;
+
+/** Import the display-font offset classes */
+@import './display-font-offset';

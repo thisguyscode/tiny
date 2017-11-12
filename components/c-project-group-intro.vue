@@ -48,7 +48,7 @@
         </div>
 
         <div class="l-grid__cell  u-3/5@tablet">
-          <p class="c-project-group-intro__description  o-text o-text--lg o-text--paragraph">{{ description }}</p>
+          <p class="c-project-group-intro__description  o-text o-text--paragraph">{{ description }}</p>
         </div>
 
       </l-grid>

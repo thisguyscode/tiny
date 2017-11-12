@@ -62,7 +62,7 @@ export default {}
   text-align: left;
   padding-top: $unit-xxl;
   padding-bottom: $unit-xxl;
-  height: 100vh;
+  // height: 100;
   background-color: #f05d5e;
   color: contrasting-color(#f05d5e, $lightest, $darkest);
 }

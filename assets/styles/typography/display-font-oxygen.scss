@@ -1,9 +1,9 @@
 /* ==========================================================================
-   # BLINK MAC SYSTEM (as display font)
+   # Oxygen (as display font)
 ========================================================================== */
 
 /** Redefine the cap height of this particular typeface */
-$cap-height:			.115em;
+$cap-height:			.1em;
 
 /** Import the body-font offset classes */
 @import './display-font-offset';

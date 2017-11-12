@@ -1,9 +1,9 @@
 /* ==========================================================================
-   # SEGOE UI (as display font)
+   # San Francisco (as body font)
 ========================================================================== */
 
 /** Redefine the cap height of this particular typeface */
-$cap-height:			.085em;
+$cap-height:			.08em;
 
 /** Import the body-font offset classes */
-@import './display-font-offset';
+@import './body-font-offset';

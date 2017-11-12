@@ -1,9 +1,9 @@
 /* ==========================================================================
-   # APPLE-SYSTEM (as body font)
+   # Ubuntu (as display font)
 ========================================================================== */
 
 /** Redefine the cap height of this particular typeface */
-$cap-height:			.115em;
+$cap-height:			.132em;
 
 /** Import the body-font offset classes */
-@import './body-font-offset';
+@import './display-font-offset';

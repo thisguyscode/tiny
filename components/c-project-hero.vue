@@ -263,6 +263,9 @@ $transition-easing: ease-out;
 
 .c-project-hero__group-title-wrapper {
   margin-bottom: $heading-trailer;
+  @include mq($from: tablet) {
+    margin-bottom: $unit-md;
+  }
 }
 
 .c-project-hero__group-title-icon {

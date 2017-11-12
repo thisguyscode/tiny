@@ -28,9 +28,17 @@
             }
           </pre>
         </c-code>
-        <p class="o-text o-text--paragraph">That one's <em>Wordpress's</em> by the way. Basically the browser is going to check the client system for apple's system font ('-apple-system', and failing that 'BlinkMacSystemFont' which just refer to the apple sytem font in different contexts), then 'Segoe UI' which is used by Windows / Windows phones and so on down the stack. These are the native fonts of various sytems, so the webpage text will render instantly AND blend in like a lexical chameleon.</p>
+        <p class="o-text o-text--paragraph">That one's <em>Wordpress's</em> by the way. First the browser will check the client system for apple's system font ('-apple-system' and 'BlinkMacSystemFont' are abstractions - they will resolve to one of San Francisco, Helvetica, Helvetica Neue or Lucida Grande). Failing that the browser will check for 'Segoe UI' (which is used by Windows / Windows phones) and so on down the stack. These are the native fonts of various sytems, so the webpage text will render instantly AND blend in like a lexical chameleon.</p>
         <h1 class="o-heading o-heading--gamma">That's Not Going To Work</h1>
         <p class="o-text o-text--paragraph">I need to offset the text by a very specific amount based on the precise height of the letters. That was fine when I was declaring Montserrat for headings and Open Sans for body copy... but now I don't know which font is going to be used. What I need is a way to determine which font the user-agent is actually rendering.</p>
+        <p class="o-text o-text--paragraph">I'll need to use a stack with explicitly defined font names. I can't depend on something like '-apple-system' to select the appropriate font seeing as I am defining such a precise number. I'll use the stack below instead which I think will cover most, if not all cases. I'll define both a display and body stack as variables to be used throughout the project.</p>
+        <c-code lang="scss">
+          <pre>
+            $font-display: "SF Pro Display", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", "Helvetica", "Lucida Grande", -apple-system, BlinkMacSystemFont, "Trebuchet MS", sans-serif;
+            $font-body: "SF Pro Text", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", "Helvetica", "Lucida Grande", -apple-system, BlinkMacSystemFont, "Trebuchet MS", sans-serif;
+          </pre>
+        </c-code>
+        <p class="o-text o-text--paragraph">But that's the least of it...</p>
         <h1 class="o-heading o-heading--gamma">Enter the hack!</h1>
         <p class="o-text o-text--paragraph">This one's messy, but it's forgiven for being so creative (not my idea by the way). Basically on page load we throw a hidden node into the DOM, fill it with a test string, give it <span class="u-text--bold">a.</span> the default font-family and <span class="u-text--bold">b.</span> the font-family that we want to test for and then compare the two. If there's even the tiniest difference we've got a match!</p>
       </l-wrapper>
@@ -44,10 +52,25 @@
         <c-code lang="scss">
           <pre>
             /* ==========================================================================
-              # SYSTEM UI (as body font)
+              # San Francisco (as display font)
             ========================================================================== */
+
             /** Redefine the cap height of this particular typeface */
-            $cap-height:			.143em;
+            $cap-height:			.148em;
+
+            /** Import the display-font offset classes */
+            @import './display-font-offset';
+          </pre>
+        </c-code>
+        <c-code lang="scss">
+          <pre>
+            /* ==========================================================================
+              # San Francisco (as body font)
+            ========================================================================== */
+
+            /** Redefine the cap height of this particular typeface */
+            $cap-height:			.16em;
+
             /** Import the body-font offset classes */
             @import './body-font-offset';
           </pre>
@@ -57,9 +80,11 @@
             /* ==========================================================================
               # SEGOE UI (as display font)
             ========================================================================== */
+
             /** Redefine the cap height of this particular typeface */
-            $cap-height:			.115em;
-            /** Import the body-font offset classes */
+            $cap-height:			.085em;
+
+            /** Import the display-font offset classes */
             @import './display-font-offset';
           </pre>
         </c-code>

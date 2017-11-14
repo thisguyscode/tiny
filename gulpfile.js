@@ -22,6 +22,7 @@ const imageminPngquant = require('imagemin-pngquant')
 const imageminZopfli = require('imagemin-zopfli')
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const imageminGiflossy = require('imagemin-giflossy')
+const imageminWebp = require('imagemin-webp')
 
 var config = {
   images: {
@@ -58,8 +59,6 @@ function clear (done) {
 function images () {
   /** Create a filter to remove .gifs and .svgs from the stream */
   const f1 = filter(['**/*', '!**/*.gif', '!**/*.svg'], {restore: true})
-  /** Create a filter to remove .webp from the stream */
-  const f2 = filter(['**/*', '!**/*.webp'], {restore: true})
   /** Define task source */
   return gulp.src(config.images.tempDir + '**/*', {nodir: true})
     .pipe(rename(function (path) {
@@ -112,12 +111,10 @@ function images () {
     /** Clone image */
     .pipe(cloneSink)
     /** Convert cloned image to WebP */
-    .pipe(webp({quality: 80, method: 6, preset: 'photo'}))
+    .pipe(webp())
     /** Restore original image */
     .pipe(cloneSink.tap())
-    /** Filter out the newly created webp */
-    .pipe(f2)
-    /** Restore the images which were filtered out */
+    /** Restore the images which were filtered out (svg, gif) */
     .pipe(f1.restore)
     /** use imagemin for compression - gulp-responsive seems not to work well */
     .pipe(imagemin([
@@ -126,10 +123,9 @@ function images () {
       imageminGiflossy({ optimizationLevel: 3, optimize: 3, lossy: 2 }),
       imagemin.svgo({ plugins: [{ removeViewBox: false }] }),
       imagemin.jpegtran({ progressive: true }),
-      imageminMozjpeg({ quality: 90 })
+      imageminMozjpeg({ quality: 90 }),
+      imageminWebp({quality: 95, method: 6})
     ]))
-    /** Bring back the webp images */
-    .pipe(f2.restore)
     /** Output to destination directory */
     .pipe(gulp.dest(config.images.destDir))
 }

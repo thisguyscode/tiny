@@ -22,7 +22,6 @@ const imageminPngquant = require('imagemin-pngquant')
 const imageminZopfli = require('imagemin-zopfli')
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const imageminGiflossy = require('imagemin-giflossy')
-const imageminWebp = require('imagemin-webp')
 
 var config = {
   images: {

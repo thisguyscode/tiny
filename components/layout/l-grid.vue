@@ -1,12 +1,12 @@
 <template>
-  <span>
-    <ul v-if="list" class="l-grid o-list-bare" :class="baseClassObject">
+  <transition>
+    <ul v-if="list" class="l-grid o-list-bare" :class="baseClassArray">
       <slot></slot>
     </ul>
-    <div v-else-if="!list" class="l-grid" :class="baseClassObject">
+    <div v-else-if="!list" class="l-grid" :class="baseClassArray">
       <slot></slot>
     </div>
-  </span>
+  </transition>
 </template>
 
 <script>
@@ -34,26 +34,21 @@ export default {
     }
   },
   computed: {
-    baseClassObject: function () {
-      return {
-        // Spacing
-        'l-grid--xs': this.spacing === 'xs',
-        'l-grid--sm': this.spacing === 'sm',
-        'l-grid--md': this.spacing === 'md',
-        'l-grid--lg': this.spacing === 'lg',
-        'l-grid--xl': this.spacing === 'xl',
-        'l-grid--flush': this.spacing === 'flush',
-        // Horizontal Alignment
-        'l-grid--center': this.horizontal === 'center',
-        'l-grid--left': this.horizontal === 'left',
-        'l-grid--right': this.horizontal === 'right',
-        // Vertical Alignment
-        'l-grid--middle': this.vertical === 'middle',
-        'l-grid--bottom': this.vertical === 'bottom',
-        // Content Distribution
-        'l-grid--around': this.distribute === 'around',
-        'l-grid--between': this.distribute === 'between'
+    baseClassArray: function () {
+      var arr = []
+      if (this.spacing) {
+        arr.push('l-grid--' + this.spacing)
       }
+      if (this.horizontal) {
+        arr.push('l-grid--' + this.horizontal)
+      }
+      if (this.vertical) {
+        arr.push('l-grid--' + this.vertical)
+      }
+      if (this.distribute) {
+        arr.push('l-grid--' + this.distribute)
+      }
+      return arr
     }
   }
 }
@@ -61,19 +56,8 @@ export default {
 
 
 <style lang="scss">
-/* ========================================================================
-  # SCOPED STYLES
-======================================================================== */
 
-/* Global variable dependencies
-======================================================================== */
-$unit-xs: $unit-xs;
-$unit-sm: $unit-sm;
-$unit-md: $unit-md;
-$unit-lg: $unit-lg;
-$unit-xl: $unit-xl;
-
-/* Local variables
+/* Variables
 ======================================================================== */
 $gutter-width: 0;
 $spacing-sizes: (
@@ -87,13 +71,12 @@ $spacing-sizes: (
 );
 
 /* The grid
-   ========================================================================== */
-
+========================================================================== */
 .l-grid {
-    display: flex;
-    flex-flow: row wrap;
-    list-style: none;
-    padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  padding: 0;
 }
 
 /**
@@ -101,14 +84,15 @@ $spacing-sizes: (
  */
 
 .l-grid__cell {
-    position: relative;
-    flex: 0 1 auto;
-    width: 100%; /* [1] */
+  position: relative;
+  flex: 0 1 auto;
+  width: 100%; /* [1] */
 }
 
 
+
 /* Gutters
-   ========================================================================== */
+========================================================================== */
 
 /**
  * 1. The variable $flexgrid-spacing-sizes contains a `null` key which
@@ -119,69 +103,69 @@ $spacing-sizes: (
  */
 
 @each $size-namespace, $size in $spacing-sizes {
-    .l-grid#{$size-namespace} { /* [1] */
-        margin-left: -$size; /* [2] */
-        margin-top: -$size; /* [2] */
-        & > .l-grid__cell {
-            padding-top: $size; /* [3] */
-            padding-left: $size; /* [3] */
-        }
+  .l-grid#{$size-namespace} { /* [1] */
+    margin-left: -$size; /* [2] */
+    margin-top: -$size; /* [2] */
+    & > .l-grid__cell {
+      padding-top: $size; /* [3] */
+      padding-left: $size; /* [3] */
     }
+  }
 }
+
 
 
 /* Automatically size cells by distributing them equally
-   ========================================================================== */
-
+========================================================================== */
 .l-grid--auto {
-    & > .l-grid__cell {
-        flex: 1 0 0;
-    }
+  & > .l-grid__cell {
+    flex: 1 0 0;
+  }
 }
+
 
 
 /* Horizontal alignment
-   ========================================================================== */
-
+========================================================================== */
 .l-grid--center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .l-grid--right {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .l-grid--left {
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
+
 
 
 /* Vertical alignment
-   ========================================================================== */
-
+========================================================================== */
 .l-grid--middle {
-    align-items: center;
+  align-items: center;
 }
 
 .l-grid--bottom {
-    align-items: flex-end;
+  align-items: flex-end;
 }
+
 
 
 /* Content distribution
-   ========================================================================== */
-
+========================================================================== */
 .l-grid--around {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 .l-grid--between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .l-grid--reverse {
-    flex-direction: row-reverse;
-
+  flex-direction: row-reverse;
 }
+
 
 </style>

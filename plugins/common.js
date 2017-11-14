@@ -4,10 +4,6 @@ import Vue from 'vue'
  * FUNCTIONAL
  */
 
-// Link
-import fLink from '~/components/functional/f-link'
-Vue.component('f-link', fLink)
-
 // No SSR
 import fNoSsr from '~/components/functional/f-no-ssr'
 Vue.component('f-no-ssr', fNoSsr)
@@ -29,8 +25,12 @@ import lHeightWrapper from '~/components/layout/l-height-wrapper'
 Vue.component('l-height-wrapper', lHeightWrapper)
 
 /**
- * COSMETIC
+ * COMPONENTS
  */
+
+// Link
+import cLink from '~/components/c-link'
+Vue.component('c-link', cLink)
 
 // Baselines
 import cBaselines from '~/components/c-baselines'

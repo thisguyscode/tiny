@@ -20,10 +20,10 @@
                     <c-baselines class="c-project-group-intro__title-baselines"></c-baselines>
                     <span class="c-project-group-intro__index   o-heading  o-heading--gamma  u-margin-bottom-none">{{ index }}. </span>
                     <span class="c-project-group-intro__name   o-heading  o-heading--gamma  u-margin-bottom-none">{{ name }}</span>
-                    <f-link
+                    <c-link
                       class="c-project-group-intro__scrollLink"
                       :scrollToSelector="'#p-work__project-group-' + index">
-                    </f-link>
+                    </c-link>
                   </h3>
                 </template>
 

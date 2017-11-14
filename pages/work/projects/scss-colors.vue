@@ -6,7 +6,7 @@
 
       <l-wrapper size="sm">
         <h3 class="o-heading o-heading--gamma">Just Show Me!</h3>
-        <p class="o-text o-text--paragraph">Yeah if you're not interested in reading any of this there's a simple live demo <f-link externalLink="https://thisguyscode.github.io/scss-color-palettes/" :inline="true">here</f-link></p>
+        <p class="o-text o-text--paragraph">Yeah if you're not interested in reading any of this there's a simple live demo <c-link externalLink="https://thisguyscode.github.io/scss-color-palettes/" :inline="true">here</c-link></p>
       </l-wrapper>
     </div>
     
@@ -25,7 +25,7 @@
           <li>For the fun of it.</li>
         </ol>
 
-        <p class="o-text o-text--paragraph">There are countless tools out there already for generating color palettes. One of my favourites for pretty (and small) palettes is <f-link externalLink="https://coolors.co" :inline="true">Coolors</f-link> and for the purposes of data visualisaton there may be no better than <f-link :inline="true" externalLink="http://vrl.cs.brown.edu/color">Colorgorical</f-link> from Brown University. But the goals of this project were somewhere between the two. Furthermore it needed to be easy to integrate into existing and future web projects - not a manual effort every time colors changed.</p>
+        <p class="o-text o-text--paragraph">There are countless tools out there already for generating color palettes. One of my favourites for pretty (and small) palettes is <c-link externalLink="https://coolors.co" :inline="true">Coolors</c-link> and for the purposes of data visualisaton there may be no better than <c-link :inline="true" externalLink="http://vrl.cs.brown.edu/color">Colorgorical</c-link> from Brown University. But the goals of this project were somewhere between the two. Furthermore it needed to be easy to integrate into existing and future web projects - not a manual effort every time colors changed.</p>
 
         <h3 class="o-heading o-heading--gamma">So I Made This SCSS Mixin</h3>
         <p class="o-text o-text--paragraph">It accepts a single color and a name and when imported to the stylesheet outputs a bunch of classes nested in the palette's name - e.g. <code class="o-code o-code--inline u-vr-reset">.palette.coralred ._05 { /*...*/} .palette.coralred ._10 { /*...*/} .palette.coralred ._15 { /*...*/}</code> with each number representing a color in a scale.</p>
@@ -117,7 +117,7 @@
       <c-baselines></c-baselines>
 
       <l-wrapper size="sm">
-        <p class="o-text o-text--paragraph">The savvy reader will realise that these classes are largely useless in an actual web project. In their current format they are only really intended for generating the <f-link externalLink="https://thisguyscode.github.io/scss-color-palettes/" :inline="true">color palette demo</f-link>, but it doesn't take much to apply this to an actual style system... it just depends on the particulars</p>
+        <p class="o-text o-text--paragraph">The savvy reader will realise that these classes are largely useless in an actual web project. In their current format they are only really intended for generating the <c-link externalLink="https://thisguyscode.github.io/scss-color-palettes/" :inline="true">color palette demo</c-link>, but it doesn't take much to apply this to an actual style system... it just depends on the particulars</p>
       </l-wrapper>
     </div>
 

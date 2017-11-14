@@ -13,7 +13,7 @@
 
                 <!-- Group -->
                 <div class="c-project-hero__group-title-wrapper">
-                  <f-link
+                  <c-link
                     class="c-project-hero__group-title  o-heading o-heading--delta"
                     :class="setTextClass(project)"
                     :externalLink="project.groupLink">
@@ -23,7 +23,7 @@
                       name="external-link">
                     </c-icon>
                     {{ project.group }}
-                  </f-link>
+                  </c-link>
                 </div>
 
                 <!-- Title -->

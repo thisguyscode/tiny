@@ -22,7 +22,7 @@
     </span>
   </button>
 
-  <f-link
+  <c-link
     v-else
     class="c-button"
     :class="baseClassObject"
@@ -55,7 +55,7 @@
 
     </span>
 
-  </f-link>
+  </c-link>
 </template>
 
 <script>

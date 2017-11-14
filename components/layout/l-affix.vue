@@ -21,93 +21,85 @@
 </template>
 
 <script>
-  import fNoSsr from '~/components/functional/f-no-ssr'
-  export default {
-    data: () => {
-      return {
-        newOffset: {
-          top: '',
-          bottom: ''
-        }
+export default {
+  data: () => {
+    return {
+      newOffset: {
+        top: '',
+        bottom: ''
       }
-    },
-    components: {
-      fNoSsr
-    },
-    props: {
-      fullWidth: {
-        type: Boolean,
-        default: false
-      },
-      relativeElementSelector: {
-        type: String,
-        required: true
-      },
-      className: {
-        type: String,
-        required: false
-      },
-      z: {
-        type: Number,
-        required: false
-      },
-      offset: {
-        type: Object,
-        default: () => {
-          return {
-            top: 80,
-            bottom: 0
-          }
-        }
-      }
-    },
-    computed: {
-      placeholder () {
-        return this.$refs.jsPlaceholder
-      },
-      actual () {
-        return this.$refs.jsActual
-      },
-      classObject: function () {
-        return {
-          '--full-width': this.fullWidth
-        }
-      }
-    },
-    methods: {
-      setPlaceholderHeight () {
-        this.$refs.jsPlaceholder.style.visibility = 'hidden'
-        this.$refs.jsActual.style.visibility = 'visible'
-      },
-      removePlaceholderHeight () {
-        this.$refs.jsPlaceholder.style.visibility = 'visible'
-        this.$refs.jsActual.style.visibility = 'hidden'
-      },
-      affixTopHandler () {
-        this.removePlaceholderHeight()
-      },
-      affixBottomHandler () {
-        this.setPlaceholderHeight()
-      },
-      affixHandler () {
-        this.setPlaceholderHeight()
-      }
-    },
-    mounted () {
-      this.newOffset = {
-        top: this.offset.top + this.placeholder.clientHeight,
-        bottom: this.offset.bottom
-      }
-      this.removePlaceholderHeight()
     }
+  },
+  props: {
+    fullWidth: {
+      type: Boolean,
+      default: false
+    },
+    relativeElementSelector: {
+      type: String,
+      required: true
+    },
+    className: {
+      type: String,
+      required: false
+    },
+    z: {
+      type: Number,
+      required: false
+    },
+    offset: {
+      type: Object,
+      default: () => {
+        return {
+          top: 80,
+          bottom: 0
+        }
+      }
+    }
+  },
+  computed: {
+    placeholder () {
+      return this.$refs.jsPlaceholder
+    },
+    actual () {
+      return this.$refs.jsActual
+    },
+    classObject: function () {
+      return {
+        '--full-width': this.fullWidth
+      }
+    }
+  },
+  methods: {
+    setPlaceholderHeight () {
+      this.$refs.jsPlaceholder.style.visibility = 'hidden'
+      this.$refs.jsActual.style.visibility = 'visible'
+    },
+    removePlaceholderHeight () {
+      this.$refs.jsPlaceholder.style.visibility = 'visible'
+      this.$refs.jsActual.style.visibility = 'hidden'
+    },
+    affixTopHandler () {
+      this.removePlaceholderHeight()
+    },
+    affixBottomHandler () {
+      this.setPlaceholderHeight()
+    },
+    affixHandler () {
+      this.setPlaceholderHeight()
+    }
+  },
+  mounted () {
+    this.newOffset = {
+      top: this.offset.top + this.placeholder.clientHeight,
+      bottom: this.offset.bottom
+    }
+    this.removePlaceholderHeight()
   }
+}
 </script>
 
 <style lang="scss" scoped>
-
-  
-  
-
   $transition-duration: 1s;
   $transition-easing: ease;
 

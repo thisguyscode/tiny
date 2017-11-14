@@ -12,7 +12,7 @@
       <c-baselines></c-baselines>
       <l-wrapper size="sm">
         <h1 class="o-heading o-heading--gamma">Right to Education</h1>
-        <p class="o-text o-text--paragraph">They asked me to take some data from <f-link externalLink="https://rte.socialcops.org/" :inline="true">this dashboard</f-link> of theirs, and produce whatever I like with it... given that I consider myself more of a product designer I quickly polished up the UI first - nothing crazy just some quick wins.</p>
+        <p class="o-text o-text--paragraph">They asked me to take some data from <c-link externalLink="https://rte.socialcops.org/" :inline="true">this dashboard</c-link> of theirs, and produce whatever I like with it... given that I consider myself more of a product designer I quickly polished up the UI first - nothing crazy just some quick wins.</p>
       </l-wrapper>
     </div>
 
@@ -42,7 +42,7 @@
       <c-baselines></c-baselines>
       <l-wrapper size="sm">
         <!-- <h1 class="o-heading o-heading--gamma">Now the task at hand</h1> -->
-        <p class="o-text o-text--paragraph">On to the actual task... to present some data from the dashboard in an interesting manner. Again I stuck to what I know and went 'web'. Check out the live demo <f-link externalLink="https://thisguyscode.github.io/rte-comparison/" :inline="true">here.</f-link> The idea was that it could feature a selection of the top insights from the dashboard and serve as a shareable promotion piece. I just took one insight given the time contraint but it was enough to illustrate the concept.</p>
+        <p class="o-text o-text--paragraph">On to the actual task... to present some data from the dashboard in an interesting manner. Again I stuck to what I know and went 'web'. Check out the live demo <c-link externalLink="https://thisguyscode.github.io/rte-comparison/" :inline="true">here.</c-link> The idea was that it could feature a selection of the top insights from the dashboard and serve as a shareable promotion piece. I just took one insight given the time contraint but it was enough to illustrate the concept.</p>
       </l-wrapper>
     </div>
 
@@ -63,8 +63,8 @@
         <p class="o-text o-text--paragraph">The Right to Education task seemed to please the powers that be enough, so they set me another task. They wanted to see my graphicky-type-skills (which are to this day admittedly lacking), so they asked me to do something infographicky related to World Malaria Day, again with very little in the way of restrictions or suggestions. So I took a handful of facts, made some accompanying illustrations, and used them in 3 different media:</p>
         <ol class="o-text o-text--paragraph">
           <li>An infographic - intended for sharing on social media (see below)</li>
-          <li><f-link externalLink="https://thisguyscode.github.io/malaria/" :inline="true">A microsite</f-link> (of course)</li>
-          <li><f-link externalLink="/files/SocialCops-Malaria.pdf" :inline="true">A printable PDF</f-link></li>
+          <li><c-link externalLink="https://thisguyscode.github.io/malaria/" :inline="true">A microsite</c-link> (of course)</li>
+          <li><c-link externalLink="/files/SocialCops-Malaria.pdf" :inline="true">A printable PDF</c-link></li>
         </ol>
       </l-wrapper>
     </div>

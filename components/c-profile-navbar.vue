@@ -3,7 +3,7 @@
     <l-wrapper>
       <l-grid>
 
-        <f-link
+        <c-link
           v-for="link in links" :key="link.id"
           :scrollToSelector="link.to"
           class="
@@ -13,7 +13,7 @@
           "
           >
           <span class="c-profile-navbar__link-text  o-text  u-vr-reset">{{ link.name }}</span>
-        </f-link>
+        </c-link>
 
       </l-grid>
     </l-wrapper>

@@ -78,7 +78,7 @@
         </div>
 
         <div class="l-grid__cell u-3/5@tablet">
-          <f-link :relativeLink="linkTo">
+          <c-link :relativeLink="linkTo">
             <div class="_image-wrapper" :class="imgWrapperClass" :style="'background-color:' + color">
               <c-image
                 v-if="imgSrc"
@@ -89,7 +89,7 @@
                 :wide=".6"
               />
             </div>
-          </f-link>
+          </c-link>
         </div>
 
       </l-grid>

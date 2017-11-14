@@ -1,11 +1,20 @@
 <template>
   <transition>
-    <ul v-if="list" class="l-grid o-list-bare" :class="baseClassArray">
+    
+    <ul
+      v-if="list"
+      class="l-grid o-list-bare"
+      :class="baseClassArray">
       <slot></slot>
     </ul>
-    <div v-else-if="!list" class="l-grid" :class="baseClassArray">
+
+    <div
+      v-else
+      class="l-grid"
+      :class="baseClassArray">
       <slot></slot>
     </div>
+
   </transition>
 </template>
 

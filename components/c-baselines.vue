@@ -8,6 +8,7 @@
   </div>
 </template>
 
+
 <script>
 export default {
   props: {
@@ -23,11 +24,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-/* ========================================================================
-  # SCOPED STYLES
-======================================================================== */
 
+<style lang="scss" scoped>
 
 /* Variables
 ======================================================================== */
@@ -37,7 +35,6 @@ $background-size: $rhythm / 2;
 $baseline-color: rgba($neutral-00, .08);
 $inverse-color: rgba($neutral-100, .08);
 $heavy-color: rgba($neutral-00, .4);
-
 
 
 /* Base class
@@ -67,6 +64,8 @@ $heavy-color: rgba($neutral-00, .4);
     );
   }
 }
+
+// I think this is only used on the 'tests/vr' page
 .c-baselines--heavy {
   @if ($show-baseline == true) {
     background-image: linear-gradient(

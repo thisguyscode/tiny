@@ -15,6 +15,7 @@
           <c-image
             v-if="project.imgSrc"
             :fit="project.imgClass"
+            :altText="project.imgAltText"
             :imageSrc="project.imgSrc"
           />
         </div>

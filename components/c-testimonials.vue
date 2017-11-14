@@ -10,6 +10,7 @@
             <div class="_image-wrapper" :style="'background-color:' + testimonial.color">
               <c-image
                 v-if="testimonial.character"
+                altText="Picture of a minimal, illustated person"
                 fit="cover"
                 :imageSrc="testimonial.character"
               />

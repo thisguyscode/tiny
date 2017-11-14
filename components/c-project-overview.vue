@@ -82,9 +82,10 @@
             <div class="_image-wrapper" :class="imgWrapperClass" :style="'background-color:' + color">
               <c-image
                 v-if="imgSrc"
+                :imageSrc="imgSrc"
+                :altText="project.imgAltText"
                 :fit="project.imgClass"
                 :position="project.imgPosition"
-                :imageSrc="imgSrc"
                 :desktop=".7"
                 :wide=".6"
               />

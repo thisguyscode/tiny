@@ -4,14 +4,17 @@
       v-if="iconName"
       class="c-tech-icon__icon"
       :class="iconClass"
-      :name="iconName"/>
+      :name="iconName"
+      :title="name + ' logo'"/>
     <div
       v-else-if="iconString"
       class="c-tech-icon__string">
       {{ iconString }}
+      <span class="u-hidden-visually">{{name}} logo</span>
     </div>
     <c-image
       v-else-if="iconImg"
+      :altText="name + ' logo'"
       :lazy="false"
       :imageSrc="iconImg"
     />

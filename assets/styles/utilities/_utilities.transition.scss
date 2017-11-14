@@ -1,0 +1,13 @@
+/* ==========================================================================
+   # TRANSITION
+========================================================================== */
+
+
+/* FADE
+======================================================================== */
+.u-transition-fade-enter-active, .u-transition-fade-leave-active {
+  transition: opacity .5s !important;
+}
+.u-transition-fade-enter, .u-transition-fade-leave-to, .u-transition-fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0 !important;
+}

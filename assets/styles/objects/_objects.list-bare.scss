@@ -1,0 +1,14 @@
+/* ==========================================================================
+   # LIST BARE
+========================================================================== */
+
+.o-list-bare {
+  @include vr-reset;
+  display: inline-block;
+  list-style: none;
+  padding-left: 0;
+  
+  > li {
+    @include vr-reset;
+  }
+}

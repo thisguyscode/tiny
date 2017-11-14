@@ -12,7 +12,7 @@
  *
  * <div class="c-card">
  *   <a href="#">
- *     <span class="u-link-bloater"></span>
+ *     <span class="o-link-bloater"></span>
  *   </a>
  *   <div class="c-card__content">
  *     ...
@@ -22,7 +22,7 @@
  * One should also add a text span to the link for the sake of screen readers
  *
  * <a href="#">
- *   <span class="u-link-bloater"></span>
+ *   <span class="o-link-bloater"></span>
  *   <span class="u-hidden-visually">Please read me screenreader</span>
  * </a>
  */
@@ -37,7 +37,7 @@
  * 2. A strange hack to make sure this works in IE
  */
 
-.u-link-bloater {
+.o-link-bloater {
   position: absolute;
   top: 0;
   right: 0;

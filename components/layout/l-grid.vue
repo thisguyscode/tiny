@@ -1,6 +1,6 @@
 <template>
   <span>
-    <ul v-if="list" class="l-grid u-list-bare" :class="baseClassObject">
+    <ul v-if="list" class="l-grid o-list-bare" :class="baseClassObject">
       <slot></slot>
     </ul>
     <div v-else-if="!list" class="l-grid" :class="baseClassObject">

@@ -1,12 +1,11 @@
 /* ========================================================================
+  # Z-INDEX
+======================================================================== */
 
-  #Z-INDEX
-
-  Simple mixin based on a function which gets the z-index value from map
-  in _settings.main.scss
-
-  ======================================================================== */
-
+/**
+ * Simple mixin based on a function which gets the z-index value from map
+ * in _settings.main.scss
+ */
 
 @function map-has-nested-keys($map, $keys...) {
   @each $key in $keys {

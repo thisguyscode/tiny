@@ -1,12 +1,16 @@
 /* ========================================================================
+  # CONTASTING COLOR
+======================================================================== */
 
-  #CONTASTING COLOR
+/**
+ * Calculates appropriate text color for background based on perceptual
+ * brightness
+ */
 
-  Calculates appropriate text color for background based on perceptual
-  brightness
+ 
 
-  ======================================================================== */
-
+/* SQRT
+======================================================================== */
 /**
  * A mathematical function used in defining perceptual brightness of colors
  */
@@ -23,8 +27,12 @@
     @return $x1;
 }
 
+
+
+/* BRIGHTNESS
+======================================================================== */
 // Brightness math based on:
-//   http://www.nbdtech.com/Blog/archive/2008/04/27/Calculating-the-Perceived-Brightness-of-a-Color.aspx
+// http://www.nbdtech.com/Blog/archive/2008/04/27/Calculating-the-Perceived-Brightness-of-a-Color.aspx
 
 $red-magic-number: 241;
 $green-magic-number: 691;
@@ -44,6 +52,10 @@ $brightness-divisor: $red-magic-number + $green-magic-number + $blue-magic-numbe
   @return 100% * $number / 255;
 }
 
+
+
+/* CONTRASTING-COLOR
+======================================================================== */
 @function contrasting-color($color, $light, $dark) {
   @if brightness($color) < 65% {
     @return $light;

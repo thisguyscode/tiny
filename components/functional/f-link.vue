@@ -7,7 +7,7 @@
   <span v-else-if="scrollToSelector">
     <f-no-ssr>
       <a class="f-link" :class="baseClassObject" v-scroll-to="{ el: scrollToSelector, offset: -176 }">
-        <span class="u-link-bloater"></span>
+        <span class="o-link-bloater"></span>
       </a>
     </f-no-ssr>
     <slot></slot>

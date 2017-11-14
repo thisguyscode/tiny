@@ -1,24 +1,24 @@
 /* ==========================================================================
-
-   #RESPONSIVE
-
+   # RESPONSIVE
 ========================================================================== */
 
-.u-hide-mobile-tablet {
-  @include mq($from: mobile, $until: desktop) {
-    display: none !important;
-  }
-}
-
+// Hide for tiny and mobile
 .u-hide-mobile {
   @include mq($until: tablet) {
     display: none !important;
   }
 }
 
-
+// Hide for tiny, mobile and tablet
 .u-hide-tablet {
   @include mq($until: desktop) {
+    display: none !important;
+  }
+}
+
+// Hide for mobile and tablet
+.u-hide-mobile-tablet {
+  @include mq($from: mobile, $until: desktop) {
     display: none !important;
   }
 }

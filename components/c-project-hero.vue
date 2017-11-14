@@ -8,7 +8,7 @@
         <div class="c-project-hero-text-cell l-grid__cell u-2/5@tablet">
           <div class="c-project-hero-text-wrapper" :style="'color:' + color">
            
-            <transition name="fade">
+            <transition name="u-transition-fade">
               <div v-if="transitionEnd">
 
                 <!-- Group -->
@@ -55,7 +55,7 @@
         </div><!--END Hero text panel -->
         
         <!-- Hero image panel -->
-        <transition name="fade">
+        <transition name="u-transition-fade">
           <div v-if="transitionEnd" class="c-project-hero-image-cell l-grid__cell u-3/5@tablet" :class="setImgFit(project)">
             <div class="c-project-hero-image-reference  o-liner" :class="setImgWrapperClass(project)">
               <div class="c-project-hero-image-wrapper">

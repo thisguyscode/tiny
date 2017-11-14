@@ -1,10 +1,27 @@
+/* ==========================================================================
+   # IMPORTS
+========================================================================== */
+
+/**
+ * All of the the settings, variables, mixings, functions etc which in and of
+ * themselves output no CSS.
+ *
+ * These are shared amongst both the global stylesheet and the Vue components
+ */
+
+
+/* Main project settings
+======================================================================== */
 @import "./settings/settings.config";
-$show-baseline: true; // Doesn't work in IE and Edge
 @import "./settings/settings.typography";
 @import "./settings/settings.main";
 
-@import "../../node_modules/sass-mq/mq";
 
+/* Tools
+======================================================================== */
+// NPM
+@import "../../node_modules/sass-mq/mq";
+// Custom
 @import "./tools/tools.aliases";
 @import "./tools/tools.border";
 @import "./tools/tools.clearfix";

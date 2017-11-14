@@ -1,40 +1,52 @@
+/* ==========================================================================
+   # GLOBAL
+========================================================================== */
+
+/**
+ * Each import in this list will output css classes to the global stylesheet
+ * N.B. These SHOULD be added to the DOM before any component/scoepd styles
+ */
+
+
+
+/* Settings / Variables
+======================================================================== */
 @import "./imports";
-// @import "./fonts";
 
+
+/* Generic (Resets / Normalizations)
+======================================================================== */
 @import "../../node_modules/normalize.css/normalize.css";
-
 @import "./generic/generic.my-resets";
 
+
+/* Elements (Styling DOM elements directly)
+======================================================================== */
+@import "./elements/elements.forms";
 @import "./elements/elements.page";
 @import "./elements/elements.ui";
-@import "./elements/elements.forms";
 
 
-@import "./layout/layout.box";
-@import "./layout/layout.wrapper";
-
+/* Objects (Reusable layout classes)
+======================================================================== */
+@import "./objects/objects.code";
 @import "./objects/objects.heading";
 @import "./objects/objects.liner";
+@import "./objects/objects.list-bare";
+@import "./objects/objects.link-bloater";
 @import "./objects/objects.text";
-@import "./objects/objects.code";
-@import "./objects/objects.page-section";
-@import "./objects/objects.text-wrapper";
+@import "./objects/objects.text-section";
 
-@import "./utilities/utilities.flow";
-@import "./utilities/utilities.text";
-@import "./utilities/utilities.list";
+
+/* Utilities (Single responsibility classes)
+======================================================================== */
+/**
+ * These classes typically utilise !important to trump
+ * component/scoped classes
+ */
 @import "./utilities/utilities.alignment";
-@import "./utilities/utilities.baseline-grid";
-@import "./utilities/utilities.widths";
-@import "./utilities/utilities.wrapper";
-@import "./utilities/utilities.link-bloater";
-@import "./utilities/utilities.box";
-@import "./utilities/utilities.divider";
+@import "./utilities/utilities.flow";
 @import "./utilities/utilities.responsive";
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
-}
-.fade-enter, .fade-leave-to, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0
-}
+@import "./utilities/utilities.text";
+@import "./utilities/utilities.transition";
+@import "./utilities/utilities.widths";

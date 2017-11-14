@@ -2,32 +2,31 @@
    # VERTICAL RHYTHM (vr)
 ======================================================================== */
 
+
+
 /* Generate all required attributes/values
 ======================================================================== */
 @mixin vr($font-family: $font-body, $font-size: $base-font-size) {
-
   /**
    * VARIABLE defininitions
    */
 
 	// Calculate the line height of the text.
 	$line-height: $font-size * $base-line-height;
-
 	// How much rhythm fits in the line height?
 	$rhythm-count: $line-height / $rhythm;
-
 	// Round the rhythm count to half cycles.
 	$rhythm-count-half: $rhythm-count - ($rhythm-count - floor($rhythm-count));
-
 	// Calculate the adjusted line height.
 	$adjusted-line-height: $rhythm-count-half * $rhythm;
-
 	// Shift the text to the baseline (distance between the baseline and descender height).
 	$baseline-shift: (($adjusted-line-height - $font-size) * 0.5);
+
 
   /**
    * STYLES created
    */
+
 	position: relative;
 	font-size: $font-size;
 
@@ -56,44 +55,40 @@
 	}
 }
 
+
+
 /* Recalculate only the offset and apply top offset to selector
 ======================================================================== */
 @mixin vr-offset($cap-height: $cap-font-body, $font-size: $base-font-size) {
-  
   /**
    * VARIABLE defininitions
    */
 
   // Calculate the line height of the text.
   $line-height: $font-size * $base-line-height;
-
   // How much rhythm fits in the line height?
   $rhythm-count: $line-height / $rhythm;
-
   // Round the rhythm count to half cycles.
   $rhythm-count-half: $rhythm-count - ($rhythm-count - floor($rhythm-count));
-
   // Calculate the adjusted line height.
   $adjusted-line-height: $rhythm-count-half * $rhythm;
-
   // Shift the text to the baseline (distance between the baseline and descender height).
   $baseline-shift: (($adjusted-line-height - $font-size) * 0.5);
-
   // Define the offset
   $offset: #{$cap-height} + #{$baseline-shift} - (#{$adjusted-line-height} * 0.5);
+  
   
   /**
    * STYLES created
    */
+
   top: calc(#{$offset});
 }
+
 
 
 /* Remove the offset
 ======================================================================== */
 @mixin vr-reset {
-  // &#{&} { /*[1]*/
-    // position: static !important;
-    top: 0 !important;
-  // }
+  top: 0 !important;
 }

@@ -60,7 +60,7 @@
                 <l-grid>
                   <div class="c-project-details__group  l-grid__cell u-2/5@mobile u-1/1@tablet">
                     <h4 class="o-heading o-heading--zeta">Date</h4>
-                    <!-- <transition name="fade"> -->
+                    <!-- <transition name="u-transition-fade"> -->
                       <p
                         v-if="transitionEnd"
                         class="c-project-details__item c-project-details__item-string  o-text">
@@ -70,7 +70,7 @@
                   </div>
                   <div class="c-project-details__group  l-grid__cell u-2/5@mobile u-1/1@tablet">
                     <h4 class="o-heading o-heading--zeta">Role</h4>
-                    <!-- <transition name="fade"> -->
+                    <!-- <transition name="u-transition-fade"> -->
                       <p
                         v-if="transitionEnd"
                         class="c-project-details__item c-project-details__item-string  o-text">
@@ -87,7 +87,7 @@
                 <h4 class="o-heading o-heading--zeta">Tech</h4>
                 <ul
                   v-if="transitionEnd"
-                  class="c-project-details__group  u-list-bare">
+                  class="c-project-details__group  o-list-bare">
                   <li
                     v-for="tech in project.techs"
                     :key="tech.id"
@@ -104,10 +104,10 @@
               <!-- column -->
               <div class="c-project-details__list-column l-grid__cell u-2/5@mobile u-1/3@tablet">
                 <h4 class="o-heading o-heading--zeta">Skills</h4>
-                <!-- <transition name="fade"> -->
+                <!-- <transition name="u-transition-fade"> -->
                   <ul
                     v-if="transitionEnd"
-                    class="c-project-details__group u-list-bare">
+                    class="c-project-details__group o-list-bare">
                     <li
                       v-for="skill in project.skills"
                       class="c-project-details__item"

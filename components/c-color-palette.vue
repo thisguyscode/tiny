@@ -1,6 +1,6 @@
 <template>
   <section class="c-color-palette">
-    <ul class="palette u-list-bare" :class="[color]">
+    <ul class="palette o-list-bare" :class="[color]">
       <li v-if="color !== 'greyscale'" class="_highlight"></li>
       <li v-if="color !== 'greyscale'" class="_base"></li>
       <li class="_05"></li>

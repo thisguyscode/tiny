@@ -1,5 +1,5 @@
 <template>
-  <!-- <transition name="fade"> -->
+  <!-- <transition name="u-transition-fade"> -->
     <div v-if="transitionEnd" class="c-project-nav-panel" :class="panelClass">
       <nuxt-link
         class="c-project-nav-panel__link"

@@ -32,7 +32,7 @@
 
                   <div v-if="role" class="_detail-group">
                     <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Tech</h4>
-                    <ul class="u-list-bare">
+                    <ul class="o-list-bare">
                       <li v-for="tech in techs" :key="tech.id">
                         <p class="c-project-overview__detail  o-text o-text--sm">{{ tech }}</p>
                       </li>
@@ -50,7 +50,7 @@
 
                   <div v-if="skills" class="_detail-group">
                     <h4 class="c-project-overview__subheading  o-heading o-heading--zeta">Skills</h4>
-                    <ul class="u-list-bare">
+                    <ul class="o-list-bare">
                       <li v-for="skill in skills" :key="skill.id">
                         <p class="c-project-overview__detail  o-text o-text--sm">{{ skill }}</p>
                       </li>

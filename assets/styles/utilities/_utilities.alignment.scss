@@ -1,17 +1,25 @@
 /* ==========================================================================
+   # ALIGNMENT
+========================================================================== */
 
-   #ALIGNMENT
+/**
+ * In a larger project one could employ a function to generate the requisite
+ * alignment utility classes, but as I don't need many these are manua for
+ * simpliciity
+ */
 
-   ========================================================================== */
 
+
+/* top, right, left, bottom
+======================================================================== */
 .u-top-0 {
   top: 0 !important;
 }
 
-.u-margin-bottom {
-  margin-bottom: $unit-lg !important;
-}
 
+
+/* MARGIN
+======================================================================== */
 .u-margin-bottom-none {
   margin-bottom: 0 !important;
 }
@@ -22,10 +30,14 @@
 .u-margin-bottom-md {
   margin-bottom: $unit-md !important;
 }
-.u-margin-bottom-md {
+.u-margin-bottom-lg {
   margin-bottom: $unit-lg !important;
 }
 
+
+
+/* PADDING
+======================================================================== */
 .u-padding-none {
   padding: 0 !important;
 }

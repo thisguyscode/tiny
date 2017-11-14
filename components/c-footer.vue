@@ -20,29 +20,35 @@ export default {
 }
 </script>
 
+
 <style lang="scss" scoped>
 
-  .c-footer {
-    background-color: $clr-primary;
-    color: contrasting-color($clr-primary, $lightest, $darkest);
-    padding-top: $unit-md;
-    padding-bottom: $unit-md;
-  }
+/* Base Class
+========================================================================== */
+.c-footer {
+  background-color: $clr-primary;
+  color: contrasting-color($clr-primary, $lightest, $darkest);
+  padding-top: $unit-md;
+  padding-bottom: $unit-md;
+}
 
-  .c-footer__text {
-    opacity: .7;
-  }
 
-  .c-footer__text--light {
-    color: $lightest;
-  }
+/* Child Classes
+========================================================================== */
+.c-footer__name {
+  font-weight: $font-weight-semi;
+}
 
-  .c-footer__text--dark {
-    color: $darkest;
-  }
+.c-footer__text {
+  opacity: .7;
+}
 
-  .c-footer__name {
-    font-weight: $font-weight-semi;
-  }
+.c-footer__text--light {
+  color: $lightest;
+}
+
+.c-footer__text--dark {
+  color: $darkest;
+}
 
 </style>

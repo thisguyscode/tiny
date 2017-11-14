@@ -544,7 +544,6 @@ import lMainContent from '~/components/layout/l-main-content'
 export default {
   layout: 'default',
   components: {
-    cGridlines,
     cTestimonials,
     cProfileNavbar,
     cHero,

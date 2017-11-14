@@ -1,21 +1,21 @@
 <template>
   <nav class="c-profile-navbar">
     <l-wrapper>
-      <l-grid>
+      <div class="o-grid o-grid--flush">
 
         <c-link
           v-for="link in links" :key="link.id"
           :scrollToSelector="link.to"
           class="
             c-profile-navbar__link
-            l-grid__cell
+            o-grid__cell
             u-1/5
           "
           >
           <span class="c-profile-navbar__link-text  o-text  u-vr-reset">{{ link.name }}</span>
         </c-link>
 
-      </l-grid>
+      </div>
     </l-wrapper>
   </nav>
 </template>

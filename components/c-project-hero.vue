@@ -2,10 +2,10 @@
   <div class="c-project-hero" :style="'background-color: ' + color">
 
     <l-wrapper>
-      <l-grid class="c-project-hero-grid">
+      <div class="c-project-hero-grid o-grid">
 
         <!-- Hero text panel -->
-        <div class="c-project-hero-text-cell l-grid__cell u-2/5@tablet">
+        <div class="c-project-hero-text-cell o-grid__cell u-2/5@tablet">
           <div class="c-project-hero-text-wrapper" :style="'color:' + color">
            
             <transition name="u-transition-fade">
@@ -56,7 +56,7 @@
         
         <!-- Hero image panel -->
         <transition name="u-transition-fade">
-          <div v-if="transitionEnd" class="c-project-hero-image-cell l-grid__cell u-3/5@tablet" :class="setImgFit(project)">
+          <div v-if="transitionEnd" class="c-project-hero-image-cell o-grid__cell u-3/5@tablet" :class="setImgFit(project)">
             <div class="c-project-hero-image-reference  o-liner" :class="setImgWrapperClass(project)">
               <div class="c-project-hero-image-wrapper">
                 <c-image
@@ -74,7 +74,7 @@
         </transition>
 
 
-      </l-grid>
+      </div>
     </l-wrapper>
   </div><!--END Hero -->
   

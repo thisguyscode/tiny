@@ -31,18 +31,18 @@
 
     <c-box :border="true" :padded="true" class="desktop-box">
       <l-wrapper size="lg" class="u-text--align-center">
-        <l-grid>
-          <div class="l-grid__cell u-1/2@tablet">
+        <div class="o-grid o-grid--flush">
+          <div class="o-grid__cell u-1/2@tablet">
             <c-image
               :imageSrc="'trivago/hotel-item/item-evolution-desktop-02.jpg'"
             />
           </div>
-          <div class="l-grid__cell u-1/2@tablet">
+          <div class="o-grid__cell u-1/2@tablet">
             <c-image
               :imageSrc="'trivago/hotel-item/item-evolution-desktop-01.jpg'"
             />
           </div>
-        </l-grid>
+        </div>
       </l-wrapper>
     </c-box>
 

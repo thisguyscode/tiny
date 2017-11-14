@@ -28,6 +28,9 @@
     <f-no-ssr>
       <a class="c-link" :class="baseClassObject" v-scroll-to="{ el: scrollToSelector, offset: -176 }">
         <span class="o-link-bloater"></span>
+        <span class="u-hidden-visually">
+          <slot name="linkText"></slot>
+        </span>
       </a>
     </f-no-ssr>
     <slot></slot>

@@ -2,8 +2,8 @@
   <section class="p-vertical-rhythm">
     <c-baselines :heavy="true"></c-baselines>
     <l-wrapper>
-      <l-grid spacing="lg">
-        <div class="l-grid__cell u-3/5@tablet">
+      <div class="o-grid o-grid--lg">
+        <div class="o-grid__cell u-3/5@tablet">
           <section class="p-vertical-rhythm__headings">
             <div class="p-vertical-rhythm__section-heading o-text o-text--sm">HEADINGS</div>
             <div class="o-heading o-heading--alpha">Heading Alpha</div>
@@ -18,7 +18,7 @@
             <!-- <div class="test-block"></div> -->
           </section>
         </div>
-        <div class="l-grid__cell u-1/5@tablet">
+        <div class="o-grid__cell u-1/5@tablet">
           <section class="p-vertical-rhythm__text">
             <div class="p-vertical-rhythm__section-heading o-text o-text--sm">TEXT</div>
             <div class="o-text o-text--xl">Text XL</div>
@@ -33,7 +33,7 @@
             <!-- <div class="test-block"></div> -->
           </section>
         </div>
-        <div class="l-grid__cell u-1/5@tablet">
+        <div class="o-grid__cell u-1/5@tablet">
           <section class="p-vertical-rhythm__code">
             <div class="p-vertical-rhythm__section-heading o-text o-text--sm">CODE</div>
             <div class="o-code o-code--sm">Code SM</div>
@@ -44,7 +44,7 @@
             <!-- <div class="test-block"></div> -->
           </section>
         </div>
-      </l-grid>
+      </div>
     </l-wrapper>
   </section>
 </template>

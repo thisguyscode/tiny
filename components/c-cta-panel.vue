@@ -4,28 +4,28 @@
     <c-baselines></c-baselines>
     
     <l-wrapper>
-      <l-grid>
-        <div class="l-grid__cell  u-3/5@tablet">
-          <l-grid>
-            <div class="l-grid__cell  u-1/1">
+      <div class="o-grid o-grid--flush">
+        <div class="o-grid__cell  u-3/5@tablet">
+          <div class="o-grid o-grid--flush">
+            <div class="o-grid__cell  u-1/1">
               <h1 class="o-heading o-heading--beta">{{ mainCtaHeading }}</h1>
             </div>
-            <div class="l-grid__cell  u-2/3@tablet">
+            <div class="o-grid__cell  u-2/3@tablet">
               <p class="c-cta-panel__main-body-text o-text o-text--paragraph">{{ mainCtaBodyText }}</p>
             </div>
-            <div class="l-grid__cell  u-1/3@tablet">
+            <div class="o-grid__cell  u-1/3@tablet">
             </div>
-            <div class="l-grid__cell  u-1/3@tablet">
+            <div class="o-grid__cell  u-1/3@tablet">
               <c-button
                 class="c-cta-panel__main-cta-button"
                 type="solid"
                 :content="mainCtaButton">
               </c-button>
             </div>
-          </l-grid>
+          </div>
         </div>
-        <div class="l-grid__cell u-1/5"></div>
-        <div class="c-cta-panel__sub-cta-wrapper  l-grid__cell  u-1/5@tablet">
+        <div class="o-grid__cell u-1/5"></div>
+        <div class="c-cta-panel__sub-cta-wrapper  o-grid__cell  u-1/5@tablet">
           <h2 class="o-heading o-heading--gamma">{{ subCtaHeading }}</h2>
           <c-button
             class="c-cta-panel__sub-cta-button u-margin-bottom-none"
@@ -33,7 +33,7 @@
             :content="subCtaButton">
           </c-button>
         </div>
-      </l-grid>
+      </div>
     </l-wrapper>
   </section>
 </template>

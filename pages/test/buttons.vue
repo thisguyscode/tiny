@@ -1,10 +1,10 @@
 <template>
   <section class="p-buttons">
     <l-wrapper>
-      <l-grid>
+      <div class="o-grid o-grid--flush">
         
         
-        <div class="l-grid__cell  u-1/5@tablet">
+        <div class="o-grid__cell  u-1/5@tablet">
           
           <!-- Submit -->
           <h1 class="o-heading o-heading--gamma">Submit</h1>
@@ -32,10 +32,10 @@
         </div>
 
         <!-- Spacer -->
-        <div class="l-grid__cell u-1/5@tablet"></div>
+        <div class="o-grid__cell u-1/5@tablet"></div>
 
         <!-- Regular -->
-        <div class="l-grid__cell  u-1/5@tablet">
+        <div class="o-grid__cell  u-1/5@tablet">
           <h1 class="o-heading o-heading--gamma">Sizes</h1>
           <c-button
             icon="lightbulb-o"
@@ -58,10 +58,10 @@
         </div>
 
         <!-- Spacer -->
-        <div class="l-grid__cell u-1/5@tablet"></div>
+        <div class="o-grid__cell u-1/5@tablet"></div>
 
         <!-- Variants -->
-        <div class="l-grid__cell  u-1/5@tablet">
+        <div class="o-grid__cell  u-1/5@tablet">
           <h1 class="o-heading o-heading--gamma">Variants</h1>
           <c-button
             icon="lightbulb-o"
@@ -107,7 +107,7 @@
           </c-button>
         </div>
 
-      </l-grid>
+      </div>
     </l-wrapper>
 
   </section>

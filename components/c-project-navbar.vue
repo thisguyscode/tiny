@@ -1,7 +1,7 @@
 <template>
   <nav class="c-project-navbar" :style="'background-color:' + color" :class="baseClass">
     <l-wrapper>
-      <l-grid>
+      <div class="o-grid o-grid--flush">
         
         <!-- PREVIOUS -->
         <nuxt-link
@@ -10,7 +10,7 @@
           class="
             c-project-navbar__link
             c-project-navbar__link--previous
-            l-grid__cell
+            o-grid__cell
             u-1/3 u-1/5@tablet
           "
         >
@@ -29,7 +29,7 @@
           class="
             c-project-navbar__link
             c-project-navbar__link--next
-            l-grid__cell
+            o-grid__cell
             u-1/3 u-1/5@tablet
           "
         >
@@ -52,7 +52,7 @@
           class="
             c-project-navbar__link
             c-project-navbar__link--close
-            l-grid__cell
+            o-grid__cell
             u-1/3 u-1/5@tablet
           "
         >
@@ -62,9 +62,9 @@
           </span>
         </nuxt-link><!--END close -->
 
-        <div class="l-grid__cell u-0  u-2/5@tablet"></div>
-        <div class="l-grid__cell u-1/3  u-1/5@tablet"></div>
-      </l-grid>
+        <div class="o-grid__cell u-0  u-2/5@tablet"></div>
+        <div class="o-grid__cell u-1/3  u-1/5@tablet"></div>
+      </div>
     </l-wrapper>
   </nav>
 </template>

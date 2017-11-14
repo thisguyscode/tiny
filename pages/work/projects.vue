@@ -51,14 +51,14 @@
     <!-- Bottom Nav -->
     <div class="p-projects__nav-panels-wrapper">
       <nav class="p-projects__nav-panels">
-        <l-grid spacing="xs">
-          <div class="p-projects__nav-panel p-projects__nav-panel--previous  l-grid__cell u-1/2@mobile">
+        <div class="o-grid o-grid--xs">
+          <div class="p-projects__nav-panel p-projects__nav-panel--previous  o-grid__cell u-1/2@mobile">
             <c-project-nav-panel :transitionEnd="transitionEnd" :project="previousProject" direction="previous"></c-project-nav-panel>
           </div>
-          <div class="p-projects__nav-panel p-projects__nav-panel--next  l-grid__cell u-1/2@mobile">
+          <div class="p-projects__nav-panel p-projects__nav-panel--next  o-grid__cell u-1/2@mobile">
             <c-project-nav-panel :transitionEnd="transitionEnd" :project="nextProject" direction="next"></c-project-nav-panel>
           </div>
-        </l-grid>
+        </div>
       </nav>
     </div>
     <!--END Bottom Nav  -->

@@ -1,12 +1,12 @@
 <template>
   <section class="c-project-group-intro" :id="'project-group-' + index + '-top'">
     <l-wrapper>
-      <l-grid class="c-project-group-intro__grid">
-        <div class="c-project-group-intro__header  l-grid__cell  u-2/5@tablet">
-          <l-grid>
+      <div class="c-project-group-intro__grid  o-grid">
+        <div class="c-project-group-intro__header  o-grid__cell  u-2/5@tablet">
+          <div class="o-grid o-grid--flush">
 
             <!-- Main group title cell -->
-            <div class="l-grid__cell  u-2/3 u-1/1@tablet">
+            <div class="o-grid__cell  u-2/3 u-1/1@tablet">
               
               <l-affix
                 className="c-project-group-intro__sticky-header"
@@ -23,6 +23,7 @@
                     <c-link
                       class="c-project-group-intro__scrollLink"
                       :scrollToSelector="'#p-work__project-group-' + index">
+                      <template slot="linkText">Go back to start of {{name}} projects</template>
                     </c-link>
                   </h3>
                 </template>
@@ -30,7 +31,7 @@
               </l-affix>
             </div><!--END Main group title cell -->
             
-            <div class="l-grid__cell  u-1/3 u-1/2@tablet" v-if="link">
+            <div class="o-grid__cell  u-1/3 u-1/2@tablet" v-if="link">
               
               <c-button
                 class="c-project-group-intro__button"
@@ -44,14 +45,16 @@
 
             </div>
 
-          </l-grid>
+          </div>
         </div>
 
-        <div class="l-grid__cell  u-3/5@tablet">
-          <p class="c-project-group-intro__description  o-text o-text--paragraph">{{ description }}</p>
+        <div class="o-grid__cell  u-3/5@tablet">
+          <p class="c-project-group-intro__description  o-text o-text--paragraph">
+            {{ description }}
+          </p>
         </div>
 
-      </l-grid>
+      </div>
     </l-wrapper>
   </section>
 </template>

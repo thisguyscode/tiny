@@ -78,29 +78,29 @@
 
     <c-box :border="true" :filled="true" :padded="true" class="u-text--align-center">
       <l-wrapper size="lg">
-        <l-grid spacing="lg">
-          <div class="l-grid__cell  u-1/3@tablet">
+        <div class="o-grid o-grid--lg">
+          <div class="o-grid__cell  u-1/3@tablet">
             <c-device-frame device="mobile">
               <c-image
                 :imageSrc="'socialcops/product-mockups/collect-flagging-mobile.jpg'"
               />
             </c-device-frame>
           </div>
-          <div class="l-grid__cell  u-1/3@tablet">
+          <div class="o-grid__cell  u-1/3@tablet">
             <c-device-frame device="mobile">
               <c-image
                 :imageSrc="'socialcops/product-mockups/collect-monitoring-mobile.gif'"
               />
             </c-device-frame>
           </div>
-          <div class="l-grid__cell  u-1/3@tablet">
+          <div class="o-grid__cell  u-1/3@tablet">
             <c-device-frame device="mobile">
               <c-image
                 :imageSrc="'socialcops/product-mockups/collect-location-mobile.gif'"
               />
             </c-device-frame>
           </div>
-        </l-grid>
+        </div>
       </l-wrapper>
     </c-box>
 

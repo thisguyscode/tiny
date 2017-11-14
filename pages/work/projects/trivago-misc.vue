@@ -14,20 +14,20 @@
     <!-- 1 -->
     <c-box :border="true" :filled="true" :padded="true" class="collage-image-wrapper">
       <l-wrapper size="lg">
-        <l-grid spacing="xl" vertical="middle">
-          <div class="l-grid__cell u-1/2@tablet">
+        <div class="o-grid o-grid--xl o-grid--middle">
+          <div class="o-grid__cell u-1/2@tablet">
             <c-image
               class="collage-image"
               :imageSrc="'trivago/misc/marathon.png'"
             />
           </div>
-          <div class="l-grid__cell u-1/2@tablet">
+          <div class="o-grid__cell u-1/2@tablet">
             <c-image
               class="collage-image"
               :imageSrc="'trivago/misc/onboarding.png'"
             />
           </div>
-        </l-grid>
+        </div>
       </l-wrapper>
     </c-box>
 

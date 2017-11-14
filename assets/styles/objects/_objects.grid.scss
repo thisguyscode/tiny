@@ -19,7 +19,7 @@ $spacing-sizes: (
 
 /* The grid
 ========================================================================== */
-.l-grid {
+.o-grid {
   display: flex;
   flex-flow: row wrap;
   list-style: none;
@@ -27,10 +27,10 @@ $spacing-sizes: (
 }
 
 /**
- * 1. Cells are full-width and stack on top of each other by default.
+ * 1. Cells are fulo-width and stack on top of each other by default.
  */
 
-.l-grid__cell {
+.o-grid__cell {
   position: relative;
   flex: 0 1 auto;
   width: 100%; /* [1] */
@@ -46,14 +46,14 @@ $spacing-sizes: (
  *    will be our default gutter size.
  * 2. Add a negative margin only on one side. That way we aren't required to
  *    use a wrapper with the same amount of spacing, though it's common to do so.
- * 3. Neutralize the left margin on `l-grid`.
+ * 3. Neutralize the left margin on `o-grid`.
  */
 
 @each $size-namespace, $size in $spacing-sizes {
-  .l-grid#{$size-namespace} { /* [1] */
+  .o-grid#{$size-namespace} { /* [1] */
     margin-left: -$size; /* [2] */
     margin-top: -$size; /* [2] */
-    & > .l-grid__cell {
+    & > .o-grid__cell {
       padding-top: $size; /* [3] */
       padding-left: $size; /* [3] */
     }
@@ -64,8 +64,8 @@ $spacing-sizes: (
 
 /* Automatically size cells by distributing them equally
 ========================================================================== */
-.l-grid--auto {
-  & > .l-grid__cell {
+.o-grid--auto {
+  & > .o-grid__cell {
     flex: 1 0 0;
   }
 }
@@ -74,15 +74,15 @@ $spacing-sizes: (
 
 /* Horizontal alignment
 ========================================================================== */
-.l-grid--center {
+.o-grid--center {
   justify-content: center;
 }
 
-.l-grid--right {
+.o-grid--right {
   justify-content: flex-end;
 }
 
-.l-grid--left {
+.o-grid--left {
   justify-content: flex-start;
 }
 
@@ -90,11 +90,11 @@ $spacing-sizes: (
 
 /* Vertical alignment
 ========================================================================== */
-.l-grid--middle {
+.o-grid--middle {
   align-items: center;
 }
 
-.l-grid--bottom {
+.o-grid--bottom {
   align-items: flex-end;
 }
 
@@ -102,14 +102,14 @@ $spacing-sizes: (
 
 /* Content distribution
 ========================================================================== */
-.l-grid--around {
+.o-grid--around {
   justify-content: space-around;
 }
 
-.l-grid--between {
+.o-grid--between {
   justify-content: space-between;
 }
 
-.l-grid--reverse {
+.o-grid--reverse {
   flex-direction: row-reverse;
 }

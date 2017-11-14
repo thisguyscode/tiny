@@ -92,7 +92,7 @@ $spacing-sizes: (
  * 1. Cells are full-width and stack on top of each other by default.
  */
 
-.l-grid__cell {
+.o-grid__cell {
   position: relative;
   flex: 0 1 auto;
   width: 100%; /* [1] */
@@ -115,7 +115,7 @@ $spacing-sizes: (
   .l-grid#{$size-namespace} { /* [1] */
     margin-left: -$size; /* [2] */
     margin-top: -$size; /* [2] */
-    & > .l-grid__cell {
+    & > .o-grid__cell {
       padding-top: $size; /* [3] */
       padding-left: $size; /* [3] */
     }
@@ -127,7 +127,7 @@ $spacing-sizes: (
 /* Automatically size cells by distributing them equally
 ========================================================================== */
 .l-grid--auto {
-  & > .l-grid__cell {
+  & > .o-grid__cell {
     flex: 1 0 0;
   }
 }

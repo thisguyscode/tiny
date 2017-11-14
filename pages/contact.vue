@@ -25,8 +25,8 @@
           <label for="honeypot" class="_honeypot"></label>
           <input class="_honeypot" id="honeypot" type="text" name="honeypot" value="" />
           
-          <l-grid class="_form-grid">
-            <div class="_details-cell l-grid__cell u-2/5@tablet">
+          <div class="o-grid  _form-grid">
+            <div class="_details-cell o-grid__cell u-2/5@tablet">
 
               <label for="name" class="_label  o-text">Name:</label>
               <input class="_input" type="text" name="name" id="name">
@@ -41,7 +41,7 @@
 
             </div>
 
-            <div class="_message-cell l-grid__cell u-3/5@tablet">
+            <div class="_message-cell o-grid__cell u-3/5@tablet">
               <label for="subject" class="_label  o-text">Subject:</label>
               <input class="_input" type="text" name="subject" id="subject">
 
@@ -60,16 +60,16 @@
 
             </div>
 
-          </l-grid>
+          </div>
         </form>
         
         <div class="_after-message-wrapper" v-if="$store.state.messageSent === true" ref="afterMessage">
-          <l-grid>
-            <div class="l-grid__cell u-3/5@tablet">
+          <div class="o-grid o-grid--flush">
+            <div class="o-grid__cell u-3/5@tablet">
               <h2 class="o-heading o-heading--gamma">Thanks for getting in touch!</h2>
               <p class="o-text o-text--paragraph">You should hear back from me pretty soon.</p>
             </div>
-            <div class="l-grid__cell u-2/5@tablet">
+            <div class="o-grid__cell u-2/5@tablet">
               <c-button 
                 :onClick="reset"
                 class="_reset-button"
@@ -78,7 +78,7 @@
                 Send another message
               </c-button>
             </div>
-          </l-grid>
+          </div>
         </div>
 
       </l-wrapper>

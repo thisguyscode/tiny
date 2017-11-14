@@ -39,10 +39,10 @@
         class="c-project-details__grid-wrapper"
         :class="{ 'visible': showDetails }">
 
-        <l-grid>
+        <div class="o-grid o-grid--flush">
 
           <!-- overview cell -->
-          <div class="c-project-details__overview-cell l-grid__cell u-2/5@tablet">
+          <div class="c-project-details__overview-cell o-grid__cell u-2/5@tablet">
             <h4 class="c-project-details__subheading  o-heading o-heading--delta">Overview</h4>
             <transition name="u-transition-fade">
               <p
@@ -54,13 +54,13 @@
           </div><!--END overview-cell -->
 
           <!-- details cell -->
-          <div class="l-grid__cell u-3/5@tablet">
-            <l-grid>
+          <div class="o-grid__cell u-3/5@tablet">
+            <div class="o-grid o-grid--flush">
               
               <!-- column -->
-              <div class="c-project-details__list-column l-grid__cell u-1/3@tablet">
-                <l-grid>
-                  <div class="c-project-details__group  l-grid__cell u-2/5@mobile u-1/1@tablet">
+              <div class="c-project-details__list-column o-grid__cell u-1/3@tablet">
+                <div class="o-grid o-grid--flush">
+                  <div class="c-project-details__group  o-grid__cell u-2/5@mobile u-1/1@tablet">
                     <h4 class="o-heading o-heading--zeta">Date</h4>
                     <transition name="u-transition-fade">
                       <p
@@ -70,7 +70,7 @@
                       </p>
                     </transition>
                   </div>
-                  <div class="c-project-details__group  l-grid__cell u-2/5@mobile u-1/1@tablet">
+                  <div class="c-project-details__group  o-grid__cell u-2/5@mobile u-1/1@tablet">
                     <h4 class="o-heading o-heading--zeta">Role</h4>
                     <transition name="u-transition-fade">
                       <p
@@ -80,12 +80,12 @@
                       </p>
                     </transition>
                   </div>
-                </l-grid>
+                </div>
               </div><!--END column -->
 
 
               <!-- column -->
-              <div class="c-project-details__list-column l-grid__cell u-2/5@mobile u-1/3@tablet">
+              <div class="c-project-details__list-column o-grid__cell u-2/5@mobile u-1/3@tablet">
                 <h4 class="o-heading o-heading--zeta">Tech</h4>
                 <transition name="u-transition-fade">
                   <ul
@@ -106,7 +106,7 @@
               </div><!--END column -->
 
               <!-- column -->
-              <div class="c-project-details__list-column l-grid__cell u-2/5@mobile u-1/3@tablet">
+              <div class="c-project-details__list-column o-grid__cell u-2/5@mobile u-1/3@tablet">
                 <h4 class="o-heading o-heading--zeta">Skills</h4>
                 <transition name="u-transition-fade">
                   <ul
@@ -122,9 +122,9 @@
                 </transition>
               </div><!--END column -->
 
-            </l-grid>
+            </div>
           </div><!--END details cell -->
-        </l-grid>
+        </div>
       </div><!--END grid-wrapper -->
     </l-wrapper>
   </div><!--END Hero -->

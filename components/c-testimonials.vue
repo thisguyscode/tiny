@@ -1,12 +1,11 @@
 <template>
   <div class="c-testimonials">
-    <!-- <h2 class="o-heading o-heading--beta">Testimonials</h2> -->
-    <l-grid list>
+    <div class="o-grid">
       <li
-        class="_entry l-grid__cell"
+        class="_entry o-grid__cell"
         v-for="testimonial in testimonials" :key="testimonial.id">
-        <l-grid>
-          <div class="_image-cell l-grid__cell u-1/5">
+        <div class="o-grid o-grid--flush">
+          <div class="_image-cell o-grid__cell u-1/5">
             <div class="_image-wrapper" :style="'background-color:' + testimonial.color">
               <c-image
                 v-if="testimonial.character"
@@ -16,7 +15,7 @@
               />
             </div>
           </div>
-          <div class="_details-wrapper  l-grid__cell u-2/5@mobile u-1/5@tablet">
+          <div class="_details-wrapper  o-grid__cell u-2/5@mobile u-1/5@tablet">
             <span 
               v-if="testimonial.color"
               class="o-text _name"
@@ -34,16 +33,16 @@
             <p class="o-text _role">{{ testimonial.role }}</p>
             <p class="o-text _company">@{{ testimonial.company }}</p>
           </div>
-          <div class="l-grid__cell u-2/5@mobile u-3/5@tablet">
+          <div class="o-grid__cell u-2/5@mobile u-3/5@tablet">
             <p class="o-text o-text--lg _quote">
               <span class="_quote-mark open">&ldquo;</span>
               {{ testimonial.quote }}
               <span class="_quote-mark close">&rdquo;</span>
             </p>
           </div>
-        </l-grid>
+        </div>
       </li>
-    </l-grid>
+    </div>
   </div>  
 </template>
 

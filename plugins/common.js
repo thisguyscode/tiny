@@ -17,8 +17,8 @@ import lWrapper from '~/components/layout/l-wrapper'
 Vue.component('l-wrapper', lWrapper)
 
 // Grid
-import lGrid from '~/components/layout/l-grid'
-Vue.component('l-grid', lGrid)
+// import lGrid from '~/components/layout/l-grid'
+// Vue.component('l-grid', lGrid)
 
 /**
  * COMPONENTS

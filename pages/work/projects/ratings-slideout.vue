@@ -50,18 +50,18 @@
 
     <c-box :border="true" :filled="true" :padded="true">
       <l-wrapper size="lg">
-        <l-grid spacing="lg" vertical="middle">
-          <div class="l-grid__cell u-2/3@desktop">
+        <div class="o-grid o-grid--lg o-grid--middle">
+          <div class="o-grid__cell u-2/3@desktop">
             <c-image
               :imageSrc="'trivago/ratings-slideout/review-analysis-desktop.png'"
             />
           </div>
-          <div class="l-grid__cell u-1/3@desktop">
+          <div class="o-grid__cell u-1/3@desktop">
             <c-image
               :imageSrc="'trivago/ratings-slideout/analysis-mobile.png'"
             />
           </div>
-        </l-grid>
+        </div>
       </l-wrapper>
     </c-box>
 
@@ -75,18 +75,18 @@
 
     <c-box :border="true" :filled="true" :padded="true">
       <l-wrapper size="lg">
-        <l-grid spacing="lg" vertical="middle">
-          <div class="l-grid__cell u-2/3@desktop">
+        <div class="o-grid o-grid--lg o-grid--middle">
+          <div class="o-grid__cell u-2/3@desktop">
             <c-image
               :imageSrc="'trivago/ratings-slideout/reviews-desktop.png'"
             />
           </div>
-          <div class="l-grid__cell u-1/3@desktop">
+          <div class="o-grid__cell u-1/3@desktop">
             <c-image
               :imageSrc="'trivago/ratings-slideout/reviews-mobile.png'"
             />
           </div>
-        </l-grid>
+        </div>
       </l-wrapper>
     </c-box>
 
@@ -100,18 +100,18 @@
 
     <c-box :border="true" :filled="true" :padded="true">
       <l-wrapper size="lg">
-        <l-grid spacing="lg" vertical="middle">
-          <div class="l-grid__cell u-2/3@desktop">
+        <div class="o-grid o-grid--lg o-grid--middle">
+          <div class="o-grid__cell u-2/3@desktop">
             <c-image
               :imageSrc="'trivago/ratings-slideout/meta-desktop.png'"
             />
           </div>
-          <div class="l-grid__cell u-1/3@desktop">
+          <div class="o-grid__cell u-1/3@desktop">
             <c-image
               :imageSrc="'trivago/ratings-slideout/meta-mobile.png'"
             />
           </div>
-        </l-grid>
+        </div>
       </l-wrapper>
     </c-box>
 

@@ -3,9 +3,8 @@
   <button
     v-if="submit===true"
     class="c-button"
-    :class="baseClassObject"
-    type="submit"
-    >
+    :class="baseClassArray"
+    type="submit">
     <span class="c-button__inner" :style="innerInlineStyle">
       <c-icon
         v-if="iconName"
@@ -25,7 +24,7 @@
   <c-link
     v-else
     class="c-button"
-    :class="baseClassObject"
+    :class="baseClassArray"
     :style="inlineStyle"
     :relativeLink="computedRelativeLink"
     :externalLink="externalLink"
@@ -44,7 +43,7 @@
         class="c-button__text  o-text  u-vr-reset"
         :class="textClassObject">
         <slot></slot>
-        <!-- Quick content -->
+        <!-- PREDEFINED TEXT -->
         <!-- Contact -->
         <span v-if="content==='contact'">Contact me</span>
         <!-- Profile -->
@@ -77,20 +76,21 @@ export default {
         }
       }
     },
-    baseClassObject: function () {
-      return {
-        'c-button--ghost': this.type === 'ghost',
-        'c-button--solid': this.type === 'solid',
-        'c-button--stretch': this.stretch === true,
-        'c-button--sm': this.size === 'sm',
-        'c-button--md': this.size === 'md',
-        'c-button--lg': this.size === 'lg',
-        'c-button--go': this.intent === 'go',
-        'c-button--danger': this.intent === 'danger',
-        'c-button--quiet': this.intent === 'quiet'
-        // 'c-button--dark': this.contrast === 'dark',
-        // 'c-button--light': this.contrast === 'light'
+    baseClassArray: function () {
+      var arr = []
+      if (this.type) {
+        arr.push('c-button--' + this.type)
       }
+      if (this.size) {
+        arr.push('c-button--' + this.size)
+      }
+      if (this.intent) {
+        arr.push('c-button--' + this.intent)
+      }
+      if (this.stetch === true) {
+        arr.push('c-button--stretch')
+      }
+      return arr
     },
     textClassObject: function () {
       return {
@@ -205,9 +205,6 @@ export default {
 
 
 <style lang="scss" scoped>
-/* ========================================================================
-  # SCOPED STYLES
-======================================================================== */
 
 /* Variables
 ======================================================================== */
@@ -218,7 +215,6 @@ $icon-gutter: $unit-xs;
 $font-weight: $font-weight-semi;
 $default-color: $neutral-95;
 $primary-color: $clr-primary;
-
 $underline-shadow: 0 1px rgba($neutral-100, .7); 
 
 
@@ -257,7 +253,6 @@ $underline-shadow: 0 1px rgba($neutral-100, .7);
 }
 
 .c-button__icon {
-  // height: 1rem;
   margin-right: $icon-gutter;
   vertical-align: text-top;
 }
@@ -278,13 +273,8 @@ $underline-shadow: 0 1px rgba($neutral-100, .7);
 
 
 .c-button--ghost {
-  // background-color: rgba($neutral-100, .5);
   transition: box-shadow .2s ease;
   box-shadow: inset 0 0 0 1px rgba($neutral-00, .2), $underline-shadow;
-
-  .c-button__icon {
-    // color: $primary-color;
-  }
 
   &:hover {
     box-shadow: inset 0 0 0 1px $neutral-00, $underline-shadow;
@@ -308,65 +298,6 @@ $underline-shadow: 0 1px rgba($neutral-100, .7);
 }
 
 
-/* Style modifiers
-======================================================================== */
-.c-button--go {
-  box-shadow: inset 0 0 0 1px $clr-good, $underline-shadow;
-  &.c-button--ghost {
-    .c-button__icon {
-      // color: $clr-good;
-    }
-  }
-  &.c-button--solid {
-    background-color: $clr-good;
-    .c-button__icon,
-    .c-button__text {
-      color: contrasting-color($clr-good, $lightest, $darkest);
-    }
-    &:hover {
-      background-color: darken($clr-good, 8%);
-    }
-  }
-}
-
-
-.c-button--danger {
-  box-shadow: inset 0 0 0 1px $clr-bad, $underline-shadow;
-  &.c-button--ghost {
-    .c-button__icon {
-      // color: $clr-bad;
-    }
-  }
-  &.c-button--solid {
-    background-color: $clr-bad;
-    .c-button__text,
-    .c-button__icon {
-      color: contrasting-color($clr-bad, $lightest, $darkest);
-    }
-    &:hover {
-      background-color: darken($clr-bad, 8%);
-    }
-  }
-}
-
-.c-button--quiet {
-  box-shadow: inset 0 0 0 1px $neutral-70, $underline-shadow;
-  &.c-button--ghost {
-    .c-button__icon {
-      // color: $neutral-30;
-    }
-  }
-  &.c-button--solid {
-    background-color: $neutral-90;
-    .c-button__text,
-    .c-button__icon {
-      color: contrasting-color($neutral-90, $lightest, $darkest);
-    }
-    &:hover {
-      background-color: darken($neutral-90, 8%);
-    }
-  }
-}
 
 /* Size modifiers
 ======================================================================== */
@@ -395,5 +326,58 @@ $underline-shadow: 0 1px rgba($neutral-100, .7);
 .c-button--stretch {
   min-width: 100%;
 }
+
+
+
+/* Style modifiers
+======================================================================== */
+.c-button--go {
+  box-shadow: inset 0 0 0 1px $clr-good, $underline-shadow;
+  &.c-button--ghost {
+    .c-button__icon {
+    }
+  }
+  &.c-button--solid {
+    background-color: $clr-good;
+    .c-button__icon,
+    .c-button__text {
+      color: contrasting-color($clr-good, $lightest, $darkest);
+    }
+    &:hover {
+      background-color: darken($clr-good, 8%);
+    }
+  }
+}
+
+
+.c-button--danger {
+  box-shadow: inset 0 0 0 1px $clr-bad, $underline-shadow;
+  &.c-button--solid {
+    background-color: $clr-bad;
+    .c-button__text,
+    .c-button__icon {
+      color: contrasting-color($clr-bad, $lightest, $darkest);
+    }
+    &:hover {
+      background-color: darken($clr-bad, 8%);
+    }
+  }
+}
+
+.c-button--quiet {
+  box-shadow: inset 0 0 0 1px $neutral-70, $underline-shadow;
+  &.c-button--solid {
+    background-color: $neutral-90;
+    .c-button__text,
+    .c-button__icon {
+      color: contrasting-color($neutral-90, $lightest, $darkest);
+    }
+    &:hover {
+      background-color: darken($neutral-90, 8%);
+    }
+  }
+}
+
+
 
 </style>

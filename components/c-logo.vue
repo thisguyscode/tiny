@@ -38,13 +38,12 @@ export default {
 
 
 <style lang="scss" scoped>
-/* ========================================================================
-  # SCOPED STYLES
-======================================================================== */
 
 /* Variables
 ======================================================================== */
 $cap: .875em;
+
+
 
 /* Base class
 ======================================================================== */
@@ -53,31 +52,7 @@ $cap: .875em;
   display: inline-block;
 }
 
-.c-logo--sm {
-  @include vr-offset($cap, $font-size-lg);
-  height: $font-size-lg;
-}
 
-.c-logo--md {
-  @include vr-offset($cap, $font-size-xl);
-  height: $font-size-xl;
-}
-
-.c-logo--xl {
-  @include vr-offset($cap, $font-size-xxl);
-  height: $font-size-xxl;
-
-  @include mq($from: tablet) {
-    @include vr-offset($cap, $font-size-xxxxl);
-    height: $font-size-xxxxl;
-  }
-}
-
-
-// .c-logo__image {
-//   width: 100%;
-//   height: 2rem;
-// }
 
 /* Child classes
 ======================================================================== */
@@ -97,5 +72,29 @@ $cap: .875em;
 }
 .c-logo__vector--light {
   fill: $neutral-100;
+}
+
+
+
+/* Size modifiers
+======================================================================== */
+.c-logo--sm {
+  @include vr-offset($cap, $font-size-lg);
+  height: $font-size-lg;
+}
+
+.c-logo--md {
+  @include vr-offset($cap, $font-size-xl);
+  height: $font-size-xl;
+}
+
+.c-logo--xl {
+  @include vr-offset($cap, $font-size-xxl);
+  height: $font-size-xxl;
+
+  @include mq($from: tablet) {
+    @include vr-offset($cap, $font-size-xxxxl);
+    height: $font-size-xxxxl;
+  }
 }
 </style>

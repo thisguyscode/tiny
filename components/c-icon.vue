@@ -32,17 +32,15 @@ export default {
 }
 </script>
 
+
 <style lang="scss" scoped>
 
+/* Base Class
+======================================================================== */
 .c-icon {
   width: auto;
-  /* Include the following two lines to make this work in Safari */
   max-width: 100%;
   max-height: 100%;
-}
-
-.c-icon--resize {
-  
 }
 
 </style>

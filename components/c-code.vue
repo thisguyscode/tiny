@@ -1,20 +1,20 @@
 <template>
   <div class="c-code">
  
-    <div class="c-code_reference-wrapper" ref="codeReference" :id="'code-reference-' + _uid">
+    <div class="c-code__reference-wrapper" ref="codeReference" :id="'code-reference-' + _uid">
 
       <l-affix
-        className="_sticky-header"
+        className="c-code__affix"
         :relativeElementSelector="'#code-reference-' + _uid"
         :z="200"
         :offset="{top: 144, bottom: 0}">
 
         <!-- Must use template to show contents before affix js has loaded on client -->
         <template scope="props" slot="contents">
-          <div class="c-code_header" v-if="filename">
-            <div class="c-code_header-reference">
-              <span class="c-code_header-gutter  o-code">
-                <c-icon class="c-code_icon" name="file"></c-icon>
+          <div class="c-code__header" v-if="filename">
+            <div class="c-code__header-reference">
+              <span class="c-code__header-gutter  o-code">
+                <c-icon class="c-code__icon" name="file"></c-icon>
               </span>
               <span class="c-code_filename o-code o-code--sm">{{ filename }}</span>
             </div>
@@ -26,11 +26,11 @@
       <div class="c-code_code-area">
         <c-baselines class="c-code__baselines" :inverse="true"></c-baselines>
         
-        <div class="c-code_gutter">
-          <div class="c-code_number o-code" v-for="i in lineCount" :key="i">{{i}}</div>
+        <div class="c-code__gutter">
+          <div class="c-code__number o-code" v-for="i in lineCount" :key="i">{{i}}</div>
         </div>
 
-        <div class="c-code_code-block">
+        <div class="c-code__code-block">
           <pre><code class="c-code_code  o-code" v-html="content">
           </code></pre>
         </div>
@@ -39,7 +39,7 @@
 
     </div>
 
-    <span class="c-code_slot-wrapper" ref="slotWrapper">
+    <span class="c-code__slot-wrapper" ref="slotWrapper">
       <slot></slot>
     </span>
 
@@ -127,124 +127,124 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  
-  
-  
-  // @import '~highlight.js/styles/github.css';
-  $padding-x: $unit-lg;
-  $padding-y: $unit-sm;
-  pre {
-    // font-family: $font-mono;
-    margin: 0;
-  }
-  
-  .c-code {
-    // @include vr($font-mono, $font-size-sm);
-    // @include vr-reset;
-    text-align: left;
-    margin-bottom: $paragraph-trailer;
-    // box-shadow: inset 0 0 0 1px $neutral-100;
-    color: $lightest;
-    
-    @include mq($until: tablet) {
-      margin-left: -$page-padding-mobile;
-      margin-right: -$page-padding-mobile;
-    }
-  }
-  .c-code__baselines {
-    opacity: .5;
-  }
 
-  .c-code_header {
-    // transition: padding-top .2s ease;
-    width: 100%;
-    // padding-bottom: $unit-xs;
-    position: relative;
-    color: $neutral-00;
-  }
-  .c-code_header-reference {
-    padding-left: $unit-lg;
-    padding-right: $unit-sm;
-    position: relative;
-  }
-  .c-code_icon {
-    // vertical-align: text-top;
-    height: 1em;
-    width: auto;
-  }
-  .c-code_header-gutter,
-  .c-code_gutter {
-    width: $unit-lg;
-    text-align: right;
-    position: absolute;
-    padding-right: $unit-sm;
-    top: 0;
-    left: 0;
-  }
-  .c-code_gutter {
-    padding-top: $unit-sm;
-  }
-  .c-code_header-gutter {
-    // padding-top: $unit-xs;
-  }
-  
-  .c-code_code-area {
-    background-color: $dark-05;
-    position: relative;
-    // max-height: $unit-xxl*3;
-    padding-left: $unit-lg;
-    @include mq($from: tablet) {
-      // max-height: $unit-xxl*2;
-    }
-    @include mq($from: desktop) {
-      // max-height: $unit-xxl*3;
-    }
-    @include mq($from: desktop) {
-      // max-height: $unit-xxl*4;
-    }
-  }
+<style lang="scss" scoped>
+/**
+ * N.B. The naming of the classes in this component is completely screwed
+ * ...sorry future Jamie.
+ */
 
-  .c-code_reference-wrapper {
-    overflow-y: scroll;
-    // padding-top: $unit-sm;
-    padding-bottom: $unit-sm;
-    position: relative;
-  }
-  
-  .c-code_code-block {
-    // @include vr($font-mono, $font-size-sm);
-    padding-top: $unit-sm;
-    color: $lightest;
-    overflow-x: scroll;
-    position: relative;
-  }
 
-  .c-code_number {
-    // @include vr($font-mono, $font-size-sm);
-    color: $neutral-70;
-    // margin-bottom: 0;
-  }
-  
-  .c-code_slot-wrapper {
-    display: none;
-  }
-
-  ._sticky-header {
-    &.affix {
-      padding-top: $unit-xs;
-      background-color: $neutral-100;
-      // left: 0;
-      // right: 0;
-      // padding-left: $page-padding-desktop;
-      // padding-right: $page-padding-desktop;
-      // background-color: red;
-    }
-  }
+/* Variables
+======================================================================== */
+$padding-x: $unit-lg;
+$padding-y: $unit-sm;
 
 
 
+/* Base Class
+======================================================================== */
+/**
+ * 1. Break past the l-wrapper on small screens
+ */
+.c-code {
+  text-align: left;
+  margin-bottom: $paragraph-trailer;
+  color: $lightest;
   
+  @include mq($until: tablet) {
+    margin-left: -$page-padding-mobile; /*[1]*/
+    margin-right: -$page-padding-mobile; /*[1]*/
+  }
+}
+
+
+
+/* MISC
+======================================================================== */
+.c-code__baselines {
+  opacity: .5;
+}
+
+.c-code__slot-wrapper {
+  display: none;
+}
+
+
+
+/* Header
+======================================================================== */
+.c-code__header-reference {
+  padding-left: $unit-lg;
+  padding-right: $unit-sm;
+  position: relative;
+}
+
+.c-code__header {
+  width: 100%;
+  position: relative;
+  color: $neutral-00;
+}
+
+.c-code__affix {
+  &.affix {
+    padding-top: $unit-xs;
+    background-color: $neutral-100;
+  }
+}
+
+
+/* Code Area
+======================================================================== */
+.c-code__reference-wrapper {
+  overflow-y: scroll;
+  padding-bottom: $unit-sm;
+  position: relative;
+}
+
+.c-code_code-area {
+  background-color: $dark-05;
+  position: relative;
+  padding-left: $unit-lg;
+}
+
+.c-code__code-block {
+  padding-top: $unit-sm;
+  color: $lightest;
+  overflow-x: scroll;
+  position: relative;
+}
+
+
+/* Gutters
+======================================================================== */
+.c-code__header-gutter,
+.c-code__gutter {
+  width: $unit-lg;
+  text-align: right;
+  position: absolute;
+  padding-right: $unit-sm;
+  top: 0;
+  left: 0;
+}
+
+.c-code__gutter {
+  padding-top: $unit-sm;
+}
+
+.c-code__number {
+  color: $neutral-70;
+}
+
+.c-code__icon {
+  height: 1em;
+  width: auto;
+}
+
+
+
+/* Syntax Highlighting
+======================================================================== */
 .hljs-keyword,
 .hljs-literal,
 .hljs-symbol,
@@ -323,10 +323,6 @@ export default {
 .hljs-strong {
   font-weight: bold;
 }
-
-/*.hljs-code {
-  font-family:'Monospace';
-}*/
 
 .hljs-bullet,
 .hljs-selector-tag,

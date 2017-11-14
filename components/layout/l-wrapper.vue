@@ -1,5 +1,5 @@
 <template>
-  <div class="l-wrapper" :class="baseClassObject">
+  <div class="l-wrapper" :class="baseClassArray">
     <slot></slot>
   </div>
 </template>
@@ -13,18 +13,19 @@ export default {
     }
   },
   computed: {
-    baseClassObject: function () {
-      return {
-        'l-wrapper--sm': this.size === 'sm',
-        'l-wrapper--md': this.size === 'md',
-        'l-wrapper--lg': this.size === 'lg'
-      }
+    baseClassArray: function () {
+      return [
+        'l-wrapper--' + this.size
+      ]
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>  
+<style lang="scss" scoped>
+
+/* Base Class
+======================================================================== */  
 .l-wrapper {
   display: block;
   position: relative;
@@ -50,16 +51,25 @@ export default {
   }
 }
 
+
+/* Size Modifiers
+======================================================================== */  
+
+/**
+ * 1. Standard font-size is still legible at this width.
+ * 2. The standard max-width defined in the project variables
+ * 3. Standard max-width with a little extra
+ */
 .l-wrapper--sm {
-  max-width: 50rem;
+  max-width: 50rem; /*[1]*/
 }
 
 .l-wrapper--md {
-  max-width: $content-max-width;
+  max-width: $content-max-width; /*[2]*/
 }
 
 .l-wrapper--lg {
-  max-width: calc(#{$content-max-width} + #{$unit-xxl*4});
+  max-width: calc(#{$content-max-width} + #{$unit-xxl*4}); /*[3]*/
 }
 
 </style>

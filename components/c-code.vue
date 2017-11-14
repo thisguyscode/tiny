@@ -125,7 +125,7 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 /**
  * N.B. The naming of the classes in this component is completely screwed
  * ...sorry future Jamie.

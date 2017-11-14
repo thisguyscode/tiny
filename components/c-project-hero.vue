@@ -60,9 +60,10 @@
             <div class="c-project-hero-image-reference  o-liner" :class="setImgWrapperClass(project)">
               <div class="c-project-hero-image-wrapper">
                 <c-image
+                  v-if="project.imgSrc"
                   class="c-project-hero__image"
                   :class="setImgClass(project)"
-                  v-if="project.imgSrc"
+                  :alt="project.imgAltText"
                   :lazy="false"
                   :fit="setImgFit(project)"
                   :imageSrc="project.imgSrc"

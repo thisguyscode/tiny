@@ -3,12 +3,13 @@
     <c-baselines></c-baselines>
     <c-image
       v-if="bgImageSrc"
-      :lazy="false"
       class='c-hero__background-image  o-liner'
-      fit="cover"
-      :class="bgImageClass"
-      :style="'opacity: ' + bgImageOpacity"
       :imageSrc="bgImageSrc"
+      :class="bgImageClass"
+      :altText="bgImageAltText"
+      :style="'opacity: ' + bgImageOpacity"
+      :lazy="false"
+      fit="cover"
     />
     <l-wrapper>
       <div class="c-hero__text-wrapper u-4/5@tablet u-3/5@desktop">

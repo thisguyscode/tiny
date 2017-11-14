@@ -8,7 +8,7 @@
         {
           "name": "National Data Dashboard",
           "slug": "data-dashboard",
-          "color": "#54a94b",
+          "color": "#B5DA98",
           "date": "Apr - May 2017",
           "role": "UI Designer",
           "skills": [
@@ -22,7 +22,8 @@
           "overview": "A dashboard for tracking a range of indicators on a national level, with granularity down to a district level.",
           "imgSrc": "socialcops/data-dashboard/003.jpg",
           "imgPosition": "top-left",
-          "imgClass": "cover"
+          "imgClass": "cover",
+          "imgAltText": "Map with colored areas on a web app dashboard"
         },
         {
           "name": "Product Mockups (incl. GIFS)",
@@ -40,7 +41,8 @@
           ],
           "overview": "Making a tonne of simplified product mock-ups, mostly depicting future features (i.e. without references).",
           "imgSrc": "socialcops/product-mockups/main.png",
-          "imgClass": "cover"
+          "imgClass": "cover",
+          "imgAltText": "A variety of web application mockups / screenshots"
         },
         {
           "name": "SCSS-based color palette generator",
@@ -61,7 +63,8 @@
           "overview": "A bit of funky SCSS for automatically generating color palettes from a single color input.",
           "imgPosition": "top-left",
           "imgSrc": "socialcops/scss-colors/main.png",
-          "imgClass": "cover"
+          "imgClass": "cover",
+          "imgAltText": "A range of monochromatic color palettes"
         },
         {
           "name": "My Application to SocialCops",
@@ -84,7 +87,8 @@
           "overview": "The mini-tasks that got me a job at SocialCops. Infographics, microsites and a little UI for good measure.",
           "imgPosition": "top-left",
           "imgSrc": "socialcops/application-to-sc/main.jpg",
-          "imgClass": "cover"
+          "imgClass": "cover",
+          "imgAltText": "An infographic showing various data relating to Malaria"
         }
       ]
     },
@@ -108,7 +112,8 @@
           ],
           "overview": "Make the hotel reviews / ratings / info more accessible on trivago (i.e. reduce users' need to visit partner site for anything other than booking)",
           "imgSrc": "trivago/ratings-slideout/main.png",
-          "imgClass": "cover"
+          "imgClass": "cover",
+          "imgAltText": "A sample of an interface relating to hotel ratings on trivago"
         },
         {
           "name": "Hotel Item Element",
@@ -125,7 +130,8 @@
           ],
           "overview": "Clean up the hotel item element which populates the main results list on trivago.",
           "imgSrc": "trivago/hotel-item/item-evolution-mobile.jpg",
-          "imgClass": "cover"
+          "imgClass": "cover",
+          "imgAltText": "A collage depicting the evolution of a small user interface element"
         },
         {
           "name": "Web Banner Design & Creation",
@@ -140,10 +146,11 @@
           "techs": [
             "Adobe Photoshop"
           ],
+          "overview": "Use web banners to drive traffic to trivago and improve brand recall. Must meet specific file-size and dimension criteria",
           "imgSrc": "trivago/web-banners/main.png",
           "imgClass": "fill",
           "imgWrapperClass": "padded",
-          "overview": "Use web banners to drive traffic to trivago and improve brand recall. Must meet specific file-size and dimension criteria"
+          "imgAltText": "Web banners ads promoting various holiday destinations"
         },
         {
           "name": "Miscellaneous Illustrations n Tings",
@@ -161,7 +168,8 @@
           ],
           "overview": "I took on a lot of little internal projects at trivago. Here's a quick sample.",
           "imgSrc": "trivago/misc/main.png",
-          "imgClass": "cover"
+          "imgClass": "cover",
+          "imgAltText": "A t-shirt with a marathon-themed collage printed on it in the shape of the trivago icon"
         }
       ]
     },
@@ -189,7 +197,8 @@
           "overview": "Enforcing a strict (far more strict than necessary) vertical rhythm on this website.",
           "imgClass": "cover",
           "imgPosition": "top-left",
-          "imgSrc": "personal/vr/main.jpg"
+          "imgSrc": "personal/vr/main.jpg",
+          "imgAltText": "Text in various sizes on a lined background"
         }
       ]
     }

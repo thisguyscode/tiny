@@ -6,7 +6,8 @@
       v-if="extension === 'svg' || extension === 'gif'"
       :src="img.src"
       :data-src="img.dataSrc"
-      :class="img.class">
+      :class="img.class"
+      :alt="altText">
     </img>
 
 
@@ -29,6 +30,7 @@
         :srcset="img.srcset"
         :data-src="img.dataSrc"
         :data-srcset="img.dataSrcset"
+        :alt="altText"
       />
 
       <!-- Loader -->
@@ -50,6 +52,10 @@ export default {
     cLoadingIndef
   },
   props: {
+    altText: {
+      type: String,
+      required: true
+    },
     imageSrc: {
       required: true
     },

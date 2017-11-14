@@ -98,29 +98,13 @@ export default {
 ======================================================================== */
 
 .c-site-header__nav {
-  // overflow: hidden;
   transition: border-color .2s ease;
   background-color: $neutral-100;
   border-bottom: 1px solid $neutral-00;
   border-top: 1px solid $neutral-00;
-  // &:after {
-  //   content: '';
-  //   pointer-events: none;
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   z-index: 1;
-    
-  // }
+  margin-top: -1px;
+
 }
-// .c-site-header__nav--dark {
-//   border-bottom-color: rgba($darkest, .5);
-// }
-// .c-site-header__nav--light {
-//   border-bottom-color: rgba($lightest, .5);
-// }
 
 .c-site-header__link,
 .c-site-header__logo-wrapper {

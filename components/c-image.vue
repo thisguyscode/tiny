@@ -54,7 +54,7 @@ export default {
   props: {
     altText: {
       type: String,
-      required: true
+      default: ''
     },
     imageSrc: {
       required: true

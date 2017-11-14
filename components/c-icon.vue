@@ -3,7 +3,8 @@
   <icon
     class="c-icon"
     :class="classObject"
-    :name="name">
+    :name="name"
+    :title="computedTitle">
   </icon>
 
 </template>
@@ -16,6 +17,10 @@ export default {
       type: String,
       required: true
     },
+    title: {
+      type: String,
+      required: false
+    },
     vertical: {
       type: Boolean,
       default: false
@@ -26,6 +31,13 @@ export default {
       return {
         'c-icon--middle': this.vertical === true,
         'c-icon--resize': this.resize === true
+      }
+    },
+    computedTitle: function () {
+      if (!this.title) {
+        return this.name
+      } else {
+        return this.title
       }
     }
   }

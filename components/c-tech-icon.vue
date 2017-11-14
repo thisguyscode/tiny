@@ -12,6 +12,7 @@
     </div>
     <c-image
       v-else-if="iconImg"
+      :alt="name + ' logo'"
       :lazy="false"
       :imageSrc="iconImg"
     />

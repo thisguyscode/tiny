@@ -22,14 +22,6 @@
 
 <script>
 export default {
-  data: () => {
-    return {
-      newOffset: {
-        top: '',
-        bottom: ''
-      }
-    }
-  },
   props: {
     fullWidth: {
       type: Boolean,
@@ -58,10 +50,10 @@ export default {
     }
   },
   computed: {
-    placeholder () {
+    placeholder: function () {
       return this.$refs.jsPlaceholder
     },
-    actual () {
+    actual: function () {
       return this.$refs.jsActual
     },
     classObject: function () {
@@ -90,51 +82,39 @@ export default {
     }
   },
   mounted () {
-    this.newOffset = {
-      top: this.offset.top + this.placeholder.clientHeight,
-      bottom: this.offset.bottom
-    }
     this.removePlaceholderHeight()
   }
 }
 </script>
 
+
 <style lang="scss" scoped>
-  $transition-duration: 1s;
-  $transition-easing: ease;
 
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity $transition-duration $transition-easing
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0
-  }
+/* Base Class
+======================================================================== */
+.l-affix {
+  position: relative;
+}
 
-  .l-affix {
-    position: relative;
-  }
 
-  .vue-affix {
-    width: auto;
-    transition: opacity .1s ease;
+/* Modifiers
+======================================================================== */
+.--full-width {
+  width: 100%;
+}
 
-    &.affix-bottom {
-      opacity: 0;
-    }
-  }
 
-  ._actual {
-    height: 0;
-    overflow: visible;
-    position: relative;
-  }
-  ._placeholder {
-    position: relative;
-    display: block;
-  }
+/* Child Classes
+======================================================================== */
+._actual {
+  height: 0;
+  overflow: visible;
+  position: relative;
+}
 
-  .--full-width {
-    width: 100%;
-  }
+._placeholder {
+  position: relative;
+  display: block;
+}
 
 </style>

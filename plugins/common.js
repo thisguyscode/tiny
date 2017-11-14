@@ -20,10 +20,6 @@ Vue.component('l-wrapper', lWrapper)
 import lGrid from '~/components/layout/l-grid'
 Vue.component('l-grid', lGrid)
 
-// Height Wrapper
-import lHeightWrapper from '~/components/layout/l-height-wrapper'
-Vue.component('l-height-wrapper', lHeightWrapper)
-
 /**
  * COMPONENTS
  */

@@ -541,7 +541,6 @@
   import cIntroText from '~/components/c-intro-text'
   import lAffix from '~/components/layout/l-affix'
   import lMainContent from '~/components/layout/l-main-content'
-  import lStaggeredGrid from '~/components/layout/l-staggered-grid'
 
   export default {
     layout: 'default',
@@ -556,8 +555,7 @@
       cIntroText,
       cCtaPanel,
       lAffix,
-      lMainContent,
-      lStaggeredGrid
+      lMainContent
     },
     data: () => {
       return {

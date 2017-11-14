@@ -50,24 +50,8 @@ export default {
 
 
 <style lang="scss" scoped>
-/* ========================================================================
-  # SCOPED STYLES
-======================================================================== */
 
-
-/* Global variable dependencies
-======================================================================== */
-
-// Sizes
-$unit-xxl:        $unit-xxl;
-
-// Colors
-$lighest:         $lightest;
-$darkest:         $darkest;
-$neutral-80:      $neutral-80;
-
-
-/* Local variables
+/* Variables
 ======================================================================== */
 $background-color: $semi-transparent-background;
 $border: inset 0 -1px 0 0 $neutral-00;
@@ -81,11 +65,8 @@ $border: inset 0 -1px 0 0 $neutral-00;
   overflow: hidden;
   background-color: $background-color;
   box-shadow: $border;
-  // color: contrasting-color($background-color, $lightest, $darkest);
   color: $neutral-00;
   min-height: $unit-xxl*2;
-  // margin-bottom: -1px;
-  // margin-top: -1px;
 
   @include mq($from: tablet) {
     min-height: $unit-xxl*5;
@@ -103,7 +84,6 @@ $border: inset 0 -1px 0 0 $neutral-00;
   float: right;
   padding-top: $unit-xxl;
   padding-bottom: $unit-xxl;
-  // text-shadow: 0 2px 10px rgba($darkest, .7);
 }
 
 </style>

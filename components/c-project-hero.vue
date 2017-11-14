@@ -63,7 +63,7 @@
                   v-if="project.imgSrc"
                   class="c-project-hero__image"
                   :class="setImgClass(project)"
-                  :alt="project.imgAltText"
+                  :altText="project.imgAltText"
                   :lazy="false"
                   :fit="setImgFit(project)"
                   :imageSrc="project.imgSrc"

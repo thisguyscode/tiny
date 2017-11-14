@@ -83,7 +83,7 @@
               <c-image
                 v-if="imgSrc"
                 :imageSrc="imgSrc"
-                :alt="project.imgAltText"
+                :altText="project.imgAltText"
                 :fit="project.imgClass"
                 :position="project.imgPosition"
                 :desktop=".7"

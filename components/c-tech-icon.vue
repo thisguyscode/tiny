@@ -12,7 +12,6 @@
     </div>
     <c-image
       v-else-if="iconImg"
-      :makeResponsive="false"
       :lazy="false"
       :imageSrc="iconImg"
     />

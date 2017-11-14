@@ -1,20 +1,14 @@
 <template>
   <div class="c-image">
     
-    <!-- IF it's an svg then simply load it -->
+    <!-- IF it's an svg or gif then use a simple <img> tag -->
     <img
-      v-if="extension === 'svg'"
+      v-if="extension === 'svg' || extension === 'gif'"
       :src="img.src"
       :data-src="img.dataSrc"
       :class="img.class">
     </img>
 
-    <img
-      v-else-if="extension === 'gif'"
-      :src="img.src"
-      :data-src="img.dataSrc"
-      :class="img.class">
-    </img>
 
     <!-- ELSE-IF it's a JPG / PNG / etc -->
     <picture v-else class="c-image__picture">
@@ -58,10 +52,6 @@ export default {
   props: {
     imageSrc: {
       required: true
-    },
-    makeResponsive: {
-      type: Boolean,
-      default: true
     },
     fit: {
       type: String,
@@ -209,8 +199,6 @@ export default {
     responsive: function () {
       if (this.extension === 'svg' || this.extension === 'gif') {
         return false
-      } else if (this.makeResponsive === false) {
-        return false
       } else {
         return true
       }
@@ -326,11 +314,6 @@ export default {
 
 
 <style lang="scss" scoped>
-/* ========================================================================
-  # SCOPED STYLES
-======================================================================== */
-
-
 
 /* Base class
 ======================================================================== */
@@ -344,29 +327,20 @@ export default {
   margin-right: auto;
 }
 
-/* Child classes
+
+
+/* The <picture> element
 ======================================================================== */
-// <picture> element
 .c-image__picture {
   text-align: center;
-  // position: relative;
   width: 100%;
   max-width: 100%;
-  // height: 100%;
 }
 
 
-// loader
-.c-image__loader {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
-
-// the actual <img>
+/* The actual <img>
+======================================================================== */
 .c-image__image {
   display: inline-block;
   overflow: hidden;
@@ -374,6 +348,9 @@ export default {
 }
 
 
+
+/* Fit modifiers
+======================================================================== */
 .c-image__image--default-fit {
   object-fit: contain;
 }
@@ -383,7 +360,6 @@ export default {
   max-width: 100%;
   object-fit: contain;
 }
-
 
 .c-image__image--fill {
   width: 100%;
@@ -397,6 +373,10 @@ export default {
   object-fit: cover;
 }
 
+
+
+/* Position modifiers
+======================================================================== */
 .c-image__image--center {
   &.c-image__image--contain {
     position: absolute;
@@ -415,7 +395,6 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    // transform: translate3d(-50%, -50%, 0);
   }
   &.c-image__image--cover {
     object-position: 0 0;
@@ -449,8 +428,17 @@ export default {
 }
 
 
-/* Removed loader when required
+
+/* Lazyload
 ======================================================================== */
+.c-image__loader {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .lazyloaded {
   & ~ .c-image__loader {
     display: none;
@@ -461,19 +449,6 @@ export default {
   width: 100%;
   height: 100%;
   display: block;
-  // max-width: 100%;
-  // max-height: 100%;
-  // display: block;
-  // min-width: $unit-xxl*3;
-  // min-height: $unit-xxl*1;
-  // @include mq($from: tablet) {
-  //   min-width: $unit-xxl*6;
-  //   min-height: $unit-xxl*2;
-  // }
-  // @include mq($from: desktop) {
-  //   min-width: $unit-xxl*9;
-  //   min-height: $unit-xxl*3;
-  // }
 }
 
 </style>

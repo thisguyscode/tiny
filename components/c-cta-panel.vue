@@ -17,7 +17,7 @@
             </div>
             <div class="l-grid__cell  u-1/3@tablet">
               <c-button
-                class="_main-cta-button"
+                class="c-cta-panel__main-cta-button"
                 type="solid"
                 :content="mainCtaButton">
               </c-button>
@@ -25,10 +25,10 @@
           </l-grid>
         </div>
         <div class="l-grid__cell u-1/5"></div>
-        <div class="_subCtaWrapper  l-grid__cell  u-1/5@tablet  u-text--lower-contrast">
+        <div class="c-cta-panel__sub-cta-wrapper  l-grid__cell  u-1/5@tablet">
           <h2 class="o-heading o-heading--gamma">{{ subCtaHeading }}</h2>
           <c-button
-            class="_sub-cta-button u-margin-bottom-none"
+            class="c-cta-panel__sub-cta-button u-margin-bottom-none"
             type="ghost"
             :content="subCtaButton">
           </c-button>
@@ -39,83 +39,85 @@
 </template>
 
 <script>
-
-  import cButton from '~/components/c-button'
-  export default {
-    components: {
-      cButton
+import cButton from '~/components/c-button'
+export default {
+  components: {
+    cButton
+  },
+  props: {
+    mainCtaHeading: {
+      type: String,
+      required: true
     },
-    props: {
-      mainCtaHeading: {
-        type: String,
-        required: true
-      },
-      mainCtaBodyText: {
-        type: String,
-        required: true
-      },
-      mainCtaButton: {
-        type: String,
-        required: true
-      },
-      subCtaHeading: {
-        type: String,
-        required: true
-      },
-      subCtaButton: {
-        type: String,
-        required: true
-      }
+    mainCtaBodyText: {
+      type: String,
+      required: true
+    },
+    mainCtaButton: {
+      type: String,
+      required: true
+    },
+    subCtaHeading: {
+      type: String,
+      required: true
+    },
+    subCtaButton: {
+      type: String,
+      required: true
     }
   }
-
+}
 </script>
+
 
 <style lang="scss" scoped>
 
-  
+/* Base Class
+======================================================================== */
+.c-cta-panel {
+  position: relative;
+  text-align: left;
+  padding-top: $unit-xl;
+  padding-bottom: $unit-lg;
+  background-color: $semi-transparent-background;
+  box-shadow: inset 0 1px 0 0 $neutral-50, inset 0 -1px 0 0 $neutral-00;
 
-  .c-cta-panel {
-    position: relative;
-    text-align: left;
+  @include mq($from: tablet) {
     padding-top: $unit-xl;
-    padding-bottom: $unit-lg;
-    background-color: $semi-transparent-background;
-    box-shadow: inset 0 1px 0 0 $neutral-50, inset 0 -1px 0 0 $neutral-00;
-
-    @include mq($from: tablet) {
-      padding-top: $unit-xl;
-      padding-bottom: $unit-xl;
-    }
-    
-    @include mq($from: desktop) {
-      padding-top: $unit-xxl + $unit-md;
-      padding-bottom: $unit-xxl + $unit-md;
-    }
+    padding-bottom: $unit-xl;
   }
-
-  .c-cta-panel__main-body-text {
-    color: $neutral-30;
+  
+  @include mq($from: desktop) {
+    padding-top: $unit-xxl + $unit-md;
+    padding-bottom: $unit-xxl + $unit-md;
   }
+}
 
-  ._main-cta-button {
-    @include mq($until: tablet) {
-      margin-bottom: $paragraph-trailer*2;
-    }
-    @include mq($from: tablet) {
-      margin-bottom: 0;
-    }
-  }
 
-  ._sub-cta-button {
-    float: right;
-  }
+/* Child Classes
+======================================================================== */
+.c-cta-panel__main-body-text {
+  color: $neutral-30;
+}
 
-  ._subCtaWrapper {
-    color: $neutral-00;
-    @include mq($from: tablet) {
-      text-align: right;
-    }
+.c-cta-panel__main-cta-button {
+  @include mq($until: tablet) {
+    margin-bottom: $paragraph-trailer*2;
   }
+  @include mq($from: tablet) {
+    margin-bottom: 0;
+  }
+}
+
+.c-cta-panel__sub-cta-button {
+  float: right;
+}
+
+.c-cta-panel__sub-cta-wrapper {
+  color: $neutral-00;
+  @include mq($from: tablet) {
+    text-align: right;
+  }
+}
 
 </style>

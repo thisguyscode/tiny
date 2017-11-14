@@ -35,6 +35,7 @@
   "scripts": {
     "analyze": "nuxt build --analyze",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "deploy-test": "push-dir --dir=dist --remote=test --branch=gh-pages --cleanup",
     "images": "gulp images",
     "dev": "nuxt",
     "build": "nuxt build",

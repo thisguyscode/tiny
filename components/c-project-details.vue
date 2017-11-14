@@ -44,11 +44,13 @@
           <!-- overview cell -->
           <div class="c-project-details__overview-cell l-grid__cell u-2/5@tablet">
             <h4 class="c-project-details__subheading  o-heading o-heading--delta">Overview</h4>
-            <p
-              v-if="transitionEnd"
-              class="c-project-details__overview-string  o-text">
-              {{ project.overview }}
-            </p>
+            <transition name="u-transition-fade">
+              <p
+                v-if="transitionEnd"
+                class="c-project-details__overview-string  o-text">
+                {{ project.overview }}
+              </p>
+            </transition>
           </div><!--END overview-cell -->
 
           <!-- details cell -->
@@ -60,23 +62,23 @@
                 <l-grid>
                   <div class="c-project-details__group  l-grid__cell u-2/5@mobile u-1/1@tablet">
                     <h4 class="o-heading o-heading--zeta">Date</h4>
-                    <!-- <transition name="u-transition-fade"> -->
+                    <transition name="u-transition-fade">
                       <p
                         v-if="transitionEnd"
                         class="c-project-details__item c-project-details__item-string  o-text">
                         {{ project.date }}
                       </p>
-                    <!-- </transition> -->
+                    </transition>
                   </div>
                   <div class="c-project-details__group  l-grid__cell u-2/5@mobile u-1/1@tablet">
                     <h4 class="o-heading o-heading--zeta">Role</h4>
-                    <!-- <transition name="u-transition-fade"> -->
+                    <transition name="u-transition-fade">
                       <p
                         v-if="transitionEnd"
                         class="c-project-details__item c-project-details__item-string  o-text">
                         {{ project.role }}
                       </p>
-                    <!-- </transition> -->
+                    </transition>
                   </div>
                 </l-grid>
               </div><!--END column -->
@@ -85,26 +87,28 @@
               <!-- column -->
               <div class="c-project-details__list-column l-grid__cell u-2/5@mobile u-1/3@tablet">
                 <h4 class="o-heading o-heading--zeta">Tech</h4>
-                <ul
-                  v-if="transitionEnd"
-                  class="c-project-details__group  o-list-bare">
-                  <li
-                    v-for="tech in project.techs"
-                    :key="tech.id"
-                    class="tech-wrapper">
+                <transition name="u-transition-fade">
+                  <ul
+                    v-if="transitionEnd"
+                    class="c-project-details__group  o-list-bare">
+                    <li
+                      v-for="tech in project.techs"
+                      :key="tech.id"
+                      class="tech-wrapper">
 
-                    <c-tech-icon :name="tech"/>
+                      <c-tech-icon :name="tech"/>
 
-                    <span class="c-project-details__item-string  c-project-details__tech-string  o-text">{{ tech }}</span>
+                      <span class="c-project-details__item-string  c-project-details__tech-string  o-text">{{ tech }}</span>
 
-                  </li>
-                </ul>
+                    </li>
+                  </ul>
+                </transition>
               </div><!--END column -->
 
               <!-- column -->
               <div class="c-project-details__list-column l-grid__cell u-2/5@mobile u-1/3@tablet">
                 <h4 class="o-heading o-heading--zeta">Skills</h4>
-                <!-- <transition name="u-transition-fade"> -->
+                <transition name="u-transition-fade">
                   <ul
                     v-if="transitionEnd"
                     class="c-project-details__group o-list-bare">
@@ -115,7 +119,7 @@
                       <span class="c-project-details__item-string  o-text">{{ skill }}</span>
                     </li>
                   </ul>
-                <!-- </transition> -->
+                </transition>
               </div><!--END column -->
 
             </l-grid>
@@ -188,29 +192,6 @@ export default {
 
 
 <style lang="scss" scoped>
-/* ========================================================================
-  # SCOPED STYLES
-======================================================================== */
-
-/* Global variable dependencies
-======================================================================== */
-// Sizes
-$unit-xs: $unit-xs;
-$unit-sm: $unit-sm;
-$unit-md: $unit-md;
-$unit-lg: $unit-lg;
-
-// Colors
-$clr-primary: $clr-primary;
-$lightest:    $lightest;
-$darkest:     $darkest;
-$blue:        $blue;
-$yellow:      $yellow;
-
-/* Local variables
-======================================================================== */
-$transition-duration: .2s;
-$transition-easing: ease;
 
 .c-project-details {
   position: relative;

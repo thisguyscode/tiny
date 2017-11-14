@@ -142,7 +142,7 @@ $padding-y: $unit-sm;
 /* Base Class
 ======================================================================== */
 /**
- * 1. Break past the l-wrapper on small screens
+ * 1. Break out of the l-wrapper on small screens
  */
 .c-code {
   text-align: left;

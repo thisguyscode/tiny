@@ -125,12 +125,10 @@
 </template>
 
 <script>
-import cColorPalette from '~/components/c-color-palette'
 import cCode from '~/components/c-code'
 export default {
   components: {
-    cCode,
-    cColorPalette
+    cCode
   },
   computed: {
     mixinCode: function () {

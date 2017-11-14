@@ -94,7 +94,7 @@
                     <li
                       v-for="tech in project.techs"
                       :key="tech.id"
-                      class="tech-wrapper">
+                      class="c-project-details__tech-wrapper">
 
                       <c-tech-icon :name="tech"/>
 
@@ -161,29 +161,6 @@ export default {
       this.showDetails = this.$store.state.showDetails
     }
   },
-  computed: {
-    textClass: function () {
-      return {
-        '_text-light': this.project.contrastingColor === 'light',
-        '_text-dark': this.project.contrastingColor === 'dark'
-      }
-    },
-    imageWrapperClass: function () {
-      return {
-        '--padded': this.project.imgWrapperClass === 'padded'
-      }
-    },
-    imageClass: function () {
-      return {
-        '--cover': this.project.imgClass === 'cover'
-      }
-    },
-    heroImageCellClass: function () {
-      return {
-        '--cover': this.project.imgClass === 'cover'
-      }
-    }
-  },
   mounted () {
     this.showDetails = this.$store.state.showDetails
   }
@@ -193,6 +170,8 @@ export default {
 
 <style lang="scss" scoped>
 
+/* Base Class
+======================================================================== */
 .c-project-details {
   position: relative;
   text-align: left;
@@ -205,15 +184,12 @@ export default {
   }
   background-color: $semi-transparent-background;
 }
-.c-project-details__heading-trigger-text {
-  margin-right: $unit-xs;
-}
 
-.c-project-details__heading-trigger-icon {
-  height: .8em;
-  color: $clr-primary;
-}
 
+
+
+/* Details Grid
+======================================================================== */
 .c-project-details__grid-wrapper {
   @include mq($until: tablet) {
     display: none;
@@ -223,20 +199,6 @@ export default {
   }
 }
 
-.c-project-details__heading-wrapper {
-  cursor: pointer;
-  padding-bottom: $heading-trailer;
-  &.active {
-    box-shadow: 0 1px 0 0 $neutral-60;
-    margin-bottom: $paragraph-trailer;
-  }
-  @include mq($from: tablet) {
-    display: none;
-  }
-}
-.c-project-details__heading-trigger {
-  float: right;
-}
 .c-project-details__overview-cell {
   @include mq($from: tablet) {
     padding-right: $unit-lg;
@@ -249,6 +211,12 @@ export default {
   }
 }
 
+.c-project-details__group {
+  display: inline-block;
+  padding-bottom: 0;
+  margin-bottom: $unit-md;
+}
+
 .c-project-details__item {
   margin-bottom: $unit-sm;
   &:last-of-type {
@@ -256,63 +224,12 @@ export default {
   }
 }
 
-.c-project-details__group {
-  // @include vr-reset;
-  display: inline-block;
-  padding-bottom: 0;
-  margin-bottom: $unit-md;
-}
 
-.tech-wrapper {
+.c-project-details__tech-wrapper {
   display: flex;
   margin-bottom: $unit-sm;
 }
 
-.c-project-details__tech-icon-wrapper {
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-  padding-left: $unit-xs;
-  padding-right: $unit-xs;
-  text-align: center;
-  height: $unit-md;
-  width: $unit-md;
-  display: inline-block;
-  margin-right: $unit-xs;
-  &.ps {
-    background-color: $blue;
-    > .c-project-details__tech-icon-text {
-      color: contrasting-color($blue, $lightest, $darkest)
-    }
-  }
-  &.ai {
-    background-color: $yellow;
-    > .c-project-details__tech-icon-text {
-      color: contrasting-color($yellow, $lightest, $darkest)
-    }
-  }
-}
-
-.c-project-details__tech-icon {
-  height: 100%;
-  width: auto;
-}
-
-.c-project-details__tech-icon-text {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  transform: translateY(-50%);
-  font-family: $font-display;
-  font-weight: $font-weight-semi;
-  display: inline-block;
-}
-
-.c-project-details__tech-string {
-  display: inline-block;
-}
 
 .c-project-details__overview-string {
   margin-bottom: $unit-md;
@@ -323,12 +240,36 @@ export default {
   color: $neutral-40;
 }
 
-
 .c-project-details__subheading {
   margin-bottom: $unit-sm;
 }
 
-// .c-project-details__inner {
-//   margin-bottom: -1px;
-// }
+
+
+/* Heading (mobile only)
+======================================================================== */
+.c-project-details__heading-wrapper {
+  cursor: pointer;
+  padding-bottom: $heading-trailer;
+  &.active {
+    box-shadow: 0 1px 0 0 $neutral-60;
+    margin-bottom: $paragraph-trailer;
+  }
+  @include mq($from: tablet) {
+    display: none;
+  }
+}
+
+.c-project-details__heading-trigger {
+  float: right;
+}
+
+.c-project-details__heading-trigger-text {
+  margin-right: $unit-xs;
+}
+
+.c-project-details__heading-trigger-icon {
+  height: .8em;
+  color: $clr-primary;
+}
 </style>

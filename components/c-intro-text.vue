@@ -24,11 +24,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  
 
-  .c-intro-text {
-    margin-bottom: $unit-xxl;
-  }
+<style lang="scss" scoped>
+
+/* Base Class
+======================================================================== */
+.c-intro-text {
+  margin-bottom: $unit-xxl;
+}
 
 </style>

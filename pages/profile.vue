@@ -571,6 +571,14 @@
             quote: 'He has excellent analytical abilities. Coupled with his innovative thinking and passion for design, he proved to be an invaluable employee.'
           },
           {
+            name: 'Patrick Triest',
+            company: 'SocialCops',
+            role: 'Full-stack Engineer',
+            character: 'characters/character-09.svg',
+            color: '#1BE7FF',
+            quote: "I'd consider Jamie a 'full-stack designer' - his work reflects a thoughtful synthesis of business requirements, aesthetic quality, UX considerations and engineering feasibility.  He can seamlessly transition from creating mockups for a sales presentations to committing production code to GitHub repositories.  Jamie is an insatiable learner, and is always a joy to collaborate with."
+          },
+          {
             name: 'Sahaj Talwar',
             company: 'SocialCops',
             role: 'Everything Designer',

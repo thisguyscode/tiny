@@ -1,8 +1,7 @@
 <template>
   <div class="c-code">
- 
     <div class="c-code__reference-wrapper" ref="codeReference" :id="'code-reference-' + _uid">
-
+      
       <l-affix
         className="c-code__affix"
         :relativeElementSelector="'#code-reference-' + _uid"
@@ -48,11 +47,9 @@
 
 <script>
 import hljs from '~/utils/highlightLanguages.js'
-import cIcon from '~/components/c-icon'
 import lAffix from '~/components/layout/l-affix'
 export default {
   components: {
-    cIcon,
     lAffix
   },
   data: () => {

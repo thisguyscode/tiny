@@ -2,7 +2,6 @@
   <l-header-primary class="c-site-header">
     
     <c-baselines></c-baselines>
-    <c-gridlines></c-gridlines>
 
     <nav class="c-site-header__nav" :class="navClass" :style="navStyle()">
       <l-wrapper>
@@ -46,16 +45,12 @@
 </template>
 
 <script>
-import cGridlines from '~/components/c-gridlines'
-import cBaselines from '~/components/c-baselines'
 import cLogo from '~/components/c-logo'
 import lHeaderPrimary from '~/components/layout/l-header-primary'
 import detectContrast from '~/utils/detectContrast'
 export default {
   components: {
     lHeaderPrimary,
-    cGridlines,
-    cBaselines,
     cLogo
   },
   computed: {

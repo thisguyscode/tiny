@@ -530,76 +530,74 @@
 </template>
 
 <script>
-  import cGridlines from '~/components/c-gridlines'
-  import cTestimonials from '~/components/c-testimonials'
-  import cTechIcon from '~/components/c-tech-icon'
-  import cLogo from '~/components/c-logo'
-  import cScoreBar from '~/components/c-score-bar'
-  import cHero from '~/components/c-hero'
-  import cCtaPanel from '~/components/c-cta-panel'
-  import cProfileNavbar from '~/components/c-profile-navbar'
-  import cIntroText from '~/components/c-intro-text'
-  import lAffix from '~/components/layout/l-affix'
-  import lMainContent from '~/components/layout/l-main-content'
+import cTestimonials from '~/components/c-testimonials'
+import cTechIcon from '~/components/c-tech-icon'
+import cLogo from '~/components/c-logo'
+import cScoreBar from '~/components/c-score-bar'
+import cHero from '~/components/c-hero'
+import cCtaPanel from '~/components/c-cta-panel'
+import cProfileNavbar from '~/components/c-profile-navbar'
+import cIntroText from '~/components/c-intro-text'
+import lAffix from '~/components/layout/l-affix'
+import lMainContent from '~/components/layout/l-main-content'
 
-  export default {
-    layout: 'default',
-    components: {
-      cGridlines,
-      cTestimonials,
-      cProfileNavbar,
-      cHero,
-      cLogo,
-      cTechIcon,
-      cScoreBar,
-      cIntroText,
-      cCtaPanel,
-      lAffix,
-      lMainContent
-    },
-    data: () => {
-      return {
-        testimonials: [
-          {
-            name: 'Dan Ardenleneu',
-            company: 'trivago',
-            role: 'Head of Design',
-            character: 'characters/character-12.svg',
-            color: '#E4FF1A',
-            quote: 'He has excellent analytical abilities. Coupled with his innovative thinking and passion for design, he proved to be an invaluable employee.'
-          },
-          {
-            name: 'Patrick Triest',
-            company: 'SocialCops',
-            role: 'Full-stack Engineer',
-            character: 'characters/character-09.svg',
-            color: '#1BE7FF',
-            quote: "I'd consider Jamie a 'full-stack designer' - his work reflects a thoughtful synthesis of business requirements, aesthetic quality, UX considerations and engineering feasibility.  He can seamlessly transition from creating mockups for a sales presentations to committing production code to GitHub repositories.  Jamie is an insatiable learner, and is always a joy to collaborate with."
-          },
-          {
-            name: 'Sahaj Talwar',
-            company: 'SocialCops',
-            role: 'Everything Designer',
-            character: 'characters/character-11.svg',
-            color: '#fc6666',
-            quote: "Jamie seems to love pixels almost as much as he loves making jokes. He's a SASSy learner, focuses on details and is just extremely good company to have around."
-          },
-          {
-            name: 'Charlotte Mitchell',
-            company: 'home',
-            role: 'Mum',
-            character: 'characters/character-13.svg',
-            color: '#53DD6C',
-            quote: "He's alright"
-          }
-        ]
-      }
-    },
-    mounted () {
-      this.$store.commit('resetCurrentColor')
+export default {
+  layout: 'default',
+  components: {
+    cGridlines,
+    cTestimonials,
+    cProfileNavbar,
+    cHero,
+    cLogo,
+    cTechIcon,
+    cScoreBar,
+    cIntroText,
+    cCtaPanel,
+    lAffix,
+    lMainContent
+  },
+  data: () => {
+    return {
+      testimonials: [
+        {
+          name: 'Dan Ardenleneu',
+          company: 'trivago',
+          role: 'Head of Design',
+          character: 'characters/character-12.svg',
+          color: '#E4FF1A',
+          quote: 'He has excellent analytical abilities. Coupled with his innovative thinking and passion for design, he proved to be an invaluable employee.'
+        },
+        {
+          name: 'Patrick Triest',
+          company: 'SocialCops',
+          role: 'Full-stack Engineer',
+          character: 'characters/character-09.svg',
+          color: '#1BE7FF',
+          quote: "I'd consider Jamie a 'full-stack designer' - his work reflects a thoughtful synthesis of business requirements, aesthetic quality, UX considerations and engineering feasibility.  He can seamlessly transition from creating mockups for a sales presentations to committing production code to GitHub repositories.  Jamie is an insatiable learner, and is always a joy to collaborate with."
+        },
+        {
+          name: 'Sahaj Talwar',
+          company: 'SocialCops',
+          role: 'Everything Designer',
+          character: 'characters/character-11.svg',
+          color: '#fc6666',
+          quote: "Jamie seems to love pixels almost as much as he loves making jokes. He's a SASSy learner, focuses on details and is just extremely good company to have around."
+        },
+        {
+          name: 'Charlotte Mitchell',
+          company: 'home',
+          role: 'Mum',
+          character: 'characters/character-13.svg',
+          color: '#53DD6C',
+          quote: "He's alright"
+        }
+      ]
     }
+  },
+  mounted () {
+    this.$store.commit('resetCurrentColor')
   }
-
+}
 </script>
 
 

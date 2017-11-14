@@ -1,6 +1,6 @@
 <template>
   <div class="l-affix">
-    <div class="_actual" ref="jsActual">
+    <div class="l-affix__actual" ref="jsActual">
       <f-no-ssr>
         <affix
           :style="'z-index:' + z"
@@ -14,7 +14,7 @@
         </affix>
       </f-no-ssr>
     </div>
-    <div ref="jsPlaceholder" class="_placeholder">
+    <div ref="jsPlaceholder" class="l-affix__placeholder">
       <slot name="contents"></slot>
     </div>
   </div>
@@ -58,7 +58,7 @@ export default {
     },
     classObject: function () {
       return {
-        '--full-width': this.fullWidth
+        'l-affix--full-width': this.fullWidth
       }
     }
   },
@@ -99,20 +99,20 @@ export default {
 
 /* Modifiers
 ======================================================================== */
-.--full-width {
+.l-affix--full-width {
   width: 100%;
 }
 
 
 /* Child Classes
 ======================================================================== */
-._actual {
+.l-affix__actual {
   height: 0;
   overflow: visible;
   position: relative;
 }
 
-._placeholder {
+.l-affix__placeholder {
   position: relative;
   display: block;
 }

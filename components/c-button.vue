@@ -87,7 +87,7 @@ export default {
       if (this.intent) {
         arr.push('c-button--' + this.intent)
       }
-      if (this.stetch === true) {
+      if (this.stretch === true) {
         arr.push('c-button--stretch')
       }
       return arr

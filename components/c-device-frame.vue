@@ -42,20 +42,15 @@ export default {
       type: String,
       default: 'desktop'
     }
-  },
-  computed: {
-    baseClassObject: function () {
-      return {
-        'c-device-frame--mobile': this.device === 'mobile',
-        'c-device-frame--desktop': this.device === 'desktop',
-        'c-device-frame--combo': this.device === 'combo'
-      }
-    }
   }
 }
 </script>
 
+
 <style lang="scss" scoped>
+/**
+ * N.B. Hey future Jamie, this is another really messy one. Sorry.
+ */
 
 /* Variables
 ========================================================================== */
@@ -63,24 +58,22 @@ $mobile-frame-color: $neutral-15;
 
 
 
+/* Base Class
+========================================================================== */
 .c-device-frame {
   position: relative;
   max-width: 100%;
 }
 
 
+
 /* Mobile frame
 ========================================================================== */
 
 .c-device-frame__mobile-frame {
-  width: 100%;
   max-width: 18rem;
-
-  @include mq($from: desktop) {
-    max-width: 25rem;
-  }
-
   min-width: 13rem;
+  width: 100%;
   position: relative;
   display: inline-block;
   background: $mobile-frame-color;
@@ -105,6 +98,10 @@ $mobile-frame-color: $neutral-15;
     height: 3rem;
     top: 5rem;
     background: $neutral-00;
+  }
+
+  @include mq($from: desktop) {
+    max-width: 25rem;
   }
   @include mq($from: desktop) {
     max-width: 35rem;
@@ -147,9 +144,6 @@ $mobile-frame-color: $neutral-15;
       background: $neutral-00;
     }
   }
-  /**
-   * Anyone reading this please forgive the '!important' s 
-   */
 }
 
 
@@ -158,14 +152,6 @@ $mobile-frame-color: $neutral-15;
 .c-device-frame__desktop-frame {
   min-width: $unit-xxl*3;
   min-height: $unit-xxl*1;
-  @include mq($from: tablet) {
-    min-width: $unit-xxl*6;
-    min-height: $unit-xxl*2;
-  }
-  // @include mq($from: desktop) {
-  //   min-width: $unit-xxl*9;
-  //   min-height: $unit-xxl*3;
-  // }
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -198,6 +184,10 @@ $mobile-frame-color: $neutral-15;
     width: $unit-sm;
     height: $unit-sm;
     box-shadow: -1.5rem 0 $neutral-60, -3rem 0 $neutral-60;
+  }
+  @include mq($from: tablet) {
+    min-width: $unit-xxl*6;
+    min-height: $unit-xxl*2;
   }
 }
 
@@ -234,9 +224,9 @@ $mobile-frame-color: $neutral-15;
 }
 
 
-/*  ==========================================================================
-    # MISC
-    ========================================================================== */
+
+/* MISC
+========================================================================== */
 
 .c-device-frame__desktop-frame,
 .c-device-frame__mobile-frame {

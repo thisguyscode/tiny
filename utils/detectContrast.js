@@ -35,7 +35,7 @@ const detectContrast = (testColor) => {
 
   var percent = Math.round(100 * o / 255)
 
-  console.log(percent)
+  // console.log(percent)
   var contrastingColor = (percent > 50) ? 'dark' : 'light'
   return contrastingColor
 }

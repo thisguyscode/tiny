@@ -27,7 +27,7 @@ const detectContrast = (testColor) => {
   var p = Math.sqrt(((red * red * redMagicNumber) + (green * green * greenMagicNumber) + (blue * blue * blueMagicNumber)) / divisor)
   var x = 100 * p / 255
   var o = Math.round(x)
-
+  console.log(o)
   var contrastingColor = (o > 50) ? 'dark' : 'light'
   return contrastingColor
 }

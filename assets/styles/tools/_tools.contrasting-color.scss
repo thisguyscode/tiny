@@ -46,10 +46,15 @@ $brightness-divisor: $red-magic-number + $green-magic-number + $blue-magic-numbe
   $blue-component: blue($color);
 
   // Calculate a brightness value in 3d color space between 0 and 255
-  $number: sqrt((($red-component * $red-component * $red-magic-number) + ($green-component * $green-component * $green-magic-number) + ($blue-component * $blue-component * $blue-magic-number)) / $brightness-divisor);
+  $yiq: (($red-component*299)+($green-component*587)+($blue-component*114))/1000;
 
-  // Convert to percentage and return
+  // Calculate a brightness value in 3d color space between 0 and 255
+  $mid: sqrt((($red-component * $red-component * $red-magic-number) + ($green-component * $green-component * $green-magic-number) + ($blue-component * $blue-component * $blue-magic-number)) / $brightness-divisor);
   @return 100% * $number / 255;
+  
+  // Choose a method
+  // $number: $yiq;
+  // Convert to percentage and return
 }
 
 

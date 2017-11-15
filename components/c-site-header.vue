@@ -142,7 +142,7 @@ export default {
 
 .c-site-header__link {
   transition: color .3s ease;
-  color: $neutral-50;
+  color: $neutral-30;
   text-align: center;
 
   &.nuxt-link-active {

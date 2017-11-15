@@ -173,7 +173,7 @@ $link-padding-x: $unit-sm;
   min-width: $page-padding-mobile;
   padding-right: $unit-xs;
   position: relative;
-  color: $neutral-60;
+  color: $neutral-30;
   
   @include mq($from: tablet) {
     transition: color .4s ease;

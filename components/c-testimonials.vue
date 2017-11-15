@@ -1,6 +1,6 @@
 <template>
   <div class="c-testimonials">
-    <div class="o-grid">
+    <ul class="o-grid">
       <li
         class="_entry o-grid__cell"
         v-for="testimonial in testimonials" :key="testimonial.id">
@@ -42,7 +42,7 @@
           </div>
         </div>
       </li>
-    </div>
+    </ul>
   </div>  
 </template>
 

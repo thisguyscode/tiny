@@ -28,7 +28,7 @@ const detectContrast = (testColor) => {
   var x = 100 * p / 255
   var o = Math.round(x)
 
-  var contrastingColor = (o > 60) ? 'dark' : 'light'
+  var contrastingColor = (o > 50) ? 'dark' : 'light'
   return contrastingColor
 }
 

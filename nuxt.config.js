@@ -5,6 +5,9 @@ module.exports = {
   router: {
     base: '/'
   },
+  manifest: {
+    theme_color: '#000000'
+  },
   /*
   ** Headers of the page
   */
@@ -69,14 +72,7 @@ module.exports = {
   ],
   modules: [
     ['nuxt-sass-resources-loader', './assets/styles/imports.scss'],
-    ['@nuxtjs/pwa', {
-      // icon: {
-      //   sizes: [ 512, 192, 380 ]
-      // },
-      meta: {
-        theme_color: '#000'
-      }
-    }]
+    ['@nuxtjs/pwa']
   ],
   /*
   ** Build configuration

@@ -70,8 +70,11 @@ module.exports = {
   modules: [
     ['nuxt-sass-resources-loader', './assets/styles/imports.scss'],
     ['@nuxtjs/pwa', {
-      icon: {
-        sizes: [ 512, 192, 380 ]
+      // icon: {
+      //   sizes: [ 512, 192, 380 ]
+      // },
+      meta: {
+        theme_color: '#000'
       }
     }]
   ],

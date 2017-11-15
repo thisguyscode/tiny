@@ -14,26 +14,11 @@ function hexToRgb (hex) {
  */
 const detectContrast = (testColor) => {
   var rgb = hexToRgb(testColor)
-
-  var red = parseInt(rgb[0])
-  var green = parseInt(rgb[1])
-  var blue = parseInt(rgb[2])
-
-  var redMagicNumber = 241
-  var greenMagicNumber = 691
-  var blueMagicNumber = 68
-  var divisor = redMagicNumber + greenMagicNumber + blueMagicNumber
-
-  // var o = Math.round((
-  //   (parseInt(rgb[0]) * redMagicNumber) +
-  //   (parseInt(rgb[1]) * greenMagicNumber) +
-  //   (parseInt(rgb[2]) * blueMagicNumber)
-  // ) / divisor)
-  var p = Math.sqrt(((red * red * redMagicNumber) + (green * green * greenMagicNumber) + (blue * blue * blueMagicNumber)) / divisor)
-  var x = 100 * p / 255
-  var o = Math.round(x)
-
-  var contrastingColor = (o > 60) ? 'dark' : 'light'
+  var o = Math.round((
+    (parseInt(rgb[0]) * 299) +
+    (parseInt(rgb[1]) * 587) +
+    (parseInt(rgb[2]) * 114)) / 1000)
+  var contrastingColor = (o > 125) ? 'dark' : 'light'
   console.log(o)
   return contrastingColor
 }

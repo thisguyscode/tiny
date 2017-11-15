@@ -309,12 +309,12 @@ export default {
     }
   }
 
-  ._details-wrapper {
-    @include mq($from: tablet) {
-      padding-top: $unit-sm;
-      padding-bottom: $unit-sm;
-    }
-  }
+  // ._details-wrapper {
+  //   @include mq($from: tablet) {
+  //     // padding-top: $unit-sm;
+  //     // padding-bottom: $unit-sm;
+  //   }
+  // }
 
   ._image {
     object-fit: contain;

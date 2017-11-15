@@ -10,34 +10,38 @@
 
           <!-- LOGO -->
           <li class="o-grid__cell  u-1/4  u-2/5@mobile" v-scroll-to="'#page-top'">
-            <nuxt-link class="c-site-header__logo-wrapper" to="/">
+            <c-link
+              relativeLink="/"
+              class="c-site-header__logo-wrapper">
               <c-logo class="c-site-header__logo" size="md"></c-logo>
-            </nuxt-link>
+              <span class="u-hidden-visually">Back to home</span>
+            </c-link>
           </li><!--END- LOGO -->
 
           <li class="c-site-header__link-wrapper  o-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile" v-scroll-to="'#page-top'">
-            <nuxt-link class="c-site-header__link" to="/work/">
-              <span class="c-site-header__link-text  o-text o-text--sm">
-                work
-              </span>
-            </nuxt-link>
+            <c-link
+              relativeLink="/work/"
+              class="c-site-header__link">
+              <span class="c-site-header__link-text  o-text o-text--sm">work</span>
+            </c-link>
           </li>
 
           <li class="c-site-header__link-wrapper  o-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile" v-scroll-to="'#page-top'">
-            <nuxt-link class="c-site-header__link" to="/profile/">
-              <span class="c-site-header__link-text  o-text o-text--sm">
-                profile
-              </span>
-            </nuxt-link>
+            <c-link
+              relativeLink="/profile/"
+              class="c-site-header__link">
+              <span class="c-site-header__link-text  o-text o-text--sm">profile</span>
+            </c-link>
           </li>
 
           <li class="c-site-header__link-wrapper  o-grid__cell  u-text--align-right  u-1/4  u-1/5@mobile" v-scroll-to="'#page-top'">
-            <nuxt-link class="c-site-header__link" to="/contact/">
-              <span class="c-site-header__link-text  o-text o-text--sm">
-                contact
-              </span>
-            </nuxt-link>
+            <c-link
+              relativeLink="/contact/"
+              class="c-site-header__link">
+              <span class="c-site-header__link-text  o-text o-text--sm">contact</span>
+            </c-link>
           </li>
+
 
         </ul>
       </l-wrapper>

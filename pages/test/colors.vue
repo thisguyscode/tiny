@@ -14,7 +14,7 @@ import detectContrast from '~/utils/detectContrast.js'
 export default {
   computed: {
     color: function () {
-      return '#009833'
+      return '#f05d5e'
     },
     text: function () {
       if (detectContrast(this.color) === 'light') {
@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 
-$color: #009833;
+$color: #f05d5e;
 
 .p-colors {
   padding: $unit-lg;

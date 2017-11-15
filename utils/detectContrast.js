@@ -19,16 +19,24 @@ const detectContrast = (testColor) => {
   var green = parseInt(rgb[1])
   var blue = parseInt(rgb[2])
 
-  var redMagicNumber = 241
-  var greenMagicNumber = 691
-  var blueMagicNumber = 68
-  var divisor = redMagicNumber + greenMagicNumber + blueMagicNumber
+  // YIQ
+  var o = Math.round((
+    (red * 299) +
+    (green * 587) +
+    (blue * 114)) / 1000)
 
-  var p = Math.sqrt(((red * red * redMagicNumber) + (green * green * greenMagicNumber) + (blue * blue * blueMagicNumber)) / divisor)
-  var x = 100 * p / 255
-  var o = Math.round(x)
-  console.log(o)
-  var contrastingColor = (o > 50) ? 'dark' : 'light'
+  // MID
+  // var redMagicNumber = 241
+  // var greenMagicNumber = 691
+  // var blueMagicNumber = 68
+  // var divisor = redMagicNumber + greenMagicNumber + blueMagicNumber
+
+  // var o = Math.sqrt(((red * red * redMagicNumber) + (green * green * greenMagicNumber) + (blue * blue * blueMagicNumber)) / divisor)
+
+  var percent = Math.round(100 * o / 255)
+
+  console.log(percent)
+  var contrastingColor = (percent > 50) ? 'dark' : 'light'
   return contrastingColor
 }
 

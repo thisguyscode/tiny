@@ -8,7 +8,7 @@
         {
           "name": "National Data Dashboard",
           "slug": "data-dashboard",
-          "color": "#4BA857",
+          "color": "#7EE081",
           "date": "Apr - May 2017",
           "role": "UI Designer",
           "skills": [
@@ -47,7 +47,7 @@
         {
           "name": "SCSS-based color palette generator",
           "slug": "scss-colors",
-          "color": "#ed5945",
+          "color": "#9E295D",
           "github": "https://github.com/thisguyscode/scss-color-palettes",
           "date": "Jan 2017",
           "role": "Tinkerer",
@@ -69,7 +69,7 @@
         {
           "name": "My Application to SocialCops",
           "slug": "application-to-sc",
-          "color": "#5BC0EB",
+          "color": "#2B2422",
           "date": "Feb 2016",
           "role": "Design Candidate",
           "skills": [
@@ -100,7 +100,7 @@
         {
           "name": "Hotel Ratings & Reviews Slideout",
           "slug": "ratings-slideout",
-          "color": "#2071BA",
+          "color": "#006D99",
           "date": "2015",
           "role": "Product Designer",
           "skills": [
@@ -118,7 +118,7 @@
         {
           "name": "Hotel Item Element",
           "slug": "hotel-item-element",
-          "color": "#a21619",
+          "color": "#C93416",
           "date": "2015",
           "role": "Product Designer",
           "skills": [
@@ -136,7 +136,7 @@
         {
           "name": "Web Banner Design & Creation",
           "slug": "web-banners",
-          "color": "#009833",
+          "color": "#ff8b00",
           "date": "2014",
           "role": "Screen Designer",
           "skills": [
@@ -155,7 +155,7 @@
         {
           "name": "Miscellaneous Illustrations n Tings",
           "slug": "trivago-misc",
-          "color": "#DE722B",
+          "color": "#ccc",
           "date": "2014 / 2015",
           "role": "Graphic Designer",
           "skills": [
@@ -180,7 +180,7 @@
         {
           "name": "Vertical Rhythm... Because Life Is Too Easy",
           "slug": "vertical-rhythm",
-          "color": "#f05d5e",
+          "color": "#6A4C93",
           "date": "Just now",
           "role": "Crazy Person",
           "skills": [

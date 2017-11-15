@@ -45,16 +45,17 @@ $brightness-divisor: $red-magic-number + $green-magic-number + $blue-magic-numbe
   $green-component: green($color);
   $blue-component: blue($color);
 
-  // Calculate a brightness value in 3d color space between 0 and 255
+  // YIQ takes into account color weight
   $yiq: (($red-component*299)+($green-component*587)+($blue-component*114))/1000;
-  @return $yiq;
-  // Calculate a brightness value in 3d color space between 0 and 255
-  // $mid: sqrt((($red-component * $red-component * $red-magic-number) + ($green-component * $green-component * $green-magic-number) + ($blue-component * $blue-component * $blue-magic-number)) / $brightness-divisor);
-  // @return 100% * $number / 255;
   
-  // Choose a method
-  // $number: $yiq;
-  // Convert to percentage and return
+  // MID calculates a brightness value in 3d color space between 0 and 255
+  $mid: sqrt((($red-component * $red-component * $red-magic-number) + ($green-component * $green-component * $green-magic-number) + ($blue-component * $blue-component * $blue-magic-number)) / $brightness-divisor);
+  
+  // Pick which to use
+  $value: $yiq;
+
+  $percent: 100% * $value / 255;
+  @return $percent;
 }
 
 
@@ -62,7 +63,7 @@ $brightness-divisor: $red-magic-number + $green-magic-number + $blue-magic-numbe
 /* CONTRASTING-COLOR
 ======================================================================== */
 @function contrasting-color($color, $light, $dark) {
-  @if brightness($color) < 50% {
+  @if brightness($color) < 50 {
     @return $light;
   } @else {
     @return $dark;

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+      
+  <title>Thunder - Jamie Mitchell's Assignment - Interaction Designer</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="57x57" href="./apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href=".">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="./android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="./ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    .c-client-thunder {
+      background-color: #ffba00;
+    }
+    .c-client-thunder--color {
+      color: #ffba00;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header data-scroll-offset='660' class="c-neutral-white c-neutral-black--color js-affix-header affix-header">
+    <div class="affix-header__container">
+      <div class="affix-header__logo-container">
+        <p class="t-paragraph-sans">
+          <strong>Jamie's Assigment</strong>
+        </p>
+      </div>
+      <div class="affix-header__title-container">
+        <p class="t-paragraph-sans">
+          <strong>Thunder: Weather App</strong>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <header style="height: 700px" class="header-minimal js-header-minimal c-client-thunder c-neutral-white--color header-minimal--centered-image header-minimal--image-center header-minimal--has-abs-images">
+    <div class="l-container header-minimal__container">
+      <h1 data-layer="1" class="t-project-title header-minimal__title js-header-minimal-item" style="transform: translate3d(0px, 0px, 0px); opacity: 1;">Thunder: Weather App</h1>
+      <div class="header-minimal__images">
+        <img src="../content/images/thunder/thunder-location_selection-01-header.jpg" data-layer="2" style="left: 5%; top: 15%; transform: translate3d(0px, 0px, 0px);" class="header-minimal__image-abs js-header-minimal-item is-hidden-mobile shadow">
+        <img src="../content/images/thunder/thunder-overview-05-header.jpg" data-layer="3" style="top: 10%; right: 5%; transform: translate3d(0px, 0px, 0px);" class="header-minimal__image-abs js-header-minimal-item is-hidden-mobile shadow">
+        <img src="../content/images/thunder/thunder-overview-04-header.jpg" data-layer="5" style="top: 0%; transform: translate3d(-50%, 0px, 0px);" class="header-minimal__image-abs js-header-minimal-item is-centered shadow">
+      </div>
+    </div>
+  </header>
+
+  <section style="" class="section c-neutral-silver c-neutral-black--color">
+    <div class="l-container l-container--small narrative">
+      <h2 class="t-title">Beautiful weather</h2>
+      <p>
+        Weather is a crucial consideration for the enjoyment, safety and even feasability of outdoor pursuits. I was tasked with producing a weather app which would help outdoor enthusiasts to monitor the weather in their region quickly and effectively.
+      </p>
+    </div>
+  </section>
+
+  <section style="" class="section c-neutral-black--color">
+    <div class="narrative">
+      <div class="l-container l-container--small">
+        <h2 class="t-title c-client-thunder--color">Think.</h2>
+        <p>As per the Ginetta process of design, I started about thinking through the issue.</p>
+      </div>
+      <div class="l-container l-container--small">
+        <h3>Preliminary (and very casual) User Research</h3>
+        <p>
+          I asked the people I'm staying with what their weather-reading behaviours looked like. Given that they engage in various outdoors sports (including hiking, fishing, dog-sledding and cross-country skiing) and they have a farm to run (which is hugely dependant on weather) they seemed to fit the profile of potential users. They provided the following insights.
+        </p>
+        <ul>
+          <li>
+            Maybe common sense, but the most essential requirement of a weather service is accurate and reliable data
+          </li>
+          <li>
+            All 3 potential users depended heavily on the map feature - not symbols on a map but actual satelitte data of weather patterns.
+          </li>
+          <li>
+            Despite all checking the weather reqularly (often several times a day), they all had different intentions depending on the individual, the season and the task at hand.
+          </li>
+        </ul>
+      </div>
+      <div class="l-container l-container--small">
+        <h3>Other Considerations</h3>
+        <ul>
+          <li>
+            The brief seemed to indicate that this should be primarily a mobile app (given the focus on speed of data consumption and everyday use), so I decided to focus on that.
+          </li>
+          <li>
+            As a minimum, the product should provide an effective, clear and consise overview of weather in the user's region. This overview should be reached and understood with the minimum degree of interaction from the user, allowing them to anticipate weather in their region at a glance.
+          </li>
+          <li>
+            The user should be able to move easily between places of interest. They will likely wish to keep track of multiple regions and the app should facilitate that.
+          </li>
+          <li>
+            There is currently an ongoing forest fire risk warning in Norway. Due to this I realised that a weather app has a responsibility to its users to deliver such warnings.
+          </li>
+        </ul>
+      </div>
+      <div class="l-container l-container--small">
+        <h3>Flow / Structure</h3>
+        <p>
+          As mentioned above, it was essential to get the user to the most pertinent information as frictionlessly as possible. On startup the app should search for the user's location.
+        </p>
+        <figure>
+          <img src="../content/images/thunder/sketch-flow.jpg" alt="sketch of the user flow">
+        </figure>
+        <h5>
+          <strong>IF</strong> the location is found succesfully
+        </h5>
+        <p>The user is taken to the overview for their current location</p>
+        <h5>
+          <strong>ELSE IF</strong> the location could not be found
+        </h5>
+        <p>
+          <strong>IF</strong> the user has used the service before... they are taken to their most recently viewed location
+        </p>
+        <p>
+          <strong>ELSE</strong> they are taken to the location selection screen with a message along the lines of
+          <i>“Please select a location to start using Thunder”</i>
+        </p>
+        <h5>
+          <strong>ELSE IF</strong> they skip
+        </h5>
+        <p>
+          <strong>New users</strong> are taken to the location selection screen
+        </p>
+        <p>
+          <strong>Returning users</strong> are taken to the overview of their most recently viewed location.
+        </p>
+      </div>
+      <div class="l-container l-container--small">
+        <h3>Basic composition</h3>
+        <p>
+          Of course I took the considerations and thoughts from above to the paper to try and rough out a basic composition. You see some of the
+          <i>‘not-so-pretty-but-rather-useful’</i> stuff that I put down here:
+
+        </p>
+      </div>
+      <div class="carousel js-carousel">
+        <div class="carousel__item c-neutral-black--color">
+          <img src="../content/images/thunder/composition-05.jpg" alt="sketch of the composition" class="shadow carousel__image" />
+          <p class="t-centered t-caption carousel__item--legend"></p>
+        </div>
+        <div class="carousel__item c-neutral-black--color">
+          <img src="../content/images/thunder/composition-01.jpg" alt="sketch of the composition" class="shadow carousel__image" />
+          <p class="t-centered t-caption carousel__item--legend"></p>
+        </div>
+        <div class="carousel__item c-neutral-black--color">
+          <img src="../content/images/thunder/composition-02.jpg" alt="sketch of the composition" class="shadow carousel__image" />
+          <p class="t-centered t-caption carousel__item--legend"></p>
+        </div>
+        <div class="carousel__item c-neutral-black--color">
+          <img src="../content/images/thunder/composition-03.jpg" alt="sketch of the composition" class="shadow carousel__image" />
+          <p class="t-centered t-caption carousel__item--legend"></p>
+        </div>
+        <div class="carousel__item c-neutral-black--color">
+          <img src="../content/images/thunder/composition-04.jpg" alt="sketch of the composition" class="shadow carousel__image" />
+          <p class="t-centered t-caption carousel__item--legend"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section c-neutral-black--color t-smooth">
+    <div class="narrative">
+      <div class="l-container l-container--small">
+        <h2 class="t-title c-client-thunder--color">Make.</h2>
+        <p>Of course now it's time to get my hands dirty and back at the computer.</p>
+      </div>
+      <div class="l-container l-container--small">
+        <h3>Montserrat</h3>
+        <p>It's pretty, it's clean, it's fashionable. What's not to like?</p>
+        <figure>
+          <img src="../content/images/thunder/montserrat.jpg" alt="montserrat" class="shadow">
+        </figure>
+      </div>
+      <div class="l-container l-container--small">
+        <h3>Colors</h3>
+        <p>I really couldn't spend long on this given the time constraint, but these are the colors I picked (updated after I'd finished the interface)</p>
+        <figure>
+          <img src="../content/images/thunder/thunder-colors-01.jpg" alt="colors used in the interface" class="shadow">
+        </figure>
+      </div>
+      <div class="l-container l-container--small">
+        <h3>Icons</h3>
+        <p>I stumbled upon
+
+          <a href="http://www.alessioatzeni.com/meteocons/">Meteocons by Alessio Atzeni</a> which given the lack of time served the purpose nicely. I also made use of
+
+          <a href="https://fontawesome.com/">Font Awesome</a> and
+
+          <a href="https://https://thenounproject.com">Noun Project</a>
+        </p>
+        <figure>
+          <img src="../content/images/thunder/meteocons.png" alt="meteocons icons" class="shadow">
+        </figure>
+      </div>
+      <div class="l-container l-container--small">
+        <h3>Overview</h3>
+        <p>I set myself the goal of at least developing the overview page to a reasonable standard. Typically if I have already figured out the rough composition on paper, I'll throw everything into the design program of choice with little concern for aligment, polish and file hygeine, and then progressively tidy things up. Here you can see the progress. </p>
+      </div>
+      <div class="l-container l-container--medium">
+        <div class="l-grid">
+          <div class="l-grid-cell l-one-third l-one-whole--mobile">
+            <img src="../content/images/thunder/thunder-overview-01@2x.jpg" alt="First version of the overview" class="shadow">
+          </div>
+          <div class="l-grid-cell l-one-third l-one-whole--mobile">
+            <img src="../content/images/thunder/thunder-overview-02@2x.jpg" alt="Second version of the overview" class="shadow">
+          </div>
+          <div class="l-grid-cell l-one-third l-one-whole--mobile">
+            <img src="../content/images/thunder/thunder-overview-03-clipped@2x.jpg" alt="First version of the overview" class="shadow">
+          </div>
+        </div>
+      </div>
+      <div class="l-container l-container--small">
+        <img width="50%" src="../content/images/thunder/thunder-overview-04@2x.jpg" alt="Final version of the overview" class="shadow">
+      </div>
+      <div class="l-container l-container--small">
+        <h3>Location Selection</h3>
+        <p>As mentioned previously, an important flow of a weather app is moving between places of interest. I managed to find some time to make a basic iteration of the location search/selection screen, although wasn't able to demonstrate the interactions. </p>
+        <img width="50%" src="../content/images/thunder/thunder-location_selection-01@2x.jpg" alt="Location selection screen" class="shadow">
+        <p>
+          I imagine the items in the list being sorted by recency, although I don't believe that the user needs to know (via a label or filter option) as long as they remain relevent. The act of actively managing a list of locations in your weather app is tedious, and this would likely provide a simpler solution. But who knows? It would be one of the first candidates for testing.
+        </p>
+      </div>
+      <div class="l-container l-container--small">
+        <h3>Weather Warnings</h3>
+        <p>Also mentioned earlier were the severe weather warnings taking place in Norway (where I am) right now. I wanted to find a place for those that they wouldn't be missed. Clicking them would take the user to a
+          <i>‘warnings’</i> map view so that they can be sure to avoid/be cautious of particular areas. Here's a very quick iteration.
+        </p>
+        <img width="50%" src="../content/images/thunder/thunder-overview-05@2x.jpg" alt="Warnings on the overview page" class="shadow">
+      </div>
+      <div class="l-container l-container--small">
+        <h3>Wind Icon</h3>
+        <p>Half way through this assignment I realised that the least important thing to the average user about wind is it's direction. Of more interest is speed and
+          <i>‘gustiness’</i>. Of course this is speculation but I think it's valid. Looking at the overview I had designed, I saw that the only information being displayed was direction, so I set about making a very quick animated icon to demonstrate how one might communicate the speed and variablility of the wind.
+        </p>
+        <div class="l-grid">
+          <div class="l-grid-cell l-one-third l-one-whole--mobile">
+            <figure>
+              <img src="../content/images/thunder/wind_icon-slow.gif" alt="Arrow with slow animated chevrons" class="shadow">
+              <figcaption class="t-caption t-centered">Slow</figcaption>
+            </figure>
+          </div>
+          <div class="l-grid-cell l-one-third l-one-whole--mobile">
+            <figure>
+              <img src="../content/images/thunder/wind_icon-fast.gif" alt="Arrow with fast animated chevrons" class="shadow">
+              <figcaption class="t-caption t-centered">Fast</figcaption>
+            </figure>
+          </div>
+          <div class="l-grid-cell l-one-third l-one-whole--mobile">
+            <figure>
+              <img src="../content/images/thunder/wind_icon-fast_gusty.gif" alt="Arrow with fast animated chevrons and erratic movement" class="shadow">
+              <figcaption class="t-caption t-centered">Fast & Gusty</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="" class="section c-neutral-black--color t-smooth">
+    <div class="narrative l-container l-container--small">
+      <h2 class="t-title c-client-thunder--color">Check.</h2>
+      <p>Weeeeell... honestly I didn't have the time or resources for this step. Better luck next time.</p>
+    </div>
+  </section>
+
+  <section class="section c-neutral-black--color t-smooth">
+    <div class="narrative l-container l-container--small">
+      <h2 class="t-title c-client-thunder--color">In Answer to Your Questions.</h2>
+      <h3>What challenges did you identify as you completed the assignment?</h3>
+      <ul>
+        <li>
+          <h4>A lack of weather knowledge</h4>
+          <p>Thorough research into the process of predicting weather and what sort of data is available could have really provided some valuable insights - insights that might set this product apart from the many others.</p>
+        </li>
+        <li>
+          <h4>Shaking off the dust</h4>
+          <p>It's been about 15 months since I left my last design job, and perhaps 9 months since I did any design work at all. Refamiliarising myself with the process and software was certainly a challenge, but I'm pleased with the speed with which it has come back.</p>
+        </li>
+        <li>
+          <h4>Equipment</h4>
+          <p>I'm far more familiar with Mac in the context of design, but I was restricted to using a small windows laptop on this occassion. There were some minor language issues (it being in Norwegian) and I was unable to use Sketch which for this purpose I would have preferred.</p>
+        </li>
+        <li>
+          <h4>Time contraint</h4>
+          <p>I have to be honest, I did overstep the time limit (spending 5-6 hours on the design process and more to complete this write-up). Even with the extra time I granted myself for the 2 challenges mentioned above, there was still so much I wanted to do. It would of course be unfair to other applicants to do so.</p>
+        </li>
+      </ul>
+      <h3>If you had an additional day to work on this what would you improve?</h3>
+      <ul>
+        <li>
+          <h4>Map views</h4>
+          <p>I would design the map views (for rain, temperature, wind and warnings). In this case it was certainly more important to complete the overview and location selection, but my limited research and my own opinion tell me that these map views are a highly desireable feature. Plus I like working with maps. </p>
+        </li>
+        <li>
+          <h4>More?</h4>
+          <p>I don't think I could do anything more than the maps in a day, but some of the priorities are: the colors, location selection interaction and the app startup screen (roughly completing the basic flow). Then I guess I would make a very simple interactive prototype to test the flow and first impressions.</p>
+        </li>
+      </ul>
+      <h3>If you started from scratch now, what would you do differently?</h3>
+      <p>It's an odd question. Either I start from scratch with the knowledge I have now in which case I would pretty much continue from where I am... or I start from scratch with a memory wipe, in which case I'd do it largely the same.</p>
+      <p>To answer your question in a less facetious manner, I might consider reducing the scope of the project to a single element, such as the wind icon above. This way I would be focusing more on polishing a creative detail than trying to tackle the structure of the whole app.</p>
+    </div>
+  </section>
+
+  <section style="" class="section c-neutral-silver c-neutral-black--color">
+    <div class="l-container l-container--medium">
+      <div class="team c-neutral-black--color">
+        <blockquote class="callout t-quote-small c-neutral-black--color">Woof, woof, woof & thanks for your time!</blockquote>
+        <ul class="team__members">
+          <li class="team__item">
+            <div class="avatar avatar--small">
+              <img src="../content/images/members/jamie.jpg" alt="Jamie Mitchell" class="avatar__image" />
+            </div>
+            <p class="t-paragraph-sans team__item-name">
+              <strong>Jamie Mitchell</strong>
+            </p>
+            <p class="t-paragraph-sans team__item-role">Interaction Designer</p>
+          </li>
+          <li class="team__item">
+            <div class="avatar avatar--small">
+              <img src="../content/images/members/tequila.jpg" alt="Tequila the Dog" class="avatar__image" />
+            </div>
+            <p class="t-paragraph-sans team__item-name">
+              <strong>Tequila</strong>
+            </p>
+            <p class="t-paragraph-sans team__item-role">Motivator</p>
+          </li>
+          <li class="team__item">
+            <div class="avatar avatar--small">
+              <img src="../content/images/members/sigri.jpg" alt="Sigri the Dog" class="avatar__image" />
+            </div>
+            <p class="t-paragraph-sans team__item-name">
+              <strong>Sigri</strong>
+            </p>
+            <p class="t-paragraph-sans team__item-role">Distractor</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer c-neutral-black c-neutral-white--color t-smooth l-page__footer">
+    <div class="l-container footer__info">
+      <div class="footer__info-block footer__info-block--links">
+        <a href="https://tinyworld.xyz" class="icon-link icon-link--ltr icon-link--text-only footer__link">
+          <span class="t-paragraph-sans icon-link__text">About Jamie</span>
+        </a>
+        <a href="mailto:tiny@tinyworld.xyz?subject=Hey Jamie, you're hired!" class="icon-link icon-link--ltr icon-link--text-only footer__link">
+          <span class="t-paragraph-sans icon-link__text">Give Jamie a job</span>
+        </a>
+      </div>
+      <div class="footer__info-block footer__info-block--icons">
+        <a href="https://github.com/thisguyscode" class="icon-link icon-link--ltr footer__link">
+          <svg viewbox="0 0 24 24" class="icon icon-link__icon">
+            <use xlink:href="../content/images/icons/sprite.svg#github"></use>
+          </svg>
+        </a>
+      </div>
+      <hr class="hr--short" />
+      <div class="footer__info-block footer__info-block--logo">
+        <a href="https://www.tinyworld.xyz">
+          <svg xmlns="http://www.w3.org/2000/svg" width="240" height="57" viewBox="0 0 27 19" class="icon-link__icon footer__logo">
+            <g fill="#121212" fill-rule="evenodd">
+              <path data-v-315bcc2d="" d="M6.406 2.703l.422-.233c.193-.104 1.897-1.014 2.683-1.44a1 1 0 0 1 .951 1.76c-.793.429-2.495 1.337-2.68 1.438-.557.302-.838.47-1.149.687l-.227.17v6.735a1 1 0 1 1-2 0V6.608c-.822.625-1.753 1.329-2.579 1.941A1 1 0 0 1 .636 6.943c1.243-.922 2.762-2.08 3.77-2.849V1.322a1 1 0 1 1 2 0v1.381zm16.73 4.575c.96-1.937 1.387-3.53 1.387-5.377a1 1 0 1 1 2 0c0 2.748-.788 4.98-2.52 7.98-.189.327-.386.66-.65 1.1l-.66 1.1c-1.363 2.285-2.124 3.806-2.703 5.615a1 1 0 1 1-1.905-.61c.636-1.985 1.455-3.624 2.89-6.03l.662-1.103c.185-.308.336-.561.473-.796-.013-.002-.033-.03-.07-.084-.17-.244-.49-.563-.952-.938-1.004-.814-2.612-1.838-4.811-3.058a1 1 0 1 1 .97-1.75c2.864 1.59 4.815 2.852 5.89 3.95zm-.997 1.83a1.019 1.019 0 0 1-.001.002v-.002zm-10.53-6.064a1 1 0 0 1 1.157.024c.494.366 1.868 1.37 2.098 1.545.488.368.767.61 1.074.937.084.09 2.09 2.482 3.7 4.289a1 1 0 1 1-1.494 1.33c-1.644-1.846-3.627-4.21-3.665-4.25-.308-.329.91.576-1.407-1.136v6.078a1 1 0 0 1-2 0v-7.93a1 1 0 0 1 .537-.887zm-3.574 2.56a1 1 0 0 1 1.998.088l-.294 6.632a1 1 0 1 1-1.998-.088l.294-6.633z"></path>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="..//js/vendor.min.js"></script>
+  <script src="..//js/main.js"></script>
+</body>
+																						</html>
